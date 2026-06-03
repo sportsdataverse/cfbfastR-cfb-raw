@@ -447,12 +447,17 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Callable, Iterable
 
-import sportsdataverse
+from importlib.metadata import version as _pkg_version
 
 # Bump SCHEMA_REV whenever the final-JSON shape or enrichment inputs change in a way
 # that should force a reprocess of already-built games.
 SCHEMA_REV = 1
-PROCESSING_VERSION = f"{sportsdataverse.__version__}+{SCHEMA_REV}"
+try:
+    _SDV_VERSION = _pkg_version("sportsdataverse")
+except Exception:  # noqa: BLE001
+    _SDV_VERSION = "0.0.0"
+# NOTE: sportsdataverse exposes no __version__ attribute; use importlib.metadata.
+PROCESSING_VERSION = f"{_SDV_VERSION}+{SCHEMA_REV}"
 
 
 def get_logger(name: str, year: int | str) -> logging.Logger:
