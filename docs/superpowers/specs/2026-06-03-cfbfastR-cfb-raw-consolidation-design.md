@@ -50,6 +50,16 @@ scraper. The scraper stays thin; bug fixes go upstream. Key entry points:
   ESPN endpoint** (not derivable from the summary payload).
 - `espn_cfb_game_rosters(game_id)` → game roster. **Hits its own ESPN endpoint** (not
   derivable from the summary payload).
+
+> **Odds are an enrichment input, not a passthrough (see §12.2).** Inside
+> `run_processing_pipeline()`, `__helper_cfb_pickcenter()` (cfb_pbp.py) sets
+> `gameSpread`/`overUnder`/`homeFavorite`, which feed **every play's EPA/WPA**
+> (`wp_spread.ubj`). For 2024+ games ESPN empties the summary `pickcenter`, so the helper
+> cascades to a **live** `sports.core.api.espn.com/.../odds` call
+> (`__helper__espn_cfb_odds_information__`), falling back to hardcoded defaults
+> `(2.5, 55.5, True, False)` on failure. Offline reprocess must NOT hit that endpoint and
+> must NOT inherit defaults — so the resolved odds are persisted at scrape time (§6.3) and
+> injected on reprocess (§7.1). Required upstream sdv-py rework is tracked in §12.2.
 - `espn_cfb_schedule(...)` → weekly/season schedule.
 
 > **Note:** cfbfastR R package is currently on branch `refactor/pbp-epa-wpa-modular`;
@@ -162,9 +172,14 @@ pickcenter, predictor, againstTheSpread, broadcasts, videos, standings, format`.
   "boxScore":    { /* raw ESPN team/player box passthrough */ },
   "game_rosters": [ { "game_id":..., "season":..., "team_id":..., "athlete_id":..., "name":..., "position":..., "jersey":... } ],
   "betting": {
-      "home_team_spread": -7.5, "over_under": 52.5,
-      "game_spread": -7.5, "game_spread_available": true,
-      "odds": [], "pickcenter": [], "predictor": {}, "against_the_spread": []
+      // resolved odds actually used by enrichment (the EPA/WPA inputs) — persisted so
+      // reprocess injects these instead of re-fetching/falling back to defaults:
+      "game_spread": -7.5, "over_under": 52.5,
+      "home_favorite": true, "home_team_spread": -7.5, "game_spread_available": true,
+      "odds_source": "summary_pickcenter" | "core_odds_api" | "default",
+      // raw payloads (whichever applied) carried for forensics + re-normalization:
+      "pickcenter": [], "odds": [], "predictor": {}, "against_the_spread": [],
+      "odds_core_items": []   // verbatim sports.core.api odds items when that path was used
   },
   "drives": { /* raw ESPN drives passthrough */ },
   "scoringPlays": [], "winprobability": [], "leaders": [],
@@ -177,6 +192,9 @@ pickcenter, predictor, againstTheSpread, broadcasts, videos, standings, format`.
 - Top-level `id/season/week/season_type` are **echoed** (self-describing returns).
 - `betting` is **normalized in Python** (stable shape, null-safe defaults) rather than
   passed through raw — insulates the R binder from ESPN's `odds`/`pickcenter`/ATS drift.
+  It also carries the **resolved odds** (`game_spread`/`over_under`/`home_favorite`/
+  `game_spread_available`) + `odds_source` so reprocess reuses the exact EPA/WPA inputs
+  (§7.1) and never re-fetches the live core-odds endpoint.
 - `drives` stays a **raw passthrough**; the enriched `plays` already carry `drive.*`
   columns, so the drives dataset in `-data` is a light re-normalization.
 
@@ -188,12 +206,17 @@ Three standalone per-game datasets, each the same data embedded in `final`, each
 - `cfb/rosters/json/{season}/{id}.json` — the `game_rosters` array (from the rosters endpoint).
 - `cfb/play_participants/json/{season}/{id}.json` — the `play_participants` array (from the
   participants endpoint).
-- `cfb/betting/json/{season}/{id}.json` — the normalized `betting` object (from the summary).
+- `cfb/betting/json/{season}/{id}.json` — the normalized `betting` object, including the
+  **resolved odds** (`game_spread`/`over_under`/`home_favorite`/`game_spread_available` +
+  `odds_source`) and the verbatim `odds_core_items` when the live core-odds endpoint was
+  used. This is the **offline source of the EPA/WPA spread inputs** for 2024+ games whose
+  summary `pickcenter` is empty.
 
-These standalone files are the **authoritative offline source** for the two
-endpoint-backed aux datasets: because participants and rosters can't be reconstructed from
-the on-disk summary, persisting them here lets the offline reprocess (§7) read them from
-disk rather than depending on a prior `final` existing.
+These standalone files are the **authoritative offline source** for the endpoint-backed
+data: because participants, rosters, and (for 2024+) the resolved odds can't be
+reconstructed from the on-disk summary, persisting them here lets the offline reprocess
+(§7) read them from disk rather than depending on a prior `final` existing or hitting the
+network.
 
 ### 6.4 How `-data` resolves the per-game JSON (enumeration + retrieval)
 
@@ -244,8 +267,14 @@ Two rebuild axes, two costs:
 - Iterates `cfb/json/raw/*.json` on disk (NOT the schedule master, NOT ESPN).
 - Per game:
   - `CFBPlayProcess(gameId, path_to_json="cfb/json/raw").cfb_pbp_disk()` → load raw from disk.
-  - `run_processing_pipeline()` → rebuild `plays` / `advBoxScore` / `drives`.
-  - `betting` re-normalized from disk raw (deterministic, offline).
+  - **Inject persisted odds** from `cfb/betting/json/{season}/{id}.json`
+    (`game_spread`/`over_under`/`home_favorite`/`game_spread_available`) so
+    `__helper_cfb_pickcenter` uses them instead of cascading to the live core-odds endpoint
+    or hardcoded defaults — this keeps the EPA/WPA spread inputs identical to scrape time.
+    (Requires the sdv-py rework in §12.2.)
+  - `run_processing_pipeline()` → rebuild `plays` / `advBoxScore` / `drives` with the
+    injected spread.
+  - `betting` re-emitted from the disk betting JSON (deterministic, offline).
   - `game_rosters` from `cfb/rosters/json/{season}/{id}.json` on disk (offline); only
     re-fetch via `espn_cfb_game_rosters()` if `--refresh-aux`.
   - `play_participants` from `cfb/play_participants/json/{season}/{id}.json` on disk
@@ -259,8 +288,8 @@ emits the field empty and flags the game for a targeted refresher run.
 
 | `final` field | reprocess source | network? |
 |---|---|---|
-| `plays`, `advBoxScore`, `drives` | re-run pipeline on disk raw | no |
-| `betting` | re-normalize disk raw | no |
+| `plays`, `advBoxScore`, `drives` | re-run pipeline on disk raw + injected odds | no |
+| `betting` (incl. resolved odds) | disk `betting/json/{season}/{id}.json` | no (yes if `--refresh-aux`) |
 | `game_rosters` | disk `rosters/json/{season}/{id}.json` | no (yes if `--refresh-aux`) |
 | `play_participants` | disk `play_participants/json/{season}/{id}.json` | no (yes if `--refresh-aux`) |
 | `header`/`gameInfo`/`scoringPlays`/… | passthrough disk raw | no |
@@ -307,7 +336,10 @@ def download_game(game_id, season, rescrape, logger):
     # endpoint-backed aux — fetched ONCE each, written both standalone AND embedded:
     participants = espn_cfb_play_participants(game_id=game_id).to_dicts()
     rosters      = espn_cfb_game_rosters(game_id=game_id).to_dicts()
-    betting      = _normalize_betting(raw)                        # from summary, no call
+    # betting carries the RESOLVED odds the pipeline actually used (proc.gameSpread, etc. —
+    # incl. the core-odds path for 2024+) + the raw payloads + odds_source, so reprocess
+    # can inject them offline (§7.1, §12.2):
+    betting      = _capture_betting(raw, proc)                    # resolved odds + payloads
     write_json_atomic(_stamp(participants, game_id, season),
                       f"cfb/play_participants/json/{season}/{game_id}.json")
     write_json_atomic(_stamp(rosters, game_id, season),
@@ -402,7 +434,22 @@ done
    `espn_cfb_04_adv_box_creation.R`, and possibly upstream tweaks in sdv-py's
    `create_box_score()`. Treat as its own sub-task when reached; do not assume the current
    shape is release-ready.
-2. **`espn_cfb_play_participants` / `espn_cfb_game_rosters` are endpoint-backed
+2. **Odds-resolution rework in sdv-py (prerequisite for offline reprocess).** The spread/OU
+   are EPA/WPA inputs, not passthroughs (see §3 callout). `__helper_cfb_pickcenter()` uses
+   the summary `pickcenter` when present, but for 2024+ games it cascades to a **live**
+   `sports.core.api.espn.com/.../odds` call (`__helper__espn_cfb_odds_information__`),
+   defaulting to `(2.5, 55.5, True, False)` on failure. Required work:
+   (a) **prefer the raw-summary keys** (`pickcenter`/`odds`/`predictor`/`againstTheSpread`,
+   all in raw) whenever they carry the spread — investigate whether the summary `odds` key
+   holds it for 2024+ (if so, no extra endpoint is ever needed);
+   (b) make the live core-odds call happen **only at scrape time**, exposing the resolved
+   odds + raw items on the processor so they're persisted to the betting JSON (§6.3);
+   (c) add an **injected-odds path** to `CFBPlayProcess` (e.g. accept resolved odds /
+   read from `path_to_json`) so reprocess (§7.1) supplies the persisted spread and the
+   live endpoint + defaults are never reached offline.
+   Until (c) lands, reprocess of 2024+ games is not provably offline — treat as a gating
+   sub-task of Plan 1.
+3. **`espn_cfb_play_participants` / `espn_cfb_game_rosters` are endpoint-backed
    (confirmed).** Both hit their own ESPN endpoints, not the summary. Therefore both are
    persisted as standalone per-game JSON (§6.3) so the offline reprocess reads them from
    disk (§7.1) — no dependence on a prior `final`. `--refresh-aux` re-hits the endpoints
@@ -410,16 +457,17 @@ done
    whether participant `athlete_id`s require a further `$ref` resolve (which would add a
    call); if so, the standalone participant JSON already captures the resolved result, so
    reprocess stays offline regardless.
-3. **`drives` upstream absence.** ESPN sometimes omits `drives`; the drives dataset and the
+4. **`drives` upstream absence.** ESPN sometimes omits `drives`; the drives dataset and the
    `drive.*` play columns must degrade gracefully (empty, not error).
-4. **Backfill volume.** 2004→present × thousands of games × ~5-10s enrichment is a long
+5. **Backfill volume.** 2004→present × thousands of games × ~5-10s enrichment is a long
    run; ProcessPool + `filter_undone` + `processing_version` make it resumable. Initial
    backfill likely run in season chunks rather than one job.
-5. **cfbfastR `pbp_output_schema.R` reuse.** `-data` PBP creation should conform to the
+6. **cfbfastR `pbp_output_schema.R` reuse.** `-data` PBP creation should conform to the
    ~150-column canonical schema; verify alignment with the modular-refactor branch.
 
 ## 13. Out of scope
 
 - Retiring/migrating legacy `cfbfastR-raw` / `cfbfastR-data` (later).
-- Changes to the sdv-py enrichment engine beyond what's needed for advBoxScore (§12.1).
+- Changes to the sdv-py enrichment engine beyond what's needed for advBoxScore (§12.1) and
+  the odds-resolution rework (§12.2) — both of which ARE in scope as gating sub-tasks.
 - KenPom/other non-ESPN sources.
