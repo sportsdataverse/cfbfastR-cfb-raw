@@ -14,8 +14,10 @@ dependencies = [
 [dependency-groups]
 dev = ["pytest>=8.0"]
 
-[tool.uv.sources]
-sportsdataverse = { path = "../../sdv-py", editable = true }
+# NOTE: sportsdataverse>=0.0.52 (offline-reprocess features) resolves from PyPI so CI's
+# `uv sync --frozen` works on a clean runner. For local co-development against an unreleased
+# sdv-py, run `uv pip install -e ../../sdv-py` after `uv sync` (do not re-add a path source
+# to [tool.uv.sources] — it would break CI, which has no sibling checkout).
 
 [tool.pytest.ini_options]
 markers = ["live: hits the live ESPN API (gated by CFB_LIVE_TESTS=1)"]

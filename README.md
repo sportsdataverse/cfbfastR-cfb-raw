@@ -33,12 +33,13 @@ bash scripts/backfill_cfb.sh 2004
 uv run python python/reprocess_cfb_json.py -s 2024 -e 2024 --force
 ```
 
-## CI prerequisites
+## Dependencies / local dev
 
-`uv.lock` pins `sportsdataverse` (`>=0.0.52`, the offline-reprocess release — sportsdataverse-py
-PR #91). For local dev `[tool.uv.sources]` points at `../../sdv-py` (editable). Before CI can
-`uv sync --frozen`, sportsdataverse 0.0.52 must be published to PyPI (so the editable path
-source is no longer required on the runner) — or the workflow must also check out `sdv-py`.
+`uv.lock` pins `sportsdataverse>=0.0.52` (the offline-reprocess release — sportsdataverse-py
+PR #91) from PyPI, so CI's `uv sync --frozen` works on a clean runner. For local
+co-development against an unreleased `sdv-py`, run `uv pip install -e ../../sdv-py` after
+`uv sync` (do not add a `[tool.uv.sources]` path source — it would break CI, which has no
+sibling checkout).
 
 ## Automation
 
