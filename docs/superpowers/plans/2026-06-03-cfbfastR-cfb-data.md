@@ -25,7 +25,7 @@ From `cfbfastR-cfb-raw` (spec §6.2, post-prune §12.8). Top-level keys:
 - `plays` — list of ~150-col enriched play dicts (EPA/WPA/QBR, `*_player_name`, down/dist, `drive.*`).
 - `play_participants` — list of `{play_id, athlete_id, role, ...}`.
 - `advBoxScore` — `{pass, rush, receiver, team, situational, defensive, turnover, drives}` (see Phase H).
-- `boxScore` — raw ESPN team/player box passthrough.
+- `boxscore` — raw ESPN team/player box passthrough (lowercase key; `advBoxScore` is the separate enriched one).
 - `game_rosters` — list of roster rows.
 - `betting` — `{game_spread, over_under, home_favorite, home_team_spread, game_spread_available, odds_source, pickcenter, odds, predictor, against_the_spread, odds_core_items, odds_full, propbets}`.
 - `power_index` — FPI dict (recent seasons; `{}` for old).
@@ -179,7 +179,7 @@ Run:
 ```bash
 Rscript -e 'j <- jsonlite::fromJSON("tests/testthat/fixtures/final_401628455.json", simplifyVector = FALSE); cat(sort(names(j)), sep="\n")'
 ```
-Expected: prints keys incl. `plays`, `advBoxScore`, `boxScore`, `betting`, `play_participants`, `drives`, `game_rosters`, `team_box_extra`, `injuries`, `power_index`, `id`, `season`, `week`.
+Expected: prints keys incl. `plays`, `advBoxScore`, `boxscore` (lowercase), `betting`, `play_participants`, `drives`, `game_rosters`, `team_box_extra`, `injuries`, `power_index`, `id`, `season`, `week`.
 
 - [ ] **Step 3: Commit the fixture**
 
@@ -485,9 +485,10 @@ test_that("reshape_player_box returns rows stamped with game_id", {
 suppressPackageStartupMessages({ library(dplyr); library(data.table); library(arrow); library(jsonlite); library(optparse); library(cli) })
 if (!exists("read_final_json")) source(file.path(dirname(sys.frame(1)$ofile %||% "."), "_data_utils.R"))
 
-# ESPN team box from final$boxScore$teams[]: each has $team + $statistics (list of {name,displayValue}).
+# ESPN team box from final$boxscore$teams[] (NOTE: key is lowercase `boxscore`, confirmed
+# against a real final JSON; `advBoxScore` stays camelCase): each $team + $statistics (list of {name,displayValue}).
 reshape_team_box <- function(g) {
-  teams <- g$boxScore$teams
+  teams <- g$boxscore$teams
   if (is.null(teams) || length(teams) == 0) return(data.frame())
   rows <- lapply(teams, function(t) {
     stats <- t$statistics %||% list()
@@ -507,7 +508,7 @@ build_team_box_season <- function(season, master = fetch_master_local(), live = 
   build_season(season, "team_box", "team_box", "espn_cfb_team_box", reshape_team_box, master, live)
 # (argparse main block identical to G1; calls build_team_box_season)
 ```
-`R/espn_cfb_03_player_box_creation.R` — same shape, `reshape_player_box(g)` reads `g$boxScore$players[]` (per-team `statistics` groups → athletes); stem/tag `player_box`/`espn_cfb_player_box`.
+`R/espn_cfb_03_player_box_creation.R` — same shape, `reshape_player_box(g)` reads `g$boxscore$players[]` (per-team `statistics` groups → athletes); stem/tag `player_box`/`espn_cfb_player_box`.
 > **Verify during execution:** inspect the fixture's `boxScore$teams[[1]]$statistics` and `boxScore$players` shapes (`Rscript -e 'str(jsonlite::fromJSON(...)$boxScore, max.level=3)'`) and adjust the field paths; ESPN box nests players as `players[[i]]$statistics[[j]]$athletes[[k]]`.
 
 - [ ] **Step 4: Run, confirm PASS.**
