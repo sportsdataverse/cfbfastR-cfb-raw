@@ -17,6 +17,27 @@ def test_write_json_atomic_creates_dirs_and_no_tmp(tmp_path):
     assert not list(target.parent.glob("*.tmp")), "temp file left behind"
 
 
+def test_write_json_atomic_emits_valid_json_for_nan_inf(tmp_path):
+    # Python's json writes bare NaN/Infinity (invalid JSON; R/JS/Go reject it).
+    # write_json_atomic must coerce nan/inf -> null so cross-language consumers can parse.
+    target = tmp_path / "g.json"
+    obj = {"a": float("nan"), "b": float("inf"), "c": float("-inf"),
+           "plays": [{"name": "x", "epa": float("nan"), "yds": 3.5}], "ok": 1}
+    u.write_json_atomic(obj, target)
+    raw = target.read_text()
+    assert "NaN" not in raw and "Infinity" not in raw, "invalid JSON literal emitted"
+    # strict parse (no NaN tolerance) must succeed
+    loaded = json.loads(raw, parse_constant=_reject_constant)
+    assert loaded["a"] is None and loaded["b"] is None and loaded["c"] is None
+    assert loaded["plays"][0]["epa"] is None
+    assert loaded["plays"][0]["yds"] == 3.5
+    assert loaded["ok"] == 1
+
+
+def _reject_constant(c):  # json.loads(parse_constant=) fires only for NaN/Infinity tokens
+    raise AssertionError(f"non-standard JSON constant present: {c}")
+
+
 def test_processing_version_format():
     v = u.PROCESSING_VERSION
     assert "+" in v and v.split("+")[1].isdigit()

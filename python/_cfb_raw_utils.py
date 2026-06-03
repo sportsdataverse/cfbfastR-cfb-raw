@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import json
 import logging
+import math
+import numbers
 import os
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
@@ -38,12 +40,36 @@ def get_logger(name: str, year: int | str) -> logging.Logger:
     return logger
 
 
+def json_safe(o):
+    """Recursively coerce a value into a STANDARDS-VALID-JSON-serializable form.
+
+    Python's json emits bare ``NaN``/``Infinity`` literals for float nan/inf, which are
+    NOT valid JSON — Python can re-read them, but R (jsonlite), JS, Go, etc. reject the
+    file. Since the `final` JSON contract is consumed cross-language (the R `-data` repo),
+    we map nan/±inf -> null and normalize numpy/Decimal reals to plain float/int here.
+    """
+    if isinstance(o, dict):
+        return {k: json_safe(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [json_safe(v) for v in o]
+    if isinstance(o, bool):
+        return o
+    if isinstance(o, numbers.Integral):
+        return int(o)
+    if isinstance(o, numbers.Real):
+        f = float(o)
+        return None if (math.isnan(f) or math.isinf(f)) else f
+    return o
+
+
 def write_json_atomic(obj, path: str | Path) -> None:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(path.suffix + ".tmp")
     with open(tmp, "w", encoding="utf-8") as f:
-        json.dump(obj, f, separators=(",", ":"), default=str)
+        # allow_nan=False guarantees a valid-JSON failure rather than a silent NaN literal;
+        # json_safe has already removed nan/inf, so this never raises in practice.
+        json.dump(json_safe(obj), f, separators=(",", ":"), default=str, allow_nan=False)
     os.replace(tmp, path)
 
 
