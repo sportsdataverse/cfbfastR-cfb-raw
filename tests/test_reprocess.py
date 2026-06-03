@@ -50,7 +50,7 @@ def test_reprocess_offline_injects_odds(tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
     _seed(tmp_path)
     monkeypatch.setattr(rp, "CFBPlayProcess", _FakeProc)
-    rp.reprocess_game(401, season=2024, refresh_aux=False, force=True)
+    rp.reprocess_game(401, season=2024, force=True)
     final = json.loads((tmp_path / "cfb/json/final/401.json").read_text())
     assert final["betting"]["game_spread"] == -10.5     # injected from disk betting
     assert final["game_rosters"] == [{"athlete_id": 5}]
@@ -64,4 +64,4 @@ def test_version_gate_skips_current(tmp_path, monkeypatch):
     (tmp_path / "cfb/json/final").mkdir(parents=True)
     (tmp_path / "cfb/json/final/401.json").write_text(json.dumps(
         {"processing_version": rp.PROCESSING_VERSION}))
-    assert rp.reprocess_game(401, season=2024, refresh_aux=False, force=False) == "skipped"
+    assert rp.reprocess_game(401, season=2024, force=False) == "skipped"

@@ -49,3 +49,8 @@ def test_odds_override_from_betting_roundtrip():
     o = b.odds_override_from_betting(betting)
     assert o == {"gameSpread": -10.5, "overUnder": 60.0,
                  "homeFavorite": True, "gameSpreadAvailable": True}
+
+
+def test_odds_override_from_betting_none_when_incomplete():
+    assert b.odds_override_from_betting({}) is None
+    assert b.odds_override_from_betting({"over_under": 50}) is None  # no game_spread

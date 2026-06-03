@@ -25,11 +25,15 @@ def capture_betting(raw: dict, proc, *, odds_full=None, propbets=None) -> dict:
     }
 
 
-def odds_override_from_betting(betting: dict) -> dict:
-    """Reconstruct the CFBPlayProcess odds_override from a persisted betting dict."""
+def odds_override_from_betting(betting: dict):
+    """Reconstruct CFBPlayProcess odds_override from a persisted betting dict.
+    Returns None if the betting dict is missing the resolved spread (caller then lets
+    CFBPlayProcess resolve normally)."""
+    if not betting or betting.get("game_spread") is None:
+        return None
     return {
         "gameSpread": betting["game_spread"],
-        "overUnder": betting["over_under"],
-        "homeFavorite": betting["home_favorite"],
-        "gameSpreadAvailable": betting["game_spread_available"],
+        "overUnder": betting.get("over_under"),
+        "homeFavorite": betting.get("home_favorite"),
+        "gameSpreadAvailable": betting.get("game_spread_available", False),
     }

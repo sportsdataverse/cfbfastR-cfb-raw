@@ -11,7 +11,7 @@ from pathlib import Path
 
 from sportsdataverse.cfb import CFBPlayProcess
 
-from _cfb_raw_utils import PROCESSING_VERSION, get_logger, run_pool, write_json_atomic
+from _cfb_raw_utils import PROCESSING_VERSION, get_logger, run_pool, season_type_from_raw, write_json_atomic
 from cfb_betting import odds_override_from_betting
 
 RAW_DIR = Path("cfb/json/raw")
@@ -52,7 +52,7 @@ def _home_away_ids(raw: dict):
     return home, away
 
 
-def reprocess_game(game_id: int, season: int, refresh_aux: bool, force: bool, logger=None):
+def reprocess_game(game_id: int, season: int, force: bool, logger=None):
     logger = logger or get_logger("cfb_reprocess", season)
     try:
         if not force and _final_is_current(game_id):
@@ -63,7 +63,9 @@ def reprocess_game(game_id: int, season: int, refresh_aux: bool, force: bool, lo
             return "missing_raw"
 
         betting = _aux("betting", season, game_id)
-        override = odds_override_from_betting(betting) if betting else None
+        override = odds_override_from_betting(betting)
+        betting_embed = {k: v for k, v in betting.items()
+                         if k not in ("game_id", "season", "week")}
 
         proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
                               odds_override=override)
@@ -73,9 +75,10 @@ def reprocess_game(game_id: int, season: int, refresh_aux: bool, force: bool, lo
         home_id, away_id = _home_away_ids(raw)
         result.update(
             id=game_id, season=season, week=result.get("week"),
+            season_type=season_type_from_raw(raw),
             processing_version=PROCESSING_VERSION,
             count=len(result.get("plays") or []),
-            betting=betting,
+            betting=betting_embed,
             game_rosters=_aux_list("rosters", season, game_id),
             play_participants=_aux_list("play_participants", season, game_id),
             power_index=_aux("power_index", season, game_id),
@@ -93,9 +96,9 @@ def reprocess_game(game_id: int, season: int, refresh_aux: bool, force: bool, lo
 
 def _worker(args):
     """Module-level (picklable) wrapper for ProcessPoolExecutor.
-    args = (game_id, season, refresh_aux, force)."""
-    game_id, season, refresh_aux, force = args
-    return reprocess_game(game_id, season, refresh_aux, force)
+    args = (game_id, season, force)."""
+    game_id, season, force = args
+    return reprocess_game(game_id, season, force)
 
 
 def main() -> None:
@@ -104,7 +107,6 @@ def main() -> None:
     ap.add_argument("-e", "--end_year", type=int, default=None)
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--force", action="store_true")
-    ap.add_argument("--refresh-aux", action="store_true")
     args = ap.parse_args()
 
     import pandas as pd
@@ -114,7 +116,7 @@ def main() -> None:
         end = args.end_year or start
         master = master[(master["season"] >= start) & (master["season"] <= end)]
     pairs = list(master[["game_id", "season"]].itertuples(index=False, name=None))
-    pairs = [(int(g), int(s), args.refresh_aux, args.force)
+    pairs = [(int(g), int(s), args.force)
              for g, s in pairs if (RAW_DIR / f"{g}.json").exists()]
     run_pool(_worker, pairs, kind="process", desc="reprocess")
 

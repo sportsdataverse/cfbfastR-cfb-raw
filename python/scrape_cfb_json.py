@@ -12,7 +12,8 @@ from sportsdataverse.cfb import CFBPlayProcess
 
 from _cfb_raw_utils import (PROCESSING_VERSION, _safe, filter_undone,
                             games_for_seasons, get_logger, load_schedule_master,
-                            most_recent_cfb_season, run_pool, stamp, write_json_atomic)
+                            most_recent_cfb_season, run_pool, season_type_from_raw,
+                            stamp, write_json_atomic)
 from cfb_betting import capture_betting
 from cfb_team_box_extra import team_box_extra_from_summary
 
@@ -92,7 +93,7 @@ def download_game(game_id: int, season: int, rescrape: bool, logger=None):
         # 6. embed + write FINAL last
         result.update(
             id=game_id, season=season, week=week,
-            season_type=result.get("season_type") or raw.get("header", {}).get("season", {}).get("type"),
+            season_type=season_type_from_raw(raw),
             processing_version=PROCESSING_VERSION,
             count=len(result.get("plays") or []),
             play_participants=participants, game_rosters=rosters, betting=betting,

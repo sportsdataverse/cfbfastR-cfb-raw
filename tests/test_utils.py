@@ -55,3 +55,10 @@ def test_games_for_seasons_filters_range(tmp_path):
     pd.DataFrame({"game_id": [1, 2, 3], "season": [2003, 2004, 2005]}).to_parquet(master)
     games = u.games_for_seasons(u.load_schedule_master(str(master)), 2004, 2005)
     assert sorted(games) == [2, 3]
+
+
+def test_season_type_from_raw_variants():
+    assert u.season_type_from_raw({"header": {"season": {"type": 2}}}) == 2
+    assert u.season_type_from_raw({"header": {"season": {"type": {"id": "3"}}}}) == 3
+    assert u.season_type_from_raw({"header": {"competitions": [{"type": {"id": 2}}]}}) == 2
+    assert u.season_type_from_raw({"header": {}}) is None

@@ -109,3 +109,28 @@ def filter_undone(games, dir: str = "cfb/json/final", rescrape: bool = False) ->
         return list(games)
     d = Path(dir)
     return [g for g in games if not (d / f"{g}.json").exists()]
+
+
+def season_type_from_raw(raw: dict):
+    """Best-effort integer season_type from an ESPN summary, or None.
+    ESPN places it inconsistently (header.season.type as int or dict, or
+    header.competitions[0].type.id)."""
+    hdr = raw.get("header", {}) or {}
+    st = hdr.get("season", {})
+    if isinstance(st, dict):
+        val = st.get("type")
+        if isinstance(val, dict):
+            val = val.get("type") or val.get("id")
+        if val is not None:
+            try:
+                return int(val)
+            except (TypeError, ValueError):
+                pass
+    comps = (hdr.get("competitions") or [{}])
+    t = comps[0].get("type", {}) if comps else {}
+    if isinstance(t, dict) and t.get("id") is not None:
+        try:
+            return int(t["id"])
+        except (TypeError, ValueError):
+            pass
+    return None
