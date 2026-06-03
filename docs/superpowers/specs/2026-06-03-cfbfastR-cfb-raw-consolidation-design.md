@@ -195,6 +195,40 @@ endpoint-backed aux datasets: because participants and rosters can't be reconstr
 the on-disk summary, persisting them here lets the offline reprocess (§7) read them from
 disk rather than depending on a prior `final` existing.
 
+### 6.4 How `-data` resolves the per-game JSON (enumeration + retrieval)
+
+`raw/` and `final/` are **flat** (`cfb/json/{raw,final}/{game_id}.json`) — sibling
+convention. The `-data` repo links to them over **HTTP**, never via a checkout of the raw
+repo. The flow per `-data` run:
+
+1. **Season range** — extracted from the `repository_dispatch` commit message
+   (`grep -oP 'Start:\s*\K[0-9]{4}'` / `End:`), or from `workflow_dispatch` inputs, or
+   defaulted to `most_recent_cfb_season()`.
+2. **Enumerate `game_id`s** — the **schedule master is the index**. ESPN `game_id`s are not
+   season-decodable, so `-data` downloads
+   `https://raw.githubusercontent.com/sportsdataverse/cfbfastR-cfb-raw/main/cfb/cfb_schedule_master.parquet`
+   once, `arrow::read_parquet()`s it, and filters to `season ∈ [start, end]` to get the
+   `game_id` list (and `season`/`week`/team meta for stamping).
+3. **Fetch each `final` JSON** — construct
+   `https://raw.githubusercontent.com/sportsdataverse/cfbfastR-cfb-raw/main/cfb/json/final/{game_id}.json`
+   and read with `jsonlite::fromJSON()`. Aux-only datasets (rosters, participants, betting)
+   read from their season-partitioned URLs (`cfb/{dataset}/json/{season}/{game_id}.json`)
+   when built independently of the flagship PBP; otherwise they are taken from the embedded
+   blocks in the already-fetched `final` JSON to avoid duplicate requests.
+4. **Bind + write** — each `espn_cfb_0N_*.R` script binds the per-game frames into a
+   per-season table, conforms PBP to `pbp_output_schema.R`, writes parquet/csv/rds, and
+   updates `cfb_{dataset}_in_data_repo.parquet`.
+
+**Robustness against the raw CDN cache.** `raw.githubusercontent.com` serves with a ~5-min
+cache, so a just-pushed `final` can briefly 404. Mitigations: (a) the `-data` cron fires
+offset **+2h** after raw (§10.3), well past the cache window; (b) per-file fetch uses a
+small retry-with-backoff on 404/transient errors; (c) a fetch that still fails is logged
+and skipped (the game is picked up on the next run), never aborting the season bind.
+
+> **Implementation note:** for a large historical *recreate* (≈17k files), HTTP-per-file is
+> slow but rare and resumable. If it becomes a bottleneck, an opt-in local-checkout fast
+> path can be added later without changing the `final` contract — out of scope here.
+
 ## 7. Reprocess-from-disk (rebuild `final` from `raw`)
 
 Two rebuild axes, two costs:
