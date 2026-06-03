@@ -1,0 +1,22 @@
+[project]
+name = "cfbfastr-cfb-raw"
+version = "0.1.0"
+description = "Scrapes ESPN college-football game JSON into raw + enriched final per-game files."
+requires-python = ">=3.11"
+dependencies = [
+    "sportsdataverse>=0.0.51",
+    "pandas>=2.0",
+    "polars>=1.0",
+    "pyarrow>=15.0",
+    "tqdm>=4.66",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[tool.uv.sources]
+sportsdataverse = { path = "../../sdv-py", editable = true }
+
+[tool.pytest.ini_options]
+markers = ["live: hits the live ESPN API (gated by CFB_LIVE_TESTS=1)"]
+testpaths = ["tests"]
