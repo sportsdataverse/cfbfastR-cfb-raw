@@ -1,11 +1,14 @@
 import importlib.util
 import json
+import sys
 from pathlib import Path
 
 P = Path(__file__).parents[1] / "python" / "scrape_cfb_json.py"
 spec = importlib.util.spec_from_file_location("scrape_cfb_json", P)
 sj = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(sj)
+# Register so pickle can resolve _worker.__module__ == "scrape_cfb_json" correctly.
+sys.modules.setdefault("scrape_cfb_json", sj)
 
 
 class _FakeProc:
@@ -54,3 +57,17 @@ def test_download_game_writes_all_artifacts(tmp_path, monkeypatch):
     for ds in ("rosters", "play_participants", "betting", "officials",
                "power_index", "team_box_extra"):
         assert (base / ds / "json" / "2024" / "401.json").exists(), ds
+
+
+def test_worker_is_module_level_and_calls_download_game(monkeypatch):
+    # A module-level worker is required for ProcessPoolExecutor (lambdas aren't picklable).
+    calls = []
+    monkeypatch.setattr(sj, "download_game",
+                        lambda gid, season, rescrape: calls.append((gid, season, rescrape)) or "ok")
+    result = sj._worker((401, 2024, True))
+    assert result == "ok"
+    assert calls == [(401, 2024, True)]
+    # must be a real module-level function (picklable), not a lambda/closure
+    import pickle
+    assert sj._worker.__name__ == "_worker"
+    pickle.dumps(sj._worker)  # raises if not picklable

@@ -113,6 +113,12 @@ def download_game(game_id: int, season: int, rescrape: bool, logger=None):
         return "error"
 
 
+def _worker(args):
+    """Module-level (picklable) wrapper for ProcessPoolExecutor. args = (game_id, season, rescrape)."""
+    game_id, season, rescrape = args
+    return download_game(game_id, season, rescrape)
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("-s", "--start_year", type=int, default=most_recent_cfb_season())
@@ -126,8 +132,8 @@ def main() -> None:
         logger = get_logger("cfb_json", season)
         games = filter_undone(games_for_seasons(master, season, season), rescrape=rescrape)
         logger.info("season %s: %d games to scrape (rescrape=%s)", season, len(games), rescrape)
-        run_pool(lambda g, _s=season: download_game(g, _s, rescrape),
-                 games, kind="process", desc=f"cfb {season}")
+        run_pool(_worker, [(g, season, rescrape) for g in games],
+                 kind="process", desc=f"cfb {season}")
 
 
 if __name__ == "__main__":
