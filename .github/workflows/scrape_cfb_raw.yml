@@ -1,0 +1,56 @@
+name: Scrape CFB Raw Data
+
+on:
+  schedule:
+    - cron: '0 9 * 8 *'        # August (preseason)
+    - cron: '0 9 * 9-11 *'     # Sept-Nov (regular season)
+    - cron: '0 9 1-20 12 *'    # early-mid December (championships/bowls open)
+    - cron: '0 9 1-20 1 *'     # early January (bowls + CFP)
+  workflow_dispatch:
+    inputs:
+      start_year:
+        description: 'Start year'
+        required: false
+        type: string
+      end_year:
+        description: 'End year'
+        required: false
+        type: string
+      rescrape:
+        description: 'Rescrape existing games'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  scrape_cfb_raw:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      START_YEAR: ${{ inputs.start_year }}
+      END_YEAR: ${{ inputs.end_year }}
+      RESCRAPE: ${{ inputs.rescrape }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Default year inputs if empty
+        if: ${{ env.START_YEAR == '' }}
+        run: |
+          YR=$(uv run python -c "import sys; sys.path.insert(0,'python'); from _cfb_raw_utils import most_recent_cfb_season as m; print(m())")
+          echo "START_YEAR=$YR" >> $GITHUB_ENV
+          echo "END_YEAR=$YR" >> $GITHUB_ENV
+
+      - name: Default rescrape if empty
+        if: ${{ env.RESCRAPE == '' }}
+        run: echo "RESCRAPE=false" >> $GITHUB_ENV
+
+      - name: Scrape CFB Raw ${{ env.START_YEAR }}-${{ env.END_YEAR }}
+        run: bash scripts/daily_cfb_scraper.sh -s ${{ env.START_YEAR }} -e ${{ env.END_YEAR }} -r ${{ env.RESCRAPE }}

@@ -1,0 +1,20 @@
+name: cfbfastR CFB Data trigger
+
+on: [push, workflow_dispatch]
+
+jobs:
+  cfbfastR_cfb_data_trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger cfbfastR CFB Data
+        uses: peter-evans/repository-dispatch@v4
+        with:
+          token: ${{ secrets.SDV_GH_TOKEN }}
+          repository: sportsdataverse/cfbfastR-cfb-data
+          event-type: daily_cfb_data
+          client-payload: |-
+            {
+              "ref": "refs/heads/main",
+              "event_name": "daily_cfb_data",
+              "commit_message": ${{ toJSON(github.event.head_commit.message) }}
+            }
