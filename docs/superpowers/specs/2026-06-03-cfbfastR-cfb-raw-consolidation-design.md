@@ -32,7 +32,7 @@ when processing logic changes — no re-scrape, no full reshape.
 | 4 | Final JSON enrichment depth | **Full** `run_processing_pipeline()` (EPA/WPA/QBR + advBoxScore) + `play_participants` + `game_rosters` + normalized `betting`. |
 | 5 | Datasets produced by `-data` | `play_by_play`, ESPN `team_box`/`player_box`, advanced box (`adv_box`), `play_participants`, `drives`, `rosters`, `betting`, `schedules`. |
 | 6 | Concurrency / scope | **ProcessPool** (CPU-bound XGBoost bypasses GIL) + full backfill via `-s/-e` year args + incremental daily. |
-| 7 | Rosters & betting placement | **Both** embedded in `final/{id}.json` **and** written as standalone per-game JSON datasets. |
+| 7 | Rosters, participants & betting placement | **Both** embedded in `final/{id}.json` **and** written as standalone per-game JSON datasets. `play_participants` & `game_rosters` each hit their own ESPN endpoint (fetched once per game); `betting` is normalized from the summary (no extra call). |
 | 8 | Reprocess-from-disk | New first-class capability gated by a `processing_version` stamp (see §7). |
 
 ## 3. SDK boundary
@@ -46,8 +46,10 @@ scraper. The scraper stays thin; bug fixes go upstream. Key entry points:
   `wp_spread.ubj`, `qbr_model.ubj` at import).
 - `CFBPlayProcess(gameId, path_to_json=...).cfb_pbp_disk()` → load raw **from disk**
   (offline reprocess).
-- `espn_cfb_play_participants(game_id)` → per-play participant mapping.
-- `espn_cfb_game_rosters(game_id)` → game roster.
+- `espn_cfb_play_participants(game_id)` → per-play participant mapping. **Hits its own
+  ESPN endpoint** (not derivable from the summary payload).
+- `espn_cfb_game_rosters(game_id)` → game roster. **Hits its own ESPN endpoint** (not
+  derivable from the summary payload).
 - `espn_cfb_schedule(...)` → weekly/season schedule.
 
 > **Note:** cfbfastR R package is currently on branch `refactor/pbp-epa-wpa-modular`;
@@ -78,12 +80,15 @@ python/
   _cfb_raw_utils.py        # logging, ProcessPool runner, manifest reader, on-disk filter,
                            #   atomic JSON write, season helpers, PROCESSING_VERSION
   scrape_cfb_schedules.py  # season -> cfb/schedules/{parquet,rds,csv} + master
-  scrape_cfb_json.py       # game_id -> cfb/json/{raw,final}/{id}.json   (core, scrape+enrich)
+  scrape_cfb_json.py       # game_id -> raw + final + standalone rosters/participants/betting
+                           #   (core: hits summary + participants + rosters endpoints ONCE each)
   reprocess_cfb_json.py    # raw-on-disk -> final/{id}.json              (offline rebuild)
-  scrape_cfb_rosters.py    # game_id -> cfb/rosters/json/{season}/{id}.json
-  scrape_cfb_betting.py    # game_id -> cfb/betting/json/{season}/{id}.json
+  # optional single-dataset refreshers (NOT in the daily loop; hit one endpoint each):
+  scrape_cfb_rosters.py      # game_id -> cfb/rosters/json/{season}/{id}.json
+  scrape_cfb_participants.py # game_id -> cfb/play_participants/json/{season}/{id}.json
+  scrape_cfb_betting.py      # game_id -> cfb/betting/json/{season}/{id}.json (from summary)
 scripts/
-  daily_cfb_scraper.sh     # season-loop orchestrator (schedules->json->rosters->betting)
+  daily_cfb_scraper.sh     # season-loop orchestrator (schedules -> json[+all aux])
   backfill_cfb.sh          # wrapper: full 2004->present range
   reprocess_cfb.sh         # season-loop, reprocess only, commits "CFB Reprocess Update (...)"
 cfb/
@@ -91,6 +96,7 @@ cfb/
   json/final/{game_id}.json
   schedules/{parquet,rds,csv}/cfb_schedule_{year}.*
   rosters/json/{season}/{game_id}.json
+  play_participants/json/{season}/{game_id}.json
   betting/json/{season}/{game_id}.json
   cfb_schedule_master.{parquet,rds}
 logs/{scraper}_logfile_{year}.log
@@ -176,9 +182,18 @@ pickcenter, predictor, againstTheSpread, broadcasts, videos, standings, format`.
 
 ### 6.3 Standalone aux JSON
 
-`cfb/rosters/json/{season}/{id}.json` carries the `game_rosters` array;
-`cfb/betting/json/{season}/{id}.json` carries the `betting` object. Each echoes
-`game_id`/`season`/`week` for self-describing joins. Same data as embedded in `final`.
+Three standalone per-game datasets, each the same data embedded in `final`, each echoing
+`game_id`/`season`/`week` for self-describing joins:
+
+- `cfb/rosters/json/{season}/{id}.json` — the `game_rosters` array (from the rosters endpoint).
+- `cfb/play_participants/json/{season}/{id}.json` — the `play_participants` array (from the
+  participants endpoint).
+- `cfb/betting/json/{season}/{id}.json` — the normalized `betting` object (from the summary).
+
+These standalone files are the **authoritative offline source** for the two
+endpoint-backed aux datasets: because participants and rosters can't be reconstructed from
+the on-disk summary, persisting them here lets the offline reprocess (§7) read them from
+disk rather than depending on a prior `final` existing.
 
 ## 7. Reprocess-from-disk (rebuild `final` from `raw`)
 
@@ -199,16 +214,21 @@ Two rebuild axes, two costs:
   - `betting` re-normalized from disk raw (deterministic, offline).
   - `game_rosters` from `cfb/rosters/json/{season}/{id}.json` on disk (offline); only
     re-fetch via `espn_cfb_game_rosters()` if `--refresh-aux`.
-  - `play_participants` carried forward from existing `final/{id}.json` (offline); only
-    re-fetch via `espn_cfb_play_participants()` if `--refresh-aux`.
+  - `play_participants` from `cfb/play_participants/json/{season}/{id}.json` on disk
+    (offline); only re-fetch via `espn_cfb_play_participants()` if `--refresh-aux`.
   - Stamp `processing_version`; atomic write `final/{id}.json`.
+
+Because participants and rosters are endpoint-backed (not in the summary), their standalone
+disk JSON is the offline source — no dependence on a prior `final`. If a standalone aux file
+is missing for a game, reprocess logs it and (a) re-fetches if `--refresh-aux`, else (b)
+emits the field empty and flags the game for a targeted refresher run.
 
 | `final` field | reprocess source | network? |
 |---|---|---|
 | `plays`, `advBoxScore`, `drives` | re-run pipeline on disk raw | no |
 | `betting` | re-normalize disk raw | no |
-| `game_rosters` | disk rosters JSON | no (yes if `--refresh-aux`) |
-| `play_participants` | carry forward existing final | no (yes if `--refresh-aux`) |
+| `game_rosters` | disk `rosters/json/{season}/{id}.json` | no (yes if `--refresh-aux`) |
+| `play_participants` | disk `play_participants/json/{season}/{id}.json` | no (yes if `--refresh-aux`) |
 | `header`/`gameInfo`/`scoringPlays`/… | passthrough disk raw | no |
 
 ### 7.2 Version gate
@@ -245,22 +265,35 @@ recreates parquet for exactly those seasons — no special wiring.
 ### 8.2 `scrape_cfb_json.py` per-game task (raw-first ordering)
 
 ```python
-def download_game(game_id, rescrape, logger):
+def download_game(game_id, season, rescrape, logger):
     raw = CFBPlayProcess(gameId=game_id, raw=True).espn_cfb_pbp()
     write_json_atomic(raw, f"cfb/json/raw/{game_id}.json")        # bank raw first
     proc = CFBPlayProcess(gameId=game_id)
     proc.espn_cfb_pbp(); result = proc.run_processing_pipeline()  # ~5-10s, XGBoost
-    result["play_participants"] = espn_cfb_play_participants(game_id=game_id).to_dicts()
-    result["game_rosters"]      = espn_cfb_game_rosters(game_id=game_id).to_dicts()
-    result["betting"]           = _normalize_betting(raw)
-    result.update(id=game_id, season=..., week=..., season_type=...,
+    # endpoint-backed aux — fetched ONCE each, written both standalone AND embedded:
+    participants = espn_cfb_play_participants(game_id=game_id).to_dicts()
+    rosters      = espn_cfb_game_rosters(game_id=game_id).to_dicts()
+    betting      = _normalize_betting(raw)                        # from summary, no call
+    write_json_atomic(_stamp(participants, game_id, season),
+                      f"cfb/play_participants/json/{season}/{game_id}.json")
+    write_json_atomic(_stamp(rosters, game_id, season),
+                      f"cfb/rosters/json/{season}/{game_id}.json")
+    write_json_atomic(_stamp(betting, game_id, season),
+                      f"cfb/betting/json/{season}/{game_id}.json")
+    result["play_participants"] = participants
+    result["game_rosters"]      = rosters
+    result["betting"]           = betting
+    result.update(id=game_id, season=season, week=..., season_type=...,
                   processing_version=PROCESSING_VERSION)
-    write_json_atomic(result, f"cfb/json/final/{game_id}.json")
+    write_json_atomic(result, f"cfb/json/final/{game_id}.json")   # final written LAST
 ```
 
 Each task is wrapped so a bad game logs `logger.exception(...)` and the pool continues.
-Raw is banked before the risky enrichment, so a mid-enrichment crash still leaves raw on
-disk for reprocess.
+Ordering is deliberate: **raw banked first** (survives an enrichment crash), **final
+written last** (its existence is the incremental-completion marker for `filter_undone`).
+The daily path hits each ESPN endpoint exactly once per game; the standalone
+`scrape_cfb_{rosters,participants,betting}.py` scripts exist only for targeted
+single-dataset refresh outside the daily loop.
 
 ### 8.3 `scripts/daily_cfb_scraper.sh`
 
@@ -271,9 +304,7 @@ for i in $(seq "$START" "$END"); do
   TMPLOG=$(mktemp /tmp/cfb_raw_${i}.XXXXXX.log)
   { git pull >/dev/null; git config --local user.email "action@github.com"; git config --local user.name "Github Action"
     uv run python python/scrape_cfb_schedules.py -s $i -e $i -r $RESCRAPE   # schedules FIRST
-    uv run python python/scrape_cfb_json.py      -s $i -e $i -r $RESCRAPE
-    uv run python python/scrape_cfb_rosters.py   -s $i -e $i -r $RESCRAPE
-    uv run python python/scrape_cfb_betting.py   -s $i -e $i -r $RESCRAPE
+    uv run python python/scrape_cfb_json.py      -s $i -e $i -r $RESCRAPE   # raw+final+all aux
     git pull >/dev/null; git add cfb/* ; git commit -m "CFB Raw Update (Start: $i End: $i)" || echo "No changes"
     git pull >/dev/null; git push >/dev/null
   } 2>&1 | tee "$TMPLOG"
@@ -337,10 +368,14 @@ done
    `espn_cfb_04_adv_box_creation.R`, and possibly upstream tweaks in sdv-py's
    `create_box_score()`. Treat as its own sub-task when reached; do not assume the current
    shape is release-ready.
-2. **`espn_cfb_play_participants` / `espn_cfb_game_rosters` network dependence.** If these
-   require auxiliary ESPN `$ref` resolution beyond the summary payload, the offline
-   reprocess relies on carry-forward (participants) / disk (rosters). `--refresh-aux` is
-   the escape hatch. Confirm during implementation whether they parse the summary alone.
+2. **`espn_cfb_play_participants` / `espn_cfb_game_rosters` are endpoint-backed
+   (confirmed).** Both hit their own ESPN endpoints, not the summary. Therefore both are
+   persisted as standalone per-game JSON (§6.3) so the offline reprocess reads them from
+   disk (§7.1) — no dependence on a prior `final`. `--refresh-aux` re-hits the endpoints
+   when an aux *parser* changes. Implementation note: confirm the exact endpoint URLs and
+   whether participant `athlete_id`s require a further `$ref` resolve (which would add a
+   call); if so, the standalone participant JSON already captures the resolved result, so
+   reprocess stays offline regardless.
 3. **`drives` upstream absence.** ESPN sometimes omits `drives`; the drives dataset and the
    `drive.*` play columns must degrade gracefully (empty, not error).
 4. **Backfill volume.** 2004→present × thousands of games × ~5-10s enrichment is a long
