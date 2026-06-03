@@ -92,3 +92,20 @@ def run_pool(fn: Callable, items: Iterable, *, kind: str = "process",
         for fut in it:
             results.append(fut.result())
     return results
+
+
+def load_schedule_master(path: str = "cfb/cfb_schedule_master.parquet"):
+    import pandas as pd
+    return pd.read_parquet(path)
+
+
+def games_for_seasons(master, start: int, end: int) -> list[int]:
+    df = master[(master["season"] >= start) & (master["season"] <= end)]
+    return df["game_id"].astype(int).unique().tolist()
+
+
+def filter_undone(games, dir: str = "cfb/json/final", rescrape: bool = False) -> list[int]:
+    if rescrape:
+        return list(games)
+    d = Path(dir)
+    return [g for g in games if not (d / f"{g}.json").exists()]
