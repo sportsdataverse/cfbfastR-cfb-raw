@@ -289,11 +289,41 @@ and skipped (the game is picked up on the next run), never aborting the season b
 
 ### 6.5 Non-live enrichment extras (extra ESPN endpoints)
 
-Because this runs at scrape/backfill time (not the live in-game hot path), each game fans
-out to extra ESPN Core v2 endpoints beyond the summary. Every extra is **persisted as its
-own standalone per-game JSON** *and* embedded in `final` (§6.2), so reprocess reads them
-from disk (offline). sdv-py already wraps these as `espn_cfb_event_*` (via
-`_common_espn.make_league_module`).
+Because this runs at scrape/backfill time (not the live in-game hot path), each game *may*
+fan out to extra ESPN Core v2 endpoints beyond the summary. Every adopted extra is
+**persisted as its own standalone per-game JSON** *and* embedded in `final` (§6.2), so
+reprocess reads them from disk (offline). sdv-py already wraps these as `espn_cfb_event_*`
+(via `_common_espn.make_league_module`).
+
+**Two adoption gates (apply per endpoint, during Plan 1 — see §12.8):**
+
+1. **Validity gate.** Confirm the endpoint actually resolves and returns data for the league
+   and the season range (several Core v2 resources 404 or return empty for older seasons —
+   FPI/`powerindex` and `propbets` are likely sparse pre-~2015). An endpoint that doesn't
+   validate is dropped, not shipped half-working.
+2. **De-duplication gate.** Confirm the endpoint provides **material net-new fields** not
+   already present in the summary I fetch anyway (`header`, `boxscore`, top-level `leaders`,
+   `odds`/`pickcenter`, `predictor`). If the data is already derivable from the summary,
+   **derive it from the summary and DROP the extra call** — don't pay a request for data I
+   already have.
+
+**De-dup hypothesis (to verify, not assume):**
+
+| Extra | Candidate summary source | Working verdict |
+|---|---|---|
+| `event_officials` | none (gameInfo = venue/attendance only) | **Likely net-new → keep** (verify refs absent from summary) |
+| `event_powerindex` (FPI) | `predictor` (ESPN matchup predictor) | **Likely net-new → keep** IF FPI ≠ predictor; else drop |
+| `event_propbets` | none | **Net-new → keep** |
+| `event_odds` (full) | `odds` + `pickcenter` | **Keep only if** it adds providers/line-movement beyond summary |
+| `event_competitor_statistics` | `boxscore.teams[].statistics` | **Likely redundant → derive from boxscore, drop call** |
+| `event_competitor_record` | `header…competitors[].record` | **Likely redundant → derive from header, drop call** |
+| `event_competitor_linescores` | `header…competitors[].linescores` | **Likely redundant → derive from header, drop call** |
+| `event_competitor_leaders` | top-level `leaders` (per-team) | **Likely redundant → derive from summary leaders, drop call** |
+
+The embedded `final` keys (`team_box_extra`, `officials`, `power_index`, `betting.*`) and the
+standalone datasets stay the same **regardless of source** — the gates only decide whether a
+field is populated from the summary or from an extra call. So the data contract is stable
+even as Plan 1 prunes redundant requests.
 
 | Extra | sdv-py fn | Calls/game | Embedded key | Standalone path / `-data` dataset |
 |---|---|---|---|---|
@@ -306,13 +336,15 @@ from disk (offline). sdv-py already wraps these as `espn_cfb_event_*` (via
 | Team leaders | `espn_cfb_event_competitor_leaders` | 2 | `team_box_extra.{tid}.leaders` | → `team_box` / `leaders` |
 | `injuries` + `gameNotes` | summary (allowlist-added, §6.1) | 0 | `injuries` / `game_notes` | → `injuries` dataset |
 
-**Per-game request budget:** summary (1) + participants (1) + rosters (1) + officials (1) +
-powerindex (1) + odds (1) + propbets (1) + 4 per-team endpoints × 2 teams (8) = **~15 GETs
-per game**. At ~17k games that's ≈255k requests for a full backfill — acceptable for a
-non-live, resumable, ProcessPool backfill, but the scrape task must: (a) fetch the extras
-concurrently within a game, (b) wrap each in its own try/except so one failed extra logs and
-emits empty rather than failing the whole game, (c) honor a small inter-request politeness
-delay / retry-with-backoff. `filter_undone` + `processing_version` keep it resumable.
+**Per-game request budget:** an *upper bound* of summary (1) + participants (1) + rosters (1)
++ officials (1) + powerindex (1) + odds (1) + propbets (1) + 4 per-team endpoints × 2 teams
+(8) = **~15 GETs/game**. But the de-dup gate is expected to eliminate the per-team block
+(−8) if it's derivable from `header`/`boxscore`/`leaders`, landing the realistic budget at
+**~7 GETs/game** (≈120k vs ≈255k for a full ~17k-game backfill). The scrape task must:
+(a) fetch the surviving extras concurrently within a game, (b) wrap each in its own
+try/except so one failed extra logs and emits empty rather than failing the whole game,
+(c) honor a small inter-request politeness delay / retry-with-backoff. `filter_undone` +
+`processing_version` keep it resumable.
 
 **Deferred / out of per-game scope:**
 - **Per-play personnel** (`espn_cfb_event_play_personnel`) — ~185 calls/game (millions at
@@ -417,9 +449,12 @@ def download_game(game_id, season, rescrape, logger):
     betting      = _capture_betting(raw, proc)                    # resolved odds + odds_full + propbets
     # non-live extras (§6.5) — each in its own try/except (one failure ≠ whole-game fail),
     # fetched concurrently within the game (thread pool over the ~12 extra GETs):
-    officials    = _safe(espn_cfb_event_officials, game_id)       # +1
-    power_index  = _safe(espn_cfb_event_powerindex, game_id)      # +1
-    team_extra   = _capture_team_box_extra(game_id, [home_id, away_id])  # statistics/record/linescores/leaders ×2
+    officials    = _safe(espn_cfb_event_officials, game_id)       # +1 (net-new; validate)
+    power_index  = _safe(espn_cfb_event_powerindex, game_id)      # +1 (keep iff FPI ≠ predictor)
+    # team_box_extra: PREFER deriving from summary header/boxscore/leaders (§6.5 de-dup gate);
+    # only fall back to event_competitor_* calls for fields the summary genuinely lacks:
+    team_extra   = _team_box_extra_from_summary(raw, proc) or \
+                   _capture_team_box_extra(game_id, [home_id, away_id])
     injuries     = raw.get("injuries", [])                        # from allowlist (no extra call)
     game_notes   = raw.get("gameNotes", [])
     # persist every extra as its own standalone JSON (offline-reprocess source):
@@ -553,10 +588,15 @@ done
    `incoming_keys_expected` (cfb_pbp.py:131) to include `injuries`+`gameNotes`, or (b) the
    scraper hits the summary URL directly for the raw capture (bypassing the filter). Pick
    one during Plan 1; (a) is cleaner and benefits all sdv-py callers.
-8. **Non-live extras endpoint shape (§6.5).** Confirm the response shapes of
-   `espn_cfb_event_officials`/`_powerindex`/`_propbets`/`_competitor_*` and that they exist
-   for older seasons (FPI/powerindex and propbets may be sparse pre-~2015); `-data` binders
-   must tolerate empty/absent extras per season (column-drift `any_of()` guardrails).
+8. **Non-live extras: validity + de-dup gate (§6.5) — BLOCKING per endpoint.** Before any
+   `espn_cfb_event_*` extra ships, Plan 1 must (i) **validate** it resolves + returns data
+   across the season range (FPI/`powerindex`/`propbets` likely sparse pre-~2015), and
+   (ii) **de-duplicate** against the summary — if `event_competitor_statistics/record/
+   linescores/leaders` are derivable from `boxscore`/`header`/`leaders` (the hypothesis),
+   derive from the summary and **drop the extra call**. Only adopt an extra that both
+   validates and adds material net-new fields. `-data` binders tolerate empty/absent extras
+   per season (column-drift `any_of()` guardrails). The `final`/standalone data contract is
+   unchanged by the source decision; only the request count changes.
 9. **Request-budget pacing (§6.5).** ~15 GETs/game × ~17k games ≈ 255k requests for full
    backfill. Implement per-game concurrent extra-fetch + retry/backoff + politeness delay;
    verify ESPN core API rate tolerance during Plan 1 and tune ProcessPool width accordingly.
