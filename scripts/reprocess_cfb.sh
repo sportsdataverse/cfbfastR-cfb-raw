@@ -9,6 +9,7 @@ while getopts s:e:f flag; do
   esac
 done
 FORCE=${FORCE:-}
+END_YEAR=${END_YEAR:-$START_YEAR}
 mkdir -p logs
 
 for i in $(seq "${START_YEAR}" "${END_YEAR}"); do

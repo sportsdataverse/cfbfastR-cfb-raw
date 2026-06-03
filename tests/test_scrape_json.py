@@ -87,3 +87,22 @@ def test_worker_is_module_level_and_calls_download_game(monkeypatch):
     import pickle
     assert sj._worker.__name__ == "_worker"
     pickle.dumps(sj._worker)  # raises if not picklable
+
+
+def test_main_dispatches_download_for_master_games(tmp_path, monkeypatch):
+    import sys
+    import pandas as pd
+    monkeypatch.chdir(tmp_path)
+    # seed a schedule master with two 2024 games
+    master_path = tmp_path / "cfb" / "cfb_schedule_master.parquet"
+    master_path.parent.mkdir(parents=True)
+    pd.DataFrame({"game_id": [401, 402], "season": [2024, 2024]}).to_parquet(master_path)
+    # run the pool synchronously in-process so monkeypatched download_game is visible
+    monkeypatch.setattr(sj, "run_pool", lambda fn, items, **kw: [fn(i) for i in items])
+    calls = []
+    monkeypatch.setattr(sj, "download_game",
+                        lambda gid, season, rescrape: calls.append((gid, season, rescrape)) or "ok")
+    monkeypatch.setattr(sys, "argv", ["scrape_cfb_json.py", "-s", "2024", "-e", "2024", "-r", "false"])
+    sj.main()
+    assert sorted(c[0] for c in calls) == [401, 402]
+    assert all(c[1] == 2024 and c[2] is False for c in calls)

@@ -10,6 +10,7 @@ while getopts s:e:r: flag; do
   esac
 done
 RESCRAPE=${RESCRAPE:-false}
+END_YEAR=${END_YEAR:-$START_YEAR}
 mkdir -p logs
 
 for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
