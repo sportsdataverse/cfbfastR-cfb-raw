@@ -17,7 +17,8 @@ single-game JSON files:
   advanced box score) plus play participants, game rosters, and normalized betting —
   self-contained per game.
 
-The system must support (a) full historical backfill (2002→present), (b) incremental
+The system must support (a) full historical backfill (2004→present; 2004 matches the
+existing `cfbfastR-data` coverage floor), (b) incremental
 in-season daily runs, and critically (c) **rebuilding `final` from `raw` already on disk**
 when processing logic changes — no re-scrape, no full reshape.
 
@@ -83,7 +84,7 @@ python/
   scrape_cfb_betting.py    # game_id -> cfb/betting/json/{season}/{id}.json
 scripts/
   daily_cfb_scraper.sh     # season-loop orchestrator (schedules->json->rosters->betting)
-  backfill_cfb.sh          # wrapper: full 2002->present range
+  backfill_cfb.sh          # wrapper: full 2004->present range
   reprocess_cfb.sh         # season-loop, reprocess only, commits "CFB Reprocess Update (...)"
 cfb/
   json/raw/{game_id}.json
@@ -342,7 +343,7 @@ done
    the escape hatch. Confirm during implementation whether they parse the summary alone.
 3. **`drives` upstream absence.** ESPN sometimes omits `drives`; the drives dataset and the
    `drive.*` play columns must degrade gracefully (empty, not error).
-4. **Backfill volume.** 2002→present × thousands of games × ~5-10s enrichment is a long
+4. **Backfill volume.** 2004→present × thousands of games × ~5-10s enrichment is a long
    run; ProcessPool + `filter_undone` + `processing_version` make it resumable. Initial
    backfill likely run in season chunks rather than one job.
 5. **cfbfastR `pbp_output_schema.R` reuse.** `-data` PBP creation should conform to the
