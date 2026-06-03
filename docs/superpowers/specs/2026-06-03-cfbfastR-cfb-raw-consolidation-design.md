@@ -597,6 +597,23 @@ done
    validates and adds material net-new fields. `-data` binders tolerate empty/absent extras
    per season (column-drift `any_of()` guardrails). The `final`/standalone data contract is
    unchanged by the source decision; only the request count changes.
+
+   **PROBE RESULTS (2026-06-03, games 401628455 recent + 242410193 ~2014), via
+   `tests/test_live_endpoints.py`:**
+   | Endpoint | Recent | Old (2014) | Verdict |
+   |---|---|---|---|
+   | `event_officials` | empty (count=0) | empty | **DROP** — referee crew not exposed here for CFB |
+   | `event_powerindex` (FPI) | data (count=2) | empty | **KEEP, recent-only** |
+   | `event_odds` (full) | data (count=2) | empty | **KEEP, recent-only** |
+   | `event_propbets` | 404 `NoESPNDataError` | 404 | **DROP** — not available for CFB |
+   | `event_competitor_record/_linescores/_statistics/_leaders` | n/a | n/a | **DROP** — all already in the summary (`header`/`boxscore`/`leaders`) for both eras |
+
+   Net effect: the per-team block (−8 calls) is confirmed redundant and already derived
+   from the summary in `scrape_cfb_json.py` (no `event_competitor_*` calls are made).
+   `propbets` and `officials` should be dropped from the per-game fetch; `powerindex` and
+   the full `event_odds` are valid for modern games only and should be season-gated to avoid
+   wasted calls on older seasons. Realistic budget after pruning: **~5 GETs/game**
+   (summary + participants + rosters + powerindex + odds, the last two recent-only).
 9. **Request-budget pacing (§6.5).** ~15 GETs/game × ~17k games ≈ 255k requests for full
    backfill. Implement per-game concurrent extra-fetch + retry/backoff + politeness delay;
    verify ESPN core API rate tolerance during Plan 1 and tune ProcessPool width accordingly.
