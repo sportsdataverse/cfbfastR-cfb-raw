@@ -290,7 +290,8 @@ done
 
 - `pyproject.toml` + `uv.lock` + `.python-version` (replaces `requirements.txt`).
 - Deps: `sportsdataverse>=0.0.51`, `pandas`, `polars`, `pyarrow`, `tqdm`.
-- `[tool.uv.sources]` path source for local dev (`sportsdataverse = { path = "../../../sdv-py", editable = true }`),
+- `[tool.uv.sources]` path source for local dev (`sportsdataverse = { path = "../../sdv-py", editable = true }`
+  — relative to repo root: `cfbfastR-dev/cfbfastR-cfb-raw` → `sdv-dev/sdv-py`),
   while `uv.lock` pins the published release for reproducible CI.
 - All script invocations use `uv run python ...` so the locked env is used everywhere.
 
