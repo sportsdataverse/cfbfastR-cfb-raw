@@ -17,8 +17,9 @@ DATASET = "betting"
 
 
 def _fetch(gid):
-    return {"odds_full": sdv.cfb.espn_cfb_event_odds(event_id=gid),
-            "propbets": sdv.cfb.espn_cfb_event_propbets(event_id=gid)}
+    # propbets is omitted: espn_cfb_event_propbets 404s for CFB (probe §12.8). propbets
+    # stays an empty-list key only in the core capture_betting contract.
+    return {"odds_full": sdv.cfb.espn_cfb_event_odds(event_id=gid), "propbets": []}
 
 
 def write_one(game_id: int, season: int) -> None:

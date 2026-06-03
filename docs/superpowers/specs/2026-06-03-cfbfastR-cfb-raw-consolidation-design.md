@@ -208,9 +208,9 @@ persisted as its own standalone per-game JSON so reprocess reads them offline.
       "odds_full": [],        // event_odds — all providers + line movement
       "propbets": []          // event_propbets — prop markets
   },
-  // ---- non-live enrichment extras (§6.5); each also a standalone dataset ----
-  "officials": [ { "id":..., "name":..., "position":..., "order":... } ],   // event_officials
-  "power_index": { /* FPI: home/away win%, projected margin, matchup quality */ }, // event_powerindex
+  // ---- non-live enrichment extras (§6.5; final verdicts in §12.8); each also a standalone dataset ----
+  // NOTE: `officials` DROPPED — ESPN does not expose CFB officials (probe §12.8).
+  "power_index": { /* FPI: home/away win%, projected margin; recent seasons only */ }, // event_powerindex
   "team_box_extra": {         // per-team Core v2, keyed by team_id
       "{team_id}": { "statistics": {}, "record": {}, "linescores": [], "leaders": [] }
   },
@@ -288,6 +288,12 @@ and skipped (the game is picked up on the next run), never aborting the season b
 > path can be added later without changing the `final` contract — out of scope here.
 
 ### 6.5 Non-live enrichment extras (extra ESPN endpoints)
+
+> **POST-PROBE ADOPTED SET (authoritative — see §12.8 for evidence):** `officials` and
+> `propbets` are **DROPPED** (unavailable for CFB); `power_index` (FPI) and full `event_odds`
+> are **season-gated** to recent seasons (`EXTRAS_MIN_SEASON = 2015`); the four per-team
+> `event_competitor_*` are **derived from the summary** (no extra calls). The menu/table
+> below documents the original candidate set; the adopted set is the pruned subset.
 
 Because this runs at scrape/backfill time (not the live in-game hot path), each game *may*
 fan out to extra ESPN Core v2 endpoints beyond the summary. Every adopted extra is

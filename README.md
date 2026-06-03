@@ -7,11 +7,18 @@ Raw + enriched college-football game JSON, scraped from ESPN via `sportsdatavers
 Per game:
 - `cfb/json/raw/{game_id}.json` — ESPN summary (curated allowlist incl. injuries + gameNotes).
 - `cfb/json/final/{game_id}.json` — fully enriched (EPA/WPA/QBR plays, advBoxScore) +
-  play participants + game rosters + normalized betting + officials + power index (FPI) +
-  per-team box extras. Self-describing (`id`/`season`/`week` echoed).
+  play participants + game rosters + normalized betting + power index (FPI, recent seasons) +
+  per-team box extras (derived from the summary). Self-describing (`id`/`season`/`week` echoed).
 
 Standalone season-partitioned datasets: `rosters`, `play_participants`, `betting`,
-`officials`, `power_index`, `team_box_extra`, plus the `schedules` + `cfb_schedule_master`.
+`power_index`, `team_box_extra`, plus the `schedules` + `cfb_schedule_master`.
+
+> **Not collected (probe §12.8, 2026-06-03):** ESPN does not expose CFB **officials**
+> (neither the summary nor the core officials endpoint returns data) and **propbets**
+> 404s for CFB — both dropped. **FPI (`power_index`) and full `event_odds`** only return
+> data for recent seasons, so they are season-gated (`EXTRAS_MIN_SEASON = 2015`). The four
+> per-team `event_competitor_*` calls are redundant with the summary and derived from it
+> (no extra requests). Net ~5 GETs/game.
 
 ## Usage
 
