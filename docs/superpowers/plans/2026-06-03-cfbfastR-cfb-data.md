@@ -70,7 +70,8 @@ cfbfastR-cfb-data/
 
 - Each creation script is callable as `Rscript R/espn_cfb_0N_*.R -s <start> -e <end>` (optparse) and exposes pure, testable reshape functions in `_data_utils.R` or its own file so testthat can exercise them on a fixture without network.
 - Tests: `testthat`, offline by default (fixture JSON); live tests gated by `Sys.getenv("CFB_LIVE_TESTS") == "1"` via `testthat::skip_if_not`.
-- Release tags: PBP = **`cfbfastR_cfb_pbp`** (what `cfbfastR::load_cfb_pbp()` reads); others = `cfbfastR_cfb_{dataset}` (e.g. `cfbfastR_cfb_team_box`, `cfbfastR_cfb_player_box`, `cfbfastR_cfb_adv_team_box`, …). Per-season file stem `{dataset}_{year}` (PBP stem `play_by_play_{year}`).
+- Release tags: **`espn_cfb_*`** namespace (matches the hoopR/wehoop sibling convention). PBP = **`espn_cfb_pbp`**; others = `espn_cfb_{dataset}` (e.g. `espn_cfb_team_box`, `espn_cfb_player_box`, `espn_cfb_adv_team_box`, …). Per-season file stem `{dataset}_{year}` (PBP stem `play_by_play_{year}`).
+- **Cutover note (load_cfb_pbp):** `cfbfastR::load_cfb_pbp()` currently reads the *legacy* `cfbfastR_cfb_pbp` release (2014–2022, old pipeline). The new pipeline publishes to `espn_cfb_pbp` **for now**, leaving the legacy tag untouched while the new data is validated. A later cutover (out of v1 scope) either repoints `load_cfb_pbp()` at `espn_cfb_pbp` or promotes the `espn_cfb_pbp` assets into `cfbfastR_cfb_pbp`.
 - "Both" publish: commit `cfb/**` in-repo AND `pb_upload` to `sportsdataverse/cfbfastR-cfb-data` + `sportsdataverse/sportsdataverse-data`.
 - Column-drift resilience: bind with `data.table::rbindlist(fill = TRUE)`; select with `dplyr::any_of()`.
 - Commit-message contract (consumed by nothing downstream of `-data`, but keep tidy): `"CFB Data Updated (Start: $i End: $i)"`.
@@ -425,7 +426,7 @@ conform_pbp <- function(df, output = "default") {
 }
 
 build_pbp_season <- function(season, master = fetch_master_local(), live = TRUE) {
-  build_season(season, dataset = "pbp", stem = "play_by_play", tag = "cfbfastR_cfb_pbp",
+  build_season(season, dataset = "pbp", stem = "play_by_play", tag = "espn_cfb_pbp",
                reshape_fn = function(g) conform_pbp(reshape_pbp(g)), master = master, live = live)
 }
 
@@ -447,7 +448,7 @@ if (sys.nframe() == 0 || identical(environment(), globalenv())) {
 
 ```bash
 git add R/espn_cfb_01_pbp_creation.R tests/testthat/test-pbp.R
-git commit -m "feat(pbp): reshape final.plays -> play_by_play, conform to cfbfastR schema, tag cfbfastR_cfb_pbp"
+git commit -m "feat(pbp): reshape final.plays -> play_by_play, conform to cfbfastR schema, tag espn_cfb_pbp"
 ```
 
 ### Task G2: ESPN team_box + player_box (`02`, `03`)
@@ -503,10 +504,10 @@ reshape_team_box <- function(g) {
   out
 }
 build_team_box_season <- function(season, master = fetch_master_local(), live = TRUE)
-  build_season(season, "team_box", "team_box", "cfbfastR_cfb_team_box", reshape_team_box, master, live)
+  build_season(season, "team_box", "team_box", "espn_cfb_team_box", reshape_team_box, master, live)
 # (argparse main block identical to G1; calls build_team_box_season)
 ```
-`R/espn_cfb_03_player_box_creation.R` — same shape, `reshape_player_box(g)` reads `g$boxScore$players[]` (per-team `statistics` groups → athletes); stem/tag `player_box`/`cfbfastR_cfb_player_box`.
+`R/espn_cfb_03_player_box_creation.R` — same shape, `reshape_player_box(g)` reads `g$boxScore$players[]` (per-team `statistics` groups → athletes); stem/tag `player_box`/`espn_cfb_player_box`.
 > **Verify during execution:** inspect the fixture's `boxScore$teams[[1]]$statistics` and `boxScore$players` shapes (`Rscript -e 'str(jsonlite::fromJSON(...)$boxScore, max.level=3)'`) and adjust the field paths; ESPN box nests players as `players[[i]]$statistics[[j]]$athletes[[k]]`.
 
 - [ ] **Step 4: Run, confirm PASS.**
@@ -539,7 +540,7 @@ test_that("block reshapes are stamped data.frames", {
 })
 ```
 - [ ] **Step 2: FAIL.**
-- [ ] **Step 3: Implement** the four scripts using the pattern above: `05` key `play_participants` (tag `cfbfastR_cfb_play_participants`, stem `play_participants`); `06` key `drives` — **note** `drives` is a nested ESPN object keyed by team, so `reshape_drives` must `purrr::map_dfr` over `g$drives` unrolling `$plays` into drive rows (verify shape on the fixture; if `drives` is `{}` for the game, return empty); `07` key `game_rosters` (tag `cfbfastR_cfb_rosters`, stem `rosters`); `13` key `injuries` (tag `cfbfastR_cfb_injuries`, stem `injuries`). Each gets a `build_<ds>_season()` + argparse main calling `build_season(...)`.
+- [ ] **Step 3: Implement** the four scripts using the pattern above: `05` key `play_participants` (tag `espn_cfb_play_participants`, stem `play_participants`); `06` key `drives` (tag `espn_cfb_drives`, stem `drives`) — **note** `drives` is a nested ESPN object keyed by team, so `reshape_drives` must `purrr::map_dfr` over `g$drives` unrolling `$plays` into drive rows (verify shape on the fixture; if `drives` is `{}` for the game, return empty); `07` key `game_rosters` (tag `espn_cfb_rosters`, stem `rosters`); `13` key `injuries` (tag `espn_cfb_injuries`, stem `injuries`). Each gets a `build_<ds>_season()` + argparse main calling `build_season(...)`.
 - [ ] **Step 4: PASS.**
 - [ ] **Step 5: Commit** — `feat(blocks): play_participants/drives/rosters/injuries reshapes`.
 
@@ -570,10 +571,10 @@ test_that("linescores + power_index degrade to empty when absent", {
 ```
 - [ ] **Step 2: FAIL.**
 - [ ] **Step 3: Implement:**
-  - `08_betting` — `reshape_betting(g)`: take scalar fields of `g$betting` (`game_spread, over_under, home_favorite, home_team_spread, game_spread_available, odds_source`) into a 1-row df + `game_id/season/week`; drop the list payloads (`odds`, `odds_full`, `pickcenter`, `predictor`, `against_the_spread`, `propbets`) for the rectangular release (keep them only in JSON). Tag `cfbfastR_cfb_betting`.
-  - `09_schedules` — `reshape_schedule_row(g)`: pull `home_id/away_id/home_team/away_team/season/week/season_type/game_date/venue` from `g$header`/`g$gameInfo` into a 1-row game-meta frame; bound across games = the season schedule. Tag `cfbfastR_cfb_schedules`, stem `cfb_schedule`. (This also produces the per-season schedule the repo serves.)
-  - `10_linescores` — `reshape_linescores(g)`: from `g$team_box_extra[[team_id]]$linescores`, long-form (team_id, period, value); empty if `team_box_extra` absent (older seasons). Tag `cfbfastR_cfb_linescores`.
-  - `11_power_index` — `reshape_power_index(g)`: flatten `g$power_index` (FPI) to a per-team or per-game row; empty `{}` → empty df (recent-only). Tag `cfbfastR_cfb_power_index`.
+  - `08_betting` — `reshape_betting(g)`: take scalar fields of `g$betting` (`game_spread, over_under, home_favorite, home_team_spread, game_spread_available, odds_source`) into a 1-row df + `game_id/season/week`; drop the list payloads (`odds`, `odds_full`, `pickcenter`, `predictor`, `against_the_spread`, `propbets`) for the rectangular release (keep them only in JSON). Tag `espn_cfb_betting`.
+  - `09_schedules` — `reshape_schedule_row(g)`: pull `home_id/away_id/home_team/away_team/season/week/season_type/game_date/venue` from `g$header`/`g$gameInfo` into a 1-row game-meta frame; bound across games = the season schedule. Tag `espn_cfb_schedules`, stem `cfb_schedule`. (This also produces the per-season schedule the repo serves.)
+  - `10_linescores` — `reshape_linescores(g)`: from `g$team_box_extra[[team_id]]$linescores`, long-form (team_id, period, value); empty if `team_box_extra` absent (older seasons). Tag `espn_cfb_linescores`.
+  - `11_power_index` — `reshape_power_index(g)`: flatten `g$power_index` (FPI) to a per-team or per-game row; empty `{}` → empty df (recent-only). Tag `espn_cfb_power_index`.
   Each gets `build_<ds>_season()` + argparse main.
 - [ ] **Step 4: PASS.**
 - [ ] **Step 5: Commit** — `feat(meta): betting/schedules/linescores/power_index reshapes`.
@@ -616,7 +617,7 @@ test_that("adv box sections rectangularize to stamped frames", {
 })
 ```
 - [ ] **Step 2: FAIL.**
-- [ ] **Step 3: Implement** `reshape_adv_box(g)` returning a named list, one frame per `g$advBoxScore` section: `team`→`adv_team`, `pass`→`adv_passing`, `rush`→`adv_rushing`, `receiver`→`adv_receiving`, `defensive`→`adv_defensive`, `turnover`→`adv_turnover`, `drives`→`adv_drives`, `situational`→`adv_situational`. Each: `data.table::rbindlist(lapply(section, as.data.frame), fill=TRUE)` then stamp `game_id`/`season`. Tolerate missing/empty sections (`any_of`); include `defensive_players`/`specialists` when present (Phase H1) via `any_of`. The `build_adv_box_season()` writes **each** section as its own dataset/tag (`cfbfastR_cfb_adv_team_box`, `cfbfastR_cfb_adv_player_passing`, …) — extend `build_season` to accept a multi-frame reshape (loop the named list, write+publish each with `stem = nm`, `tag = sprintf("cfbfastR_cfb_%s", nm)`).
+- [ ] **Step 3: Implement** `reshape_adv_box(g)` returning a named list, one frame per `g$advBoxScore` section: `team`→`adv_team`, `pass`→`adv_passing`, `rush`→`adv_rushing`, `receiver`→`adv_receiving`, `defensive`→`adv_defensive`, `turnover`→`adv_turnover`, `drives`→`adv_drives`, `situational`→`adv_situational`. Each: `data.table::rbindlist(lapply(section, as.data.frame), fill=TRUE)` then stamp `game_id`/`season`. Tolerate missing/empty sections (`any_of`); include `defensive_players`/`specialists` when present (Phase H1) via `any_of`. The `build_adv_box_season()` writes **each** section as its own dataset/tag (`espn_cfb_adv_team`, `espn_cfb_adv_passing`, …) — extend `build_season` to accept a multi-frame reshape (loop the named list, write+publish each with `stem = nm`, `tag = sprintf("espn_cfb_%s", nm)`).
 - [ ] **Step 4: PASS.**
 - [ ] **Step 5: Commit** — `feat(advbox): rectangularize all advBoxScore sections into per-section release datasets`.
 
@@ -626,7 +627,7 @@ test_that("adv box sections rectangularize to stamped frames", {
 
 ### Task I1: `releases_init.R` + `run_summary.R`
 
-- [ ] Implement `R/releases_init.R` — idempotently `piggyback::pb_release_create()` each tag (`cfbfastR_cfb_pbp`, `_team_box`, `_player_box`, `_adv_*`, `_play_participants`, `_drives`, `_rosters`, `_betting`, `_schedules`, `_linescores`, `_power_index`, `_injuries`) on BOTH publish repos (wrap each in tryCatch; "already exists" is fine). Run once manually before the first data run.
+- [ ] Implement `R/releases_init.R` — idempotently `piggyback::pb_release_create()` each tag (`espn_cfb_pbp`, `_team_box`, `_player_box`, `_adv_*`, `_play_participants`, `_drives`, `_rosters`, `_betting`, `_schedules`, `_linescores`, `_power_index`, `_injuries`) on BOTH publish repos (wrap each in tryCatch; "already exists" is fine). Run once manually before the first data run.
 - [ ] Implement `R/run_summary.R` — read each `cfb/*/cfb_*_in_data_repo.csv`, print a per-dataset season×row_count table to stdout and append a markdown table to `$GITHUB_STEP_SUMMARY` (if set). optparse `-s/-e`.
 - [ ] Commit — `feat(release): release-tag init + run summary`.
 
@@ -640,14 +641,14 @@ test_that("adv box sections rectangularize to stamped frames", {
 
 ### Task I4: README + CLAUDE.md
 
-- [ ] README: what it produces (per-dataset tables + release tags incl. `cfbfastR_cfb_pbp` consumed by `cfbfastR::load_cfb_pbp()`), the reshape-not-re-enrich architecture, the dual-publish model, how `repository_dispatch` from `-raw` drives it. CLAUDE.md: conventions (reshape fns pure + testable on fixture, `any_of` drift-safety, tags, dual `pb_upload`, no AI co-authors, commit-message format). Commit.
+- [ ] README: what it produces (per-dataset tables + release tags incl. `espn_cfb_pbp` consumed by `cfbfastR::load_cfb_pbp()`), the reshape-not-re-enrich architecture, the dual-publish model, how `repository_dispatch` from `-raw` drives it. CLAUDE.md: conventions (reshape fns pure + testable on fixture, `any_of` drift-safety, tags, dual `pb_upload`, no AI co-authors, commit-message format). Commit.
 
 ### Task I5: create remote + push + wire the trigger
 
 - [ ] **Step 1:** `gh repo create sportsdataverse/cfbfastR-cfb-data --public --source=. --remote=origin --push --description "..."`.
 - [ ] **Step 2:** Run `Rscript R/releases_init.R` once (creates the release tags on both repos) — requires `GITHUB_PAT`/`SDV_GH_TOKEN` with write to `sportsdataverse-data`.
 - [ ] **Step 3:** Verify the `-raw` → `-data` link end-to-end: push to `-raw` (or `workflow_dispatch`) and confirm `cfbfastR_cfb_data_trigger.yml` now dispatches successfully (the target repo exists) and `daily_cfb.yml` starts. Confirm `SDV_GH_TOKEN` org-secret is inherited by `cfbfastR-cfb-data` (same as `-raw`).
-- [ ] **Step 4:** Smoke test: `workflow_dispatch` `daily_cfb.yml` for `-s 2024 -e 2024`; confirm parquet committed + a release asset uploaded; spot-check `cfbfastR::load_cfb_pbp(2024)` reads the new `cfbfastR_cfb_pbp` asset.
+- [ ] **Step 4:** Smoke test: `workflow_dispatch` `daily_cfb.yml` for `-s 2024 -e 2024`; confirm parquet committed + a release asset uploaded to the `espn_cfb_pbp` tag on **both** repos (`piggyback::pb_list(repo, tag = "espn_cfb_pbp")`). Note: `cfbfastR::load_cfb_pbp()` reads the legacy `cfbfastR_cfb_pbp` tag, so it will NOT pick up `espn_cfb_pbp` yet — that's the deferred cutover (§73 cutover note). Verify the new asset loads directly: `arrow::read_parquet(piggyback URL for espn_cfb_pbp/play_by_play_2024.parquet)`.
 
 ---
 
@@ -655,7 +656,7 @@ test_that("adv box sections rectangularize to stamped frames", {
 
 - **Spec coverage:** §5.2 datasets → Phases G+H (officials/propbets dropped per §12.8; rankings/recruiting/QBR deferred per this session's v1-scope decision). §6.4 HTTP linkage + master enumeration → F3 `fetch_final`/`season_game_ids_from_master`. §10.3 workflow/trigger → I3. Release "both" → F3 `pb_upload_both` + committed `cfb/`. §12.1 advBox expansion → H1+H2.
 - **Reshape-not-re-enrich** is the load-bearing simplification: PBP conforms to cfbfastR's real `.pbp_apply_output_schema` (verified in `R/pbp_output_schema.R`); other datasets are block reshapes. No EPA/WPA recompute in R.
-- **Release tag `cfbfastR_cfb_pbp`** matches `cfbfastR::load_cfb_pbp()` exactly (verified in `R/load_cfb_pbp.R`); box loaders don't exist yet, so their tags are new (a future cfbfastR `load_cfb_*_box()` can read them).
+- **Release tags use the `espn_cfb_*` namespace** ("publish to `espn_cfb_pbp` for now" — this session). `cfbfastR::load_cfb_pbp()` reads the *legacy* `cfbfastR_cfb_pbp` tag (verified in `R/load_cfb_pbp.R`), so the new pipeline's `espn_cfb_pbp` output is intentionally separate until the deferred cutover (§73 cutover note) — legacy data stays untouched during rollout. Box/other loaders don't exist yet, so their `espn_cfb_*` tags are new.
 - **Verification points flagged inline** (not placeholders): ESPN `boxScore` player nesting (G2), `drives` nesting (G3), enriched play-column names for the advBox expansion (H1), and `.pbp_apply_output_schema` name/signature (G1) — each must be confirmed against the fixture/installed package during execution, with a concrete fallback.
 - **Offline tests** rely on one committed fixture (`final_401628455.json`); reshape fns are pure (no network), so the suite runs without GH/ESPN. cfbfastR is optional for the reshape tests (`conform_pbp` no-ops without it); CI installs it.
 - **Phase H1 ships in a later sdv-py release** (0.0.53); `-data` tolerates its absence (`any_of`), so Plan 2 is not blocked on it.
