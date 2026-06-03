@@ -16,6 +16,10 @@ from _cfb_raw_utils import (PROCESSING_VERSION, _safe, filter_undone,
 from cfb_betting import capture_betting
 from cfb_team_box_extra import team_box_extra_from_summary
 
+# FPI/powerindex + full event_odds only return data for recent CFB seasons
+# (probe: 2014 empty, 2024 populated). Tunable.
+EXTRAS_MIN_SEASON = 2015
+
 
 # --- thin sdv-py adapters (monkeypatch points in tests) ---
 def _participants(gid):
@@ -26,20 +30,12 @@ def _rosters(gid):
     return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
 
 
-def _officials(gid):
-    return sdv.cfb.espn_cfb_event_officials(event_id=gid)
-
-
 def _power_index(gid):
     return sdv.cfb.espn_cfb_event_powerindex(event_id=gid)
 
 
 def _odds_full(gid):
     return sdv.cfb.espn_cfb_event_odds(event_id=gid)
-
-
-def _propbets(gid):
-    return sdv.cfb.espn_cfb_event_propbets(event_id=gid)
 
 
 def _home_away_ids(raw: dict):
@@ -71,13 +67,11 @@ def download_game(game_id: int, season: int, rescrape: bool, logger=None):
         # 3. aux (endpoint-backed) — each _safe-wrapped so one failure doesn't kill the game
         participants = _safe(_participants, game_id, logger=logger, default=[])
         rosters = _safe(_rosters, game_id, logger=logger, default=[])
-        betting = capture_betting(
-            raw, proc,
-            odds_full=_safe(_odds_full, game_id, logger=logger, default=[]),
-            propbets=_safe(_propbets, game_id, logger=logger, default=[]),
-        )
-        officials = _safe(_officials, game_id, logger=logger, default=[])
-        power_index = _safe(_power_index, game_id, logger=logger, default={})
+
+        recent = season >= EXTRAS_MIN_SEASON
+        odds_full = _safe(_odds_full, game_id, logger=logger, default=[]) if recent else []
+        power_index = _safe(_power_index, game_id, logger=logger, default={}) if recent else {}
+        betting = capture_betting(raw, proc, odds_full=odds_full, propbets=[])
 
         # 4. team_box_extra: prefer summary (de-dup gate); {} if summary lacks it
         team_extra = team_box_extra_from_summary(raw, [home_id, away_id]) or {}
@@ -89,7 +83,7 @@ def download_game(game_id: int, season: int, rescrape: bool, logger=None):
         # 5. standalone datasets (each is an offline-reprocess source)
         standalone = {
             "rosters": rosters, "play_participants": participants, "betting": betting,
-            "officials": officials, "power_index": power_index, "team_box_extra": team_extra,
+            "power_index": power_index, "team_box_extra": team_extra,
         }
         for name, obj in standalone.items():
             write_json_atomic(stamp(obj, game_id=game_id, season=season, week=week),
@@ -102,7 +96,7 @@ def download_game(game_id: int, season: int, rescrape: bool, logger=None):
             processing_version=PROCESSING_VERSION,
             count=len(result.get("plays") or []),
             play_participants=participants, game_rosters=rosters, betting=betting,
-            officials=officials, power_index=power_index, team_box_extra=team_extra,
+            power_index=power_index, team_box_extra=team_extra,
             injuries=injuries, game_notes=game_notes,
             homeTeamId=home_id, awayTeamId=away_id,
         )

@@ -39,10 +39,8 @@ def test_download_game_writes_all_artifacts(tmp_path, monkeypatch):
     monkeypatch.setattr(sj, "CFBPlayProcess", _FakeProc)
     monkeypatch.setattr(sj, "_participants", lambda gid: [{"play_id": 1, "athlete_id": 5}])
     monkeypatch.setattr(sj, "_rosters", lambda gid: [{"athlete_id": 5}])
-    monkeypatch.setattr(sj, "_officials", lambda gid: [{"name": "Ref"}])
     monkeypatch.setattr(sj, "_power_index", lambda gid: {"fpi": 1})
     monkeypatch.setattr(sj, "_odds_full", lambda gid: [{"provider": "x"}])
-    monkeypatch.setattr(sj, "_propbets", lambda gid: [])
 
     sj.download_game(401, season=2024, rescrape=True)
 
@@ -53,10 +51,28 @@ def test_download_game_writes_all_artifacts(tmp_path, monkeypatch):
     assert final["processing_version"]
     assert final["injuries"] == [{"x": 1}]
     assert final["betting"]["game_spread"] == -7.5
-    assert final["officials"] == [{"name": "Ref"}]
-    for ds in ("rosters", "play_participants", "betting", "officials",
-               "power_index", "team_box_extra"):
+    assert final["power_index"] == {"fpi": 1}
+    assert final["betting"]["propbets"] == []
+    for ds in ("rosters", "play_participants", "betting", "power_index", "team_box_extra"):
         assert (base / ds / "json" / "2024" / "401.json").exists(), ds
+
+
+def test_old_season_skips_modern_extras(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(sj, "CFBPlayProcess", _FakeProc)
+    monkeypatch.setattr(sj, "_participants", lambda gid: [])
+    monkeypatch.setattr(sj, "_rosters", lambda gid: [])
+
+    def _boom(gid):
+        raise AssertionError("modern extra fetched for an old season")
+
+    monkeypatch.setattr(sj, "_power_index", _boom)
+    monkeypatch.setattr(sj, "_odds_full", _boom)
+    sj.download_game(401, season=2010, rescrape=True)  # < EXTRAS_MIN_SEASON
+    import json as _json
+    final = _json.loads((Path("cfb/json/final/401.json")).read_text())
+    assert final["power_index"] == {}
+    assert final["betting"]["odds_full"] == []
 
 
 def test_worker_is_module_level_and_calls_download_game(monkeypatch):

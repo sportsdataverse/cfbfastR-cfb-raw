@@ -38,7 +38,6 @@ def _seed(base: Path):
                     "game_spread_available": True, "game_id": 401, "season": 2024},
         "rosters": {"game_id": 401, "season": 2024, "data": [{"athlete_id": 5}]},
         "play_participants": {"game_id": 401, "season": 2024, "data": [{"play_id": 1}]},
-        "officials": {"game_id": 401, "season": 2024, "data": [{"name": "Ref"}]},
         "power_index": {"game_id": 401, "season": 2024, "fpi": 1},
         "team_box_extra": {"game_id": 401, "season": 2024},
     }.items():
@@ -55,7 +54,6 @@ def test_reprocess_offline_injects_odds(tmp_path, monkeypatch):
     final = json.loads((tmp_path / "cfb/json/final/401.json").read_text())
     assert final["betting"]["game_spread"] == -10.5     # injected from disk betting
     assert final["game_rosters"] == [{"athlete_id": 5}]
-    assert final["officials"] == [{"name": "Ref"}]
     assert final["processing_version"]
 
 

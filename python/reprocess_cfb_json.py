@@ -78,7 +78,6 @@ def reprocess_game(game_id: int, season: int, refresh_aux: bool, force: bool, lo
             betting=betting,
             game_rosters=_aux_list("rosters", season, game_id),
             play_participants=_aux_list("play_participants", season, game_id),
-            officials=_aux_list("officials", season, game_id),
             power_index=_aux("power_index", season, game_id),
             team_box_extra=_aux("team_box_extra", season, game_id),
             injuries=raw.get("injuries") or [],
