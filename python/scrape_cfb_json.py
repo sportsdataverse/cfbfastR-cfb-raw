@@ -83,12 +83,12 @@ def download_game(game_id: int, season: int, rescrape: bool, logger=None):
 
         # 5. standalone datasets (each is an offline-reprocess source)
         standalone = {
-            "rosters": rosters, "play_participants": participants, "betting": betting,
+            "game_rosters": rosters, "play_participants": participants, "betting": betting,
             "power_index": power_index, "team_box_extra": team_extra,
         }
         for name, obj in standalone.items():
             write_json_atomic(stamp(obj, game_id=game_id, season=season, week=week),
-                              f"cfb/{name}/json/{season}/{game_id}.json")
+                              f"cfb/{name}/json/{game_id}.json")
 
         # 6. embed + write FINAL last
         result.update(

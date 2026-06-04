@@ -36,12 +36,12 @@ def _seed(base: Path):
     for ds, payload in {
         "betting": {"game_spread": -10.5, "over_under": 60.0, "home_favorite": True,
                     "game_spread_available": True, "game_id": 401, "season": 2024},
-        "rosters": {"game_id": 401, "season": 2024, "data": [{"athlete_id": 5}]},
+        "game_rosters": {"game_id": 401, "season": 2024, "data": [{"athlete_id": 5}]},
         "play_participants": {"game_id": 401, "season": 2024, "data": [{"play_id": 1}]},
         "power_index": {"game_id": 401, "season": 2024, "fpi": 1},
         "team_box_extra": {"game_id": 401, "season": 2024},
     }.items():
-        d = base / f"cfb/{ds}/json/2024"
+        d = base / f"cfb/{ds}/json"
         d.mkdir(parents=True)
         (d / "401.json").write_text(json.dumps(payload))
 

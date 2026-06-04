@@ -53,8 +53,8 @@ def test_download_game_writes_all_artifacts(tmp_path, monkeypatch):
     assert final["betting"]["game_spread"] == -7.5
     assert final["power_index"] == {"fpi": 1}
     assert final["betting"]["propbets"] == []
-    for ds in ("rosters", "play_participants", "betting", "power_index", "team_box_extra"):
-        assert (base / ds / "json" / "2024" / "401.json").exists(), ds
+    for ds in ("game_rosters", "play_participants", "betting", "power_index", "team_box_extra"):
+        assert (base / ds / "json" / "401.json").exists(), ds
 
 
 def test_old_season_skips_modern_extras(tmp_path, monkeypatch):

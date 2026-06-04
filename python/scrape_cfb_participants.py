@@ -22,7 +22,7 @@ def _fetch(gid):
 
 def write_one(game_id: int, season: int) -> None:
     write_json_atomic(stamp(_fetch(game_id), game_id=game_id, season=season),
-                      f"cfb/{DATASET}/json/{season}/{game_id}.json")
+                      f"cfb/{DATASET}/json/{game_id}.json")
 
 
 def main() -> None:
@@ -37,7 +37,7 @@ def main() -> None:
     for season in range(args.start_year, end + 1):
         logger = get_logger(f"cfb_{DATASET}", season)
         games = filter_undone(games_for_seasons(master, season, season),
-                              dir=f"cfb/{DATASET}/json/{season}", rescrape=rescrape)
+                              dir=f"cfb/{DATASET}/json", rescrape=rescrape)
         logger.info("%s %s: %d games", DATASET, season, len(games))
         run_pool(lambda g, _s=season: write_one(g, _s), games, kind="thread",
                  desc=f"{DATASET} {season}")

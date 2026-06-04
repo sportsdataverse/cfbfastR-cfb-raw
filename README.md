@@ -10,8 +10,9 @@ Per game:
   play participants + game rosters + normalized betting + power index (FPI, recent seasons) +
   per-team box extras (derived from the summary). Self-describing (`id`/`season`/`week` echoed).
 
-Standalone season-partitioned datasets: `rosters`, `play_participants`, `betting`,
-`power_index`, `team_box_extra`, plus the `schedules` + `cfb_schedule_master`.
+Standalone datasets, each a flat `cfb/{dataset}/json/{game_id}.json` folder (no season
+subdirectories — ESPN game ids are globally unique): `game_rosters`, `play_participants`,
+`betting`, `power_index`, `team_box_extra`, plus the `schedules` + `cfb_schedule_master`.
 
 > **Not collected (probe §12.8, 2026-06-03):** ESPN does not expose CFB **officials**
 > (neither the summary nor the core officials endpoint returns data) and **propbets**

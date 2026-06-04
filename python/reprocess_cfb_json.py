@@ -26,7 +26,7 @@ def _read(path: Path, default):
 
 
 def _aux(ds: str, season: int, game_id: int):
-    return _read(Path(f"cfb/{ds}/json/{season}/{game_id}.json"), {})
+    return _read(Path(f"cfb/{ds}/json/{game_id}.json"), {})
 
 
 def _aux_list(ds: str, season: int, game_id: int):
@@ -79,7 +79,7 @@ def reprocess_game(game_id: int, season: int, force: bool, logger=None):
             processing_version=PROCESSING_VERSION,
             count=len(result.get("plays") or []),
             betting=betting_embed,
-            game_rosters=_aux_list("rosters", season, game_id),
+            game_rosters=_aux_list("game_rosters", season, game_id),
             play_participants=_aux_list("play_participants", season, game_id),
             power_index=_aux("power_index", season, game_id),
             team_box_extra=_aux("team_box_extra", season, game_id),
