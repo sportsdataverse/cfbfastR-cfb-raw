@@ -6,13 +6,16 @@
 - **Target repo:** `cfbfastR-cfb-raw` (Python/uv) — new `python/model_training/` package
 - **Source of truth (R originals):** `gp-cfb-raw-keepers/from-cfbfastR-raw/model_training/{00,01,02,03,04,06}*.R`
 - **Inference parity target (sdv-py):** `sportsdataverse/cfb/model_vars.py` + `cfb_pbp.py` (`CFBPlayProcess`), bundled `sportsdataverse/cfb/models/{ep_model,wp_spread,qbr_model}.ubj`
+- **Program:** **Track 1** of the CFB Modeling Suite (see `2026-06-13-cfb-modeling-suite-program.md`). Tracks 2–6 (fourth-down, RB-eval, pregame-WP/Five-Factors, CPOE, NFL EP/WP) are specced separately.
 
 ## 1. Goal
 
 Convert the cfbfastR R EP/WP model-training pipeline to Python, living in `cfbfastR-cfb-raw`,
-to **retrain the EP, WP, and QBR models** on the full 2002/2004→2025 history that the CFB backfill
-produces. The retrained models drop back into sdv-py's `cfb/models/*.ubj` so the library's
-EPA/WPA/QBR computation is reproducible and extendable from a Python-native pipeline (no R toolchain).
+to **retrain the EP, WP-spread, WP-naive, and QBR models** on the full **earliest-available→2025**
+history that the CFB backfill produces. The retrained models drop back into sdv-py's
+`cfb/models/*.ubj` so the library's EPA/WPA/QBR computation is reproducible and extendable from a
+Python-native pipeline (no R toolchain). **WP-naive is newly promoted to a shipped artifact** (it was
+trained as a by-product); shipping it requires a small sdv-py change to bundle + apply `wp_naive.ubj`.
 
 Training inputs are **recreated faithfully from scratch, from raw ESPN game JSON** — not read
 from the persisted `final.json`. The recreation reuses `CFBPlayProcess`'s own feature-building
@@ -91,7 +94,8 @@ Hard evidence gathered while examining the R scripts and the shipped models (xgb
 | 8 | Figures | **Recreate all 4 calibration plots with exceptional, bespoke styling** (plotnine) **plus** emit calibration **data tables**. Plotting code is retained, not dropped. |
 | 9 | Figures engine | **plotnine** (ggplot2 port) — near-verbatim translation of the R `theme()` blocks. |
 | 10 | QBR model | **In scope.** Faithful GAM port (`cfb_qbr/qbr.R → qbr.py`) landed now as a reference ancestor; **Stage 2 adds a 6-feat XGBoost drop-in** for the shipped `qbr_model.ubj` (features = `CFBPlayProcess` `qbr_vars`, target = ESPN raw QBR). |
-| 11 | Model handoff to sdv-py | **Manual, reviewed copy** of `ep_model.ubj` / `wp_spread.ubj` into `sdv-py/sportsdataverse/cfb/models/` (no automated overwrite). |
+| 11 | Model handoff to sdv-py | **Manual, reviewed copy** of `ep_model.ubj` / `wp_spread.ubj` / `wp_naive.ubj` / `qbr_model.ubj` into `sdv-py/sportsdataverse/cfb/models/` (no automated overwrite). **WP-naive is new to sdv-py** → also a small `CFBPlayProcess`/`model_vars` change to bundle + apply it (emit a `wp_*_naive` output alongside the spread WP). |
+| 12 | Season coverage | Train from the **earliest available backfill season → 2025**. Backfill floor is 2004 (also ESPN's QBR floor); attempt 2002–2003 only if the backfill yields usable data for them. |
 
 ## 4. Data flow
 
@@ -191,7 +195,9 @@ buggy `game_id` blocklist carried in `02`/`03`.
   `ExpScoreDiff_Time_Ratio`, `adj_TimeSecsRem`, `pos_team_receives_2H_kickoff`, …); winner + spread
   from the ESPN summary / `homeTeamSpread`. Because the shipped `wp_spread.ubj` **is** this recipe's
   output, Stage-2 WP can be validated to near-equality against it directly.
-- Trains EP + WP-spread **+ the 6-feat QBR XGBoost** on **2002/2004→2025**.
+- Trains EP + WP-spread + **WP-naive** + the 6-feat QBR XGBoost on **earliest-available→2025**.
+  WP-naive is the same `cfbscrapR-wpa.ipynb` recipe minus `spread_time` (12 feats, `nrounds=65`,
+  `eta=0.2, max_depth=4`); it ships as `wp_naive.ubj` (decision #11).
 - **QBR (`train_qbr.py`):** features = the 6 `qbr_vars` (per-QB weighted means from
   `CFBPlayProcess`); target = ESPN raw QBR (`composite.csv` from `qbr_scrape.py`);
   `objective=reg:squarederror`. Drop-in for `qbr_model.ubj`.
@@ -260,9 +266,9 @@ benefits from the repo's existing ProcessPool convention for per-season fan-out.
   tolerance + exact deterministic intermediates. If even tolerance fails, the divergence is in
   feature construction (modern processor vs 2021 R derivation) — diagnosable via the intermediate
   asserts.
-- **2002–2003 coverage.** The R trained on 2002→2020; the CFB backfill floor is 2004 (per the
-  consolidation spec). Stage 2 trains on whatever the backfill provides (2004→2025 expected);
-  confirm the floor before training.
+- **2002–2003 coverage (now in scope, decision #12).** The R trained on 2002→2020; the CFB backfill
+  floor is 2004. Stage 2 trains earliest-available→2025; 2002–2003 are attempted only if the backfill
+  yields usable data — confirm the realized floor before training.
 - **Gill Sans MT availability.** Windows-only; the fallback chain must keep the plots legible on
   Linux CI. Final brand-perfect renders may be a local (Windows) step.
 - **cfbfastR hex logo asset.** Must be sourced and vendored into the repo (with attribution).
