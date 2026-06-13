@@ -49,11 +49,15 @@ def clean_plays(df: pl.DataFrame) -> pl.DataFrame:
     df = df.filter(~pl.col("game_id").is_in(bad.to_list()))
     from .constants import BAD_GAME_IDS
     df = df.filter(~pl.col("game_id").is_in(list(BAD_GAME_IDS)))
-    if "clock_minutes" in df.columns:
+    # ESPN partial games: keep only games whose 4th qtr reaches a 0-minute clock. The
+    # column is `clock_minutes` in keepers' pbp_train but `clock.minutes` (ESPN dot-notation)
+    # on CFBPlayProcess final.json -- support whichever is present.
+    clock_col = next((c for c in ("clock_minutes", "clock.minutes") if c in df.columns), None)
+    if clock_col is not None:
         full = (
             df.filter(pl.col("period") == 4)
             .group_by("game_id")
-            .agg(min_clock=pl.col("clock_minutes").min())
+            .agg(min_clock=pl.col(clock_col).min())
             .filter(pl.col("min_clock") == 0)
             .get_column("game_id")
         )
