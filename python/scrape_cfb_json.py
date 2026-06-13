@@ -32,11 +32,14 @@ def _rosters(gid):
 
 
 def _power_index(gid):
-    return sdv.cfb.espn_cfb_event_powerindex(event_id=gid)
+    # sportsdataverse 0.0.51+ renamed event_powerindex -> game_powerindex and
+    # defaults return_parsed=True; we want the raw Core v2 {items} dict to bank.
+    return sdv.cfb.espn_cfb_game_powerindex(event_id=gid, return_parsed=False)
 
 
 def _odds_full(gid):
-    return sdv.cfb.espn_cfb_event_odds(event_id=gid)
+    # 0.0.51+ rename: event_odds -> game_odds; raw dict via return_parsed=False.
+    return sdv.cfb.espn_cfb_game_odds(event_id=gid, return_parsed=False)
 
 
 def _home_away_ids(raw: dict):
