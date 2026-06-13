@@ -56,6 +56,8 @@ def main(argv=None) -> int:
         Path(args.out).parent.mkdir(parents=True, exist_ok=True)
         model.save_model(args.out)
         print(f"saved -> {args.out}")
+    elif args.cmd in ("validate", "figures"):
+        print(f"{args.cmd}: use the model_training.{args.cmd} library API (CLI wiring TBD)")
     return 0
 
 

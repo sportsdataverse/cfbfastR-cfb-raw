@@ -7,7 +7,8 @@ from model_training.features import ep_matrix, wp_matrix
 def _frame():
     base = {src: 1.0 for src in set(C.EP_SOURCE.values()) | set(C.WP_SOURCE.values())}
     base.update({"label": 0, "Total_W_Scaled": 0.5, "ScoreDiff_W": 0.5,
-                 "season": 2024, "pos_team": "A", "winner": "A", "next_score_half": "Touchdown"})
+                 "season": 2024, "pos_team": "A", "start.pos_team.name": "A",
+                 "winner": "A", "next_score_half": "Touchdown"})
     return pl.DataFrame([base, {**base, "label": 6, "winner": "B", "next_score_half": "No_Score"}])
 
 

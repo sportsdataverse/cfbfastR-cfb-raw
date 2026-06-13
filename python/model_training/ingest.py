@@ -62,6 +62,7 @@ def clean_plays(df: pl.DataFrame) -> pl.DataFrame:
             .get_column("game_id")
         )
         df = df.filter(pl.col("game_id").is_in(full.to_list()))
+    df = df.filter(pl.col("start.down").is_between(1, 4))
     return df.filter(~pl.col("type.text").is_in(list(REMOVE_PLAYS)))
 
 
@@ -106,10 +107,19 @@ def write_training_frame(final_dir, out_path, seasons=None) -> int:
 
 
 def add_winner(df: pl.DataFrame) -> pl.DataFrame:
-    return df.with_columns(
-        winner=pl.when(pl.col("homeScore") > pl.col("awayScore"))
-        .then(pl.col("homeTeamName"))
-        .when(pl.col("homeScore") < pl.col("awayScore"))
-        .then(pl.col("awayTeamName"))
-        .otherwise(pl.lit("TIE")),
+    # homeScore/awayScore on play records are running scores; the winner is decided by the
+    # game's FINAL (max) score per game_id.
+    return (
+        df.with_columns(
+            _home_final=pl.col("homeScore").max().over("game_id"),
+            _away_final=pl.col("awayScore").max().over("game_id"),
+        )
+        .with_columns(
+            winner=pl.when(pl.col("_home_final") > pl.col("_away_final"))
+            .then(pl.col("homeTeamName"))
+            .when(pl.col("_home_final") < pl.col("_away_final"))
+            .then(pl.col("awayTeamName"))
+            .otherwise(pl.lit("TIE")),
+        )
+        .drop(["_home_final", "_away_final"])
     )

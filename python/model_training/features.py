@@ -27,7 +27,7 @@ def wp_matrix(df: pl.DataFrame, variant: str = "spread"):
     feats = C.WP_SPREAD_FEATURES if variant == "spread" else C.WP_NAIVE_FEATURES
     source = {k: v for k, v in C.WP_SOURCE.items() if k in feats}
     X = _select(df, source)[feats]
-    y = (df["pos_team"] == df["winner"]).cast(pl.Int32).to_numpy()
+    y = (df["start.pos_team.name"] == df["winner"]).cast(pl.Int32).to_numpy()
     return X, y, None
 
 

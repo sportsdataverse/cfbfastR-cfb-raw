@@ -8,7 +8,6 @@ Each item has athlete/team/event $refs (event id = game_id) + splits.categories[
 from __future__ import annotations
 
 import argparse
-import json
 import re
 from pathlib import Path
 

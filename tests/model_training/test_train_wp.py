@@ -9,6 +9,7 @@ def _synth_wp_frame(n=400):
     rng = np.random.default_rng(1)
     rows = {src: rng.random(n) for src in C.WP_SOURCE.values()}
     rows["pos_team"] = ["A"] * n
+    rows["start.pos_team.name"] = ["A"] * n
     rows["winner"] = rng.choice(["A", "B"], n)
     return pl.DataFrame(rows)
 
