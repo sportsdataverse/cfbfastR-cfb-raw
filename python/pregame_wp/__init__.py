@@ -14,6 +14,7 @@ from __future__ import annotations
 
 __version__ = "0.1.0"
 
+from . import data_ingest
 from .box_score import calculate_box_score_from_frames
 from .ep_curve import ep_at, eqppp, load_ep_curve, load_punt_sr
 from .five_factors import calculate_five_factors_rating, translate
