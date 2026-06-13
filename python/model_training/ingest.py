@@ -103,3 +103,13 @@ def write_training_frame(final_dir, out_path, seasons=None) -> int:
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)
     df.write_parquet(out_path)
     return df.height
+
+
+def add_winner(df: pl.DataFrame) -> pl.DataFrame:
+    return df.with_columns(
+        winner=pl.when(pl.col("homeScore") > pl.col("awayScore"))
+        .then(pl.col("homeTeamName"))
+        .when(pl.col("homeScore") < pl.col("awayScore"))
+        .then(pl.col("awayTeamName"))
+        .otherwise(pl.lit("TIE")),
+    )
