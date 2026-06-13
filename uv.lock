@@ -1432,7 +1432,7 @@ wheels = [
 
 [[package]]
 name = "sportsdataverse"
-version = "0.0.52"
+version = "0.0.59"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "attrs" },
@@ -1451,9 +1451,9 @@ dependencies = [
     { name = "tqdm" },
     { name = "xgboost" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/44/70/c9a7794a3068587d4ad31fecf8569a9c83630d316ec30f51a4f393f1dbef/sportsdataverse-0.0.52.tar.gz", hash = "sha256:5be5a50758a96533f94dfbeecdc8c71b472407c88f358626d52d642e6dee8b49", size = 7681899, upload-time = "2026-06-03T10:50:45.896Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/8d/cb/0103f65609d58bdfbfe2293dd8ac975b349c04489981a3f68e79755a288a/sportsdataverse-0.0.59.tar.gz", hash = "sha256:3258632c05e128c321cdd6f4ce196624ec5779d5c5073f95184ee8a21efa87d6", size = 8331214, upload-time = "2026-06-13T16:29:07.268Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/28/df/b05406d4b81aac28feb1f4b6b9ebb3d99e939c67c72efdf607d739492bd2/sportsdataverse-0.0.52-py3-none-any.whl", hash = "sha256:ba28c737ee74756fda49855b0848a5a260f91f030e4ba2b1cdd8768276eb2cc4", size = 7929841, upload-time = "2026-06-03T10:50:43.889Z" },
+    { url = "https://files.pythonhosted.org/packages/14/88/53ea40f7e91470a7450889c84b3f1d7fb10fb12aac41e7f8837df20ac1aa/sportsdataverse-0.0.59-py3-none-any.whl", hash = "sha256:f03daaaf0dd5d3774dcbfa6c0b1753ff66a097b4ef1fd299cf5369d40115560c", size = 8604942, upload-time = "2026-06-13T16:29:04.814Z" },
 ]
 
 [[package]]
