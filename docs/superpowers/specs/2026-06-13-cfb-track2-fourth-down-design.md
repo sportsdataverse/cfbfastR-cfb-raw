@@ -47,7 +47,7 @@ All facts below are read directly from `fourth-downs.ipynb` cells 5–7 and conf
 |---|---|---|
 | `down` | `start.down` on the play | 3 or 4 (filter gate) |
 | `distance` | `start.distance` | yards to first down; > 0 (filter gate) |
-| `yards_to_goal` | `start.yardsToEndzone` | > 0 and `distance > yards_to_goal` (filter gate) |
+| `yards_to_goal` | `start.yardsToEndzone` | > 0; combined filter: `distance <= yards_to_goal` (see §2.4 filter #5) |
 | `posteam_total` | derived | `home_total = (homeTeamSpread + overUnder)/2`; `away_total = (overUnder - homeTeamSpread)/2`; `posteam_total = home_total if is_home else away_total` |
 | `posteam_spread` | derived | `posteam_spread = homeTeamSpread if is_home else -homeTeamSpread` (positive = underdog; negative = favorite) |
 
@@ -73,20 +73,20 @@ params = {
 
 ### 2.4 Data filter (training rows selected)
 
-From notebook cell 6 + R script lines 28–75 (identical logic):
+From notebook cell 6 + R script lines 28–75 (aligned logic; see filter #5 for one directional difference between sources — R script is canonical):
 
 1. `down in {3, 4}`
 2. `(rush == 1 OR pass == 1) OR first_down_penalty == 1`
 3. `distance > 0`
 4. `yards_to_goal > 0`
-5. `distance > yards_to_goal` — note: the notebook uses `distance > yards_to_goal` (strict `>`); the R script uses `distance <= yards_to_goal` as a *keep* filter, which is `distance <= yards_to_goal → keep` — this is the same condition expressed as an upper bound. **Important:** the R script has `filter(distance <= yards_to_goal)` which means it keeps plays where `distance ≤ yards_to_goal`; the notebook uses `(merged_vars.distance > merged_vars.yards_to_goal)` as the condition. These are **opposite** on their face. Reading context: the R filter `distance <= yards_to_goal` means "keep only plays where you need fewer yards for a first down than there are yards to the end zone (not goal-line situations with distance > field remaining)". This is the semantically sensible filter (avoids impossible distances). **Resolution: use `distance <= yards_to_goal` (keep when achievable) — matching the R script, which is the primary recipe.**
+5. `distance <= yards_to_goal` — keep plays where yards needed for a first down does not exceed yards to the end zone (avoids geometrically impossible distances). The R script (`filter(distance <= yards_to_goal)`) is the primary recipe and this direction is semantically correct. The notebook used the opposite filter direction, which is a notebook-specific artifact; the R script's formulation is adopted here.
 6. `posteam_total` not null (spread + overUnder must be present)
 7. `posteam_spread` not null
 
 ### 2.5 Spread convention
 
 The notebook derives posteam_total/spread from game-level `spread` + `overUnder` joined from CFBD lines CSV. In the ESPN backfill's `final.json`:
-- `homeTeamSpread` (doc level) = the spread from the home team's perspective. Convention: **negative = home team is favored** (CFBD convention, confirmed by the `d.get('homeTeamSpread')` sample returning `48.5` on a heavy favorite game).
+- `homeTeamSpread` (doc level) = the spread from the home team's perspective. Convention: **negative = home team is favored** (CFBD convention). Example: `homeTeamSpread = 48.5` means the home team is a +48.5 underdog — i.e., the away team is the heavy favorite.
 - `overUnder` (doc level) = game total.
 - Per-play `start.pos_team_spread` = already computed by `CFBPlayProcess` from the game-level `homeTeamSpread` with the posteam perspective applied (negative if posteam is favored, positive if underdog).
 

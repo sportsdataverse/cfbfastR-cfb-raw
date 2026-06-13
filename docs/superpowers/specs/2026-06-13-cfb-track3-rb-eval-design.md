@@ -257,11 +257,11 @@ convention as Track 1 figures.
 ## 10. CLI
 
 ```
-uv run python -m rb_eval features   --final-dir cfb/json/final  --out cfb/rb_eval/rush_plays.parquet
-uv run python -m rb_eval aggregate  --plays cfb/rb_eval/rush_plays.parquet  --out cfb/rb_eval/rusher_seasons.parquet
-uv run python -m rb_eval train      --seasons cfb/rb_eval/rusher_seasons.parquet  --out cfb/rb_eval/
-uv run python -m rb_eval validate   --loso cfb/rb_eval/xrepa_loso.parquet  --out cfb/rb_eval/
-uv run python -m rb_eval figures    --table cfb/rb_eval/calibration.parquet  --out cfb/rb_eval/
+uv run python -m rb_eval.cli features   --final-dir cfb/json/final  --out cfb/rb_eval/rush_plays.parquet
+uv run python -m rb_eval.cli aggregate  --plays cfb/rb_eval/rush_plays.parquet  --out cfb/rb_eval/rusher_seasons.parquet
+uv run python -m rb_eval.cli train      --seasons cfb/rb_eval/rusher_seasons.parquet  --out cfb/rb_eval/
+uv run python -m rb_eval.cli validate   --loso cfb/rb_eval/xrepa_loso.parquet  --out cfb/rb_eval/
+uv run python -m rb_eval.cli figures    --table cfb/rb_eval/calibration.parquet  --out cfb/rb_eval/
 ```
 
 Each subcommand is idempotent. Default `--out cfb/rb_eval/`. A `--seasons A:B` flag filters to

@@ -14,11 +14,13 @@
 home, assess the nflverse-pbp data source, and produce a scoped Phase 1+ plan
 for retraining the three NFL models bundled in sdv-py's `nfl/models/`.
 
-**Architecture:** Mirrors CFB Track 1. Training features come from NFL play-by-play
-(nflverse-pbp or raw ESPN — data source TBD by Phase 0). The only net-new logic
+**Architecture:** Mirrors CFB Track 1. Training features come from nflverse-pbp
+(confirmed by Phase 0 / UPDATE; raw ESPN is secondary). The only net-new logic
 is the outcome label (next score in half), directly analogous to the CFB port.
-Three models: EP (8-feat, `multi:softprob`, 7-class), WP-spread (13-feat,
-`binary:logistic`), QBR (6-feat, `reg:squarederror`).
+Two models in scope: EP (**18-feat**, `multi:softprob`, 7-class, 525 rounds),
+WP-spread (**12-feat**, `binary:logistic`, 534 rounds). The sdv-py QBR bundle
+is a CFB-copy placeholder; there is no nflfastR QBR model — QBR is out of scope
+for Track 6. See UPDATE section and spec §12 for confirmed hyperparameters.
 
 **Spec:** `docs/superpowers/specs/2026-06-13-cfb-track6-nfl-ep-wp-design.md`
 
@@ -392,8 +394,10 @@ This is the gate-check before any Phase 1 implementation begins.
 
 **Files (in the target NFL repo):**
 - `python/model_training/__init__.py`
-- `python/model_training/constants.py` — NFL feature lists imported from
-  `sportsdataverse.nfl.model_vars` (same pattern as CFB Track 1 `constants.py`)
+- `python/model_training/constants.py` — NFL feature lists hard-coded to the
+  **confirmed canonical nflfastR contracts** (18-feat EP, 12-feat WP-spread).
+  Do NOT import from `sportsdataverse.nfl.model_vars` — those lists reflect the
+  CFB-copy architecture (8/13-feat) and would lock in the wrong contracts.
 - `tests/model_training/test_package.py`
 - `tests/model_training/test_constants.py`
 
@@ -409,19 +413,28 @@ This is the gate-check before any Phase 1 implementation begins.
   ```python
   # tests/model_training/test_constants.py
   from model_training import constants as C
-  from sportsdataverse.nfl import model_vars as mv
 
-  def test_ep_features_match_sdvpy():
-      assert C.EP_FEATURES == mv.ep_final_names  # 8 features
+  # Canonical nflfastR contracts (from fastrmodels/data-raw/models.R)
+  _NFL_EP_FEATURES = [
+      "half_seconds_remaining", "yardline_100", "home", "retractable", "dome",
+      "outdoors", "ydstogo", "era0", "era1", "era2", "era3", "era4",
+      "down1", "down2", "down3", "down4",
+      "posteam_timeouts_remaining", "defteam_timeouts_remaining",
+  ]  # 18 features
+  _NFL_WP_FEATURES = [
+      "receive_2h_ko", "spread_time", "home", "half_seconds_remaining",
+      "game_seconds_remaining", "diff_time_ratio", "score_differential",
+      "down1", "down2", "down3", "down4", "posteam_timeouts_remaining",
+  ]  # 12 features (monotone_constraints on spread_time + score_differential)
 
-  def test_wp_features_match_sdvpy():
-      assert C.WP_FEATURES == mv.wp_final_names   # 13 features
+  def test_ep_features_canonical():
+      assert C.EP_FEATURES == _NFL_EP_FEATURES
 
-  def test_qbr_features_match_sdvpy():
-      assert C.QBR_FEATURES == mv.qbr_vars        # 6 features
+  def test_wp_features_canonical():
+      assert C.WP_FEATURES == _NFL_WP_FEATURES
 
-  def test_ep_score_map_matches_sdvpy():
-      assert C.EP_CLASS_TO_SCORE == mv.ep_class_to_score_mapping
+  def test_ep_score_map():
+      assert C.EP_CLASS_TO_SCORE == {0: 7, 1: -7, 2: 3, 3: -3, 4: 2, 5: -2, 6: 0}
   ```
 
 - [ ] **Step 2: Run tests to verify they fail**
@@ -450,8 +463,13 @@ This is the gate-check before any Phase 1 implementation begins.
   - `EP_CLASS_TO_SCORE` (from `nfl/model_vars.py`)
   - `NEXT_SCORE_TO_LABEL` — 7-class label mapping (identical to CFB; the
     scoring classes are the same for NFL)
-  - XGBoost param dicts — **PLACEHOLDER values** pending Phase 0 Task 0.2
-    recipe confirmation. Mark clearly as `# PENDING RECIPE CONFIRMATION`.
+  - XGBoost param dicts — **confirmed values** from the UPDATE section (no
+    longer placeholders). EP: `eta=0.025, gamma=1, subsample=0.8,
+    colsample_bytree=0.8, max_depth=5, min_child_weight=1, nrounds=525`.
+    WP-spread: `eta=0.05, gamma=.79012017, subsample=0.9224245,
+    colsample_bytree=0.6201923, max_depth=3, min_child_weight=5, nrounds=534`
+    with `monotone_constraints=(1, 1, 0, ..., 0)` on spread_time +
+    score_differential. See UPDATE section for full lists.
   - `NFL_EP_SOURCE`, `NFL_WP_SOURCE` — source column crosswalk from nflverse-pbp
     (or `NFLPlayProcess` output) to model feature names — **PENDING Task 0.3
     column audit**.
@@ -832,10 +850,9 @@ Before any Phase 1 implementation begins, all of the following must be resolved:
 - All commits use conventional-commits format. No AI co-author trailers.
 - All Phase 1+ tasks are structured to follow the TDD pattern from CFB Track 1:
   write a failing test → run it → implement → run to pass → commit.
-- The `xgboost` parameter dicts in `constants.py` are placeholders until the
-  nflfastR recipe is confirmed (Phase 0 Task 0.2). Do not hard-code the CFB
-  hyperparameters as NFL hyperparameters — they may differ even if the
-  architecture is identical.
+- The `xgboost` parameter dicts in `constants.py` use the **confirmed
+  nflfastR hyperparameters** (see UPDATE section). Phase 0 Task 0.2 is
+  resolved — the recipe is `fastrmodels/data-raw/models.R`.
 - The file-structure table from the spec §9 (NFL analogue modules) governs
   the one-responsibility-per-file convention. No other files should be created
   without a corresponding spec update.

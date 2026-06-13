@@ -29,17 +29,23 @@ implementation begins.
 Three models ship under `sportsdataverse/nfl/models/` and are loaded at module
 import time in `nfl_pbp.py`:
 
-| Model file | Size | `num_features` | `objective` | `num_class` | `num_trees` |
-|---|---|---|---|---|---|
-| `ep_model.ubj` | 9.0 MB | **8** | `multi:softprob` | **7** | **525** |
-| `wp_spread.ubj` | 1.7 MB | **13** | `binary:logistic` | — | **760** |
-| `qbr_model.ubj` | 72 KB | **6** | `reg:squarederror` | — | **45** |
+| Model file | Size | `num_features` | `objective` | `num_class` | `nrounds` | total trees |
+|---|---|---|---|---|---|---|
+| `ep_model.ubj` | 9.0 MB | **8** | `multi:softprob` | **7** | **525** | 3675 (525×7) |
+| `wp_spread.ubj` | 1.7 MB | **13** | `binary:logistic` | — | **760** | 760 |
+| `qbr_model.ubj` | 72 KB | **6** | `reg:squarederror` | — | **45** | 45 |
+
+> **Note:** For `multi:softprob` (EP), XGBoost builds one tree per class per round, so total trees = `nrounds × num_class`. The `nrounds` column reflects the training rounds; total tree count is shown separately.
 
 All three have `feature_names = None` (no embedded feature name list), so the
 inference contract is defined entirely by the column selection / rename logic in
 `nfl_pbp.py` → `model_vars.py`.
 
-### 2.2 Critical finding: NFL models are architecturally identical to the CFB models
+### 2.2 Finding: NFL bundles contain CFB-model copies (superseded by §12)
+
+> **This section's finding was subsequently explained by §12:** the models are not independently-trained NFL equivalents — they are literal CFB model files bundled under the NFL path. See §12 for the confirmed canonical nflfastR recipe (18-feat EP / 12-feat WP) and the corrected target architecture.
+
+### 2.2a Initial observation: bundled models are architecturally identical to CFB models
 
 The NFL `ep_model.ubj`, `wp_spread.ubj`, and `qbr_model.ubj` carry **the exact
 same architecture** as the CFB counterparts already established by Track 1's
@@ -342,7 +348,7 @@ The NFL `constants.py` can be generated almost verbatim from `nfl/model_vars.py`
 ## 12. UPDATE — canonical recipe found (`fastrmodels/data-raw/models.R`)
 
 The Phase-0 "find the nflfastR recipe" survey is **resolved**. Ben Baldwin's
-`nflverse/fastrmodels/data-raw/models.R` (local: `…/nflverse-dev/fastrmodels/data-raw/models.R`)
+`nflverse/fastrmodels/data-raw/models.R` (canonical: `https://github.com/nflverse/fastrmodels/blob/main/data-raw/models.R`)
 estimates the canonical nflfastR EP/WP/CP/FG models. Two findings reshape this track:
 
 ### 12.1 The bundled sdv-py NFL models are **CFB-model copies**, not real NFL models

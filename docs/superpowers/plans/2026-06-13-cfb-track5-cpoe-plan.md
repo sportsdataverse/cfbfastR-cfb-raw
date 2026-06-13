@@ -1511,7 +1511,7 @@ git commit -m "test(cpoe): end-to-end smoke (ingest -> train -> loso)"
 - [ ] **Step 1: Run ingest on full history**
 
 ```bash
-uv run python -m cpoe ingest \
+uv run python -m cpoe.cli ingest \
   --final-dir cfb/json/final \
   --out cfb/cpoe/cp_plays.parquet
 ```
@@ -1521,7 +1521,7 @@ Expected: several hundred thousand pass plays loaded.
 - [ ] **Step 2: Run LOSO CV to tune nrounds**
 
 ```bash
-uv run python -m cpoe loso \
+uv run python -m cpoe.cli loso \
   --plays cfb/cpoe/cp_plays.parquet \
   --out cfb/cpoe/loso_cv.parquet \
   --nrounds 400
@@ -1533,14 +1533,14 @@ Otherwise adjust `nrounds` and repeat. Document the chosen `nrounds` in `FEASIBI
 - [ ] **Step 3: Produce calibration artifacts**
 
 ```bash
-uv run python -m cpoe validate --loso cfb/cpoe/loso_cv.parquet --out cfb/cpoe/calibration.parquet
-uv run python -m cpoe figures --calibration cfb/cpoe/calibration.parquet --out-dir cfb/cpoe/figures/
+uv run python -m cpoe.cli validate --loso cfb/cpoe/loso_cv.parquet --out cfb/cpoe/calibration.parquet
+uv run python -m cpoe.cli figures --calibration cfb/cpoe/calibration.parquet --out-dir cfb/cpoe/figures/
 ```
 
 - [ ] **Step 4: Train final model on full history**
 
 ```bash
-uv run python -m cpoe train \
+uv run python -m cpoe.cli train \
   --plays cfb/cpoe/cp_plays.parquet \
   --out cfb/cpoe/cp_model.ubj \
   --nrounds <tuned_value>
