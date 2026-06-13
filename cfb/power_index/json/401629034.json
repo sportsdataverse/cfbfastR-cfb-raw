@@ -1,1 +1,1 @@
-{"count":2,"pageIndex":1,"pageSize":25,"pageCount":1,"items":[{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401629034/competitions/401629034/powerindex/41?lang=en&region=us"},{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401629034/competitions/401629034/powerindex/154?lang=en&region=us"}],"game_id":401629034,"season":2024,"week":8}
+{"game_id":401629034,"season":2024,"week":8}
