@@ -69,6 +69,9 @@ figures = [
 gam = [
     { name = "pygam" },
 ]
+pregame-wp = [
+    { name = "scipy" },
+]
 
 [package.metadata]
 requires-dist = [
@@ -92,6 +95,7 @@ figures = [
     { name = "statsmodels", specifier = ">=0.14" },
 ]
 gam = [{ name = "pygam", specifier = ">=0.9" }]
+pregame-wp = [{ name = "scipy", specifier = ">=1.10" }]
 
 [[package]]
 name = "charset-normalizer"
