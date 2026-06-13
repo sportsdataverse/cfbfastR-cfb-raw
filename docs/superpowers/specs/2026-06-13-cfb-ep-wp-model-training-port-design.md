@@ -57,6 +57,15 @@ Hard evidence gathered while examining the R scripts and the shipped models (xgb
    (scraped to `composite.csv`) — plus the canonical `qbr_epa` definition (EPA floored at −5, −3.5 on
    fumbles, wp garbage-time weighting), which `CFBPlayProcess` already implements identically. QBR
    retraining is therefore **in scope** (see §3 #10, §7).
+7. **Prior-art survey (`akeaswaran/cfb-pbp-analysis`, `akeaswaran/cfb_qbr`) does NOT contain the
+   shipped EP/WP recipes either.** `cfb-pbp-analysis/CFB-EPA_AKE.ipynb` is the cfbscrapR **16-feat
+   patsy-formula** EP model (CoreML `CFBEPA.mlmodel` lineage, class order `No_Score=4`);
+   `win-prob.ipynb` is a **pregame 5-factor team** WP model (`pgwp_model.model`), not play-level;
+   `model_training.R` is a modern **10-feat** EP variant (correct weights, clean labeling). None
+   matches the shipped 8-feat EP / 13-feat WP — the shipped WP recipe remains **reconstructed** (§7).
+   Two artifacts are reusable: the vectorized next-score labeling (§6.1) and
+   `epa/wpa-model-test-items.json` as **sanity** fixtures (cfbscrapR-lineage reference values —
+   ballpark cross-checks, NOT shipped-parity oracles).
 
 ## 3. Decisions (locked)
 
@@ -124,11 +133,18 @@ dummy expansion.
 ## 6. Label & weight derivation (the portable IP)
 
 ### 6.1 Next score in half (`next_score.py`, port of `06`)
-For each game, iterate plays in order; for each play find the next scoring event **within the
-same half**. NSH carries the signed point value from the possessing team's perspective
-(`+7/+3/+2` for posteam TD/FG/Safety, negated for the opponent); `No_Score` (0) when the half
-ends before any score. Defensive-TD play types flip the scoring team's sign. DSH records the
-drive id of the next score (used for the recency/score-distance weight).
+For each game, find the next scoring event **within the same half** for every play. NSH carries the
+signed point value from the possessing team's perspective (`+7/+3/+2` for posteam TD/FG/Safety,
+negated for the opponent); `No_Score` (0) when the half ends before any score. Defensive-TD play
+types flip the scoring team's sign. DSH records the drive id of the next score (used for the
+recency/score-distance weight).
+
+**Implementation: prefer the vectorized form over the keepers `06` row loop.** akeaswaran's
+`cfb-pbp-analysis/model_training.R` computes the same labels with a `tidyr::fill(.direction="up")`
+of the scoring drive/team/type within `(game_id, half)` — which ports to a polars
+`fill_null(strategy="backward").over(["game_id", "half"])` (next-score-looking-forward). This is
+far simpler and faster than the per-play `find_next_score` loop and produces identical labels; the
+loop form is kept only as a reference oracle in tests.
 
 ### 6.2 7-class label (`ingest.py`, port of `01`)
 `NSH ∈ {7,3,2,-2,-3,-7} → {TD, FG, Safety, Opp_Safety, Opp_FG, Opp_TD}`, else `No_Score`;
