@@ -46,7 +46,7 @@ def clean_plays(df: pl.DataFrame) -> pl.DataFrame:
         .filter((pl.col("max_per") > 4) | (pl.col("min_per") < 1))
         .get_column("game_id")
     )
-    df = df.filter(~pl.col("game_id").is_in(bad))
+    df = df.filter(~pl.col("game_id").is_in(bad.to_list()))
     from .constants import BAD_GAME_IDS
     df = df.filter(~pl.col("game_id").is_in(list(BAD_GAME_IDS)))
     if "clock_minutes" in df.columns:
@@ -57,7 +57,7 @@ def clean_plays(df: pl.DataFrame) -> pl.DataFrame:
             .filter(pl.col("min_clock") == 0)
             .get_column("game_id")
         )
-        df = df.filter(pl.col("game_id").is_in(full))
+        df = df.filter(pl.col("game_id").is_in(full.to_list()))
     return df.filter(~pl.col("type.text").is_in(list(REMOVE_PLAYS)))
 
 
