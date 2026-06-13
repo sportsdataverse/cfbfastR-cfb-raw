@@ -333,5 +333,78 @@ The NFL `constants.py` can be generated almost verbatim from `nfl/model_vars.py`
 - Fourth-down model for NFL (out of scope for this track).
 - Any NFL model beyond EP / WP / QBR (not currently bundled in sdv-py).
 - Changes to `NFLPlayProcess` inference logic beyond what is needed to bundle
-  a retrained model (the inference contract is fixed by `nfl_pbp.py`).
+  a retrained model. **(SUPERSEDED by §12 — see below: the bundled NFL models are CFB copies, so
+  retraining real NFL models REQUIRES changing the inference feature contract.)**
 - Automated deployment or CI-triggered model updates (decision #5: always manual).
+
+---
+
+## 12. UPDATE — canonical recipe found (`fastrmodels/data-raw/models.R`)
+
+The Phase-0 "find the nflfastR recipe" survey is **resolved**. Ben Baldwin's
+`nflverse/fastrmodels/data-raw/models.R` (local: `…/nflverse-dev/fastrmodels/data-raw/models.R`)
+estimates the canonical nflfastR EP/WP/CP/FG models. Two findings reshape this track:
+
+### 12.1 The bundled sdv-py NFL models are **CFB-model copies**, not real NFL models
+
+Introspecting `sportsdataverse/nfl/models/*.ubj`:
+
+| sdv-py NFL bundle | feats / trees | = nflfastR canonical? | = CFB shipped? |
+|---|---|---|---|
+| `ep_model.ubj` | **8 / 3675** (525×7) | ❌ (nflfastR EP = **18**-feat) | ✅ identical to CFB EP |
+| `wp_spread.ubj` | **13 / 760** | ❌ (nflfastR WP = **12**-feat / 534) | ✅ identical to CFB WP |
+| `qbr_model.ubj` | **6 / 45** | ❌ (no nflfastR QBR model) | ✅ identical to CFB QBR |
+
+So `NFLPlayProcess` currently computes NFL EPA/WPA/QBR with **CFB-trained weights on the CFB
+feature contract** — a latent fidelity gap: sdv-py's NFL metrics will diverge from nflverse's
+official values (which come from the real 18-feat EP / 12-feat WP models). **Track 6 is therefore
+a correctness fix, not a drop-in retrain:** it must (a) train *real* NFL models from the nflfastR
+recipe AND (b) update `NFLPlayProcess`'s feature construction from the CFB 8/13-feat contract to
+the NFL 18/12-feat contract. The handoff (decision #5, manual) now includes inference-code changes,
+not just `.ubj` swaps — scope this carefully.
+
+### 12.2 The canonical nflfastR recipe (exact, from `models.R`)
+
+**EP** — `multi:softprob`, `num_class=7`, `eta=0.025, gamma=1, subsample=0.8, colsample_bytree=0.8,
+max_depth=5, min_child_weight=1`, `nrounds=525`, `set.seed(2013)`, `weight=Total_W_Scaled`.
+**18 features:** `half_seconds_remaining, yardline_100, home, retractable, dome, outdoors, ydstogo,
+era0, era1, era2, era3, era4, down1, down2, down3, down4, posteam_timeouts_remaining,
+defteam_timeouts_remaining`. Label class order = CFB's (`TD=0 … No_Score=6`). Data:
+`nflfastR-data/models/cal_data.rds`.
+
+**WP-spread** — `binary:logistic`, `eta=0.05, gamma=.79012017, subsample=0.9224245,
+colsample_bytree=5/12, max_depth=5, min_child_weight=7`, `nrounds=534`, **`monotone_constraints =
+"(0,0,0,0,0,1,1,-1,-1,-1,1,-1)"`**. **12 features:** `receive_2h_ko, spread_time, home,
+half_seconds_remaining, game_seconds_remaining, Diff_Time_Ratio, score_differential, down, ydstogo,
+yardline_100, posteam_timeouts_remaining, defteam_timeouts_remaining`. `label = (posteam == Winner)`,
+filter `qtr <= 4`. Data: `guga31bb/metrics/wp_tuning/cal_data.rds`.
+
+**WP-naive** — same as spread minus `spread_time` (11 features), `eta=0.2, gamma=0, subsample=0.8,
+colsample_bytree=0.8, max_depth=4, min_child_weight=1`, `nrounds=65`.
+
+**Bonus models in the same script** (adjacent, optional additions to this track):
+- **CP** (completion probability) — `binary:logistic, eta=0.025, gamma=5, subsample=0.8,
+  colsample_bytree=0.8, max_depth=4, min_child_weight=6, base_score=mean(complete_pass)`,
+  `nrounds=560`; features from `prepare_cp_data()`. **This is Track 5's true lineage** (CFB
+  `cpoe_model.R` uses these exact params; StatsBomb was an experiment overlay).
+- **FG** (field goal) — `mgcv::bam(sp ~ s(yardline_100, by = interaction(era, model_roof)) +
+  model_roof + era, family = "binomial")` (a GAM, not XGBoost).
+
+### 12.3 Cross-checks (confirm the CFB forensics)
+
+- **CFB keepers `03` = a copy of this nflfastR WP-spread recipe** (identical `eta=0.05/.79012017/
+  5÷12/534/min_child_weight=7`). That's why keepers `03` was the divergent CFB dead-end — it was the
+  NFL recipe, never the shipped CFB WP (which is cfbscrapR-wpa's 760-tree model).
+- The feature *derivations* (`make_model_mutations`, `prepare_wp_data`, `prepare_cp_data`:
+  era/roof dummies, `spread_time`, `Diff_Time_Ratio`) live in **nflfastR's** `R/helper_add_ep_wp.R`
+  / `helper_add_cp_cpoe.R` (NOT in fastrmodels) — the one remaining Phase-0 read.
+
+### 12.4 Revised Phase-0 (most of it is now done)
+
+1. ~~Find the recipe~~ → **done** (above).
+2. Read nflfastR `R/helper_add_ep_wp.R` + `helper_add_cp_cpoe.R` for the exact feature
+   derivations (era buckets, roof one-hot, `spread_time`, `Diff_Time_Ratio`, `prepare_cp_data`).
+3. Decide the cross-repo home (`nfl-raw`) + data sourcing (`nflfastR-data` / `guga31bb/metrics`
+   cal_data, or regenerate from nflverse pbp).
+4. Scope the `NFLPlayProcess` feature-contract change (8/13-feat CFB-shape → 18/12-feat NFL-shape) —
+   this is the largest piece and was previously unrecognized.

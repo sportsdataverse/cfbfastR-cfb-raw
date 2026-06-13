@@ -401,3 +401,20 @@ Track 1 (`figures.py` in `model_training/`):
   passes or dropped from the training set (current decision: drop).
 - **Per-QB-season CPOE aggregation:** define the minimum pass-attempt threshold for a season
   CPOE to be considered reliable (proposed: ≥ 100 attempts).
+
+---
+
+## 12. UPDATE — true CP lineage is nflfastR, not StatsBomb
+
+`nflverse/fastrmodels/data-raw/models.R` estimates the canonical **nflfastR CP (completion
+probability) model**, and its hyperparameters are **exactly** what CFB `cpoe_model.R` uses
+(`binary:logistic, eta=0.025, gamma=5, subsample=0.8, colsample_bytree=0.8, max_depth=4,
+min_child_weight=6, base_score=mean(complete_pass)`, `nrounds=560`). So `cpoe_model.R` is a port of
+the **nflfastR CP recipe applied to StatsBomb AMF data as an experiment** — the StatsBomb dependency
+is the *data overlay*, not the recipe. The canonical CP feature set comes from nflfastR's
+`prepare_cp_data()` (`helper_add_cp_cpoe.R`). This does NOT change the CFB feasibility verdict (ESPN
+CFB pbp still lacks throw-level features like air-yards / pass location), but it means: (a) the
+recipe to target is the documented nflfastR CP model, not a black box; (b) reading
+`prepare_cp_data()` enumerates exactly which throw-level features a real CP model needs — the precise
+checklist for the Phase-0 CFB-feasibility audit; (c) if CFBD air-yards prove usable (Approach B),
+the nflfastR CP recipe is the drop-in starting point.

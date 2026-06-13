@@ -839,3 +839,33 @@ Before any Phase 1 implementation begins, all of the following must be resolved:
 - The file-structure table from the spec §9 (NFL analogue modules) governs
   the one-responsibility-per-file convention. No other files should be created
   without a corresponding spec update.
+
+---
+
+## UPDATE — recipe found; Phase 0 mostly resolved (see spec §12)
+
+`fastrmodels/data-raw/models.R` is the canonical nflfastR build script. **Use these exact
+hyperparameters in `constants.py`** (no longer placeholders):
+
+- **NFL EP** — `multi:softprob`, `num_class=7`, `eta=0.025, gamma=1, subsample=0.8,
+  colsample_bytree=0.8, max_depth=5, min_child_weight=1`, `nrounds=525`, weight `Total_W_Scaled`,
+  `set.seed(2013)`. **18 features** (`half_seconds_remaining, yardline_100, home, retractable, dome,
+  outdoors, ydstogo, era0-4, down1-4, posteam_timeouts_remaining, defteam_timeouts_remaining`).
+- **NFL WP-spread** — `binary:logistic`, `eta=0.05, gamma=.79012017, subsample=0.9224245,
+  colsample_bytree=5/12, max_depth=5, min_child_weight=7`, `nrounds=534`, `monotone_constraints
+  "(0,0,0,0,0,1,1,-1,-1,-1,1,-1)"`. **12 features** (`receive_2h_ko, spread_time, home,
+  half_seconds_remaining, game_seconds_remaining, Diff_Time_Ratio, score_differential, down, ydstogo,
+  yardline_100, posteam_timeouts_remaining, defteam_timeouts_remaining`).
+- **NFL WP-naive** — drop `spread_time` (11 feats), `eta=0.2, gamma=0, subsample=0.8,
+  colsample_bytree=0.8, max_depth=4, min_child_weight=1`, `nrounds=65`.
+
+**Critical scope change:** sdv-py's bundled `nfl/models/*.ubj` are **CFB-model copies** (8/13/6 feats,
+3675/760/45 trees), NOT real NFL models. So this track must ALSO add a phase to **rewire
+`NFLPlayProcess`'s feature contract** from the CFB 8/13-feat shape to the NFL 18/12-feat shape — the
+retrained `.ubj` cannot drop in without it. Add this as a new high-priority phase before handoff.
+
+**Remaining Phase-0 reads:** nflfastR `R/helper_add_ep_wp.R` (`make_model_mutations`,
+`prepare_wp_data`: era buckets, roof one-hot, `spread_time`, `Diff_Time_Ratio`) +
+`helper_add_cp_cpoe.R` (`prepare_cp_data`). Data: `nflfastR-data/models/cal_data.rds` (EP) +
+`guga31bb/metrics/wp_tuning/cal_data.rds` (WP). Optional adjacent models in the same script: CP
+(`binary:logistic`/560 — Track 5's true lineage) and FG (`mgcv::bam` GAM).
