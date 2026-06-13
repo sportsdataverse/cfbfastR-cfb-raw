@@ -1,0 +1,241 @@
+2026-06-13 19:46:52,174 ERROR schedules failed for 2010
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_schedules.py", line 59, in main
+    df = fetch_season(season)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_schedules.py", line 23, in fetch_season
+    df = sdv.cfb.espn_cfb_schedule(dates=season, return_as_pandas=True)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_schedule.py", line 90, in espn_cfb_schedule
+    event = scoreboard_event_parsing(event)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_schedule.py", line 136, in scoreboard_event_parsing
+    event.get("competitions")[0].get("competitors")[0].get("team").pop("links", None)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2026-06-13 19:46:54,037 INFO season 2010: 16 games to scrape (rescrape=False)
+cfb 2010:   0%|          | 0/16 [00:00<?, ?it/s]2026-06-13 19:47:06,541 ERROR extra fetch failed: _rosters(310293144,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 65, in espn_cfb_game_rosters
+    items = helper_cfb_game_items(summary)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 97, in helper_cfb_game_items
+    items = items.rename({"id": "team_id", "uid": "team_uid", "statistics_href": "team_statistics_href"})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 5275, in rename
+    .collect(optimizations=QueryOptFlags._eager())
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\_utils\deprecation.py", line 97, in wrapper
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\lazyframe\opt_flags.py", line 343, in wrapper
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\lazyframe\frame.py", line 2630, in collect
+    return wrap_df(ldf.collect(engine, callback))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "statistics_href" not found
+ERROR:cfb_json_2010:extra fetch failed: _rosters(310293144,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 65, in espn_cfb_game_rosters
+    items = helper_cfb_game_items(summary)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 97, in helper_cfb_game_items
+    items = items.rename({"id": "team_id", "uid": "team_uid", "statistics_href": "team_statistics_href"})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 5275, in rename
+    .collect(optimizations=QueryOptFlags._eager())
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\_utils\deprecation.py", line 97, in wrapper
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\lazyframe\opt_flags.py", line 343, in wrapper
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\lazyframe\frame.py", line 2630, in collect
+    return wrap_df(ldf.collect(engine, callback))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "statistics_href" not found
+2026-06-13 19:47:06,584 ERROR extra fetch failed: _rosters(310223147,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 65, in espn_cfb_game_rosters
+    items = helper_cfb_game_items(summary)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 97, in helper_cfb_game_items
+    items = items.rename({"id": "team_id", "uid": "team_uid", "statistics_href": "team_statistics_href"})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 5275, in rename
+    .collect(optimizations=QueryOptFlags._eager())
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\_utils\deprecation.py", line 97, in wrapper
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\lazyframe\opt_flags.py", line 343, in wrapper
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\lazyframe\frame.py", line 2630, in collect
+    return wrap_df(ldf.collect(engine, callback))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "statistics_href" not found
+ERROR:cfb_json_2010:extra fetch failed: _rosters(310223147,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 65, in espn_cfb_game_rosters
+    items = helper_cfb_game_items(summary)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 97, in helper_cfb_game_items
+    items = items.rename({"id": "team_id", "uid": "team_uid", "statistics_href": "team_statistics_href"})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 5275, in rename
+    .collect(optimizations=QueryOptFlags._eager())
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\_utils\deprecation.py", line 97, in wrapper
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\lazyframe\opt_flags.py", line 343, in wrapper
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\lazyframe\frame.py", line 2630, in collect
+    return wrap_df(ldf.collect(engine, callback))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "statistics_href" not found
+cfb 2010:   6%|6         | 1/16 [00:12<03:07, 12.53s/it]cfb 2010:  19%|#8        | 3/16 [00:14<00:52,  4.06s/it]cfb 2010:  25%|##5       | 4/16 [00:16<00:37,  3.14s/it]cfb 2010:  31%|###1      | 5/16 [00:17<00:26,  2.44s/it]cfb 2010:  38%|###7      | 6/16 [00:17<00:18,  1.89s/it]cfb 2010:  44%|####3     | 7/16 [00:18<00:12,  1.34s/it]cfb 2010:  50%|#####     | 8/16 [00:19<00:10,  1.25s/it]cfb 2010:  56%|#####6    | 9/16 [00:20<00:09,  1.36s/it]cfb 2010:  69%|######8   | 11/16 [00:20<00:03,  1.28it/s]cfb 2010:  75%|#######5  | 12/16 [00:21<00:02,  1.62it/s]cfb 2010:  81%|########1 | 13/16 [00:21<00:01,  1.98it/s]cfb 2010:  88%|########7 | 14/16 [00:21<00:00,  2.18it/s]cfb 2010:  94%|#########3| 15/16 [00:22<00:00,  2.14it/s]cfb 2010: 100%|##########| 16/16 [00:22<00:00,  1.38s/it]
+[docs/cfb-modeling-suite-tracks-2-6 63b7b935] CFB Raw Update (Start: 2010 End: 2010)
+ 112 files changed, 112 insertions(+)
+ create mode 100644 cfb/betting/json/310010127.json
+ create mode 100644 cfb/betting/json/310010130.json
+ create mode 100644 cfb/betting/json/310010201.json
+ create mode 100644 cfb/betting/json/310010213.json
+ create mode 100644 cfb/betting/json/310012628.json
+ create mode 100644 cfb/betting/json/310012641.json
+ create mode 100644 cfb/betting/json/310030259.json
+ create mode 100644 cfb/betting/json/310040008.json
+ create mode 100644 cfb/betting/json/310060193.json
+ create mode 100644 cfb/betting/json/310070245.json
+ create mode 100644 cfb/betting/json/310070331.json
+ create mode 100644 cfb/betting/json/310080096.json
+ create mode 100644 cfb/betting/json/310090103.json
+ create mode 100644 cfb/betting/json/310102483.json
+ create mode 100644 cfb/betting/json/310223147.json
+ create mode 100644 cfb/betting/json/310293144.json
+ create mode 100644 cfb/game_rosters/json/310010127.json
+ create mode 100644 cfb/game_rosters/json/310010130.json
+ create mode 100644 cfb/game_rosters/json/310010201.json
+ create mode 100644 cfb/game_rosters/json/310010213.json
+ create mode 100644 cfb/game_rosters/json/310012628.json
+ create mode 100644 cfb/game_rosters/json/310012641.json
+ create mode 100644 cfb/game_rosters/json/310030259.json
+ create mode 100644 cfb/game_rosters/json/310040008.json
+ create mode 100644 cfb/game_rosters/json/310060193.json
+ create mode 100644 cfb/game_rosters/json/310070245.json
+ create mode 100644 cfb/game_rosters/json/310070331.json
+ create mode 100644 cfb/game_rosters/json/310080096.json
+ create mode 100644 cfb/game_rosters/json/310090103.json
+ create mode 100644 cfb/game_rosters/json/310102483.json
+ create mode 100644 cfb/game_rosters/json/310223147.json
+ create mode 100644 cfb/game_rosters/json/310293144.json
+ create mode 100644 cfb/json/final/310010127.json
+ create mode 100644 cfb/json/final/310010130.json
+ create mode 100644 cfb/json/final/310010201.json
+ create mode 100644 cfb/json/final/310010213.json
+ create mode 100644 cfb/json/final/310012628.json
+ create mode 100644 cfb/json/final/310012641.json
+ create mode 100644 cfb/json/final/310030259.json
+ create mode 100644 cfb/json/final/310040008.json
+ create mode 100644 cfb/json/final/310060193.json
+ create mode 100644 cfb/json/final/310070245.json
+ create mode 100644 cfb/json/final/310070331.json
+ create mode 100644 cfb/json/final/310080096.json
+ create mode 100644 cfb/json/final/310090103.json
+ create mode 100644 cfb/json/final/310102483.json
+ create mode 100644 cfb/json/final/310223147.json
+ create mode 100644 cfb/json/final/310293144.json
+ create mode 100644 cfb/json/raw/310010127.json
+ create mode 100644 cfb/json/raw/310010130.json
+ create mode 100644 cfb/json/raw/310010201.json
+ create mode 100644 cfb/json/raw/310010213.json
+ create mode 100644 cfb/json/raw/310012628.json
+ create mode 100644 cfb/json/raw/310012641.json
+ create mode 100644 cfb/json/raw/310030259.json
+ create mode 100644 cfb/json/raw/310040008.json
+ create mode 100644 cfb/json/raw/310060193.json
+ create mode 100644 cfb/json/raw/310070245.json
+ create mode 100644 cfb/json/raw/310070331.json
+ create mode 100644 cfb/json/raw/310080096.json
+ create mode 100644 cfb/json/raw/310090103.json
+ create mode 100644 cfb/json/raw/310102483.json
+ create mode 100644 cfb/json/raw/310223147.json
+ create mode 100644 cfb/json/raw/310293144.json
+ create mode 100644 cfb/play_participants/json/310010127.json
+ create mode 100644 cfb/play_participants/json/310010130.json
+ create mode 100644 cfb/play_participants/json/310010201.json
+ create mode 100644 cfb/play_participants/json/310010213.json
+ create mode 100644 cfb/play_participants/json/310012628.json
+ create mode 100644 cfb/play_participants/json/310012641.json
+ create mode 100644 cfb/play_participants/json/310030259.json
+ create mode 100644 cfb/play_participants/json/310040008.json
+ create mode 100644 cfb/play_participants/json/310060193.json
+ create mode 100644 cfb/play_participants/json/310070245.json
+ create mode 100644 cfb/play_participants/json/310070331.json
+ create mode 100644 cfb/play_participants/json/310080096.json
+ create mode 100644 cfb/play_participants/json/310090103.json
+ create mode 100644 cfb/play_participants/json/310102483.json
+ create mode 100644 cfb/play_participants/json/310223147.json
+ create mode 100644 cfb/play_participants/json/310293144.json
+ create mode 100644 cfb/power_index/json/310010127.json
+ create mode 100644 cfb/power_index/json/310010130.json
+ create mode 100644 cfb/power_index/json/310010201.json
+ create mode 100644 cfb/power_index/json/310010213.json
+ create mode 100644 cfb/power_index/json/310012628.json
+ create mode 100644 cfb/power_index/json/310012641.json
+ create mode 100644 cfb/power_index/json/310030259.json
+ create mode 100644 cfb/power_index/json/310040008.json
+ create mode 100644 cfb/power_index/json/310060193.json
+ create mode 100644 cfb/power_index/json/310070245.json
+ create mode 100644 cfb/power_index/json/310070331.json
+ create mode 100644 cfb/power_index/json/310080096.json
+ create mode 100644 cfb/power_index/json/310090103.json
+ create mode 100644 cfb/power_index/json/310102483.json
+ create mode 100644 cfb/power_index/json/310223147.json
+ create mode 100644 cfb/power_index/json/310293144.json
+ create mode 100644 cfb/team_box_extra/json/310010127.json
+ create mode 100644 cfb/team_box_extra/json/310010130.json
+ create mode 100644 cfb/team_box_extra/json/310010201.json
+ create mode 100644 cfb/team_box_extra/json/310010213.json
+ create mode 100644 cfb/team_box_extra/json/310012628.json
+ create mode 100644 cfb/team_box_extra/json/310012641.json
+ create mode 100644 cfb/team_box_extra/json/310030259.json
+ create mode 100644 cfb/team_box_extra/json/310040008.json
+ create mode 100644 cfb/team_box_extra/json/310060193.json
+ create mode 100644 cfb/team_box_extra/json/310070245.json
+ create mode 100644 cfb/team_box_extra/json/310070331.json
+ create mode 100644 cfb/team_box_extra/json/310080096.json
+ create mode 100644 cfb/team_box_extra/json/310090103.json
+ create mode 100644 cfb/team_box_extra/json/310102483.json
+ create mode 100644 cfb/team_box_extra/json/310223147.json
+ create mode 100644 cfb/team_box_extra/json/310293144.json
+To https://github.com/sportsdataverse/cfbfastR-cfb-raw.git
+   91f8c4d9..63b7b935  docs/cfb-modeling-suite-tracks-2-6 -> docs/cfb-modeling-suite-tracks-2-6
