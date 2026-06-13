@@ -1,1 +1,1 @@
-{"game_id":401677097,"season":2024,"week":1}
+{"count":2,"pageIndex":1,"pageSize":25,"pageCount":1,"items":[{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401677097/competitions/401677097/powerindex/2390?lang=en&region=us"},{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401677097/competitions/401677097/powerindex/66?lang=en&region=us"}],"game_id":401677097,"season":2024,"week":1}
