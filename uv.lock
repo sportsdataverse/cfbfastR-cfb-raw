@@ -57,6 +57,7 @@ dependencies = [
 
 [package.dev-dependencies]
 dev = [
+    { name = "joblib" },
     { name = "pytest" },
 ]
 figures = [
@@ -81,7 +82,10 @@ requires-dist = [
 ]
 
 [package.metadata.requires-dev]
-dev = [{ name = "pytest", specifier = ">=8.0" }]
+dev = [
+    { name = "joblib", specifier = ">=1.3" },
+    { name = "pytest", specifier = ">=8.0" },
+]
 figures = [
     { name = "pillow", specifier = ">=10.0" },
     { name = "plotnine", specifier = ">=0.13" },
@@ -439,6 +443,15 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/84/8b/75b9a5020f89ee618f32dd004215f126b727c8384c9e4b8ed411f65b5c74/janitor_rs-0.6.1-pp311-pypy311_pp73-musllinux_1_2_armv7l.whl", hash = "sha256:249121144a3bb328fc178d7a28293ba458d2fd72c2185255d5d90cb66e0c317d", size = 1665001, upload-time = "2026-01-29T01:55:43.779Z" },
     { url = "https://files.pythonhosted.org/packages/39/e1/eae703268888dcf6c734cbb4b14aa0930df1699dc368b7ceb6ae0650473d/janitor_rs-0.6.1-pp311-pypy311_pp73-musllinux_1_2_i686.whl", hash = "sha256:4d474d69b4c2692e506a9653c7c0c411e0bc7556d026c7fa10dc28021e8d8da9", size = 1616382, upload-time = "2026-01-29T01:55:57.546Z" },
     { url = "https://files.pythonhosted.org/packages/f7/8b/9b32c6519c8b798e0ad4fdb503ba449753a6b3e8f065c56f7371e0e25935/janitor_rs-0.6.1-pp311-pypy311_pp73-musllinux_1_2_x86_64.whl", hash = "sha256:fa1209b0868477255cb0f8c8a5c4a741ca90fa6b02ead963a26eb3b3508ec668", size = 1457458, upload-time = "2026-01-29T01:56:12.311Z" },
+]
+
+[[package]]
+name = "joblib"
+version = "1.5.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/41/f2/d34e8b3a08a9cc79a50b2208a93dce981fe615b64d5a4d4abee421d898df/joblib-1.5.3.tar.gz", hash = "sha256:8561a3269e6801106863fd0d6d84bb737be9e7631e33aaed3fb9ce5953688da3", size = 331603, upload-time = "2025-12-15T08:41:46.427Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7b/91/984aca2ec129e2757d1e4e3c81c3fcda9d0f85b74670a094cc443d9ee949/joblib-1.5.3-py3-none-any.whl", hash = "sha256:5fc3c5039fc5ca8c0276333a188bbd59d6b7ab37fe6632daa76bc7f9ec18e713", size = 309071, upload-time = "2025-12-15T08:41:44.973Z" },
 ]
 
 [[package]]
