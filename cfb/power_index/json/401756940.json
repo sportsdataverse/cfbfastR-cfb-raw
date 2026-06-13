@@ -1,1 +1,1 @@
-{"game_id":401756940,"season":2025,"week":10}
+{"count":2,"pageIndex":1,"pageSize":25,"pageCount":1,"items":[{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401756940/competitions/401756940/powerindex/2305?lang=en&region=us"},{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401756940/competitions/401756940/powerindex/197?lang=en&region=us"}],"game_id":401756940,"season":2025,"week":10}

@@ -1,1 +1,1 @@
-{"game_id":401761659,"season":2025,"week":13}
+{"count":2,"pageIndex":1,"pageSize":25,"pageCount":1,"items":[{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401761659/competitions/401761659/powerindex/326?lang=en&region=us"},{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401761659/competitions/401761659/powerindex/2433?lang=en&region=us"}],"game_id":401761659,"season":2025,"week":13}
