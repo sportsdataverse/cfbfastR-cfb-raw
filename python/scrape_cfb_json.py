@@ -117,6 +117,14 @@ def _worker(args):
     return download_game(game_id, season, rescrape)
 
 
+def _scrape_workers():
+    """Game-pool worker count. CFB_SCRAPE_WORKERS env overrides the default
+    (cpu_count-2); lower it (e.g. 3) to stay under ESPN's Core v2 rate limit
+    on large backfills."""
+    val = os.getenv("CFB_SCRAPE_WORKERS")
+    return int(val) if val else None
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("-s", "--start_year", type=int, default=most_recent_cfb_season())
@@ -131,7 +139,7 @@ def main() -> None:
         games = filter_undone(games_for_seasons(master, season, season), rescrape=rescrape)
         logger.info("season %s: %d games to scrape (rescrape=%s)", season, len(games), rescrape)
         run_pool(_worker, [(g, season, rescrape) for g in games],
-                 kind="process", desc=f"cfb {season}")
+                 kind="process", desc=f"cfb {season}", workers=_scrape_workers())
 
 
 if __name__ == "__main__":
