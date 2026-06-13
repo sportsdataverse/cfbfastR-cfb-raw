@@ -59,7 +59,9 @@ def scrape(years, weeks, out_path: str) -> int:
     frames = []
     for yr in years:
         for wk in weeks:
-            data = session.get(_qbr_url(yr, wk), timeout=30).json()
+            resp = session.get(_qbr_url(yr, wk), timeout=30)
+            resp.raise_for_status()
+            data = resp.json()
             rows = parse_qbr_payload(data, yr, wk)
             for r in rows:
                 r["passer_player_name"] = _athlete_name(yr, r["athlete_id"], cache, session)

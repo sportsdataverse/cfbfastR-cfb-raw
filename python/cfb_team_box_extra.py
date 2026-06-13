@@ -25,7 +25,7 @@ def team_box_extra_from_summary(raw: dict, team_ids):
         return None
     by_team = {}
     box_by_id = {str(t.get("team", {}).get("id")): t for t in _box_teams(raw)}
-    lead_by_id = {str(l.get("team", {}).get("id")): l for l in _leaders(raw)}
+    lead_by_id = {str(lead.get("team", {}).get("id")): lead for lead in _leaders(raw)}
     for c in comps:
         tid = str(c.get("team", {}).get("id"))
         by_team[tid] = {

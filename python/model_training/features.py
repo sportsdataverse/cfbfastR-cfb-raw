@@ -1,7 +1,8 @@
 """Select/rename final.json plays into the exact shipped model input matrices.
 
 Returns pandas DataFrames (xgboost.DMatrix-friendly) with columns in the EXACT shipped
-order, plus the label and weight arrays. WP label is win_indicator = (pos_team==winner);
+order, plus the label and weight arrays. WP label is win_indicator =
+(start.pos_team.name == winner), i.e. the posteam NAME compared to the game winner;
 no sample weights for WP (per the cfbscrapR-wpa recipe). EP uses ScoreDiff_W weights.
 """
 from __future__ import annotations
@@ -24,7 +25,12 @@ def ep_matrix(df: pl.DataFrame):
 
 
 def wp_matrix(df: pl.DataFrame, variant: str = "spread"):
-    feats = C.WP_SPREAD_FEATURES if variant == "spread" else C.WP_NAIVE_FEATURES
+    if variant == "spread":
+        feats = C.WP_SPREAD_FEATURES
+    elif variant == "naive":
+        feats = C.WP_NAIVE_FEATURES
+    else:
+        raise ValueError(f"Unknown WP variant: {variant!r} (expected 'spread' or 'naive')")
     source = {k: v for k, v in C.WP_SOURCE.items() if k in feats}
     X = _select(df, source)[feats]
     y = (df["start.pos_team.name"] == df["winner"]).cast(pl.Int32).to_numpy()

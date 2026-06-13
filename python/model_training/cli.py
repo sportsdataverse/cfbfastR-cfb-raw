@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
 from .ingest import add_winner, build_training_frame, write_training_frame  # noqa: F401
@@ -57,7 +58,12 @@ def main(argv=None) -> int:
         model.save_model(args.out)
         print(f"saved -> {args.out}")
     elif args.cmd in ("validate", "figures"):
-        print(f"{args.cmd}: use the model_training.{args.cmd} library API (CLI wiring TBD)")
+        print(
+            f"{args.cmd}: CLI wiring not yet implemented — "
+            f"use the model_training.{args.cmd} library API directly.",
+            file=sys.stderr,
+        )
+        return 2
     return 0
 
 
