@@ -1127,7 +1127,161 @@ git commit -m "feat(model-training): WP trainer (spread 13-feat/760, naive 12-fe
 
 ---
 
-## Phase 6 — `train_qbr.py`
+## Phase 6 — QBR scrape + `train_qbr.py`
+
+### Task 6.0: ESPN QBR scraper (the training target, keyed by game_id)
+
+The 6-feat QBR model's target is ESPN's raw QBR. Add a backfill scraper that hits the ESPN core QBR
+endpoint and keys each record by `game_id` (from the event `$ref`) + athlete, so it joins to the
+per-QB feature rows on `(game_id, passer_player_name)`.
+
+**Files:**
+- Create: `python/scrape_cfb_qbr.py`
+- Test: `tests/model_training/test_qbr_scrape.py`
+- Test fixture: `tests/fixtures/model_training/qbr_endpoint_sample.json`
+
+- [ ] **Step 1: Capture one endpoint payload as a fixture (live, one-time)**
+
+```bash
+uv run python - <<'PY'
+import json, requests
+url = "https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2024/types/2/weeks/1/qbr/10000?limit=1000"
+open("tests/fixtures/model_training/qbr_endpoint_sample.json", "w").write(json.dumps(requests.get(url).json()))
+print("saved")
+PY
+```
+
+Expected: `saved` (a `{items:[...]}` payload with `athlete`/`team`/`event` `$ref`s + `splits.categories[0].stats`).
+
+- [ ] **Step 2: Write the failing test (offline parse of the fixture)**
+
+```python
+# tests/model_training/test_qbr_scrape.py
+import json
+import pathlib
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / "python"))
+from scrape_cfb_qbr import parse_qbr_payload
+
+FIX = pathlib.Path(__file__).parent.parent / "fixtures" / "model_training" / "qbr_endpoint_sample.json"
+
+
+def test_parse_extracts_game_id_athlete_and_qbr():
+    payload = json.loads(FIX.read_text())
+    rows = parse_qbr_payload(payload, year=2024, week=1)
+    assert rows, "expected QBR rows"
+    r = rows[0]
+    assert {"game_id", "athlete_id", "year", "week", "QBR", "TQBR"} <= set(r.keys())
+    assert str(r["game_id"]).isdigit()  # game_id extracted from event $ref
+```
+
+- [ ] **Step 3: Implement the scraper parser + fetch loop**
+
+```python
+# python/scrape_cfb_qbr.py
+"""Scrape ESPN core QBR (the QBR-model training target), keyed by game_id + athlete.
+
+Endpoint: sports.core.api.espn.com/.../seasons/{yr}/types/2/weeks/{wk}/qbr/10000?limit=1000
+Each item has athlete/team/event $refs (event id = game_id) + splits.categories[0].stats
+(QBR, TQBR, and component pieces). Output rows join to per-QB feature rows on
+(game_id, passer_player_name).
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import re
+from pathlib import Path
+
+import requests
+
+_EVENT_ID = re.compile(r"/events/(\d+)")
+_ATHLETE_ID = re.compile(r"/athletes/(\d+)")
+
+
+def _qbr_url(year: int, week: int) -> str:
+    return (f"https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/"
+            f"seasons/{year}/types/2/weeks/{week}/qbr/10000?limit=1000")
+
+
+def parse_qbr_payload(payload: dict, year: int, week: int) -> list[dict]:
+    rows = []
+    for rec in payload.get("items", []) or []:
+        ev = (rec.get("event") or {}).get("$ref", "")
+        ath = (rec.get("athlete") or {}).get("$ref", "")
+        gm = _EVENT_ID.search(ev)
+        aid = _ATHLETE_ID.search(ath)
+        out = {"year": year, "week": week,
+               "game_id": int(gm.group(1)) if gm else None,
+               "athlete_id": int(aid.group(1)) if aid else None}
+        stats = (((rec.get("splits") or {}).get("categories") or [{}])[0]).get("stats", [])
+        for s in stats:
+            out[s["abbreviation"]] = s.get("value")
+        rows.append(out)
+    return rows
+
+
+def _athlete_name(year: int, athlete_id: int, cache: dict, session: requests.Session) -> str | None:
+    if athlete_id in cache:
+        return cache[athlete_id]
+    url = (f"https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/"
+           f"seasons/{year}/athletes/{athlete_id}?lang=en&region=us")
+    try:
+        name = session.get(url, timeout=30).json().get("fullName")
+    except Exception:
+        name = None
+    cache[athlete_id] = name
+    return name
+
+
+def scrape(years: range, weeks: range, out_path: str) -> int:
+    import pandas as pd
+    session = requests.Session()
+    cache: dict = {}
+    frames = []
+    for yr in years:
+        for wk in weeks:
+            data = session.get(_qbr_url(yr, wk), timeout=30).json()
+            rows = parse_qbr_payload(data, yr, wk)
+            for r in rows:
+                r["passer_player_name"] = _athlete_name(yr, r["athlete_id"], cache, session)
+                r["raw_qbr"] = r.get("QBR")
+                r["adj_qbr"] = r.get("TQBR")
+            if rows:
+                frames.append(pd.DataFrame(rows))
+    df = pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
+    Path(out_path).parent.mkdir(parents=True, exist_ok=True)
+    df.to_parquet(out_path, index=False)
+    return len(df)
+
+
+def main(argv=None) -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("-s", "--start", type=int, required=True)
+    ap.add_argument("-e", "--end", type=int, required=True)
+    ap.add_argument("--out", default="cfb/qbr/espn_qbr.parquet")
+    args = ap.parse_args(argv)
+    n = scrape(range(args.start, args.end + 1), range(1, 16), args.out)
+    print(f"wrote {n} QBR rows -> {args.out}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+```
+
+- [ ] **Step 4: Run test to verify it passes**
+
+Run: `uv run pytest tests/model_training/test_qbr_scrape.py -v`
+Expected: PASS (parses `game_id`/`athlete_id`/`QBR`/`TQBR` from the fixture)
+
+- [ ] **Step 5: Commit**
+
+```bash
+git add python/scrape_cfb_qbr.py tests/model_training/test_qbr_scrape.py tests/fixtures/model_training/qbr_endpoint_sample.json
+git commit -m "feat(model-training): ESPN QBR scraper (training target, keyed by game_id)"
+```
 
 ### Task 6.1: QBR trainer (6-feat reg:squarederror, ESPN-QBR target)
 

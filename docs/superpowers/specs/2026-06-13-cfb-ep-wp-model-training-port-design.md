@@ -17,11 +17,15 @@ history that the CFB backfill produces. The retrained models drop back into sdv-
 Python-native pipeline (no R toolchain). **WP-naive is newly promoted to a shipped artifact** (it was
 trained as a by-product); shipping it requires a small sdv-py change to bundle + apply `wp_naive.ubj`.
 
-Training inputs are **recreated faithfully from scratch, from raw ESPN game JSON** — not read
-from the persisted `final.json`. The recreation reuses `CFBPlayProcess`'s own feature-building
-functions ("most of the same functions"), so training features are built by the same code that
-computes them at inference → train/inference parity by construction, while remaining a
-self-contained pipeline that does not depend on whatever columns `final.json` happens to persist.
+Training inputs come from the backfill's per-game **`final.json` plays — the `CFBPlayProcess`
+output**, which the backfill already produced *from raw* with each game's odds resolved (via
+`odds_override_from_betting`) before baking the EP/WP feature columns (notably `spread_time`). This
+is the producer==consumer source: the features are the exact `start.*` columns the model consumes at
+inference, so train/inference parity holds by construction — and reading `final.json` is **more
+faithful than re-running from raw** (it avoids re-deriving odds and risking `spread_time` drift) as
+well as far cheaper. (Decision revised 2026-06-13: the earlier "recreate from raw in-memory" framing
+was superseded once it was confirmed `final.json` retains all 8 EP / 13 WP feature columns with
+odds-correct values.)
 
 ## 2. Background — what the investigation established
 
@@ -85,15 +89,15 @@ Hard evidence gathered while examining the R scripts and the shipped models (xgb
 | # | Decision | Choice |
 |---|----------|--------|
 | 1 | Port location | `cfbfastR-cfb-raw/python/model_training/` (depends on `sportsdataverse` already in `pyproject`). |
-| 2 | Training-data source | The **CFB backfill** (2002/2004→2025). Inputs recreated **from raw**, not from `final.json`. |
-| 3 | Feature recreation | Build from raw by **reusing `CFBPlayProcess` feature functions** (not a separate re-implementation, not the persisted output). |
+| 2 | Training-data source | The **CFB backfill's `final.json`** per-game plays (= `CFBPlayProcess` output, produced from raw with odds resolved). |
+| 3 | Feature recreation | Read the model-feature columns from `final.json` — same producer code as inference, **odds-correct** (`spread_time` baked from the backfill's resolved odds), and cheap. (Revised from "re-run from raw in-memory".) |
 | 4 | Staging | **Stage 1 faithful replica** (validated vs the May-2021 `xgb_*` reference models) **then Stage 2 parity upgrade** (drop-in shipped contract). |
 | 5 | Stage-1 EP weights | Replicate the **scrambled** `c(0,3,-3,-2,-7,2,7)` so predictions match the R reference. |
 | 6 | Stage-2 EP weights | Use the **correct** `ep_class_to_score_mapping` (match sdv-py inference). |
 | 7 | WP feature set | Stage 1 = R's 10-feat spread / 9-feat naive; Stage 2 = shipped **13-feat** `wp_final_names`. |
 | 8 | Figures | **Recreate all 4 calibration plots with exceptional, bespoke styling** (plotnine) **plus** emit calibration **data tables**. Plotting code is retained, not dropped. |
 | 9 | Figures engine | **plotnine** (ggplot2 port) — near-verbatim translation of the R `theme()` blocks. |
-| 10 | QBR model | **In scope.** Faithful GAM port (`cfb_qbr/qbr.R → qbr.py`) landed now as a reference ancestor; **Stage 2 adds a 6-feat XGBoost drop-in** for the shipped `qbr_model.ubj` (features = `CFBPlayProcess` `qbr_vars`, target = ESPN raw QBR). |
+| 10 | QBR model | **In scope.** Faithful GAM port (`cfb_qbr/qbr.R → qbr.py`) landed now as a reference ancestor; **Stage 2 adds a 6-feat XGBoost drop-in** for the shipped `qbr_model.ubj` (features = `CFBPlayProcess` `qbr_vars`). **Target = ESPN raw QBR via a new backfill scraper** (`scrape_cfb_qbr.py`, ESPN core `…/weeks/{wk}/qbr` endpoint, keyed by `game_id` from the event `$ref` + athlete) → joined on `(game_id, passer_player_name)`. |
 | 11 | Model handoff to sdv-py | **Manual, reviewed copy** of `ep_model.ubj` / `wp_spread.ubj` / `wp_naive.ubj` / `qbr_model.ubj` into `sdv-py/sportsdataverse/cfb/models/` (no automated overwrite). **WP-naive is new to sdv-py** → also a small `CFBPlayProcess`/`model_vars` change to bundle + apply it (emit a `wp_*_naive` output alongside the spread WP). |
 | 12 | Season coverage | Train from the **earliest available backfill season → 2025**. Backfill floor is 2004 (also ESPN's QBR floor); attempt 2002–2003 only if the backfill yields usable data for them. |
 
@@ -102,10 +106,9 @@ Hard evidence gathered while examining the R scripts and the shipped models (xgb
 ```
 CFB backfill: scrape_cfb_json.py → cfb/json/raw/{game_id}.json   (verbatim ESPN summary)
    │
-   ▼  model_training reads RAW (not final.json) and rebuilds inputs from scratch
+   ▼  model_training reads the backfill's final.json plays (= CFBPlayProcess output, odds-resolved)
 features.py
-   ├─ CFBPlayProcess(gameId, path_to_json=raw_dir).cfb_pbp_disk().run_processing_pipeline()
-   │     → in-memory play_df with start.*/end.* feature columns  (same functions as inference)
+   ├─ read cfb/json/final/{game_id}.json → plays (already carry start.* EP/WP feature columns)
    └─ select model inputs:  Stage 1 → R subset (8 EP / 10 WP / 9 naive)
                             Stage 2 → shipped contract (8 EP / 13 WP)
 next_score.py  (port of 06)
@@ -132,7 +135,7 @@ it; `next_score.py` is the irreducible core of the port.
 |---|---|---|
 | `next_score.py` | `06_data_ingest_utils.R` | `find_game_next_score_half(drive_df)` + `find_next_score(play_i, score_plays_i, dat_drive)`. NSH = signed next-score points from posteam perspective; DSH = drive id of that score; half-boundary → 0 (no score before half); defense-TD list flips the scoring sign. |
 | `ingest.py` | `01_data_ingest.R` | Per season: NSH→`Next_Score`→7-class `label`; recency/score-diff weights; kickoff down→-1, drop `down<1`, drop OT games, drop ESPN partial games, drop special-teams play types. Writes `pbp_full.parquet`. |
-| `features.py` | (01 select/rename) | Run `CFBPlayProcess` on raw → in-memory `play_df`; select/rename to `ep_final_names` (8) and the stage-appropriate WP set; `ExpScoreDiff = pos_score_diff + ep` and `ExpScoreDiff_Time_Ratio = ExpScoreDiff/(game_seconds_remaining+1)` with **stage-dependent** EP weights. |
+| `features.py` | (01 select/rename) | Read `final.json` plays; select/rename to `ep_final_names` (8) and the stage-appropriate WP set (the `start.*` columns already carry odds-resolved `spread_time`/`ExpScoreDiff_Time_Ratio`). QBR: per-QB-game aggregation of the 6 `qbr_vars`. |
 | `train_ep.py` | `02_epa_xgb_model.R` | `booster=gbtree, objective=multi:softprob, eval_metric=mlogloss, num_class=7, eta=0.025, gamma=1, subsample=0.8, colsample_bytree=0.8, max_depth=5, min_child_weight=1`, `nrounds=525`, `weight=ScoreDiff_W`. Optional LOSO CV. Save `ep_model.ubj`. |
 | `train_wp.py` | `cfbscrapR-wpa.ipynb` (shipped recipe) / `03` (Stage-1 ref only) | **Spread — the confirmed shipped recipe (760 trees / 13 feats):** `binary:logistic`, `eta=0.02, gamma=0.3445502, subsample=0.7204741, colsample_bytree=0.5714286, max_depth=5, min_child_weight=14`, `nrounds=760`; features = `wp_final_names` (13); **NO sample weights**; `label = (pos_team == winner)` (winner from home/away points). **Naive:** drops `spread_time` (12 feats), `eta=0.2, gamma=0, subsample=0.8, colsample_bytree=0.8, max_depth=4, min_child_weight=1`, `nrounds=65`. (Stage-1's faithful-replica target is keepers `03`'s divergent 10-feat model — `eta=0.05,…,nrounds=534`, `weight=ScoreDiff_W` — kept only to validate the labeling/training machinery; the shipped model uses the cfbscrapR-wpa recipe above.) Save `wp_spread.ubj` / `wp_naive.ubj`. |
 | `train_qbr.py` | `cfb_qbr/qbr.R` (GAM) → 6-feat XGBoost | **Stage 2.** features = the 6 `qbr_vars` per QB-game (`CFBPlayProcess` weighted means: `qbr_epa, sack_epa, pass_epa, rush_epa, pen_epa, spread`); target = ESPN raw QBR (`qbr_scrape.py → composite.csv`); `objective=reg:squarederror`. The faithful 1-feat GAM port (`raw_qbr ~ s(qbr_epa)`) lands in `akeaswaran/cfb_qbr` (`qbr.py`) **now**, as the conceptual ancestor + canonical `qbr_epa` source. |
