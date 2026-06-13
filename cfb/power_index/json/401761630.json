@@ -1,1 +1,1 @@
-{"count":2,"pageIndex":1,"pageSize":25,"pageCount":1,"items":[{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401761630/competitions/401761630/powerindex/290?lang=en&region=us"},{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401761630/competitions/401761630/powerindex/2247?lang=en&region=us"}],"game_id":401761630,"season":2025,"week":8}
+{"game_id":401761630,"season":2025,"week":8}
