@@ -10,9 +10,9 @@
 ## 1. Goal
 
 Convert the cfbfastR R EP/WP model-training pipeline to Python, living in `cfbfastR-cfb-raw`,
-to **retrain the EP and WP models** on the full 2002/2004→2025 history that the CFB backfill
+to **retrain the EP, WP, and QBR models** on the full 2002/2004→2025 history that the CFB backfill
 produces. The retrained models drop back into sdv-py's `cfb/models/*.ubj` so the library's
-EPA/WPA computation is reproducible and extendable from a Python-native pipeline (no R toolchain).
+EPA/WPA/QBR computation is reproducible and extendable from a Python-native pipeline (no R toolchain).
 
 Training inputs are **recreated faithfully from scratch, from raw ESPN game JSON** — not read
 from the persisted `final.json`. The recreation reuses `CFBPlayProcess`'s own feature-building
@@ -50,8 +50,13 @@ Hard evidence gathered while examining the R scripts and the shipped models (xgb
    `ep_class_to_score_mapping = {0:7, 1:-7, 2:3, 3:-3, 4:2, 5:-2, 6:0}`.
 5. **Old binary `.model` is unreadable in xgboost ≥3.1.** The May-2021 reference models load only
    in xgboost 3.0; they were converted once to UBJ for use as Stage-1 validation fixtures.
-6. **The shipped `qbr_model.ubj` (6-feat, `reg:squarederror`) has no training script** in keepers.
-   QBR retraining is **out of scope** for this port (tracked as a follow-up).
+6. **The shipped `qbr_model.ubj` (6-feat, `reg:squarederror`) has no training script** in keepers,
+   but its inputs and target are recoverable: `CFBPlayProcess.__process_qbr` already computes all 6
+   `qbr_vars` features (`qbr_epa, sack_epa, pass_epa, rush_epa, pen_epa, spread` as per-QB weighted
+   means), and `akeaswaran/cfb_qbr` supplies the missing piece — the training **target**, ESPN raw QBR
+   (scraped to `composite.csv`) — plus the canonical `qbr_epa` definition (EPA floored at −5, −3.5 on
+   fumbles, wp garbage-time weighting), which `CFBPlayProcess` already implements identically. QBR
+   retraining is therefore **in scope** (see §3 #10, §7).
 
 ## 3. Decisions (locked)
 
@@ -66,7 +71,7 @@ Hard evidence gathered while examining the R scripts and the shipped models (xgb
 | 7 | WP feature set | Stage 1 = R's 10-feat spread / 9-feat naive; Stage 2 = shipped **13-feat** `wp_final_names`. |
 | 8 | Figures | **Recreate all 4 calibration plots with exceptional, bespoke styling** (plotnine) **plus** emit calibration **data tables**. Plotting code is retained, not dropped. |
 | 9 | Figures engine | **plotnine** (ggplot2 port) — near-verbatim translation of the R `theme()` blocks. |
-| 10 | QBR model | **Out of scope** (no source recipe). Follow-up. |
+| 10 | QBR model | **In scope.** Faithful GAM port (`cfb_qbr/qbr.R → qbr.py`) landed now as a reference ancestor; **Stage 2 adds a 6-feat XGBoost drop-in** for the shipped `qbr_model.ubj` (features = `CFBPlayProcess` `qbr_vars`, target = ESPN raw QBR). |
 | 11 | Model handoff to sdv-py | **Manual, reviewed copy** of `ep_model.ubj` / `wp_spread.ubj` into `sdv-py/sportsdataverse/cfb/models/` (no automated overwrite). |
 
 ## 4. Data flow
@@ -85,8 +90,9 @@ next_score.py  (port of 06)
 ingest.py  (port of 01)
    └─ NSH → Next_Score → label (7-class);  weights Drive_Score_Dist_W / ScoreDiff_W / Total_W
    └─ play-type + down cleaning; write pbp_full.parquet  (idempotent, season-partitioned)
-train_ep.py (02) / train_wp.py (03)
-   └─ XGBoost → models/{ep_model,wp_spread,wp_naive}.ubj   (+ optional LOSO CV)
+train_ep.py (02) / train_wp.py (03) / train_qbr.py (Stage 2)
+   └─ XGBoost → models/{ep_model,wp_spread,wp_naive,qbr_model}.ubj   (+ optional LOSO CV)
+   └─ QBR: features = qbr_vars from CFBPlayProcess; target = ESPN raw QBR (composite.csv)
 validate.py + figures.py
    └─ prediction-parity vs reference .ubj; calibration tables (parquet/csv) + 4 styled PNGs
    ▼  (Stage 2 only, manual)
@@ -106,7 +112,8 @@ it; `next_score.py` is the irreducible core of the port.
 | `features.py` | (01 select/rename) | Run `CFBPlayProcess` on raw → in-memory `play_df`; select/rename to `ep_final_names` (8) and the stage-appropriate WP set; `ExpScoreDiff = pos_score_diff + ep` and `ExpScoreDiff_Time_Ratio = ExpScoreDiff/(game_seconds_remaining+1)` with **stage-dependent** EP weights. |
 | `train_ep.py` | `02_epa_xgb_model.R` | `booster=gbtree, objective=multi:softprob, eval_metric=mlogloss, num_class=7, eta=0.025, gamma=1, subsample=0.8, colsample_bytree=0.8, max_depth=5, min_child_weight=1`, `nrounds=525`, `weight=ScoreDiff_W`. Optional LOSO CV. Save `ep_model.ubj`. |
 | `train_wp.py` | `03_wpa_xgb_model.R` | **Spread**: `binary:logistic`, `eta=0.05, gamma=.79012017, subsample=0.9224245, colsample_bytree=5/12, max_depth=5, min_child_weight=7`, `nrounds=534`. **Naive**: `eta=0.025, gamma=0.8, subsample=0.8, colsample_bytree=0.8, max_depth=5, min_child_weight=4`, `nrounds=525`, drops `spread_time`. `label = 1 if posteam == winner else 0`; needs home/away points to resolve winner; `weight=ScoreDiff_W`. Save `wp_spread.ubj` / `wp_naive.ubj`. |
-| `validate.py` | (CV/calibration math) | Prediction-parity harness vs reference `.ubj` (Stage 1) / shipped `.ubj` (Stage 2); LOSO-binned (0.05) calibration → `bin_pred_prob` vs `bin_actual_prob`; weighted calibration error. Emits tables as parquet/csv. |
+| `train_qbr.py` | `cfb_qbr/qbr.R` (GAM) → 6-feat XGBoost | **Stage 2.** features = the 6 `qbr_vars` per QB-game (`CFBPlayProcess` weighted means: `qbr_epa, sack_epa, pass_epa, rush_epa, pen_epa, spread`); target = ESPN raw QBR (`qbr_scrape.py → composite.csv`); `objective=reg:squarederror`. The faithful 1-feat GAM port (`raw_qbr ~ s(qbr_epa)`) lands in `akeaswaran/cfb_qbr` (`qbr.py`) **now**, as the conceptual ancestor + canonical `qbr_epa` source. |
+| `validate.py` | (CV/calibration math) | Prediction-parity harness vs reference `.ubj` (Stage 1) / shipped `.ubj` (Stage 2); LOSO-binned (0.05) calibration → `bin_pred_prob` vs `bin_actual_prob`; weighted calibration error; QBR fit vs ESPN raw QBR (corr + MAE). Emits tables as parquet/csv. |
 | `figures.py` | ggplot blocks in 02/03 | plotnine recreation of the 4 calibration plots (see §8). |
 | `cli.py` | `00_play_by_play_train.R` | Subcommands `ingest \| train-ep \| train-wp \| validate \| figures`; flags `--stage {1,2}`, `--seasons A:B`, `--loso`, `--raw-dir`, `--out-dir`. |
 
@@ -152,10 +159,13 @@ buggy `game_id` blocklist carried in `02`/`03`.
 
 ### Stage 2 — parity upgrade (the shipped models)
 - Builds the **shipped 13-feat WP** contract (`wp_final_names`) and the **correct EP weights**.
-- Trains EP + WP-spread on **2002/2004→2025**.
-- **Regression gate:** retrained `ep_model.ubj` / `wp_spread.ubj` predict within a documented
-  tolerance of the *shipped* models on a held-out historical season (so existing EPA/WPA do not
-  shift), then coverage extends to the new seasons.
+- Trains EP + WP-spread **+ the 6-feat QBR XGBoost** on **2002/2004→2025**.
+- **QBR (`train_qbr.py`):** features = the 6 `qbr_vars` (per-QB weighted means from
+  `CFBPlayProcess`); target = ESPN raw QBR (`composite.csv` from `qbr_scrape.py`);
+  `objective=reg:squarederror`. Drop-in for `qbr_model.ubj`.
+- **Regression gate:** retrained `ep_model.ubj` / `wp_spread.ubj` / `qbr_model.ubj` predict within a
+  documented tolerance of the *shipped* models on a held-out historical season (so existing
+  EPA/WPA/QBR do not shift), then coverage extends to the new seasons.
 - Output models are copied into sdv-py manually under review (decision #11).
 
 ## 8. Figures (`figures.py`) — bespoke styling + data tables
@@ -188,7 +198,11 @@ parquet + csv next to the PNG, so the numbers are inspectable independent of the
 
 Add to `cfbfastR-cfb-raw/pyproject.toml`:
 - runtime/training: `xgboost>=2.0` (explicit; currently transitive via sdv-py), `numpy` (transitive).
+  The QBR XGBoost (Stage 2) needs no new dep.
 - figures (own group): `plotnine`, `statsmodels` (loess backend), `pillow` (logo overlay).
+
+The standalone GAM reference (`akeaswaran/cfb_qbr/qbr.py`) needs `pygam` — but that lives in the
+`cfb_qbr` repo, **not** a `cfbfastR-cfb-raw` dependency; the in-port QBR model is XGBoost.
 
 `polars` / `pyarrow` / `pandas` are already present. No GPU. XGBoost training is CPU-bound and
 benefits from the repo's existing ProcessPool convention for per-season fan-out.
@@ -203,8 +217,10 @@ benefits from the repo's existing ProcessPool convention for per-season fan-out.
 4. **`train_ep.py`** (Stage 1) → validate predictions vs `xgb_ep_model` reference within tolerance.
 5. **`train_wp.py`** (Stage 1, spread + naive) → validate vs `xgb_wp_spread`/`xgb_wp_naive` refs.
 6. **`figures.py`** + `validate.py` — calibration tables + 4 styled plots; eyeball vs keepers PNGs.
-7. **Stage 2** — flip feature sets to the shipped contract + correct EP weights; train on full
-   history; regression-gate vs shipped `.ubj`; copy into sdv-py under review.
+   (The faithful `cfb_qbr` GAM port — `qbr.py` — is already landed as the QBR reference.)
+7. **Stage 2** — flip feature sets to the shipped contract + correct EP weights; **add `train_qbr.py`**
+   (6-feat XGBoost; ESPN raw QBR target via `qbr_scrape.py → composite.csv`); train all three on full
+   history; regression-gate each vs the shipped `.ubj`; copy into sdv-py under review.
 
 ## 11. Risks & open items
 
@@ -218,6 +234,10 @@ benefits from the repo's existing ProcessPool convention for per-season fan-out.
 - **Gill Sans MT availability.** Windows-only; the fallback chain must keep the plots legible on
   Linux CI. Final brand-perfect renders may be a local (Windows) step.
 - **cfbfastR hex logo asset.** Must be sourced and vendored into the repo (with attribution).
-- **QBR model.** No source recipe in keepers; retraining `qbr_model.ubj` is a tracked follow-up.
+- **QBR target alignment.** The 6-feat `qbr_model.ubj` retrain depends on ESPN raw QBR
+  (`composite.csv`) joining cleanly to per-QB-game `qbr_vars`; ESPN QBR coverage starts ~2004 and is
+  QB-week grain. The shipped-model recipe is *reconstructed* (features known from `CFBPlayProcess`,
+  target = ESPN QBR), not a literal script — validated by the Stage-2 parity gate. The faithful
+  `cfb_qbr` GAM (`qbr.py`) is a 1-feat ancestor, not a drop-in for `qbr_model.ubj`.
 - **Model handoff.** Overwriting sdv-py's bundled `.ubj` is consequential; kept manual + reviewed,
   never automated by this pipeline.
