@@ -9,6 +9,7 @@ dependencies = [
     "polars>=1.0",
     "pyarrow>=15.0",
     "tqdm>=4.66",
+    "scikit-learn>=1.0",
     "xgboost>=2.0",
 ]
 

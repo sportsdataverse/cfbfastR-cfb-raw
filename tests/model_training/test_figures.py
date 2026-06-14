@@ -1,3 +1,7 @@
+import pytest
+
+pytest.importorskip("plotnine")
+
 import polars as pl
 
 from model_training.figures import write_calibration
