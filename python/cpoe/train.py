@@ -83,10 +83,11 @@ def compute_cpoe(df: pl.DataFrame, model: xgb.Booster, approach: str = "A") -> p
     X = feat_df.select(features).to_pandas()
     preds = model.predict(xgb.DMatrix(X))
 
-    return pass_df.with_columns(
-        pl.Series("expected_completion", preds.tolist()).cast(pl.Float64),
-        (
-            pl.col("completion").cast(pl.Float64)
-            - pl.Series("expected_completion_tmp", preds.tolist()).cast(pl.Float64)
-        ).alias("cpoe"),
+    exp_ser = pl.Series("expected_completion", preds.tolist(), dtype=pl.Float64)
+    return (
+        pass_df
+        .with_columns(exp_ser)
+        .with_columns(
+            (pl.col("completion").cast(pl.Float64) - pl.col("expected_completion")).alias("cpoe")
+        )
     )

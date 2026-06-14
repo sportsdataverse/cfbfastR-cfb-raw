@@ -16,6 +16,8 @@ from __future__ import annotations
 import numpy as np
 import polars as pl
 
+from .constants import RB_EVAL_TARGET
+
 
 def calibration_table(
     cv_results: pl.DataFrame,
@@ -24,25 +26,25 @@ def calibration_table(
     """Bin LOSO predictions and compute mean actual EPA per bin.
 
     Args:
-        cv_results: frame with columns exp_rb_epa and target, from loso_cv.
+        cv_results: frame with columns exp_rb_epa and unadjusted_epa, from loso_cv.
         bin_size: bin width for rounding exp_rb_epa. Default 0.05 (matches R source).
 
     Returns:
         Sorted frame with columns:
             bin_pred_epa    — bin centre (rounded to bin_size)
             total_instances — number of rusher-seasons in this bin
-            bin_actual_epa  — mean target within the bin
+            bin_actual_epa  — mean unadjusted_epa within the bin
     """
     return (
         cv_results
-        .drop_nulls(["exp_rb_epa", "target"])
+        .drop_nulls(["exp_rb_epa", RB_EVAL_TARGET])
         .with_columns(
             bin_pred_epa=(pl.col("exp_rb_epa") / bin_size).round(0) * bin_size,
         )
         .group_by("bin_pred_epa")
         .agg(
             total_instances=pl.len(),
-            bin_actual_epa=pl.col("target").mean(),
+            bin_actual_epa=pl.col(RB_EVAL_TARGET).mean(),
         )
         .sort("bin_pred_epa")
     )

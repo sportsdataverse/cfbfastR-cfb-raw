@@ -73,12 +73,13 @@ def loso_calibrate(
         X_te = feat_te.select(features).to_pandas()
         preds = model.predict(xgb.DMatrix(X_te))
 
-        fold = test_df.with_columns(
-            pl.Series("predicted_cp", preds.tolist()).cast(pl.Float64),
-            (
-                pl.col("completion").cast(pl.Float64)
-                - pl.Series("_tmp_pred", preds.tolist()).cast(pl.Float64)
-            ).alias("cpoe"),
+        pred_ser = pl.Series("predicted_cp", preds.tolist(), dtype=pl.Float64)
+        fold = (
+            test_df
+            .with_columns(pred_ser)
+            .with_columns(
+                (pl.col("completion").cast(pl.Float64) - pl.col("predicted_cp")).alias("cpoe")
+            )
         )
         # Assign distance bucket for calibration stratification
         fold = assign_distance_bucket(fold)

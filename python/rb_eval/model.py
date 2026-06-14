@@ -146,6 +146,28 @@ def fit_rb_eval_model(
     return gam
 
 
+def train_xrepa(model_data: pl.DataFrame):
+    """Fit the final full-dataset xREPA GAM (LinearGAM(s(0)+s(1))).
+
+    Trains on all seasons in model_data (no held-out fold). Use loso_cv
+    for out-of-sample evaluation; use this for the production artifact.
+
+    Requires pygam (install with: uv sync --group gam).
+
+    Args:
+        model_data: GAM input frame from build_model_data, with columns
+                    epa_per_play, success, unadjusted_epa, weight.
+
+    Returns:
+        Fitted pygam LinearGAM.
+    """
+    data = model_data.drop_nulls(RB_EVAL_FEATURES + [RB_EVAL_TARGET, "weight"])
+    X = data.select(RB_EVAL_FEATURES).to_numpy()
+    y = data[RB_EVAL_TARGET].to_numpy()
+    w = data["weight"].to_numpy()
+    return fit_rb_eval_model(X, y, weights=w)
+
+
 def loso_cv(model_data: pl.DataFrame) -> pl.DataFrame:
     """Leave-one-season-out cross-validation for xREPA.
 

@@ -39,6 +39,8 @@ def pregame_wp(
             wp = pregame_wp(model, five_factor_diff=2.1, std=7.5)
             print(f"Home WP: {wp:.3f}")
     """
+    if std <= 0.0:
+        return 0.5
     pred = float(model.predict([[five_factor_diff]])[0])
     return float(norm.cdf((pred - mu) / std))
 
@@ -57,4 +59,6 @@ def pregame_wp_from_pred(pred_mov: float, std: float, mu: float = WP_MU) -> floa
     Returns:
         Win probability in [0, 1].
     """
+    if std <= 0.0:
+        return 0.5
     return float(norm.cdf((pred_mov - mu) / std))
