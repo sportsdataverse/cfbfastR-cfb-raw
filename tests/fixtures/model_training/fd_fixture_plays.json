@@ -1,0 +1,67 @@
+[
+  {
+    "start.down": 3,
+    "start.distance": 5,
+    "start.yardsToEndzone": 40,
+    "start.pos_team_spread": -7.0,
+    "homeTeamSpread": -7.0,
+    "overUnder": 55.0,
+    "start.is_home": 1,
+    "yardsGained": 7,
+    "rush": true,
+    "pass": false,
+    "firstD_by_penalty": false
+  },
+  {
+    "start.down": 4,
+    "start.distance": 2,
+    "start.yardsToEndzone": 15,
+    "start.pos_team_spread": 7.0,
+    "homeTeamSpread": -7.0,
+    "overUnder": 55.0,
+    "start.is_home": 0,
+    "yardsGained": -3,
+    "rush": false,
+    "pass": true,
+    "firstD_by_penalty": false
+  },
+  {
+    "start.down": 1,
+    "start.distance": 10,
+    "start.yardsToEndzone": 70,
+    "start.pos_team_spread": 0.0,
+    "homeTeamSpread": 0.0,
+    "overUnder": 50.0,
+    "start.is_home": 1,
+    "yardsGained": 5,
+    "rush": true,
+    "pass": false,
+    "firstD_by_penalty": false
+  },
+  {
+    "start.down": 4,
+    "start.distance": 1,
+    "start.yardsToEndzone": 5,
+    "start.pos_team_spread": 3.0,
+    "homeTeamSpread": null,
+    "overUnder": null,
+    "start.is_home": 0,
+    "yardsGained": 2,
+    "rush": true,
+    "pass": false,
+    "firstD_by_penalty": false
+  },
+  {
+    "start.down": 3,
+    "start.distance": 8,
+    "start.yardsToEndzone": 30,
+    "start.pos_team_spread": -3.0,
+    "homeTeamSpread": -3.0,
+    "overUnder": 48.0,
+    "start.is_home": 1,
+    "yardsGained": null,
+    "rush": true,
+    "pass": false,
+    "firstD_by_penalty": false
+  }
+]

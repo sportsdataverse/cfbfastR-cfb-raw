@@ -15,6 +15,20 @@ REMOVE_PLAYS = {
 }
 
 
+def _norm_inv(expr: pl.Expr, lo, hi) -> pl.Expr:
+    """Inverted min-max: (hi - x) / (hi - lo).  Returns lit(1.0) when span is zero or bounds are null."""
+    if lo is None or hi is None or hi == lo:
+        return pl.lit(1.0)
+    return (hi - expr) / (hi - lo)
+
+
+def _minmax(expr: pl.Expr, lo, hi) -> pl.Expr:
+    """Standard min-max: (x - lo) / (hi - lo).  Returns lit(1.0) when span is zero or bounds are null."""
+    if lo is None or hi is None or hi == lo:
+        return pl.lit(1.0)
+    return (expr - lo) / (hi - lo)
+
+
 def add_weights(df: pl.DataFrame) -> pl.DataFrame:
     df = df.with_columns(
         abs_diff=pl.col("pos_score_diff_start").abs(),
@@ -23,23 +37,18 @@ def add_weights(df: pl.DataFrame) -> pl.DataFrame:
     dsd_min, dsd_max = df["Drive_Score_Dist"].min(), df["Drive_Score_Dist"].max()
     ad_min, ad_max = df["abs_diff"].min(), df["abs_diff"].max()
     df = df.with_columns(
-        Drive_Score_Dist_W=(dsd_max - pl.col("Drive_Score_Dist")) / (dsd_max - dsd_min),
-        ScoreDiff_W=(ad_max - pl.col("abs_diff")) / (ad_max - ad_min),
+        Drive_Score_Dist_W=_norm_inv(pl.col("Drive_Score_Dist"), dsd_min, dsd_max),
+        ScoreDiff_W=_norm_inv(pl.col("abs_diff"), ad_min, ad_max),
     ).with_columns(
         Total_W=pl.col("Drive_Score_Dist_W") + pl.col("ScoreDiff_W"),
     )
     tw_min, tw_max = df["Total_W"].min(), df["Total_W"].max()
     return df.with_columns(
-        Total_W_Scaled=(pl.col("Total_W") - tw_min) / (tw_max - tw_min),
+        Total_W_Scaled=_minmax(pl.col("Total_W"), tw_min, tw_max),
     )
 
 
 def clean_plays(df: pl.DataFrame) -> pl.DataFrame:
-    df = df.with_columns(
-        start_down=pl.when((pl.col("start.down") == 5) & pl.col("type.text").str.contains("Kickoff"))
-        .then(-1)
-        .otherwise(pl.col("start.down")),
-    )
     bad = (
         df.group_by("game_id")
         .agg(max_per=pl.col("period").max(), min_per=pl.col("period").min())

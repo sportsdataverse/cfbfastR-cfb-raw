@@ -30,13 +30,12 @@ def test_wp_naive_reference_predicts_on_sanity_fixture():
     # the keepers naive reference is 9-feat; the fixture is a superset. Restrict to the
     # reference's own leading feature count so the DMatrix width matches the model.
     nfeat = ref.num_features()
-    # choose numeric feature columns deterministically: the WP_NAIVE contract order,
-    # falling back to the first nfeat numeric columns of the fixture.
+    # choose feature columns deterministically using the WP_NAIVE contract order.
     candidate = [c for c in C.WP_NAIVE_FEATURES if c in full.columns]
-    cols = (
-        candidate[:nfeat]
-        if len(candidate) >= nfeat
-        else list(full.select_dtypes("number").columns)[:nfeat]
+    assert len(candidate) >= nfeat, (
+        f"Fixture has only {len(candidate)} WP_NAIVE contract columns; need {nfeat}. "
+        f"Missing: {[c for c in C.WP_NAIVE_FEATURES if c not in full.columns]}"
     )
+    cols = candidate[:nfeat]
     preds = ref.predict(xgb.DMatrix(full[cols]))
     assert ((preds >= 0) & (preds <= 1)).all()
