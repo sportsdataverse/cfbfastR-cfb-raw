@@ -1,1 +1,1 @@
-{"game_id":401249009,"season":2020,"week":10}
+{"count":2,"pageIndex":1,"pageSize":25,"pageCount":1,"items":[{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401249009/competitions/401249009/powerindex/2440?lang=en&region=us"},{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401249009/competitions/401249009/powerindex/328?lang=en&region=us"}],"game_id":401249009,"season":2020,"week":10}

@@ -1,1 +1,1 @@
-{"game_id":401234615,"season":2020,"week":7}
+{"count":2,"pageIndex":1,"pageSize":25,"pageCount":1,"items":[{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401234615/competitions/401234615/powerindex/183?lang=en&region=us"},{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401234615/competitions/401234615/powerindex/2335?lang=en&region=us"}],"game_id":401234615,"season":2020,"week":7}
