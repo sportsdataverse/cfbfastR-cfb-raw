@@ -1,1 +1,1 @@
-{"game_id":401301007,"season":2021,"week":4}
+{"count":2,"pageIndex":1,"pageSize":25,"pageCount":1,"items":[{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401301007/competitions/401301007/powerindex/151?lang=en&region=us"},{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401301007/competitions/401301007/powerindex/2127?lang=en&region=us"}],"game_id":401301007,"season":2021,"week":4}

@@ -1,1 +1,1 @@
-{"game_id":401282613,"season":2021,"week":1}
+{"count":2,"pageIndex":1,"pageSize":25,"pageCount":1,"items":[{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401282613/competitions/401282613/powerindex/258?lang=en&region=us"},{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401282613/competitions/401282613/powerindex/2729?lang=en&region=us"}],"game_id":401282613,"season":2021,"week":1}
