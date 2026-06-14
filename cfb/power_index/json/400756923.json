@@ -1,1 +1,1 @@
-{"game_id":400756923,"season":2015,"week":3}
+{"count":2,"pageIndex":1,"pageSize":25,"pageCount":1,"items":[{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400756923/competitions/400756923/powerindex/2390?lang=en&region=us"},{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400756923/competitions/400756923/powerindex/158?lang=en&region=us"}],"game_id":400756923,"season":2015,"week":3}

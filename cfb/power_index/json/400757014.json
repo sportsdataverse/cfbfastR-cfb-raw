@@ -1,1 +1,1 @@
-{"game_id":400757014,"season":2015,"week":2}
+{"count":2,"pageIndex":1,"pageSize":25,"pageCount":1,"items":[{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400757014/competitions/400757014/powerindex/30?lang=en&region=us"},{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400757014/competitions/400757014/powerindex/70?lang=en&region=us"}],"game_id":400757014,"season":2015,"week":2}
