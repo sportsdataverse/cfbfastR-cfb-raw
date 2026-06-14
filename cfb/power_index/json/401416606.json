@@ -1,1 +1,1 @@
-{"game_id":401416606,"season":2022,"week":4}
+{"count":2,"pageIndex":1,"pageSize":25,"pageCount":1,"items":[{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401416606/competitions/401416606/powerindex/195?lang=en&region=us"},{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401416606/competitions/401416606/powerindex/2230?lang=en&region=us"}],"game_id":401416606,"season":2022,"week":4}
