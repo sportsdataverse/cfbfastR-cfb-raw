@@ -1,53 +1,70 @@
-"""Ingest processed play-by-play parquet files for CPOE training.
+"""Read final.json plays for CP model training.
 
-Expected on-disk layout (cfbfastR-cfb-raw scraper output):
+The CP training frame is simpler than the EP/WP frame in model_training/ingest.py:
+no next-score labeling (the outcome is the completion flag already on the play),
+no sample weights, no NSH/bad-game-id filtering (handled elsewhere).
 
-    <season_dir>/
-        <game_id>/
-            plays.parquet    ← one per game, produced by CFBPlayProcess
-
-``load_season_pass_plays`` walks every ``plays.parquet`` file under
-``season_dir``, applies ``extract_pass_features``, and concatenates into
-a single DataFrame ready for training or LOSO cross-validation.
+We read all plays and let features.filter_pass_plays() do the subset selection.
 """
 from __future__ import annotations
 
-import pathlib
+import json
+from pathlib import Path
 
-import pandas as pd
-
-from .features import extract_pass_features
+import polars as pl
 
 
-def load_season_pass_plays(
-    season_dir: pathlib.Path | str,
-    *,
-    glob: str = "**/plays.parquet",
-) -> pd.DataFrame:
-    """Load and filter pass plays from all games under ``season_dir``.
+def build_cp_training_frame(
+    final_dir: str | Path,
+    seasons: list[int] | None = None,
+) -> pl.DataFrame:
+    """Read final.json plays from the backfill directory for CP model training.
+
+    Reads all `*.json` files under `final_dir`. Each file is expected to be a
+    `CFBPlayProcess` output dict with a `plays` key.
 
     Args:
-        season_dir: Root directory to walk.  Typically
-            ``<raw_base>/<season>/<season_type>/``.
-        glob: Recursive glob pattern for per-game PBP files.
+        final_dir: Path to cfb/json/final/ directory containing `*.json` files.
+        seasons: Optional list of season years to include. When None, all
+            available seasons are included.
 
     Returns:
-        pandas DataFrame with FEATURE_COLS + TARGET_COL columns.
-        Empty (zero rows) DataFrame if no plays files are found.
+        polars DataFrame with all play rows (not yet filtered to pass_attempt;
+        use features.filter_pass_plays() to get genuine pass attempts).
+        Returns an empty DataFrame if no files are found or no plays match.
     """
-    season_dir = pathlib.Path(season_dir)
-    parts: list[pd.DataFrame] = []
+    frames: list[pl.DataFrame] = []
+    final_dir = Path(final_dir)
 
-    for plays_path in sorted(season_dir.glob(glob)):
-        try:
-            raw = pd.read_parquet(plays_path)
-        except Exception:
+    for fpath in sorted(final_dir.glob("*.json")):
+        with open(fpath, encoding="utf-8") as fh:
+            obj = json.load(fh)
+
+        # Season filter
+        if seasons is not None and obj.get("season") not in seasons:
             continue
-        feat = extract_pass_features(raw)
-        if not feat.empty:
-            parts.append(feat)
 
-    if not parts:
-        return pd.DataFrame()
+        plays = obj.get("plays") or []
+        if not plays:
+            continue
 
-    return pd.concat(parts, ignore_index=True)
+        try:
+            frame = pl.DataFrame(plays, infer_schema_length=None)
+        except Exception:
+            # Malformed payload — skip silently
+            continue
+
+        # Attach top-level game metadata if absent from individual play rows
+        for meta_col, meta_val in (
+            ("game_id", obj.get("gameId") or obj.get("game_id")),
+            ("season", obj.get("season")),
+        ):
+            if meta_col not in frame.columns and meta_val is not None:
+                frame = frame.with_columns(pl.lit(meta_val).alias(meta_col))
+
+        frames.append(frame)
+
+    if not frames:
+        return pl.DataFrame()
+
+    return pl.concat(frames, how="diagonal_relaxed")

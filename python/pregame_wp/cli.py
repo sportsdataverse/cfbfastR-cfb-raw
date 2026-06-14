@@ -1,97 +1,157 @@
-"""CLI: build-boxes | train | predict-matchup.
+"""CLI for the Pregame WP + Five-Factors pipeline (Track 4).
+
+Subcommands:
+  ingest    -- Fetch CFBD data (requires CFB_DATA_API_KEY env var).
+  train     -- Build box scores and train the XGBRegressor (offline).
+  validate  -- Compute MAE/RMSE/Brier on held-out data (offline).
+  predict   -- Predict WP for a single matchup (offline if model is on disk).
+  figures   -- Generate diagnostic scatter plot (offline).
 
 Usage:
-  uv run python -m pregame_wp build-boxes  --seasons 2012:2020 --out cfb/pregame_wp/boxes/
-  uv run python -m pregame_wp train        --boxes cfb/pregame_wp/boxes/ --out cfb/pregame_wp/
-  uv run python -m pregame_wp predict-matchup --home "LSU" --away "Clemson" --year 2019
+    python -m pregame_wp ingest --season 2019
+    python -m pregame_wp train --input boxes.parquet --model pregame_wp/models/pgwp.ubj
+    python -m pregame_wp validate --input boxes.parquet --model pregame_wp/models/pgwp.ubj --std 7.5
+    python -m pregame_wp predict --model pgwp.ubj --five-factor-diff 2.1 --std 7.5
+    python -m pregame_wp figures --input boxes.parquet --model pgwp.ubj --out scatter.png
 """
 from __future__ import annotations
 
 import argparse
+import os
+import sys
 from pathlib import Path
 
 
 def build_parser() -> argparse.ArgumentParser:
-    ap = argparse.ArgumentParser(
+    parser = argparse.ArgumentParser(
         prog="pregame_wp",
-        description="CFB Pregame WP + Five-Factors pipeline (Track 4, CFB Modeling Suite).",
+        description="CFB Pregame Win Probability + Five-Factors modeling pipeline.",
     )
-    sub = ap.add_subparsers(dest="cmd", required=True)
+    sub = parser.add_subparsers(dest="cmd", required=True)
 
-    bb = sub.add_parser("build-boxes", help="Compute 5FR box scores from CFBD data.")
-    bb.add_argument("--seasons", default="2012:2020",
-                    help="Season range as A:B (e.g. 2012:2020).")
-    bb.add_argument("--out", default="cfb/pregame_wp/boxes/")
+    # ingest
+    p_ingest = sub.add_parser("ingest", help="Fetch CFBD team game stats (requires CFB_DATA_API_KEY).")
+    p_ingest.add_argument("--season", required=True, type=int, help="CFB season year (e.g. 2019).")
+    p_ingest.add_argument("--out", default="data/cfbd", help="Output directory for CFBD data files.")
 
-    tr = sub.add_parser("train", help="Train XGBRegressor on stored game boxes.")
-    tr.add_argument("--boxes", default="cfb/pregame_wp/boxes/")
-    tr.add_argument("--out", default="cfb/pregame_wp/")
+    # train
+    p_train = sub.add_parser("train", help="Train XGBRegressor on 5FRDiff -> PtsDiff (offline).")
+    p_train.add_argument("--input", dest="input_path", required=True,
+                         help="Path to parquet/CSV with columns '5FRDiff' and 'PtsDiff'.")
+    p_train.add_argument("--model", dest="model_path",
+                         default="python/pregame_wp/models/pgwp_model.ubj",
+                         help="Output path for the trained .ubj model file.")
+    p_train.add_argument("--std-out", dest="std_path", default=None,
+                         help="Optional: write std to a text file for later use.")
 
-    pm = sub.add_parser("predict-matchup", help="Predict WP for a future matchup.")
-    pm.add_argument("--home", required=True)
-    pm.add_argument("--away", required=True)
-    pm.add_argument("--year", type=int, required=True)
-    pm.add_argument("--model", default="python/pregame_wp/models/pgwp_model.ubj")
-    pm.add_argument("--games", type=int, default=4,
-                    help="Recent games to average for each team's 5FR.")
-    pm.add_argument("--week", type=int, default=-1,
-                    help="Week of season (-1 = latest available).")
+    # validate
+    p_val = sub.add_parser("validate", help="Compute MAE/RMSE/Brier on held-out data (offline).")
+    p_val.add_argument("--input", dest="input_path", required=True,
+                       help="Path to box-score parquet/CSV.")
+    p_val.add_argument("--model", dest="model_path", required=True,
+                       help="Path to trained .ubj model file.")
+    p_val.add_argument("--std", dest="std_val", required=True, type=float,
+                       help="Training std (from train step).")
 
-    return ap
+    # predict
+    p_pred = sub.add_parser("predict", help="Predict pregame WP for a single matchup (offline).")
+    p_pred.add_argument("--model", dest="model_path", required=True,
+                        help="Path to trained .ubj model file.")
+    p_pred.add_argument("--five-factor-diff", dest="ffr_diff", required=True, type=float,
+                        help="5FRDiff = home_5FR - away_5FR.")
+    p_pred.add_argument("--std", dest="std_val", required=True, type=float,
+                        help="Training std for WP CDF normalization.")
+
+    # figures
+    p_fig = sub.add_parser("figures", help="Generate scatter plot of predicted vs actual (offline).")
+    p_fig.add_argument("--input", dest="input_path", required=True,
+                       help="Path to box-score parquet/CSV.")
+    p_fig.add_argument("--model", dest="model_path", required=True,
+                       help="Path to trained .ubj model file.")
+    p_fig.add_argument("--out", dest="out_path", default="scatter.png",
+                       help="Output figure path (PNG/SVG).")
+
+    return parser
 
 
-def _parse_seasons(seasons_str: str) -> list[int]:
-    parts = seasons_str.split(":")
-    if len(parts) == 2:
-        return list(range(int(parts[0]), int(parts[1]) + 1))
-    return [int(parts[0])]
-
-
-def main(argv: list[str] | None = None) -> int:
+def main(argv: list[str] | None = None) -> None:
     args = build_parser().parse_args(argv)
 
-    if args.cmd == "build-boxes":
-        seasons = _parse_seasons(args.seasons)
-        print(f"build-boxes: seasons {seasons[0]}–{seasons[-1]}, out={args.out}")
-        print("  (requires CFBD data staged locally; see data_ingest.py)")
+    if args.cmd == "ingest":
+        api_key = os.environ.get("CFB_DATA_API_KEY")
+        if not api_key:
+            print(
+                "ERROR: CFB_DATA_API_KEY environment variable is not set. "
+                "Set it and re-run: export CFB_DATA_API_KEY=<your_key>",
+                file=sys.stderr,
+            )
+            sys.exit(1)
 
-    elif args.cmd == "train":
-        import glob as _glob
-        import pandas as pd
-        from pregame_wp.training import filter_outliers, save_pgwp_model, train_pgwp_model
+        print(f"Fetching CFBD team game stats for season {args.season}...")
+        from pregame_wp.data_prep import load_cfbd_data
 
-        box_files = sorted(_glob.glob(str(Path(args.boxes) / "*.parquet")))
-        if not box_files:
-            print(f"train: no parquet files found in {args.boxes}")
-            return 1
-        frames = [pd.read_parquet(f) for f in box_files]
-        stored = pd.concat(frames, ignore_index=True)
-        filtered = filter_outliers(stored)
-        model, mu, std = train_pgwp_model(filtered)
+        df = load_cfbd_data(season=args.season, api_key=api_key)
         out_dir = Path(args.out)
         out_dir.mkdir(parents=True, exist_ok=True)
-        save_pgwp_model(model, std, out_dir / "pgwp_model.ubj",
-                        season_range=None)
-        print(f"train: model saved → {out_dir / 'pgwp_model.ubj'} (mu={mu}, std={std:.4f})")
+        out_file = out_dir / f"team_game_stats_{args.season}.parquet"
+        df.write_parquet(str(out_file))
+        print(f"Saved {len(df)} rows to {out_file}")
 
-    elif args.cmd == "predict-matchup":
-        import xgboost as xgb
-        import json
-        from pregame_wp.predict import five_fr_to_wp
+    elif args.cmd == "train":
+        import polars as pl
+        from pregame_wp.model import save_model, train_pregame_model_with_stats
 
-        model_path = Path(args.model)
-        if not model_path.exists():
-            print(f"predict-matchup: model not found at {model_path}")
-            return 1
-        m = xgb.XGBRegressor()
-        m.load_model(str(model_path))
-        card = json.loads(model_path.with_suffix(".json").read_text())
-        mu, std = float(card["mu"]), float(card["std"])
-        print(f"predict-matchup: {args.home} vs {args.away}, year={args.year}")
-        print("  (requires pre-computed 5FR averages; see box_score.py)")
+        p = Path(args.input_path)
+        df = pl.read_parquet(str(p)) if p.suffix == ".parquet" else pl.read_csv(str(p))
+        print(f"Loaded {len(df)} rows from {args.input_path}")
 
-    return 0
+        model, mu, std = train_pregame_model_with_stats(df)
+        print(f"Trained model: n_estimators={model.n_estimators}, mu={mu:.4f}, std={std:.4f}")
+
+        Path(args.model_path).parent.mkdir(parents=True, exist_ok=True)
+        save_model(model, args.model_path)
+        print(f"Saved model to {args.model_path}")
+
+        if args.std_path:
+            Path(args.std_path).write_text(f"{std}\n")
+            print(f"Saved std={std:.6f} to {args.std_path}")
+
+    elif args.cmd == "validate":
+        import polars as pl
+        from pregame_wp.model import load_model
+        from pregame_wp.validate import validate_model
+
+        p = Path(args.input_path)
+        df = pl.read_parquet(str(p)) if p.suffix == ".parquet" else pl.read_csv(str(p))
+        model = load_model(args.model_path)
+        metrics = validate_model(model, df, std=args.std_val)
+
+        print("Validation metrics:")
+        for k, v in metrics.items():
+            print(f"  {k}: {v:.4f}")
+
+    elif args.cmd == "predict":
+        from pregame_wp.model import load_model
+        from pregame_wp.wp import pregame_wp
+
+        model = load_model(args.model_path)
+        wp = pregame_wp(model, args.ffr_diff, args.std_val)
+        away_wp = 1.0 - wp
+        print(f"5FRDiff: {args.ffr_diff:+.4f}")
+        print(f"Home WP: {wp:.4f} ({wp*100:.1f}%)")
+        print(f"Away WP: {away_wp:.4f} ({away_wp*100:.1f}%)")
+
+    elif args.cmd == "figures":
+        import polars as pl
+        from pregame_wp.figures import scatter_from_df
+        from pregame_wp.model import load_model
+
+        p = Path(args.input_path)
+        df = pl.read_parquet(str(p)) if p.suffix == ".parquet" else pl.read_csv(str(p))
+        model = load_model(args.model_path)
+        scatter_from_df(model, df, output_path=args.out_path)
+        print(f"Saved figure to {args.out_path}")
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    main()

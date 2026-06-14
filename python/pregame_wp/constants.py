@@ -1,74 +1,103 @@
-"""All numeric constants for the Five-Factors system.
+"""All numeric constants for the Pregame WP + Five-Factors system (Track 4).
 
-Bug note (OQ-5): PuntReturnEqPPP is assigned punt_eqppp (the punting team's EP),
-not punt_ret_eqppp (the return team's EP), in the notebook's generate_team_st_stats.
-This makes PuntEqPPP - PuntReturnEqPPP = 0 always. This faithful port preserves that
-behavior; the field-position factor's punt term effectively contributes nothing.
+Bug note (OQ-5 — FAITHFUL PORT):
+  In the notebook's generate_team_st_stats, PuntReturnEqPPP is assigned
+  punt_eqppp (the punter's EP) rather than punt_ret_eqppp (the returner's EP),
+  making the PuntEqPPP - PuntReturnEqPPP field-position sub-term always zero.
+  The variables punt_ret_eqppp / punt_ret_isoppp are computed but never used.
+  Phase 0 decision: preserve this behavior (Option A) for parity with the
+  trained pgwp_model.model. See docs/superpowers/plans/…-track4-pregame-wp… §0.1.
 
-Mu/std note (OQ-7): WP conversion uses mu=0.0 (point-differential is symmetric by
-construction — each game contributes one +ve and one -ve entry) and std derived from
-full-training-set predictions rather than a test-split, which was non-reproducible in
-the notebook without a fixed random seed.
+Mu/std note (OQ-7 resolution):
+  WP conversion uses mu=0.0 (point-differential is symmetric; each game has one
+  positive and one negative entry) and std derived from full-training-set
+  predictions (not a test-split stat). The notebook used test-split statistics
+  which is non-reproducible without a fixed seed.
 """
 from __future__ import annotations
 
-# --- 5FR factor weights (must sum to 1.0) ---
-EFF_WEIGHT = 0.35
-EXPL_WEIGHT = 0.30
-FIN_DRV_WEIGHT = 0.15
-FLD_POS_WEIGHT = 0.10
-TRNOVR_WEIGHT = 0.10
+# ---------------------------------------------------------------------------
+# Five-Factor composite weights (must sum to 1.0)
+# ---------------------------------------------------------------------------
+EFFICIENCY_WEIGHT: float = 0.35
+EXPLOSIVENESS_WEIGHT: float = 0.30
+FINISHING_WEIGHT: float = 0.15
+FIELD_POS_WEIGHT: float = 0.10
+TURNOVER_WEIGHT: float = 0.10
 
-# --- translate() domain tuples: (inMin, inMax, outMin, outMax) ---
-EFF_DOMAIN = (-1.0, 1.0, 0.0, 10.0)
-FIN_DRV_PPD_DOMAIN = (-7.0, 7.0, 0.0, 3.5)
-FIN_DRV_RATE_DOMAIN = (-1.0, 1.0, 0.0, 4.0)
-FIN_DRV_SR_DOMAIN = (-1.0, 1.0, 0.0, 2.5)
-FLD_POS_QUANT_DOMAIN = (-10.0, 10.0, 0.0, 10.0)
-TRNOVR_LUCK_DOMAIN = (-5.0, 5.0, 0.0, 3.0)
-TRNOVR_SACK_DOMAIN = (-1.0, 1.0, 0.0, 3.0)
-TRNOVR_HAVOC_DOMAIN = (-1.0, 1.0, 0.0, 4.0)
+# ---------------------------------------------------------------------------
+# Down-specific success-rate thresholds
+# ---------------------------------------------------------------------------
+SR_DOWN1: float = 0.5   # yards_gained >= 0.5 * distance
+SR_DOWN2: float = 0.7   # yards_gained >= 0.7 * distance
+SR_DOWN4: float = 1.0   # yards_gained >= 1.0 * distance  (must convert)
+# Down 3 is intentionally absent from the np.select conditions → default False (OQ-2).
 
-# --- field position sub-factor weights ---
-FP_SR_WEIGHT = 0.37
-FP_TO_WEIGHT = 0.21
-FP_KICK_WEIGHT = 0.22
-FP_PUNT_WEIGHT = 0.20
+EXPLOSIVE_THRESHOLD: int = 15   # yards for a play to be classified as explosive
 
-# --- success rate thresholds (down-specific) ---
-SR_DOWN1 = 0.5
-SR_DOWN2 = 0.7
-SR_DOWN4 = 1.0
-EXPLOSIVE_THRESHOLD = 15  # yards; play_explosive = yards_gained >= threshold
+# ---------------------------------------------------------------------------
+# Scoring opportunity threshold (start_yardline + yards_gained >= threshold)
+# ---------------------------------------------------------------------------
+SCORING_OPP_THRESHOLD: int = 60
 
-# --- scoring opportunity threshold ---
-SCORING_OPP_THRESHOLD = 60  # start_yardline + yards >= 60 marks a scoring opp
+# ---------------------------------------------------------------------------
+# translate() linear-scale domains (inMin, inMax, outMin, outMax)
+# ---------------------------------------------------------------------------
+EFF_DOMAIN: tuple[float, float, float, float] = (-1.0, 1.0, 0.0, 10.0)
+FIN_DRV_PPD_DOMAIN: tuple[float, float, float, float] = (-7.0, 7.0, 0.0, 3.5)
+FIN_DRV_RATE_DOMAIN: tuple[float, float, float, float] = (-1.0, 1.0, 0.0, 4.0)
+FIN_DRV_SR_DOMAIN: tuple[float, float, float, float] = (-1.0, 1.0, 0.0, 2.5)
+FLD_POS_QUANT_DOMAIN: tuple[float, float, float, float] = (-10.0, 10.0, 0.0, 10.0)
+TRNOVR_LUCK_DOMAIN: tuple[float, float, float, float] = (-5.0, 5.0, 0.0, 3.0)
+TRNOVR_SACK_DOMAIN: tuple[float, float, float, float] = (-1.0, 1.0, 0.0, 3.0)
+TRNOVR_HAVOC_DOMAIN: tuple[float, float, float, float] = (-1.0, 1.0, 0.0, 4.0)
 
-# --- expected turnover formula weights ---
-EXP_TO_INT_WEIGHT = 0.22
-EXP_TO_FUM_WEIGHT = 0.49
+# ---------------------------------------------------------------------------
+# Field-position sub-factor weights (within the quant formula)
+# ---------------------------------------------------------------------------
+FP_SR_WEIGHT: float = 0.37
+FP_TO_WEIGHT: float = 0.21
+FP_KICK_WEIGHT: float = 0.22
+FP_PUNT_WEIGHT: float = 0.20
 
-# --- kickoff / punt thresholds ---
-KICKOFF_NET_SUCCESS = 40    # net yards for a successful kickoff
-KICKOFF_RETURN_SUCCESS = 24  # return yards for a successful kick return
-TOUCHBACK_RETURN_YARDS = 25  # conventional return yards assumed on touchback
-PUNT_TOUCHBACK_RETURN_YARDS = 20
+# ---------------------------------------------------------------------------
+# Expected turnover formula coefficients (spec §4.7)
+# ---------------------------------------------------------------------------
+EXP_TO_INT_WEIGHT: float = 0.22   # weight for (PD + INT) interceptions component
+EXP_TO_FUM_WEIGHT: float = 0.49   # weight for fumbles
 
-# --- training / outlier ---
-OUTLIER_Z_5FR = 3.2
-OUTLIER_Z_PTS = 3.0
-TRAIN_SPLIT = 0.80
-XGB_N_ESTIMATORS = 10
-XGB_SEED = 123
+# ---------------------------------------------------------------------------
+# Kickoff / punt thresholds
+# ---------------------------------------------------------------------------
+KICKOFF_NET_SUCCESS: int = 40       # yards for a kickoff net to be "successful"
+KICKOFF_RETURN_SUCCESS: int = 24    # yards for a kickoff return to be "successful"
+TOUCHBACK_RETURN_YARDS: int = 25    # assumed return yards on a touchback
+PUNT_TOUCHBACK_RETURN_YARDS: int = 20  # assumed return yards on a punt touchback
 
-# --- WP normalization (OQ-7: mu=0.0; std computed from full training preds at train time) ---
-WP_MU = 0.0
+# ---------------------------------------------------------------------------
+# Training + outlier filter
+# ---------------------------------------------------------------------------
+PREGAME_WP_PARAMS: dict[str, object] = {"n_estimators": 10}
+FILTER_Z: float = 3.2    # z-score threshold for |5FRDiff| outlier removal
+FILTER_Z2: float = 3.0   # z-score threshold for |PtsDiff| outlier removal
+TRAIN_SPLIT: float = 0.80
+XGB_N_ESTIMATORS: int = 10
+XGB_SEED: int = 123
 
-# --- recruiting talent ---
-TALENT_FCS_PERCENTILE = 0.02
-RETURNING_PROD_FLOOR_PERCENTILE = 0.02
-PRESEASON_WEEKS = 4  # weeks <= PRESEASON_WEEKS trigger returning-production adjustment
+# ---------------------------------------------------------------------------
+# WP normalization (OQ-7 resolution)
+# ---------------------------------------------------------------------------
+WP_MU: float = 0.0  # symmetric by construction; std computed from full training preds
 
-# --- home-field advantage adjustments (points) ---
-HFA_NORMAL = 2.5
-HFA_COVID = 1.0  # 2020 season (reduced/no crowds)
+# ---------------------------------------------------------------------------
+# Home-field advantage (points)
+# ---------------------------------------------------------------------------
+HFA_NORMAL: float = 2.5
+HFA_COVID: float = 1.0   # 2020 COVID season (reduced/absent crowds)
+
+# ---------------------------------------------------------------------------
+# Talent / returning production
+# ---------------------------------------------------------------------------
+TALENT_FCS_PERCENTILE: float = 0.02    # 2nd-percentile FBS rating floor for FCS teams
+RETURNING_PROD_FLOOR_PERCENTILE: float = 0.02
+PRESEASON_WEEKS: int = 4               # weeks <= 4 trigger returning-production adjustment

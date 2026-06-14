@@ -10,6 +10,7 @@ dependencies = [
     "pyarrow>=15.0",
     "requests>=2.28",
     "tqdm>=4.66",
+    "scikit-learn>=1.0",
     "xgboost>=2.0",
 ]
 

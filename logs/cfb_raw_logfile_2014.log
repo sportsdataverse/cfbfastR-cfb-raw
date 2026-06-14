@@ -1,0 +1,585 @@
+2026-06-13 19:24:29,502 ERROR schedules failed for 2014
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_schedules.py", line 59, in main
+    df = fetch_season(season)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_schedules.py", line 23, in fetch_season
+    df = sdv.cfb.espn_cfb_schedule(dates=season, return_as_pandas=True)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_schedule.py", line 90, in espn_cfb_schedule
+    event = scoreboard_event_parsing(event)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_schedule.py", line 136, in scoreboard_event_parsing
+    event.get("competitions")[0].get("competitors")[0].get("team").pop("links", None)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2026-06-13 19:24:31,213 INFO season 2014: 16 games to scrape (rescrape=False)
+cfb 2014:   0%|          | 0/16 [00:00<?, ?it/s]WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster) [retry 1/15]
+2026-06-13 19:24:44,053 ERROR extra fetch failed: _rosters(400752260,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
+    teams_df = helper_cfb_team_items(items=items, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 148, in helper_cfb_team_items
+    teams_df.columns = [
+    ^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 923, in columns
+    self._df.set_column_names(names)
+polars.exceptions.ShapeError: 16 column names provided for a DataFrame of width 13
+ERROR:cfb_json_2014:extra fetch failed: _rosters(400752260,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
+    teams_df = helper_cfb_team_items(items=items, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 148, in helper_cfb_team_items
+    teams_df.columns = [
+    ^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 923, in columns
+    self._df.set_column_names(names)
+polars.exceptions.ShapeError: 16 column names provided for a DataFrame of width 13
+cfb 2014:   6%|6         | 1/16 [00:12<03:13, 12.93s/it]2026-06-13 19:24:44,255 ERROR extra fetch failed: _rosters(400751619,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
+    teams_df = helper_cfb_team_items(items=items, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 148, in helper_cfb_team_items
+    teams_df.columns = [
+    ^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 923, in columns
+    self._df.set_column_names(names)
+polars.exceptions.ShapeError: 16 column names provided for a DataFrame of width 13
+ERROR:cfb_json_2014:extra fetch failed: _rosters(400751619,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
+    teams_df = helper_cfb_team_items(items=items, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 148, in helper_cfb_team_items
+    teams_df.columns = [
+    ^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 923, in columns
+    self._df.set_column_names(names)
+polars.exceptions.ShapeError: 16 column names provided for a DataFrame of width 13
+cfb 2014:  12%|#2        | 2/16 [00:13<01:16,  5.46s/it]WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster) [retry 1/15]
+2026-06-13 19:24:45,013 ERROR extra fetch failed: _rosters(400753954,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
+    teams_df = helper_cfb_team_items(items=items, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 146, in helper_cfb_team_items
+    teams_df = pl.concat([teams_df, team_row], how="vertical")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
+    out = wrap_df(plr.concat_df(elems))
+                  ^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ShapeError: unable to append to a DataFrame of width 13 with a DataFrame of width 14
+ERROR:cfb_json_2014:extra fetch failed: _rosters(400753954,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
+    teams_df = helper_cfb_team_items(items=items, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 146, in helper_cfb_team_items
+    teams_df = pl.concat([teams_df, team_row], how="vertical")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
+    out = wrap_df(plr.concat_df(elems))
+                  ^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ShapeError: unable to append to a DataFrame of width 13 with a DataFrame of width 14
+cfb 2014:  19%|#8        | 3/16 [00:13<00:42,  3.29s/it]WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster) [retry 2/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster) [retry 1/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster) [retry 2/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster) [retry 3/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster) [retry 2/15]
+cfb 2014:  25%|##5       | 4/16 [00:16<00:38,  3.22s/it]WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster) [retry 3/15]
+cfb 2014:  31%|###1      | 5/16 [00:17<00:26,  2.40s/it]WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster) [retry 4/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster) [retry 3/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster) [retry 4/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster) [retry 5/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster) [retry 4/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster) [retry 5/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster) [retry 6/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster) [retry 5/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster) [retry 6/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster) [retry 7/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster) [retry 6/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster) [retry 7/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster) [retry 8/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster) [retry 7/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster) [retry 8/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster) [retry 9/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster) [retry 8/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster) [retry 9/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster) [retry 10/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster) [retry 9/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster) [retry 10/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster) [retry 11/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster) [retry 10/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster) [retry 11/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster) [retry 12/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster) [retry 11/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster) [retry 12/15]
+cfb 2014:  38%|###7      | 6/16 [00:36<01:20,  8.05s/it]WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster) [retry 13/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster) [retry 12/15]
+cfb 2014:  50%|#####     | 8/16 [00:37<00:33,  4.20s/it]WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster) [retry 13/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster) [retry 14/15]
+cfb 2014:  56%|#####6    | 9/16 [00:39<00:24,  3.56s/it]WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster) [retry 13/15]
+cfb 2014:  62%|######2   | 10/16 [00:39<00:16,  2.70s/it]WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster) [retry 14/15]
+cfb 2014:  69%|######8   | 11/16 [00:40<00:11,  2.27s/it]WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster) [retry 15/15]
+WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster) [retry 14/15]
+cfb 2014:  75%|#######5  | 12/16 [00:41<00:07,  1.98s/it]WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster) [retry 15/15]
+cfb 2014:  81%|########1 | 13/16 [00:42<00:04,  1.59s/it]ERROR:sdv.dl_utils:Retry Limit Exceeded: https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster 
+params: {}
+ NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-06-13 19:25:14,414 ERROR extra fetch failed: _rosters(400749714,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 200, in helper_cfb_roster_items
+    team_roster_resp = download(team_roster_url, **kwargs)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\dl_utils.py", line 171, in download
+    raise last_exc
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\dl_utils.py", line 121, in download
+    response = no_espn_data(response)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\errors.py", line 116, in no_espn_data
+    raise NoESPNDataError(_format_404(response.url))
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+ERROR:cfb_json_2014:extra fetch failed: _rosters(400749714,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 200, in helper_cfb_roster_items
+    team_roster_resp = download(team_roster_url, **kwargs)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\dl_utils.py", line 171, in download
+    raise last_exc
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\dl_utils.py", line 121, in download
+    response = no_espn_data(response)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\errors.py", line 116, in no_espn_data
+    raise NoESPNDataError(_format_404(response.url))
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400749714/competitions/400749714/competitors/2287/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+cfb 2014:  88%|########7 | 14/16 [00:43<00:02,  1.33s/it]WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster) [retry 15/15]
+ERROR:sdv.dl_utils:Retry Limit Exceeded: https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster 
+params: {}
+ NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-06-13 19:25:15,361 ERROR extra fetch failed: _rosters(400610179,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 200, in helper_cfb_roster_items
+    team_roster_resp = download(team_roster_url, **kwargs)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\dl_utils.py", line 171, in download
+    raise last_exc
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\dl_utils.py", line 121, in download
+    response = no_espn_data(response)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\errors.py", line 116, in no_espn_data
+    raise NoESPNDataError(_format_404(response.url))
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+ERROR:cfb_json_2014:extra fetch failed: _rosters(400610179,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 200, in helper_cfb_roster_items
+    team_roster_resp = download(team_roster_url, **kwargs)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\dl_utils.py", line 171, in download
+    raise last_exc
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\dl_utils.py", line 121, in download
+    response = no_espn_data(response)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\errors.py", line 116, in no_espn_data
+    raise NoESPNDataError(_format_404(response.url))
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610179/competitions/400610179/competitors/239/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+cfb 2014:  94%|#########3| 15/16 [00:44<00:01,  1.25s/it]ERROR:sdv.dl_utils:Retry Limit Exceeded: https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster 
+params: {}
+ NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-06-13 19:25:16,673 ERROR extra fetch failed: _rosters(400610219,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 200, in helper_cfb_roster_items
+    team_roster_resp = download(team_roster_url, **kwargs)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\dl_utils.py", line 171, in download
+    raise last_exc
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\dl_utils.py", line 121, in download
+    response = no_espn_data(response)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\errors.py", line 116, in no_espn_data
+    raise NoESPNDataError(_format_404(response.url))
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+ERROR:cfb_json_2014:extra fetch failed: _rosters(400610219,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 200, in helper_cfb_roster_items
+    team_roster_resp = download(team_roster_url, **kwargs)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\dl_utils.py", line 171, in download
+    raise last_exc
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\dl_utils.py", line 121, in download
+    response = no_espn_data(response)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\errors.py", line 116, in no_espn_data
+    raise NoESPNDataError(_format_404(response.url))
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400610219/competitions/400610219/competitors/275/roster
+
+  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+cfb 2014: 100%|##########| 16/16 [00:45<00:00,  1.24s/it]cfb 2014: 100%|##########| 16/16 [00:45<00:00,  2.85s/it]
+[docs/cfb-modeling-suite-tracks-2-6 8b478212] CFB Raw Update (Start: 2014 End: 2014)
+ 112 files changed, 112 insertions(+)
+ create mode 100644 cfb/betting/json/400610177.json
+ create mode 100644 cfb/betting/json/400610178.json
+ create mode 100644 cfb/betting/json/400610179.json
+ create mode 100644 cfb/betting/json/400610200.json
+ create mode 100644 cfb/betting/json/400610213.json
+ create mode 100644 cfb/betting/json/400610217.json
+ create mode 100644 cfb/betting/json/400610218.json
+ create mode 100644 cfb/betting/json/400610219.json
+ create mode 100644 cfb/betting/json/400610224.json
+ create mode 100644 cfb/betting/json/400610227.json
+ create mode 100644 cfb/betting/json/400610228.json
+ create mode 100644 cfb/betting/json/400610325.json
+ create mode 100644 cfb/betting/json/400749714.json
+ create mode 100644 cfb/betting/json/400751619.json
+ create mode 100644 cfb/betting/json/400752260.json
+ create mode 100644 cfb/betting/json/400753954.json
+ create mode 100644 cfb/game_rosters/json/400610177.json
+ create mode 100644 cfb/game_rosters/json/400610178.json
+ create mode 100644 cfb/game_rosters/json/400610179.json
+ create mode 100644 cfb/game_rosters/json/400610200.json
+ create mode 100644 cfb/game_rosters/json/400610213.json
+ create mode 100644 cfb/game_rosters/json/400610217.json
+ create mode 100644 cfb/game_rosters/json/400610218.json
+ create mode 100644 cfb/game_rosters/json/400610219.json
+ create mode 100644 cfb/game_rosters/json/400610224.json
+ create mode 100644 cfb/game_rosters/json/400610227.json
+ create mode 100644 cfb/game_rosters/json/400610228.json
+ create mode 100644 cfb/game_rosters/json/400610325.json
+ create mode 100644 cfb/game_rosters/json/400749714.json
+ create mode 100644 cfb/game_rosters/json/400751619.json
+ create mode 100644 cfb/game_rosters/json/400752260.json
+ create mode 100644 cfb/game_rosters/json/400753954.json
+ create mode 100644 cfb/json/final/400610177.json
+ create mode 100644 cfb/json/final/400610178.json
+ create mode 100644 cfb/json/final/400610179.json
+ create mode 100644 cfb/json/final/400610200.json
+ create mode 100644 cfb/json/final/400610213.json
+ create mode 100644 cfb/json/final/400610217.json
+ create mode 100644 cfb/json/final/400610218.json
+ create mode 100644 cfb/json/final/400610219.json
+ create mode 100644 cfb/json/final/400610224.json
+ create mode 100644 cfb/json/final/400610227.json
+ create mode 100644 cfb/json/final/400610228.json
+ create mode 100644 cfb/json/final/400610325.json
+ create mode 100644 cfb/json/final/400749714.json
+ create mode 100644 cfb/json/final/400751619.json
+ create mode 100644 cfb/json/final/400752260.json
+ create mode 100644 cfb/json/final/400753954.json
+ create mode 100644 cfb/json/raw/400610177.json
+ create mode 100644 cfb/json/raw/400610178.json
+ create mode 100644 cfb/json/raw/400610179.json
+ create mode 100644 cfb/json/raw/400610200.json
+ create mode 100644 cfb/json/raw/400610213.json
+ create mode 100644 cfb/json/raw/400610217.json
+ create mode 100644 cfb/json/raw/400610218.json
+ create mode 100644 cfb/json/raw/400610219.json
+ create mode 100644 cfb/json/raw/400610224.json
+ create mode 100644 cfb/json/raw/400610227.json
+ create mode 100644 cfb/json/raw/400610228.json
+ create mode 100644 cfb/json/raw/400610325.json
+ create mode 100644 cfb/json/raw/400749714.json
+ create mode 100644 cfb/json/raw/400751619.json
+ create mode 100644 cfb/json/raw/400752260.json
+ create mode 100644 cfb/json/raw/400753954.json
+ create mode 100644 cfb/play_participants/json/400610177.json
+ create mode 100644 cfb/play_participants/json/400610178.json
+ create mode 100644 cfb/play_participants/json/400610179.json
+ create mode 100644 cfb/play_participants/json/400610200.json
+ create mode 100644 cfb/play_participants/json/400610213.json
+ create mode 100644 cfb/play_participants/json/400610217.json
+ create mode 100644 cfb/play_participants/json/400610218.json
+ create mode 100644 cfb/play_participants/json/400610219.json
+ create mode 100644 cfb/play_participants/json/400610224.json
+ create mode 100644 cfb/play_participants/json/400610227.json
+ create mode 100644 cfb/play_participants/json/400610228.json
+ create mode 100644 cfb/play_participants/json/400610325.json
+ create mode 100644 cfb/play_participants/json/400749714.json
+ create mode 100644 cfb/play_participants/json/400751619.json
+ create mode 100644 cfb/play_participants/json/400752260.json
+ create mode 100644 cfb/play_participants/json/400753954.json
+ create mode 100644 cfb/power_index/json/400610177.json
+ create mode 100644 cfb/power_index/json/400610178.json
+ create mode 100644 cfb/power_index/json/400610179.json
+ create mode 100644 cfb/power_index/json/400610200.json
+ create mode 100644 cfb/power_index/json/400610213.json
+ create mode 100644 cfb/power_index/json/400610217.json
+ create mode 100644 cfb/power_index/json/400610218.json
+ create mode 100644 cfb/power_index/json/400610219.json
+ create mode 100644 cfb/power_index/json/400610224.json
+ create mode 100644 cfb/power_index/json/400610227.json
+ create mode 100644 cfb/power_index/json/400610228.json
+ create mode 100644 cfb/power_index/json/400610325.json
+ create mode 100644 cfb/power_index/json/400749714.json
+ create mode 100644 cfb/power_index/json/400751619.json
+ create mode 100644 cfb/power_index/json/400752260.json
+ create mode 100644 cfb/power_index/json/400753954.json
+ create mode 100644 cfb/team_box_extra/json/400610177.json
+ create mode 100644 cfb/team_box_extra/json/400610178.json
+ create mode 100644 cfb/team_box_extra/json/400610179.json
+ create mode 100644 cfb/team_box_extra/json/400610200.json
+ create mode 100644 cfb/team_box_extra/json/400610213.json
+ create mode 100644 cfb/team_box_extra/json/400610217.json
+ create mode 100644 cfb/team_box_extra/json/400610218.json
+ create mode 100644 cfb/team_box_extra/json/400610219.json
+ create mode 100644 cfb/team_box_extra/json/400610224.json
+ create mode 100644 cfb/team_box_extra/json/400610227.json
+ create mode 100644 cfb/team_box_extra/json/400610228.json
+ create mode 100644 cfb/team_box_extra/json/400610325.json
+ create mode 100644 cfb/team_box_extra/json/400749714.json
+ create mode 100644 cfb/team_box_extra/json/400751619.json
+ create mode 100644 cfb/team_box_extra/json/400752260.json
+ create mode 100644 cfb/team_box_extra/json/400753954.json
+To https://github.com/sportsdataverse/cfbfastR-cfb-raw.git
+   967007ba..8b478212  docs/cfb-modeling-suite-tracks-2-6 -> docs/cfb-modeling-suite-tracks-2-6

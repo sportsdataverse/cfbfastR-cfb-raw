@@ -1,131 +1,174 @@
-"""CLI entry-point for the CFB CPOE training pipeline (Track 5).
+"""CLI: ingest | train | loso | predict | validate | figures.
 
-Usage
------
-Train on 2021–2023 regular season, run LOSO CV, save model::
+Entry point: python -m cpoe.cli <subcommand> [options]
+             or via the cpoe console_scripts entry point.
 
-    uv run --env-file .env python -m cpoe \\
-        --raw-dir cfb/json/final \\
-        --out-dir artifacts/cpoe \\
-        --seasons 2021 2022 2023 \\
-        --loso
-
-Args
-----
---raw-dir    Root of the on-disk processed PBP parquet tree.
-             Layout: <raw-dir>/<season>/<season_type>/<game_id>/plays.parquet
---out-dir    Output directory for the trained model (.ubj) and CV results (.json).
---seasons    One or more integer seasons to include in training.
---loso       If set, run LOSO cross-validation before full-data training.
---nrounds    XGBoost boosting rounds (default: 560).
+All subcommands follow the same data-flow:
+  ingest  → cp_plays.parquet
+  train   → cp_model.ubj          (from cp_plays.parquet)
+  loso    → loso_cv.parquet       (from cp_plays.parquet; LOSO calibration)
+  predict → cpoe_plays.parquet    (from cp_plays.parquet + cp_model.ubj)
+  validate→ calibration.parquet   (from loso_cv.parquet)
+  figures → figures/cp_*.png|csv  (from calibration.parquet)
 """
 from __future__ import annotations
 
 import argparse
-import json
-import pathlib
-import sys
+from pathlib import Path
 
+
+# ---------------------------------------------------------------------------
+# Parser
+# ---------------------------------------------------------------------------
 
 def build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(
-        prog="python -m cpoe",
-        description="Train the CFB CP model and compute CPOE.",
+    ap = argparse.ArgumentParser(
+        prog="cpoe",
+        description="CFB CPOE pipeline — ingest | train | loso | predict | validate | figures",
     )
-    p.add_argument("--raw-dir", required=True, help="Root of processed PBP parquet tree.")
-    p.add_argument("--out-dir", required=True, help="Output directory for model + CV results.")
-    p.add_argument(
-        "--seasons",
-        nargs="+",
-        type=int,
-        default=[],
-        metavar="YEAR",
-        help="Seasons to include (e.g. 2021 2022 2023).",
+    ap.add_argument(
+        "--approach",
+        choices=["A", "B"],
+        default="A",
+        help="Feature approach: A (8 game-state features) or B (9, with CFBD air_yards)",
     )
-    p.add_argument(
-        "--loso",
-        action="store_true",
-        default=False,
-        help="Run leave-one-season-out cross-validation.",
-    )
-    p.add_argument(
-        "--nrounds",
-        type=int,
-        default=None,
-        help="XGBoost boosting rounds (default: 560 from constants).",
-    )
-    return p
+    sub = ap.add_subparsers(dest="cmd", required=True)
+
+    # --- ingest ---
+    i = sub.add_parser("ingest", help="Read final.json plays into a parquet training frame")
+    i.add_argument("--final-dir", default="cfb/json/final",
+                   help="Path to cfb/json/final/ directory")
+    i.add_argument("--out", default="cfb/cpoe/cp_plays.parquet",
+                   help="Output parquet path")
+    i.add_argument("--seasons", nargs="*", type=int,
+                   help="Season years to include (default: all)")
+
+    # --- train ---
+    t = sub.add_parser("train", help="Train the CP model from cp_plays.parquet")
+    t.add_argument("--plays", default="cfb/cpoe/cp_plays.parquet",
+                   help="Input plays parquet")
+    t.add_argument("--out", default="cfb/cpoe/cp_model.ubj",
+                   help="Output model path (.ubj)")
+    t.add_argument("--nrounds", type=int, default=400,
+                   help="XGBoost boosting rounds")
+
+    # --- loso ---
+    lo = sub.add_parser("loso", help="Leave-one-season-out calibration CV")
+    lo.add_argument("--plays", default="cfb/cpoe/cp_plays.parquet")
+    lo.add_argument("--out", default="cfb/cpoe/loso_cv.parquet")
+    lo.add_argument("--nrounds", type=int, default=400)
+    lo.add_argument("--seasons", nargs="*", type=int,
+                    help="Seasons to include in LOSO loop (default: all)")
+
+    # --- predict ---
+    pr = sub.add_parser("predict", help="Add expected_completion + cpoe to plays")
+    pr.add_argument("--plays", default="cfb/cpoe/cp_plays.parquet")
+    pr.add_argument("--model", default="cfb/cpoe/cp_model.ubj")
+    pr.add_argument("--out", default="cfb/cpoe/cpoe_plays.parquet")
+
+    # --- validate ---
+    v = sub.add_parser("validate", help="Compute calibration table from LOSO CV output")
+    v.add_argument("--loso", default="cfb/cpoe/loso_cv.parquet")
+    v.add_argument("--out", default="cfb/cpoe/calibration.parquet")
+
+    # --- figures ---
+    f = sub.add_parser("figures", help="Write calibration PNG + CSV from calibration table")
+    f.add_argument("--calibration", default="cfb/cpoe/calibration.parquet")
+    f.add_argument("--out-dir", default="cfb/cpoe/figures/")
+
+    return ap
 
 
-def main(argv: list[str] | None = None) -> int:
-    """Run the CPOE training pipeline.
+# ---------------------------------------------------------------------------
+# Main dispatch
+# ---------------------------------------------------------------------------
 
-    Returns:
-        Exit code (0 = success, non-zero = failure).
-    """
-    from .constants import XGB_NROUNDS
-    from .ingest import load_season_pass_plays
+def main(argv=None) -> int:
+    import polars as pl
+    import xgboost as xgb
 
-    parser = build_parser()
-    args = parser.parse_args(argv)
+    args = build_parser().parse_args(argv)
+    approach = args.approach
 
-    raw_dir = pathlib.Path(args.raw_dir)
-    out_dir = pathlib.Path(args.out_dir)
-    out_dir.mkdir(parents=True, exist_ok=True)
+    # ---- ingest ----
+    if args.cmd == "ingest":
+        from .ingest import build_cp_training_frame
 
-    nrounds = args.nrounds if args.nrounds is not None else XGB_NROUNDS
+        df = build_cp_training_frame(args.final_dir, seasons=args.seasons)
+        out = Path(args.out)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        df.write_parquet(out)
+        print(f"wrote {df.height} plays -> {out}")
 
-    # --- collect seasons ---
-    seasons = args.seasons
-    if not seasons:
-        print("ERROR: --seasons must list at least one season.", file=sys.stderr)
-        return 1
+    # ---- train ----
+    elif args.cmd == "train":
+        from .train import train_cp_model
 
-    import pandas as pd
-    parts = []
-    for season in seasons:
-        season_path = raw_dir / str(season)
-        if not season_path.exists():
-            print(f"  [warn] season dir not found: {season_path}", file=sys.stderr)
-            continue
-        print(f"  Loading season {season} …")
-        df = load_season_pass_plays(season_path)
-        if df.empty:
-            print(f"  [warn] no pass plays found for season {season}", file=sys.stderr)
-            continue
-        df["season"] = season
-        parts.append(df)
+        df = pl.read_parquet(args.plays)
+        model = train_cp_model(df, output_path=args.out, approach=approach,
+                               nrounds=args.nrounds)
+        print(f"saved model -> {args.out}")
 
-    if not parts:
-        print("ERROR: no data loaded — check --raw-dir and --seasons.", file=sys.stderr)
-        return 1
+    # ---- loso ----
+    elif args.cmd == "loso":
+        from .calibrate import loso_calibrate
 
-    all_df = pd.concat(parts, ignore_index=True)
-    print(f"Total pass plays loaded: {len(all_df):,}")
+        df = pl.read_parquet(args.plays)
+        cv = loso_calibrate(df, seasons=args.seasons, approach=approach,
+                            nrounds=args.nrounds)
+        out = Path(args.out)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        cv.write_parquet(out)
+        print(f"LOSO CV done ({cv.height} rows) -> {out}")
 
-    # --- optional LOSO CV ---
-    if args.loso:
-        from .loso import run_loso_cv
-        print("Running LOSO cross-validation …")
-        cv_result = run_loso_cv(all_df, nrounds=nrounds)
-        cv_path = out_dir / "loso_cv.json"
-        cv_path.write_text(json.dumps(cv_result, indent=2), encoding="utf-8")
-        print(f"  mean log-loss: {cv_result['summary']['mean_log_loss']:.4f}")
-        print(f"  mean Brier:    {cv_result['summary']['mean_brier_score']:.4f}")
-        print(f"  CV results → {cv_path}")
+    # ---- predict ----
+    elif args.cmd == "predict":
+        from .train import compute_cpoe
 
-    # --- full-data training ---
-    from .constants import FEATURE_COLS, TARGET_COL
-    from .train_cp import save_cp_model, train_cp_model
+        df = pl.read_parquet(args.plays)
+        model = xgb.Booster()
+        model.load_model(args.model)
+        out_df = compute_cpoe(df, model, approach=approach)
+        out = Path(args.out)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out_df.write_parquet(out)
+        print(f"wrote CPOE plays -> {out}")
 
-    print(f"Training on full dataset ({len(all_df):,} plays, nrounds={nrounds}) …")
-    booster = train_cp_model(all_df[FEATURE_COLS], all_df[TARGET_COL], nrounds=nrounds)
-    model_path = out_dir / "cfb_cp_model.ubj"
-    save_cp_model(booster, model_path)
-    print(f"  Model saved → {model_path}")
+    # ---- validate ----
+    elif args.cmd == "validate":
+        from .validate import calibration_table, distance_bucket, weighted_cal_error
+
+        cv = pl.read_parquet(args.loso)
+        # Ensure distance_bucket is present
+        if "distance_bucket" not in cv.columns and "distance" in cv.columns:
+            cv = cv.with_columns(distance_bucket(pl.col("distance")).alias("distance_bucket"))
+        tbl = calibration_table(cv)
+        out = Path(args.out)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        tbl.write_parquet(out)
+        err = weighted_cal_error(tbl)
+        print(f"Overall weighted calibration error: {err['overall']:.4f}")
+        print(f"calibration table written -> {out}")
+
+    # ---- figures ----
+    elif args.cmd == "figures":
+        from .figures import write_cp_calibration
+        from .validate import weighted_cal_error
+
+        tbl = pl.read_parquet(args.calibration)
+        err_result = weighted_cal_error(tbl)
+        overall_err = err_result["overall"]
+        out_dir = Path(args.out_dir)
+        out_dir.mkdir(parents=True, exist_ok=True)
+        png, csv = write_cp_calibration(
+            tbl,
+            stem=out_dir / "cp_calibration",
+            cal_error=overall_err,
+        )
+        print(f"figures written -> {png}, {csv}")
 
     return 0
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    raise SystemExit(main())
