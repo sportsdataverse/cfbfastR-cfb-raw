@@ -20,5 +20,22 @@ Python/uv scraper for ESPN college-football game JSON. Sibling of `cfbfastR-cfb-
 - Bump `SCHEMA_REV` when the final shape / enrichment inputs change.
 - Never add AI co-author trailers to commits.
 
+## Model training
+
+Five native Python model packages live under `python/`:
+
+| Package | Entry point | Dep group |
+|---|---|---|
+| `model_training` (T1) | `python -m model_training` | — |
+| `model_training/fourth_down` (T2) | `python -m model_training.fourth_down` | — |
+| `rb_eval` (T3) | `python -m rb_eval` | `gam` (pygam) |
+| `pregame_wp` (T4) | `python -m pregame_wp` | — |
+| `cpoe` (T5) | `python -m cpoe` | — |
+
+Figures for all tracks require `uv sync --group figures` (plotnine).
+Tests for T3 (pygam) require `uv sync --group gam`; they skip cleanly otherwise.
+
+See `python/model_training/HANDOFF.md` for the sdv-py integration checklist.
+
 ## Spec
 `docs/superpowers/specs/2026-06-03-cfbfastR-cfb-raw-consolidation-design.md`
