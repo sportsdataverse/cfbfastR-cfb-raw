@@ -1,1 +1,1 @@
-{"game_id":401114240,"season":2019,"week":1}
+{"count":2,"pageIndex":1,"pageSize":25,"pageCount":1,"items":[{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401114240/competitions/401114240/powerindex/276?lang=en&region=us"},{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401114240/competitions/401114240/powerindex/2678?lang=en&region=us"}],"game_id":401114240,"season":2019,"week":1}
