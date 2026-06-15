@@ -50,6 +50,7 @@ dependencies = [
     { name = "polars" },
     { name = "pyarrow" },
     { name = "requests" },
+    { name = "scikit-learn" },
     { name = "sportsdataverse" },
     { name = "tqdm" },
     { name = "xgboost" },
@@ -80,7 +81,8 @@ requires-dist = [
     { name = "polars", specifier = ">=1.0" },
     { name = "pyarrow", specifier = ">=15.0" },
     { name = "requests", specifier = ">=2.28" },
-    { name = "sportsdataverse", specifier = ">=0.0.52" },
+    { name = "scikit-learn", specifier = ">=1.0" },
+    { name = "sportsdataverse", specifier = ">=0.0.60" },
     { name = "tqdm", specifier = ">=4.66" },
     { name = "xgboost", specifier = ">=2.0" },
 ]
@@ -1432,7 +1434,7 @@ wheels = [
 
 [[package]]
 name = "sportsdataverse"
-version = "0.0.59"
+version = "0.0.60"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "attrs" },
@@ -1451,9 +1453,9 @@ dependencies = [
     { name = "tqdm" },
     { name = "xgboost" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/8d/cb/0103f65609d58bdfbfe2293dd8ac975b349c04489981a3f68e79755a288a/sportsdataverse-0.0.59.tar.gz", hash = "sha256:3258632c05e128c321cdd6f4ce196624ec5779d5c5073f95184ee8a21efa87d6", size = 8331214, upload-time = "2026-06-13T16:29:07.268Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/66/d5/c9428c27a27a051bb217ff383f421c36211acfe2a9e57c93aa70b9269762/sportsdataverse-0.0.60.tar.gz", hash = "sha256:99c5eee2a1b5196dd3d3d8a461d6400204f96fbd9178094fc50e9ae3327a5c35", size = 8340352, upload-time = "2026-06-15T21:19:59.48Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/14/88/53ea40f7e91470a7450889c84b3f1d7fb10fb12aac41e7f8837df20ac1aa/sportsdataverse-0.0.59-py3-none-any.whl", hash = "sha256:f03daaaf0dd5d3774dcbfa6c0b1753ff66a097b4ef1fd299cf5369d40115560c", size = 8604942, upload-time = "2026-06-13T16:29:04.814Z" },
+    { url = "https://files.pythonhosted.org/packages/19/6d/e1d345a6004de13a845b9e7de2985c2fc0541ece8cd467fe9747081d24bd/sportsdataverse-0.0.60-py3-none-any.whl", hash = "sha256:26d43a39eb32b67dc505d4ea3218883f2fb9779aeb20086275c7ee59b87a00eb", size = 8614190, upload-time = "2026-06-15T21:19:56.613Z" },
 ]
 
 [[package]]
