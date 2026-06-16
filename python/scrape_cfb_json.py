@@ -21,25 +21,38 @@ from cfb_team_box_extra import team_box_extra_from_summary
 # (probe: 2014 empty, 2024 populated). Tunable.
 EXTRAS_MIN_SEASON = 2015
 
+# sdv-py download() defaults to num_retries=15 (16 attempts) and retries even a
+# definitive ESPN 404 (NoESPNDataError) — catastrophic for the rosters/
+# participants path, which fans out ~250 Core v2 $ref calls per game: every
+# no-roster game (FCS / data gaps) burns 16 attempts x ~51s of backoff on a 404
+# that will never succeed, and under real throttle the 16x retries amplify load
+# and deepen the rate-limit. Cap retries low for the extras: fail fast on a 404,
+# keep a small cushion for genuine transients. Override via CFB_EXTRAS_RETRIES.
+EXTRAS_NUM_RETRIES = int(os.getenv("CFB_EXTRAS_RETRIES", "2"))
+
 
 # --- thin sdv-py adapters (monkeypatch points in tests) ---
 def _participants(gid):
-    return sdv.cfb.espn_cfb_play_participants(game_id=gid, return_as_pandas=True).to_dict("records")
+    return sdv.cfb.espn_cfb_play_participants(
+        game_id=gid, return_as_pandas=True, num_retries=EXTRAS_NUM_RETRIES
+    ).to_dict("records")
 
 
 def _rosters(gid):
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
+    return sdv.cfb.espn_cfb_game_rosters(
+        game_id=gid, return_as_pandas=True, num_retries=EXTRAS_NUM_RETRIES
+    ).to_dict("records")
 
 
 def _power_index(gid):
     # sportsdataverse 0.0.51+ renamed event_powerindex -> game_powerindex and
     # defaults return_parsed=True; we want the raw Core v2 {items} dict to bank.
-    return sdv.cfb.espn_cfb_game_powerindex(event_id=gid, return_parsed=False)
+    return sdv.cfb.espn_cfb_game_powerindex(event_id=gid, return_parsed=False, num_retries=EXTRAS_NUM_RETRIES)
 
 
 def _odds_full(gid):
     # 0.0.51+ rename: event_odds -> game_odds; raw dict via return_parsed=False.
-    return sdv.cfb.espn_cfb_game_odds(event_id=gid, return_parsed=False)
+    return sdv.cfb.espn_cfb_game_odds(event_id=gid, return_parsed=False, num_retries=EXTRAS_NUM_RETRIES)
 
 
 def _home_away_ids(raw: dict):
