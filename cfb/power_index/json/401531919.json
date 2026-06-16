@@ -1,1 +1,1 @@
-{"game_id":401531919,"season":2023,"week":12}
+{"count":2,"pageIndex":1,"pageSize":25,"pageCount":1,"items":[{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401531919/competitions/401531919/powerindex/2032?lang=en&region=us"},{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401531919/competitions/401531919/powerindex/326?lang=en&region=us"}],"game_id":401531919,"season":2023,"week":12}
