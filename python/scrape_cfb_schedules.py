@@ -18,13 +18,37 @@ MASTER = "cfb/cfb_schedule_master.parquet"
 
 
 def fetch_season(season: int) -> pd.DataFrame:
-    # espn_cfb_schedule(dates=<year>) returns a full-season DataFrame with
-    # game_id and season columns already present (verified via STEP 0).
-    df = sdv.cfb.espn_cfb_schedule(dates=season, return_as_pandas=True)
-    # Ensure season column exists (the API already includes it, but guard anyway)
-    if "season" not in df.columns:
-        df["season"] = season
-    return df
+    """Build a complete season schedule by iterating every (season_type, week)
+    the ESPN calendar defines and accumulating, deduped on ``game_id``.
+
+    A single ``dates=<year>`` scoreboard query is unreliable: it truncates at the
+    API limit (~500, so a ~850-game season loses half) and mis-stamps
+    season_type/week on the overflow rows. Fetching each calendar week with an
+    explicit ``week`` + ``season_type`` returns correctly-attributed games and
+    the whole regular season + postseason.
+    """
+    try:
+        cal = sdv.cfb.espn_cfb_calendar(season=season, return_as_pandas=True)
+        week_specs = [(int(r["season_type"]), int(r["week"])) for _, r in cal.iterrows()]
+    except Exception:
+        # Calendar unavailable (rare, very old seasons): regular weeks 1-16 + bowls.
+        week_specs = [(2, w) for w in range(1, 17)] + [(3, 1)]
+
+    frames = []
+    for season_type, week in week_specs:
+        df = sdv.cfb.espn_cfb_schedule(
+            dates=season, week=week, season_type=season_type, return_as_pandas=True
+        )
+        if df is not None and len(df) > 0:
+            frames.append(df)
+
+    if not frames:
+        return pd.DataFrame()
+
+    out = pd.concat(frames, ignore_index=True).drop_duplicates(subset=["game_id"], keep="last")
+    if "season" not in out.columns:
+        out["season"] = season
+    return out
 
 
 def merge_master(new: pd.DataFrame, master_path: str = MASTER) -> None:
