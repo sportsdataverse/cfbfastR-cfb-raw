@@ -56,7 +56,12 @@ def main(argv=None) -> int:
             model = train_qbr(df, pl.read_parquet(args.espn_qbr))
         Path(args.out).parent.mkdir(parents=True, exist_ok=True)
         model.save_model(args.out)
-        print(f"saved -> {args.out}")
+        from .model_card import write_xgb_model_card
+        _mtype = {"train-ep": "ep", "train-wp": f"wp_{args.variant}", "train-qbr": "qbr"}[args.cmd]
+        _label = {"train-ep": "next_score_label", "train-wp": "label", "train-qbr": "qbr"}[args.cmd]
+        write_xgb_model_card(args.out, model_type=_mtype, label=_label, model=model,
+                             n_rows=df.height)
+        print(f"saved -> {args.out} (+ model_card.json)")
     elif args.cmd in ("validate", "figures"):
         print(
             f"{args.cmd}: CLI wiring not yet implemented — "

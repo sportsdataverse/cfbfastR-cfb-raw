@@ -94,6 +94,12 @@ def train_fd_model(
 
     if output_path is not None:
         model.save_model(output_path)
+        from model_training.model_card import write_xgb_model_card
+        write_xgb_model_card(
+            output_path, model_type="fourth_down", label="fd_label",
+            features=FD_FEATURES, hyperparams=FD_PARAMS, n_rows=enriched.height,
+            extra={"num_class": 76, "nrounds": nrounds},
+        )
 
     return model
 

@@ -82,14 +82,26 @@ def train_pregame_model_with_stats(
     return model, mu, std
 
 
-def save_model(model: XGBRegressor, path: str) -> None:
-    """Save the trained model to a UBJ file (XGBoost native format).
+def save_model(model: XGBRegressor, path: str, *, n_rows: int | None = None) -> None:
+    """Save the trained model to a UBJ file (XGBoost native format) + model card.
 
     Args:
         model: Fitted XGBRegressor.
         path: File path (should end in .ubj).
+        n_rows: Optional training row count recorded in the model card.
     """
     model.save_model(path)
+    try:
+        from model_training.model_card import write_xgb_model_card
+
+        from .constants import PREGAME_WP_PARAMS
+        write_xgb_model_card(
+            path, model_type="pregame_wp", label="PtsDiff", model=model,
+            features=["5FRDiff"], hyperparams=PREGAME_WP_PARAMS, n_rows=n_rows,
+            extra={"wp_mapping": "norm.cdf((pred - 0.0) / std)"},
+        )
+    except Exception:  # noqa: BLE001 — card is best-effort; never block the save
+        pass
 
 
 def load_model(path: str) -> XGBRegressor:

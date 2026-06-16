@@ -53,6 +53,13 @@ def train_cp_model(
     if output_path is not None:
         Path(output_path).parent.mkdir(parents=True, exist_ok=True)
         model.save_model(str(output_path))
+        from model_training.model_card import write_xgb_model_card
+        feats = C.CPOE_FEATURES if approach == "A" else C.CPOE_FEATURES_B
+        write_xgb_model_card(
+            output_path, model_type="cpoe", label="completion",
+            features=feats, hyperparams=C.CPOE_PARAMS, n_rows=len(y),
+            extra={"approach": approach, "nrounds": nrounds},
+        )
     return model
 
 
