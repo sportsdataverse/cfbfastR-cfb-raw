@@ -1,1 +1,1 @@
-{"game_id":401013164,"season":2018,"week":10}
+{"count":2,"pageIndex":1,"pageSize":25,"pageCount":1,"items":[{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401013164/competitions/401013164/powerindex/152?lang=en&region=us"},{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401013164/competitions/401013164/powerindex/52?lang=en&region=us"}],"game_id":401013164,"season":2018,"week":10}

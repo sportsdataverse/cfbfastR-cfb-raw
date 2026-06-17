@@ -1,1 +1,1 @@
-{"game_id":401012760,"season":2018,"week":6}
+{"count":2,"pageIndex":1,"pageSize":25,"pageCount":1,"items":[{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401012760/competitions/401012760/powerindex/26?lang=en&region=us"},{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401012760/competitions/401012760/powerindex/264?lang=en&region=us"}],"game_id":401012760,"season":2018,"week":6}
