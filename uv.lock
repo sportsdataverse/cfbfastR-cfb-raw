@@ -65,7 +65,7 @@ requires-dist = [
     { name = "polars", specifier = ">=1.0" },
     { name = "pyarrow", specifier = ">=15.0" },
     { name = "requests", specifier = ">=2.28" },
-    { name = "sportsdataverse", specifier = ">=0.0.60" },
+    { name = "sportsdataverse", specifier = ">=0.0.65" },
     { name = "tqdm", specifier = ">=4.66" },
 ]
 
@@ -1257,7 +1257,7 @@ wheels = [
 
 [[package]]
 name = "sportsdataverse"
-version = "0.0.60"
+version = "0.0.65"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "attrs" },
@@ -1276,9 +1276,9 @@ dependencies = [
     { name = "tqdm" },
     { name = "xgboost" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/66/d5/c9428c27a27a051bb217ff383f421c36211acfe2a9e57c93aa70b9269762/sportsdataverse-0.0.60.tar.gz", hash = "sha256:99c5eee2a1b5196dd3d3d8a461d6400204f96fbd9178094fc50e9ae3327a5c35", size = 8340352, upload-time = "2026-06-15T21:19:59.48Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/76/20/f641693fc7ddf6986ea985c93f2c47c01eaa4a38f9148c3c46fb689ab770/sportsdataverse-0.0.65.tar.gz", hash = "sha256:43e21f578f7d3bc939c4f84e99e9adafea6174d5158f06c226c30f7d24671a20", size = 8355258, upload-time = "2026-06-17T10:59:21.424Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/19/6d/e1d345a6004de13a845b9e7de2985c2fc0541ece8cd467fe9747081d24bd/sportsdataverse-0.0.60-py3-none-any.whl", hash = "sha256:26d43a39eb32b67dc505d4ea3218883f2fb9779aeb20086275c7ee59b87a00eb", size = 8614190, upload-time = "2026-06-15T21:19:56.613Z" },
+    { url = "https://files.pythonhosted.org/packages/82/3c/b4e53e7c49620f9ea03a38f971bd2b47ed6a943d051d1b37307125c1b977/sportsdataverse-0.0.65-py3-none-any.whl", hash = "sha256:76955e3e2fc20579e93e1cab5f6304fc88559fcbd52a1560eaac5a892928a6ab", size = 8630397, upload-time = "2026-06-17T10:59:19.323Z" },
 ]
 
 [[package]]
