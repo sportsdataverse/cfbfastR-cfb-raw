@@ -1,231 +1,6 @@
-2026-06-17 10:21:18,123 INFO schedules 2022: 904 games
-2026-06-17 10:21:19,695 INFO season 2022: 320 hollow/missing games to rescrape
-cfb 2022:   0%|          | 0/320 [00:00<?, ?it/s]cfb 2022:   0%|          | 1/320 [00:31<2:48:37, 31.72s/it]cfb 2022:   1%|          | 2/320 [00:35<1:19:53, 15.07s/it]cfb 2022:   1%|          | 3/320 [00:35<44:59,  8.52s/it]  cfb 2022:   1%|1         | 4/320 [00:37<30:27,  5.78s/it]cfb 2022:   2%|1         | 5/320 [00:58<59:06, 11.26s/it]cfb 2022:   2%|1         | 6/320 [00:58<39:17,  7.51s/it]cfb 2022:   2%|2         | 7/320 [00:59<27:11,  5.21s/it]cfb 2022:   2%|2         | 8/320 [00:59<19:07,  3.68s/it]2026-06-17 10:22:19,431 ERROR extra fetch failed: _rosters(401409240,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
-    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
-sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401409240/competitions/401409240/competitors
-ERROR:cfb_json_2022:extra fetch failed: _rosters(401409240,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
-    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
-sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401409240/competitions/401409240/competitors
-cfb 2022:   3%|2         | 9/320 [00:59<13:39,  2.63s/it]cfb 2022:   3%|3         | 10/320 [01:18<38:55,  7.53s/it]cfb 2022:   3%|3         | 11/320 [01:21<31:48,  6.18s/it]cfb 2022:   4%|3         | 12/320 [01:22<23:46,  4.63s/it]cfb 2022:   4%|4         | 13/320 [01:23<17:22,  3.39s/it]C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\xgboost\core.py:751: UserWarning: [10:22:44] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\common\error_msg.cc:56: Empty dataset at worker: 0
-  return func(**kwargs)
-cfb 2022:   4%|4         | 14/320 [01:39<36:34,  7.17s/it]cfb 2022:   5%|4         | 15/320 [01:40<27:24,  5.39s/it]cfb 2022:   5%|5         | 16/320 [01:44<25:10,  4.97s/it]cfb 2022:   5%|5         | 17/320 [01:44<18:03,  3.58s/it]cfb 2022:   6%|5         | 18/320 [01:59<34:48,  6.92s/it]cfb 2022:   6%|5         | 19/320 [02:00<26:02,  5.19s/it]cfb 2022:   6%|6         | 20/320 [02:05<25:49,  5.17s/it]cfb 2022:   7%|6         | 21/320 [02:05<18:35,  3.73s/it]cfb 2022:   7%|6         | 22/320 [02:17<29:59,  6.04s/it]cfb 2022:   7%|7         | 23/320 [02:24<31:27,  6.35s/it]cfb 2022:   8%|7         | 24/320 [02:25<23:14,  4.71s/it]cfb 2022:   8%|7         | 25/320 [02:26<17:57,  3.65s/it]cfb 2022:   8%|8         | 26/320 [02:37<28:11,  5.75s/it]cfb 2022:   8%|8         | 27/320 [02:43<29:05,  5.96s/it]cfb 2022:   9%|8         | 28/320 [02:44<20:56,  4.30s/it]cfb 2022:   9%|9         | 29/320 [02:48<21:08,  4.36s/it]cfb 2022:   9%|9         | 30/320 [02:54<23:20,  4.83s/it]cfb 2022:  10%|9         | 31/320 [03:00<25:25,  5.28s/it]cfb 2022:  10%|#         | 32/320 [03:04<22:54,  4.77s/it]cfb 2022:  10%|#         | 33/320 [03:10<24:48,  5.18s/it]cfb 2022:  11%|#         | 34/320 [03:17<27:08,  5.69s/it]cfb 2022:  11%|#         | 35/320 [03:18<20:11,  4.25s/it]cfb 2022:  11%|#1        | 36/320 [03:27<27:02,  5.71s/it]cfb 2022:  12%|#1        | 37/320 [03:32<26:42,  5.66s/it]cfb 2022:  12%|#1        | 38/320 [03:39<28:21,  6.03s/it]cfb 2022:  12%|#2        | 40/320 [03:47<23:24,  5.02s/it]cfb 2022:  13%|#2        | 41/320 [03:55<26:11,  5.63s/it]cfb 2022:  13%|#3        | 42/320 [04:00<26:09,  5.65s/it]cfb 2022:  13%|#3        | 43/320 [04:01<20:00,  4.33s/it]cfb 2022:  14%|#3        | 44/320 [04:09<24:46,  5.39s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
-cfb 2022:  14%|#4        | 45/320 [04:17<27:55,  6.09s/it]cfb 2022:  14%|#4        | 46/320 [04:24<28:38,  6.27s/it]cfb 2022:  15%|#4        | 47/320 [04:24<21:07,  4.64s/it]cfb 2022:  15%|#5        | 48/320 [04:31<23:32,  5.19s/it]cfb 2022:  15%|#5        | 49/320 [04:36<23:01,  5.10s/it]cfb 2022:  16%|#5        | 50/320 [04:43<25:57,  5.77s/it]cfb 2022:  16%|#5        | 51/320 [04:47<22:57,  5.12s/it]cfb 2022:  16%|#6        | 52/320 [04:51<21:50,  4.89s/it]cfb 2022:  17%|#6        | 53/320 [04:54<18:53,  4.24s/it]cfb 2022:  17%|#6        | 54/320 [05:03<24:50,  5.60s/it]cfb 2022:  17%|#7        | 55/320 [05:06<22:12,  5.03s/it]cfb 2022:  18%|#7        | 56/320 [05:11<22:15,  5.06s/it]cfb 2022:  18%|#7        | 57/320 [05:13<17:40,  4.03s/it]cfb 2022:  18%|#8        | 58/320 [05:21<22:36,  5.18s/it]cfb 2022:  18%|#8        | 59/320 [05:26<22:41,  5.22s/it]cfb 2022:  19%|#8        | 60/320 [05:31<22:27,  5.18s/it]cfb 2022:  19%|#9        | 61/320 [05:34<19:33,  4.53s/it]cfb 2022:  19%|#9        | 62/320 [05:44<25:32,  5.94s/it]cfb 2022:  20%|#9        | 63/320 [05:44<18:45,  4.38s/it]cfb 2022:  20%|##        | 64/320 [05:46<15:06,  3.54s/it]cfb 2022:  20%|##        | 65/320 [05:50<15:10,  3.57s/it]cfb 2022:  21%|##        | 66/320 [05:59<22:37,  5.35s/it]cfb 2022:  21%|##        | 67/320 [06:02<19:36,  4.65s/it]cfb 2022:  21%|##1       | 68/320 [06:04<15:36,  3.72s/it]cfb 2022:  22%|##1       | 69/320 [06:07<15:44,  3.76s/it]cfb 2022:  22%|##1       | 70/320 [06:15<20:28,  4.92s/it]cfb 2022:  22%|##2       | 71/320 [06:21<22:14,  5.36s/it]cfb 2022:  22%|##2       | 72/320 [06:22<16:11,  3.92s/it]cfb 2022:  23%|##2       | 73/320 [06:30<20:58,  5.10s/it]cfb 2022:  23%|##3       | 74/320 [06:33<17:58,  4.39s/it]cfb 2022:  23%|##3       | 75/320 [06:40<21:20,  5.23s/it]cfb 2022:  24%|##3       | 76/320 [06:43<18:27,  4.54s/it]cfb 2022:  24%|##4       | 77/320 [06:49<20:00,  4.94s/it]cfb 2022:  24%|##4       | 78/320 [06:52<17:50,  4.42s/it]cfb 2022:  25%|##4       | 79/320 [07:02<24:12,  6.03s/it]cfb 2022:  25%|##5       | 80/320 [07:05<21:25,  5.36s/it]cfb 2022:  25%|##5       | 81/320 [07:07<17:04,  4.29s/it]cfb 2022:  26%|##5       | 82/320 [07:09<13:34,  3.42s/it]cfb 2022:  26%|##5       | 83/320 [07:25<28:40,  7.26s/it]cfb 2022:  26%|##6       | 84/320 [07:25<20:36,  5.24s/it]cfb 2022:  27%|##6       | 85/320 [07:27<16:48,  4.29s/it]cfb 2022:  27%|##6       | 86/320 [07:30<14:24,  3.69s/it]cfb 2022:  27%|##7       | 87/320 [07:44<27:09,  6.99s/it]cfb 2022:  28%|##7       | 88/320 [07:48<23:03,  5.96s/it]cfb 2022:  28%|##7       | 89/320 [07:51<19:38,  5.10s/it]cfb 2022:  28%|##8       | 91/320 [08:04<21:37,  5.66s/it]cfb 2022:  29%|##8       | 92/320 [08:05<17:29,  4.60s/it]cfb 2022:  29%|##9       | 93/320 [08:10<18:07,  4.79s/it]cfb 2022:  29%|##9       | 94/320 [08:15<17:38,  4.68s/it]cfb 2022:  30%|##9       | 95/320 [08:22<20:35,  5.49s/it]cfb 2022:  30%|###       | 96/320 [08:24<16:48,  4.50s/it]cfb 2022:  30%|###       | 97/320 [08:29<16:26,  4.42s/it]cfb 2022:  31%|###       | 98/320 [08:33<16:50,  4.55s/it]cfb 2022:  31%|###       | 99/320 [08:42<21:20,  5.80s/it]cfb 2022:  31%|###1      | 100/320 [08:44<16:26,  4.48s/it]cfb 2022:  32%|###1      | 101/320 [08:51<19:57,  5.47s/it]cfb 2022:  32%|###1      | 102/320 [08:57<19:35,  5.39s/it]cfb 2022:  32%|###2      | 103/320 [09:04<21:35,  5.97s/it]cfb 2022:  32%|###2      | 104/320 [09:05<15:55,  4.42s/it]cfb 2022:  33%|###2      | 105/320 [09:10<17:19,  4.83s/it]cfb 2022:  33%|###3      | 106/320 [09:22<24:48,  6.96s/it]cfb 2022:  33%|###3      | 107/320 [09:24<19:09,  5.40s/it]cfb 2022:  34%|###3      | 108/320 [09:26<15:08,  4.29s/it]cfb 2022:  34%|###4      | 109/320 [09:34<19:37,  5.58s/it]cfb 2022:  34%|###4      | 110/320 [09:41<21:02,  6.01s/it]cfb 2022:  35%|###4      | 111/320 [09:45<18:09,  5.21s/it]cfb 2022:  35%|###5      | 112/320 [09:47<14:33,  4.20s/it]cfb 2022:  35%|###5      | 113/320 [09:57<21:10,  6.14s/it]cfb 2022:  36%|###5      | 114/320 [10:03<20:43,  6.04s/it]cfb 2022:  36%|###5      | 115/320 [10:06<16:56,  4.96s/it]cfb 2022:  36%|###6      | 116/320 [10:08<14:17,  4.20s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
-cfb 2022:  37%|###6      | 117/320 [10:17<19:08,  5.66s/it]cfb 2022:  37%|###6      | 118/320 [10:20<15:55,  4.73s/it]cfb 2022:  37%|###7      | 119/320 [10:27<18:51,  5.63s/it]cfb 2022:  38%|###7      | 120/320 [10:28<13:34,  4.07s/it]cfb 2022:  38%|###7      | 121/320 [10:36<17:13,  5.20s/it]cfb 2022:  38%|###8      | 122/320 [10:41<16:53,  5.12s/it]cfb 2022:  38%|###8      | 123/320 [10:47<17:55,  5.46s/it]cfb 2022:  39%|###8      | 124/320 [10:47<12:35,  3.85s/it]cfb 2022:  39%|###9      | 125/320 [10:57<18:15,  5.62s/it]cfb 2022:  39%|###9      | 126/320 [10:58<13:58,  4.32s/it]cfb 2022:  40%|###9      | 127/320 [11:04<15:34,  4.84s/it]cfb 2022:  40%|####      | 128/320 [11:07<14:00,  4.38s/it]cfb 2022:  40%|####      | 129/320 [11:14<15:59,  5.02s/it]cfb 2022:  41%|####      | 130/320 [11:15<12:21,  3.90s/it]cfb 2022:  41%|####      | 131/320 [11:21<14:32,  4.62s/it]cfb 2022:  41%|####1     | 132/320 [11:25<13:36,  4.34s/it]cfb 2022:  42%|####1     | 133/320 [11:33<17:05,  5.48s/it]cfb 2022:  42%|####1     | 134/320 [11:35<13:51,  4.47s/it]cfb 2022:  42%|####2     | 135/320 [11:42<15:53,  5.16s/it]cfb 2022:  42%|####2     | 136/320 [11:44<12:44,  4.15s/it]cfb 2022:  43%|####2     | 137/320 [11:55<19:20,  6.34s/it]cfb 2022:  43%|####3     | 138/320 [11:58<16:08,  5.32s/it]cfb 2022:  43%|####3     | 139/320 [12:01<13:14,  4.39s/it]cfb 2022:  44%|####3     | 140/320 [12:07<15:25,  5.14s/it]cfb 2022:  44%|####4     | 141/320 [12:17<18:58,  6.36s/it]cfb 2022:  44%|####4     | 142/320 [12:17<13:32,  4.56s/it]cfb 2022:  45%|####4     | 143/320 [12:22<14:15,  4.83s/it]cfb 2022:  45%|####5     | 144/320 [12:26<13:00,  4.43s/it]cfb 2022:  45%|####5     | 145/320 [12:37<18:19,  6.28s/it]cfb 2022:  46%|####5     | 146/320 [12:40<15:45,  5.43s/it]cfb 2022:  46%|####5     | 147/320 [12:43<13:19,  4.62s/it]cfb 2022:  46%|####6     | 148/320 [12:44<10:18,  3.60s/it]cfb 2022:  47%|####6     | 149/320 [12:59<20:21,  7.14s/it]cfb 2022:  47%|####6     | 150/320 [13:05<18:53,  6.67s/it]cfb 2022:  47%|####7     | 151/320 [13:09<16:27,  5.84s/it]cfb 2022:  48%|####7     | 152/320 [13:09<11:39,  4.17s/it]cfb 2022:  48%|####7     | 153/320 [13:22<18:50,  6.77s/it]cfb 2022:  48%|####8     | 154/320 [13:24<15:05,  5.45s/it]cfb 2022:  48%|####8     | 155/320 [13:25<11:06,  4.04s/it]cfb 2022:  49%|####8     | 156/320 [13:28<10:05,  3.69s/it]cfb 2022:  49%|####9     | 157/320 [13:40<17:11,  6.33s/it]cfb 2022:  49%|####9     | 158/320 [13:44<14:36,  5.41s/it]cfb 2022:  50%|####9     | 159/320 [13:47<13:05,  4.88s/it]cfb 2022:  50%|#####     | 160/320 [13:48<09:27,  3.55s/it]cfb 2022:  50%|#####     | 161/320 [13:59<15:38,  5.90s/it]cfb 2022:  51%|#####     | 162/320 [14:03<13:52,  5.27s/it]cfb 2022:  51%|#####     | 163/320 [14:07<12:46,  4.88s/it]cfb 2022:  51%|#####1    | 164/320 [14:07<09:03,  3.49s/it]cfb 2022:  52%|#####1    | 165/320 [14:21<17:16,  6.69s/it]cfb 2022:  52%|#####1    | 166/320 [14:22<12:24,  4.84s/it]cfb 2022:  52%|#####2    | 167/320 [14:24<10:00,  3.93s/it]cfb 2022:  52%|#####2    | 168/320 [14:27<09:29,  3.74s/it]cfb 2022:  53%|#####2    | 169/320 [14:39<15:46,  6.27s/it]cfb 2022:  53%|#####3    | 170/320 [14:41<12:29,  5.00s/it]cfb 2022:  53%|#####3    | 171/320 [14:44<11:02,  4.44s/it]cfb 2022:  54%|#####3    | 172/320 [14:47<09:24,  3.81s/it]cfb 2022:  54%|#####4    | 173/320 [14:59<15:26,  6.30s/it]cfb 2022:  54%|#####4    | 174/320 [15:02<13:24,  5.51s/it]cfb 2022:  55%|#####4    | 175/320 [15:07<12:26,  5.15s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
-cfb 2022:  55%|#####5    | 176/320 [15:10<11:19,  4.72s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
-cfb 2022:  55%|#####5    | 177/320 [15:21<15:36,  6.55s/it]cfb 2022:  56%|#####5    | 178/320 [15:26<13:51,  5.86s/it]cfb 2022:  56%|#####5    | 179/320 [15:33<15:07,  6.44s/it]cfb 2022:  56%|#####6    | 180/320 [15:38<14:00,  6.00s/it]cfb 2022:  57%|#####6    | 181/320 [15:44<13:46,  5.95s/it]cfb 2022:  57%|#####6    | 182/320 [15:46<11:08,  4.84s/it]cfb 2022:  57%|#####7    | 183/320 [15:58<15:34,  6.82s/it]C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\xgboost\core.py:751: UserWarning: [10:37:21] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\common\error_msg.cc:56: Empty dataset at worker: 0
-  return func(**kwargs)
-cfb 2022:  57%|#####7    | 184/320 [16:03<14:04,  6.21s/it]cfb 2022:  58%|#####7    | 185/320 [16:07<12:51,  5.71s/it]cfb 2022:  58%|#####8    | 186/320 [16:08<09:21,  4.19s/it]cfb 2022:  58%|#####8    | 187/320 [16:20<14:56,  6.74s/it]cfb 2022:  59%|#####8    | 188/320 [16:29<15:44,  7.15s/it]cfb 2022:  59%|#####9    | 189/320 [16:31<12:34,  5.76s/it]cfb 2022:  59%|#####9    | 190/320 [16:32<09:05,  4.19s/it]cfb 2022:  60%|#####9    | 191/320 [16:43<13:31,  6.29s/it]cfb 2022:  60%|######    | 192/320 [16:53<15:51,  7.44s/it]cfb 2022:  60%|######    | 193/320 [16:54<11:44,  5.54s/it]cfb 2022:  61%|######    | 194/320 [16:55<08:26,  4.02s/it]cfb 2022:  61%|######    | 195/320 [17:12<16:52,  8.10s/it]cfb 2022:  61%|######1   | 196/320 [17:24<19:12,  9.30s/it]cfb 2022:  62%|######1   | 197/320 [17:25<13:43,  6.70s/it]cfb 2022:  62%|######1   | 198/320 [17:26<09:58,  4.91s/it]cfb 2022:  62%|######2   | 199/320 [17:34<11:56,  5.92s/it]cfb 2022:  62%|######2   | 200/320 [17:49<17:05,  8.55s/it]cfb 2022:  63%|######2   | 201/320 [17:49<12:12,  6.15s/it]cfb 2022:  63%|######3   | 202/320 [17:50<08:45,  4.45s/it]cfb 2022:  63%|######3   | 203/320 [17:58<10:55,  5.60s/it]cfb 2022:  64%|######3   | 204/320 [18:12<16:02,  8.30s/it]cfb 2022:  64%|######4   | 206/320 [18:13<08:38,  4.55s/it]cfb 2022:  65%|######4   | 207/320 [18:17<08:32,  4.53s/it]cfb 2022:  65%|######5   | 208/320 [18:35<14:52,  7.97s/it]cfb 2022:  65%|######5   | 209/320 [18:36<11:18,  6.11s/it]cfb 2022:  66%|######5   | 210/320 [18:37<08:23,  4.58s/it]cfb 2022:  66%|######5   | 211/320 [18:43<08:56,  4.93s/it]cfb 2022:  66%|######6   | 212/320 [18:58<14:17,  7.94s/it]cfb 2022:  67%|######6   | 213/320 [19:00<11:02,  6.19s/it]cfb 2022:  67%|######6   | 214/320 [19:03<09:10,  5.19s/it]cfb 2022:  67%|######7   | 215/320 [19:07<08:39,  4.95s/it]cfb 2022:  68%|######7   | 216/320 [19:21<13:02,  7.52s/it]2026-06-17 10:40:41,589 ERROR extra fetch failed: _rosters(401411170,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
-    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
-sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401411170/competitions/401411170/competitors
-ERROR:cfb_json_2022:extra fetch failed: _rosters(401411170,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
-    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
-sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401411170/competitions/401411170/competitors
-cfb 2022:  68%|######7   | 217/320 [19:22<09:31,  5.55s/it]2026-06-17 10:40:42,286 ERROR extra fetch failed: _participants(401416647,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\requests\models.py", line 1116, in json
-    return complexjson.loads(self.text, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 346, in loads
-    return _default_decoder.decode(s)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 355, in raw_decode
-    raise JSONDecodeError("Expecting value", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 36, in _participants
-    return sdv.cfb.espn_cfb_play_participants(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_play_participants.py", line 184, in espn_cfb_play_participants
-    plays_raw = _download_plays(game_id, **kwargs)
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_play_participants.py", line 215, in _download_plays
-    body = resp.json()
-           ^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\requests\models.py", line 1120, in json
-    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
-requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-ERROR:cfb_json_2022:extra fetch failed: _participants(401416647,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\requests\models.py", line 1116, in json
-    return complexjson.loads(self.text, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 346, in loads
-    return _default_decoder.decode(s)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 355, in raw_decode
-    raise JSONDecodeError("Expecting value", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 36, in _participants
-    return sdv.cfb.espn_cfb_play_participants(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_play_participants.py", line 184, in espn_cfb_play_participants
-    plays_raw = _download_plays(game_id, **kwargs)
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_play_participants.py", line 215, in _download_plays
-    body = resp.json()
-           ^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\requests\models.py", line 1120, in json
-    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
-requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-cfb 2022:  68%|######8   | 218/320 [19:22<06:56,  4.09s/it]2026-06-17 10:40:42,481 ERROR extra fetch failed: _rosters(401416647,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
-    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
-sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401416647/competitions/401416647/competitors
-ERROR:cfb_json_2022:extra fetch failed: _rosters(401416647,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
-    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
-sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401416647/competitions/401416647/competitors
-cfb 2022:  68%|######8   | 219/320 [19:22<04:56,  2.93s/it]2026-06-17 10:40:43,804 ERROR extra fetch failed: _rosters(401416648,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\requests\models.py", line 1116, in json
-    return complexjson.loads(self.text, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 346, in loads
-    return _default_decoder.decode(s)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 355, in raw_decode
-    raise JSONDecodeError("Expecting value", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 199, in helper_cfb_roster_items
-    entries = team_roster_resp.json().get("entries", [])
-              ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\requests\models.py", line 1120, in json
-    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
-requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-ERROR:cfb_json_2022:extra fetch failed: _rosters(401416648,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\requests\models.py", line 1116, in json
-    return complexjson.loads(self.text, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 346, in loads
-    return _default_decoder.decode(s)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 355, in raw_decode
-    raise JSONDecodeError("Expecting value", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 199, in helper_cfb_roster_items
-    entries = team_roster_resp.json().get("entries", [])
-              ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\requests\models.py", line 1120, in json
-    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
-requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-cfb 2022:  69%|######8   | 220/320 [19:24<04:07,  2.48s/it]cfb 2022:  69%|######9   | 221/320 [19:26<03:42,  2.25s/it]cfb 2022:  69%|######9   | 222/320 [19:30<04:33,  2.79s/it]cfb 2022:  70%|######9   | 223/320 [19:42<09:15,  5.73s/it]cfb 2022:  70%|#######   | 224/320 [19:44<07:04,  4.43s/it]cfb 2022:  70%|#######   | 225/320 [19:44<04:57,  3.14s/it]cfb 2022:  71%|#######   | 226/320 [19:47<05:04,  3.24s/it]cfb 2022:  71%|#######   | 227/320 [20:03<10:54,  7.03s/it]cfb 2022:  71%|#######1  | 228/320 [20:04<07:51,  5.13s/it]cfb 2022:  72%|#######1  | 229/320 [20:05<05:50,  3.85s/it]cfb 2022:  72%|#######1  | 230/320 [20:05<04:14,  2.82s/it]2026-06-17 10:41:25,769 ERROR extra fetch failed: _rosters(401411176,)
+2026-06-17 11:49:42,276 INFO schedules 2022: 904 games
+2026-06-17 11:49:44,117 INFO season 2022: 4 hollow/missing games to rescrape
+cfb 2022:   0%|          | 0/4 [00:00<?, ?it/s]2026-06-17 11:49:46,771 ERROR extra fetch failed: _rosters(401411176,)
 Traceback (most recent call last):
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
     return fn(*args, **kwargs)
@@ -253,8 +28,92 @@ Traceback (most recent call last):
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
     raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
 sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401411176/competitions/401411176/competitors
-cfb 2022:  72%|#######2  | 231/320 [20:06<03:13,  2.17s/it]cfb 2022:  72%|#######2  | 232/320 [20:27<11:45,  8.02s/it]cfb 2022:  73%|#######2  | 233/320 [20:28<08:33,  5.90s/it]cfb 2022:  73%|#######3  | 235/320 [20:30<05:01,  3.54s/it]cfb 2022:  74%|#######3  | 236/320 [20:49<10:27,  7.47s/it]cfb 2022:  74%|#######4  | 237/320 [20:52<08:41,  6.28s/it]cfb 2022:  74%|#######4  | 238/320 [20:52<06:20,  4.64s/it]cfb 2022:  75%|#######4  | 239/320 [20:53<04:40,  3.46s/it]cfb 2022:  75%|#######5  | 240/320 [21:12<10:27,  7.84s/it]cfb 2022:  75%|#######5  | 241/320 [21:13<07:39,  5.82s/it]cfb 2022:  76%|#######5  | 242/320 [21:15<06:15,  4.81s/it]cfb 2022:  76%|#######5  | 243/320 [21:18<05:34,  4.35s/it]cfb 2022:  76%|#######6  | 244/320 [21:31<08:32,  6.75s/it]cfb 2022:  77%|#######6  | 245/320 [21:31<06:11,  4.95s/it]cfb 2022:  77%|#######6  | 246/320 [21:31<04:19,  3.50s/it]cfb 2022:  77%|#######7  | 247/320 [21:40<06:12,  5.11s/it]cfb 2022:  78%|#######7  | 248/320 [21:52<08:36,  7.17s/it]cfb 2022:  78%|#######7  | 249/320 [21:54<06:29,  5.49s/it]cfb 2022:  78%|#######8  | 250/320 [21:54<04:43,  4.05s/it]cfb 2022:  78%|#######8  | 251/320 [22:03<06:06,  5.30s/it]cfb 2022:  79%|#######8  | 252/320 [22:11<07:04,  6.25s/it]cfb 2022:  79%|#######9  | 253/320 [22:16<06:32,  5.86s/it]cfb 2022:  79%|#######9  | 254/320 [22:17<04:56,  4.49s/it]cfb 2022:  80%|#######9  | 255/320 [22:21<04:36,  4.26s/it]cfb 2022:  80%|########  | 256/320 [22:35<07:33,  7.09s/it]cfb 2022:  80%|########  | 257/320 [22:36<05:38,  5.37s/it]cfb 2022:  81%|########  | 258/320 [22:39<04:47,  4.64s/it]cfb 2022:  81%|########  | 259/320 [22:42<04:02,  3.98s/it]cfb 2022:  81%|########1 | 260/320 [22:56<07:04,  7.08s/it]cfb 2022:  82%|########1 | 261/320 [22:57<05:04,  5.16s/it]cfb 2022:  82%|########1 | 262/320 [22:58<03:54,  4.05s/it]cfb 2022:  82%|########2 | 263/320 [23:04<04:21,  4.59s/it]cfb 2022:  82%|########2 | 264/320 [23:15<06:13,  6.67s/it]cfb 2022:  83%|########2 | 265/320 [23:16<04:31,  4.93s/it]cfb 2022:  83%|########3 | 266/320 [23:18<03:32,  3.94s/it]cfb 2022:  83%|########3 | 267/320 [23:27<04:58,  5.63s/it]cfb 2022:  84%|########3 | 268/320 [23:36<05:35,  6.44s/it]cfb 2022:  84%|########4 | 269/320 [23:37<04:10,  4.92s/it]cfb 2022:  84%|########4 | 270/320 [23:40<03:39,  4.39s/it]cfb 2022:  85%|########4 | 271/320 [23:48<04:19,  5.30s/it]cfb 2022:  85%|########5 | 272/320 [23:53<04:14,  5.30s/it]cfb 2022:  85%|########5 | 273/320 [23:54<03:02,  3.88s/it]cfb 2022:  86%|########5 | 274/320 [24:04<04:34,  5.96s/it]cfb 2022:  86%|########5 | 275/320 [24:09<04:12,  5.61s/it]cfb 2022:  86%|########6 | 276/320 [24:16<04:15,  5.82s/it]cfb 2022:  87%|########6 | 277/320 [24:17<03:10,  4.44s/it]cfb 2022:  87%|########6 | 278/320 [24:21<03:04,  4.39s/it]cfb 2022:  87%|########7 | 279/320 [24:25<02:55,  4.28s/it]cfb 2022:  88%|########7 | 280/320 [24:35<03:58,  5.97s/it]cfb 2022:  88%|########7 | 281/320 [24:36<02:56,  4.54s/it]cfb 2022:  88%|########8 | 282/320 [24:46<03:54,  6.17s/it]cfb 2022:  88%|########8 | 283/320 [24:52<03:39,  5.93s/it]cfb 2022:  89%|########8 | 284/320 [24:52<02:33,  4.28s/it]cfb 2022:  89%|########9 | 285/320 [24:54<02:11,  3.76s/it]cfb 2022:  89%|########9 | 286/320 [25:08<03:52,  6.84s/it]cfb 2022:  90%|########9 | 287/320 [25:10<02:57,  5.37s/it]cfb 2022:  90%|######### | 288/320 [25:11<02:02,  3.83s/it]cfb 2022:  90%|######### | 289/320 [25:12<01:32,  2.98s/it]cfb 2022:  91%|######### | 290/320 [25:25<03:04,  6.15s/it]cfb 2022:  91%|######### | 291/320 [25:26<02:12,  4.57s/it]cfb 2022:  91%|#########1| 292/320 [25:31<02:07,  4.57s/it]cfb 2022:  92%|#########1| 293/320 [25:33<01:43,  3.83s/it]cfb 2022:  92%|#########1| 294/320 [25:46<02:49,  6.50s/it]cfb 2022:  92%|#########2| 295/320 [25:47<02:03,  4.92s/it]cfb 2022:  92%|#########2| 296/320 [25:50<01:46,  4.46s/it]cfb 2022:  93%|#########3| 298/320 [26:03<01:59,  5.44s/it]cfb 2022:  93%|#########3| 299/320 [26:08<01:49,  5.20s/it]cfb 2022:  94%|#########3| 300/320 [26:08<01:18,  3.94s/it]cfb 2022:  94%|#########4| 301/320 [26:10<01:02,  3.29s/it]cfb 2022:  94%|#########4| 302/320 [26:22<01:44,  5.82s/it]cfb 2022:  95%|#########4| 303/320 [26:28<01:41,  5.99s/it]cfb 2022:  95%|#########5| 304/320 [26:30<01:14,  4.63s/it]cfb 2022:  96%|#########5| 306/320 [26:41<01:11,  5.09s/it]cfb 2022:  96%|#########5| 307/320 [26:50<01:19,  6.15s/it]cfb 2022:  96%|#########6| 308/320 [26:52<00:59,  4.94s/it]cfb 2022:  97%|#########6| 309/320 [26:53<00:42,  3.90s/it]cfb 2022:  97%|#########6| 310/320 [27:01<00:49,  4.99s/it]cfb 2022:  97%|#########7| 311/320 [27:10<00:54,  6.04s/it]cfb 2022:  98%|#########7| 312/320 [27:13<00:41,  5.15s/it]cfb 2022:  98%|#########7| 313/320 [27:14<00:29,  4.19s/it]cfb 2022:  98%|#########8| 314/320 [27:18<00:24,  4.15s/it]cfb 2022:  98%|#########8| 315/320 [27:30<00:31,  6.34s/it]cfb 2022:  99%|#########8| 316/320 [27:33<00:21,  5.35s/it]cfb 2022:  99%|#########9| 317/320 [27:34<00:12,  4.00s/it]cfb 2022:  99%|#########9| 318/320 [27:37<00:07,  3.82s/it]cfb 2022: 100%|#########9| 319/320 [27:53<00:07,  7.26s/it]cfb 2022: 100%|##########| 320/320 [27:55<00:00,  5.79s/it]cfb 2022: 100%|##########| 320/320 [27:55<00:00,  5.24s/it]
-[main 5c5f436fd] CFB Raw Update (Start: 2022 End: 2022)
- 1589 files changed, 1588 insertions(+), 1588 deletions(-)
+2026-06-17 11:49:46,825 ERROR extra fetch failed: _rosters(401409240,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401409240/competitions/401409240/competitors
+ERROR:cfb_json_2022:extra fetch failed: _rosters(401409240,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401409240/competitions/401409240/competitors
+2026-06-17 11:49:46,856 ERROR extra fetch failed: _rosters(401416647,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401416647/competitions/401416647/competitors
+ERROR:cfb_json_2022:extra fetch failed: _rosters(401416647,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401416647/competitions/401416647/competitors
+2026-06-17 11:49:46,905 ERROR extra fetch failed: _rosters(401411170,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401411170/competitions/401411170/competitors
+ERROR:cfb_json_2022:extra fetch failed: _rosters(401411170,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401411170/competitions/401411170/competitors
+cfb 2022:  25%|##5       | 1/4 [00:02<00:08,  2.85s/it]cfb 2022:  75%|#######5  | 3/4 [00:02<00:00,  1.28it/s]cfb 2022: 100%|##########| 4/4 [00:02<00:00,  1.34it/s]
+[main be652d194] CFB Raw Update (Start: 2022 End: 2022)
+ 1 file changed, 0 insertions(+), 0 deletions(-)
 To https://github.com/sportsdataverse/cfbfastR-cfb-raw.git
-   89e35c535..5c5f436fd  main -> main
+   50610a242..be652d194  main -> main
