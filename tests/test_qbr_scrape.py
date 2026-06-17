@@ -2,10 +2,10 @@ import json
 import pathlib
 import sys
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / "python"))
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "python"))
 from scrape_cfb_qbr import parse_qbr_payload
 
-FIX = pathlib.Path(__file__).parent.parent / "fixtures" / "model_training" / "qbr_endpoint_sample.json"
+FIX = pathlib.Path(__file__).parent / "fixtures" / "qbr_endpoint_sample.json"
 
 
 def test_parse_extracts_game_id_athlete_and_qbr():
