@@ -213,7 +213,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,9,13,False,24,"[{'value': 3.0, 'displayValue': '3', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,17,13,False,24,"[{'value': 3.0, 'displayValue': '3', 'period': 1}
  {'value': 10.0, 'displayValue': '10', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
@@ -707,7 +707,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 3.0, 'displayValue': '3', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,22,True,99,"[{'value': 3.0, 'displayValue': '3', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,22,True,99,"[{'value': 3.0, 'displayValue': '3', 'period': 1}
  {'value': 6.0, 'displayValue': '6', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 6.0, 'displayValue': '6', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
@@ -922,7 +922,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",322452655,2012,2,1,
-322450278,s:20~l:23~e:322450278~c:322450278,2012-09-02T02:00Z,27663,True,False,False,False,True,False,2012-09-02T02:00Z,,[],,,,,1,STD,3660,Valley Children's Stadium,Fresno,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,9,37,True,99,"[{'value': 14.0, 'displayValue': '14', 'period': 1}
+322450278,s:20~l:23~e:322450278~c:322450278,2012-09-02T02:00Z,27663,True,False,False,False,True,False,2012-09-02T02:00Z,,[],,,,,1,STD,3660,Valley Children's Stadium,Fresno,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,17,37,True,99,"[{'value': 14.0, 'displayValue': '14', 'period': 1}
  {'value': 10.0, 'displayValue': '10', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 13.0, 'displayValue': '13', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
@@ -956,7 +956,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,12,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,12,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
  {'value': 6.0, 'displayValue': '6', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 6.0, 'displayValue': '6', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
@@ -1084,7 +1084,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,9,25,False,99,"[{'value': 3.0, 'displayValue': '3', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,17,25,False,99,"[{'value': 3.0, 'displayValue': '3', 'period': 1}
  {'value': 3.0, 'displayValue': '3', 'period': 2}
  {'value': 10.0, 'displayValue': '10', 'period': 3}
  {'value': 9.0, 'displayValue': '9', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
@@ -1678,7 +1678,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",322522229,2012,2,2,OT
-322520036,s:20~l:23~e:322520036~c:322520036,2012-09-08T23:00Z,23567,True,False,False,False,False,False,2012-09-08T23:00Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,7,False,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+322520036,s:20~l:23~e:322520036~c:322520036,2012-09-08T23:00Z,23567,True,False,False,False,False,False,2012-09-08T23:00Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,7,False,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 0.0, 'displayValue': '0', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
@@ -1847,7 +1847,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",322522711,2012,2,2,
-322520021,s:20~l:23~e:322520021~c:322520021,2012-09-08T23:30Z,30799,True,False,False,False,True,False,2012-09-08T23:30Z,NBCSN,[],,,national,NBCSN,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,42,True,99,"[{'value': 14.0, 'displayValue': '14', 'period': 1}
+322520021,s:20~l:23~e:322520021~c:322520021,2012-09-08T23:30Z,30799,True,False,False,False,True,False,2012-09-08T23:30Z,NBCSN,[],,,national,NBCSN,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,42,True,99,"[{'value': 14.0, 'displayValue': '14', 'period': 1}
  {'value': 7.0, 'displayValue': '7', 'period': 2}
  {'value': 21.0, 'displayValue': '21', 'period': 3}
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
@@ -2473,7 +2473,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-0'}]",322592572,2012,2,3,
-322590068,s:20~l:23~e:322590068~c:322590068,2012-09-15T20:00Z,34178,True,False,False,False,True,False,2012-09-15T20:00Z,NBCSN,[],,,national,NBCSN,1,STD,3653,Albertsons Stadium,Boise,ID,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,9,39,True,99,"[{'value': 8.0, 'displayValue': '8', 'period': 1}
+322590068,s:20~l:23~e:322590068~c:322590068,2012-09-15T20:00Z,34178,True,False,False,False,True,False,2012-09-15T20:00Z,NBCSN,[],,,national,NBCSN,1,STD,3653,Albertsons Stadium,Boise,ID,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,17,39,True,99,"[{'value': 8.0, 'displayValue': '8', 'period': 1}
  {'value': 7.0, 'displayValue': '7', 'period': 2}
  {'value': 21.0, 'displayValue': '21', 'period': 3}
  {'value': 3.0, 'displayValue': '3', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
@@ -2735,7 +2735,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",322592440,2012,2,3,
-322590021,s:20~l:23~e:322590021~c:322590021,2012-09-16T00:00Z,24826,True,False,False,False,True,False,2012-09-16T00:00Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,49,True,99,"[{'value': 21.0, 'displayValue': '21', 'period': 1}
+322590021,s:20~l:23~e:322590021~c:322590021,2012-09-16T00:00Z,24826,True,False,False,False,True,False,2012-09-16T00:00Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,49,True,99,"[{'value': 21.0, 'displayValue': '21', 'period': 1}
  {'value': 14.0, 'displayValue': '14', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
@@ -2754,7 +2754,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 16.0, 'displayValue': '16', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,20,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,20,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
  {'value': 13.0, 'displayValue': '13', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
@@ -2800,7 +2800,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",322590275,2012,2,3,
-322590278,s:20~l:23~e:322590278~c:322590278,2012-09-16T00:00Z,27513,True,False,False,False,True,False,2012-09-16T00:00Z,CBSSN,[],,,national,CBSSN,1,STD,3660,Valley Children's Stadium,Fresno,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,9,69,True,99,"[{'value': 35.0, 'displayValue': '35', 'period': 1}
+322590278,s:20~l:23~e:322590278~c:322590278,2012-09-16T00:00Z,27513,True,False,False,False,True,False,2012-09-16T00:00Z,CBSSN,[],,,national,CBSSN,1,STD,3660,Valley Children's Stadium,Fresno,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,17,69,True,99,"[{'value': 35.0, 'displayValue': '35', 'period': 1}
  {'value': 20.0, 'displayValue': '20', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
@@ -2852,7 +2852,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-0'}]",322632084,2012,2,4,
-322640068,s:20~l:23~e:322640068~c:322640068,2012-09-21T01:00Z,36864,True,False,False,False,True,False,2012-09-21T01:00Z,ESPN,[],,,national,ESPN,1,STD,3653,Albertsons Stadium,Boise,ID,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,9,7,True,24,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
+322640068,s:20~l:23~e:322640068~c:322640068,2012-09-21T01:00Z,36864,True,False,False,False,True,False,2012-09-21T01:00Z,ESPN,[],,,national,ESPN,1,STD,3653,Albertsons Stadium,Boise,ID,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,17,7,True,24,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
  {'value': 0.0, 'displayValue': '0', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
@@ -3419,7 +3419,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '3-0'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-0'}]",322660008,2012,2,4,
-322660036,s:20~l:23~e:322660036~c:322660036,2012-09-22T23:00Z,23374,True,False,False,False,True,False,2012-09-22T23:00Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,40.0,0:40,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,19,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
+322660036,s:20~l:23~e:322660036~c:322660036,2012-09-22T23:00Z,23374,True,False,False,False,True,False,2012-09-22T23:00Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,40.0,0:40,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,19,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
  {'value': 0.0, 'displayValue': '0', 'period': 2}
  {'value': 6.0, 'displayValue': '6', 'period': 3}
  {'value': 13.0, 'displayValue': '13', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-3'}
@@ -3523,7 +3523,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",322662633,2012,2,4,
-322660021,s:20~l:23~e:322660021~c:322660021,2012-09-23T00:00Z,24103,True,False,False,False,True,False,2012-09-23T00:00Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,34,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
+322660021,s:20~l:23~e:322660021~c:322660021,2012-09-23T00:00Z,24103,True,False,False,False,True,False,2012-09-23T00:00Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,34,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
  {'value': 17.0, 'displayValue': '17', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 10.0, 'displayValue': '10', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-2'}
@@ -3568,7 +3568,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-1'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-0'}]",278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,9,26,False,99,"[{'value': 20.0, 'displayValue': '20', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-0'}]",278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,17,26,False,99,"[{'value': 20.0, 'displayValue': '20', 'period': 1}
  {'value': 0.0, 'displayValue': '0', 'period': 2}
  {'value': 6.0, 'displayValue': '6', 'period': 3}
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-2'}
@@ -3841,7 +3841,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 15.0, 'displayValue': '15', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-3'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-2'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-1'}]",68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,9,32,True,24,"[{'value': 3.0, 'displayValue': '3', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-1'}]",68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,17,32,True,24,"[{'value': 3.0, 'displayValue': '3', 'period': 1}
  {'value': 22.0, 'displayValue': '22', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-1'}
@@ -4010,7 +4010,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-2'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-1'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,21,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-1'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,21,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
  {'value': 14.0, 'displayValue': '14', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-4'}
@@ -4316,13 +4316,13 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-3'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-0'}]",322730328,2012,2,5,
-322730278,s:20~l:23~e:322730278~c:322730278,2012-09-30T02:00Z,33894,True,False,False,False,True,False,2012-09-30T02:00Z,,[],,,,,1,STD,3660,Valley Children's Stadium,Fresno,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,9,52,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+322730278,s:20~l:23~e:322730278~c:322730278,2012-09-30T02:00Z,33894,True,False,False,False,True,False,2012-09-30T02:00Z,,[],,,,,1,STD,3660,Valley Children's Stadium,Fresno,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,17,52,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 29.0, 'displayValue': '29', 'period': 2}
  {'value': 10.0, 'displayValue': '10', 'period': 3}
  {'value': 6.0, 'displayValue': '6', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-2'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-0'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,40,False,99,"[{'value': 21.0, 'displayValue': '21', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-0'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,40,False,99,"[{'value': 21.0, 'displayValue': '21', 'period': 1}
  {'value': 6.0, 'displayValue': '6', 'period': 2}
  {'value': 13.0, 'displayValue': '13', 'period': 3}
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-3'}
@@ -4703,7 +4703,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-5'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-3'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-1'}]",68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,9,40,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-1'}]",68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,17,40,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 16.0, 'displayValue': '16', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 10.0, 'displayValue': '10', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-1'}
@@ -4918,13 +4918,13 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-2'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",322800167,2012,2,6,
-322800036,s:20~l:23~e:322800036~c:322800036,2012-10-06T23:00Z,25814,True,False,False,False,True,False,2012-10-06T23:00Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,7,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
+322800036,s:20~l:23~e:322800036~c:322800036,2012-10-06T23:00Z,25814,True,False,False,False,True,False,2012-10-06T23:00Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,7,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
  {'value': 0.0, 'displayValue': '0', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-5'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-3'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-2'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-2'}]",278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,9,28,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-2'}]",278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,17,28,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 7.0, 'displayValue': '7', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 14.0, 'displayValue': '14', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-2'}
@@ -5024,7 +5024,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-2'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-2'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-1'}]",322802440,2012,2,6,OT
-322800021,s:20~l:23~e:322800021~c:322800021,2012-10-07T00:00Z,50586,True,False,False,False,True,False,2012-10-07T00:00Z,CBSSN,[],,,national,CBSSN,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,52,True,99,"[{'value': 14.0, 'displayValue': '14', 'period': 1}
+322800021,s:20~l:23~e:322800021~c:322800021,2012-10-07T00:00Z,50586,True,False,False,False,True,False,2012-10-07T00:00Z,CBSSN,[],,,national,CBSSN,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,52,True,99,"[{'value': 14.0, 'displayValue': '14', 'period': 1}
  {'value': 21.0, 'displayValue': '21', 'period': 2}
  {'value': 3.0, 'displayValue': '3', 'period': 3}
  {'value': 14.0, 'displayValue': '14', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-3'}
@@ -5312,13 +5312,13 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '3-0'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '2-1'}]",322872348,2012,2,7,
-322870068,s:20~l:23~e:322870068~c:322870068,2012-10-13T19:30Z,35742,True,False,False,False,True,False,2012-10-13T19:30Z,NBCSN,[],,,national,NBCSN,1,STD,3653,Albertsons Stadium,Boise,ID,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,9,20,True,24,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+322870068,s:20~l:23~e:322870068~c:322870068,2012-10-13T19:30Z,35742,True,False,False,False,True,False,2012-10-13T19:30Z,NBCSN,[],,,national,NBCSN,1,STD,3653,Albertsons Stadium,Boise,ID,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,17,20,True,24,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 10.0, 'displayValue': '10', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 3.0, 'displayValue': '3', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '5-1'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '2-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '2-0'}]",278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,9,10,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '2-0'}]",278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,17,10,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
  {'value': 0.0, 'displayValue': '0', 'period': 2}
  {'value': 3.0, 'displayValue': '3', 'period': 3}
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-3'}
@@ -5645,13 +5645,13 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-2'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '3-0'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '2-1'}]",322872229,2012,2,7,
-322870021,s:20~l:23~e:322870021~c:322870021,2012-10-13T22:30Z,27133,True,False,False,False,True,False,2012-10-13T22:30Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,62.0,1:02,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,38,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+322870021,s:20~l:23~e:322870021~c:322870021,2012-10-13T22:30Z,27133,True,False,False,False,True,False,2012-10-13T22:30Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,62.0,1:02,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,38,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 10.0, 'displayValue': '10', 'period': 2}
  {'value': 14.0, 'displayValue': '14', 'period': 3}
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-3'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '4-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '2-1'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,14,False,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '2-1'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,14,False,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 0.0, 'displayValue': '0', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-6'}
@@ -6056,7 +6056,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '5-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-0'}]",322942649,2012,2,8,
-322940068,s:20~l:23~e:322940068~c:322940068,2012-10-20T19:30Z,36012,True,False,False,False,True,False,2012-10-20T19:30Z,NBCSN,[],,,national,NBCSN,1,STD,3653,Albertsons Stadium,Boise,ID,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,9,32,True,22,"[{'value': 8.0, 'displayValue': '8', 'period': 1}
+322940068,s:20~l:23~e:322940068~c:322940068,2012-10-20T19:30Z,36012,True,False,False,False,True,False,2012-10-20T19:30Z,NBCSN,[],,,national,NBCSN,1,STD,3653,Albertsons Stadium,Boise,ID,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,17,32,True,22,"[{'value': 8.0, 'displayValue': '8', 'period': 1}
  {'value': 17.0, 'displayValue': '17', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '6-1'}
@@ -6493,7 +6493,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-3'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-3'}]",322940012,2012,2,8,
-322940278,s:20~l:23~e:322940278~c:322940278,2012-10-21T02:30Z,29423,True,False,False,False,True,False,2012-10-21T02:30Z,,[],,,,,1,STD,3660,Valley Children's Stadium,Fresno,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,9,42,True,99,"[{'value': 21.0, 'displayValue': '21', 'period': 1}
+322940278,s:20~l:23~e:322940278~c:322940278,2012-10-21T02:30Z,29423,True,False,False,False,True,False,2012-10-21T02:30Z,,[],,,,,1,STD,3660,Valley Children's Stadium,Fresno,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,17,42,True,99,"[{'value': 21.0, 'displayValue': '21', 'period': 1}
  {'value': 14.0, 'displayValue': '14', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '5-3'}
@@ -6513,7 +6513,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 7.0, 'displayValue': '7', 'period': 5}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '6-2'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-2'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '4-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '3-1'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,39,True,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '3-1'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,39,True,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
  {'value': 6.0, 'displayValue': '6', 'period': 2}
  {'value': 8.0, 'displayValue': '8', 'period': 3}
  {'value': 17.0, 'displayValue': '17', 'period': 4}
@@ -6737,7 +6737,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-7'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-4'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-3'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-4'}]",68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,9,45,True,21,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-4'}]",68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,17,45,True,21,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 10.0, 'displayValue': '10', 'period': 2}
  {'value': 21.0, 'displayValue': '21', 'period': 3}
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '7-1'}
@@ -7012,7 +7012,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 8.0, 'displayValue': '8', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-5'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-2'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '2-3'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-3'}]",278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,9,49,True,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-3'}]",278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,17,49,True,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
  {'value': 14.0, 'displayValue': '14', 'period': 2}
  {'value': 21.0, 'displayValue': '21', 'period': 3}
  {'value': 14.0, 'displayValue': '14', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '6-3'}
@@ -7162,7 +7162,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '4-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '3-1'}]",323012229,2012,2,9,
-323010036,s:20~l:23~e:323010036~c:323010036,2012-10-27T23:00Z,16573,True,False,False,False,True,False,2012-10-27T23:00Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,42,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+323010036,s:20~l:23~e:323010036~c:323010036,2012-10-27T23:00Z,16573,True,False,False,False,True,False,2012-10-27T23:00Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,42,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 21.0, 'displayValue': '21', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 14.0, 'displayValue': '14', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-6'}
@@ -7227,7 +7227,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-2'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-4'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-3'}]",323012433,2012,2,9,
-323010021,s:20~l:23~e:323010021~c:323010021,2012-10-28T00:00Z,23874,True,False,False,False,True,False,2012-10-28T00:00Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,176.0,2:56,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,24,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+323010021,s:20~l:23~e:323010021~c:323010021,2012-10-28T00:00Z,23874,True,False,False,False,True,False,2012-10-28T00:00Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,176.0,2:56,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,24,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 7.0, 'displayValue': '7', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 3.0, 'displayValue': '3', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '6-3'}
@@ -7506,13 +7506,13 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '4-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '4-2'}]",323082641,2012,2,10,
-323080068,s:20~l:23~e:323080068~c:323080068,2012-11-04T02:30Z,36084,True,False,False,False,True,False,2012-11-04T02:30Z,CBSSN,[],,,national,CBSSN,1,STD,3653,Albertsons Stadium,Boise,ID,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,9,19,False,19,"[{'value': 6.0, 'displayValue': '6', 'period': 1}
+323080068,s:20~l:23~e:323080068~c:323080068,2012-11-04T02:30Z,36084,True,False,False,False,True,False,2012-11-04T02:30Z,CBSSN,[],,,national,CBSSN,1,STD,3653,Albertsons Stadium,Boise,ID,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,17,19,False,19,"[{'value': 6.0, 'displayValue': '6', 'period': 1}
  {'value': 7.0, 'displayValue': '7', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 6.0, 'displayValue': '6', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '7-2'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '4-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '3-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '4-1'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,21,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '4-1'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,21,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 0.0, 'displayValue': '0', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '7-3'}
@@ -7932,7 +7932,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 3.0, 'displayValue': '3', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-7'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-4'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-3'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-4'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,31,False,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-4'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,31,False,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 7.0, 'displayValue': '7', 'period': 2}
  {'value': 3.0, 'displayValue': '3', 'period': 3}
  {'value': 14.0, 'displayValue': '14', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-7'}
@@ -7978,7 +7978,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-2'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-4'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-4'}]",323080058,2012,2,10,
-323080278,s:20~l:23~e:323080278~c:323080278,2012-11-03T23:00Z,30755,True,False,False,False,True,False,2012-11-03T23:00Z,,[],,,,,1,STD,3660,Valley Children's Stadium,Fresno,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,9,45,True,99,"[{'value': 21.0, 'displayValue': '21', 'period': 1}
+323080278,s:20~l:23~e:323080278~c:323080278,2012-11-03T23:00Z,30755,True,False,False,False,True,False,2012-11-03T23:00Z,,[],,,,,1,STD,3660,Valley Children's Stadium,Fresno,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,17,45,True,99,"[{'value': 21.0, 'displayValue': '21', 'period': 1}
  {'value': 21.0, 'displayValue': '21', 'period': 2}
  {'value': 3.0, 'displayValue': '3', 'period': 3}
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '7-3'}
@@ -8512,7 +8512,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '4-2'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-3'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '3-5'}]",323150152,2012,2,11,
-323150021,s:20~l:23~e:323150021~c:323150021,2012-11-10T20:30Z,30266,True,False,False,False,True,False,2012-11-10T20:30Z,NBCSN,[],,,national,NBCSN,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,28,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+323150021,s:20~l:23~e:323150021~c:323150021,2012-11-10T20:30Z,30266,True,False,False,False,True,False,2012-11-10T20:30Z,NBCSN,[],,,national,NBCSN,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,28,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 7.0, 'displayValue': '7', 'period': 2}
  {'value': 14.0, 'displayValue': '14', 'period': 3}
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '8-3'}
@@ -8655,7 +8655,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '3-3'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '3-3'}]",323152636,2012,2,11,
-323150036,s:20~l:23~e:323150036~c:323150036,2012-11-11T00:00Z,13887,True,False,False,False,True,False,2012-11-11T00:00Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,33,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+323150036,s:20~l:23~e:323150036~c:323150036,2012-11-11T00:00Z,13887,True,False,False,False,True,False,2012-11-11T00:00Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,33,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 17.0, 'displayValue': '17', 'period': 2}
  {'value': 3.0, 'displayValue': '3', 'period': 3}
  {'value': 6.0, 'displayValue': '6', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-7'}
@@ -8674,7 +8674,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-8'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-3'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-5'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-6'}]",68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,9,49,True,99,"[{'value': 21.0, 'displayValue': '21', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-6'}]",68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,17,49,True,99,"[{'value': 21.0, 'displayValue': '21', 'period': 1}
  {'value': 14.0, 'displayValue': '14', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '8-2'}
@@ -8765,7 +8765,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 15.0, 'displayValue': '15', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '6-4'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-3'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '4-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '3-3'}]",278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,9,52,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '3-3'}]",278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,17,52,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 14.0, 'displayValue': '14', 'period': 2}
  {'value': 23.0, 'displayValue': '23', 'period': 3}
  {'value': 8.0, 'displayValue': '8', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '8-3'}
@@ -9337,13 +9337,13 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '5-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-4'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '3-4'}]",323220059,2012,2,12,
-323220068,s:20~l:23~e:323220068~c:323220068,2012-11-17T20:30Z,33545,True,False,False,False,True,False,2012-11-17T20:30Z,NBCSN,[],,,national,NBCSN,1,STD,3653,Albertsons Stadium,Boise,ID,USA,False,249.0,4:09,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,9,42,True,99,"[{'value': 14.0, 'displayValue': '14', 'period': 1}
+323220068,s:20~l:23~e:323220068~c:323220068,2012-11-17T20:30Z,33545,True,False,False,False,True,False,2012-11-17T20:30Z,NBCSN,[],,,national,NBCSN,1,STD,3653,Albertsons Stadium,Boise,ID,USA,False,249.0,4:09,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,17,42,True,99,"[{'value': 14.0, 'displayValue': '14', 'period': 1}
  {'value': 21.0, 'displayValue': '21', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '9-2'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '5-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '4-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '6-1'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,14,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '6-1'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,14,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
  {'value': 0.0, 'displayValue': '0', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-8'}
@@ -10202,7 +10202,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-5'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-5'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '2-6'}]",323290248,2012,2,13,
-323290278,s:20~l:23~e:323290278~c:323290278,2012-11-24T20:30Z,36240,True,False,False,False,True,False,2012-11-24T20:30Z,NBCSN,[],,,national,NBCSN,1,STD,3660,Valley Children's Stadium,Fresno,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,9,48,True,99,"[{'value': 21.0, 'displayValue': '21', 'period': 1}
+323290278,s:20~l:23~e:323290278~c:323290278,2012-11-24T20:30Z,36240,True,False,False,False,True,False,2012-11-24T20:30Z,NBCSN,[],,,national,NBCSN,1,STD,3660,Valley Children's Stadium,Fresno,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,17,48,True,99,"[{'value': 21.0, 'displayValue': '21', 'period': 1}
  {'value': 10.0, 'displayValue': '10', 'period': 2}
  {'value': 14.0, 'displayValue': '14', 'period': 3}
  {'value': 3.0, 'displayValue': '3', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '9-3'}
@@ -10234,7 +10234,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-8'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-5'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '3-3'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '3-5'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,42,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '3-5'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,42,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 14.0, 'displayValue': '14', 'period': 2}
  {'value': 14.0, 'displayValue': '14', 'period': 3}
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '9-3'}
@@ -10282,7 +10282,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-2'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '5-2'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '6-2'}]",323292229,2012,2,13,OT
-323290036,s:20~l:23~e:323290036~c:323290036,2012-11-25T00:00Z,12286,True,False,False,False,True,False,2012-11-25T00:00Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,24,True,99,"[{'value': 14.0, 'displayValue': '14', 'period': 1}
+323290036,s:20~l:23~e:323290036~c:323290036,2012-11-25T00:00Z,12286,True,False,False,False,True,False,2012-11-25T00:00Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,24,True,99,"[{'value': 14.0, 'displayValue': '14', 'period': 1}
  {'value': 3.0, 'displayValue': '3', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-8'}
@@ -10504,7 +10504,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 14.0, 'displayValue': '14', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '7-5'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-4'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '5-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '4-4'}]",68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,9,27,True,20,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '4-4'}]",68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,17,27,True,20,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 10.0, 'displayValue': '10', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 3.0, 'displayValue': '3', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '10-2'}
@@ -10723,7 +10723,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-4'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '5-2'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '4-4'}]",323500012,2012,3,1,
-323550021,s:20~l:23~e:323550021~c:323550021,2012-12-21T01:00Z,35442,True,False,True,False,True,False,2012-12-21T01:00Z,ESPN/ESPN 3D,[],event,SAN DIEGO COUNTY CREDIT UNION POINSETTIA BOWL,national,ESPN,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,6,False,99,"[{'value': 3.0, 'displayValue': '3', 'period': 1}
+323550021,s:20~l:23~e:323550021~c:323550021,2012-12-21T01:00Z,35442,True,False,True,False,True,False,2012-12-21T01:00Z,ESPN/ESPN 3D,[],event,SAN DIEGO COUNTY CREDIT UNION POINSETTIA BOWL,national,ESPN,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,6,False,99,"[{'value': 3.0, 'displayValue': '3', 'period': 1}
  {'value': 3.0, 'displayValue': '3', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '9-4'}
@@ -10749,7 +10749,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '4-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '5-3'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '6-2'}]",323562116,2012,3,1,
-323570068,s:20~l:23~e:323570068~c:323570068,2012-12-22T20:30Z,33217,True,False,True,False,True,False,2012-12-22T20:30Z,ESPN,[],event,MAACO BOWL LAS VEGAS,national,ESPN,1,STD,3914,Sam Boyd Stadium,Las Vegas,NV,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,9,28,True,19,"[{'value': 9.0, 'displayValue': '9', 'period': 1}
+323570068,s:20~l:23~e:323570068~c:323570068,2012-12-22T20:30Z,33217,True,False,True,False,True,False,2012-12-22T20:30Z,ESPN,[],event,MAACO BOWL LAS VEGAS,national,ESPN,1,STD,3914,Sam Boyd Stadium,Las Vegas,NV,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,68,s:20~l:23~t:68,Boise State,Broncos,BOIS,Boise State Broncos,Boise St,0033a0,d64309,True,3653,https://a.espncdn.com/i/teamlogos/ncaa/500/68.png,17,28,True,19,"[{'value': 9.0, 'displayValue': '9', 'period': 1}
  {'value': 9.0, 'displayValue': '9', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 3.0, 'displayValue': '3', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '11-2'}
@@ -10781,7 +10781,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 14.0, 'displayValue': '14', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '7-6'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '6-2'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-4'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '5-3'}]",278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,9,10,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '5-3'}]",278,s:20~l:23~t:278,Fresno State,Bulldogs,FRES,Fresno State Bulldogs,Fresno St,b1102b,13284c,True,3660,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,17,10,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
  {'value': 0.0, 'displayValue': '0', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 3.0, 'displayValue': '3', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '9-4'}
