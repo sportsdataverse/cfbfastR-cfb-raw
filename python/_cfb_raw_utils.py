@@ -137,6 +137,28 @@ def filter_undone(games, dir: str = "cfb/json/final", rescrape: bool = False) ->
     return [g for g in games if not (d / f"{g}.json").exists()]
 
 
+def hollow_game_ids(failures_csv: str = "logs/scrape_failures.csv") -> set[int]:
+    """Return game IDs recorded as hollow_extras in scrape_failures.csv."""
+    import csv as _csv
+    p = Path(failures_csv)
+    if not p.exists():
+        return set()
+    with p.open() as f:
+        return {int(row["game_id"]) for row in _csv.DictReader(f) if row.get("issue") == "hollow_extras"}
+
+
+def filter_hollow(games, failures_csv: str = "logs/scrape_failures.csv") -> list[int]:
+    """Return only games flagged as hollow_extras (or no_final) in scrape_failures.csv."""
+    import csv as _csv
+    p = Path(failures_csv)
+    if not p.exists():
+        raise FileNotFoundError(f"Run scrape_failures.py first to generate {failures_csv}")
+    with p.open() as f:
+        flagged = {int(row["game_id"]) for row in _csv.DictReader(f)}
+    game_set = set(games)
+    return [g for g in games if g in flagged and g in game_set]
+
+
 def season_type_from_raw(raw: dict):
     """Best-effort integer season_type from an ESPN summary, or None.
     ESPN places it inconsistently (header.season.type as int or dict, or

@@ -21,6 +21,11 @@ on:
         required: false
         type: boolean
         default: false
+      hollow:
+        description: 'Rescrape only hollow/missing games from logs/scrape_failures.csv'
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   scrape_cfb_raw:
@@ -30,6 +35,7 @@ jobs:
       START_YEAR: ${{ inputs.start_year }}
       END_YEAR: ${{ inputs.end_year }}
       RESCRAPE: ${{ inputs.rescrape }}
+      HOLLOW: ${{ inputs.hollow }}
     steps:
       - uses: actions/checkout@v5
 
@@ -52,5 +58,9 @@ jobs:
         if: ${{ env.RESCRAPE == '' }}
         run: echo "RESCRAPE=false" >> $GITHUB_ENV
 
+      - name: Default hollow if empty
+        if: ${{ env.HOLLOW == '' }}
+        run: echo "HOLLOW=false" >> $GITHUB_ENV
+
       - name: Scrape CFB Raw ${{ env.START_YEAR }}-${{ env.END_YEAR }}
-        run: bash scripts/daily_cfb_scraper.sh -s ${{ env.START_YEAR }} -e ${{ env.END_YEAR }} -r ${{ env.RESCRAPE }}
+        run: bash scripts/daily_cfb_scraper.sh -s ${{ env.START_YEAR }} -e ${{ env.END_YEAR }} -r ${{ env.RESCRAPE }} -h ${{ env.HOLLOW }}

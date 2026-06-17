@@ -10,7 +10,7 @@ import argparse
 import sportsdataverse as sdv
 from sportsdataverse.cfb import CFBPlayProcess
 
-from _cfb_raw_utils import (PROCESSING_VERSION, _safe, filter_undone,
+from _cfb_raw_utils import (PROCESSING_VERSION, _safe, filter_hollow, filter_undone,
                             games_for_seasons, get_logger, load_schedule_master,
                             most_recent_cfb_season, run_pool, season_type_from_raw,
                             stamp, write_json_atomic)
@@ -143,15 +143,23 @@ def main() -> None:
     ap.add_argument("-s", "--start_year", type=int, default=most_recent_cfb_season())
     ap.add_argument("-e", "--end_year", type=int, default=None)
     ap.add_argument("-r", "--rescrape", type=str, default="false")
+    ap.add_argument("--hollow", type=str, default="false",
+                    help="rescrape only games flagged as hollow_extras/no_final in logs/scrape_failures.csv")
     args = ap.parse_args()
     end = args.end_year or args.start_year
     rescrape = str(args.rescrape).lower() in ("1", "true", "yes")
+    hollow = str(args.hollow).lower() in ("1", "true", "yes")
     master = load_schedule_master()
     for season in range(args.start_year, end + 1):
         logger = get_logger("cfb_json", season)
-        games = filter_undone(games_for_seasons(master, season, season), rescrape=rescrape)
-        logger.info("season %s: %d games to scrape (rescrape=%s)", season, len(games), rescrape)
-        run_pool(_worker, [(g, season, rescrape) for g in games],
+        all_games = games_for_seasons(master, season, season)
+        if hollow:
+            games = filter_hollow(all_games)
+            logger.info("season %s: %d hollow/missing games to rescrape", season, len(games))
+        else:
+            games = filter_undone(all_games, rescrape=rescrape)
+            logger.info("season %s: %d games to scrape (rescrape=%s)", season, len(games), rescrape)
+        run_pool(_worker, [(g, season, True) for g in games],
                  kind="process", desc=f"cfb {season}", workers=_scrape_workers())
 
 
