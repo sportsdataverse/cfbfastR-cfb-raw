@@ -1,429 +1,35 @@
-2026-06-14 05:17:20,235 INFO schedules 2019: 500 games
-2026-06-14 05:17:22,591 INFO season 2019: 504 games to scrape (rescrape=True)
-cfb 2019:   0%|          | 0/504 [00:00<?, ?it/s]cfb 2019:   0%|          | 1/504 [00:22<3:10:15, 22.69s/it]cfb 2019:   0%|          | 2/504 [00:23<1:20:27,  9.62s/it]cfb 2019:   1%|          | 3/504 [00:25<50:46,  6.08s/it]  2026-06-14 05:17:49,321 ERROR extra fetch failed: _rosters(401135286,)
+2026-06-17 10:18:58,622 INFO schedules 2019: 892 games
+2026-06-17 10:19:00,255 INFO season 2019: 1 hollow/missing games to rescrape
+cfb 2019:   0%|          | 0/1 [00:00<?, ?it/s]2026-06-17 10:19:02,633 ERROR extra fetch failed: _rosters(401117539,)
 Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
     return fn(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
     team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to vstack, column names don't match: "jersey" and "valid"
-ERROR:cfb_json_2019:extra fetch failed: _rosters(401135286,)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117539/competitions/401117539/competitors
+ERROR:cfb_json_2019:extra fetch failed: _rosters(401117539,)
 Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
     return fn(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
     team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to vstack, column names don't match: "jersey" and "valid"
-cfb 2019:   1%|          | 4/504 [00:27<37:13,  4.47s/it]cfb 2019:   1%|          | 5/504 [00:43<1:13:14,  8.81s/it]cfb 2019:   1%|1         | 6/504 [00:47<1:00:28,  7.29s/it]cfb 2019:   1%|1         | 7/504 [00:49<45:09,  5.45s/it]  cfb 2019:   2%|1         | 8/504 [01:04<1:09:34,  8.42s/it]cfb 2019:   2%|1         | 9/504 [01:09<1:01:43,  7.48s/it]2026-06-14 05:18:35,136 ERROR extra fetch failed: _rosters(401155540,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 151, in helper_cfb_team_items
-    for row in range(len(teams_df["logos"])):
-                         ~~~~~~~~^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 1441, in __getitem__
-    return get_df_item_by_key(self, key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\_utils\getitem.py", line 163, in get_df_item_by_key
-    return df.get_column(key)
-           ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 9289, in get_column
-    return wrap_s(self._df.get_column(name))
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ColumnNotFoundError: "logos" not found
-ERROR:cfb_json_2019:extra fetch failed: _rosters(401155540,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 151, in helper_cfb_team_items
-    for row in range(len(teams_df["logos"])):
-                         ~~~~~~~~^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 1441, in __getitem__
-    return get_df_item_by_key(self, key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\_utils\getitem.py", line 163, in get_df_item_by_key
-    return df.get_column(key)
-           ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 9289, in get_column
-    return wrap_s(self._df.get_column(name))
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ColumnNotFoundError: "logos" not found
-cfb 2019:   2%|2         | 11/504 [01:12<38:23,  4.67s/it] 2026-06-14 05:18:36,140 ERROR extra fetch failed: _rosters(401155538,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 151, in helper_cfb_team_items
-    for row in range(len(teams_df["logos"])):
-                         ~~~~~~~~^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 1441, in __getitem__
-    return get_df_item_by_key(self, key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\_utils\getitem.py", line 163, in get_df_item_by_key
-    return df.get_column(key)
-           ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 9289, in get_column
-    return wrap_s(self._df.get_column(name))
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ColumnNotFoundError: "logos" not found
-ERROR:cfb_json_2019:extra fetch failed: _rosters(401155538,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 151, in helper_cfb_team_items
-    for row in range(len(teams_df["logos"])):
-                         ~~~~~~~~^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 1441, in __getitem__
-    return get_df_item_by_key(self, key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\_utils\getitem.py", line 163, in get_df_item_by_key
-    return df.get_column(key)
-           ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 9289, in get_column
-    return wrap_s(self._df.get_column(name))
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ColumnNotFoundError: "logos" not found
-cfb 2019:   2%|2         | 12/504 [01:13<30:45,  3.75s/it]2026-06-14 05:18:38,455 ERROR extra fetch failed: _rosters(401155539,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 151, in helper_cfb_team_items
-    for row in range(len(teams_df["logos"])):
-                         ~~~~~~~~^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 1441, in __getitem__
-    return get_df_item_by_key(self, key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\_utils\getitem.py", line 163, in get_df_item_by_key
-    return df.get_column(key)
-           ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 9289, in get_column
-    return wrap_s(self._df.get_column(name))
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ColumnNotFoundError: "logos" not found
-ERROR:cfb_json_2019:extra fetch failed: _rosters(401155539,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 151, in helper_cfb_team_items
-    for row in range(len(teams_df["logos"])):
-                         ~~~~~~~~^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 1441, in __getitem__
-    return get_df_item_by_key(self, key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\_utils\getitem.py", line 163, in get_df_item_by_key
-    return df.get_column(key)
-           ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 9289, in get_column
-    return wrap_s(self._df.get_column(name))
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ColumnNotFoundError: "logos" not found
-cfb 2019:   3%|2         | 13/504 [01:16<27:34,  3.37s/it]cfb 2019:   3%|2         | 14/504 [01:25<41:53,  5.13s/it]cfb 2019:   3%|2         | 15/504 [01:33<48:18,  5.93s/it]cfb 2019:   3%|3         | 16/504 [01:35<38:15,  4.70s/it]cfb 2019:   3%|3         | 17/504 [01:44<48:36,  5.99s/it]cfb 2019:   4%|3         | 18/504 [01:54<58:00,  7.16s/it]cfb 2019:   4%|3         | 19/504 [01:55<43:06,  5.33s/it]cfb 2019:   4%|3         | 20/504 [02:03<50:19,  6.24s/it]cfb 2019:   4%|4         | 21/504 [02:13<57:21,  7.13s/it]cfb 2019:   4%|4         | 22/504 [02:17<50:39,  6.31s/it]cfb 2019:   5%|4         | 23/504 [02:26<57:50,  7.22s/it]cfb 2019:   5%|4         | 24/504 [02:34<59:04,  7.38s/it]cfb 2019:   5%|4         | 25/504 [02:37<48:00,  6.01s/it]cfb 2019:   5%|5         | 26/504 [02:49<1:03:15,  7.94s/it]cfb 2019:   5%|5         | 27/504 [02:56<1:00:20,  7.59s/it]cfb 2019:   6%|5         | 28/504 [02:59<48:35,  6.12s/it]  cfb 2019:   6%|5         | 29/504 [03:12<1:04:43,  8.18s/it]cfb 2019:   6%|5         | 30/504 [03:19<1:02:29,  7.91s/it]cfb 2019:   6%|6         | 31/504 [03:20<46:23,  5.88s/it]  cfb 2019:   6%|6         | 32/504 [03:32<1:01:02,  7.76s/it]cfb 2019:   7%|6         | 33/504 [03:41<1:01:40,  7.86s/it]cfb 2019:   7%|6         | 34/504 [03:41<43:38,  5.57s/it]  cfb 2019:   7%|6         | 35/504 [03:53<59:54,  7.66s/it]cfb 2019:   7%|7         | 36/504 [03:58<53:33,  6.87s/it]cfb 2019:   7%|7         | 37/504 [04:01<43:09,  5.54s/it]cfb 2019:   8%|7         | 38/504 [04:19<1:11:58,  9.27s/it]cfb 2019:   8%|7         | 39/504 [04:21<55:17,  7.13s/it]  cfb 2019:   8%|7         | 40/504 [04:23<43:15,  5.59s/it]cfb 2019:   8%|8         | 41/504 [04:39<1:07:21,  8.73s/it]cfb 2019:   8%|8         | 42/504 [04:40<49:57,  6.49s/it]  cfb 2019:   9%|8         | 43/504 [04:44<44:07,  5.74s/it]cfb 2019:   9%|8         | 44/504 [04:59<1:05:27,  8.54s/it]cfb 2019:   9%|8         | 45/504 [05:02<51:40,  6.75s/it]  cfb 2019:   9%|9         | 46/504 [05:06<46:38,  6.11s/it]cfb 2019:   9%|9         | 47/504 [05:18<58:38,  7.70s/it]cfb 2019:  10%|9         | 48/504 [05:24<54:27,  7.17s/it]cfb 2019:  10%|9         | 49/504 [05:26<42:38,  5.62s/it]cfb 2019:  10%|9         | 50/504 [05:38<58:24,  7.72s/it]cfb 2019:  10%|#         | 51/504 [05:42<49:50,  6.60s/it]cfb 2019:  10%|#         | 52/504 [05:46<41:47,  5.55s/it]cfb 2019:  11%|#         | 53/504 [06:01<1:04:51,  8.63s/it]cfb 2019:  11%|#         | 54/504 [06:05<53:59,  7.20s/it]  cfb 2019:  11%|#         | 55/504 [06:08<43:39,  5.83s/it]cfb 2019:  11%|#1        | 56/504 [06:23<1:04:31,  8.64s/it]cfb 2019:  11%|#1        | 57/504 [06:26<52:19,  7.02s/it]  cfb 2019:  12%|#1        | 58/504 [06:30<45:53,  6.17s/it]cfb 2019:  12%|#1        | 59/504 [06:47<1:09:11,  9.33s/it]cfb 2019:  12%|#1        | 60/504 [06:48<49:16,  6.66s/it]  cfb 2019:  12%|#2        | 61/504 [06:51<42:19,  5.73s/it]cfb 2019:  12%|#2        | 62/504 [07:09<1:08:45,  9.33s/it]cfb 2019:  12%|#2        | 63/504 [07:11<52:16,  7.11s/it]  cfb 2019:  13%|#2        | 64/504 [07:14<43:46,  5.97s/it]cfb 2019:  13%|#2        | 65/504 [07:26<56:15,  7.69s/it]cfb 2019:  13%|#3        | 66/504 [07:30<49:04,  6.72s/it]cfb 2019:  13%|#3        | 67/504 [07:37<48:08,  6.61s/it]cfb 2019:  13%|#3        | 68/504 [07:48<58:32,  8.06s/it]cfb 2019:  14%|#3        | 69/504 [07:53<51:07,  7.05s/it]cfb 2019:  14%|#3        | 70/504 [07:58<46:48,  6.47s/it]cfb 2019:  14%|#4        | 71/504 [08:09<56:40,  7.85s/it]cfb 2019:  14%|#4        | 72/504 [08:15<52:29,  7.29s/it]cfb 2019:  14%|#4        | 73/504 [08:18<43:11,  6.01s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
-cfb 2019:  15%|#4        | 74/504 [08:34<1:04:11,  8.96s/it]cfb 2019:  15%|#4        | 75/504 [08:38<53:21,  7.46s/it]  cfb 2019:  15%|#5        | 76/504 [08:42<45:16,  6.35s/it]cfb 2019:  15%|#5        | 77/504 [08:55<1:01:06,  8.59s/it]cfb 2019:  15%|#5        | 78/504 [09:00<51:55,  7.31s/it]  WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 55 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 5 will retain null names.
-cfb 2019:  16%|#5        | 79/504 [09:05<46:46,  6.60s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 55 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 5 will retain null names.
-cfb 2019:  16%|#5        | 80/504 [09:18<1:01:55,  8.76s/it]cfb 2019:  16%|#6        | 81/504 [09:24<54:01,  7.66s/it]  WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 53 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 3 will retain null names.
-cfb 2019:  16%|#6        | 82/504 [09:27<45:06,  6.41s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 53 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 3 will retain null names.
-2026-06-14 05:26:54,639 ERROR extra fetch failed: _rosters(401128942,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 153, in helper_cfb_team_items
-    teams_df[row, "logo_href"] = team[0]["href"]
-                                 ~~~~^^^
-TypeError: 'NoneType' object is not subscriptable
-ERROR:cfb_json_2019:extra fetch failed: _rosters(401128942,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 153, in helper_cfb_team_items
-    teams_df[row, "logo_href"] = team[0]["href"]
-                                 ~~~~^^^
-TypeError: 'NoneType' object is not subscriptable
-cfb 2019:  16%|#6        | 83/504 [09:32<41:36,  5.93s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
-cfb 2019:  17%|#6        | 84/504 [09:41<48:08,  6.88s/it]cfb 2019:  17%|#6        | 85/504 [09:49<50:29,  7.23s/it]cfb 2019:  17%|#7        | 86/504 [09:54<46:10,  6.63s/it]cfb 2019:  17%|#7        | 87/504 [10:04<53:19,  7.67s/it]cfb 2019:  17%|#7        | 88/504 [10:13<55:13,  7.97s/it]cfb 2019:  18%|#7        | 89/504 [10:15<41:54,  6.06s/it]cfb 2019:  18%|#7        | 90/504 [10:27<54:42,  7.93s/it]cfb 2019:  18%|#8        | 91/504 [10:36<56:41,  8.24s/it]cfb 2019:  18%|#8        | 92/504 [10:38<43:45,  6.37s/it]cfb 2019:  18%|#8        | 93/504 [10:48<52:04,  7.60s/it]cfb 2019:  19%|#8        | 94/504 [10:58<56:47,  8.31s/it]cfb 2019:  19%|#8        | 95/504 [11:01<45:55,  6.74s/it]cfb 2019:  19%|#9        | 96/504 [11:12<53:00,  7.79s/it]cfb 2019:  19%|#9        | 97/504 [11:18<50:32,  7.45s/it]cfb 2019:  19%|#9        | 98/504 [11:20<39:14,  5.80s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 52 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 2 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 52 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 2 will retain null names.
-cfb 2019:  20%|#9        | 99/504 [11:34<55:22,  8.20s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 56 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 6 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 56 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 6 will retain null names.
-cfb 2019:  20%|#9        | 100/504 [11:40<51:01,  7.58s/it]cfb 2019:  20%|##        | 101/504 [11:44<43:21,  6.45s/it]cfb 2019:  20%|##        | 102/504 [11:58<59:24,  8.87s/it]cfb 2019:  20%|##        | 103/504 [12:01<46:04,  6.89s/it]cfb 2019:  21%|##        | 104/504 [12:06<42:02,  6.31s/it]cfb 2019:  21%|##        | 105/504 [12:16<48:54,  7.35s/it]cfb 2019:  21%|##1       | 106/504 [12:18<38:12,  5.76s/it]cfb 2019:  21%|##1       | 107/504 [12:26<43:49,  6.62s/it]cfb 2019:  21%|##1       | 108/504 [12:37<51:11,  7.76s/it]cfb 2019:  22%|##1       | 109/504 [12:38<38:23,  5.83s/it]cfb 2019:  22%|##1       | 110/504 [12:49<48:29,  7.38s/it]cfb 2019:  22%|##2       | 111/504 [12:57<49:31,  7.56s/it]cfb 2019:  22%|##2       | 112/504 [12:59<37:57,  5.81s/it]cfb 2019:  22%|##2       | 113/504 [13:07<42:54,  6.59s/it]cfb 2019:  23%|##2       | 114/504 [13:19<52:47,  8.12s/it]cfb 2019:  23%|##2       | 115/504 [13:20<39:30,  6.09s/it]cfb 2019:  23%|##3       | 116/504 [13:33<52:35,  8.13s/it]cfb 2019:  23%|##3       | 117/504 [13:38<45:46,  7.10s/it]cfb 2019:  23%|##3       | 118/504 [13:40<36:12,  5.63s/it]cfb 2019:  24%|##3       | 119/504 [13:54<51:57,  8.10s/it]cfb 2019:  24%|##3       | 120/504 [13:58<43:36,  6.81s/it]cfb 2019:  24%|##4       | 121/504 [14:04<43:30,  6.81s/it]cfb 2019:  24%|##4       | 122/504 [14:19<58:00,  9.11s/it]cfb 2019:  24%|##4       | 123/504 [14:19<40:44,  6.42s/it]cfb 2019:  25%|##4       | 124/504 [14:29<48:21,  7.64s/it]cfb 2019:  25%|##4       | 125/504 [14:40<53:12,  8.42s/it]cfb 2019:  25%|##5       | 126/504 [14:44<44:20,  7.04s/it]cfb 2019:  25%|##5       | 127/504 [14:48<38:35,  6.14s/it]cfb 2019:  25%|##5       | 128/504 [15:02<53:15,  8.50s/it]cfb 2019:  26%|##5       | 129/504 [15:02<37:47,  6.05s/it]cfb 2019:  26%|##5       | 130/504 [15:11<43:35,  6.99s/it]cfb 2019:  26%|##5       | 131/504 [15:20<47:19,  7.61s/it]cfb 2019:  26%|##6       | 132/504 [15:23<38:10,  6.16s/it]cfb 2019:  26%|##6       | 133/504 [15:34<46:23,  7.50s/it]cfb 2019:  27%|##6       | 134/504 [15:42<47:50,  7.76s/it]cfb 2019:  27%|##6       | 135/504 [15:46<40:38,  6.61s/it]cfb 2019:  27%|##6       | 136/504 [15:57<49:17,  8.04s/it]cfb 2019:  27%|##7       | 137/504 [16:06<49:39,  8.12s/it]cfb 2019:  27%|##7       | 138/504 [16:08<38:59,  6.39s/it]cfb 2019:  28%|##7       | 139/504 [16:17<44:31,  7.32s/it]cfb 2019:  28%|##7       | 140/504 [16:29<52:11,  8.60s/it]cfb 2019:  28%|##7       | 141/504 [16:31<39:18,  6.50s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 55 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 5 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 55 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 5 will retain null names.
-cfb 2019:  28%|##8       | 142/504 [16:39<43:25,  7.20s/it]cfb 2019:  28%|##8       | 143/504 [16:52<53:33,  8.90s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 54 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 4 will retain null names.
-cfb 2019:  29%|##8       | 144/504 [16:54<41:10,  6.86s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 54 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 4 will retain null names.
-cfb 2019:  29%|##8       | 145/504 [17:00<38:48,  6.49s/it]cfb 2019:  29%|##8       | 146/504 [17:15<53:42,  9.00s/it]cfb 2019:  29%|##9       | 147/504 [17:15<38:07,  6.41s/it]cfb 2019:  29%|##9       | 148/504 [17:23<40:25,  6.81s/it]cfb 2019:  30%|##9       | 149/504 [17:36<51:00,  8.62s/it]cfb 2019:  30%|##9       | 150/504 [17:37<37:30,  6.36s/it]cfb 2019:  30%|##9       | 151/504 [17:46<42:12,  7.17s/it]cfb 2019:  30%|###       | 152/504 [17:55<45:12,  7.71s/it]cfb 2019:  30%|###       | 153/504 [18:00<40:12,  6.87s/it]cfb 2019:  31%|###       | 154/504 [18:09<43:55,  7.53s/it]cfb 2019:  31%|###       | 155/504 [18:19<47:38,  8.19s/it]cfb 2019:  31%|###       | 156/504 [18:20<35:30,  6.12s/it]cfb 2019:  31%|###1      | 157/504 [18:30<42:03,  7.27s/it]cfb 2019:  31%|###1      | 158/504 [18:40<47:21,  8.21s/it]cfb 2019:  32%|###1      | 159/504 [18:43<37:05,  6.45s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 52 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 2 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 52 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 2 will retain null names.
-cfb 2019:  32%|###1      | 160/504 [18:51<39:50,  6.95s/it]cfb 2019:  32%|###1      | 161/504 [19:03<48:31,  8.49s/it]cfb 2019:  32%|###2      | 162/504 [19:07<40:25,  7.09s/it]cfb 2019:  32%|###2      | 163/504 [19:15<41:59,  7.39s/it]cfb 2019:  33%|###2      | 164/504 [19:25<46:49,  8.26s/it]cfb 2019:  33%|###2      | 165/504 [19:28<37:13,  6.59s/it]cfb 2019:  33%|###2      | 166/504 [19:39<45:39,  8.11s/it]cfb 2019:  33%|###3      | 167/504 [19:48<46:05,  8.21s/it]cfb 2019:  33%|###3      | 168/504 [19:49<34:18,  6.13s/it]cfb 2019:  34%|###3      | 169/504 [20:01<44:35,  7.99s/it]cfb 2019:  34%|###3      | 170/504 [20:06<38:05,  6.84s/it]2026-06-14 05:37:32,069 ERROR extra fetch failed: _rosters(401128729,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 153, in helper_cfb_team_items
-    teams_df[row, "logo_href"] = team[0]["href"]
-                                 ~~~~^^^
-TypeError: 'NoneType' object is not subscriptable
-ERROR:cfb_json_2019:extra fetch failed: _rosters(401128729,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 153, in helper_cfb_team_items
-    teams_df[row, "logo_href"] = team[0]["href"]
-                                 ~~~~^^^
-TypeError: 'NoneType' object is not subscriptable
-cfb 2019:  34%|###3      | 171/504 [20:09<32:45,  5.90s/it]cfb 2019:  34%|###4      | 172/504 [20:10<24:34,  4.44s/it]cfb 2019:  34%|###4      | 173/504 [20:27<45:00,  8.16s/it]cfb 2019:  35%|###4      | 174/504 [20:32<40:13,  7.31s/it]cfb 2019:  35%|###4      | 175/504 [20:34<30:37,  5.58s/it]cfb 2019:  35%|###4      | 176/504 [20:50<48:02,  8.79s/it]cfb 2019:  35%|###5      | 177/504 [20:56<42:13,  7.75s/it]cfb 2019:  35%|###5      | 178/504 [20:56<30:23,  5.59s/it]cfb 2019:  36%|###5      | 179/504 [21:12<46:59,  8.67s/it]cfb 2019:  36%|###5      | 180/504 [21:17<40:56,  7.58s/it]cfb 2019:  36%|###5      | 181/504 [21:18<30:06,  5.59s/it]cfb 2019:  36%|###6      | 182/504 [21:34<46:30,  8.67s/it]cfb 2019:  36%|###6      | 183/504 [21:40<42:02,  7.86s/it]cfb 2019:  37%|###6      | 184/504 [21:42<32:28,  6.09s/it]cfb 2019:  37%|###6      | 185/504 [21:51<37:27,  7.05s/it]cfb 2019:  37%|###6      | 186/504 [21:57<35:09,  6.63s/it]cfb 2019:  37%|###7      | 187/504 [21:57<25:01,  4.74s/it]cfb 2019:  37%|###7      | 188/504 [22:13<42:14,  8.02s/it]cfb 2019:  38%|###7      | 189/504 [22:16<35:09,  6.70s/it]cfb 2019:  38%|###7      | 190/504 [22:18<27:46,  5.31s/it]cfb 2019:  38%|###7      | 191/504 [22:32<40:09,  7.70s/it]cfb 2019:  38%|###8      | 192/504 [22:34<32:03,  6.16s/it]cfb 2019:  38%|###8      | 193/504 [22:40<30:33,  5.90s/it]cfb 2019:  38%|###8      | 194/504 [22:52<40:29,  7.84s/it]cfb 2019:  39%|###8      | 195/504 [22:53<29:36,  5.75s/it]cfb 2019:  39%|###8      | 196/504 [23:03<36:08,  7.04s/it]cfb 2019:  39%|###9      | 197/504 [23:14<41:35,  8.13s/it]cfb 2019:  39%|###9      | 198/504 [23:15<31:17,  6.13s/it]cfb 2019:  39%|###9      | 199/504 [23:27<39:51,  7.84s/it]cfb 2019:  40%|###9      | 200/504 [23:34<39:12,  7.74s/it]cfb 2019:  40%|###9      | 201/504 [23:39<33:45,  6.68s/it]cfb 2019:  40%|####      | 202/504 [23:49<39:26,  7.83s/it]cfb 2019:  40%|####      | 203/504 [23:56<37:54,  7.56s/it]cfb 2019:  40%|####      | 204/504 [24:01<34:30,  6.90s/it]cfb 2019:  41%|####      | 205/504 [24:11<37:49,  7.59s/it]cfb 2019:  41%|####      | 206/504 [24:17<35:31,  7.15s/it]cfb 2019:  41%|####1     | 207/504 [24:21<31:28,  6.36s/it]cfb 2019:  41%|####1     | 208/504 [24:35<42:18,  8.58s/it]cfb 2019:  41%|####1     | 209/504 [24:38<34:28,  7.01s/it]cfb 2019:  42%|####1     | 210/504 [24:43<30:17,  6.18s/it]cfb 2019:  42%|####1     | 211/504 [24:59<45:02,  9.22s/it]cfb 2019:  42%|####2     | 212/504 [25:00<32:40,  6.71s/it]cfb 2019:  42%|####2     | 213/504 [25:05<30:09,  6.22s/it]cfb 2019:  42%|####2     | 214/504 [25:22<46:03,  9.53s/it]cfb 2019:  43%|####2     | 215/504 [25:23<34:05,  7.08s/it]cfb 2019:  43%|####2     | 216/504 [25:25<25:45,  5.37s/it]cfb 2019:  43%|####3     | 217/504 [25:45<47:09,  9.86s/it]cfb 2019:  43%|####3     | 218/504 [25:46<33:38,  7.06s/it]cfb 2019:  43%|####3     | 219/504 [25:47<26:04,  5.49s/it]cfb 2019:  44%|####3     | 220/504 [26:04<42:05,  8.89s/it]cfb 2019:  44%|####3     | 221/504 [26:05<30:43,  6.52s/it]cfb 2019:  44%|####4     | 222/504 [26:09<26:43,  5.68s/it]cfb 2019:  44%|####4     | 223/504 [26:27<43:27,  9.28s/it]cfb 2019:  44%|####4     | 224/504 [26:28<32:17,  6.92s/it]cfb 2019:  45%|####4     | 225/504 [26:36<33:59,  7.31s/it]cfb 2019:  45%|####4     | 226/504 [26:52<45:05,  9.73s/it]cfb 2019:  45%|####5     | 227/504 [26:52<32:06,  6.96s/it]cfb 2019:  45%|####5     | 228/504 [27:00<32:48,  7.13s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 52 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 2 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 52 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 2 will retain null names.
-cfb 2019:  45%|####5     | 229/504 [27:17<46:47, 10.21s/it]cfb 2019:  46%|####5     | 230/504 [27:17<33:07,  7.25s/it]cfb 2019:  46%|####5     | 231/504 [27:22<29:47,  6.55s/it]cfb 2019:  46%|####6     | 232/504 [27:39<43:15,  9.54s/it]cfb 2019:  46%|####6     | 233/504 [27:40<32:04,  7.10s/it]cfb 2019:  46%|####6     | 234/504 [27:45<28:49,  6.41s/it]cfb 2019:  47%|####6     | 235/504 [28:03<44:03,  9.83s/it]cfb 2019:  47%|####6     | 236/504 [28:03<31:07,  6.97s/it]cfb 2019:  47%|####7     | 237/504 [28:08<28:41,  6.45s/it]cfb 2019:  47%|####7     | 238/504 [28:26<43:43,  9.86s/it]cfb 2019:  47%|####7     | 239/504 [28:32<38:33,  8.73s/it]cfb 2019:  48%|####7     | 240/504 [28:33<27:37,  6.28s/it]cfb 2019:  48%|####7     | 241/504 [28:53<45:22, 10.35s/it]cfb 2019:  48%|####8     | 242/504 [28:54<33:56,  7.77s/it]cfb 2019:  48%|####8     | 243/504 [28:56<25:33,  5.87s/it]cfb 2019:  48%|####8     | 244/504 [29:19<48:17, 11.15s/it]cfb 2019:  49%|####8     | 245/504 [29:20<33:56,  7.86s/it]cfb 2019:  49%|####8     | 246/504 [29:20<24:01,  5.59s/it]cfb 2019:  49%|####9     | 247/504 [29:41<44:21, 10.36s/it]cfb 2019:  49%|####9     | 248/504 [29:41<31:05,  7.29s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 57 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 7 will retain null names.
-cfb 2019:  49%|####9     | 249/504 [29:45<25:50,  6.08s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 57 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 7 will retain null names.
-cfb 2019:  50%|####9     | 250/504 [30:05<43:21, 10.24s/it]cfb 2019:  50%|####9     | 251/504 [30:05<30:39,  7.27s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 57 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 7 will retain null names.
-cfb 2019:  50%|#####     | 252/504 [30:09<26:01,  6.20s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 57 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 7 will retain null names.
-cfb 2019:  50%|#####     | 253/504 [30:30<44:46, 10.70s/it]cfb 2019:  50%|#####     | 254/504 [30:31<32:44,  7.86s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 53 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 3 will retain null names.
-cfb 2019:  51%|#####     | 255/504 [30:32<24:03,  5.80s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 53 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 3 will retain null names.
-cfb 2019:  51%|#####     | 256/504 [30:52<40:46,  9.87s/it]cfb 2019:  51%|#####     | 257/504 [30:52<28:55,  7.02s/it]cfb 2019:  51%|#####1    | 258/504 [30:53<22:04,  5.39s/it]cfb 2019:  51%|#####1    | 259/504 [31:09<35:00,  8.57s/it]cfb 2019:  52%|#####1    | 260/504 [31:11<25:59,  6.39s/it]cfb 2019:  52%|#####1    | 261/504 [31:13<20:58,  5.18s/it]cfb 2019:  52%|#####1    | 262/504 [31:27<31:43,  7.87s/it]cfb 2019:  52%|#####2    | 263/504 [31:30<25:03,  6.24s/it]cfb 2019:  52%|#####2    | 264/504 [31:32<20:20,  5.09s/it]cfb 2019:  53%|#####2    | 265/504 [31:49<34:23,  8.64s/it]cfb 2019:  53%|#####2    | 267/504 [31:53<22:12,  5.62s/it]cfb 2019:  53%|#####3    | 268/504 [32:10<32:55,  8.37s/it]cfb 2019:  53%|#####3    | 269/504 [32:10<24:27,  6.24s/it]cfb 2019:  54%|#####3    | 270/504 [32:16<23:41,  6.08s/it]cfb 2019:  54%|#####3    | 271/504 [32:29<31:49,  8.19s/it]cfb 2019:  54%|#####3    | 272/504 [32:31<24:42,  6.39s/it]cfb 2019:  54%|#####4    | 273/504 [32:36<22:33,  5.86s/it]cfb 2019:  54%|#####4    | 274/504 [32:50<32:04,  8.37s/it]cfb 2019:  55%|#####4    | 275/504 [32:55<27:55,  7.32s/it]cfb 2019:  55%|#####4    | 276/504 [32:56<20:33,  5.41s/it]cfb 2019:  55%|#####4    | 277/504 [33:13<33:30,  8.86s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 56 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 6 will retain null names.
-cfb 2019:  55%|#####5    | 278/504 [33:17<27:30,  7.30s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 56 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 6 will retain null names.
-cfb 2019:  55%|#####5    | 279/504 [33:18<21:12,  5.66s/it]cfb 2019:  56%|#####5    | 280/504 [33:38<36:35,  9.80s/it]cfb 2019:  56%|#####5    | 282/504 [33:39<20:13,  5.46s/it]cfb 2019:  56%|#####6    | 283/504 [33:58<32:59,  8.96s/it]cfb 2019:  56%|#####6    | 284/504 [34:01<26:39,  7.27s/it]cfb 2019:  57%|#####6    | 285/504 [34:02<20:12,  5.54s/it]cfb 2019:  57%|#####6    | 286/504 [34:24<37:12, 10.24s/it]cfb 2019:  57%|#####6    | 287/504 [34:24<26:52,  7.43s/it]cfb 2019:  57%|#####7    | 288/504 [34:25<20:05,  5.58s/it]cfb 2019:  57%|#####7    | 289/504 [34:46<35:14,  9.83s/it]cfb 2019:  58%|#####7    | 290/504 [34:47<25:48,  7.24s/it]cfb 2019:  58%|#####7    | 291/504 [34:48<19:56,  5.62s/it]cfb 2019:  58%|#####7    | 292/504 [35:05<31:26,  8.90s/it]cfb 2019:  58%|#####8    | 293/504 [35:07<24:15,  6.90s/it]cfb 2019:  58%|#####8    | 294/504 [35:14<24:10,  6.91s/it]cfb 2019:  59%|#####8    | 295/504 [35:29<31:50,  9.14s/it]cfb 2019:  59%|#####8    | 296/504 [35:29<22:42,  6.55s/it]cfb 2019:  59%|#####8    | 297/504 [35:37<23:41,  6.87s/it]cfb 2019:  59%|#####9    | 298/504 [35:50<30:32,  8.89s/it]cfb 2019:  59%|#####9    | 299/504 [35:51<22:16,  6.52s/it]cfb 2019:  60%|#####9    | 300/504 [36:00<23:56,  7.04s/it]cfb 2019:  60%|#####9    | 301/504 [36:13<30:29,  9.01s/it]cfb 2019:  60%|#####9    | 302/504 [36:14<21:38,  6.43s/it]cfb 2019:  60%|######    | 303/504 [36:23<25:00,  7.46s/it]cfb 2019:  60%|######    | 304/504 [36:37<30:31,  9.16s/it]cfb 2019:  61%|######    | 305/504 [36:38<22:20,  6.74s/it]cfb 2019:  61%|######    | 306/504 [36:49<26:25,  8.01s/it]cfb 2019:  61%|######    | 307/504 [36:59<28:43,  8.75s/it]cfb 2019:  61%|######1   | 308/504 [36:59<20:20,  6.23s/it]cfb 2019:  61%|######1   | 309/504 [37:08<22:15,  6.85s/it]cfb 2019:  62%|######1   | 310/504 [37:21<28:28,  8.81s/it]cfb 2019:  62%|######1   | 311/504 [37:22<21:08,  6.57s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 52 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 2 will retain null names.
-cfb 2019:  62%|######1   | 312/504 [37:27<18:47,  5.87s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 52 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 2 will retain null names.
-cfb 2019:  62%|######2   | 313/504 [37:43<28:59,  9.11s/it]cfb 2019:  62%|######2   | 314/504 [37:45<22:16,  7.03s/it]cfb 2019:  62%|######2   | 315/504 [37:49<19:02,  6.05s/it]cfb 2019:  63%|######2   | 316/504 [38:06<29:14,  9.33s/it]cfb 2019:  63%|######2   | 317/504 [38:11<24:51,  7.97s/it]cfb 2019:  63%|######3   | 318/504 [38:12<18:04,  5.83s/it]cfb 2019:  63%|######3   | 319/504 [38:28<27:45,  9.00s/it]cfb 2019:  63%|######3   | 320/504 [38:34<24:09,  7.88s/it]cfb 2019:  64%|######3   | 321/504 [38:34<17:11,  5.64s/it]cfb 2019:  64%|######3   | 322/504 [38:51<27:50,  9.18s/it]cfb 2019:  64%|######4   | 323/504 [38:58<25:15,  8.37s/it]cfb 2019:  64%|######4   | 324/504 [38:58<17:46,  5.93s/it]cfb 2019:  64%|######4   | 325/504 [39:11<23:54,  8.01s/it]cfb 2019:  65%|######4   | 326/504 [39:17<21:50,  7.37s/it]cfb 2019:  65%|######4   | 327/504 [39:17<15:47,  5.35s/it]cfb 2019:  65%|######5   | 328/504 [39:30<21:48,  7.44s/it]cfb 2019:  65%|######5   | 329/504 [39:38<22:32,  7.73s/it]cfb 2019:  66%|######5   | 331/504 [39:50<19:50,  6.88s/it]cfb 2019:  66%|######5   | 332/504 [40:00<21:57,  7.66s/it]cfb 2019:  66%|######6   | 333/504 [40:00<16:26,  5.77s/it]cfb 2019:  66%|######6   | 334/504 [40:12<21:05,  7.45s/it]cfb 2019:  66%|######6   | 335/504 [40:22<22:54,  8.14s/it]cfb 2019:  67%|######6   | 336/504 [40:25<18:17,  6.53s/it]cfb 2019:  67%|######6   | 337/504 [40:31<18:09,  6.53s/it]cfb 2019:  67%|######7   | 338/504 [40:45<23:54,  8.64s/it]cfb 2019:  67%|######7   | 339/504 [40:50<20:42,  7.53s/it]cfb 2019:  67%|######7   | 340/504 [40:51<15:07,  5.53s/it]cfb 2019:  68%|######7   | 341/504 [41:09<25:24,  9.35s/it]cfb 2019:  68%|######7   | 342/504 [41:13<21:05,  7.81s/it]cfb 2019:  68%|######8   | 343/504 [41:14<14:54,  5.55s/it]cfb 2019:  68%|######8   | 344/504 [41:35<27:33, 10.34s/it]cfb 2019:  69%|######8   | 346/504 [41:36<15:18,  5.82s/it]cfb 2019:  69%|######8   | 347/504 [41:57<25:03,  9.58s/it]cfb 2019:  69%|######9   | 348/504 [41:58<18:57,  7.29s/it]cfb 2019:  69%|######9   | 349/504 [41:59<14:28,  5.61s/it]cfb 2019:  69%|######9   | 350/504 [42:18<23:51,  9.29s/it]cfb 2019:  70%|######9   | 351/504 [42:18<17:18,  6.79s/it]cfb 2019:  70%|######9   | 352/504 [42:23<15:34,  6.15s/it]cfb 2019:  70%|#######   | 353/504 [42:43<25:21, 10.08s/it]cfb 2019:  70%|#######   | 354/504 [42:47<21:03,  8.43s/it]cfb 2019:  70%|#######   | 355/504 [42:54<19:50,  7.99s/it]cfb 2019:  71%|#######   | 356/504 [43:10<25:48, 10.46s/it]cfb 2019:  71%|#######   | 357/504 [43:11<18:42,  7.63s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
-cfb 2019:  71%|#######1  | 358/504 [43:18<18:14,  7.50s/it]cfb 2019:  71%|#######1  | 359/504 [43:35<24:54, 10.31s/it]cfb 2019:  71%|#######1  | 360/504 [43:36<18:03,  7.52s/it]cfb 2019:  72%|#######1  | 361/504 [43:41<15:50,  6.65s/it]cfb 2019:  72%|#######1  | 362/504 [43:58<23:23,  9.88s/it]cfb 2019:  72%|#######2  | 363/504 [43:59<16:52,  7.18s/it]2026-06-14 06:01:23,332 ERROR extra fetch failed: _rosters(401128943,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 153, in helper_cfb_team_items
-    teams_df[row, "logo_href"] = team[0]["href"]
-                                 ~~~~^^^
-TypeError: 'NoneType' object is not subscriptable
-ERROR:cfb_json_2019:extra fetch failed: _rosters(401128943,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 153, in helper_cfb_team_items
-    teams_df[row, "logo_href"] = team[0]["href"]
-                                 ~~~~^^^
-TypeError: 'NoneType' object is not subscriptable
-cfb 2019:  72%|#######2  | 364/504 [44:00<12:31,  5.37s/it]cfb 2019:  72%|#######2  | 365/504 [44:07<13:39,  5.89s/it]cfb 2019:  73%|#######2  | 366/504 [44:22<19:47,  8.60s/it]cfb 2019:  73%|#######2  | 367/504 [44:23<13:58,  6.12s/it]cfb 2019:  73%|#######3  | 368/504 [44:31<15:10,  6.69s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 52 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 2 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 52 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 2 will retain null names.
-cfb 2019:  73%|#######3  | 369/504 [44:42<18:14,  8.11s/it]cfb 2019:  73%|#######3  | 370/504 [44:45<14:17,  6.40s/it]cfb 2019:  74%|#######3  | 371/504 [44:55<16:37,  7.50s/it]cfb 2019:  74%|#######3  | 372/504 [45:05<18:41,  8.50s/it]cfb 2019:  74%|#######4  | 373/504 [45:06<13:12,  6.05s/it]cfb 2019:  74%|#######4  | 374/504 [45:18<16:48,  7.76s/it]cfb 2019:  74%|#######4  | 375/504 [45:28<18:32,  8.62s/it]cfb 2019:  75%|#######4  | 376/504 [45:29<13:36,  6.38s/it]cfb 2019:  75%|#######4  | 377/504 [45:39<15:39,  7.40s/it]cfb 2019:  75%|#######5  | 378/504 [45:50<17:27,  8.32s/it]cfb 2019:  75%|#######5  | 379/504 [45:51<13:16,  6.37s/it]cfb 2019:  75%|#######5  | 380/504 [45:59<13:49,  6.69s/it]WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster
-
-  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
-  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster) [retry 1/15]
-WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster
-
-  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
-  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster) [retry 2/15]
-WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster
-
-  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
-  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster) [retry 3/15]
-cfb 2019:  76%|#######5  | 381/504 [46:08<15:23,  7.51s/it]WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster
-
-  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
-  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster) [retry 4/15]
-WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster
-
-  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
-  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster) [retry 5/15]
-cfb 2019:  76%|#######5  | 382/504 [46:14<14:28,  7.12s/it]WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster
-
-  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
-  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster) [retry 6/15]
-WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster
-
-  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
-  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster) [retry 7/15]
-cfb 2019:  76%|#######5  | 383/504 [46:25<16:21,  8.11s/it]WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster
-
-  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
-  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster) [retry 8/15]
-WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster
-
-  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
-  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster) [retry 9/15]
-WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster
-
-  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
-  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster) [retry 10/15]
-cfb 2019:  76%|#######6  | 384/504 [46:34<16:52,  8.44s/it]WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster
-
-  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
-  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster) [retry 11/15]
-WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster
-
-  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
-  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster) [retry 12/15]
-WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster
-
-  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
-  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster) [retry 13/15]
-cfb 2019:  76%|#######6  | 385/504 [46:48<20:02, 10.11s/it]WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster
-
-  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
-  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster) [retry 14/15]
-WARNING:sdv.dl_utils:NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster
-
-  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
-  (from `sportsdataverse import find_team, find_athlete, find_event`): 404 - Not Found for url (https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster) [retry 15/15]
-cfb 2019:  77%|#######6  | 386/504 [46:56<18:45,  9.54s/it]ERROR:sdv.dl_utils:Retry Limit Exceeded: https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster 
-params: {}
- NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster
-
-  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
-  (from `sportsdataverse import find_team, find_athlete, find_event`)
-2026-06-14 06:04:20,843 ERROR extra fetch failed: _rosters(401117874,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 183, in helper_cfb_roster_items
-    team_roster_resp = download(team_roster_url, **kwargs)
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\dl_utils.py", line 251, in download
-    raise last_exc
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\dl_utils.py", line 201, in download
-    response = no_espn_data(response)
-               ^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\errors.py", line 140, in no_espn_data
-    raise NoESPNDataError(_format_404(response.url))
-sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster
-
-  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
-  (from `sportsdataverse import find_team, find_athlete, find_event`)
-ERROR:cfb_json_2019:extra fetch failed: _rosters(401117874,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 183, in helper_cfb_roster_items
-    team_roster_resp = download(team_roster_url, **kwargs)
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\dl_utils.py", line 251, in download
-    raise last_exc
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\dl_utils.py", line 201, in download
-    response = no_espn_data(response)
-               ^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\errors.py", line 140, in no_espn_data
-    raise NoESPNDataError(_format_404(response.url))
-sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117874/competitions/401117874/competitors/151/roster
-
-  Suggestion: Try `find_event(date, league='cfb', home=..., away=...)` to look up a valid event_id.
-  (from `sportsdataverse import find_team, find_athlete, find_event`)
-cfb 2019:  77%|#######6  | 387/504 [46:58<14:04,  7.22s/it]cfb 2019:  77%|#######6  | 388/504 [47:06<14:07,  7.31s/it]cfb 2019:  77%|#######7  | 389/504 [47:18<16:51,  8.79s/it]cfb 2019:  77%|#######7  | 390/504 [47:21<13:21,  7.03s/it]cfb 2019:  78%|#######7  | 391/504 [47:26<12:07,  6.44s/it]cfb 2019:  78%|#######7  | 392/504 [47:38<15:13,  8.16s/it]cfb 2019:  78%|#######7  | 393/504 [47:44<13:51,  7.50s/it]cfb 2019:  78%|#######8  | 394/504 [47:49<12:15,  6.68s/it]cfb 2019:  78%|#######8  | 395/504 [48:01<15:00,  8.26s/it]cfb 2019:  79%|#######8  | 396/504 [48:05<12:44,  7.08s/it]cfb 2019:  79%|#######8  | 397/504 [48:09<10:58,  6.15s/it]cfb 2019:  79%|#######8  | 398/504 [48:23<15:13,  8.62s/it]cfb 2019:  79%|#######9  | 399/504 [48:24<10:50,  6.20s/it]cfb 2019:  79%|#######9  | 400/504 [48:33<12:10,  7.02s/it]cfb 2019:  80%|#######9  | 401/504 [48:44<14:06,  8.22s/it]cfb 2019:  80%|#######9  | 402/504 [48:50<12:53,  7.59s/it]cfb 2019:  80%|#######9  | 403/504 [48:54<11:09,  6.63s/it]cfb 2019:  80%|########  | 404/504 [49:06<13:34,  8.14s/it]cfb 2019:  80%|########  | 405/504 [49:15<13:49,  8.37s/it]cfb 2019:  81%|########  | 406/504 [49:18<11:09,  6.84s/it]cfb 2019:  81%|########  | 407/504 [49:32<14:20,  8.88s/it]cfb 2019:  81%|########  | 408/504 [49:41<14:09,  8.85s/it]cfb 2019:  81%|########1 | 409/504 [49:41<09:55,  6.27s/it]cfb 2019:  81%|########1 | 410/504 [49:54<13:08,  8.39s/it]cfb 2019:  82%|########1 | 411/504 [50:00<11:43,  7.57s/it]cfb 2019:  82%|########1 | 412/504 [50:05<10:36,  6.92s/it]cfb 2019:  82%|########1 | 413/504 [50:17<12:32,  8.27s/it]cfb 2019:  82%|########2 | 414/504 [50:23<11:23,  7.60s/it]cfb 2019:  82%|########2 | 415/504 [50:29<10:28,  7.07s/it]cfb 2019:  83%|########2 | 416/504 [50:39<11:46,  8.03s/it]cfb 2019:  83%|########2 | 417/504 [50:47<11:38,  8.03s/it]cfb 2019:  83%|########2 | 418/504 [50:52<10:19,  7.20s/it]cfb 2019:  83%|########3 | 419/504 [51:08<13:45,  9.72s/it]cfb 2019:  83%|########3 | 420/504 [51:14<12:07,  8.66s/it]cfb 2019:  84%|########3 | 421/504 [51:15<08:49,  6.38s/it]cfb 2019:  84%|########3 | 422/504 [51:33<13:25,  9.82s/it]cfb 2019:  84%|########3 | 423/504 [51:37<10:46,  7.98s/it]cfb 2019:  84%|########4 | 424/504 [51:38<08:02,  6.03s/it]cfb 2019:  84%|########4 | 425/504 [51:55<12:22,  9.39s/it]cfb 2019:  85%|########4 | 426/504 [51:57<09:02,  6.95s/it]cfb 2019:  85%|########4 | 427/504 [52:00<07:34,  5.90s/it]cfb 2019:  85%|########4 | 428/504 [52:17<11:37,  9.18s/it]cfb 2019:  85%|########5 | 429/504 [52:21<09:29,  7.59s/it]cfb 2019:  85%|########5 | 430/504 [52:21<06:51,  5.56s/it]cfb 2019:  86%|########5 | 431/504 [52:41<11:58,  9.84s/it]cfb 2019:  86%|########5 | 432/504 [52:45<09:25,  7.86s/it]cfb 2019:  86%|########5 | 433/504 [52:46<07:11,  6.08s/it]cfb 2019:  86%|########6 | 434/504 [53:04<11:04,  9.49s/it]cfb 2019:  86%|########6 | 435/504 [53:08<08:58,  7.80s/it]cfb 2019:  87%|########6 | 437/504 [53:25<09:10,  8.21s/it]cfb 2019:  87%|########6 | 438/504 [53:29<07:48,  7.10s/it]cfb 2019:  87%|########7 | 439/504 [53:30<05:58,  5.51s/it]cfb 2019:  87%|########7 | 440/504 [53:48<09:25,  8.83s/it]cfb 2019:  88%|########7 | 441/504 [53:51<07:38,  7.28s/it]cfb 2019:  88%|########7 | 442/504 [53:55<06:30,  6.30s/it]cfb 2019:  88%|########7 | 443/504 [54:07<08:17,  8.16s/it]cfb 2019:  88%|########8 | 444/504 [54:14<07:45,  7.76s/it]cfb 2019:  88%|########8 | 445/504 [54:15<05:27,  5.55s/it]cfb 2019:  88%|########8 | 446/504 [54:30<08:06,  8.39s/it]cfb 2019:  89%|########8 | 447/504 [54:33<06:40,  7.03s/it]cfb 2019:  89%|########8 | 448/504 [54:39<06:08,  6.58s/it]cfb 2019:  89%|########9 | 449/504 [54:55<08:31,  9.29s/it]cfb 2019:  89%|########9 | 450/504 [54:58<06:47,  7.56s/it]cfb 2019:  89%|########9 | 451/504 [55:02<05:46,  6.53s/it]cfb 2019:  90%|########9 | 452/504 [55:17<07:54,  9.12s/it]cfb 2019:  90%|########9 | 453/504 [55:22<06:34,  7.74s/it]cfb 2019:  90%|######### | 454/504 [55:25<05:22,  6.45s/it]cfb 2019:  90%|######### | 455/504 [55:41<07:32,  9.24s/it]cfb 2019:  90%|######### | 456/504 [55:44<05:44,  7.18s/it]cfb 2019:  91%|######### | 457/504 [55:49<05:15,  6.71s/it]cfb 2019:  91%|######### | 458/504 [56:06<07:24,  9.66s/it]cfb 2019:  91%|#########1| 459/504 [56:07<05:22,  7.16s/it]cfb 2019:  91%|#########1| 460/504 [56:12<04:42,  6.41s/it]cfb 2019:  91%|#########1| 461/504 [56:28<06:38,  9.26s/it]cfb 2019:  92%|#########1| 462/504 [56:29<04:50,  6.91s/it]cfb 2019:  92%|#########1| 463/504 [56:33<04:01,  5.89s/it]cfb 2019:  92%|#########2| 464/504 [56:48<05:44,  8.61s/it]cfb 2019:  92%|#########2| 465/504 [56:48<04:00,  6.17s/it]cfb 2019:  92%|#########2| 466/504 [56:56<04:18,  6.82s/it]cfb 2019:  93%|#########2| 467/504 [57:12<05:45,  9.33s/it]cfb 2019:  93%|#########2| 468/504 [57:12<03:59,  6.65s/it]cfb 2019:  93%|#########3| 469/504 [57:20<04:12,  7.21s/it]cfb 2019:  93%|#########3| 470/504 [57:32<04:53,  8.62s/it]cfb 2019:  93%|#########3| 471/504 [57:35<03:41,  6.71s/it]cfb 2019:  94%|#########3| 472/504 [57:43<03:51,  7.23s/it]cfb 2019:  94%|#########3| 473/504 [57:54<04:20,  8.39s/it]cfb 2019:  94%|#########4| 474/504 [57:59<03:36,  7.23s/it]cfb 2019:  94%|#########4| 475/504 [58:02<02:56,  6.07s/it]cfb 2019:  94%|#########4| 476/504 [58:17<04:06,  8.79s/it]cfb 2019:  95%|#########4| 477/504 [58:22<03:24,  7.56s/it]cfb 2019:  95%|#########4| 478/504 [58:25<02:43,  6.30s/it]cfb 2019:  95%|#########5| 479/504 [58:39<03:36,  8.67s/it]cfb 2019:  95%|#########5| 480/504 [58:44<02:58,  7.46s/it]cfb 2019:  95%|#########5| 481/504 [58:49<02:33,  6.68s/it]cfb 2019:  96%|#########5| 482/504 [59:03<03:13,  8.81s/it]cfb 2019:  96%|#########5| 483/504 [59:07<02:34,  7.35s/it]cfb 2019:  96%|#########6| 484/504 [59:11<02:09,  6.45s/it]cfb 2019:  96%|#########6| 485/504 [59:25<02:47,  8.80s/it]cfb 2019:  96%|#########6| 486/504 [59:27<01:59,  6.66s/it]cfb 2019:  97%|#########6| 487/504 [59:30<01:35,  5.63s/it]cfb 2019:  97%|#########6| 488/504 [59:47<02:25,  9.11s/it]cfb 2019:  97%|#########7| 489/504 [59:51<01:50,  7.38s/it]cfb 2019:  97%|#########7| 490/504 [59:56<01:35,  6.83s/it]cfb 2019:  97%|#########7| 491/504 [1:00:08<01:48,  8.36s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 54 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 4 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 54 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 4 will retain null names.
-cfb 2019:  98%|#########7| 492/504 [1:00:14<01:31,  7.63s/it]cfb 2019:  98%|#########7| 493/504 [1:00:23<01:28,  8.01s/it]cfb 2019:  98%|#########8| 494/504 [1:00:35<01:31,  9.12s/it]cfb 2019:  98%|#########8| 495/504 [1:00:36<01:01,  6.79s/it]cfb 2019:  98%|#########8| 496/504 [1:00:45<00:59,  7.43s/it]cfb 2019:  99%|#########8| 497/504 [1:00:56<00:58,  8.36s/it]cfb 2019:  99%|#########8| 498/504 [1:01:00<00:43,  7.26s/it]cfb 2019:  99%|#########9| 499/504 [1:01:05<00:32,  6.53s/it]cfb 2019:  99%|#########9| 500/504 [1:01:17<00:32,  8.07s/it]cfb 2019:  99%|#########9| 501/504 [1:01:19<00:19,  6.47s/it]cfb 2019: 100%|#########9| 502/504 [1:01:25<00:12,  6.35s/it]cfb 2019: 100%|#########9| 503/504 [1:01:35<00:07,  7.15s/it]cfb 2019: 100%|##########| 504/504 [1:01:42<00:00,  7.19s/it]cfb 2019: 100%|##########| 504/504 [1:01:42<00:00,  7.35s/it]
-[main 2c9ab9593] CFB Raw Update (Start: 2019 End: 2019)
- 2197 files changed, 2196 insertions(+), 2196 deletions(-)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117539/competitions/401117539/competitors
+cfb 2019: 100%|##########| 1/1 [00:02<00:00,  2.52s/it]cfb 2019: 100%|##########| 1/1 [00:02<00:00,  2.52s/it]
+[main 3e0bd1a66] CFB Raw Update (Start: 2019 End: 2019)
+ 2 files changed, 1 insertion(+), 1 deletion(-)
 To https://github.com/sportsdataverse/cfbfastR-cfb-raw.git
-   d1c0475ff..2c9ab9593  main -> main
+   0383bb2ca..3e0bd1a66  main -> main
