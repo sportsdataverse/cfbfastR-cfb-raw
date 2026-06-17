@@ -1,22 +1,6 @@
-2026-06-17 11:06:09,953 INFO schedules 2024: 920 games
-2026-06-17 11:06:11,874 INFO season 2024: 1 hollow/missing games to rescrape
-cfb 2024:   0%|          | 0/1 [00:00<?, ?it/s]2026-06-17 11:06:17,724 ERROR extra fetch failed: _rosters(401635597,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\requests\models.py", line 1116, in json
-    return complexjson.loads(self.text, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 346, in loads
-    return _default_decoder.decode(s)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 355, in raw_decode
-    raise JSONDecodeError("Expecting value", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-
-During handling of the above exception, another exception occurred:
-
+2026-06-17 11:50:58,685 INFO schedules 2024: 920 games
+2026-06-17 11:51:00,412 INFO season 2024: 6 hollow/missing games to rescrape
+cfb 2024:   0%|          | 0/6 [00:00<?, ?it/s]2026-06-17 11:51:02,967 ERROR extra fetch failed: _rosters(401640992,)
 Traceback (most recent call last):
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
     return fn(*args, **kwargs)
@@ -24,32 +8,13 @@ Traceback (most recent call last):
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
     return sdv.cfb.espn_cfb_game_rosters(
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 70, in espn_cfb_game_rosters
-    athletes = helper_cfb_athlete_items(teams_rosters=team_rosters, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 253, in helper_cfb_athlete_items
-    athlete_resp = athlete_res.json()
-                   ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\requests\models.py", line 1120, in json
-    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
-requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-ERROR:cfb_json_2024:extra fetch failed: _rosters(401635597,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\requests\models.py", line 1116, in json
-    return complexjson.loads(self.text, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 346, in loads
-    return _default_decoder.decode(s)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 355, in raw_decode
-    raise JSONDecodeError("Expecting value", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-
-During handling of the above exception, another exception occurred:
-
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401640992/competitions/401640992/competitors
+ERROR:cfb_json_2024:extra fetch failed: _rosters(401640992,)
 Traceback (most recent call last):
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
     return fn(*args, **kwargs)
@@ -57,17 +22,56 @@ Traceback (most recent call last):
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
     return sdv.cfb.espn_cfb_game_rosters(
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 70, in espn_cfb_game_rosters
-    athletes = helper_cfb_athlete_items(teams_rosters=team_rosters, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 253, in helper_cfb_athlete_items
-    athlete_resp = athlete_res.json()
-                   ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\requests\models.py", line 1120, in json
-    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
-requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-cfb 2024: 100%|##########| 1/1 [00:06<00:00,  6.17s/it]cfb 2024: 100%|##########| 1/1 [00:06<00:00,  6.17s/it]
-[main 782a9aa10] CFB Raw Update (Start: 2024 End: 2024)
- 5 files changed, 2127 insertions(+), 2593 deletions(-)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401640992/competitions/401640992/competitors
+cfb 2024:  17%|#6        | 1/6 [00:02<00:13,  2.65s/it]cfb 2024:  33%|###3      | 2/6 [00:22<00:50, 12.60s/it]cfb 2024:  50%|#####     | 3/6 [00:23<00:21,  7.28s/it]cfb 2024:  67%|######6   | 4/6 [00:23<00:08,  4.49s/it]cfb 2024:  83%|########3 | 5/6 [00:25<00:03,  3.65s/it]cfb 2024: 100%|##########| 6/6 [00:46<00:00,  9.57s/it]cfb 2024: 100%|##########| 6/6 [00:46<00:00,  7.77s/it]
+[main 40120ca79] CFB Raw Update (Start: 2024 End: 2024)
+ 43 files changed, 42 insertions(+)
+ create mode 100644 cfb/betting/json/401640992.json
+ create mode 100644 cfb/betting/json/401677102.json
+ create mode 100644 cfb/betting/json/401677103.json
+ create mode 100644 cfb/betting/json/401677104.json
+ create mode 100644 cfb/betting/json/401677181.json
+ create mode 100644 cfb/betting/json/401677190.json
+ create mode 100644 cfb/game_rosters/json/401640992.json
+ create mode 100644 cfb/game_rosters/json/401677102.json
+ create mode 100644 cfb/game_rosters/json/401677103.json
+ create mode 100644 cfb/game_rosters/json/401677104.json
+ create mode 100644 cfb/game_rosters/json/401677181.json
+ create mode 100644 cfb/game_rosters/json/401677190.json
+ create mode 100644 cfb/json/final/401640992.json
+ create mode 100644 cfb/json/final/401677102.json
+ create mode 100644 cfb/json/final/401677103.json
+ create mode 100644 cfb/json/final/401677104.json
+ create mode 100644 cfb/json/final/401677181.json
+ create mode 100644 cfb/json/final/401677190.json
+ create mode 100644 cfb/json/raw/401640992.json
+ create mode 100644 cfb/json/raw/401677102.json
+ create mode 100644 cfb/json/raw/401677103.json
+ create mode 100644 cfb/json/raw/401677104.json
+ create mode 100644 cfb/json/raw/401677181.json
+ create mode 100644 cfb/json/raw/401677190.json
+ create mode 100644 cfb/play_participants/json/401640992.json
+ create mode 100644 cfb/play_participants/json/401677102.json
+ create mode 100644 cfb/play_participants/json/401677103.json
+ create mode 100644 cfb/play_participants/json/401677104.json
+ create mode 100644 cfb/play_participants/json/401677181.json
+ create mode 100644 cfb/play_participants/json/401677190.json
+ create mode 100644 cfb/power_index/json/401640992.json
+ create mode 100644 cfb/power_index/json/401677102.json
+ create mode 100644 cfb/power_index/json/401677103.json
+ create mode 100644 cfb/power_index/json/401677104.json
+ create mode 100644 cfb/power_index/json/401677181.json
+ create mode 100644 cfb/power_index/json/401677190.json
+ create mode 100644 cfb/team_box_extra/json/401640992.json
+ create mode 100644 cfb/team_box_extra/json/401677102.json
+ create mode 100644 cfb/team_box_extra/json/401677103.json
+ create mode 100644 cfb/team_box_extra/json/401677104.json
+ create mode 100644 cfb/team_box_extra/json/401677181.json
+ create mode 100644 cfb/team_box_extra/json/401677190.json
 To https://github.com/sportsdataverse/cfbfastR-cfb-raw.git
-   d02acc707..782a9aa10  main -> main
+   158265a29..40120ca79  main -> main
