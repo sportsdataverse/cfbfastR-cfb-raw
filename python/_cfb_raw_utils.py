@@ -6,6 +6,7 @@ import logging
 import math
 import numbers
 import os
+import time
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
@@ -70,7 +71,19 @@ def write_json_atomic(obj, path: str | Path) -> None:
         # allow_nan=False guarantees a valid-JSON failure rather than a silent NaN literal;
         # json_safe has already removed nan/inf, so this never raises in practice.
         json.dump(json_safe(obj), f, separators=(",", ":"), default=str, allow_nan=False)
-    os.replace(tmp, path)
+    # On Windows the parallel scraper intermittently hits WinError 32 (PermissionError) here
+    # when AV / the NTFS change journal briefly locks the .tmp or destination; os.replace is
+    # atomic on Linux and never sees this. Retry a bounded number of times with a short
+    # increasing backoff, then re-raise so a genuine permission problem still surfaces.
+    _REPLACE_ATTEMPTS = 5
+    for attempt in range(_REPLACE_ATTEMPTS):
+        try:
+            os.replace(tmp, path)
+            break
+        except PermissionError:
+            if attempt == _REPLACE_ATTEMPTS - 1:
+                raise
+            time.sleep(0.1 * (attempt + 1))
 
 
 def stamp(obj, *, game_id: int, season: int, week=None):
