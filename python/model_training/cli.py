@@ -57,8 +57,14 @@ def main(argv=None) -> int:
         Path(args.out).parent.mkdir(parents=True, exist_ok=True)
         model.save_model(args.out)
         from .model_card import write_xgb_model_card
-        _mtype = {"train-ep": "ep", "train-wp": f"wp_{args.variant}", "train-qbr": "qbr"}[args.cmd]
-        _label = {"train-ep": "next_score_label", "train-wp": "label", "train-qbr": "qbr"}[args.cmd]
+        # Resolve per-cmd metadata without eagerly evaluating args.variant
+        # (only train-wp defines --variant).
+        if args.cmd == "train-ep":
+            _mtype, _label = "ep", "next_score_label"
+        elif args.cmd == "train-wp":
+            _mtype, _label = f"wp_{args.variant}", "label"
+        else:
+            _mtype, _label = "qbr", "qbr"
         write_xgb_model_card(args.out, model_type=_mtype, label=_label, model=model,
                              n_rows=df.height)
         print(f"saved -> {args.out} (+ model_card.json)")
