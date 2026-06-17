@@ -5,6 +5,8 @@ import numpy as np
 import polars as pl
 import pytest
 
+pytest.importorskip("pygam")  # GAM training requires the optional `gam` dep group
+
 from rb_eval.train import loso_cv, load_model, save_model, train_xrepa
 
 

@@ -53,6 +53,7 @@ def test_weighted_r2_is_finite():
 
 
 def test_xrepa_calibration_figure_emits_png_and_csv(tmp_path):
+    pytest.importorskip("plotnine")  # figure rendering needs the optional `figures` group
     from rb_eval.figures import write_xrepa_calibration
     cv = _cv_frame(100)
     table = calibration_table(cv)

@@ -14,26 +14,21 @@ from pathlib import Path
 import numpy as np
 import polars as pl
 
-try:
-    from pygam import LinearGAM, s
-except ImportError as e:
-    raise ImportError(
-        "pygam is required for rb_eval training. Install with: uv sync --group gam"
-    ) from e
-
-try:
-    import joblib
-except ImportError as e:
-    raise ImportError(
-        "joblib is required for model persistence. Install with: uv sync --group dev"
-    ) from e
-
+# pygam (gam group) + joblib (dev group) are imported lazily inside the functions
+# that need them, so this module imports cleanly without the optional gam group
+# (and pytest can collect rb_eval tests without pygam installed).
 
 _GAM_FEATURES = ["epa_per_play", "success"]
 
 
-def train_xrepa(model_data: pl.DataFrame) -> "LinearGAM":
+def train_xrepa(model_data: pl.DataFrame) -> "LinearGAM":  # noqa: F821
     """Fit LinearGAM(s(0) + s(1)) on (epa_per_play, success) -> target with sample weights."""
+    try:
+        from pygam import LinearGAM, s
+    except ImportError as e:
+        raise ImportError(
+            "pygam is required for rb_eval training. Install with: uv sync --group gam"
+        ) from e
     df = model_data.drop_nulls(_GAM_FEATURES + ["target", "weight"])
     X = df.select(_GAM_FEATURES).to_numpy()
     y = df["target"].to_numpy()
@@ -81,6 +76,7 @@ def save_model(
         Path to the model_card.json sidecar.
     """
     import pygam
+    import joblib
     from datetime import date
 
     path = Path(path)
@@ -101,6 +97,7 @@ def save_model(
     return card_path
 
 
-def load_model(path: str | Path) -> "LinearGAM":
+def load_model(path: str | Path) -> "LinearGAM":  # noqa: F821
     """Load a persisted GAM from disk."""
+    import joblib
     return joblib.load(Path(path))
