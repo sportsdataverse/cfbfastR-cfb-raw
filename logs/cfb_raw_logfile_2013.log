@@ -1,6 +1,6 @@
-2026-06-17 09:13:41,853 INFO schedules 2013: 861 games
-2026-06-17 09:13:43,301 INFO season 2013: 44 hollow/missing games to rescrape
-cfb 2013:   0%|          | 0/44 [00:00<?, ?it/s]cfb 2013:   2%|2         | 1/44 [00:08<06:04,  8.48s/it]cfb 2013:   5%|4         | 2/44 [00:08<02:31,  3.61s/it]cfb 2013:   7%|6         | 3/44 [00:09<01:27,  2.14s/it]2026-06-17 09:13:53,080 ERROR extra fetch failed: _rosters(332570038,)
+2026-06-17 11:43:28,514 INFO schedules 2013: 861 games
+2026-06-17 11:43:30,628 INFO season 2013: 5 hollow/missing games to rescrape
+cfb 2013:   0%|          | 0/5 [00:00<?, ?it/s]2026-06-17 11:43:33,819 ERROR extra fetch failed: _rosters(332570038,)
 Traceback (most recent call last):
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
     return fn(*args, **kwargs)
@@ -28,7 +28,7 @@ Traceback (most recent call last):
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
     raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
 sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/332570038/competitions/332570038/competitors
-cfb 2013:   9%|9         | 4/44 [00:09<01:02,  1.57s/it]cfb 2013:  11%|#1        | 5/44 [00:09<00:41,  1.07s/it]cfb 2013:  14%|#3        | 6/44 [00:13<01:10,  1.86s/it]cfb 2013:  16%|#5        | 7/44 [00:14<00:54,  1.48s/it]cfb 2013:  18%|#8        | 8/44 [00:14<00:45,  1.25s/it]cfb 2013:  20%|##        | 9/44 [00:14<00:31,  1.09it/s]cfb 2013:  23%|##2       | 10/44 [00:20<01:15,  2.22s/it]cfb 2013:  25%|##5       | 11/44 [00:21<01:00,  1.82s/it]cfb 2013:  30%|##9       | 13/44 [00:21<00:34,  1.11s/it]cfb 2013:  32%|###1      | 14/44 [00:26<01:00,  2.03s/it]cfb 2013:  34%|###4      | 15/44 [00:27<00:51,  1.76s/it]cfb 2013:  36%|###6      | 16/44 [00:28<00:40,  1.44s/it]cfb 2013:  39%|###8      | 17/44 [00:28<00:33,  1.23s/it]cfb 2013:  41%|####      | 18/44 [00:32<00:52,  2.01s/it]cfb 2013:  43%|####3     | 19/44 [00:33<00:40,  1.63s/it]cfb 2013:  45%|####5     | 20/44 [00:34<00:33,  1.41s/it]cfb 2013:  48%|####7     | 21/44 [00:34<00:24,  1.05s/it]cfb 2013:  50%|#####     | 22/44 [00:39<00:46,  2.13s/it]cfb 2013:  52%|#####2    | 23/44 [00:39<00:33,  1.57s/it]cfb 2013:  55%|#####4    | 24/44 [00:40<00:29,  1.49s/it]cfb 2013:  57%|#####6    | 25/44 [00:40<00:21,  1.13s/it]cfb 2013:  59%|#####9    | 26/44 [00:46<00:41,  2.33s/it]cfb 2013:  61%|######1   | 27/44 [00:46<00:28,  1.68s/it]cfb 2013:  64%|######3   | 28/44 [00:46<00:21,  1.35s/it]cfb 2013:  66%|######5   | 29/44 [00:48<00:22,  1.49s/it]cfb 2013:  68%|######8   | 30/44 [00:51<00:27,  1.96s/it]cfb 2013:  70%|#######   | 31/44 [00:52<00:20,  1.55s/it]cfb 2013:  73%|#######2  | 32/44 [00:53<00:15,  1.30s/it]cfb 2013:  75%|#######5  | 33/44 [00:54<00:14,  1.34s/it]cfb 2013:  77%|#######7  | 34/44 [00:57<00:18,  1.89s/it]cfb 2013:  80%|#######9  | 35/44 [00:58<00:13,  1.54s/it]cfb 2013:  82%|########1 | 36/44 [01:00<00:13,  1.68s/it]cfb 2013:  84%|########4 | 37/44 [01:00<00:09,  1.31s/it]2026-06-17 09:14:44,745 ERROR extra fetch failed: _rosters(400520954,)
+cfb 2013:  20%|##        | 1/5 [00:03<00:12,  3.19s/it]2026-06-17 11:43:33,905 ERROR extra fetch failed: _rosters(400520954,)
 Traceback (most recent call last):
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
     return fn(*args, **kwargs)
@@ -56,7 +56,7 @@ Traceback (most recent call last):
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
     raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
 sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400520954/competitions/400520954/competitors
-cfb 2013:  86%|########6 | 38/44 [01:01<00:06,  1.10s/it]2026-06-17 09:14:45,868 ERROR extra fetch failed: _rosters(340183147,)
+2026-06-17 11:43:35,067 ERROR extra fetch failed: _rosters(340183147,)
 Traceback (most recent call last):
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
     return fn(*args, **kwargs)
@@ -84,7 +84,7 @@ Traceback (most recent call last):
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
     raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
 sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/340183147/competitions/340183147/competitors
-cfb 2013:  89%|########8 | 39/44 [01:02<00:05,  1.13s/it]cfb 2013:  91%|######### | 40/44 [01:03<00:04,  1.01s/it]2026-06-17 09:14:47,034 ERROR extra fetch failed: _rosters(340183194,)
+cfb 2013:  60%|######    | 3/5 [00:04<00:02,  1.33s/it]2026-06-17 11:43:35,230 ERROR extra fetch failed: _rosters(340183194,)
 Traceback (most recent call last):
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
     return fn(*args, **kwargs)
@@ -112,7 +112,7 @@ Traceback (most recent call last):
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
     raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
 sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/340183194/competitions/340183194/competitors
-cfb 2013:  93%|#########3| 41/44 [01:03<00:02,  1.17it/s]cfb 2013:  95%|#########5| 42/44 [01:04<00:01,  1.27it/s]2026-06-17 09:14:48,811 ERROR extra fetch failed: _rosters(340253144,)
+cfb 2013:  80%|########  | 4/5 [00:04<00:00,  1.07it/s]2026-06-17 11:43:35,706 ERROR extra fetch failed: _rosters(340253144,)
 Traceback (most recent call last):
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
     return fn(*args, **kwargs)
@@ -140,8 +140,8 @@ Traceback (most recent call last):
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
     raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
 sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/340253144/competitions/340253144/competitors
-cfb 2013:  98%|#########7| 43/44 [01:05<00:00,  1.13it/s]cfb 2013: 100%|##########| 44/44 [01:06<00:00,  1.28it/s]cfb 2013: 100%|##########| 44/44 [01:06<00:00,  1.50s/it]
-[main 93a1f3dd4] CFB Raw Update (Start: 2013 End: 2013)
- 92 files changed, 91 insertions(+), 91 deletions(-)
+cfb 2013: 100%|##########| 5/5 [00:05<00:00,  1.31it/s]cfb 2013: 100%|##########| 5/5 [00:05<00:00,  1.03s/it]
+[main 6c9232e50] CFB Raw Update (Start: 2013 End: 2013)
+ 4 files changed, 3 insertions(+), 3 deletions(-)
 To https://github.com/sportsdataverse/cfbfastR-cfb-raw.git
-   65ba569cb..93a1f3dd4  main -> main
+   4960a03f2..6c9232e50  main -> main
