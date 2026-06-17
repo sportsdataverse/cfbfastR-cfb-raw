@@ -1,1 +1,1 @@
-{"count":2,"pageIndex":1,"pageSize":25,"pageCount":1,"items":[{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401012753/competitions/401012753/powerindex/12?lang=en&region=us"},{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401012753/competitions/401012753/powerindex/30?lang=en&region=us"}],"game_id":401012753,"season":2018,"week":5}
+{"game_id":401012753,"season":2018,"week":5}
