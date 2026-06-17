@@ -1,6 +1,6 @@
-2026-06-17 10:18:58,622 INFO schedules 2019: 892 games
-2026-06-17 10:19:00,255 INFO season 2019: 1 hollow/missing games to rescrape
-cfb 2019:   0%|          | 0/1 [00:00<?, ?it/s]2026-06-17 10:19:02,633 ERROR extra fetch failed: _rosters(401117539,)
+2026-06-17 11:47:25,566 INFO schedules 2019: 892 games
+2026-06-17 11:47:27,578 INFO season 2019: 1 hollow/missing games to rescrape
+cfb 2019:   0%|          | 0/1 [00:00<?, ?it/s]2026-06-17 11:47:29,800 ERROR extra fetch failed: _rosters(401117539,)
 Traceback (most recent call last):
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
     return fn(*args, **kwargs)
@@ -28,8 +28,8 @@ Traceback (most recent call last):
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
     raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
 sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401117539/competitions/401117539/competitors
-cfb 2019: 100%|##########| 1/1 [00:02<00:00,  2.52s/it]cfb 2019: 100%|##########| 1/1 [00:02<00:00,  2.52s/it]
-[main 3e0bd1a66] CFB Raw Update (Start: 2019 End: 2019)
- 2 files changed, 1 insertion(+), 1 deletion(-)
+cfb 2019: 100%|##########| 1/1 [00:02<00:00,  2.36s/it]cfb 2019: 100%|##########| 1/1 [00:02<00:00,  2.36s/it]
+[main 55f360708] CFB Raw Update (Start: 2019 End: 2019)
+ 1 file changed, 0 insertions(+), 0 deletions(-)
 To https://github.com/sportsdataverse/cfbfastR-cfb-raw.git
-   0383bb2ca..3e0bd1a66  main -> main
+   b58b8aaaf..55f360708  main -> main
