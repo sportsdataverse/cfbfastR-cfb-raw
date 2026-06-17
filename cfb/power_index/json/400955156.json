@@ -1,1 +1,1 @@
-{"game_id":400955156,"season":2017,"week":14}
+{"count":2,"pageIndex":1,"pageSize":25,"pageCount":1,"items":[{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400955156/competitions/400955156/powerindex/275?lang=en&region=us"},{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400955156/competitions/400955156/powerindex/194?lang=en&region=us"}],"game_id":400955156,"season":2017,"week":14}
