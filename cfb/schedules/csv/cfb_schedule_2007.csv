@@ -422,7 +422,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 3.0, 'displayValue': '3', 'period': 5}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,28,False,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,28,False,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 7.0, 'displayValue': '7', 'period': 2}
  {'value': 14.0, 'displayValue': '14', 'period': 3}
  {'value': 0.0, 'displayValue': '0', 'period': 4}
@@ -1028,7 +1028,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",272510251,2007,2,2,
-272510036,s:20~l:23~e:272510036~c:272510036,2007-09-08T18:00Z,27805,True,False,False,False,True,False,2007-09-08T18:00Z,CBSSN,[],,,national,CBSSN,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,28,False,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+272510036,s:20~l:23~e:272510036~c:272510036,2007-09-08T18:00Z,27805,True,False,False,False,True,False,2007-09-08T18:00Z,CBSSN,[],,,national,CBSSN,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,28,False,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 7.0, 'displayValue': '7', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 14.0, 'displayValue': '14', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-2'}
@@ -1512,7 +1512,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,17,False,99,"[{'value': 10.0, 'displayValue': '10', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,17,False,99,"[{'value': 10.0, 'displayValue': '10', 'period': 1}
  {'value': 0.0, 'displayValue': '0', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
@@ -2576,7 +2576,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 3.0, 'displayValue': '3', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,13,False,99,"[{'value': 3.0, 'displayValue': '3', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,13,False,99,"[{'value': 3.0, 'displayValue': '3', 'period': 1}
  {'value': 7.0, 'displayValue': '7', 'period': 2}
  {'value': 3.0, 'displayValue': '3', 'period': 3}
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-2'}
@@ -3087,7 +3087,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 14.0, 'displayValue': '14', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-0'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,27,False,99,"[{'value': 14.0, 'displayValue': '14', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-0'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,27,False,99,"[{'value': 14.0, 'displayValue': '14', 'period': 1}
  {'value': 3.0, 'displayValue': '3', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 3.0, 'displayValue': '3', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-3'}
@@ -3120,7 +3120,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",272652084,2007,2,4,
-272650021,s:20~l:23~e:272650021~c:272650021,2007-09-22T22:36Z,53110,True,False,False,False,False,False,2007-09-22T22:36Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,52,True,99,"[{'value': 14.0, 'displayValue': '14', 'period': 1}
+272650021,s:20~l:23~e:272650021~c:272650021,2007-09-22T22:36Z,53110,True,False,False,False,False,False,2007-09-22T22:36Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,52,True,99,"[{'value': 14.0, 'displayValue': '14', 'period': 1}
  {'value': 21.0, 'displayValue': '21', 'period': 2}
  {'value': 3.0, 'displayValue': '3', 'period': 3}
  {'value': 14.0, 'displayValue': '14', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
@@ -3666,7 +3666,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '4-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '2-0'}]",272720024,2007,2,5,
-272720021,s:20~l:23~e:272720021~c:272720021,2007-09-30T02:06Z,24647,True,False,False,False,True,False,2007-09-30T02:06Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,23,False,99,"[{'value': 3.0, 'displayValue': '3', 'period': 1}
+272720021,s:20~l:23~e:272720021~c:272720021,2007-09-30T02:06Z,24647,True,False,False,False,True,False,2007-09-30T02:06Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,23,False,99,"[{'value': 3.0, 'displayValue': '3', 'period': 1}
  {'value': 7.0, 'displayValue': '7', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 13.0, 'displayValue': '13', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-3'}
@@ -4038,7 +4038,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-2'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-1'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,12,False,99,"[{'value': 3.0, 'displayValue': '3', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-1'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,12,False,99,"[{'value': 3.0, 'displayValue': '3', 'period': 1}
  {'value': 0.0, 'displayValue': '0', 'period': 2}
  {'value': 3.0, 'displayValue': '3', 'period': 3}
  {'value': 6.0, 'displayValue': '6', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-4'}
@@ -4658,13 +4658,13 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-3'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-2'}]",272790204,2007,2,6,
-272790036,s:20~l:23~e:272790036~c:272790036,2007-10-06T21:30Z,27930,True,False,False,False,True,False,2007-10-06T21:30Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,20,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
+272790036,s:20~l:23~e:272790036~c:272790036,2007-10-06T21:30Z,27930,True,False,False,False,True,False,2007-10-06T21:30Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,20,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
  {'value': 0.0, 'displayValue': '0', 'period': 2}
  {'value': 10.0, 'displayValue': '10', 'period': 3}
  {'value': 10.0, 'displayValue': '10', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-5'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-2'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-3'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-2'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,24,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-2'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,24,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 0.0, 'displayValue': '0', 'period': 2}
  {'value': 3.0, 'displayValue': '3', 'period': 3}
  {'value': 14.0, 'displayValue': '14', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-3'}
@@ -5324,7 +5324,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-3'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-2'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-2'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,7,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-2'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,7,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
  {'value': 7.0, 'displayValue': '7', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-4'}
@@ -5422,7 +5422,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-3'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-2'}]",272860024,2007,2,7,
-272860036,s:20~l:23~e:272860036~c:272860036,2007-10-13T21:30Z,25150,True,False,False,False,False,False,2007-10-13T21:30Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,21,False,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+272860036,s:20~l:23~e:272860036~c:272860036,2007-10-13T21:30Z,25150,True,False,False,False,False,False,2007-10-13T21:30Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,21,False,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 0.0, 'displayValue': '0', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-6'}
@@ -6301,7 +6301,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-3'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-2'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-2'}]",272932567,2007,2,8,OT
-272930021,s:20~l:23~e:272930021~c:272930021,2007-10-21T00:36Z,20205,True,False,False,False,True,False,2007-10-21T00:36Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,17,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
+272930021,s:20~l:23~e:272930021~c:272930021,2007-10-21T00:36Z,20205,True,False,False,False,True,False,2007-10-21T00:36Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,17,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
  {'value': 10.0, 'displayValue': '10', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-5'}
@@ -6320,7 +6320,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 13.0, 'displayValue': '13', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-6'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-4'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-2'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-3'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,48,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-3'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,48,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 17.0, 'displayValue': '17', 'period': 2}
  {'value': 3.0, 'displayValue': '3', 'period': 3}
  {'value': 21.0, 'displayValue': '21', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-6'}
@@ -6892,7 +6892,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-3'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-4'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-3'}]",273000276,2007,2,9,
-273000036,s:20~l:23~e:273000036~c:273000036,2007-10-27T21:30Z,16718,True,False,False,False,True,False,2007-10-27T21:30Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,3,False,99,"[{'value': 3.0, 'displayValue': '3', 'period': 1}
+273000036,s:20~l:23~e:273000036~c:273000036,2007-10-27T21:30Z,16718,True,False,False,False,True,False,2007-10-27T21:30Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,3,False,99,"[{'value': 3.0, 'displayValue': '3', 'period': 1}
  {'value': 0.0, 'displayValue': '0', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-7'}
@@ -7022,7 +7022,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '3-2'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '4-1'}]",273002638,2007,2,9,
-273000021,s:20~l:23~e:273000021~c:273000021,2007-10-28T01:30Z,0,True,False,False,False,False,False,2007-10-28T01:30Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,0,6,STATUS_POSTPONED,post,False,Postponed,Postponed,Postponed,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,0,,99,,"[{'name': 'overall', 'abbreviation': 'overall', 'type': 'total', 'summary': '4-8'}
+273000021,s:20~l:23~e:273000021~c:273000021,2007-10-28T01:30Z,0,True,False,False,False,False,False,2007-10-28T01:30Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,0,6,STATUS_POSTPONED,post,False,Postponed,Postponed,Postponed,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,0,,99,,"[{'name': 'overall', 'abbreviation': 'overall', 'type': 'total', 'summary': '4-8'}
  {'name': 'Home', 'abbreviation': 'Home', 'type': 'homerecord', 'summary': '2-4'}
  {'name': 'Away', 'abbreviation': 'Away', 'type': 'awayrecord', 'summary': '2-4'}
  {'name': 'vs. Conf.', 'abbreviation': 'CONF', 'type': 'vsconf', 'summary': '3-5'}]",252,s:20~l:23~t:252,BYU,Cougars,BYU,BYU Cougars,BYU,0047ba,002e5d,True,3801,https://a.espncdn.com/i/teamlogos/ncaa/500/252.png,4,0,,99,,"[{'name': 'overall', 'abbreviation': 'overall', 'type': 'total', 'summary': '11-2'}
@@ -7453,7 +7453,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '6-2'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '4-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '2-2'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '4-0'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,16,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '4-0'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,16,False,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
  {'value': 3.0, 'displayValue': '3', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 13.0, 'displayValue': '13', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-8'}
@@ -7722,7 +7722,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '4-2'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '3-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '4-2'}]",273070135,2007,2,10,
-273070021,s:20~l:23~e:273070021~c:273070021,2007-11-04T01:00Z,22852,True,False,False,False,True,False,2007-11-04T01:00Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,27,True,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
+273070021,s:20~l:23~e:273070021~c:273070021,2007-11-04T01:00Z,22852,True,False,False,False,True,False,2007-11-04T01:00Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,27,True,99,"[{'value': 0.0, 'displayValue': '0', 'period': 1}
  {'value': 7.0, 'displayValue': '7', 'period': 2}
  {'value': 13.0, 'displayValue': '13', 'period': 3}
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-5'}
@@ -8248,7 +8248,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 3.0, 'displayValue': '3', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '7-3'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '4-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '3-2'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '4-2'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,23,False,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '4-2'}]",36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,23,False,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 10.0, 'displayValue': '10', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 6.0, 'displayValue': '6', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-9'}
@@ -8469,7 +8469,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 16.0, 'displayValue': '16', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-8'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-5'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-3'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-5'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,38,True,99,"[{'value': 14.0, 'displayValue': '14', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '1-5'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,38,True,99,"[{'value': 14.0, 'displayValue': '14', 'period': 1}
  {'value': 7.0, 'displayValue': '7', 'period': 2}
  {'value': 0.0, 'displayValue': '0', 'period': 3}
  {'value': 17.0, 'displayValue': '17', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-5'}
@@ -8866,7 +8866,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '5-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '3-2'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '6-0'}]",273212751,2007,2,12,
-273210036,s:20~l:23~e:273210036~c:273210036,2007-11-17T19:06Z,14332,True,False,False,False,False,False,2007-11-17T19:06Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,42,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+273210036,s:20~l:23~e:273210036~c:273210036,2007-11-17T19:06Z,14332,True,False,False,False,False,False,2007-11-17T19:06Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,42,True,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 21.0, 'displayValue': '21', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-9'}
@@ -8885,7 +8885,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'value': 6.0, 'displayValue': '6', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '9-3'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '6-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '3-3'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '6-2'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,23,False,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '6-2'}]",21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,23,False,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 10.0, 'displayValue': '10', 'period': 2}
  {'value': 6.0, 'displayValue': '6', 'period': 3}
  {'value': 0.0, 'displayValue': '0', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-6'}
@@ -9271,7 +9271,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-5'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-4'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-8'}]",273270344,2007,2,13,
-273270036,s:20~l:23~e:273270036~c:273270036,2007-11-23T19:00Z,18820,True,False,False,False,True,False,2007-11-23T19:00Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,9,36,True,99,"[{'value': 3.0, 'displayValue': '3', 'period': 1}
+273270036,s:20~l:23~e:273270036~c:273270036,2007-11-23T19:00Z,18820,True,False,False,False,True,False,2007-11-23T19:00Z,,[],,,,,1,STD,3761,Hughes Stadium (CO),Fort Collins,CO,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,36,s:20~l:23~t:36,Colorado State,Rams,CSU,Colorado State Rams,Colorado St,004c23,c8c372,True,5388,https://a.espncdn.com/i/teamlogos/ncaa/500/36.png,17,36,True,99,"[{'value': 3.0, 'displayValue': '3', 'period': 1}
  {'value': 14.0, 'displayValue': '14', 'period': 2}
  {'value': 10.0, 'displayValue': '10', 'period': 3}
  {'value': 9.0, 'displayValue': '9', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-9'}
@@ -9790,7 +9790,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '4-3'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '2-3'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '4-4'}]",273280002,2007,2,13,
-273280021,s:20~l:23~e:273280021~c:273280021,2007-11-25T01:00Z,18350,True,False,False,False,False,False,2007-11-25T01:00Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,33,False,99,"[{'value': 10.0, 'displayValue': '10', 'period': 1}
+273280021,s:20~l:23~e:273280021~c:273280021,2007-11-25T01:00Z,18350,True,False,False,False,False,False,2007-11-25T01:00Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,33,False,99,"[{'value': 10.0, 'displayValue': '10', 'period': 1}
  {'value': 14.0, 'displayValue': '14', 'period': 2}
  {'value': 3.0, 'displayValue': '3', 'period': 3}
  {'value': 6.0, 'displayValue': '6', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-7'}
@@ -9935,7 +9935,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '5-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '3-3'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '6-3'}]",273352483,2007,2,14,OT
-273350021,s:20~l:23~e:273350021~c:273350021,2007-12-01T23:36Z,28473,True,False,False,False,True,False,2007-12-01T23:36Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,9,27,False,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
+273350021,s:20~l:23~e:273350021~c:273350021,2007-12-01T23:36Z,28473,True,False,False,False,True,False,2007-12-01T23:36Z,,[],,,,,1,STD,3932,SDCCU Stadium,San Diego,CA,USA,False,0.0,0:00,4,3,STATUS_FINAL,post,True,Final,Final,Final,4,21,s:20~l:23~t:21,San Diego State,Aztecs,SDSU,San Diego State Aztecs,San Diego St,a6192e,000000,True,7311,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,17,27,False,99,"[{'value': 7.0, 'displayValue': '7', 'period': 1}
  {'value': 6.0, 'displayValue': '6', 'period': 2}
  {'value': 7.0, 'displayValue': '7', 'period': 3}
  {'value': 7.0, 'displayValue': '7', 'period': 4}]","[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-8'}
