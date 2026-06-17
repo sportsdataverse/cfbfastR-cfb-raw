@@ -49,7 +49,7 @@ def train_cp_model(
 
 
 def save_cp_model(booster: xgb.Booster, path: pathlib.Path | str) -> None:
-    """Save a trained Booster to an UBJ file.
+    """Save a trained Booster to an UBJ file (+ a model_card.json sidecar).
 
     Args:
         booster: Fitted XGBoost Booster.
@@ -58,6 +58,13 @@ def save_cp_model(booster: xgb.Booster, path: pathlib.Path | str) -> None:
     p = pathlib.Path(path)
     p.parent.mkdir(parents=True, exist_ok=True)
     booster.save_model(str(p))
+    try:
+        from model_training.model_card import write_xgb_model_card
+
+        write_xgb_model_card(p, model_type="cpoe", label=TARGET_COL, model=booster,
+                             features=list(FEATURE_COLS), hyperparams=dict(XGB_PARAMS))
+    except Exception:  # noqa: BLE001 — card is best-effort; never block the save
+        pass
 
 
 def load_cp_model(path: pathlib.Path | str) -> xgb.Booster:

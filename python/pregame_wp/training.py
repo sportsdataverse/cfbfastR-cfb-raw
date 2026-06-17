@@ -54,26 +54,37 @@ def save_pgwp_model(
     path: str,
     season_range: tuple[int, int] | None = None,
 ) -> None:
-    """Save model as UBJ + sidecar metadata JSON."""
-    import json
+    """Save model as UBJ + a unified ``model_card.json`` sidecar.
+
+    The card uses the shared ``write_xgb_model_card`` helper (Tracks 1-5 parity)
+    and merges the pregame-specific ``mu`` / ``std`` normalization params in at the
+    top level via ``extra=``.  Those two keys are load-bearing — both
+    ``load_pgwp_model`` and the CLI read them back to reconstruct the
+    5FRDiff -> WP Gaussian transform — so the write is intentionally NOT
+    best-effort here (a failure must surface, unlike the audit-only cards).
+    """
     from pathlib import Path
-    from datetime import date
+
+    from model_training.model_card import write_xgb_model_card
 
     p = Path(path)
     p.parent.mkdir(parents=True, exist_ok=True)
     model.save_model(str(p))
 
-    card = {
-        "mu": WP_MU,
-        "std": std,
-        "n_estimators": XGB_N_ESTIMATORS,
-        "feature": "5FRDiff",
-        "target": "PtsDiff",
-        "trained_date": date.today().isoformat(),
-        "season_range": list(season_range) if season_range else None,
-        "note": "pgwp_model — NOT bundled into sdv-py. Track 4 analytic artifact.",
-    }
-    p.with_suffix(".json").write_text(json.dumps(card, indent=2))
+    write_xgb_model_card(
+        p,
+        model_type="pregame_wp",
+        label="PtsDiff",
+        features=["5FRDiff"],
+        model=model,
+        seasons=season_range,
+        extra={
+            "mu": WP_MU,
+            "std": std,
+            "n_estimators": XGB_N_ESTIMATORS,
+            "note": "pgwp_model — NOT bundled into sdv-py. Track 4 analytic artifact.",
+        },
+    )
 
 
 def load_pgwp_model(path: str) -> tuple[xgb.XGBRegressor, float, float]:

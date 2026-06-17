@@ -32,7 +32,9 @@ def main(argv=None) -> int:
     if args.cmd == "train-fd":
         import polars as pl
 
-        from .constants import FD_NROUNDS
+        from model_training.model_card import write_xgb_model_card
+
+        from .constants import FD_FEATURES, FD_NROUNDS, FD_PARAMS, FD_YARDS_GAINED_COL
         from .train import train_from_plays
 
         final_dir = Path(args.final_dir)
@@ -63,7 +65,20 @@ def main(argv=None) -> int:
         out = Path(args.out)
         out.parent.mkdir(parents=True, exist_ok=True)
         model.save_model(str(out))
-        print(f"Saved fd_model -> {out} ({model.num_boosted_rounds()} rounds, {model.num_features()} features)")
+
+        write_xgb_model_card(
+            out,
+            model_type="fourth_down",
+            label=FD_YARDS_GAINED_COL,
+            model=model,
+            features=FD_FEATURES,
+            hyperparams=FD_PARAMS,
+            seasons=args.seasons,
+        )
+        print(
+            f"Saved fd_model -> {out} ({model.num_boosted_rounds()} rounds, "
+            f"{model.num_features()} features) (+ model_card.json)"
+        )
 
         if args.validate:
             from .validate import assert_structure
