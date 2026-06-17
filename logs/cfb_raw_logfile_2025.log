@@ -1,6 +1,120 @@
-2026-06-17 11:06:56,443 INFO schedules 2025: 934 games
-2026-06-17 11:06:58,394 INFO season 2025: 0 hollow/missing games to rescrape
-[main 62bfb97c5] CFB Raw Update (Start: 2025 End: 2025)
- 3 files changed, 2117 insertions(+), 2382 deletions(-)
+2026-06-17 11:52:32,285 INFO schedules 2025: 934 games
+2026-06-17 11:52:34,129 INFO season 2025: 15 hollow/missing games to rescrape
+cfb 2025:   0%|          | 0/15 [00:00<?, ?it/s]C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\xgboost\core.py:751: UserWarning: [11:52:37] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\common\error_msg.cc:56: Empty dataset at worker: 0
+  return func(**kwargs)
+cfb 2025:   7%|6         | 1/15 [00:19<04:38, 19.93s/it]cfb 2025:  13%|#3        | 2/15 [00:21<01:56,  8.92s/it]C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\xgboost\core.py:751: UserWarning: [11:52:56] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\common\error_msg.cc:56: Empty dataset at worker: 0
+  return func(**kwargs)
+cfb 2025:  20%|##        | 3/15 [00:22<01:03,  5.31s/it]cfb 2025:  33%|###3      | 5/15 [00:38<01:09,  6.99s/it]cfb 2025:  40%|####      | 6/15 [00:39<00:47,  5.27s/it]C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\xgboost\core.py:751: UserWarning: [11:53:15] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\common\error_msg.cc:56: Empty dataset at worker: 0
+  return func(**kwargs)
+cfb 2025:  47%|####6     | 7/15 [00:41<00:34,  4.27s/it]cfb 2025:  53%|#####3    | 8/15 [00:43<00:25,  3.61s/it]C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\xgboost\core.py:751: UserWarning: [11:53:19] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\common\error_msg.cc:56: Empty dataset at worker: 0
+  return func(**kwargs)
+cfb 2025:  60%|######    | 9/15 [00:58<00:41,  6.85s/it]cfb 2025:  73%|#######3  | 11/15 [01:02<00:18,  4.59s/it]cfb 2025:  80%|########  | 12/15 [01:02<00:10,  3.49s/it]cfb 2025:  87%|########6 | 13/15 [01:12<00:10,  5.40s/it]cfb 2025:  93%|#########3| 14/15 [01:14<00:04,  4.26s/it]cfb 2025: 100%|##########| 15/15 [01:17<00:00,  4.11s/it]cfb 2025: 100%|##########| 15/15 [01:17<00:00,  5.19s/it]
+[main cd2d9fc00] CFB Raw Update (Start: 2025 End: 2025)
+ 106 files changed, 105 insertions(+)
+ create mode 100644 cfb/betting/json/401769070.json
+ create mode 100644 cfb/betting/json/401769071.json
+ create mode 100644 cfb/betting/json/401769072.json
+ create mode 100644 cfb/betting/json/401769073.json
+ create mode 100644 cfb/betting/json/401769074.json
+ create mode 100644 cfb/betting/json/401769075.json
+ create mode 100644 cfb/betting/json/401769076.json
+ create mode 100644 cfb/betting/json/401778328.json
+ create mode 100644 cfb/betting/json/401778329.json
+ create mode 100644 cfb/betting/json/401778330.json
+ create mode 100644 cfb/betting/json/401778331.json
+ create mode 100644 cfb/betting/json/401778332.json
+ create mode 100644 cfb/betting/json/401778333.json
+ create mode 100644 cfb/betting/json/401778334.json
+ create mode 100644 cfb/betting/json/401831583.json
+ create mode 100644 cfb/game_rosters/json/401769070.json
+ create mode 100644 cfb/game_rosters/json/401769071.json
+ create mode 100644 cfb/game_rosters/json/401769072.json
+ create mode 100644 cfb/game_rosters/json/401769073.json
+ create mode 100644 cfb/game_rosters/json/401769074.json
+ create mode 100644 cfb/game_rosters/json/401769075.json
+ create mode 100644 cfb/game_rosters/json/401769076.json
+ create mode 100644 cfb/game_rosters/json/401778328.json
+ create mode 100644 cfb/game_rosters/json/401778329.json
+ create mode 100644 cfb/game_rosters/json/401778330.json
+ create mode 100644 cfb/game_rosters/json/401778331.json
+ create mode 100644 cfb/game_rosters/json/401778332.json
+ create mode 100644 cfb/game_rosters/json/401778333.json
+ create mode 100644 cfb/game_rosters/json/401778334.json
+ create mode 100644 cfb/game_rosters/json/401831583.json
+ create mode 100644 cfb/json/final/401769070.json
+ create mode 100644 cfb/json/final/401769071.json
+ create mode 100644 cfb/json/final/401769072.json
+ create mode 100644 cfb/json/final/401769073.json
+ create mode 100644 cfb/json/final/401769074.json
+ create mode 100644 cfb/json/final/401769075.json
+ create mode 100644 cfb/json/final/401769076.json
+ create mode 100644 cfb/json/final/401778328.json
+ create mode 100644 cfb/json/final/401778329.json
+ create mode 100644 cfb/json/final/401778330.json
+ create mode 100644 cfb/json/final/401778331.json
+ create mode 100644 cfb/json/final/401778332.json
+ create mode 100644 cfb/json/final/401778333.json
+ create mode 100644 cfb/json/final/401778334.json
+ create mode 100644 cfb/json/final/401831583.json
+ create mode 100644 cfb/json/raw/401769070.json
+ create mode 100644 cfb/json/raw/401769071.json
+ create mode 100644 cfb/json/raw/401769072.json
+ create mode 100644 cfb/json/raw/401769073.json
+ create mode 100644 cfb/json/raw/401769074.json
+ create mode 100644 cfb/json/raw/401769075.json
+ create mode 100644 cfb/json/raw/401769076.json
+ create mode 100644 cfb/json/raw/401778328.json
+ create mode 100644 cfb/json/raw/401778329.json
+ create mode 100644 cfb/json/raw/401778330.json
+ create mode 100644 cfb/json/raw/401778331.json
+ create mode 100644 cfb/json/raw/401778332.json
+ create mode 100644 cfb/json/raw/401778333.json
+ create mode 100644 cfb/json/raw/401778334.json
+ create mode 100644 cfb/json/raw/401831583.json
+ create mode 100644 cfb/play_participants/json/401769070.json
+ create mode 100644 cfb/play_participants/json/401769071.json
+ create mode 100644 cfb/play_participants/json/401769072.json
+ create mode 100644 cfb/play_participants/json/401769073.json
+ create mode 100644 cfb/play_participants/json/401769074.json
+ create mode 100644 cfb/play_participants/json/401769075.json
+ create mode 100644 cfb/play_participants/json/401769076.json
+ create mode 100644 cfb/play_participants/json/401778328.json
+ create mode 100644 cfb/play_participants/json/401778329.json
+ create mode 100644 cfb/play_participants/json/401778330.json
+ create mode 100644 cfb/play_participants/json/401778331.json
+ create mode 100644 cfb/play_participants/json/401778332.json
+ create mode 100644 cfb/play_participants/json/401778333.json
+ create mode 100644 cfb/play_participants/json/401778334.json
+ create mode 100644 cfb/play_participants/json/401831583.json
+ create mode 100644 cfb/power_index/json/401769070.json
+ create mode 100644 cfb/power_index/json/401769071.json
+ create mode 100644 cfb/power_index/json/401769072.json
+ create mode 100644 cfb/power_index/json/401769073.json
+ create mode 100644 cfb/power_index/json/401769074.json
+ create mode 100644 cfb/power_index/json/401769075.json
+ create mode 100644 cfb/power_index/json/401769076.json
+ create mode 100644 cfb/power_index/json/401778328.json
+ create mode 100644 cfb/power_index/json/401778329.json
+ create mode 100644 cfb/power_index/json/401778330.json
+ create mode 100644 cfb/power_index/json/401778331.json
+ create mode 100644 cfb/power_index/json/401778332.json
+ create mode 100644 cfb/power_index/json/401778333.json
+ create mode 100644 cfb/power_index/json/401778334.json
+ create mode 100644 cfb/power_index/json/401831583.json
+ create mode 100644 cfb/team_box_extra/json/401769070.json
+ create mode 100644 cfb/team_box_extra/json/401769071.json
+ create mode 100644 cfb/team_box_extra/json/401769072.json
+ create mode 100644 cfb/team_box_extra/json/401769073.json
+ create mode 100644 cfb/team_box_extra/json/401769074.json
+ create mode 100644 cfb/team_box_extra/json/401769075.json
+ create mode 100644 cfb/team_box_extra/json/401769076.json
+ create mode 100644 cfb/team_box_extra/json/401778328.json
+ create mode 100644 cfb/team_box_extra/json/401778329.json
+ create mode 100644 cfb/team_box_extra/json/401778330.json
+ create mode 100644 cfb/team_box_extra/json/401778331.json
+ create mode 100644 cfb/team_box_extra/json/401778332.json
+ create mode 100644 cfb/team_box_extra/json/401778333.json
+ create mode 100644 cfb/team_box_extra/json/401778334.json
+ create mode 100644 cfb/team_box_extra/json/401831583.json
 To https://github.com/sportsdataverse/cfbfastR-cfb-raw.git
-   30898ceb6..62bfb97c5  main -> main
+   ae866719a..cd2d9fc00  main -> main
