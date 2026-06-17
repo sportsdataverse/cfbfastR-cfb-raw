@@ -1,5 +1,8 @@
 import numpy as np
 import pandas as pd
+import pytest
+
+pytest.importorskip("plotnine")  # figure rendering needs the optional `figures` group
 
 from model_training.fourth_down.figures import write_fd_figures
 
