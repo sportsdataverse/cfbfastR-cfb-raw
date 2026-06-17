@@ -1,652 +1,191 @@
-2026-06-14 03:22:21,893 INFO schedules 2021: 500 games
-2026-06-14 03:22:24,268 INFO season 2021: 438 games to scrape (rescrape=True)
-cfb 2021:   0%|          | 0/438 [00:00<?, ?it/s]cfb 2021:   0%|          | 1/438 [00:24<2:56:17, 24.20s/it]cfb 2021:   0%|          | 2/438 [00:24<1:15:43, 10.42s/it]cfb 2021:   1%|          | 3/438 [00:25<41:30,  5.73s/it]  cfb 2021:   1%|          | 4/438 [00:45<1:24:15, 11.65s/it]cfb 2021:   1%|1         | 5/438 [00:46<54:46,  7.59s/it]  cfb 2021:   1%|1         | 6/438 [00:46<36:20,  5.05s/it]2026-06-14 03:23:13,254 ERROR extra fetch failed: _rosters(401386136,)
+2026-06-17 10:20:43,785 INFO schedules 2021: 897 games
+2026-06-17 10:20:45,124 INFO season 2021: 6 hollow/missing games to rescrape
+cfb 2021:   0%|          | 0/6 [00:00<?, ?it/s]2026-06-17 10:20:46,651 ERROR download_game failed: 401339628
 Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 80, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 5937, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 482, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1082, in __helper_cfb_pbp
+    return self.__helper_cfb_game_data(pbp_txt, init)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1232, in __helper_cfb_game_data
+    awayTeamMascot = str(pbp_txt["header"]["competitions"][0]["competitors"][1]["team"]["name"])
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'name'
+ERROR:cfb_json_2021:download_game failed: 401339628
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 80, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 5937, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 482, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1082, in __helper_cfb_pbp
+    return self.__helper_cfb_game_data(pbp_txt, init)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1232, in __helper_cfb_game_data
+    awayTeamMascot = str(pbp_txt["header"]["competitions"][0]["competitors"][1]["team"]["name"])
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'name'
+cfb 2021:  17%|#6        | 1/6 [00:01<00:07,  1.51s/it]2026-06-17 10:20:47,955 ERROR extra fetch failed: _rosters(401331220,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
     return fn(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 151, in helper_cfb_team_items
-    for row in range(len(teams_df["logos"])):
-                         ~~~~~~~~^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 1441, in __getitem__
-    return get_df_item_by_key(self, key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\_utils\getitem.py", line 163, in get_df_item_by_key
-    return df.get_column(key)
-           ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 9289, in get_column
-    return wrap_s(self._df.get_column(name))
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ColumnNotFoundError: "logos" not found
-ERROR:cfb_json_2021:extra fetch failed: _rosters(401386136,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 151, in helper_cfb_team_items
-    for row in range(len(teams_df["logos"])):
-                         ~~~~~~~~^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 1441, in __getitem__
-    return get_df_item_by_key(self, key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\_utils\getitem.py", line 163, in get_df_item_by_key
-    return df.get_column(key)
-           ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 9289, in get_column
-    return wrap_s(self._df.get_column(name))
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ColumnNotFoundError: "logos" not found
-cfb 2021:   2%|1         | 7/438 [00:49<31:11,  4.34s/it]2026-06-14 03:23:16,378 ERROR extra fetch failed: _rosters(401386135,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 151, in helper_cfb_team_items
-    for row in range(len(teams_df["logos"])):
-                         ~~~~~~~~^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 1441, in __getitem__
-    return get_df_item_by_key(self, key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\_utils\getitem.py", line 163, in get_df_item_by_key
-    return df.get_column(key)
-           ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 9289, in get_column
-    return wrap_s(self._df.get_column(name))
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ColumnNotFoundError: "logos" not found
-ERROR:cfb_json_2021:extra fetch failed: _rosters(401386135,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 151, in helper_cfb_team_items
-    for row in range(len(teams_df["logos"])):
-                         ~~~~~~~~^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 1441, in __getitem__
-    return get_df_item_by_key(self, key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\_utils\getitem.py", line 163, in get_df_item_by_key
-    return df.get_column(key)
-           ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 9289, in get_column
-    return wrap_s(self._df.get_column(name))
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ColumnNotFoundError: "logos" not found
-cfb 2021:   2%|1         | 8/438 [00:52<28:24,  3.96s/it]2026-06-14 03:23:19,405 ERROR extra fetch failed: _rosters(401386134,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 151, in helper_cfb_team_items
-    for row in range(len(teams_df["logos"])):
-                         ~~~~~~~~^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 1441, in __getitem__
-    return get_df_item_by_key(self, key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\_utils\getitem.py", line 163, in get_df_item_by_key
-    return df.get_column(key)
-           ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 9289, in get_column
-    return wrap_s(self._df.get_column(name))
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ColumnNotFoundError: "logos" not found
-ERROR:cfb_json_2021:extra fetch failed: _rosters(401386134,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 151, in helper_cfb_team_items
-    for row in range(len(teams_df["logos"])):
-                         ~~~~~~~~^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 1441, in __getitem__
-    return get_df_item_by_key(self, key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\_utils\getitem.py", line 163, in get_df_item_by_key
-    return df.get_column(key)
-           ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 9289, in get_column
-    return wrap_s(self._df.get_column(name))
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ColumnNotFoundError: "logos" not found
-cfb 2021:   2%|2         | 9/438 [00:55<26:06,  3.65s/it]2026-06-14 03:23:21,365 ERROR extra fetch failed: _rosters(401405374,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 151, in helper_cfb_team_items
-    for row in range(len(teams_df["logos"])):
-                         ~~~~~~~~^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 1441, in __getitem__
-    return get_df_item_by_key(self, key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\_utils\getitem.py", line 163, in get_df_item_by_key
-    return df.get_column(key)
-           ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 9289, in get_column
-    return wrap_s(self._df.get_column(name))
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ColumnNotFoundError: "logos" not found
-ERROR:cfb_json_2021:extra fetch failed: _rosters(401405374,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 151, in helper_cfb_team_items
-    for row in range(len(teams_df["logos"])):
-                         ~~~~~~~~^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 1441, in __getitem__
-    return get_df_item_by_key(self, key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\_utils\getitem.py", line 163, in get_df_item_by_key
-    return df.get_column(key)
-           ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\dataframe\frame.py", line 9289, in get_column
-    return wrap_s(self._df.get_column(name))
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ColumnNotFoundError: "logos" not found
-cfb 2021:   2%|2         | 10/438 [00:57<22:10,  3.11s/it]cfb 2021:   3%|2         | 11/438 [01:06<35:22,  4.97s/it]cfb 2021:   3%|2         | 12/438 [01:10<32:56,  4.64s/it]cfb 2021:   3%|2         | 13/438 [01:22<49:53,  7.04s/it]cfb 2021:   3%|3         | 14/438 [01:30<50:23,  7.13s/it]cfb 2021:   3%|3         | 15/438 [01:34<44:41,  6.34s/it]cfb 2021:   4%|3         | 16/438 [01:42<47:57,  6.82s/it]cfb 2021:   4%|3         | 17/438 [01:47<42:41,  6.08s/it]cfb 2021:   4%|4         | 18/438 [01:56<49:18,  7.04s/it]cfb 2021:   4%|4         | 19/438 [02:00<43:47,  6.27s/it]cfb 2021:   5%|4         | 20/438 [02:07<45:04,  6.47s/it]cfb 2021:   5%|4         | 21/438 [02:17<51:10,  7.36s/it]cfb 2021:   5%|5         | 22/438 [02:20<41:49,  6.03s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 57 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 7 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 57 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 7 will retain null names.
-cfb 2021:   5%|5         | 23/438 [02:27<43:49,  6.34s/it]cfb 2021:   5%|5         | 24/438 [02:37<52:55,  7.67s/it]cfb 2021:   6%|5         | 25/438 [02:43<48:33,  7.06s/it]cfb 2021:   6%|5         | 26/438 [02:46<40:09,  5.85s/it]cfb 2021:   6%|6         | 27/438 [03:01<59:35,  8.70s/it]cfb 2021:   6%|6         | 28/438 [03:02<42:15,  6.18s/it]cfb 2021:   7%|6         | 29/438 [03:04<33:32,  4.92s/it]2026-06-14 03:25:33,154 ERROR extra fetch failed: _rosters(401281952,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
     team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to vstack, column names don't match: "jersey" and "valid"
-ERROR:cfb_json_2021:extra fetch failed: _rosters(401281952,)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401331220/competitions/401331220/competitors
+ERROR:cfb_json_2021:extra fetch failed: _rosters(401331220,)
 Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
     return fn(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
     team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to vstack, column names don't match: "jersey" and "valid"
-cfb 2021:   7%|6         | 30/438 [03:09<33:33,  4.93s/it]2026-06-14 03:25:34,812 ERROR extra fetch failed: _rosters(401328138,)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401331220/competitions/401331220/competitors
+2026-06-17 10:20:48,002 ERROR extra fetch failed: _rosters(401331217,)
 Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
     return fn(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 153, in helper_cfb_team_items
-    teams_df[row, "logo_href"] = team[0]["href"]
-                                 ~~~~^^^
-TypeError: 'NoneType' object is not subscriptable
-ERROR:cfb_json_2021:extra fetch failed: _rosters(401328138,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 68, in espn_cfb_game_rosters
-    teams_df = helper_cfb_team_items(items=items, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 153, in helper_cfb_team_items
-    teams_df[row, "logo_href"] = team[0]["href"]
-                                 ~~~~^^^
-TypeError: 'NoneType' object is not subscriptable
-cfb 2021:   7%|7         | 31/438 [03:10<26:23,  3.89s/it]cfb 2021:   7%|7         | 32/438 [03:19<36:27,  5.39s/it]cfb 2021:   8%|7         | 33/438 [03:25<37:23,  5.54s/it]cfb 2021:   8%|7         | 34/438 [03:25<26:21,  3.92s/it]cfb 2021:   8%|7         | 35/438 [03:40<49:13,  7.33s/it]cfb 2021:   8%|8         | 36/438 [03:44<42:05,  6.28s/it]cfb 2021:   8%|8         | 37/438 [03:46<32:33,  4.87s/it]cfb 2021:   9%|8         | 38/438 [04:04<59:03,  8.86s/it]cfb 2021:   9%|8         | 39/438 [04:04<42:10,  6.34s/it]cfb 2021:   9%|9         | 40/438 [04:05<30:33,  4.61s/it]cfb 2021:   9%|9         | 41/438 [04:24<1:00:07,  9.09s/it]cfb 2021:  10%|9         | 42/438 [04:26<44:01,  6.67s/it]  cfb 2021:  10%|9         | 43/438 [04:26<32:03,  4.87s/it]cfb 2021:  10%|#         | 44/438 [04:44<57:54,  8.82s/it]cfb 2021:  10%|#         | 45/438 [04:45<42:08,  6.43s/it]cfb 2021:  11%|#         | 46/438 [04:47<32:48,  5.02s/it]cfb 2021:  11%|#         | 47/438 [05:05<58:00,  8.90s/it]cfb 2021:  11%|#         | 48/438 [05:06<42:17,  6.51s/it]cfb 2021:  11%|#1        | 49/438 [05:07<32:52,  5.07s/it]cfb 2021:  11%|#1        | 50/438 [05:24<55:32,  8.59s/it]cfb 2021:  12%|#1        | 51/438 [05:25<40:35,  6.29s/it]cfb 2021:  12%|#1        | 52/438 [05:33<42:42,  6.64s/it]cfb 2021:  12%|#2        | 53/438 [05:42<47:19,  7.37s/it]cfb 2021:  12%|#2        | 54/438 [05:45<38:34,  6.03s/it]cfb 2021:  13%|#2        | 55/438 [05:52<41:45,  6.54s/it]cfb 2021:  13%|#2        | 56/438 [06:04<52:11,  8.20s/it]cfb 2021:  13%|#3        | 58/438 [06:10<36:42,  5.80s/it]cfb 2021:  13%|#3        | 59/438 [06:25<49:59,  7.92s/it]cfb 2021:  14%|#3        | 60/438 [06:29<43:11,  6.86s/it]cfb 2021:  14%|#3        | 61/438 [06:30<34:12,  5.44s/it]cfb 2021:  14%|#4        | 62/438 [06:46<51:30,  8.22s/it]cfb 2021:  14%|#4        | 63/438 [06:56<55:22,  8.86s/it]cfb 2021:  15%|#4        | 64/438 [06:57<40:05,  6.43s/it]cfb 2021:  15%|#4        | 65/438 [07:05<43:55,  7.07s/it]cfb 2021:  15%|#5        | 66/438 [07:13<45:53,  7.40s/it]cfb 2021:  15%|#5        | 67/438 [07:25<53:13,  8.61s/it]cfb 2021:  16%|#5        | 68/438 [07:25<38:07,  6.18s/it]cfb 2021:  16%|#5        | 69/438 [07:34<43:26,  7.06s/it]cfb 2021:  16%|#5        | 70/438 [07:46<51:07,  8.34s/it]cfb 2021:  16%|#6        | 71/438 [07:47<38:42,  6.33s/it]cfb 2021:  16%|#6        | 72/438 [07:59<48:20,  7.93s/it]cfb 2021:  17%|#6        | 73/438 [08:06<46:11,  7.59s/it]cfb 2021:  17%|#6        | 74/438 [08:10<38:56,  6.42s/it]2026-06-14 03:30:42,305 ERROR extra fetch failed: _rosters(401328192,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
     team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to vstack, column names don't match: "valid" and "jersey"
-ERROR:cfb_json_2021:extra fetch failed: _rosters(401328192,)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401331217/competitions/401331217/competitors
+ERROR:cfb_json_2021:extra fetch failed: _rosters(401331217,)
 Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
     return fn(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
     team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to vstack, column names don't match: "valid" and "jersey"
-cfb 2021:  17%|#7        | 75/438 [08:18<42:16,  6.99s/it]cfb 2021:  17%|#7        | 76/438 [08:24<40:24,  6.70s/it]cfb 2021:  18%|#7        | 77/438 [08:25<29:54,  4.97s/it]2026-06-14 03:30:50,797 ERROR extra fetch failed: _rosters(401282173,)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401331217/competitions/401331217/competitors
+2026-06-17 10:20:48,004 ERROR extra fetch failed: _rosters(401309893,)
 Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
     return fn(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
     team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to vstack, column names don't match: "valid" and "jersey"
-ERROR:cfb_json_2021:extra fetch failed: _rosters(401282173,)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401309893/competitions/401309893/competitors
+ERROR:cfb_json_2021:extra fetch failed: _rosters(401309893,)
 Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
     return fn(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
     team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to vstack, column names don't match: "valid" and "jersey"
-cfb 2021:  18%|#7        | 78/438 [08:26<23:23,  3.90s/it]cfb 2021:  18%|#8        | 79/438 [08:39<38:31,  6.44s/it]cfb 2021:  18%|#8        | 80/438 [08:45<37:47,  6.33s/it]cfb 2021:  18%|#8        | 81/438 [08:46<29:20,  4.93s/it]cfb 2021:  19%|#8        | 82/438 [09:02<49:12,  8.29s/it]cfb 2021:  19%|#8        | 83/438 [09:06<40:18,  6.81s/it]cfb 2021:  19%|#9        | 84/438 [09:09<33:53,  5.74s/it]cfb 2021:  19%|#9        | 85/438 [09:26<53:57,  9.17s/it]cfb 2021:  20%|#9        | 86/438 [09:29<42:17,  7.21s/it]cfb 2021:  20%|#9        | 87/438 [09:33<37:13,  6.36s/it]cfb 2021:  20%|##        | 88/438 [09:49<52:54,  9.07s/it]cfb 2021:  20%|##        | 89/438 [09:53<45:10,  7.77s/it]cfb 2021:  21%|##        | 90/438 [09:55<34:25,  5.93s/it]cfb 2021:  21%|##        | 91/438 [10:12<53:05,  9.18s/it]cfb 2021:  21%|##1       | 92/438 [10:14<41:47,  7.25s/it]cfb 2021:  21%|##1       | 93/438 [10:17<33:36,  5.85s/it]2026-06-14 03:32:44,190 ERROR extra fetch failed: _rosters(401282613,)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401309893/competitions/401309893/competitors
+cfb 2021:  33%|###3      | 2/6 [00:02<00:05,  1.47s/it]2026-06-17 10:20:48,279 ERROR extra fetch failed: _rosters(401331225,)
 Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
     return fn(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
     team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to append to a DataFrame of width 12 with a DataFrame of width 13
-ERROR:cfb_json_2021:extra fetch failed: _rosters(401282613,)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401331225/competitions/401331225/competitors
+ERROR:cfb_json_2021:extra fetch failed: _rosters(401331225,)
 Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 106, in _safe
     return fn(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 42, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
     team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to append to a DataFrame of width 12 with a DataFrame of width 13
-cfb 2021:  21%|##1       | 94/438 [10:20<28:00,  4.89s/it]cfb 2021:  22%|##1       | 95/438 [10:34<44:04,  7.71s/it]cfb 2021:  22%|##1       | 96/438 [10:37<35:28,  6.22s/it]cfb 2021:  22%|##2       | 97/438 [10:40<30:43,  5.41s/it]cfb 2021:  22%|##2       | 98/438 [10:55<46:03,  8.13s/it]cfb 2021:  23%|##2       | 99/438 [10:57<36:29,  6.46s/it]cfb 2021:  23%|##2       | 100/438 [11:04<36:53,  6.55s/it]cfb 2021:  23%|##3       | 101/438 [11:17<47:35,  8.47s/it]cfb 2021:  23%|##3       | 102/438 [11:18<35:10,  6.28s/it]cfb 2021:  24%|##3       | 103/438 [11:22<30:25,  5.45s/it]cfb 2021:  24%|##3       | 104/438 [11:38<48:55,  8.79s/it]cfb 2021:  24%|##3       | 105/438 [11:42<40:28,  7.29s/it]cfb 2021:  24%|##4       | 106/438 [11:42<28:42,  5.19s/it]cfb 2021:  24%|##4       | 107/438 [12:00<48:51,  8.86s/it]cfb 2021:  25%|##4       | 108/438 [12:04<41:07,  7.48s/it]cfb 2021:  25%|##4       | 109/438 [12:07<33:49,  6.17s/it]cfb 2021:  25%|##5       | 110/438 [12:20<45:13,  8.27s/it]cfb 2021:  25%|##5       | 111/438 [12:25<39:57,  7.33s/it]cfb 2021:  26%|##5       | 112/438 [12:29<34:17,  6.31s/it]cfb 2021:  26%|##5       | 113/438 [12:44<47:03,  8.69s/it]cfb 2021:  26%|##6       | 114/438 [12:47<38:27,  7.12s/it]cfb 2021:  26%|##6       | 115/438 [12:52<34:42,  6.45s/it]cfb 2021:  26%|##6       | 116/438 [13:04<43:08,  8.04s/it]cfb 2021:  27%|##6       | 118/438 [13:15<37:09,  6.97s/it]cfb 2021:  27%|##7       | 119/438 [13:24<38:55,  7.32s/it]cfb 2021:  27%|##7       | 120/438 [13:24<29:16,  5.53s/it]cfb 2021:  28%|##7       | 121/438 [13:40<43:47,  8.29s/it]cfb 2021:  28%|##7       | 122/438 [13:43<36:55,  7.01s/it]cfb 2021:  28%|##8       | 123/438 [13:46<30:51,  5.88s/it]cfb 2021:  28%|##8       | 124/438 [13:59<41:37,  7.95s/it]cfb 2021:  29%|##8       | 125/438 [14:04<36:06,  6.92s/it]2026-06-14 03:36:30,430 ERROR extra fetch failed: _rosters(401282624,)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401331225/competitions/401331225/competitors
+2026-06-17 10:20:48,340 ERROR download_game failed: 401352013
 Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to append to a DataFrame of width 12 with a DataFrame of width 13
-ERROR:cfb_json_2021:extra fetch failed: _rosters(401282624,)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 80, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 5937, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 482, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1082, in __helper_cfb_pbp
+    return self.__helper_cfb_game_data(pbp_txt, init)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1232, in __helper_cfb_game_data
+    awayTeamMascot = str(pbp_txt["header"]["competitions"][0]["competitors"][1]["team"]["name"])
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'name'
+ERROR:cfb_json_2021:download_game failed: 401352013
 Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to append to a DataFrame of width 12 with a DataFrame of width 13
-cfb 2021:  29%|##8       | 126/438 [14:06<28:31,  5.49s/it]cfb 2021:  29%|##8       | 127/438 [14:07<22:07,  4.27s/it]cfb 2021:  29%|##9       | 128/438 [14:27<46:23,  8.98s/it]cfb 2021:  29%|##9       | 129/438 [14:29<35:03,  6.81s/it]cfb 2021:  30%|##9       | 130/438 [14:31<27:01,  5.27s/it]cfb 2021:  30%|##9       | 131/438 [14:48<45:16,  8.85s/it]cfb 2021:  30%|###       | 132/438 [14:51<35:23,  6.94s/it]cfb 2021:  30%|###       | 133/438 [14:52<26:24,  5.20s/it]cfb 2021:  31%|###       | 134/438 [15:12<49:24,  9.75s/it]cfb 2021:  31%|###       | 135/438 [15:14<38:09,  7.56s/it]cfb 2021:  31%|###1      | 136/438 [15:17<30:46,  6.11s/it]cfb 2021:  31%|###1      | 137/438 [15:36<49:01,  9.77s/it]cfb 2021:  32%|###1      | 138/438 [15:38<38:08,  7.63s/it]2026-06-14 03:38:04,662 ERROR extra fetch failed: _rosters(401282186,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to vstack, column names don't match: "jersey" and "valid"
-ERROR:cfb_json_2021:extra fetch failed: _rosters(401282186,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to vstack, column names don't match: "jersey" and "valid"
-cfb 2021:  32%|###1      | 140/438 [15:40<22:40,  4.57s/it]cfb 2021:  32%|###2      | 141/438 [15:52<32:07,  6.49s/it]cfb 2021:  32%|###2      | 142/438 [16:01<34:09,  6.92s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 53 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 3 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 53 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 3 will retain null names.
-cfb 2021:  33%|###2      | 144/438 [16:15<34:44,  7.09s/it]cfb 2021:  33%|###3      | 145/438 [16:24<36:26,  7.46s/it]cfb 2021:  33%|###3      | 146/438 [16:25<28:50,  5.93s/it]cfb 2021:  34%|###3      | 147/438 [16:35<34:04,  7.03s/it]cfb 2021:  34%|###3      | 148/438 [16:45<37:13,  7.70s/it]cfb 2021:  34%|###4      | 149/438 [16:48<30:37,  6.36s/it]cfb 2021:  34%|###4      | 150/438 [17:03<43:21,  9.03s/it]cfb 2021:  34%|###4      | 151/438 [17:05<32:25,  6.78s/it]cfb 2021:  35%|###4      | 152/438 [17:12<32:54,  6.90s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
-cfb 2021:  35%|###4      | 153/438 [17:27<44:15,  9.32s/it]cfb 2021:  35%|###5      | 154/438 [17:31<36:01,  7.61s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 72 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 22 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 72 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 22 will retain null names.
-cfb 2021:  35%|###5      | 155/438 [17:38<35:25,  7.51s/it]cfb 2021:  36%|###5      | 156/438 [17:50<42:05,  8.96s/it]cfb 2021:  36%|###5      | 157/438 [17:54<34:18,  7.32s/it]cfb 2021:  36%|###6      | 158/438 [17:59<31:27,  6.74s/it]cfb 2021:  36%|###6      | 159/438 [18:07<33:09,  7.13s/it]cfb 2021:  37%|###6      | 160/438 [18:16<35:20,  7.63s/it]cfb 2021:  37%|###6      | 161/438 [18:23<34:37,  7.50s/it]cfb 2021:  37%|###6      | 162/438 [18:27<29:46,  6.47s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 58 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 8 will retain null names.
-cfb 2021:  37%|###7      | 163/438 [18:39<37:33,  8.19s/it]cfb 2021:  37%|###7      | 164/438 [18:40<26:36,  5.83s/it]cfb 2021:  38%|###7      | 165/438 [18:47<28:49,  6.34s/it]cfb 2021:  38%|###7      | 166/438 [19:00<36:51,  8.13s/it]cfb 2021:  38%|###8      | 167/438 [19:03<30:09,  6.68s/it]cfb 2021:  38%|###8      | 168/438 [19:13<34:30,  7.67s/it]cfb 2021:  39%|###8      | 169/438 [19:22<35:49,  7.99s/it]cfb 2021:  39%|###8      | 170/438 [19:23<27:06,  6.07s/it]2026-06-14 03:41:49,153 ERROR extra fetch failed: _rosters(401282188,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to vstack, column names don't match: "jersey" and "valid"
-ERROR:cfb_json_2021:extra fetch failed: _rosters(401282188,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to vstack, column names don't match: "jersey" and "valid"
-cfb 2021:  39%|###9      | 171/438 [19:25<20:59,  4.72s/it]2026-06-14 03:41:57,172 ERROR extra fetch failed: _rosters(401282619,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to vstack, column names don't match: "jersey" and "valid"
-ERROR:cfb_json_2021:extra fetch failed: _rosters(401282619,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to vstack, column names don't match: "jersey" and "valid"
-cfb 2021:  39%|###9      | 172/438 [19:33<25:11,  5.68s/it]cfb 2021:  39%|###9      | 173/438 [19:36<22:06,  5.00s/it]cfb 2021:  40%|###9      | 174/438 [19:43<24:16,  5.52s/it]cfb 2021:  40%|###9      | 175/438 [19:53<30:45,  7.02s/it]cfb 2021:  40%|####      | 176/438 [19:59<28:25,  6.51s/it]cfb 2021:  40%|####      | 177/438 [20:07<30:26,  7.00s/it]cfb 2021:  41%|####      | 178/438 [20:12<27:37,  6.38s/it]cfb 2021:  41%|####      | 179/438 [20:23<33:21,  7.73s/it]cfb 2021:  41%|####1     | 180/438 [20:32<35:32,  8.26s/it]cfb 2021:  41%|####1     | 181/438 [20:34<27:34,  6.44s/it]cfb 2021:  42%|####1     | 182/438 [20:45<33:28,  7.85s/it]cfb 2021:  42%|####1     | 183/438 [20:52<31:38,  7.45s/it]cfb 2021:  42%|####2     | 184/438 [20:55<26:05,  6.16s/it]cfb 2021:  42%|####2     | 185/438 [21:08<34:32,  8.19s/it]cfb 2021:  42%|####2     | 186/438 [21:11<27:58,  6.66s/it]cfb 2021:  43%|####2     | 187/438 [21:19<29:14,  6.99s/it]cfb 2021:  43%|####2     | 188/438 [21:30<33:48,  8.11s/it]cfb 2021:  43%|####3     | 189/438 [21:33<28:22,  6.84s/it]cfb 2021:  43%|####3     | 190/438 [21:41<29:11,  7.06s/it]cfb 2021:  44%|####3     | 191/438 [21:52<33:58,  8.25s/it]cfb 2021:  44%|####3     | 192/438 [21:57<29:18,  7.15s/it]cfb 2021:  44%|####4     | 193/438 [22:01<25:44,  6.30s/it]cfb 2021:  44%|####4     | 194/438 [22:14<33:26,  8.22s/it]cfb 2021:  45%|####4     | 195/438 [22:20<31:06,  7.68s/it]cfb 2021:  45%|####4     | 196/438 [22:21<22:56,  5.69s/it]cfb 2021:  45%|####4     | 197/438 [22:32<28:57,  7.21s/it]cfb 2021:  45%|####5     | 198/438 [22:42<32:17,  8.07s/it]cfb 2021:  45%|####5     | 199/438 [22:44<24:59,  6.27s/it]cfb 2021:  46%|####5     | 200/438 [22:56<31:53,  8.04s/it]cfb 2021:  46%|####5     | 201/438 [23:03<29:47,  7.54s/it]cfb 2021:  46%|####6     | 202/438 [23:03<20:55,  5.32s/it]cfb 2021:  46%|####6     | 203/438 [23:22<36:43,  9.38s/it]cfb 2021:  47%|####6     | 204/438 [23:30<35:12,  9.03s/it]cfb 2021:  47%|####6     | 205/438 [23:31<25:23,  6.54s/it]cfb 2021:  47%|####7     | 206/438 [23:43<32:19,  8.36s/it]cfb 2021:  47%|####7     | 207/438 [23:52<32:35,  8.47s/it]cfb 2021:  47%|####7     | 208/438 [23:53<24:12,  6.32s/it]cfb 2021:  48%|####7     | 209/438 [24:06<31:54,  8.36s/it]cfb 2021:  48%|####7     | 210/438 [24:12<28:56,  7.62s/it]cfb 2021:  48%|####8     | 211/438 [24:15<23:17,  6.16s/it]cfb 2021:  48%|####8     | 212/438 [24:27<30:23,  8.07s/it]cfb 2021:  49%|####8     | 213/438 [24:31<25:42,  6.86s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 52 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 2 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 52 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 2 will retain null names.
-cfb 2021:  49%|####8     | 214/438 [24:37<24:07,  6.46s/it]cfb 2021:  49%|####9     | 215/438 [24:46<26:34,  7.15s/it]cfb 2021:  49%|####9     | 216/438 [24:55<29:01,  7.84s/it]cfb 2021:  50%|####9     | 217/438 [24:56<21:13,  5.76s/it]cfb 2021:  50%|####9     | 218/438 [25:04<23:25,  6.39s/it]cfb 2021:  50%|#####     | 219/438 [25:15<28:26,  7.79s/it]cfb 2021:  50%|#####     | 220/438 [25:18<23:13,  6.39s/it]cfb 2021:  50%|#####     | 221/438 [25:30<29:11,  8.07s/it]cfb 2021:  51%|#####     | 222/438 [25:35<25:21,  7.05s/it]cfb 2021:  51%|#####     | 223/438 [25:37<19:30,  5.44s/it]cfb 2021:  51%|#####1    | 224/438 [25:50<27:43,  7.77s/it]cfb 2021:  51%|#####1    | 225/438 [25:56<26:12,  7.38s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 52 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 2 will retain null names.
-cfb 2021:  52%|#####1    | 226/438 [26:01<23:44,  6.72s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 52 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 2 will retain null names.
-cfb 2021:  52%|#####1    | 227/438 [26:09<24:27,  6.96s/it]cfb 2021:  52%|#####2    | 228/438 [26:21<29:52,  8.53s/it]cfb 2021:  52%|#####2    | 229/438 [26:25<24:35,  7.06s/it]cfb 2021:  53%|#####2    | 230/438 [26:33<25:47,  7.44s/it]cfb 2021:  53%|#####2    | 231/438 [26:41<26:22,  7.64s/it]cfb 2021:  53%|#####2    | 232/438 [26:49<26:32,  7.73s/it]cfb 2021:  53%|#####3    | 233/438 [26:55<24:46,  7.25s/it]cfb 2021:  53%|#####3    | 234/438 [27:02<24:39,  7.25s/it]cfb 2021:  54%|#####3    | 235/438 [27:12<26:39,  7.88s/it]cfb 2021:  54%|#####3    | 236/438 [27:16<23:05,  6.86s/it]cfb 2021:  54%|#####4    | 237/438 [27:24<23:42,  7.08s/it]cfb 2021:  54%|#####4    | 238/438 [27:34<26:13,  7.87s/it]cfb 2021:  55%|#####4    | 239/438 [27:40<24:10,  7.29s/it]cfb 2021:  55%|#####4    | 240/438 [27:47<24:19,  7.37s/it]cfb 2021:  55%|#####5    | 241/438 [27:55<24:29,  7.46s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
-cfb 2021:  55%|#####5    | 242/438 [28:04<26:14,  8.03s/it]cfb 2021:  55%|#####5    | 243/438 [28:11<24:35,  7.57s/it]cfb 2021:  56%|#####5    | 244/438 [28:18<24:17,  7.51s/it]cfb 2021:  56%|#####5    | 245/438 [28:29<27:48,  8.64s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 53 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 3 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 53 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 3 will retain null names.
-cfb 2021:  56%|#####6    | 246/438 [28:34<24:04,  7.52s/it]cfb 2021:  56%|#####6    | 247/438 [28:43<24:50,  7.80s/it]cfb 2021:  57%|#####6    | 248/438 [28:53<27:14,  8.60s/it]cfb 2021:  57%|#####6    | 249/438 [28:55<20:20,  6.46s/it]cfb 2021:  57%|#####7    | 250/438 [29:05<23:58,  7.65s/it]cfb 2021:  57%|#####7    | 251/438 [29:14<24:57,  8.01s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
-cfb 2021:  58%|#####7    | 253/438 [29:29<23:58,  7.78s/it]cfb 2021:  58%|#####7    | 254/438 [29:35<22:23,  7.30s/it]cfb 2021:  58%|#####8    | 255/438 [29:39<19:33,  6.41s/it]cfb 2021:  58%|#####8    | 256/438 [29:54<26:34,  8.76s/it]cfb 2021:  59%|#####8    | 257/438 [30:01<25:06,  8.33s/it]cfb 2021:  59%|#####8    | 258/438 [30:03<19:44,  6.58s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 55 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 5 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 55 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 5 will retain null names.
-cfb 2021:  59%|#####9    | 259/438 [30:18<26:35,  8.92s/it]cfb 2021:  59%|#####9    | 260/438 [30:25<24:55,  8.40s/it]2026-06-14 03:52:52,059 ERROR extra fetch failed: _rosters(401282631,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to append to a DataFrame of width 13 with a DataFrame of width 12
-ERROR:cfb_json_2021:extra fetch failed: _rosters(401282631,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to append to a DataFrame of width 13 with a DataFrame of width 12
-cfb 2021:  60%|#####9    | 261/438 [30:28<19:50,  6.72s/it]cfb 2021:  60%|######    | 263/438 [30:38<17:50,  6.11s/it]cfb 2021:  60%|######    | 264/438 [30:48<20:24,  7.03s/it]cfb 2021:  61%|######    | 265/438 [30:49<15:15,  5.29s/it]cfb 2021:  61%|######    | 266/438 [30:57<17:26,  6.08s/it]cfb 2021:  61%|######    | 267/438 [31:11<23:28,  8.24s/it]cfb 2021:  61%|######1   | 268/438 [31:11<16:57,  5.99s/it]cfb 2021:  61%|######1   | 269/438 [31:21<20:28,  7.27s/it]cfb 2021:  62%|######1   | 270/438 [31:35<25:40,  9.17s/it]cfb 2021:  62%|######1   | 271/438 [31:36<18:46,  6.74s/it]cfb 2021:  62%|######2   | 272/438 [31:41<17:04,  6.17s/it]2026-06-14 03:54:08,187 ERROR extra fetch failed: _rosters(401282204,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to vstack, column names don't match: "jersey" and "valid"
-ERROR:cfb_json_2021:extra fetch failed: _rosters(401282204,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to vstack, column names don't match: "jersey" and "valid"
-cfb 2021:  62%|######2   | 273/438 [31:44<14:14,  5.18s/it]cfb 2021:  63%|######2   | 274/438 [31:52<16:53,  6.18s/it]cfb 2021:  63%|######2   | 275/438 [31:58<16:11,  5.96s/it]cfb 2021:  63%|######3   | 276/438 [32:04<16:12,  6.01s/it]cfb 2021:  63%|######3   | 277/438 [32:09<15:23,  5.74s/it]cfb 2021:  63%|######3   | 278/438 [32:16<16:44,  6.28s/it]cfb 2021:  64%|######3   | 279/438 [32:22<15:56,  6.02s/it]cfb 2021:  64%|######3   | 280/438 [32:27<15:21,  5.84s/it]cfb 2021:  64%|######4   | 281/438 [32:35<16:57,  6.48s/it]cfb 2021:  64%|######4   | 282/438 [32:42<16:59,  6.54s/it]cfb 2021:  65%|######4   | 283/438 [32:51<18:59,  7.35s/it]cfb 2021:  65%|######4   | 284/438 [32:57<17:26,  6.80s/it]cfb 2021:  65%|######5   | 285/438 [33:07<20:00,  7.84s/it]cfb 2021:  65%|######5   | 286/438 [33:13<18:09,  7.16s/it]cfb 2021:  66%|######5   | 287/438 [33:19<17:45,  7.05s/it]cfb 2021:  66%|######5   | 288/438 [33:32<21:58,  8.79s/it]cfb 2021:  66%|######5   | 289/438 [33:32<15:28,  6.23s/it]cfb 2021:  66%|######6   | 290/438 [33:41<17:22,  7.04s/it]cfb 2021:  66%|######6   | 291/438 [33:55<21:53,  8.94s/it]cfb 2021:  67%|######6   | 292/438 [34:00<18:55,  7.77s/it]2026-06-14 03:56:26,756 ERROR extra fetch failed: _rosters(401282086,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to vstack, column names don't match: "valid" and "jersey"
-ERROR:cfb_json_2021:extra fetch failed: _rosters(401282086,)
-Traceback (most recent call last):
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 93, in _safe
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 31, in _rosters
-    return sdv.cfb.espn_cfb_game_rosters(game_id=gid, return_as_pandas=True).to_dict("records")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
-    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 188, in helper_cfb_roster_items
-    game_rosters = pl.concat([game_rosters, team_roster], how="vertical")
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\polars\functions\eager.py", line 246, in concat
-    out = wrap_df(plr.concat_df(elems))
-                  ^^^^^^^^^^^^^^^^^^^^
-polars.exceptions.ShapeError: unable to vstack, column names don't match: "valid" and "jersey"
-cfb 2021:  67%|######6   | 293/438 [34:02<14:55,  6.18s/it]cfb 2021:  67%|######7   | 294/438 [34:05<12:17,  5.12s/it]cfb 2021:  67%|######7   | 295/438 [34:12<13:49,  5.80s/it]cfb 2021:  68%|######7   | 296/438 [34:24<17:50,  7.54s/it]cfb 2021:  68%|######7   | 297/438 [34:28<15:33,  6.62s/it]cfb 2021:  68%|######8   | 298/438 [34:34<14:37,  6.27s/it]cfb 2021:  68%|######8   | 299/438 [34:43<16:39,  7.19s/it]cfb 2021:  68%|######8   | 300/438 [34:52<17:23,  7.56s/it]cfb 2021:  69%|######8   | 301/438 [34:58<16:47,  7.35s/it]cfb 2021:  69%|######8   | 302/438 [35:02<13:45,  6.07s/it]cfb 2021:  69%|######9   | 303/438 [35:16<19:20,  8.60s/it]cfb 2021:  69%|######9   | 304/438 [35:17<14:21,  6.43s/it]cfb 2021:  70%|######9   | 305/438 [35:26<15:25,  6.96s/it]cfb 2021:  70%|######9   | 306/438 [35:34<16:11,  7.36s/it]cfb 2021:  70%|#######   | 307/438 [35:36<12:50,  5.88s/it]cfb 2021:  70%|#######   | 308/438 [35:49<16:59,  7.84s/it]cfb 2021:  71%|#######   | 309/438 [35:59<18:11,  8.46s/it]cfb 2021:  71%|#######   | 310/438 [35:59<13:09,  6.17s/it]cfb 2021:  71%|#######1  | 311/438 [36:14<18:07,  8.56s/it]cfb 2021:  71%|#######1  | 312/438 [36:15<13:29,  6.42s/it]cfb 2021:  71%|#######1  | 313/438 [36:20<12:11,  5.85s/it]cfb 2021:  72%|#######1  | 314/438 [36:37<19:23,  9.38s/it]cfb 2021:  72%|#######2  | 316/438 [36:42<12:21,  6.08s/it]cfb 2021:  72%|#######2  | 317/438 [36:58<17:38,  8.75s/it]cfb 2021:  73%|#######2  | 318/438 [37:01<14:09,  7.08s/it]cfb 2021:  73%|#######2  | 319/438 [37:03<11:36,  5.86s/it]cfb 2021:  73%|#######3  | 320/438 [37:18<16:32,  8.41s/it]cfb 2021:  73%|#######3  | 321/438 [37:25<15:29,  7.95s/it]cfb 2021:  74%|#######3  | 322/438 [37:31<14:17,  7.40s/it]cfb 2021:  74%|#######3  | 323/438 [37:36<12:35,  6.57s/it]cfb 2021:  74%|#######3  | 324/438 [37:49<16:18,  8.58s/it]cfb 2021:  74%|#######4  | 325/438 [37:51<12:33,  6.67s/it]cfb 2021:  74%|#######4  | 326/438 [37:57<11:54,  6.38s/it]cfb 2021:  75%|#######4  | 327/438 [38:11<16:06,  8.70s/it]cfb 2021:  75%|#######4  | 328/438 [38:12<11:28,  6.26s/it]cfb 2021:  75%|#######5  | 329/438 [38:20<12:18,  6.77s/it]cfb 2021:  75%|#######5  | 330/438 [38:33<15:34,  8.65s/it]cfb 2021:  76%|#######5  | 331/438 [38:36<12:39,  7.10s/it]cfb 2021:  76%|#######5  | 332/438 [38:44<13:02,  7.38s/it]cfb 2021:  76%|#######6  | 333/438 [38:52<12:51,  7.35s/it]cfb 2021:  76%|#######6  | 334/438 [38:58<12:32,  7.24s/it]cfb 2021:  76%|#######6  | 335/438 [39:09<14:09,  8.24s/it]cfb 2021:  77%|#######6  | 336/438 [39:17<13:42,  8.07s/it]cfb 2021:  77%|#######6  | 337/438 [39:22<12:03,  7.16s/it]cfb 2021:  77%|#######7  | 338/438 [39:33<13:57,  8.38s/it]cfb 2021:  77%|#######7  | 339/438 [39:41<13:23,  8.12s/it]cfb 2021:  78%|#######7  | 340/438 [39:45<11:38,  7.13s/it]cfb 2021:  78%|#######7  | 341/438 [39:57<13:53,  8.60s/it]cfb 2021:  78%|#######8  | 342/438 [40:06<13:32,  8.47s/it]cfb 2021:  78%|#######8  | 343/438 [40:06<09:31,  6.02s/it]cfb 2021:  79%|#######8  | 344/438 [40:18<12:16,  7.84s/it]cfb 2021:  79%|#######8  | 345/438 [40:21<09:53,  6.39s/it]cfb 2021:  79%|#######8  | 346/438 [40:29<10:20,  6.75s/it]cfb 2021:  79%|#######9  | 347/438 [40:39<12:01,  7.92s/it]cfb 2021:  79%|#######9  | 348/438 [40:45<10:50,  7.22s/it]cfb 2021:  80%|#######9  | 349/438 [40:51<10:29,  7.07s/it]cfb 2021:  80%|#######9  | 350/438 [40:59<10:30,  7.16s/it]cfb 2021:  80%|########  | 351/438 [41:05<09:44,  6.72s/it]cfb 2021:  80%|########  | 352/438 [41:12<10:00,  6.99s/it]cfb 2021:  81%|########  | 353/438 [41:18<09:30,  6.71s/it]cfb 2021:  81%|########  | 354/438 [41:26<09:38,  6.88s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 53 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 3 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 53 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 3 will retain null names.
-cfb 2021:  81%|########1 | 355/438 [41:31<09:05,  6.57s/it]cfb 2021:  81%|########1 | 356/438 [41:40<09:50,  7.20s/it]cfb 2021:  82%|########1 | 357/438 [41:49<10:21,  7.67s/it]cfb 2021:  82%|########1 | 358/438 [41:53<08:48,  6.60s/it]cfb 2021:  82%|########1 | 359/438 [42:01<09:05,  6.91s/it]cfb 2021:  82%|########2 | 360/438 [42:11<10:30,  8.08s/it]cfb 2021:  82%|########2 | 361/438 [42:15<08:47,  6.85s/it]cfb 2021:  83%|########2 | 362/438 [42:25<09:47,  7.73s/it]cfb 2021:  83%|########2 | 363/438 [42:33<09:41,  7.76s/it]cfb 2021:  83%|########3 | 364/438 [42:39<09:05,  7.37s/it]cfb 2021:  83%|########3 | 365/438 [42:50<10:18,  8.47s/it]cfb 2021:  84%|########3 | 366/438 [42:58<09:51,  8.22s/it]cfb 2021:  84%|########3 | 367/438 [42:59<07:12,  6.09s/it]cfb 2021:  84%|########4 | 368/438 [43:13<09:50,  8.43s/it]cfb 2021:  84%|########4 | 369/438 [43:18<08:23,  7.30s/it]cfb 2021:  84%|########4 | 370/438 [43:20<06:29,  5.72s/it]cfb 2021:  85%|########4 | 371/438 [43:37<10:12,  9.15s/it]cfb 2021:  85%|########4 | 372/438 [43:37<07:08,  6.49s/it]cfb 2021:  85%|########5 | 373/438 [43:43<06:55,  6.40s/it]cfb 2021:  85%|########5 | 374/438 [43:56<08:58,  8.41s/it]cfb 2021:  86%|########5 | 375/438 [43:58<06:44,  6.43s/it]cfb 2021:  86%|########5 | 376/438 [44:09<08:04,  7.81s/it]cfb 2021:  86%|########6 | 377/438 [44:22<09:20,  9.19s/it]cfb 2021:  86%|########6 | 378/438 [44:23<06:43,  6.73s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 52 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 2 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 52 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 2 will retain null names.
-cfb 2021:  87%|########6 | 379/438 [44:34<07:57,  8.09s/it]cfb 2021:  87%|########6 | 380/438 [44:43<08:13,  8.51s/it]cfb 2021:  87%|########6 | 381/438 [44:47<06:47,  7.15s/it]cfb 2021:  87%|########7 | 382/438 [45:03<09:05,  9.74s/it]cfb 2021:  87%|########7 | 383/438 [45:09<07:55,  8.64s/it]cfb 2021:  88%|########7 | 384/438 [45:22<08:44,  9.70s/it]cfb 2021:  88%|########7 | 385/438 [45:29<08:03,  9.13s/it]cfb 2021:  88%|########8 | 386/438 [45:31<06:03,  6.98s/it]cfb 2021:  88%|########8 | 387/438 [45:45<07:45,  9.12s/it]cfb 2021:  89%|########8 | 388/438 [45:52<07:00,  8.40s/it]cfb 2021:  89%|########8 | 389/438 [45:53<05:01,  6.14s/it]cfb 2021:  89%|########9 | 390/438 [46:08<07:06,  8.88s/it]cfb 2021:  89%|########9 | 391/438 [46:16<06:44,  8.60s/it]cfb 2021:  89%|########9 | 392/438 [46:18<05:00,  6.53s/it]cfb 2021:  90%|########9 | 393/438 [46:30<06:08,  8.19s/it]cfb 2021:  90%|########9 | 394/438 [46:41<06:42,  9.16s/it]cfb 2021:  90%|######### | 395/438 [46:45<05:28,  7.64s/it]cfb 2021:  90%|######### | 396/438 [46:57<06:07,  8.75s/it]cfb 2021:  91%|######### | 397/438 [47:05<05:56,  8.69s/it]cfb 2021:  91%|######### | 398/438 [47:09<04:51,  7.28s/it]cfb 2021:  91%|#########1| 399/438 [47:19<05:15,  8.10s/it]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
-WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
-cfb 2021:  91%|#########1| 400/438 [47:29<05:30,  8.70s/it]cfb 2021:  92%|#########1| 401/438 [47:35<04:44,  7.69s/it]cfb 2021:  92%|#########1| 402/438 [47:46<05:12,  8.68s/it]cfb 2021:  92%|#########2| 403/438 [47:51<04:31,  7.76s/it]cfb 2021:  92%|#########2| 404/438 [48:02<04:55,  8.68s/it]cfb 2021:  92%|#########2| 405/438 [48:07<04:03,  7.38s/it]cfb 2021:  93%|#########2| 406/438 [48:11<03:31,  6.61s/it]cfb 2021:  93%|#########2| 407/438 [48:23<04:08,  8.02s/it]cfb 2021:  93%|#########3| 408/438 [48:31<04:04,  8.16s/it]cfb 2021:  93%|#########3| 409/438 [48:32<02:48,  5.82s/it]cfb 2021:  94%|#########3| 410/438 [48:42<03:18,  7.09s/it]cfb 2021:  94%|#########3| 411/438 [48:51<03:32,  7.87s/it]cfb 2021:  94%|#########4| 412/438 [48:52<02:26,  5.62s/it]cfb 2021:  94%|#########4| 413/438 [49:01<02:47,  6.70s/it]cfb 2021:  95%|#########4| 414/438 [49:07<02:35,  6.48s/it]cfb 2021:  95%|#########4| 415/438 [49:13<02:30,  6.52s/it]cfb 2021:  95%|#########4| 416/438 [49:23<02:46,  7.57s/it]cfb 2021:  95%|#########5| 417/438 [49:25<02:04,  5.91s/it]cfb 2021:  95%|#########5| 418/438 [49:35<02:17,  6.90s/it]cfb 2021:  96%|#########5| 419/438 [49:45<02:28,  7.83s/it]cfb 2021:  96%|#########5| 420/438 [49:46<01:46,  5.94s/it]cfb 2021:  96%|#########6| 421/438 [49:57<02:07,  7.47s/it]cfb 2021:  96%|#########6| 422/438 [50:03<01:51,  6.98s/it]cfb 2021:  97%|#########6| 423/438 [50:11<01:47,  7.14s/it]cfb 2021:  97%|#########6| 424/438 [50:19<01:46,  7.61s/it]cfb 2021:  97%|#########7| 425/438 [50:22<01:18,  6.05s/it]cfb 2021:  97%|#########7| 426/438 [50:32<01:27,  7.31s/it]cfb 2021:  97%|#########7| 427/438 [50:37<01:11,  6.52s/it]cfb 2021:  98%|#########7| 428/438 [50:47<01:17,  7.72s/it]cfb 2021:  98%|#########7| 429/438 [50:54<01:06,  7.35s/it]cfb 2021:  98%|#########8| 430/438 [50:57<00:49,  6.20s/it]cfb 2021:  98%|#########8| 431/438 [51:11<00:59,  8.51s/it]cfb 2021:  99%|#########8| 432/438 [51:14<00:40,  6.77s/it]cfb 2021:  99%|#########8| 433/438 [51:19<00:31,  6.22s/it]cfb 2021:  99%|#########9| 434/438 [51:33<00:34,  8.68s/it]cfb 2021:  99%|#########9| 435/438 [51:36<00:20,  6.80s/it]cfb 2021: 100%|#########9| 437/438 [51:53<00:07,  7.76s/it]cfb 2021: 100%|##########| 438/438 [51:57<00:00,  6.85s/it]cfb 2021: 100%|##########| 438/438 [51:57<00:00,  7.12s/it]
-[main 9f01c89b2] CFB Raw Update (Start: 2021 End: 2021)
- 1904 files changed, 1903 insertions(+), 1903 deletions(-)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 80, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 5937, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 482, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1082, in __helper_cfb_pbp
+    return self.__helper_cfb_game_data(pbp_txt, init)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1232, in __helper_cfb_game_data
+    awayTeamMascot = str(pbp_txt["header"]["competitions"][0]["competitors"][1]["team"]["name"])
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'name'
+cfb 2021:  83%|########3 | 5/6 [00:03<00:00,  2.10it/s]cfb 2021: 100%|##########| 6/6 [00:03<00:00,  1.83it/s]
+[main 8c8929951] CFB Raw Update (Start: 2021 End: 2021)
+ 5 files changed, 4 insertions(+), 4 deletions(-)
 To https://github.com/sportsdataverse/cfbfastR-cfb-raw.git
-   826b25081..9f01c89b2  main -> main
+   51d59bea6..8c8929951  main -> main
