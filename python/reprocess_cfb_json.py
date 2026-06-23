@@ -68,7 +68,10 @@ def reprocess_game(game_id: int, season: int, force: bool, logger=None):
                          if k not in ("game_id", "season", "week")}
 
         proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
-                              odds_override=override)
+                              odds_override=override,
+                              game_roster=_aux_list("game_rosters", season, game_id),
+                              participants=_aux_list("play_participants", season, game_id))
+        proc.join_participants = False  # offline: use the supplied participants/roster, never the network
         proc.cfb_pbp_disk()
         result = proc.run_processing_pipeline()
 
@@ -118,7 +121,11 @@ def main() -> None:
     pairs = list(master[["game_id", "season"]].itertuples(index=False, name=None))
     pairs = [(int(g), int(s), args.force)
              for g, s in pairs if (RAW_DIR / f"{g}.json").exists()]
-    run_pool(_worker, pairs, kind="process", desc="reprocess")
+    # CFB_REPROCESS_WORKERS bounds pool concurrency (the 0.0.69 pipeline bundles
+    # several models per worker; the default cpu-2 can OOM-kill a worker on a long
+    # all-years sweep). 0/unset -> run_pool's default (cpu-2).
+    workers = int(os.getenv("CFB_REPROCESS_WORKERS", "0")) or None
+    run_pool(_worker, pairs, kind="process", desc="reprocess", workers=workers)
 
 
 if __name__ == "__main__":

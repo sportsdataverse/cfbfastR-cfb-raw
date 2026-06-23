@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Scrapes ESPN college-football game JSON into raw + enriched final per-game files."
 requires-python = ">=3.11"
 dependencies = [
-    "sportsdataverse>=0.0.66",
+    "sportsdataverse>=0.0.69",
     "pandas>=2.0",
     "polars>=1.0",
     "pyarrow>=15.0",
@@ -15,9 +15,11 @@ dependencies = [
 [dependency-groups]
 dev = ["pytest>=8.0"]
 
-# NOTE: sportsdataverse>=0.0.66 (offline-reprocess features; game_rosters column-width
-# fix that 0.0.52 lacked; and the 0.0.60 espn_cfb_schedule guard for null-competitor
-# placeholder events that crashed whole seasons, e.g. 2010/2014) resolves from PyPI so CI's
+# NOTE: sportsdataverse>=0.0.69 (offline-reprocess features; game_rosters column-width
+# fix that 0.0.52 lacked; the 0.0.60 espn_cfb_schedule guard for null-competitor
+# placeholder events that crashed whole seasons, e.g. 2010/2014; and the 0.0.69
+# roster-backed {type}_player_id + CFBPlayProcess(game_roster=, participants=) params
+# the reprocess pipeline passes for fetch-free, id-aware rebuilds) resolves from PyPI so CI's
 # `uv sync --frozen` works on a clean runner. For local co-development against an unreleased
 # sdv-py, run `uv pip install -e ../../sdv-py` after `uv sync` (do not re-add a path source
 # to [tool.uv.sources] — it would break CI, which has no sibling checkout).
