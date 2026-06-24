@@ -1,0 +1,16 @@
+# Minimal pre-commit: enforce the SportsDataverse no-AI-attribution policy at commit
+# time (the human is the sole attributable contributor). Conventional-commit formatting
+# is intentionally NOT enforced -- the automated scraper commits ("CFB Raw Update ...")
+# are not conventional and must pass.
+#
+# Wire it up once per clone:  pre-commit install
+# (default_install_hook_types installs the commit-msg stage, not just pre-commit).
+default_install_hook_types: [commit-msg]
+repos:
+  - repo: local
+    hooks:
+      - id: no-ai-coauthor
+        name: forbid AI co-author trailers (SDV policy)
+        entry: python tools/hooks/check_commit_msg.py
+        language: system
+        stages: [commit-msg]
