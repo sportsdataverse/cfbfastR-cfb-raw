@@ -1,4 +1,5 @@
 """Shared helpers for cfbfastR-cfb-raw scrapers."""
+
 from __future__ import annotations
 
 import json
@@ -7,6 +8,7 @@ import math
 import numbers
 import os
 import time
+import uuid
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
@@ -16,7 +18,10 @@ from importlib.metadata import version as _pkg_version
 
 # Bump SCHEMA_REV whenever the final-JSON shape or enrichment inputs change in a way
 # that should force a reprocess of already-built games.
-SCHEMA_REV = 1
+#   rev 2: odds_override now sourced from the cfb_line_odds multi-book consensus
+#          (cfb/odds_consensus.parquet) instead of the ESPN betting aux; EPA/WPA
+#          spread inputs change, so every prior 0.0.69+1 final must rebuild.
+SCHEMA_REV = 2
 try:
     _SDV_VERSION = _pkg_version("sportsdataverse")
 except Exception:  # noqa: BLE001
@@ -66,24 +71,35 @@ def json_safe(o):
 def write_json_atomic(obj, path: str | Path) -> None:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    tmp = path.with_suffix(path.suffix + ".tmp")
-    with open(tmp, "w", encoding="utf-8") as f:
-        # allow_nan=False guarantees a valid-JSON failure rather than a silent NaN literal;
-        # json_safe has already removed nan/inf, so this never raises in practice.
-        json.dump(json_safe(obj), f, separators=(",", ":"), default=str, allow_nan=False)
-    # On Windows the parallel scraper intermittently hits WinError 32 (PermissionError) here
-    # when AV / the NTFS change journal briefly locks the .tmp or destination; os.replace is
-    # atomic on Linux and never sees this. Retry a bounded number of times with a short
-    # increasing backoff, then re-raise so a genuine permission problem still surfaces.
-    _REPLACE_ATTEMPTS = 5
-    for attempt in range(_REPLACE_ATTEMPTS):
+    # Per-writer unique temp: a fixed "{path}.tmp" RACES when two processes write the
+    # same game concurrently -- one's os.replace consumes the shared temp, the other's
+    # then FileNotFoundErrors. pid+uuid makes each writer's temp private; the final
+    # os.replace stays atomic and is harmlessly last-writer-wins on the destination.
+    tmp = path.with_suffix(path.suffix + f".{os.getpid()}-{uuid.uuid4().hex[:8]}.tmp")
+    try:
+        with open(tmp, "w", encoding="utf-8") as f:
+            # allow_nan=False guarantees a valid-JSON failure rather than a silent NaN literal;
+            # json_safe has already removed nan/inf, so this never raises in practice.
+            json.dump(json_safe(obj), f, separators=(",", ":"), default=str, allow_nan=False)
+        # On Windows the parallel scraper intermittently hits WinError 32 (PermissionError) here
+        # when AV / the NTFS change journal briefly locks the .tmp or destination; os.replace is
+        # atomic on Linux and never sees this. Retry a bounded number of times with a short
+        # increasing backoff, then re-raise so a genuine permission problem still surfaces.
+        _REPLACE_ATTEMPTS = 5
+        for attempt in range(_REPLACE_ATTEMPTS):
+            try:
+                os.replace(tmp, path)
+                break
+            except PermissionError:
+                if attempt == _REPLACE_ATTEMPTS - 1:
+                    raise
+                time.sleep(0.1 * (attempt + 1))
+    finally:
+        # never leave a private temp behind on a failed write
         try:
-            os.replace(tmp, path)
-            break
-        except PermissionError:
-            if attempt == _REPLACE_ATTEMPTS - 1:
-                raise
-            time.sleep(0.1 * (attempt + 1))
+            tmp.unlink(missing_ok=True)
+        except OSError:
+            pass
 
 
 def stamp(obj, *, game_id: int, season: int, week=None):
@@ -110,8 +126,9 @@ def _safe(fn: Callable, *args, logger: logging.Logger | None = None, default=Non
         return default
 
 
-def run_pool(fn: Callable, items: Iterable, *, kind: str = "process",
-             workers: int | None = None, desc: str | None = None) -> list:
+def run_pool(
+    fn: Callable, items: Iterable, *, kind: str = "process", workers: int | None = None, desc: str | None = None
+) -> list:
     items = list(items)
     if not items:
         return []
@@ -135,6 +152,7 @@ def run_pool(fn: Callable, items: Iterable, *, kind: str = "process",
 
 def load_schedule_master(path: str = "cfb/cfb_schedule_master.parquet"):
     import pandas as pd
+
     return pd.read_parquet(path)
 
 
@@ -153,6 +171,7 @@ def filter_undone(games, dir: str = "cfb/json/final", rescrape: bool = False) ->
 def hollow_game_ids(failures_csv: str = "logs/scrape_failures.csv") -> set[int]:
     """Return game IDs recorded as hollow_extras in scrape_failures.csv."""
     import csv as _csv
+
     p = Path(failures_csv)
     if not p.exists():
         return set()
@@ -163,6 +182,7 @@ def hollow_game_ids(failures_csv: str = "logs/scrape_failures.csv") -> set[int]:
 def filter_hollow(games, failures_csv: str = "logs/scrape_failures.csv") -> list[int]:
     """Return only games flagged as hollow_extras (or no_final) in scrape_failures.csv."""
     import csv as _csv
+
     p = Path(failures_csv)
     if not p.exists():
         raise FileNotFoundError(f"Run scrape_failures.py first to generate {failures_csv}")
@@ -187,7 +207,7 @@ def season_type_from_raw(raw: dict):
                 return int(val)
             except (TypeError, ValueError):
                 pass
-    comps = (hdr.get("competitions") or [{}])
+    comps = hdr.get("competitions") or [{}]
     t = comps[0].get("type", {}) if comps else {}
     if isinstance(t, dict) and t.get("id") is not None:
         try:
