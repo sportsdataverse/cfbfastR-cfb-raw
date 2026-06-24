@@ -6,6 +6,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import argparse
+import functools
 import json
 from pathlib import Path
 
@@ -16,6 +17,31 @@ from cfb_betting import odds_override_from_betting
 
 RAW_DIR = Path("cfb/json/raw")
 FINAL_DIR = Path("cfb/json/final")
+CONSENSUS_PATH = Path("cfb/odds_consensus.parquet")
+
+
+@functools.lru_cache(maxsize=1)
+def _consensus_map() -> dict:
+    """game_id -> odds_override from the cfb_line_odds multi-book consensus.
+
+    Preferred over the per-game ESPN betting aux: it's a median spread/total across
+    sportsbooks keyed by the real ESPN game_id (2006-2025). Built by
+    cfbfastR-cfb-data/python/betting/build_odds_consensus.py. Loaded once per worker
+    process; an absent aux yields an empty map (callers fall back to ESPN betting)."""
+    if not CONSENSUS_PATH.exists():
+        return {}
+    import polars as pl
+
+    df = pl.read_parquet(CONSENSUS_PATH)
+    return {
+        int(r["game_id"]): {
+            "gameSpread": float(r["gameSpread"]),
+            "overUnder": float(r["overUnder"]),
+            "homeFavorite": bool(r["homeFavorite"]),
+            "gameSpreadAvailable": bool(r["gameSpreadAvailable"]),
+        }
+        for r in df.iter_rows(named=True)
+    }
 
 
 def _read(path: Path, default):
@@ -63,7 +89,13 @@ def reprocess_game(game_id: int, season: int, force: bool, logger=None):
             return "missing_raw"
 
         betting = _aux("betting", season, game_id)
-        override = odds_override_from_betting(betting)
+        # prefer the cfb_line_odds multi-book consensus; fall back to the ESPN betting aux
+        consensus = _consensus_map().get(int(game_id))
+        if consensus is not None:
+            override, odds_source = consensus, "cfb_line_odds"
+        else:
+            override = odds_override_from_betting(betting)
+            odds_source = "espn_betting" if override is not None else None
         betting_embed = {k: v for k, v in betting.items()
                          if k not in ("game_id", "season", "week")}
 
@@ -89,6 +121,7 @@ def reprocess_game(game_id: int, season: int, force: bool, logger=None):
             injuries=raw.get("injuries") or [],
             game_notes=raw.get("gameNotes") or [],
             homeTeamId=home_id, awayTeamId=away_id,
+            odds_source=odds_source or result.get("odds_source"),
         )
         write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
         return "rebuilt"
