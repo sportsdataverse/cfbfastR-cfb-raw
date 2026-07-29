@@ -51,6 +51,27 @@ _disabled = False
 _POLL_TTL = float(os.getenv("CFB_PROXY_POLL_TTL", "300"))
 _RESERVE_BYTES = float(os.getenv("CFB_PROXY_RESERVE_GB", "1.0")) * 1024**3
 
+# Measured proxied wire bytes per game (Core v2 only -- Site v2 goes direct).
+# pre-2014 : core plays 347 KB + roster $ref walk ~65 x 5.64 KB  ~= 744 KB
+# 2014+    : core plays 726 KB + roster $ref walk ~220 x 7.62 KB ~= 2436 KB
+_BYTES_PRE_2014 = 744 * 1024
+_BYTES_POST_2014 = 2436 * 1024
+_PARTICIPANTS_ERA = 2014
+
+# LOCAL accounting is the primary control, NOT the provider's counter.
+# Proxy Bonanza reports bandwidth in BATCHES, not live: 3.55 MiB pushed through
+# a proxy left `bandwidth` byte-identical after 60s, and the value did not move
+# across ~50 minutes of real scraping. A governor that waits for that number to
+# drop would sail past the quota and only find out when requests start failing.
+#
+# So each worker gets an equal slice of the remaining budget and meters itself
+# against measured per-game costs. No shared state and no locking: a worker
+# simply stops proxying once it has spent its own share. Slightly conservative
+# (a worker that finishes early leaves its slice unused), which is the right
+# direction to err on a metered resource.
+_my_budget: float | None = None
+_spent: float = 0.0
+
 
 def _renviron() -> dict[str, str]:
     """Read .Renviron at call time. Values are never logged."""
@@ -80,8 +101,8 @@ def _fetch_package() -> dict:
 
 
 def _load() -> None:
-    """Populate the proxy ring and the initial remaining-bandwidth reading."""
-    global _proxies, _cycle, _remaining, _remaining_at
+    """Populate the proxy ring, the baseline budget, and this worker's slice."""
+    global _proxies, _cycle, _remaining, _remaining_at, _my_budget
     data = _fetch_package()
     login, password = data["login"], data["password"]
     urls = [
@@ -98,6 +119,11 @@ def _load() -> None:
     _cycle = itertools.cycle(urls[offset:] + urls[:offset])
     _remaining = int(data.get("bandwidth") or 0)
     _remaining_at = time.time()
+
+    # The provider reading is a trustworthy STARTING POINT even though it does
+    # not update live, so use it to size this worker's slice once.
+    workers = max(1, int(os.getenv("CFB_SCRAPE_WORKERS", "1")))
+    _my_budget = max(0.0, _remaining - _RESERVE_BYTES) / workers
 
 
 def _refresh_remaining() -> None:
@@ -121,10 +147,14 @@ def status() -> str:
     if _proxies is None:
         return "proxy: not initialised"
     gb = (_remaining or 0) / 1024**3
-    return f"proxy: {len(_proxies)} ips, ~{gb:.2f} GB remaining"
+    budget = f"{_my_budget / 1024**3:.2f}" if _my_budget is not None else "?"
+    return (
+        f"proxy: {len(_proxies)} ips, ~{gb:.2f} GiB reported remaining "
+        f"(batched, not live); this worker spent {_spent / 1024**3:.2f}/{budget} GiB of its slice"
+    )
 
 
-def apply_to_env() -> str | None:
+def apply_to_env(season: int | None = None) -> str | None:
     """Point the next request family at the next proxy in the ring.
 
     Sets HTTP(S)_PROXY plus NO_PROXY so only the rate-limited Core v2 host is
@@ -146,12 +176,25 @@ def apply_to_env() -> str | None:
             except Exception:
                 _disabled = True
                 return None
+        global _spent
         _refresh_remaining()
-        if _remaining is not None and _remaining < _RESERVE_BYTES:
+
+        # Two independent stop conditions. The local one is what actually fires
+        # in practice; the provider one only helps if their counter ever catches
+        # up mid-run (or someone else drains the package).
+        out_of_slice = _my_budget is not None and _spent >= _my_budget
+        provider_low = _remaining is not None and _remaining < _RESERVE_BYTES
+        if out_of_slice or provider_low:
             _disabled = True
             for k in ("HTTP_PROXY", "HTTPS_PROXY", "http_proxy", "https_proxy"):
                 os.environ.pop(k, None)
             return None
+
+        # Charge this game up front: if it dies mid-way we have still spent the
+        # bytes it pulled, so pre-charging is the conservative direction.
+        _spent += (
+            _BYTES_PRE_2014 if (season or 0) < _PARTICIPANTS_ERA else _BYTES_POST_2014
+        )
         url = next(_cycle)  # type: ignore[arg-type]
 
     os.environ["HTTP_PROXY"] = url

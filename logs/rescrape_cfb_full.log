@@ -2604,3 +2604,15 @@ VERIFY 2006 INFO play_participants  games= 788 ok=   0 empty= 788 missing=  0 ba
 VERIFY 2006 PROBE game=262430009 plays=150 named=108 with_id=107 id_given_name=99.1%
 [2026-07-29T04:01:00Z] season 2006 COMPLETE (checkpointed)
 [2026-07-29T04:01:00Z] --- season 2007: refreshing schedule ---
+2026-07-29 00:01:13,196 INFO schedules 2007: 800 games
+[2026-07-29T04:01:13Z] --- season 2007: rescraping all games (raw+final+participants+rosters+extras) ---
+2026-07-29 00:01:15,392 INFO season 2007: 800 games to scrape (rescrape=True)
+cfb 2007:   0%|          | 0/800 [00:00<?, ?it/s]VERIFY 2007 OK   raw                games= 800 ok= 800 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2007 OK   final              games= 800 ok= 800 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2007 OK   game_rosters       games= 800 ok= 793 empty=   7 missing=  0 bad=  0.9%
+VERIFY 2007 INFO play_participants  games= 800 ok=   0 empty= 800 missing=  0 bad=100.0% (pre-2014: ESPN ships no participants[] -- expected)
+VERIFY 2007 PROBE game=272420344 plays=178 named=126 with_id=124 id_given_name=98.4%
+[2026-07-29T04:23:59Z] season 2007 COMPLETE (checkpointed)
+[2026-07-29T04:23:59Z] --- season 2008: refreshing schedule ---
+2026-07-29 00:24:24,976 INFO schedules 2008: 810 games
+[2026-07-29T04:24:25Z] --- season 2008: rescraping all games (raw+final+participants+rosters+extras) ---

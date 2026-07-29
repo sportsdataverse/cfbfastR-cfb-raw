@@ -92,7 +92,7 @@ def download_game(game_id: int, season: int, rescrape: bool, logger=None):
     # right granularity: one game is ~224 sequential Core v2 calls, so rotating
     # per request would throw away connection reuse for no extra IP spread.
     # Returns None when proxying is off or the bandwidth reserve was reached.
-    proxy_hostport = proxy_pool.apply_to_env()
+    proxy_hostport = proxy_pool.apply_to_env(season)
     try:
         # 1. bank RAW first -- but never let a degraded fetch clobber good data.
         # If ESPN answered with a 5xx/empty body, the allowlist dict collapses to
