@@ -1656,3 +1656,5 @@ VERIFY 2005 PROBE game=252440009 plays=190 named=144 with_id=118 id_given_name=8
 [2026-07-29T01:27:39Z] --- season 2006: refreshing schedule ---
 2026-07-28 21:27:55,228 INFO schedules 2006: 788 games
 [2026-07-29T01:27:55Z] --- season 2006: rescraping all games (raw+final+participants+rosters+extras) ---
+2026-07-28 21:27:57,773 INFO season 2006: 788 games to scrape (rescrape=True)
+cfb 2006:   0%|          | 0/788 [00:00<?, ?it/s]

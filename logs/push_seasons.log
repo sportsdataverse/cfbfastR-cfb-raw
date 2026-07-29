@@ -11,3 +11,5 @@
 [2026-07-29T01:21:57Z] oneshot done
 [2026-07-29T01:25:00Z] === push watcher start (poll=60s stop_after=2025 oneshot=0) ===
 [2026-07-29T01:28:00Z] season 2005: preparing commit
+[2026-07-29T01:28:08Z] season 2005: pull --rebase failed -- aborting any partial rebase and retrying next tick
+[2026-07-29T01:29:08Z] season 2005: preparing commit
