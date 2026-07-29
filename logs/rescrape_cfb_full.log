@@ -4637,3 +4637,15 @@ VERIFY 2017 OK   play_participants  games= 890 ok= 877 empty=  13 missing=  0 ba
 VERIFY 2017 PROBE game=400935257 plays=171 named=136 with_id=136 id_given_name=100.0%
 [2026-07-29T12:03:26Z] season 2017 COMPLETE (checkpointed)
 [2026-07-29T12:03:26Z] --- season 2018: refreshing schedule ---
+2026-07-29 08:03:55,983 INFO schedules 2018: 826 games
+[2026-07-29T12:03:56Z] --- season 2018: rescraping all games (raw+final+participants+rosters+extras) ---
+2026-07-29 08:03:58,167 INFO season 2018: 898 games to scrape (rescrape=True)
+cfb 2018:   0%|          | 0/898 [00:00<?, ?it/s]VERIFY 2018 OK   raw                games= 898 ok= 898 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2018 OK   final              games= 898 ok= 898 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2018 OK   game_rosters       games= 898 ok= 876 empty=  22 missing=  0 bad=  2.4%
+VERIFY 2018 OK   play_participants  games= 898 ok= 887 empty=  11 missing=  0 bad=  1.2%
+VERIFY 2018 PROBE game=401021659 plays=156 named=124 with_id=124 id_given_name=100.0%
+[2026-07-29T13:38:41Z] season 2018 COMPLETE (checkpointed)
+[2026-07-29T13:38:41Z] --- season 2019: refreshing schedule ---
+2026-07-29 09:38:58,868 INFO schedules 2019: 892 games
+[2026-07-29T13:38:59Z] --- season 2019: rescraping all games (raw+final+participants+rosters+extras) ---
