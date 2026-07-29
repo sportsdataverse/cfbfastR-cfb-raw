@@ -71,7 +71,7 @@ push_season() {
   # Stage explicit paths only -- never a blind `git add -A`. A FAILED add must
   # not be mistaken for "nothing to commit": that is how the first version of
   # this script marked 2004 pushed while 2769 files sat uncommitted.
-  if ! git add cfb/ logs/ scripts/ python/ 2>>"$LOG"; then
+  if ! git add cfb/ logs/ scripts/ python/ pyproject.toml uv.lock 2>>"$LOG"; then
     say "season $YEAR: git add FAILED -- will retry next tick"
     return 1
   fi
@@ -110,7 +110,7 @@ $VERIFY
 EOF
   then
     say "season $YEAR: commit aborted (hooks likely rewrote files) -- re-adding and retrying"
-    git add cfb/ logs/ scripts/ python/ 2>>"$LOG" || true
+    git add cfb/ logs/ scripts/ python/ pyproject.toml uv.lock 2>>"$LOG" || true
     if ! git commit -q -m "data(cfb): full rescrape season $YEAR ($NFILES files)"; then
       say "season $YEAR: COMMIT FAILED AGAIN -- leaving staged, will retry next tick"
       return 1

@@ -4833,3 +4833,21 @@ VERIFY 2021 OK   play_participants  games= 897 ok= 891 empty=   4 missing=  2 ba
 VERIFY 2021 PROBE game=401282714 plays=174 named=138 with_id=138 id_given_name=100.0%
 [2026-07-29T17:56:32Z] season 2021 COMPLETE (checkpointed)
 [2026-07-29T17:56:32Z] --- season 2022: refreshing schedule ---
+2026-07-29 13:57:13,729 INFO schedules 2022: 765 games
+[2026-07-29T17:57:14Z] --- season 2022: rescraping all games (raw+final+participants+rosters+extras) ---
+2026-07-29 13:57:16,116 INFO season 2022: 904 games to scrape (rescrape=True)
+cfb 2022:   0%|          | 0/904 [00:00<?, ?it/s]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 55 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 5 will retain null names.
+WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=401403994) [status retry 1/4]
+WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=401403994) [status retry 2/4]
+WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=401403994) [status retry 3/4]
+WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=401403994) [status retry 4/4]
+WARNING:sdv.dl_utils:retryable status 503 persisted after 4 retries; returning to caller for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=401403994)
+VERIFY 2022 OK   raw                games= 904 ok= 904 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2022 OK   final              games= 904 ok= 904 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2022 OK   game_rosters       games= 904 ok= 899 empty=   5 missing=  0 bad=  0.6%
+VERIFY 2022 OK   play_participants  games= 904 ok= 899 empty=   5 missing=  0 bad=  0.6%
+VERIFY 2022 PROBE game=401411109 plays=184 named=142 with_id=142 id_given_name=100.0%
+[2026-07-29T19:39:36Z] season 2022 COMPLETE (checkpointed)
+[2026-07-29T19:39:36Z] --- season 2023: refreshing schedule ---
+2026-07-29 15:39:52,728 INFO schedules 2023: 911 games
+[2026-07-29T19:39:53Z] --- season 2023: rescraping all games (raw+final+participants+rosters+extras) ---
