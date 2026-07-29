@@ -4861,3 +4861,20 @@ VERIFY 2023 PROBE game=401523986 plays=168 named=131 with_id=131 id_given_name=1
 [2026-07-29T21:22:31Z] --- season 2024: refreshing schedule ---
 2026-07-29 17:22:50,230 INFO schedules 2024: 920 games
 [2026-07-29T21:22:50Z] --- season 2024: rescraping all games (raw+final+participants+rosters+extras) ---
+2026-07-29 17:22:52,567 INFO season 2024: 966 games to scrape (rescrape=True)
+cfb 2024:   0%|          | 0/966 [00:00<?, ?it/s]WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=401628609) [status retry 1/4]
+WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=401628609) [status retry 2/4]
+WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=401628609) [status retry 3/4]
+WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=401628609) [status retry 4/4]
+WARNING:sdv.dl_utils:retryable status 503 persisted after 4 retries; returning to caller for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=401628609)
+WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 78 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 28 will retain null names.
+WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=401628609) [status retry 1/2]
+VERIFY 2024 OK   raw                games= 966 ok= 966 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2024 OK   final              games= 966 ok= 966 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2024 OK   game_rosters       games= 966 ok= 965 empty=   1 missing=  0 bad=  0.1%
+VERIFY 2024 OK   play_participants  games= 966 ok= 965 empty=   1 missing=  0 bad=  0.1%
+VERIFY 2024 PROBE game=401628579 plays=168 named=130 with_id=130 id_given_name=100.0%
+[2026-07-29T23:04:54Z] season 2024 COMPLETE (checkpointed)
+[2026-07-29T23:04:54Z] --- season 2025: refreshing schedule ---
+2026-07-29 19:05:12,472 INFO schedules 2025: 934 games
+[2026-07-29T23:05:12Z] --- season 2025: rescraping all games (raw+final+participants+rosters+extras) ---
