@@ -2710,3 +2710,10 @@ VERIFY 2011 PROBE game=312982229 plays=205 named=145 with_id=144 id_given_name=9
 [2026-07-29T06:05:01Z] --- season 2012: refreshing schedule ---
 2026-07-29 02:05:41,561 INFO schedules 2012: 794 games
 [2026-07-29T06:05:41Z] --- season 2012: rescraping all games (raw+final+participants+rosters+extras) ---
+VERIFY 2012 OK   raw                games= 852 ok= 852 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2012 OK   final              games= 852 ok= 852 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2012 OK   game_rosters       games= 852 ok= 841 empty=  11 missing=  0 bad=  1.3%
+VERIFY 2012 INFO play_participants  games= 852 ok=   0 empty= 852 missing=  0 bad=100.0% (pre-2014: ESPN ships no participants[] -- expected)
+VERIFY 2012 PROBE game=322780254 plays=178 named=121 with_id=120 id_given_name=99.2%
+[2026-07-29T06:32:10Z] season 2012 COMPLETE (checkpointed)
+[2026-07-29T06:32:10Z] --- season 2013: refreshing schedule ---
