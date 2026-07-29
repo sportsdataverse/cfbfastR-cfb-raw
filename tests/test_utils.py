@@ -83,3 +83,50 @@ def test_season_type_from_raw_variants():
     assert u.season_type_from_raw({"header": {"season": {"type": {"id": "3"}}}}) == 3
     assert u.season_type_from_raw({"header": {"competitions": [{"type": {"id": 2}}]}}) == 2
     assert u.season_type_from_raw({"header": {}}) is None
+
+
+def _big(n):
+    """A payload whose serialized size is comfortably above the guard threshold."""
+    return {"plays": [{"id": i, "text": "x" * 40} for i in range(n)]}
+
+
+def test_write_json_guarded_refuses_to_clobber_with_a_degraded_payload(tmp_path):
+    """ESPN 5xx/empty bodies collapse to a ~250-byte stub. Writing that over a
+    banked 50-400KB summary is what destroyed 11 games in the 2004 pilot."""
+    target = tmp_path / "401.json"
+    u.write_json_atomic(_big(400), target)
+    before = target.stat().st_size
+
+    wrote = u.write_json_guarded({"header": {}, "boxscore": {}}, target)
+
+    assert wrote is False, "degraded write should be refused"
+    assert target.stat().st_size == before, "banked copy must be untouched"
+    assert len(json.loads(target.read_text())["plays"]) == 400
+
+
+def test_write_json_guarded_allows_growth_and_modest_change(tmp_path):
+    """Real content changes must pass through -- the guard only blocks collapse."""
+    target = tmp_path / "401.json"
+    u.write_json_atomic(_big(100), target)
+
+    assert u.write_json_guarded(_big(400), target) is True, "growth must be allowed"
+    assert len(json.loads(target.read_text())["plays"]) == 400
+
+    # shrinking to 80% of current is a plausible real edit, not a collapse
+    assert u.write_json_guarded(_big(330), target) is True
+    assert len(json.loads(target.read_text())["plays"]) == 330
+
+
+def test_write_json_guarded_writes_when_no_existing_file(tmp_path):
+    """First write of a game has nothing to protect."""
+    target = tmp_path / "sub" / "401.json"
+    assert u.write_json_guarded({"id": 401}, target) is True
+    assert json.loads(target.read_text())["id"] == 401
+
+
+def test_write_json_guarded_replaces_an_existing_empty_stub(tmp_path):
+    """The recovery direction: a good payload must overwrite a prior stub."""
+    target = tmp_path / "401.json"
+    u.write_json_atomic({}, target)
+    assert u.write_json_guarded(_big(400), target) is True
+    assert len(json.loads(target.read_text())["plays"]) == 400

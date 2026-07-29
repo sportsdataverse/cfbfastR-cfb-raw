@@ -80,7 +80,9 @@ def write_json_atomic(obj, path: str | Path) -> None:
         with open(tmp, "w", encoding="utf-8") as f:
             # allow_nan=False guarantees a valid-JSON failure rather than a silent NaN literal;
             # json_safe has already removed nan/inf, so this never raises in practice.
-            json.dump(json_safe(obj), f, separators=(",", ":"), default=str, allow_nan=False)
+            json.dump(
+                json_safe(obj), f, separators=(",", ":"), default=str, allow_nan=False
+            )
         # On Windows the parallel scraper intermittently hits WinError 32 (PermissionError) here
         # when AV / the NTFS change journal briefly locks the .tmp or destination; os.replace is
         # atomic on Linux and never sees this. Retry a bounded number of times with a short
@@ -102,6 +104,46 @@ def write_json_atomic(obj, path: str | Path) -> None:
             pass
 
 
+def write_json_guarded(
+    obj, path: str | Path, *, min_ratio: float = 0.5, logger=None
+) -> bool:
+    """Write ``obj`` unless doing so would replace a substantially larger file.
+
+    ESPN intermittently answers a rescrape with a 5xx-degraded or empty body.
+    ``espn_cfb_pbp(raw=True)`` turns that into a near-empty allowlist dict, and
+    writing it unconditionally CLOBBERS good banked data. Observed in the 2004
+    pilot: 11 games went from 54KB-414KB down to a 251-byte stub, taking 16
+    collateral betting/team_box_extra files with them, against a background of
+    12x HTTP 429 and 154x 5xx.
+
+    A rescrape must never leave the tree worse than it found it, so a write that
+    would shrink an existing file below ``min_ratio`` of its current size is
+    refused and the good data is kept. Growth and modest shrinkage (real content
+    changes) pass through untouched.
+
+    Returns True if the file was written, False if the write was refused.
+    """
+    path = Path(path)
+    payload = json.dumps(
+        json_safe(obj), separators=(",", ":"), default=str, allow_nan=False
+    )
+    new_bytes = len(payload.encode("utf-8"))
+    if path.exists():
+        old_bytes = path.stat().st_size
+        if old_bytes > 0 and new_bytes < min_ratio * old_bytes:
+            if logger is not None:
+                logger.warning(
+                    "REFUSED degraded write %s: %d -> %d bytes (%.0f%% of existing); keeping banked copy",
+                    path,
+                    old_bytes,
+                    new_bytes,
+                    100.0 * new_bytes / old_bytes,
+                )
+            return False
+    write_json_atomic(obj, path)
+    return True
+
+
 def stamp(obj, *, game_id: int, season: int, week=None):
     """Attach self-describing identity. Dicts get keys merged; lists are wrapped."""
     meta = {"game_id": game_id, "season": season, "week": week}
@@ -116,18 +158,27 @@ def most_recent_cfb_season(now: datetime | None = None) -> int:
     return now.year if now.month >= 8 else now.year - 1
 
 
-def _safe(fn: Callable, *args, logger: logging.Logger | None = None, default=None, **kwargs):
+def _safe(
+    fn: Callable, *args, logger: logging.Logger | None = None, default=None, **kwargs
+):
     """Call fn, returning `default` (and logging) on any exception."""
     try:
         return fn(*args, **kwargs)
     except Exception:  # noqa: BLE001 - intentional broad guard around a single extra
         if logger is not None:
-            logger.exception("extra fetch failed: %s%s", getattr(fn, "__name__", fn), args)
+            logger.exception(
+                "extra fetch failed: %s%s", getattr(fn, "__name__", fn), args
+            )
         return default
 
 
 def run_pool(
-    fn: Callable, items: Iterable, *, kind: str = "process", workers: int | None = None, desc: str | None = None
+    fn: Callable,
+    items: Iterable,
+    *,
+    kind: str = "process",
+    workers: int | None = None,
+    desc: str | None = None,
 ) -> list:
     items = list(items)
     if not items:
@@ -161,7 +212,9 @@ def games_for_seasons(master, start: int, end: int) -> list[int]:
     return df["game_id"].astype(int).unique().tolist()
 
 
-def filter_undone(games, dir: str = "cfb/json/final", rescrape: bool = False) -> list[int]:
+def filter_undone(
+    games, dir: str = "cfb/json/final", rescrape: bool = False
+) -> list[int]:
     if rescrape:
         return list(games)
     d = Path(dir)
@@ -176,7 +229,11 @@ def hollow_game_ids(failures_csv: str = "logs/scrape_failures.csv") -> set[int]:
     if not p.exists():
         return set()
     with p.open() as f:
-        return {int(row["game_id"]) for row in _csv.DictReader(f) if row.get("issue") == "hollow_extras"}
+        return {
+            int(row["game_id"])
+            for row in _csv.DictReader(f)
+            if row.get("issue") == "hollow_extras"
+        }
 
 
 def filter_hollow(games, failures_csv: str = "logs/scrape_failures.csv") -> list[int]:
@@ -185,7 +242,9 @@ def filter_hollow(games, failures_csv: str = "logs/scrape_failures.csv") -> list
 
     p = Path(failures_csv)
     if not p.exists():
-        raise FileNotFoundError(f"Run scrape_failures.py first to generate {failures_csv}")
+        raise FileNotFoundError(
+            f"Run scrape_failures.py first to generate {failures_csv}"
+        )
     with p.open() as f:
         flagged = {int(row["game_id"]) for row in _csv.DictReader(f)}
     game_set = set(games)

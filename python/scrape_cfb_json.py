@@ -1,8 +1,10 @@
 """Core CFB scraper: per-game raw + enriched final + standalone aux/extras."""
+
 from __future__ import annotations
 
 import os
 import sys
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import argparse
@@ -10,10 +12,20 @@ import argparse
 import sportsdataverse as sdv
 from sportsdataverse.cfb import CFBPlayProcess
 
-from _cfb_raw_utils import (PROCESSING_VERSION, _safe, filter_hollow, filter_undone,
-                            games_for_seasons, get_logger, load_schedule_master,
-                            most_recent_cfb_season, run_pool, season_type_from_raw,
-                            stamp, write_json_atomic)
+from _cfb_raw_utils import (
+    PROCESSING_VERSION,
+    _safe,
+    filter_hollow,
+    filter_undone,
+    games_for_seasons,
+    get_logger,
+    load_schedule_master,
+    most_recent_cfb_season,
+    run_pool,
+    season_type_from_raw,
+    stamp,
+    write_json_guarded,
+)
 from cfb_betting import capture_betting
 from cfb_team_box_extra import team_box_extra_from_summary
 
@@ -47,16 +59,22 @@ def _rosters(gid):
 def _power_index(gid):
     # sportsdataverse 0.0.51+ renamed event_powerindex -> game_powerindex and
     # defaults return_parsed=True; we want the raw Core v2 {items} dict to bank.
-    return sdv.cfb.espn_cfb_game_powerindex(event_id=gid, return_parsed=False, num_retries=EXTRAS_NUM_RETRIES)
+    return sdv.cfb.espn_cfb_game_powerindex(
+        event_id=gid, return_parsed=False, num_retries=EXTRAS_NUM_RETRIES
+    )
 
 
 def _odds_full(gid):
     # 0.0.51+ rename: event_odds -> game_odds; raw dict via return_parsed=False.
-    return sdv.cfb.espn_cfb_game_odds(event_id=gid, return_parsed=False, num_retries=EXTRAS_NUM_RETRIES)
+    return sdv.cfb.espn_cfb_game_odds(
+        event_id=gid, return_parsed=False, num_retries=EXTRAS_NUM_RETRIES
+    )
 
 
 def _home_away_ids(raw: dict):
-    comps = (raw.get("header", {}).get("competitions") or [{}])[0].get("competitors") or []
+    comps = (raw.get("header", {}).get("competitions") or [{}])[0].get(
+        "competitors"
+    ) or []
     home = away = None
     for c in comps:
         tid = c.get("team", {}).get("id")
@@ -70,9 +88,17 @@ def _home_away_ids(raw: dict):
 def download_game(game_id: int, season: int, rescrape: bool, logger=None):
     logger = logger or get_logger("cfb_json", season)
     try:
-        # 1. bank RAW first
+        # 1. bank RAW first -- but never let a degraded fetch clobber good data.
+        # If ESPN answered with a 5xx/empty body, the allowlist dict collapses to
+        # a ~250-byte stub; writing it would destroy a banked 50-400KB summary,
+        # and every downstream output derives from it. Refuse the write AND skip
+        # the rest of the game so raw/ and final/ can't drift apart.
         raw = CFBPlayProcess(gameId=game_id, raw=True).espn_cfb_pbp()
-        write_json_atomic(raw, f"cfb/json/raw/{game_id}.json")
+        if not write_json_guarded(raw, f"cfb/json/raw/{game_id}.json", logger=logger):
+            logger.warning(
+                "degraded summary for %s -- keeping banked copy, skipping game", game_id
+            )
+            return "degraded"
 
         # 2. enrich
         proc = CFBPlayProcess(gameId=game_id)
@@ -86,8 +112,12 @@ def download_game(game_id: int, season: int, rescrape: bool, logger=None):
         rosters = _safe(_rosters, game_id, logger=logger, default=[])
 
         recent = season >= EXTRAS_MIN_SEASON
-        odds_full = _safe(_odds_full, game_id, logger=logger, default=[]) if recent else []
-        power_index = _safe(_power_index, game_id, logger=logger, default={}) if recent else {}
+        odds_full = (
+            _safe(_odds_full, game_id, logger=logger, default=[]) if recent else []
+        )
+        power_index = (
+            _safe(_power_index, game_id, logger=logger, default={}) if recent else {}
+        )
         betting = capture_betting(raw, proc, odds_full=odds_full, propbets=[])
 
         # 4. team_box_extra: prefer summary (de-dup gate); {} if summary lacks it
@@ -99,25 +129,41 @@ def download_game(game_id: int, season: int, rescrape: bool, logger=None):
 
         # 5. standalone datasets (each is an offline-reprocess source)
         standalone = {
-            "game_rosters": rosters, "play_participants": participants, "betting": betting,
-            "power_index": power_index, "team_box_extra": team_extra,
+            "game_rosters": rosters,
+            "play_participants": participants,
+            "betting": betting,
+            "power_index": power_index,
+            "team_box_extra": team_extra,
         }
+        # Same no-shrink guard per dataset: _safe() defaults each of these to
+        # []/{} on a transient failure, and writing that empty default over a
+        # good banked roster/participants file is the identical clobber.
         for name, obj in standalone.items():
-            write_json_atomic(stamp(obj, game_id=game_id, season=season, week=week),
-                              f"cfb/{name}/json/{game_id}.json")
+            write_json_guarded(
+                stamp(obj, game_id=game_id, season=season, week=week),
+                f"cfb/{name}/json/{game_id}.json",
+                logger=logger,
+            )
 
         # 6. embed + write FINAL last
         result.update(
-            id=game_id, season=season, week=week,
+            id=game_id,
+            season=season,
+            week=week,
             season_type=season_type_from_raw(raw),
             processing_version=PROCESSING_VERSION,
             count=len(result.get("plays") or []),
-            play_participants=participants, game_rosters=rosters, betting=betting,
-            power_index=power_index, team_box_extra=team_extra,
-            injuries=injuries, game_notes=game_notes,
-            homeTeamId=home_id, awayTeamId=away_id,
+            play_participants=participants,
+            game_rosters=rosters,
+            betting=betting,
+            power_index=power_index,
+            team_box_extra=team_extra,
+            injuries=injuries,
+            game_notes=game_notes,
+            homeTeamId=home_id,
+            awayTeamId=away_id,
         )
-        write_json_atomic(result, f"cfb/json/final/{game_id}.json")
+        write_json_guarded(result, f"cfb/json/final/{game_id}.json", logger=logger)
         return "ok"
     except Exception:
         logger.exception("download_game failed: %s", game_id)
@@ -143,8 +189,12 @@ def main() -> None:
     ap.add_argument("-s", "--start_year", type=int, default=most_recent_cfb_season())
     ap.add_argument("-e", "--end_year", type=int, default=None)
     ap.add_argument("-r", "--rescrape", type=str, default="false")
-    ap.add_argument("--hollow", type=str, default="false",
-                    help="rescrape only games flagged as hollow_extras/no_final in logs/scrape_failures.csv")
+    ap.add_argument(
+        "--hollow",
+        type=str,
+        default="false",
+        help="rescrape only games flagged as hollow_extras/no_final in logs/scrape_failures.csv",
+    )
     args = ap.parse_args()
     end = args.end_year or args.start_year
     rescrape = str(args.rescrape).lower() in ("1", "true", "yes")
@@ -155,12 +205,24 @@ def main() -> None:
         all_games = games_for_seasons(master, season, season)
         if hollow:
             games = filter_hollow(all_games)
-            logger.info("season %s: %d hollow/missing games to rescrape", season, len(games))
+            logger.info(
+                "season %s: %d hollow/missing games to rescrape", season, len(games)
+            )
         else:
             games = filter_undone(all_games, rescrape=rescrape)
-            logger.info("season %s: %d games to scrape (rescrape=%s)", season, len(games), rescrape)
-        run_pool(_worker, [(g, season, True) for g in games],
-                 kind="process", desc=f"cfb {season}", workers=_scrape_workers())
+            logger.info(
+                "season %s: %d games to scrape (rescrape=%s)",
+                season,
+                len(games),
+                rescrape,
+            )
+        run_pool(
+            _worker,
+            [(g, season, True) for g in games],
+            kind="process",
+            desc=f"cfb {season}",
+            workers=_scrape_workers(),
+        )
 
 
 if __name__ == "__main__":
