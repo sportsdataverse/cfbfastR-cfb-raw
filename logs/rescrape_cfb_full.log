@@ -2694,3 +2694,19 @@ VERIFY 2010 INFO play_participants  games= 810 ok=   0 empty= 810 missing=  0 ba
 VERIFY 2010 PROBE game=302450194 plays=161 named=122 with_id=112 id_given_name=91.8%
 [2026-07-29T05:38:43Z] season 2010 COMPLETE (checkpointed)
 [2026-07-29T05:38:43Z] --- season 2011: refreshing schedule ---
+2026-07-29 01:39:19,493 INFO schedules 2011: 728 games
+[2026-07-29T05:39:19Z] --- season 2011: rescraping all games (raw+final+participants+rosters+extras) ---
+2026-07-29 01:39:21,824 INFO season 2011: 817 games to scrape (rescrape=True)
+cfb 2011:   0%|          | 0/817 [00:00<?, ?it/s]2026-07-29 01:39:40,333 WARNING REFUSED degraded write cfb\json\raw\313020030.json: 452907 -> 251 bytes (0% of existing); keeping banked copy
+WARNING:cfb_json_2011:REFUSED degraded write cfb\json\raw\313020030.json: 452907 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 01:39:40,333 WARNING degraded summary for 313020030 (proxy=154.81.58.3:60099) -- keeping banked copy, skipping game
+WARNING:cfb_json_2011:degraded summary for 313020030 (proxy=154.81.58.3:60099) -- keeping banked copy, skipping game
+cfb 2011:   0%|          | 1/817 [00:18<4:10:48, 18.44s/it]VERIFY 2011 OK   raw                games= 817 ok= 817 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2011 OK   final              games= 817 ok= 817 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2011 OK   game_rosters       games= 817 ok= 805 empty=  12 missing=  0 bad=  1.5%
+VERIFY 2011 INFO play_participants  games= 817 ok=   0 empty= 817 missing=  0 bad=100.0% (pre-2014: ESPN ships no participants[] -- expected)
+VERIFY 2011 PROBE game=312982229 plays=205 named=145 with_id=144 id_given_name=99.3%
+[2026-07-29T06:05:01Z] season 2011 COMPLETE (checkpointed)
+[2026-07-29T06:05:01Z] --- season 2012: refreshing schedule ---
+2026-07-29 02:05:41,561 INFO schedules 2012: 794 games
+[2026-07-29T06:05:41Z] --- season 2012: rescraping all games (raw+final+participants+rosters+extras) ---

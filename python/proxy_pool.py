@@ -51,11 +51,18 @@ _disabled = False
 _POLL_TTL = float(os.getenv("CFB_PROXY_POLL_TTL", "300"))
 _RESERVE_BYTES = float(os.getenv("CFB_PROXY_RESERVE_GB", "1.0")) * 1024**3
 
-# Measured proxied wire bytes per game (Core v2 only -- Site v2 goes direct).
-# pre-2014 : core plays 347 KB + roster $ref walk ~65 x 5.64 KB  ~= 744 KB
-# 2014+    : core plays 726 KB + roster $ref walk ~220 x 7.62 KB ~= 2436 KB
-_BYTES_PRE_2014 = 744 * 1024
-_BYTES_POST_2014 = 2436 * 1024
+# Proxied bytes per game (Core v2 only -- Site v2 goes direct).
+#
+# These are WIRE bytes, which is what the provider meters. An earlier version of
+# this file used 744/2436 KiB, taken from `len(response.content)` -- but that is
+# the DECOMPRESSED payload. ESPN serves gzipped JSON, so the wire cost is ~3.4x
+# smaller. Calibrated against the real counter after 4,650 games (2004-2009):
+# 1,035,090,064 bytes / 4,650 = 217 KiB per pre-2014 game.
+#
+# The post-2014 figure keeps the measured 3.27x ratio between the eras (that
+# ratio is compression-invariant; only the absolute scale was wrong).
+_BYTES_PRE_2014 = 217 * 1024
+_BYTES_POST_2014 = 712 * 1024
 _PARTICIPANTS_ERA = 2014
 
 # LOCAL accounting is the primary control, NOT the provider's counter.
