@@ -526,4 +526,51 @@ WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.26', port=60099): Max r
 WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.80', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/106084?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/106084?lang=en&region=us) [retry 1/15]
 WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.2', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/150178?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/150178?lang=en&region=us) [retry 1/2]
 WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.74', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/146279?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/146279?lang=en&region=us) [retry 1/15]
-cfb 2004:  95%|█████████▌| 679/712 [14:58<00:56,  1.72s/it]cfb 2004:  96%|█████████▌| 680/712 [14:58<00:41,  1.30s/it]cfb 2004:  96%|█████████▌| 681/712 [15:00<00:42,  1.38s/it]
+cfb 2004:  95%|█████████▌| 679/712 [14:58<00:56,  1.72s/it]cfb 2004:  96%|█████████▌| 680/712 [14:58<00:41,  1.30s/it]cfb 2004:  96%|█████████▌| 681/712 [15:00<00:42,  1.38s/it]cfb 2004:  96%|█████████▌| 682/712 [15:05<01:12,  2.42s/it]cfb 2004:  96%|█████████▌| 683/712 [15:07<01:03,  2.18s/it]cfb 2004:  96%|█████████▌| 684/712 [15:07<00:50,  1.82s/it]cfb 2004:  96%|█████████▌| 685/712 [15:09<00:43,  1.62s/it]cfb 2004:  96%|█████████▋| 686/712 [15:09<00:35,  1.36s/it]cfb 2004:  96%|█████████▋| 687/712 [15:10<00:31,  1.26s/it]cfb 2004:  97%|█████████▋| 688/712 [15:11<00:23,  1.02it/s]cfb 2004:  97%|█████████▋| 689/712 [15:12<00:24,  1.07s/it]cfb 2004:  97%|█████████▋| 690/712 [15:13<00:25,  1.16s/it]cfb 2004:  97%|█████████▋| 691/712 [15:16<00:35,  1.69s/it]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=243652653&1785295334936) [status retry 1/4]
+cfb 2004:  97%|█████████▋| 692/712 [15:19<00:38,  1.93s/it]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=243652653&1785295334936) [status retry 2/4]
+cfb 2004:  97%|█████████▋| 693/712 [15:20<00:31,  1.66s/it]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=243652653&1785295334936) [status retry 3/4]
+cfb 2004:  97%|█████████▋| 694/712 [15:21<00:26,  1.46s/it]cfb 2004:  98%|█████████▊| 695/712 [15:21<00:19,  1.16s/it]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=243652653&1785295334936) [status retry 4/4]
+cfb 2004:  98%|█████████▊| 696/712 [15:22<00:15,  1.01it/s]cfb 2004:  98%|█████████▊| 697/712 [15:22<00:10,  1.38it/s]cfb 2004:  98%|█████████▊| 698/712 [15:23<00:10,  1.37it/s]WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=250010245) [status retry 1/2]
+WARNING:sdv.dl_utils:retryable status 500 persisted after 4 retries; returning to caller for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=243652653&1785295334936)
+2026-07-28 23:22:27,434 ERROR download_game failed: 243652653
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 114, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7051, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 844, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1466, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 243652653 has no header.competitions; cannot build play-by-play.
+ERROR:cfb_json_2004:download_game failed: 243652653
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 114, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7051, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 844, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1466, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 243652653 has no header.competitions; cannot build play-by-play.
+cfb 2004:  98%|█████████▊| 699/712 [15:24<00:13,  1.01s/it]WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=250010245) [status retry 2/2]
+cfb 2004:  98%|█████████▊| 700/712 [15:25<00:10,  1.12it/s]WARNING:sdv.dl_utils:retryable status 503 persisted after 2 retries; returning to caller for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=250010245)
+cfb 2004:  98%|█████████▊| 701/712 [15:26<00:10,  1.08it/s]cfb 2004:  99%|█████████▊| 702/712 [15:28<00:11,  1.19s/it]cfb 2004:  99%|█████████▊| 703/712 [15:28<00:07,  1.15it/s]cfb 2004:  99%|█████████▉| 704/712 [15:30<00:09,  1.19s/it]cfb 2004:  99%|█████████▉| 705/712 [15:30<00:06,  1.04it/s]cfb 2004:  99%|█████████▉| 706/712 [15:31<00:05,  1.19it/s]cfb 2004:  99%|█████████▉| 707/712 [15:31<00:03,  1.60it/s]cfb 2004: 100%|█████████▉| 709/712 [15:31<00:01,  2.76it/s]cfb 2004: 100%|█████████▉| 710/712 [15:31<00:00,  2.81it/s]cfb 2004: 100%|█████████▉| 711/712 [15:36<00:01,  1.50s/it]cfb 2004: 100%|██████████| 712/712 [15:38<00:00,  1.56s/it]cfb 2004: 100%|██████████| 712/712 [15:38<00:00,  1.32s/it]
+VERIFY 2004 OK   raw                games= 712 ok= 712 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2004 OK   final              games= 712 ok= 712 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2004 OK   game_rosters       games= 712 ok= 699 empty=  13 missing=  0 bad=  1.8%
+VERIFY 2004 INFO play_participants  games= 712 ok=   0 empty= 712 missing=  0 bad=100.0% (pre-2014: ESPN ships no participants[] -- expected)
+VERIFY 2004 PROBE game=242410259 plays=165 named=112 with_id=112 id_given_name=100.0%
+[2026-07-29T03:22:43Z] season 2004 COMPLETE (checkpointed)
+[2026-07-29T03:22:43Z] --- season 2005: refreshing schedule ---
+2026-07-28 23:22:55,392 INFO schedules 2005: 728 games
+[2026-07-29T03:22:55Z] --- season 2005: rescraping all games (raw+final+participants+rosters+extras) ---
+2026-07-28 23:22:57,635 INFO season 2005: 728 games to scrape (rescrape=True)
+cfb 2005:   0%|          | 0/728 [00:00<?, ?it/s]
