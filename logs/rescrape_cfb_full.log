@@ -2563,3 +2563,38 @@ VERIFY 2005 PROBE game=252440009 plays=190 named=144 with_id=118 id_given_name=8
 [2026-07-29T03:40:52Z] --- season 2006: refreshing schedule ---
 2026-07-28 23:41:05,202 INFO schedules 2006: 788 games
 [2026-07-29T03:41:05Z] --- season 2006: rescraping all games (raw+final+participants+rosters+extras) ---
+2026-07-28 23:41:07,365 INFO season 2006: 788 games to scrape (rescrape=True)
+cfb 2006:   0%|          | 0/788 [00:00<?, ?it/s]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=262430009&1785296470652) [status retry 1/4]
+WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=262430009&1785296470652) [status retry 2/4]
+WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=262430009&1785296470652) [status retry 3/4]
+cfb 2006:   0%|          | 1/788 [00:12<2:41:30, 12.31s/it]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=262430009&1785296470652) [status retry 4/4]
+cfb 2006:   0%|          | 2/788 [00:14<1:26:48,  6.63s/it]WARNING:sdv.dl_utils:retryable status 500 persisted after 4 retries; returning to caller for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=262430009&1785296470652)
+2026-07-28 23:41:24,769 ERROR download_game failed: 262430009
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 114, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7051, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 844, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1466, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 262430009 has no header.competitions; cannot build play-by-play.
+ERROR:cfb_json_2006:download_game failed: 262430009
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 114, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7051, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 844, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1466, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 262430009 has no header.competitions; cannot build play-by-play.
+cfb 2006:   0%|          | 3/788 [00:17<1:01:20,  4.69s/it]cfb 2006:   1%|          | 4/788 [00:18<43:42,  3.35s/it]  cfb 2006:   1%|          | 5/788 [00:18<29:20,  2.25s/it]cfb 2006:   1%|          | 6/788 [00:19<22:47,  1.75s/it]cfb 2006:   1%|          | 8/788 [00:25<28:34,  2.20s/it]cfb 2006:   1%|          | 9/788 [00:26<25:17,  1.95s/it]cfb 2006:   1%|▏         | 10/788 [00:27<23:38,  1.82s/it]cfb 2006:   1%|▏         | 11/788 [00:28<17:59,  1.39s/it]cfb 2006:   2%|▏         | 12/788 [00:28<13:17,  1.03s/it]cfb 2006:   2%|▏         | 13/788 [00:29<15:05,  1.17s/it]cfb 2006:   2%|▏         | 14/788 [00:30<14:12,  1.10s/it]cfb 2006:   2%|▏         | 15/788 [00:31<13:20,  1.04s/it]cfb 2006:   2%|▏         | 16/788 [00:33<15:52,  1.23s/it]cfb 2006:   2%|▏         | 18/788 [00:35<15:10,  1.18s/it]
