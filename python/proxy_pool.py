@@ -26,6 +26,7 @@ embeds login:password.
 from __future__ import annotations
 
 import itertools
+import logging
 import os
 import pathlib
 import re
@@ -112,13 +113,26 @@ def _load() -> None:
     global _proxies, _cycle, _remaining, _remaining_at, _my_budget
     data = _fetch_package()
     login, password = data["login"], data["password"]
+    # The API returns TWO entry shapes for ippacks and they disagree on `active`:
+    #   shape A: {active: True, id, ip, ip_internal, port_http, proxyserver{...}, visible}
+    #   shape B: {ip, outgoing_ip, georegion_name, port_http, countrycode, visible}
+    # Shape B has NO `active` key at all. Requiring truthy `active` silently
+    # dropped all 50 usable IPs when the response flipped to shape B mid-run,
+    # which raised below and disabled proxying for the rest of that season.
+    # Treat an entry as usable unless it is EXPLICITLY inactive/invisible.
     urls = [
         f"http://{login}:{password}@{p['ip']}:{p['port_http']}"
         for p in data.get("ippacks", [])
-        if p.get("active") and p.get("ip") and p.get("port_http")
+        if p.get("ip")
+        and p.get("port_http")
+        and p.get("active") is not False
+        and p.get("visible") is not False
     ]
     if not urls:
-        raise RuntimeError("proxy package returned no active ips")
+        raise RuntimeError(
+            f"proxy package returned no usable ips "
+            f"(entries={len(data.get('ippacks') or [])}, keys={sorted((data.get('ippacks') or [{}])[0])})",
+        )
     # Offset each worker into the ring so 12 processes don't all start on the
     # same IP and serialise onto it.
     offset = os.getpid() % len(urls)
@@ -180,8 +194,17 @@ def apply_to_env(season: int | None = None) -> str | None:
         if _proxies is None:
             try:
                 _load()
-            except Exception:
+            except Exception as exc:
+                # Falling back to direct is the right SAFETY behaviour, but doing
+                # it silently is how an entire season ran unproxied without
+                # anyone noticing. Say so loudly, once, on the scraper's logger.
                 _disabled = True
+                logging.getLogger("cfb_json").warning(
+                    "PROXY POOL UNAVAILABLE (%s: %s) -- continuing on DIRECT connections. "
+                    "Rate limiting will be higher; re-check the package and restart to re-enable.",
+                    type(exc).__name__,
+                    exc,
+                )
                 return None
         global _spent
         _refresh_remaining()
@@ -214,4 +237,4 @@ def apply_to_env(season: int | None = None) -> str | None:
 
 
 def disabled() -> bool:
-    return _disabled
+    re

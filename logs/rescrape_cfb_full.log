@@ -4579,4 +4579,55 @@ VERIFY 2015 PROBE game=400757045 plays=181 named=137 with_id=134 id_given_name=9
 2026-07-29 06:06:02,572 INFO schedules 2016: 820 games
 [2026-07-29T10:06:02Z] --- season 2016: rescraping all games (raw+final+participants+rosters+extras) ---
 2026-07-29 06:06:04,709 INFO season 2016: 879 games to scrape (rescrape=True)
-cfb 2016:   0%|          | 0/879 [00:00<?, ?it/s]
+cfb 2016:   0%|          | 0/879 [00:00<?, ?it/s]VERIFY 2016 OK   raw                games= 879 ok= 879 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2016 OK   final              games= 879 ok= 879 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2016 OK   game_rosters       games= 879 ok= 873 empty=   6 missing=  0 bad=  0.7%
+VERIFY 2016 OK   play_participants  games= 879 ok= 875 empty=   4 missing=  0 bad=  0.5%
+VERIFY 2016 PROBE game=400869446 plays=174 named=133 with_id=133 id_given_name=100.0%
+[2026-07-29T11:34:16Z] season 2016 COMPLETE (checkpointed)
+[2026-07-29T11:34:16Z] --- season 2017: refreshing schedule ---
+2026-07-29 07:34:35,278 INFO schedules 2017: 890 games
+[2026-07-29T11:34:35Z] --- season 2017: rescraping all games (raw+final+participants+rosters+extras) ---
+2026-07-29 07:34:37,375 INFO season 2017: 890 games to scrape (rescrape=True)
+cfb 2017:   0%|          | 0/890 [00:00<?, ?it/s]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=400941787&1785324882175) [status retry 1/4]
+WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=400941787&1785324882175) [status retry 2/4]
+WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=400941787&1785324882175) [status retry 3/4]
+WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=400941787&1785324882175) [status retry 4/4]
+2026-07-29 07:34:53,700 WARNING REFUSED degraded write cfb\json\raw\400935230.json: 407425 -> 251 bytes (0% of existing); keeping banked copy
+WARNING:cfb_json_2017:REFUSED degraded write cfb\json\raw\400935230.json: 407425 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 07:34:53,700 WARNING degraded summary for 400935230 (proxy=direct) -- keeping banked copy, skipping game
+WARNING:cfb_json_2017:degraded summary for 400935230 (proxy=direct) -- keeping banked copy, skipping game
+cfb 2017:   0%|          | 1/890 [00:16<4:00:54, 16.26s/it]WARNING:sdv.dl_utils:retryable status 500 persisted after 4 retries; returning to caller for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=400941787&1785324882175)
+2026-07-29 07:34:55,423 ERROR download_game failed: 400941787
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 114, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7051, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 844, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1466, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 400941787 has no header.competitions; cannot build play-by-play.
+ERROR:cfb_json_2017:download_game failed: 400941787
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 114, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7051, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 844, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1466, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 400941787 has no header.competitions; cannot build play-by-play.
+cfb 2017:   0%|          | 2/890 [00:17<1:54:06,  7.71s/it]cfb 2017:   0%|          | 3/890 [00:31<2:33:17, 10.37s/it]cfb 2017:   0%|          | 4/890 [00:33<1:42:17,  6.93s/it]cfb 2017:   1%|          | 5/890 [00:34<1:12:24,  4.91s/it]WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=400933828) [status retry 1/4]
+WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=400933828) [status retry 2/4]
+cfb 2017:   1%|          | 7/890 [00:35<39:14,  2.67s/it]  WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=400933828) [status retry 3/4]
+cfb 2017:   1%|          | 9/890 [00:36<26:58,  1.84s/it]cfb 2017:   1%|          | 10/890 [00:37<21:12,  1.45s/it]cfb 2017:   1%|          | 11/890 [00:37<18:06,  1.24s/it]WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=400933828) [status retry 4/4]
+cfb 2017:   1%|▏         | 12/890 [00:39<21:18,  1.46s/it]cfb 2017:   1%|▏         | 13/890 [00:46<42:41,  2.92s/it]cfb 2017:   2%|▏         | 14/890 [00:49<44:41,  3.06s/it]cfb 2017:   2%|▏         | 15/890 [01:00<1:14:58,  5.14s/it]
