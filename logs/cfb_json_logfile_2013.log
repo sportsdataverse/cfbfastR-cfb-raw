@@ -14318,3 +14318,200 @@ Traceback (most recent call last):
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
     raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
 sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/340253144/competitions/340253144/competitors
+2026-07-29 02:32:54,385 INFO season 2013: 861 games to scrape (rescrape=True)
+2026-07-29 02:34:05,902 ERROR download_game failed: 332850120
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 114, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7051, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 844, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1466, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 332850120 has no header.competitions; cannot build play-by-play.
+2026-07-29 02:34:06,691 WARNING REFUSED degraded write cfb\json\raw\332852247.json: 483564 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:34:06,691 WARNING degraded summary for 332852247 (proxy=23.239.174.51:60099) -- keeping banked copy, skipping game
+2026-07-29 02:34:24,952 WARNING REFUSED degraded write cfb\json\raw\332850326.json: 378423 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:34:24,952 WARNING degraded summary for 332850326 (proxy=23.239.174.74:60099) -- keeping banked copy, skipping game
+2026-07-29 02:35:14,910 WARNING REFUSED degraded write cfb\json\raw\332990099.json: 357565 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:35:14,910 WARNING degraded summary for 332990099 (proxy=23.239.174.227:60099) -- keeping banked copy, skipping game
+2026-07-29 02:35:31,376 WARNING REFUSED degraded write cfb\json\raw\332990164.json: 384185 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:35:31,376 WARNING degraded summary for 332990164 (proxy=23.239.174.80:60099) -- keeping banked copy, skipping game
+2026-07-29 02:36:32,736 WARNING REFUSED degraded write cfb\json\raw\332990062.json: 451220 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:36:32,736 WARNING degraded summary for 332990062 (proxy=23.239.174.50:60099) -- keeping banked copy, skipping game
+2026-07-29 02:37:05,610 WARNING REFUSED degraded write cfb\json\raw\332422247.json: 411720 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:37:05,610 WARNING degraded summary for 332422247 (proxy=23.239.174.153:60099) -- keeping banked copy, skipping game
+2026-07-29 02:37:21,917 WARNING REFUSED degraded write cfb\json\raw\332430245.json: 414036 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:37:21,917 WARNING degraded summary for 332430245 (proxy=23.239.174.210:60099) -- keeping banked copy, skipping game
+2026-07-29 02:39:34,821 ERROR download_game failed: 332502390
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 114, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7051, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 844, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1466, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 332502390 has no header.competitions; cannot build play-by-play.
+2026-07-29 02:40:35,015 WARNING REFUSED degraded write cfb\json\raw\332500152.json: 384711 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:40:35,015 WARNING degraded summary for 332500152 (proxy=154.81.58.132:60099) -- keeping banked copy, skipping game
+2026-07-29 02:42:06,605 WARNING REFUSED degraded write cfb\json\raw\332570135.json: 323426 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:42:06,605 WARNING degraded summary for 332570135 (proxy=154.81.58.183:60099) -- keeping banked copy, skipping game
+2026-07-29 02:42:20,303 ERROR download_game failed: 332570221
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 114, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7051, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 844, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1466, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 332570221 has no header.competitions; cannot build play-by-play.
+2026-07-29 02:43:04,980 ERROR extra fetch failed: _rosters(332570038,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/332570038/competitions/332570038/competitors
+2026-07-29 02:43:38,778 WARNING REFUSED degraded write cfb\json\raw\332640264.json: 412061 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:43:38,778 WARNING degraded summary for 332640264 (proxy=154.81.58.26:60099) -- keeping banked copy, skipping game
+2026-07-29 02:43:50,051 WARNING REFUSED degraded write cfb\json\raw\332642641.json: 431135 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:43:50,051 WARNING degraded summary for 332642641 (proxy=154.81.58.101:60099) -- keeping banked copy, skipping game
+2026-07-29 02:43:56,920 WARNING REFUSED degraded write cfb\json\raw\332640113.json: 341524 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:43:56,920 WARNING degraded summary for 332640113 (proxy=23.239.174.210:60099) -- keeping banked copy, skipping game
+2026-07-29 02:44:02,373 WARNING REFUSED degraded write cfb\json\raw\332640259.json: 440896 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:44:02,373 WARNING degraded summary for 332640259 (proxy=154.81.58.89:60099) -- keeping banked copy, skipping game
+2026-07-29 02:45:04,026 WARNING REFUSED degraded write cfb\json\raw\332690202.json: 424282 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:45:04,026 WARNING degraded summary for 332690202 (proxy=23.239.174.227:60099) -- keeping banked copy, skipping game
+2026-07-29 02:45:23,444 WARNING REFUSED degraded write cfb\json\raw\332710277.json: 485287 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:45:23,444 WARNING degraded summary for 332710277 (proxy=23.239.174.50:60099) -- keeping banked copy, skipping game
+2026-07-29 02:46:28,766 WARNING REFUSED degraded write cfb\json\raw\332710167.json: 393897 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:46:28,766 WARNING degraded summary for 332710167 (proxy=154.81.58.169:60099) -- keeping banked copy, skipping game
+2026-07-29 02:48:15,969 WARNING REFUSED degraded write cfb\json\raw\332880098.json: 356558 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:48:15,969 WARNING degraded summary for 332880098 (proxy=154.81.58.98:60099) -- keeping banked copy, skipping game
+2026-07-29 02:50:48,497 WARNING REFUSED degraded write cfb\json\raw\333060103.json: 365266 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:50:48,497 WARNING degraded summary for 333060103 (proxy=23.239.174.196:60099) -- keeping banked copy, skipping game
+2026-07-29 02:51:49,256 WARNING REFUSED degraded write cfb\json\raw\333102050.json: 345384 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:51:49,256 WARNING degraded summary for 333102050 (proxy=23.239.174.171:60099) -- keeping banked copy, skipping game
+2026-07-29 02:52:11,566 WARNING REFUSED degraded write cfb\json\raw\333130154.json: 417343 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:52:11,566 WARNING degraded summary for 333130154 (proxy=23.239.174.96:60099) -- keeping banked copy, skipping game
+2026-07-29 02:52:32,069 WARNING REFUSED degraded write cfb\json\raw\333132641.json: 388170 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:52:32,069 WARNING degraded summary for 333132641 (proxy=23.239.174.80:60099) -- keeping banked copy, skipping game
+2026-07-29 02:52:40,567 WARNING REFUSED degraded write cfb\json\raw\333130276.json: 359435 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:52:40,567 WARNING degraded summary for 333130276 (proxy=23.239.174.80:60099) -- keeping banked copy, skipping game
+2026-07-29 02:54:59,518 WARNING REFUSED degraded write cfb\json\raw\333200077.json: 419304 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:54:59,519 WARNING degraded summary for 333200077 (proxy=23.239.174.153:60099) -- keeping banked copy, skipping game
+2026-07-29 02:55:08,574 WARNING REFUSED degraded write cfb\json\raw\333200038.json: 497023 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:55:08,574 WARNING degraded summary for 333200038 (proxy=23.239.174.96:60099) -- keeping banked copy, skipping game
+2026-07-29 02:56:09,585 WARNING REFUSED degraded write cfb\json\raw\333270038.json: 395397 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:56:09,585 WARNING degraded summary for 333270038 (proxy=23.239.174.153:60099) -- keeping banked copy, skipping game
+2026-07-29 02:56:17,812 WARNING REFUSED degraded write cfb\json\raw\333272294.json: 384029 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:56:17,812 WARNING degraded summary for 333272294 (proxy=23.239.174.171:60099) -- keeping banked copy, skipping game
+2026-07-29 02:58:28,504 WARNING REFUSED degraded write cfb\json\raw\333340005.json: 415938 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:58:28,504 WARNING degraded summary for 333340005 (proxy=23.239.174.98:60099) -- keeping banked copy, skipping game
+2026-07-29 02:59:33,730 ERROR extra fetch failed: _rosters(400520954,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/400520954/competitions/400520954/competitors
+2026-07-29 02:59:38,892 ERROR download_game failed: 333410164
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 114, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7051, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 844, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1466, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 333410164 has no header.competitions; cannot build play-by-play.
+2026-07-29 02:59:53,349 WARNING REFUSED degraded write cfb\json\raw\333610120.json: 408635 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 02:59:53,349 WARNING degraded summary for 333610120 (proxy=154.81.58.132:60099) -- keeping banked copy, skipping game
+2026-07-29 03:00:32,669 ERROR extra fetch failed: _rosters(340183147,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/340183147/competitions/340183147/competitors
+2026-07-29 03:00:35,941 ERROR extra fetch failed: _rosters(340253144,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/340253144/competitions/340253144/competitors
+2026-07-29 03:00:36,174 ERROR extra fetch failed: _rosters(340183194,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/340183194/competitions/340183194/competitors
+2026-07-29 03:00:42,472 ERROR download_game failed: 340052050
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 114, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7051, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 844, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1466, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 340052050 has no header.competitions; cannot build play-by-play.
