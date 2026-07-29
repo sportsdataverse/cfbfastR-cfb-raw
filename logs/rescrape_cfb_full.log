@@ -4851,3 +4851,13 @@ VERIFY 2022 PROBE game=401411109 plays=184 named=142 with_id=142 id_given_name=1
 [2026-07-29T19:39:36Z] --- season 2023: refreshing schedule ---
 2026-07-29 15:39:52,728 INFO schedules 2023: 911 games
 [2026-07-29T19:39:53Z] --- season 2023: rescraping all games (raw+final+participants+rosters+extras) ---
+2026-07-29 15:39:54,944 INFO season 2023: 911 games to scrape (rescrape=True)
+cfb 2023:   0%|          | 0/911 [00:00<?, ?it/s]VERIFY 2023 OK   raw                games= 911 ok= 911 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2023 OK   final              games= 911 ok= 911 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2023 OK   game_rosters       games= 911 ok= 911 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2023 OK   play_participants  games= 911 ok= 911 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2023 PROBE game=401523986 plays=168 named=131 with_id=131 id_given_name=100.0%
+[2026-07-29T21:22:31Z] season 2023 COMPLETE (checkpointed)
+[2026-07-29T21:22:31Z] --- season 2024: refreshing schedule ---
+2026-07-29 17:22:50,230 INFO schedules 2024: 920 games
+[2026-07-29T21:22:50Z] --- season 2024: rescraping all games (raw+final+participants+rosters+extras) ---
