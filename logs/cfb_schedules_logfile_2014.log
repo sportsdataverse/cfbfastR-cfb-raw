@@ -1,0 +1,36 @@
+2026-06-13 19:24:29,502 ERROR schedules failed for 2014
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_schedules.py", line 59, in main
+    df = fetch_season(season)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_schedules.py", line 23, in fetch_season
+    df = sdv.cfb.espn_cfb_schedule(dates=season, return_as_pandas=True)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_schedule.py", line 90, in espn_cfb_schedule
+    event = scoreboard_event_parsing(event)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_schedule.py", line 136, in scoreboard_event_parsing
+    event.get("competitions")[0].get("competitors")[0].get("team").pop("links", None)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2026-06-14 13:04:46,049 ERROR schedules failed for 2014
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_schedules.py", line 59, in main
+    df = fetch_season(season)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_schedules.py", line 23, in fetch_season
+    df = sdv.cfb.espn_cfb_schedule(dates=season, return_as_pandas=True)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_schedule.py", line 93, in espn_cfb_schedule
+    event = scoreboard_event_parsing(event)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_schedule.py", line 139, in scoreboard_event_parsing
+    event.get("competitions")[0].get("competitors")[0].get("team").pop("links", None)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2026-06-14 13:30:58,239 INFO schedules 2014: 499 games
+2026-06-16 12:08:46,733 INFO schedules 2014: 873 games
+2026-06-17 08:06:10,224 INFO schedules 2014: 873 games
+2026-06-17 08:06:10,253 INFO schedules 2014: 873 games
+2026-06-17 09:15:22,569 INFO schedules 2014: 873 games
+2026-06-17 11:44:09,742 INFO schedules 2014: 873 games

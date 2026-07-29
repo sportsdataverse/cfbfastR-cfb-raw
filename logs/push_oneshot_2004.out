@@ -1,0 +1,11 @@
+[2026-07-29T01:14:38Z] === push watcher start (poll=60s stop_after=2025 oneshot=1) ===
+[2026-07-29T01:14:38Z] season 2004: preparing commit
+error: Unable to create 'C:/Users/saiem/Documents/GitHub-Data/sdv-dev/cfbfastR-dev/cfbfastR-cfb-raw/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+error: could not write index
+fatal: Cannot autostash
+[2026-07-29T01:14:42Z] season 2004: pull --rebase failed, committing on top of local
+[2026-07-29T01:14:42Z] season 2004: nothing staged, marking pushed
+[2026-07-29T01:14:42Z] oneshot done
+EXIT=0

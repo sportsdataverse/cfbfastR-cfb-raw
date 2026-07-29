@@ -1,0 +1,261 @@
+2026-06-23 20:07:01,825 ERROR reprocess failed: 401523986
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[-30.]'
+2026-06-23 20:07:01,889 ERROR reprocess failed: 401525434
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[-20.5]'
+2026-06-23 20:07:01,948 ERROR reprocess failed: 401525450
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[-8.]'
+2026-06-23 20:07:01,954 ERROR reprocess failed: 401532392
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[-3.]'
+2026-06-23 20:07:01,985 ERROR reprocess failed: 401520146
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[-10.]'
+2026-06-23 20:07:01,999 ERROR reprocess failed: 401520176
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[-7.]'
+2026-06-23 20:07:01,999 ERROR reprocess failed: 401525816
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[-35.]'
+2026-06-23 20:07:02,029 ERROR reprocess failed: 401520174
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[15.]'
+2026-06-23 20:07:02,040 ERROR reprocess failed: 401520148
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[-7.]'
+2026-06-23 20:07:04,206 ERROR reprocess failed: 401525462
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[8.]'
+2026-06-23 20:07:04,260 ERROR reprocess failed: 401520163
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[-14.5]'
+2026-06-23 20:07:04,308 ERROR reprocess failed: 401520162
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[-35.]'
+2026-06-23 20:07:04,313 ERROR reprocess failed: 401520156
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[28.]'
+2026-06-23 20:07:06,240 ERROR reprocess failed: 401520169
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[-20.5]'
+2026-06-23 20:07:06,283 ERROR reprocess failed: 401523997
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[-14.5]'
+2026-06-23 20:07:06,328 ERROR reprocess failed: 401520179
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[-28.]'
+2026-06-23 20:07:06,382 ERROR reprocess failed: 401523994
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[-20.5]'
+2026-06-23 20:07:06,382 ERROR reprocess failed: 401520180
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[-25.5]'
+2026-06-23 20:07:06,418 ERROR reprocess failed: 401520167
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[2.5]'
+2026-06-23 20:07:08,263 ERROR reprocess failed: 401520170
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[-4.]'
+2026-06-23 20:07:08,374 ERROR reprocess failed: 401525464
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[-9.5]'
+2026-06-23 20:07:10,119 ERROR reprocess failed: 401520151
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[-39.]'
+2026-06-23 20:07:11,943 ERROR reprocess failed: 401523991
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[7.5]'
+2026-06-23 20:07:14,127 ERROR reprocess failed: 401525819
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[1.]'
+2026-06-23 20:07:15,867 ERROR reprocess failed: 401520155
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[-9.]'
+2026-06-23 20:07:16,062 ERROR reprocess failed: 401525825
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[14.]'
+2026-06-23 20:07:17,900 ERROR reprocess failed: 401520182
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[2.5]'
+2026-06-23 20:07:17,947 ERROR reprocess failed: 401520171
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[-7.]'
+2026-06-23 20:07:17,996 ERROR reprocess failed: 401525468
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 70, in reprocess_game
+    proc = CFBPlayProcess(gameId=game_id, path_to_json=str(RAW_DIR),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 580, in __init__
+    "gameSpread": float(odds_override["gameSpread"]),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '[13.]'

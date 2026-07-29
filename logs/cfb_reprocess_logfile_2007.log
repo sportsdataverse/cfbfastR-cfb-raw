@@ -1,0 +1,1393 @@
+2026-06-23 21:30:58,027 ERROR reprocess failed: 272440235
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272440235.json.tmp' -> 'cfb\\json\\final\\272440235.json'
+2026-06-23 21:30:59,274 ERROR reprocess failed: 272440356
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272440356.json.tmp' -> 'cfb\\json\\final\\272440356.json'
+2026-06-23 21:31:00,046 ERROR reprocess failed: 272442483
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272442483.json.tmp' -> 'cfb\\json\\final\\272442483.json'
+2026-06-23 21:31:02,795 ERROR reprocess failed: 272440152
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272440152.json.tmp' -> 'cfb\\json\\final\\272440152.json'
+2026-06-23 21:31:03,321 ERROR reprocess failed: 272442006
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272442006.json.tmp' -> 'cfb\\json\\final\\272442006.json'
+2026-06-23 21:31:06,296 ERROR reprocess failed: 272440333
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272440333.json.tmp' -> 'cfb\\json\\final\\272440333.json'
+2026-06-23 21:31:12,037 ERROR reprocess failed: 272510276
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510276.json.tmp' -> 'cfb\\json\\final\\272510276.json'
+2026-06-23 21:31:12,062 ERROR reprocess failed: 272510057
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510057.json.tmp' -> 'cfb\\json\\final\\272510057.json'
+2026-06-23 21:31:13,279 ERROR reprocess failed: 272510201
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510201.json.tmp' -> 'cfb\\json\\final\\272510201.json'
+2026-06-23 21:31:14,552 ERROR reprocess failed: 272510251
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510251.json.tmp' -> 'cfb\\json\\final\\272510251.json'
+2026-06-23 21:31:15,580 ERROR reprocess failed: 272510061
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510061.json.tmp' -> 'cfb\\json\\final\\272510061.json'
+2026-06-23 21:31:16,496 ERROR reprocess failed: 272510194
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510194.json.tmp' -> 'cfb\\json\\final\\272510194.json'
+2026-06-23 21:31:16,940 ERROR reprocess failed: 272510026
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510026.json.tmp' -> 'cfb\\json\\final\\272510026.json'
+2026-06-23 21:31:17,124 ERROR reprocess failed: 272510213
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510213.json.tmp' -> 'cfb\\json\\final\\272510213.json'
+2026-06-23 21:31:18,057 ERROR reprocess failed: 272510154
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510154.json.tmp' -> 'cfb\\json\\final\\272510154.json'
+2026-06-23 21:31:19,569 ERROR reprocess failed: 272512348
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272512348.json.tmp' -> 'cfb\\json\\final\\272512348.json'
+2026-06-23 21:31:20,043 ERROR reprocess failed: 272510059
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510059.json.tmp' -> 'cfb\\json\\final\\272510059.json'
+2026-06-23 21:31:20,522 ERROR reprocess failed: 272510264
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510264.json.tmp' -> 'cfb\\json\\final\\272510264.json'
+2026-06-23 21:31:22,689 ERROR reprocess failed: 272510228
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510228.json.tmp' -> 'cfb\\json\\final\\272510228.json'
+2026-06-23 21:31:23,404 ERROR reprocess failed: 272510135
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510135.json.tmp' -> 'cfb\\json\\final\\272510135.json'
+2026-06-23 21:31:23,525 ERROR reprocess failed: 272510221
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510221.json.tmp' -> 'cfb\\json\\final\\272510221.json'
+2026-06-23 21:31:25,826 ERROR reprocess failed: 272512509
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272512509.json.tmp' -> 'cfb\\json\\final\\272512509.json'
+2026-06-23 21:31:28,157 ERROR reprocess failed: 272510349
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510349.json.tmp' -> 'cfb\\json\\final\\272510349.json'
+2026-06-23 21:31:29,184 ERROR reprocess failed: 272510103
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510103.json.tmp' -> 'cfb\\json\\final\\272510103.json'
+2026-06-23 21:31:31,630 ERROR reprocess failed: 272510145
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510145.json.tmp' -> 'cfb\\json\\final\\272510145.json'
+2026-06-23 21:31:32,857 ERROR reprocess failed: 272510151
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510151.json.tmp' -> 'cfb\\json\\final\\272510151.json'
+2026-06-23 21:31:33,191 ERROR reprocess failed: 272510254
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510254.json.tmp' -> 'cfb\\json\\final\\272510254.json'
+2026-06-23 21:31:34,180 ERROR reprocess failed: 272510066
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510066.json.tmp' -> 'cfb\\json\\final\\272510066.json'
+2026-06-23 21:31:35,290 ERROR reprocess failed: 272510239
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510239.json.tmp' -> 'cfb\\json\\final\\272510239.json'
+2026-06-23 21:31:35,611 ERROR reprocess failed: 272510197
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510197.json.tmp' -> 'cfb\\json\\final\\272510197.json'
+2026-06-23 21:31:35,757 ERROR reprocess failed: 272510309
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510309.json.tmp' -> 'cfb\\json\\final\\272510309.json'
+2026-06-23 21:31:36,377 ERROR reprocess failed: 272510356
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510356.json.tmp' -> 'cfb\\json\\final\\272510356.json'
+2026-06-23 21:31:38,020 ERROR reprocess failed: 272512305
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272512305.json.tmp' -> 'cfb\\json\\final\\272512305.json'
+2026-06-23 21:31:38,971 ERROR reprocess failed: 272512306
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272512306.json.tmp' -> 'cfb\\json\\final\\272512306.json'
+2026-06-23 21:31:39,187 ERROR reprocess failed: 272512655
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272512655.json.tmp' -> 'cfb\\json\\final\\272512655.json'
+2026-06-23 21:31:40,820 ERROR reprocess failed: 272512711
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272512711.json.tmp' -> 'cfb\\json\\final\\272512711.json'
+2026-06-23 21:31:41,460 ERROR reprocess failed: 272512294
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272512294.json.tmp' -> 'cfb\\json\\final\\272512294.json'
+2026-06-23 21:31:41,775 ERROR reprocess failed: 272510009
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272510009.json.tmp' -> 'cfb\\json\\final\\272510009.json'
+2026-06-23 21:31:44,022 ERROR reprocess failed: 272572653
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272572653.json.tmp' -> 'cfb\\json\\final\\272572653.json'
+2026-06-23 21:31:44,211 ERROR reprocess failed: 272580158
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272580158.json.tmp' -> 'cfb\\json\\final\\272580158.json'
+2026-06-23 21:31:46,624 ERROR reprocess failed: 272580057
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272580057.json.tmp' -> 'cfb\\json\\final\\272580057.json'
+2026-06-23 21:31:49,041 ERROR reprocess failed: 272580096
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272580096.json.tmp' -> 'cfb\\json\\final\\272580096.json'
+2026-06-23 21:31:49,442 ERROR reprocess failed: 272580264
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272580264.json.tmp' -> 'cfb\\json\\final\\272580264.json'
+2026-06-23 21:31:51,292 ERROR reprocess failed: 272580213
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272580213.json.tmp' -> 'cfb\\json\\final\\272580213.json'
+2026-06-23 21:31:54,046 ERROR reprocess failed: 272580259
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272580259.json.tmp' -> 'cfb\\json\\final\\272580259.json'
+2026-06-23 21:31:54,593 ERROR reprocess failed: 272582483
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272582483.json.tmp' -> 'cfb\\json\\final\\272582483.json'
+2026-06-23 21:31:56,556 ERROR reprocess failed: 272582439
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272582439.json.tmp' -> 'cfb\\json\\final\\272582439.json'
+2026-06-23 21:31:59,384 ERROR reprocess failed: 272580153
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272580153.json.tmp' -> 'cfb\\json\\final\\272580153.json'
+2026-06-23 21:31:59,552 ERROR reprocess failed: 272580127
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272580127.json.tmp' -> 'cfb\\json\\final\\272580127.json'
+2026-06-23 21:32:01,718 ERROR reprocess failed: 272582509
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272582509.json.tmp' -> 'cfb\\json\\final\\272582509.json'
+2026-06-23 21:32:02,072 ERROR reprocess failed: 272582459
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272582459.json.tmp' -> 'cfb\\json\\final\\272582459.json'
+2026-06-23 21:32:04,348 ERROR reprocess failed: 272580066
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272580066.json.tmp' -> 'cfb\\json\\final\\272580066.json'
+2026-06-23 21:32:04,541 ERROR reprocess failed: 272580142
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272580142.json.tmp' -> 'cfb\\json\\final\\272580142.json'
+2026-06-23 21:32:06,978 ERROR reprocess failed: 272580130
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272580130.json.tmp' -> 'cfb\\json\\final\\272580130.json'
+2026-06-23 21:32:09,388 ERROR reprocess failed: 272582426
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272582426.json.tmp' -> 'cfb\\json\\final\\272582426.json'
+2026-06-23 21:32:11,692 ERROR reprocess failed: 272580238
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272580238.json.tmp' -> 'cfb\\json\\final\\272580238.json'
+2026-06-23 21:32:12,101 ERROR reprocess failed: 272580239
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272580239.json.tmp' -> 'cfb\\json\\final\\272580239.json'
+2026-06-23 21:32:12,859 ERROR reprocess failed: 272580309
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272580309.json.tmp' -> 'cfb\\json\\final\\272580309.json'
+2026-06-23 21:32:15,368 ERROR reprocess failed: 272580068
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272580068.json.tmp' -> 'cfb\\json\\final\\272580068.json'
+2026-06-23 21:32:21,155 ERROR reprocess failed: 272632390
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272632390.json.tmp' -> 'cfb\\json\\final\\272632390.json'
+2026-06-23 21:32:21,429 ERROR reprocess failed: 272640202
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272640202.json.tmp' -> 'cfb\\json\\final\\272640202.json'
+2026-06-23 21:32:23,725 ERROR reprocess failed: 272650145
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272650145.json.tmp' -> 'cfb\\json\\final\\272650145.json'
+2026-06-23 21:32:25,987 ERROR reprocess failed: 272650194
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272650194.json.tmp' -> 'cfb\\json\\final\\272650194.json'
+2026-06-23 21:32:26,313 ERROR reprocess failed: 272650251
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272650251.json.tmp' -> 'cfb\\json\\final\\272650251.json'
+2026-06-23 21:32:27,148 ERROR reprocess failed: 272650130
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272650130.json.tmp' -> 'cfb\\json\\final\\272650130.json'
+2026-06-23 21:32:28,366 ERROR reprocess failed: 272650024
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272650024.json.tmp' -> 'cfb\\json\\final\\272650024.json'
+2026-06-23 21:32:29,243 ERROR reprocess failed: 272650152
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272650152.json.tmp' -> 'cfb\\json\\final\\272650152.json'
+2026-06-23 21:32:31,059 ERROR reprocess failed: 272650259
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272650259.json.tmp' -> 'cfb\\json\\final\\272650259.json'
+2026-06-23 21:32:31,233 ERROR reprocess failed: 272650097
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272650097.json.tmp' -> 'cfb\\json\\final\\272650097.json'
+2026-06-23 21:32:32,107 ERROR reprocess failed: 272650062
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272650062.json.tmp' -> 'cfb\\json\\final\\272650062.json'
+2026-06-23 21:32:33,188 ERROR reprocess failed: 272650058
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272650058.json.tmp' -> 'cfb\\json\\final\\272650058.json'
+2026-06-23 21:32:33,306 ERROR reprocess failed: 272650158
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272650158.json.tmp' -> 'cfb\\json\\final\\272650158.json'
+2026-06-23 21:32:36,337 ERROR reprocess failed: 272650258
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272650258.json.tmp' -> 'cfb\\json\\final\\272650258.json'
+2026-06-23 21:32:36,536 ERROR reprocess failed: 272650195
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272650195.json.tmp' -> 'cfb\\json\\final\\272650195.json'
+2026-06-23 21:32:36,730 ERROR reprocess failed: 272650189
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272650189.json.tmp' -> 'cfb\\json\\final\\272650189.json'
+2026-06-23 21:32:39,039 ERROR reprocess failed: 272650252
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272650252.json.tmp' -> 'cfb\\json\\final\\272650252.json'
+2026-06-23 21:32:41,434 ERROR reprocess failed: 272650038
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272650038.json.tmp' -> 'cfb\\json\\final\\272650038.json'
+2026-06-23 21:32:41,727 ERROR reprocess failed: 272652116
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272652116.json.tmp' -> 'cfb\\json\\final\\272652116.json'
+2026-06-23 21:32:44,241 ERROR reprocess failed: 272650002
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272650002.json.tmp' -> 'cfb\\json\\final\\272650002.json'
+2026-06-23 21:32:44,987 ERROR reprocess failed: 272650309
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272650309.json.tmp' -> 'cfb\\json\\final\\272650309.json'
+2026-06-23 21:32:46,617 ERROR reprocess failed: 272652633
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272652633.json.tmp' -> 'cfb\\json\\final\\272652633.json'
+2026-06-23 21:32:50,023 ERROR reprocess failed: 272652655
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272652655.json.tmp' -> 'cfb\\json\\final\\272652655.json'
+2026-06-23 21:32:53,230 ERROR reprocess failed: 272650026
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272650026.json.tmp' -> 'cfb\\json\\final\\272650026.json'
+2026-06-23 21:33:00,230 ERROR reprocess failed: 272720164
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272720164.json.tmp' -> 'cfb\\json\\final\\272720164.json'
+2026-06-23 21:33:05,881 ERROR reprocess failed: 272720052
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272720052.json.tmp' -> 'cfb\\json\\final\\272720052.json'
+2026-06-23 21:34:38,210 ERROR reprocess failed: 272930120
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272930120.json.tmp' -> 'cfb\\json\\final\\272930120.json'
+2026-06-23 21:34:40,667 ERROR reprocess failed: 272930356
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272930356.json.tmp' -> 'cfb\\json\\final\\272930356.json'
+2026-06-23 21:34:43,204 ERROR reprocess failed: 272930228
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272930228.json.tmp' -> 'cfb\\json\\final\\272930228.json'
+2026-06-23 21:34:45,507 ERROR reprocess failed: 272932005
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272932005.json.tmp' -> 'cfb\\json\\final\\272932005.json'
+2026-06-23 21:34:45,755 ERROR reprocess failed: 272930282
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272930282.json.tmp' -> 'cfb\\json\\final\\272930282.json'
+2026-06-23 21:34:47,581 ERROR reprocess failed: 272930158
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272930158.json.tmp' -> 'cfb\\json\\final\\272930158.json'
+2026-06-23 21:34:50,363 ERROR reprocess failed: 272932653
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272932653.json.tmp' -> 'cfb\\json\\final\\272932653.json'
+2026-06-23 21:34:50,457 ERROR reprocess failed: 272930183
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272930183.json.tmp' -> 'cfb\\json\\final\\272930183.json'
+2026-06-23 21:34:51,292 ERROR reprocess failed: 272932309
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272932309.json.tmp' -> 'cfb\\json\\final\\272932309.json'
+2026-06-23 21:34:52,792 ERROR reprocess failed: 272930151
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272930151.json.tmp' -> 'cfb\\json\\final\\272930151.json'
+2026-06-23 21:34:52,857 ERROR reprocess failed: 272930278
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272930278.json.tmp' -> 'cfb\\json\\final\\272930278.json'
+2026-06-23 21:34:55,599 ERROR reprocess failed: 272932348
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\272932348.json.tmp' -> 'cfb\\json\\final\\272932348.json'
+2026-06-23 21:35:02,186 ERROR reprocess failed: 273000213
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273000213.json.tmp' -> 'cfb\\json\\final\\273000213.json'
+2026-06-23 21:35:05,378 ERROR reprocess failed: 273000245
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273000245.json.tmp' -> 'cfb\\json\\final\\273000245.json'
+2026-06-23 21:35:46,412 ERROR reprocess failed: 273070213
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273070213.json.tmp' -> 'cfb\\json\\final\\273070213.json'
+2026-06-23 21:35:49,231 ERROR reprocess failed: 273070252
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273070252.json.tmp' -> 'cfb\\json\\final\\273070252.json'
+2026-06-23 21:35:49,603 ERROR reprocess failed: 273070235
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273070235.json.tmp' -> 'cfb\\json\\final\\273070235.json'
+2026-06-23 21:35:54,038 ERROR reprocess failed: 273070024
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273070024.json.tmp' -> 'cfb\\json\\final\\273070024.json'
+2026-06-23 21:35:56,531 ERROR reprocess failed: 273070135
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273070135.json.tmp' -> 'cfb\\json\\final\\273070135.json'
+2026-06-23 21:35:59,328 ERROR reprocess failed: 273080248
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273080248.json.tmp' -> 'cfb\\json\\final\\273080248.json'
+2026-06-23 21:36:01,680 ERROR reprocess failed: 273120252
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273120252.json.tmp' -> 'cfb\\json\\final\\273120252.json'
+2026-06-23 21:36:06,490 ERROR reprocess failed: 273140120
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273140120.json.tmp' -> 'cfb\\json\\final\\273140120.json'
+2026-06-23 21:36:07,402 ERROR reprocess failed: 273140061
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273140061.json.tmp' -> 'cfb\\json\\final\\273140061.json'
+2026-06-23 21:36:08,944 ERROR reprocess failed: 273140275
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273140275.json.tmp' -> 'cfb\\json\\final\\273140275.json'
+2026-06-23 21:36:11,303 ERROR reprocess failed: 273140062
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273140062.json.tmp' -> 'cfb\\json\\final\\273140062.json'
+2026-06-23 21:36:13,453 ERROR reprocess failed: 273140328
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273140328.json.tmp' -> 'cfb\\json\\final\\273140328.json'
+2026-06-23 21:36:15,806 ERROR reprocess failed: 273142633
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273142633.json.tmp' -> 'cfb\\json\\final\\273142633.json'
+2026-06-23 21:36:18,901 ERROR reprocess failed: 273142509
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273142509.json.tmp' -> 'cfb\\json\\final\\273142509.json'
+2026-06-23 21:36:22,996 ERROR reprocess failed: 273140254
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273140254.json.tmp' -> 'cfb\\json\\final\\273140254.json'
+2026-06-23 21:36:23,002 ERROR reprocess failed: 273142393
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273142393.json.tmp' -> 'cfb\\json\\final\\273142393.json'
+2026-06-23 21:36:23,070 ERROR reprocess failed: 273142459
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273142459.json.tmp' -> 'cfb\\json\\final\\273142459.json'
+2026-06-23 21:36:23,236 ERROR reprocess failed: 273140276
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273140276.json.tmp' -> 'cfb\\json\\final\\273140276.json'
+2026-06-23 21:36:23,680 ERROR reprocess failed: 273140023
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273140023.json.tmp' -> 'cfb\\json\\final\\273140023.json'
+2026-06-23 21:36:24,049 ERROR reprocess failed: 273140249
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273140249.json.tmp' -> 'cfb\\json\\final\\273140249.json'
+2026-06-23 21:36:25,427 ERROR reprocess failed: 273142572
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273142572.json.tmp' -> 'cfb\\json\\final\\273142572.json'
+2026-06-23 21:36:25,826 ERROR reprocess failed: 273142226
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273142226.json.tmp' -> 'cfb\\json\\final\\273142226.json'
+2026-06-23 21:36:26,119 ERROR reprocess failed: 273140098
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273140098.json.tmp' -> 'cfb\\json\\final\\273140098.json'
+2026-06-23 21:36:26,292 ERROR reprocess failed: 273140005
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273140005.json.tmp' -> 'cfb\\json\\final\\273140005.json'
+2026-06-23 21:36:26,422 ERROR reprocess failed: 273142433
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273142433.json.tmp' -> 'cfb\\json\\final\\273142433.json'
+2026-06-23 21:36:27,938 ERROR reprocess failed: 273140265
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273140265.json.tmp' -> 'cfb\\json\\final\\273140265.json'
+2026-06-23 21:36:28,976 ERROR reprocess failed: 273140204
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273140204.json.tmp' -> 'cfb\\json\\final\\273140204.json'
+2026-06-23 21:36:29,053 ERROR reprocess failed: 273142439
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273142439.json.tmp' -> 'cfb\\json\\final\\273142439.json'
+2026-06-23 21:36:30,034 ERROR reprocess failed: 273172050
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273172050.json.tmp' -> 'cfb\\json\\final\\273172050.json'
+2026-06-23 21:36:31,520 ERROR reprocess failed: 273190012
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273190012.json.tmp' -> 'cfb\\json\\final\\273190012.json'
+2026-06-23 21:36:31,737 ERROR reprocess failed: 273192032
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273192032.json.tmp' -> 'cfb\\json\\final\\273192032.json'
+2026-06-23 21:36:33,595 ERROR reprocess failed: 273210145
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273210145.json.tmp' -> 'cfb\\json\\final\\273210145.json'
+2026-06-23 21:36:34,379 ERROR reprocess failed: 273212305
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273212305.json.tmp' -> 'cfb\\json\\final\\273212305.json'
+2026-06-23 21:36:35,059 ERROR reprocess failed: 273212641
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273212641.json.tmp' -> 'cfb\\json\\final\\273212641.json'
+2026-06-23 21:36:35,295 ERROR reprocess failed: 273212306
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273212306.json.tmp' -> 'cfb\\json\\final\\273212306.json'
+2026-06-23 21:36:36,150 ERROR reprocess failed: 273212132
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273212132.json.tmp' -> 'cfb\\json\\final\\273212132.json'
+2026-06-23 21:36:37,094 ERROR reprocess failed: 273210130
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273210130.json.tmp' -> 'cfb\\json\\final\\273210130.json'
+2026-06-23 21:36:37,945 ERROR reprocess failed: 273210259
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273210259.json.tmp' -> 'cfb\\json\\final\\273210259.json'
+2026-06-23 21:36:39,046 ERROR reprocess failed: 273210057
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273210057.json.tmp' -> 'cfb\\json\\final\\273210057.json'
+2026-06-23 21:36:41,687 ERROR reprocess failed: 273212633
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273212633.json.tmp' -> 'cfb\\json\\final\\273212633.json'
+2026-06-23 21:36:41,949 ERROR reprocess failed: 273210041
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273210041.json.tmp' -> 'cfb\\json\\final\\273210041.json'
+2026-06-23 21:36:42,074 ERROR reprocess failed: 273210135
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273210135.json.tmp' -> 'cfb\\json\\final\\273210135.json'
+2026-06-23 21:36:43,452 ERROR reprocess failed: 273210059
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273210059.json.tmp' -> 'cfb\\json\\final\\273210059.json'
+2026-06-23 21:36:45,796 ERROR reprocess failed: 273210008
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273210008.json.tmp' -> 'cfb\\json\\final\\273210008.json'
+2026-06-23 21:36:45,920 ERROR reprocess failed: 273210166
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273210166.json.tmp' -> 'cfb\\json\\final\\273210166.json'
+2026-06-23 21:36:46,081 ERROR reprocess failed: 273210242
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273210242.json.tmp' -> 'cfb\\json\\final\\273210242.json'
+2026-06-23 21:36:48,711 ERROR reprocess failed: 273210084
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273210084.json.tmp' -> 'cfb\\json\\final\\273210084.json'
+2026-06-23 21:36:50,532 ERROR reprocess failed: 273210264
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273210264.json.tmp' -> 'cfb\\json\\final\\273210264.json'
+2026-06-23 21:36:51,155 ERROR reprocess failed: 273212426
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273212426.json.tmp' -> 'cfb\\json\\final\\273212426.json'
+2026-06-23 21:36:51,859 ERROR reprocess failed: 273212294
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273212294.json.tmp' -> 'cfb\\json\\final\\273212294.json'
+2026-06-23 21:36:53,101 ERROR reprocess failed: 273210254
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273210254.json.tmp' -> 'cfb\\json\\final\\273210254.json'
+2026-06-23 21:36:53,716 ERROR reprocess failed: 273210265
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273210265.json.tmp' -> 'cfb\\json\\final\\273210265.json'
+2026-06-23 21:36:55,842 ERROR reprocess failed: 273212628
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273212628.json.tmp' -> 'cfb\\json\\final\\273212628.json'
+2026-06-23 21:36:56,504 ERROR reprocess failed: 273242653
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273242653.json.tmp' -> 'cfb\\json\\final\\273242653.json'
+2026-06-23 21:36:58,435 ERROR reprocess failed: 273270099
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273270099.json.tmp' -> 'cfb\\json\\final\\273270099.json'
+2026-06-23 21:36:59,326 ERROR reprocess failed: 273270062
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273270062.json.tmp' -> 'cfb\\json\\final\\273270062.json'
+2026-06-23 21:37:01,234 ERROR reprocess failed: 273270038
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273270038.json.tmp' -> 'cfb\\json\\final\\273270038.json'
+2026-06-23 21:37:03,523 ERROR reprocess failed: 273282305
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273282305.json.tmp' -> 'cfb\\json\\final\\273282305.json'
+2026-06-23 21:37:04,373 ERROR reprocess failed: 273280258
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273280258.json.tmp' -> 'cfb\\json\\final\\273280258.json'
+2026-06-23 21:37:06,816 ERROR reprocess failed: 273280057
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273280057.json.tmp' -> 'cfb\\json\\final\\273280057.json'
+2026-06-23 21:37:11,709 ERROR reprocess failed: 273280151
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273280151.json.tmp' -> 'cfb\\json\\final\\273280151.json'
+2026-06-23 21:37:14,320 ERROR reprocess failed: 273280238
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273280238.json.tmp' -> 'cfb\\json\\final\\273280238.json'
+2026-06-23 21:37:14,398 ERROR reprocess failed: 273280235
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273280235.json.tmp' -> 'cfb\\json\\final\\273280235.json'
+2026-06-23 21:37:14,497 ERROR reprocess failed: 273280242
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273280242.json.tmp' -> 'cfb\\json\\final\\273280242.json'
+2026-06-23 21:37:14,870 ERROR reprocess failed: 273282116
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273282116.json.tmp' -> 'cfb\\json\\final\\273282116.json'
+2026-06-23 21:37:16,905 ERROR reprocess failed: 273282572
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273282572.json.tmp' -> 'cfb\\json\\final\\273282572.json'
+2026-06-23 21:37:17,216 ERROR reprocess failed: 273280024
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273280024.json.tmp' -> 'cfb\\json\\final\\273280024.json'
+2026-06-23 21:37:17,634 ERROR reprocess failed: 273280153
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273280153.json.tmp' -> 'cfb\\json\\final\\273280153.json'
+2026-06-23 21:37:19,189 ERROR reprocess failed: 273280249
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273280249.json.tmp' -> 'cfb\\json\\final\\273280249.json'
+2026-06-23 21:37:19,330 ERROR reprocess failed: 273280021
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273280021.json.tmp' -> 'cfb\\json\\final\\273280021.json'
+2026-06-23 21:37:19,741 ERROR reprocess failed: 273280264
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273280264.json.tmp' -> 'cfb\\json\\final\\273280264.json'
+2026-06-23 21:37:20,379 ERROR reprocess failed: 273280309
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273280309.json.tmp' -> 'cfb\\json\\final\\273280309.json'
+2026-06-23 21:37:21,543 ERROR reprocess failed: 273330097
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273330097.json.tmp' -> 'cfb\\json\\final\\273330097.json'
+2026-06-23 21:37:21,876 ERROR reprocess failed: 273340166
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273340166.json.tmp' -> 'cfb\\json\\final\\273340166.json'
+2026-06-23 21:37:22,600 ERROR reprocess failed: 273350142
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273350142.json.tmp' -> 'cfb\\json\\final\\273350142.json'
+2026-06-23 21:37:24,212 ERROR reprocess failed: 273350099
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273350099.json.tmp' -> 'cfb\\json\\final\\273350099.json'
+2026-06-23 21:37:24,299 ERROR reprocess failed: 273350103
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273350103.json.tmp' -> 'cfb\\json\\final\\273350103.json'
+2026-06-23 21:37:24,977 ERROR reprocess failed: 273350030
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273350030.json.tmp' -> 'cfb\\json\\final\\273350030.json'
+2026-06-23 21:37:27,004 ERROR reprocess failed: 273352483
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273352483.json.tmp' -> 'cfb\\json\\final\\273352483.json'
+2026-06-23 21:37:27,421 ERROR reprocess failed: 273350021
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273350021.json.tmp' -> 'cfb\\json\\final\\273350021.json'
+2026-06-23 21:37:28,428 ERROR reprocess failed: 273352117
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273352117.json.tmp' -> 'cfb\\json\\final\\273352117.json'
+2026-06-23 21:37:29,507 ERROR reprocess failed: 273352426
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273352426.json.tmp' -> 'cfb\\json\\final\\273352426.json'
+2026-06-23 21:37:31,625 ERROR reprocess failed: 273350024
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273350024.json.tmp' -> 'cfb\\json\\final\\273350024.json'
+2026-06-23 21:37:31,949 ERROR reprocess failed: 273542426
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273542426.json.tmp' -> 'cfb\\json\\final\\273542426.json'
+2026-06-23 21:37:34,005 ERROR reprocess failed: 273562132
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273562132.json.tmp' -> 'cfb\\json\\final\\273562132.json'
+2026-06-23 21:37:34,702 ERROR reprocess failed: 273560167
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273560167.json.tmp' -> 'cfb\\json\\final\\273560167.json'
+2026-06-23 21:37:36,687 ERROR reprocess failed: 273610251
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273610251.json.tmp' -> 'cfb\\json\\final\\273610251.json'
+2026-06-23 21:37:37,478 ERROR reprocess failed: 273620127
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273620127.json.tmp' -> 'cfb\\json\\final\\273620127.json'
+2026-06-23 21:37:39,208 ERROR reprocess failed: 273630154
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273630154.json.tmp' -> 'cfb\\json\\final\\273630154.json'
+2026-06-23 21:37:40,242 ERROR reprocess failed: 273630344
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273630344.json.tmp' -> 'cfb\\json\\final\\273630344.json'
+2026-06-23 21:37:40,527 ERROR reprocess failed: 273630245
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273630245.json.tmp' -> 'cfb\\json\\final\\273630245.json'
+2026-06-23 21:37:40,580 ERROR reprocess failed: 273640038
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273640038.json.tmp' -> 'cfb\\json\\final\\273640038.json'
+2026-06-23 21:37:42,635 ERROR reprocess failed: 273652483
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273652483.json.tmp' -> 'cfb\\json\\final\\273652483.json'
+2026-06-23 21:37:44,057 ERROR reprocess failed: 273650052
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273650052.json.tmp' -> 'cfb\\json\\final\\273650052.json'
+2026-06-23 21:37:45,758 ERROR reprocess failed: 273650197
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\273650197.json.tmp' -> 'cfb\\json\\final\\273650197.json'
+2026-06-23 21:37:45,835 ERROR reprocess failed: 280010061
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\280010061.json.tmp' -> 'cfb\\json\\final\\280010061.json'
+2026-06-23 21:37:46,591 ERROR reprocess failed: 280010030
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\280010030.json.tmp' -> 'cfb\\json\\final\\280010030.json'
+2026-06-23 21:37:48,381 ERROR reprocess failed: 280010258
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\280010258.json.tmp' -> 'cfb\\json\\final\\280010258.json'
+2026-06-23 21:37:49,008 ERROR reprocess failed: 280020201
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\280020201.json.tmp' -> 'cfb\\json\\final\\280020201.json'
+2026-06-23 21:37:50,843 ERROR reprocess failed: 280070194
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 126, in reprocess_game
+    write_json_atomic(result, str(FINAL_DIR / f"{game_id}.json"))
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 84, in write_json_atomic
+    os.replace(tmp, path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'cfb\\json\\final\\280070194.json.tmp' -> 'cfb\\json\\final\\280070194.json'
