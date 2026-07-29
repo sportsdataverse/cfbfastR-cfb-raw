@@ -1,0 +1,529 @@
+[2026-07-29T03:06:42Z] === rescrape start 2004..2025 workers=12 retries=2 force=0 git=0 py=./.venv/Scripts/python.exe ===
+[2026-07-29T03:06:42Z] --- preflight: interpreter + sportsdataverse build ---
+[2026-07-29T03:06:42Z] --- preflight: interpreter + sportsdataverse build ---
+  python : C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Scripts\python.exe
+  sdv    : C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\__init__.py
+  build  : OK
+  proxy: 50 ips, ~14.24 GB remaining
+[2026-07-29T03:06:46Z] --- season 2004: refreshing schedule ---
+2026-07-28 23:07:00,028 INFO schedules 2004: 712 games
+[2026-07-29T03:07:00Z] --- season 2004: rescraping all games (raw+final+participants+rosters+extras) ---
+2026-07-28 23:07:02,488 INFO season 2004: 712 games to scrape (rescrape=True)
+cfb 2004:   0%|          | 0/712 [00:00<?, ?it/s]2026-07-28 23:07:09,200 ERROR extra fetch failed: _rosters(242462199,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/242462199/competitions/242462199/competitors
+ERROR:cfb_json_2004:extra fetch failed: _rosters(242462199,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/242462199/competitions/242462199/competitors
+cfb 2004:   0%|          | 1/712 [00:06<1:18:50,  6.65s/it]cfb 2004:   0%|          | 2/712 [00:11<1:03:31,  5.37s/it]cfb 2004:   0%|          | 3/712 [00:15<55:32,  4.70s/it]  cfb 2004:   1%|          | 4/712 [00:18<50:38,  4.29s/it]cfb 2004:   1%|          | 5/712 [00:19<36:27,  3.09s/it]cfb 2004:   1%|          | 6/712 [00:19<25:06,  2.13s/it]cfb 2004:   1%|          | 8/712 [00:21<17:04,  1.45s/it]cfb 2004:   1%|▏         | 9/712 [00:22<16:12,  1.38s/it]cfb 2004:   1%|▏         | 10/712 [00:24<17:32,  1.50s/it]cfb 2004:   2%|▏         | 11/712 [00:24<14:17,  1.22s/it]cfb 2004:   2%|▏         | 12/712 [00:25<13:19,  1.14s/it]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=242482005&1785294442490) [status retry 1/4]
+WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=242482005&1785294442490) [status retry 2/4]
+WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=242482005&1785294442490) [status retry 3/4]
+cfb 2004:   2%|▏         | 13/712 [00:27<15:19,  1.32s/it]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=242482005&1785294442490) [status retry 4/4]
+WARNING:sdv.dl_utils:retryable status 500 persisted after 4 retries; returning to caller for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=242482005&1785294442490)
+2026-07-28 23:07:33,420 WARNING REFUSED degraded write cfb\json\raw\242482005.json: 415127 -> 251 bytes (0% of existing); keeping banked copy
+WARNING:cfb_json_2004:REFUSED degraded write cfb\json\raw\242482005.json: 415127 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-28 23:07:33,420 WARNING degraded summary for 242482005 (proxy=154.81.58.224:60099) -- keeping banked copy, skipping game
+WARNING:cfb_json_2004:degraded summary for 242482005 (proxy=154.81.58.224:60099) -- keeping banked copy, skipping game
+cfb 2004:   2%|▏         | 14/712 [00:30<21:49,  1.88s/it]cfb 2004:   2%|▏         | 15/712 [00:32<21:35,  1.86s/it]cfb 2004:   2%|▏         | 16/712 [00:34<20:17,  1.75s/it]cfb 2004:   2%|▏         | 17/712 [00:35<18:49,  1.62s/it]cfb 2004:   3%|▎         | 19/712 [00:36<14:07,  1.22s/it]cfb 2004:   3%|▎         | 20/712 [00:38<14:26,  1.25s/it]cfb 2004:   3%|▎         | 21/712 [00:40<16:34,  1.44s/it]cfb 2004:   3%|▎         | 22/712 [00:41<16:18,  1.42s/it]cfb 2004:   3%|▎         | 23/712 [00:45<23:31,  2.05s/it]cfb 2004:   3%|▎         | 24/712 [00:46<20:48,  1.82s/it]cfb 2004:   4%|▎         | 25/712 [00:46<15:23,  1.34s/it]cfb 2004:   4%|▎         | 26/712 [00:47<12:34,  1.10s/it]cfb 2004:   4%|▍         | 27/712 [00:47<09:18,  1.23it/s]cfb 2004:   4%|▍         | 28/712 [00:47<07:33,  1.51it/s]cfb 2004:   4%|▍         | 29/712 [00:49<09:47,  1.16it/s]cfb 2004:   4%|▍         | 30/712 [00:49<07:59,  1.42it/s]cfb 2004:   4%|▍         | 31/712 [00:51<14:08,  1.25s/it]cfb 2004:   4%|▍         | 32/712 [00:53<15:53,  1.40s/it]cfb 2004:   5%|▍         | 33/712 [00:54<13:24,  1.18s/it]cfb 2004:   5%|▍         | 34/712 [00:54<10:25,  1.08it/s]cfb 2004:   5%|▍         | 35/712 [00:57<16:06,  1.43s/it]cfb 2004:   5%|▌         | 36/712 [00:58<14:03,  1.25s/it]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=242480145&1785294476399) [status retry 1/4]
+cfb 2004:   5%|▌         | 37/712 [01:00<18:28,  1.64s/it]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=242480145&1785294476399) [status retry 2/4]
+WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=242480145&1785294476399) [status retry 3/4]
+cfb 2004:   5%|▌         | 38/712 [01:01<16:02,  1.43s/it]cfb 2004:   5%|▌         | 39/712 [01:02<14:30,  1.29s/it]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=242480145&1785294476399) [status retry 4/4]
+cfb 2004:   6%|▌         | 40/712 [01:03<14:37,  1.31s/it]cfb 2004:   6%|▌         | 41/712 [01:05<14:54,  1.33s/it]WARNING:sdv.dl_utils:retryable status 500 persisted after 4 retries; returning to caller for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=242480145&1785294476399)
+2026-07-28 23:08:09,321 ERROR download_game failed: 242480145
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 114, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7051, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 844, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1466, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 242480145 has no header.competitions; cannot build play-by-play.
+ERROR:cfb_json_2004:download_game failed: 242480145
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 114, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7051, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 844, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1466, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 242480145 has no header.competitions; cannot build play-by-play.
+cfb 2004:   6%|▌         | 42/712 [01:06<15:23,  1.38s/it]cfb 2004:   6%|▌         | 43/712 [01:07<12:15,  1.10s/it]cfb 2004:   6%|▌         | 44/712 [01:08<12:59,  1.17s/it]cfb 2004:   6%|▋         | 45/712 [01:11<17:57,  1.62s/it]cfb 2004:   6%|▋         | 46/712 [01:11<13:27,  1.21s/it]cfb 2004:   7%|▋         | 47/712 [01:12<13:24,  1.21s/it]2026-07-28 23:08:15,234 ERROR extra fetch failed: _rosters(242480057,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/242480057/competitions/242480057/competitors
+ERROR:cfb_json_2004:extra fetch failed: _rosters(242480057,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/242480057/competitions/242480057/competitors
+cfb 2004:   7%|▋         | 49/712 [01:13<09:32,  1.16it/s]cfb 2004:   7%|▋         | 50/712 [01:14<09:19,  1.18it/s]cfb 2004:   7%|▋         | 51/712 [01:16<13:00,  1.18s/it]cfb 2004:   7%|▋         | 52/712 [01:18<16:10,  1.47s/it]cfb 2004:   7%|▋         | 53/712 [01:21<21:27,  1.95s/it]2026-07-28 23:08:25,692 ERROR extra fetch failed: _rosters(242502390,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/242502390/competitions/242502390/competitors
+ERROR:cfb_json_2004:extra fetch failed: _rosters(242502390,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/242502390/competitions/242502390/competitors
+cfb 2004:   8%|▊         | 54/712 [01:23<19:03,  1.74s/it]cfb 2004:   8%|▊         | 55/712 [01:23<15:59,  1.46s/it]2026-07-28 23:08:26,720 ERROR extra fetch failed: _rosters(242500058,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/242500058/competitions/242500058/competitors
+ERROR:cfb_json_2004:extra fetch failed: _rosters(242500058,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/242500058/competitions/242500058/competitors
+cfb 2004:   8%|▊         | 56/712 [01:24<12:04,  1.10s/it]cfb 2004:   8%|▊         | 57/712 [01:26<17:06,  1.57s/it]cfb 2004:   8%|▊         | 58/712 [01:28<17:43,  1.63s/it]cfb 2004:   8%|▊         | 59/712 [01:28<13:33,  1.25s/it]cfb 2004:   8%|▊         | 60/712 [01:29<11:06,  1.02s/it]cfb 2004:   9%|▊         | 61/712 [01:31<13:16,  1.22s/it]cfb 2004:   9%|▊         | 62/712 [01:31<09:57,  1.09it/s]cfb 2004:   9%|▉         | 63/712 [01:36<23:28,  2.17s/it]cfb 2004:   9%|▉         | 64/712 [01:39<26:00,  2.41s/it]cfb 2004:   9%|▉         | 65/712 [01:40<21:32,  2.00s/it]cfb 2004:   9%|▉         | 66/712 [01:42<22:14,  2.07s/it]cfb 2004:   9%|▉         | 67/712 [01:43<17:03,  1.59s/it]cfb 2004:  10%|▉         | 68/712 [01:45<19:26,  1.81s/it]cfb 2004:  10%|▉         | 70/712 [01:45<11:35,  1.08s/it]cfb 2004:  10%|▉         | 71/712 [01:46<11:01,  1.03s/it]cfb 2004:  10%|█         | 72/712 [01:48<13:54,  1.30s/it]cfb 2004:  10%|█         | 73/712 [01:49<11:36,  1.09s/it]cfb 2004:  10%|█         | 74/712 [01:53<20:18,  1.91s/it]cfb 2004:  11%|█         | 75/712 [01:54<16:25,  1.55s/it]cfb 2004:  11%|█         | 76/712 [01:58<25:07,  2.37s/it]cfb 2004:  11%|█         | 77/712 [01:59<21:12,  2.00s/it]cfb 2004:  11%|█         | 78/712 [01:59<15:23,  1.46s/it]cfb 2004:  11%|█         | 79/712 [01:59<11:09,  1.06s/it]cfb 2004:  11%|█         | 80/712 [01:59<08:13,  1.28it/s]cfb 2004:  11%|█▏        | 81/712 [02:02<12:53,  1.23s/it]cfb 2004:  12%|█▏        | 82/712 [02:02<10:10,  1.03it/s]cfb 2004:  12%|█▏        | 83/712 [02:03<09:36,  1.09it/s]cfb 2004:  12%|█▏        | 84/712 [02:07<20:48,  1.99s/it]cfb 2004:  12%|█▏        | 85/712 [02:08<15:10,  1.45s/it]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=242550158&1785294545172) [status retry 1/4]
+WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=242550158&1785294545172) [status retry 2/4]
+WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=242550158&1785294545172) [status retry 3/4]
+WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=242550158&1785294545172) [status retry 4/4]
+cfb 2004:  12%|█▏        | 86/712 [02:12<25:27,  2.44s/it]cfb 2004:  12%|█▏        | 87/712 [02:13<20:56,  2.01s/it]cfb 2004:  12%|█▏        | 88/712 [02:14<15:43,  1.51s/it]cfb 2004:  12%|█▎        | 89/712 [02:14<12:06,  1.17s/it]WARNING:sdv.dl_utils:retryable status 500 persisted after 4 retries; returning to caller for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=242550158&1785294545172)
+2026-07-28 23:09:18,469 WARNING REFUSED degraded write cfb\json\raw\242550158.json: 439020 -> 251 bytes (0% of existing); keeping banked copy
+WARNING:cfb_json_2004:REFUSED degraded write cfb\json\raw\242550158.json: 439020 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-28 23:09:18,469 WARNING degraded summary for 242550158 (proxy=154.81.58.216:60099) -- keeping banked copy, skipping game
+WARNING:cfb_json_2004:degraded summary for 242550158 (proxy=154.81.58.216:60099) -- keeping banked copy, skipping game
+cfb 2004:  13%|█▎        | 90/712 [02:15<12:38,  1.22s/it]cfb 2004:  13%|█▎        | 91/712 [02:16<09:39,  1.07it/s]cfb 2004:  13%|█▎        | 92/712 [02:16<09:12,  1.12it/s]cfb 2004:  13%|█▎        | 93/712 [02:17<06:59,  1.48it/s]cfb 2004:  13%|█▎        | 94/712 [02:17<06:15,  1.65it/s]cfb 2004:  13%|█▎        | 95/712 [02:18<05:39,  1.82it/s]cfb 2004:  13%|█▎        | 96/712 [02:19<08:05,  1.27it/s]cfb 2004:  14%|█▎        | 97/712 [02:21<11:17,  1.10s/it]cfb 2004:  14%|█▍        | 98/712 [02:21<08:19,  1.23it/s]cfb 2004:  14%|█▍        | 99/712 [02:23<12:01,  1.18s/it]cfb 2004:  14%|█▍        | 100/712 [02:24<10:44,  1.05s/it]cfb 2004:  14%|█▍        | 101/712 [02:24<08:11,  1.24it/s]cfb 2004:  14%|█▍        | 102/712 [02:26<13:43,  1.35s/it]cfb 2004:  14%|█▍        | 103/712 [02:27<10:01,  1.01it/s]cfb 2004:  15%|█▍        | 104/712 [02:30<17:49,  1.76s/it]cfb 2004:  15%|█▍        | 105/712 [02:32<18:22,  1.82s/it]cfb 2004:  15%|█▍        | 106/712 [02:33<16:25,  1.63s/it]cfb 2004:  15%|█▌        | 107/712 [02:34<12:47,  1.27s/it]cfb 2004:  15%|█▌        | 108/712 [02:34<09:43,  1.03it/s]cfb 2004:  15%|█▌        | 109/712 [02:34<07:23,  1.36it/s]cfb 2004:  15%|█▌        | 110/712 [02:35<08:48,  1.14it/s]cfb 2004:  16%|█▌        | 112/712 [02:38<09:35,  1.04it/s]cfb 2004:  16%|█▌        | 113/712 [02:39<10:21,  1.04s/it]cfb 2004:  16%|█▌        | 114/712 [02:40<09:46,  1.02it/s]cfb 2004:  16%|█▌        | 115/712 [02:40<08:22,  1.19it/s]cfb 2004:  16%|█▋        | 116/712 [02:40<06:27,  1.54it/s]cfb 2004:  16%|█▋        | 117/712 [02:42<08:15,  1.20it/s]2026-07-28 23:09:44,906 ERROR extra fetch failed: _rosters(242602572,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/242602572/competitions/242602572/competitors
+ERROR:cfb_json_2004:extra fetch failed: _rosters(242602572,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/242602572/competitions/242602572/competitors
+cfb 2004:  17%|█▋        | 118/712 [02:42<06:51,  1.44it/s]cfb 2004:  17%|█▋        | 119/712 [02:42<05:46,  1.71it/s]cfb 2004:  17%|█▋        | 120/712 [02:46<14:05,  1.43s/it]cfb 2004:  17%|█▋        | 121/712 [02:47<14:42,  1.49s/it]cfb 2004:  17%|█▋        | 122/712 [02:48<10:59,  1.12s/it]cfb 2004:  17%|█▋        | 123/712 [02:48<08:19,  1.18it/s]cfb 2004:  17%|█▋        | 124/712 [02:48<06:36,  1.48it/s]cfb 2004:  18%|█▊        | 125/712 [02:53<19:13,  1.97s/it]cfb 2004:  18%|█▊        | 126/712 [02:53<13:59,  1.43s/it]cfb 2004:  18%|█▊        | 127/712 [02:55<16:25,  1.68s/it]WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.74', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/120841?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/120841?lang=en&region=us) [retry 1/15]
+WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.2', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/107775?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/107775?lang=en&region=us) [retry 1/15]
+WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.2', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/103592?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/103592?lang=en&region=us) [retry 1/2]
+WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.101', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/146649?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/146649?lang=en&region=us) [retry 1/2]
+WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.101', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/131186?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/131186?lang=en&region=us) [retry 1/15]
+WARNING:sdv.dl_utils:HTTPConnectionPool(host='154.81.58.253', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/154773?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/154773?lang=en&region=us) [retry 1/15]
+cfb 2004:  18%|█▊        | 128/712 [03:02<29:45,  3.06s/it]cfb 2004:  18%|█▊        | 129/712 [03:04<27:45,  2.86s/it]cfb 2004:  18%|█▊        | 130/712 [03:05<22:49,  2.35s/it]cfb 2004:  18%|█▊        | 131/712 [03:06<16:36,  1.72s/it]cfb 2004:  19%|█▊        | 132/712 [03:07<14:58,  1.55s/it]cfb 2004:  19%|█▊        | 133/712 [03:07<10:54,  1.13s/it]cfb 2004:  19%|█▉        | 134/712 [03:07<07:57,  1.21it/s]cfb 2004:  19%|█▉        | 135/712 [03:09<11:52,  1.23s/it]cfb 2004:  19%|█▉        | 136/712 [03:13<19:27,  2.03s/it]cfb 2004:  19%|█▉        | 137/712 [03:14<16:12,  1.69s/it]cfb 2004:  19%|█▉        | 138/712 [03:15<14:49,  1.55s/it]cfb 2004:  20%|█▉        | 139/712 [03:17<14:18,  1.50s/it]cfb 2004:  20%|█▉        | 140/712 [03:19<16:25,  1.72s/it]cfb 2004:  20%|█▉        | 141/712 [03:20<14:01,  1.47s/it]cfb 2004:  20%|█▉        | 142/712 [03:21<13:00,  1.37s/it]cfb 2004:  20%|██        | 143/712 [03:26<23:02,  2.43s/it]cfb 2004:  20%|██        | 144/712 [03:26<17:23,  1.84s/it]cfb 2004:  20%|██        | 145/712 [03:28<18:38,  1.97s/it]cfb 2004:  21%|██        | 146/712 [03:29<14:35,  1.55s/it]cfb 2004:  21%|██        | 147/712 [03:31<15:20,  1.63s/it]cfb 2004:  21%|██        | 148/712 [03:31<12:03,  1.28s/it]cfb 2004:  21%|██        | 149/712 [03:32<09:44,  1.04s/it]cfb 2004:  21%|██        | 150/712 [03:33<09:09,  1.02it/s]cfb 2004:  21%|██        | 151/712 [03:36<15:31,  1.66s/it]cfb 2004:  21%|██▏       | 152/712 [03:39<19:37,  2.10s/it]cfb 2004:  21%|██▏       | 153/712 [03:40<17:57,  1.93s/it]cfb 2004:  22%|██▏       | 154/712 [03:41<14:42,  1.58s/it]cfb 2004:  22%|██▏       | 155/712 [03:42<12:42,  1.37s/it]cfb 2004:  22%|██▏       | 156/712 [03:44<13:00,  1.40s/it]cfb 2004:  22%|██▏       | 157/712 [03:45<13:27,  1.46s/it]cfb 2004:  22%|██▏       | 158/712 [03:47<13:17,  1.44s/it]cfb 2004:  22%|██▏       | 159/712 [03:47<09:49,  1.07s/it]cfb 2004:  22%|██▏       | 160/712 [03:48<08:59,  1.02it/s]cfb 2004:  23%|██▎       | 161/712 [03:52<17:34,  1.91s/it]cfb 2004:  23%|██▎       | 162/712 [03:52<12:58,  1.41s/it]cfb 2004:  23%|██▎       | 163/712 [03:53<12:24,  1.36s/it]cfb 2004:  23%|██▎       | 164/712 [03:54<10:08,  1.11s/it]cfb 2004:  23%|██▎       | 165/712 [03:55<10:10,  1.12s/it]cfb 2004:  23%|██▎       | 166/712 [03:58<15:33,  1.71s/it]cfb 2004:  23%|██▎       | 167/712 [04:00<16:54,  1.86s/it]cfb 2004:  24%|██▎       | 168/712 [04:01<14:46,  1.63s/it]cfb 2004:  24%|██▎       | 169/712 [04:01<11:08,  1.23s/it]cfb 2004:  24%|██▍       | 170/712 [04:05<18:21,  2.03s/it]cfb 2004:  24%|██▍       | 171/712 [04:08<18:37,  2.07s/it]cfb 2004:  24%|██▍       | 174/712 [04:08<09:25,  1.05s/it]2026-07-28 23:11:12,419 ERROR extra fetch failed: _rosters(242622655,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/242622655/competitions/242622655/competitors
+ERROR:cfb_json_2004:extra fetch failed: _rosters(242622655,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/242622655/competitions/242622655/competitors
+cfb 2004:  25%|██▍       | 175/712 [04:09<09:26,  1.05s/it]cfb 2004:  25%|██▍       | 176/712 [04:12<12:38,  1.42s/it]cfb 2004:  25%|██▌       | 178/712 [04:13<10:10,  1.14s/it]cfb 2004:  25%|██▌       | 179/712 [04:14<08:29,  1.05it/s]cfb 2004:  25%|██▌       | 180/712 [04:14<07:23,  1.20it/s]cfb 2004:  25%|██▌       | 181/712 [04:18<14:16,  1.61s/it]cfb 2004:  26%|██▌       | 182/712 [04:20<14:55,  1.69s/it]cfb 2004:  26%|██▌       | 183/712 [04:22<15:24,  1.75s/it]cfb 2004:  26%|██▌       | 184/712 [04:22<11:59,  1.36s/it]cfb 2004:  26%|██▌       | 185/712 [04:22<08:57,  1.02s/it]cfb 2004:  26%|██▌       | 186/712 [04:24<10:25,  1.19s/it]cfb 2004:  26%|██▋       | 187/712 [04:25<10:25,  1.19s/it]cfb 2004:  27%|██▋       | 189/712 [04:33<21:10,  2.43s/it]cfb 2004:  27%|██▋       | 190/712 [04:35<19:24,  2.23s/it]cfb 2004:  27%|██▋       | 191/712 [04:35<16:00,  1.84s/it]cfb 2004:  27%|██▋       | 192/712 [04:38<18:40,  2.16s/it]cfb 2004:  27%|██▋       | 193/712 [04:40<16:43,  1.93s/it]cfb 2004:  27%|██▋       | 194/712 [04:40<12:24,  1.44s/it]cfb 2004:  27%|██▋       | 195/712 [04:40<09:49,  1.14s/it]cfb 2004:  28%|██▊       | 196/712 [04:44<17:00,  1.98s/it]cfb 2004:  28%|██▊       | 197/712 [04:45<13:45,  1.60s/it]cfb 2004:  28%|██▊       | 198/712 [04:48<16:18,  1.90s/it]cfb 2004:  28%|██▊       | 199/712 [04:48<12:36,  1.48s/it]cfb 2004:  28%|██▊       | 200/712 [04:50<12:36,  1.48s/it]cfb 2004:  28%|██▊       | 201/712 [04:54<18:58,  2.23s/it]cfb 2004:  28%|██▊       | 202/712 [04:54<14:51,  1.75s/it]cfb 2004:  29%|██▊       | 203/712 [04:55<12:27,  1.47s/it]cfb 2004:  29%|██▊       | 204/712 [04:56<10:43,  1.27s/it]cfb 2004:  29%|██▉       | 205/712 [04:59<16:18,  1.93s/it]cfb 2004:  29%|██▉       | 206/712 [05:00<13:09,  1.56s/it]cfb 2004:  29%|██▉       | 207/712 [05:03<16:32,  1.96s/it]cfb 2004:  29%|██▉       | 208/712 [05:04<15:09,  1.81s/it]cfb 2004:  29%|██▉       | 209/712 [05:05<11:34,  1.38s/it]cfb 2004:  29%|██▉       | 210/712 [05:07<13:05,  1.56s/it]cfb 2004:  30%|██▉       | 211/712 [05:07<10:30,  1.26s/it]2026-07-28 23:12:10,648 ERROR extra fetch failed: _rosters(242690005,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/242690005/competitions/242690005/competitors
+ERROR:cfb_json_2004:extra fetch failed: _rosters(242690005,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/242690005/competitions/242690005/competitors
+cfb 2004:  30%|██▉       | 212/712 [05:08<08:05,  1.03it/s]cfb 2004:  30%|██▉       | 213/712 [05:09<08:21,  1.01s/it]cfb 2004:  30%|███       | 214/712 [05:10<08:47,  1.06s/it]2026-07-28 23:12:13,166 ERROR extra fetch failed: _rosters(242690195,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/242690195/competitions/242690195/competitors
+ERROR:cfb_json_2004:extra fetch failed: _rosters(242690195,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/242690195/competitions/242690195/competitors
+cfb 2004:  30%|███       | 215/712 [05:10<06:44,  1.23it/s]cfb 2004:  30%|███       | 216/712 [05:10<05:36,  1.47it/s]cfb 2004:  30%|███       | 217/712 [05:12<08:38,  1.05s/it]cfb 2004:  31%|███       | 219/712 [05:16<12:06,  1.47s/it]cfb 2004:  31%|███       | 220/712 [05:18<12:17,  1.50s/it]cfb 2004:  31%|███       | 221/712 [05:19<11:56,  1.46s/it]cfb 2004:  31%|███       | 222/712 [05:20<09:38,  1.18s/it]cfb 2004:  31%|███▏      | 223/712 [05:23<13:36,  1.67s/it]cfb 2004:  31%|███▏      | 224/712 [05:24<12:27,  1.53s/it]cfb 2004:  32%|███▏      | 226/712 [05:25<08:26,  1.04s/it]cfb 2004:  32%|███▏      | 227/712 [05:25<07:44,  1.05it/s]cfb 2004:  32%|███▏      | 228/712 [05:26<06:12,  1.30it/s]cfb 2004:  32%|███▏      | 229/712 [05:28<10:29,  1.30s/it]cfb 2004:  32%|███▏      | 230/712 [05:31<13:00,  1.62s/it]cfb 2004:  32%|███▏      | 231/712 [05:31<10:12,  1.27s/it]cfb 2004:  33%|███▎      | 232/712 [05:32<09:37,  1.20s/it]cfb 2004:  33%|███▎      | 233/712 [05:32<07:10,  1.11it/s]cfb 2004:  33%|███▎      | 234/712 [05:34<09:17,  1.17s/it]cfb 2004:  33%|███▎      | 235/712 [05:35<08:47,  1.11s/it]cfb 2004:  33%|███▎      | 237/712 [05:36<06:20,  1.25it/s]cfb 2004:  33%|███▎      | 238/712 [05:37<05:55,  1.33it/s]cfb 2004:  34%|███▎      | 239/712 [05:39<09:48,  1.24s/it]cfb 2004:  34%|███▎      | 240/712 [05:47<23:34,  3.00s/it]cfb 2004:  34%|███▍      | 241/712 [05:49<20:53,  2.66s/it]cfb 2004:  34%|███▍      | 242/712 [05:50<18:00,  2.30s/it]cfb 2004:  34%|███▍      | 243/712 [05:54<20:49,  2.66s/it]cfb 2004:  34%|███▍      | 244/712 [05:54<16:10,  2.07s/it]cfb 2004:  34%|███▍      | 245/712 [05:56<15:52,  2.04s/it]WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.123', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/teams/356?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/teams/356?lang=en&region=us) [retry 1/15]
+WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.213', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/146370?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/146370?lang=en&region=us) [retry 1/2]
+WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.101', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/120356?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/120356?lang=en&region=us) [retry 1/15]
+WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.24', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/107612?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/107612?lang=en&region=us) [retry 1/2]
+WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.2', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/146532?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/146532?lang=en&region=us) [retry 1/2]
+cfb 2004:  35%|███▍      | 246/712 [05:58<15:49,  2.04s/it]cfb 2004:  35%|███▍      | 247/712 [05:59<11:36,  1.50s/it]cfb 2004:  35%|███▍      | 248/712 [06:00<12:15,  1.58s/it]cfb 2004:  35%|███▍      | 249/712 [06:01<10:38,  1.38s/it]cfb 2004:  35%|███▌      | 250/712 [06:01<07:55,  1.03s/it]cfb 2004:  35%|███▌      | 251/712 [06:02<06:02,  1.27it/s]cfb 2004:  35%|███▌      | 252/712 [06:03<06:59,  1.10it/s]cfb 2004:  36%|███▌      | 253/712 [06:09<19:26,  2.54s/it]cfb 2004:  36%|███▌      | 254/712 [06:13<21:45,  2.85s/it]cfb 2004:  36%|███▌      | 255/712 [06:14<18:12,  2.39s/it]cfb 2004:  36%|███▌      | 256/712 [06:15<14:22,  1.89s/it]cfb 2004:  36%|███▌      | 257/712 [06:16<12:10,  1.61s/it]cfb 2004:  36%|███▌      | 258/712 [06:17<10:39,  1.41s/it]cfb 2004:  36%|███▋      | 259/712 [06:17<08:09,  1.08s/it]cfb 2004:  37%|███▋      | 260/712 [06:19<10:49,  1.44s/it]cfb 2004:  37%|███▋      | 261/712 [06:19<07:51,  1.05s/it]cfb 2004:  37%|███▋      | 262/712 [06:22<11:04,  1.48s/it]cfb 2004:  37%|███▋      | 263/712 [06:23<10:48,  1.44s/it]cfb 2004:  37%|███▋      | 264/712 [06:24<08:35,  1.15s/it]cfb 2004:  37%|███▋      | 265/712 [06:24<07:11,  1.03it/s]cfb 2004:  37%|███▋      | 266/712 [06:26<08:06,  1.09s/it]cfb 2004:  38%|███▊      | 267/712 [06:28<09:49,  1.32s/it]cfb 2004:  38%|███▊      | 268/712 [06:30<11:14,  1.52s/it]cfb 2004:  38%|███▊      | 269/712 [06:31<10:21,  1.40s/it]cfb 2004:  38%|███▊      | 270/712 [06:31<08:15,  1.12s/it]cfb 2004:  38%|███▊      | 271/712 [06:32<07:38,  1.04s/it]cfb 2004:  38%|███▊      | 272/712 [06:35<12:04,  1.65s/it]cfb 2004:  38%|███▊      | 273/712 [06:35<08:39,  1.18s/it]cfb 2004:  38%|███▊      | 274/712 [06:39<14:05,  1.93s/it]cfb 2004:  39%|███▊      | 275/712 [06:39<11:06,  1.53s/it]cfb 2004:  39%|███▉      | 276/712 [06:40<09:23,  1.29s/it]cfb 2004:  39%|███▉      | 277/712 [06:41<09:08,  1.26s/it]cfb 2004:  39%|███▉      | 278/712 [06:46<16:43,  2.31s/it]cfb 2004:  39%|███▉      | 279/712 [06:48<15:23,  2.13s/it]cfb 2004:  39%|███▉      | 280/712 [06:48<11:23,  1.58s/it]cfb 2004:  39%|███▉      | 281/712 [06:48<08:11,  1.14s/it]cfb 2004:  40%|███▉      | 282/712 [06:51<11:40,  1.63s/it]cfb 2004:  40%|███▉      | 284/712 [06:51<06:52,  1.04it/s]cfb 2004:  40%|████      | 285/712 [06:52<06:19,  1.13it/s]cfb 2004:  40%|████      | 286/712 [06:52<05:09,  1.38it/s]cfb 2004:  40%|████      | 287/712 [06:53<04:38,  1.53it/s]cfb 2004:  40%|████      | 288/712 [06:56<09:06,  1.29s/it]cfb 2004:  41%|████      | 289/712 [06:56<06:57,  1.01it/s]cfb 2004:  41%|████      | 290/712 [06:57<06:10,  1.14it/s]cfb 2004:  41%|████      | 291/712 [06:59<09:43,  1.39s/it]cfb 2004:  41%|████      | 292/712 [07:02<12:37,  1.80s/it]cfb 2004:  41%|████      | 293/712 [07:02<09:41,  1.39s/it]cfb 2004:  41%|████▏     | 294/712 [07:03<07:56,  1.14s/it]cfb 2004:  41%|████▏     | 295/712 [07:10<19:38,  2.83s/it]cfb 2004:  42%|████▏     | 296/712 [07:10<13:57,  2.01s/it]cfb 2004:  42%|████▏     | 297/712 [07:12<13:25,  1.94s/it]cfb 2004:  42%|████▏     | 298/712 [07:12<10:34,  1.53s/it]cfb 2004:  42%|████▏     | 299/712 [07:14<11:53,  1.73s/it]cfb 2004:  42%|████▏     | 300/712 [07:17<13:00,  1.89s/it]cfb 2004:  42%|████▏     | 301/712 [07:18<12:32,  1.83s/it]cfb 2004:  42%|████▏     | 302/712 [07:19<09:12,  1.35s/it]cfb 2004:  43%|████▎     | 303/712 [07:19<07:46,  1.14s/it]cfb 2004:  43%|████▎     | 304/712 [07:23<12:34,  1.85s/it]cfb 2004:  43%|████▎     | 305/712 [07:23<09:45,  1.44s/it]cfb 2004:  43%|████▎     | 306/712 [07:24<09:02,  1.34s/it]cfb 2004:  43%|████▎     | 307/712 [07:25<07:17,  1.08s/it]cfb 2004:  43%|████▎     | 308/712 [07:26<07:32,  1.12s/it]cfb 2004:  43%|████▎     | 309/712 [07:30<12:30,  1.86s/it]cfb 2004:  44%|████▎     | 311/712 [07:30<07:34,  1.13s/it]cfb 2004:  44%|████▍     | 312/712 [07:32<09:29,  1.42s/it]cfb 2004:  44%|████▍     | 313/712 [07:34<09:02,  1.36s/it]cfb 2004:  44%|████▍     | 314/712 [07:35<08:32,  1.29s/it]cfb 2004:  44%|████▍     | 316/712 [07:36<07:14,  1.10s/it]cfb 2004:  45%|████▍     | 317/712 [07:37<07:04,  1.08s/it]cfb 2004:  45%|████▍     | 318/712 [07:38<06:51,  1.04s/it]cfb 2004:  45%|████▍     | 319/712 [07:39<05:37,  1.16it/s]cfb 2004:  45%|████▍     | 320/712 [07:40<05:48,  1.12it/s]cfb 2004:  45%|████▌     | 321/712 [07:40<04:32,  1.43it/s]cfb 2004:  45%|████▌     | 322/712 [07:41<05:07,  1.27it/s]cfb 2004:  45%|████▌     | 323/712 [07:42<04:50,  1.34it/s]cfb 2004:  46%|████▌     | 324/712 [07:44<08:57,  1.39s/it]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=242830066&1785294881964) [status retry 1/4]
+cfb 2004:  46%|████▌     | 325/712 [07:46<08:50,  1.37s/it]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=242830066&1785294881964) [status retry 2/4]
+WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=242830066&1785294881964) [status retry 3/4]
+cfb 2004:  46%|████▌     | 326/712 [07:47<08:22,  1.30s/it]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=242830066&1785294881964) [status retry 4/4]
+cfb 2004:  46%|████▌     | 327/712 [07:49<09:46,  1.52s/it]cfb 2004:  46%|████▌     | 328/712 [07:50<08:56,  1.40s/it]WARNING:sdv.dl_utils:retryable status 500 persisted after 4 retries; returning to caller for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=242830066&1785294881964)
+2026-07-28 23:14:55,127 ERROR download_game failed: 242830066
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 114, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7051, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 844, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1466, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 242830066 has no header.competitions; cannot build play-by-play.
+ERROR:cfb_json_2004:download_game failed: 242830066
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 114, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7051, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 844, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1466, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 242830066 has no header.competitions; cannot build play-by-play.
+cfb 2004:  46%|████▌     | 329/712 [07:52<10:00,  1.57s/it]cfb 2004:  46%|████▋     | 330/712 [07:54<10:30,  1.65s/it]cfb 2004:  46%|████▋     | 331/712 [07:56<11:35,  1.83s/it]cfb 2004:  47%|████▋     | 332/712 [07:57<10:20,  1.63s/it]cfb 2004:  47%|████▋     | 333/712 [07:58<08:11,  1.30s/it]cfb 2004:  47%|████▋     | 334/712 [07:59<07:03,  1.12s/it]cfb 2004:  47%|████▋     | 335/712 [07:59<06:09,  1.02it/s]cfb 2004:  47%|████▋     | 337/712 [08:00<04:00,  1.56it/s]cfb 2004:  47%|████▋     | 338/712 [08:04<10:07,  1.62s/it]cfb 2004:  48%|████▊     | 339/712 [08:05<08:08,  1.31s/it]cfb 2004:  48%|████▊     | 340/712 [08:07<10:24,  1.68s/it]cfb 2004:  48%|████▊     | 341/712 [08:09<09:25,  1.52s/it]cfb 2004:  48%|████▊     | 342/712 [08:11<11:54,  1.93s/it]cfb 2004:  48%|████▊     | 343/712 [08:14<12:24,  2.02s/it]cfb 2004:  48%|████▊     | 344/712 [08:14<09:33,  1.56s/it]cfb 2004:  48%|████▊     | 345/712 [08:16<10:19,  1.69s/it]cfb 2004:  49%|████▊     | 346/712 [08:16<07:45,  1.27s/it]cfb 2004:  49%|████▊     | 347/712 [08:21<13:34,  2.23s/it]cfb 2004:  49%|████▉     | 348/712 [08:22<11:36,  1.91s/it]cfb 2004:  49%|████▉     | 349/712 [08:25<13:42,  2.27s/it]cfb 2004:  49%|████▉     | 350/712 [08:26<11:16,  1.87s/it]cfb 2004:  49%|████▉     | 351/712 [08:27<09:00,  1.50s/it]cfb 2004:  49%|████▉     | 352/712 [08:27<07:01,  1.17s/it]cfb 2004:  50%|████▉     | 353/712 [08:29<07:35,  1.27s/it]cfb 2004:  50%|████▉     | 354/712 [08:31<09:13,  1.54s/it]cfb 2004:  50%|████▉     | 355/712 [08:31<07:31,  1.27s/it]cfb 2004:  50%|█████     | 356/712 [08:33<07:17,  1.23s/it]cfb 2004:  50%|█████     | 357/712 [08:36<11:14,  1.90s/it]cfb 2004:  50%|█████     | 358/712 [08:36<08:14,  1.40s/it]cfb 2004:  50%|█████     | 359/712 [08:39<09:44,  1.66s/it]cfb 2004:  51%|█████     | 360/712 [08:39<08:12,  1.40s/it]cfb 2004:  51%|█████     | 361/712 [08:42<09:50,  1.68s/it]cfb 2004:  51%|█████     | 362/712 [08:42<07:57,  1.36s/it]cfb 2004:  51%|█████     | 363/712 [08:44<08:43,  1.50s/it]cfb 2004:  51%|█████     | 364/712 [08:45<07:45,  1.34s/it]cfb 2004:  51%|█████▏    | 365/712 [08:47<07:53,  1.36s/it]cfb 2004:  51%|█████▏    | 366/712 [08:47<07:06,  1.23s/it]cfb 2004:  52%|█████▏    | 367/712 [08:48<06:27,  1.12s/it]cfb 2004:  52%|█████▏    | 368/712 [08:49<06:05,  1.06s/it]cfb 2004:  52%|█████▏    | 369/712 [08:50<06:07,  1.07s/it]cfb 2004:  52%|█████▏    | 370/712 [08:54<09:46,  1.71s/it]cfb 2004:  52%|█████▏    | 371/712 [08:54<07:31,  1.32s/it]cfb 2004:  52%|█████▏    | 373/712 [08:55<05:54,  1.05s/it]cfb 2004:  53%|█████▎    | 374/712 [08:56<05:41,  1.01s/it]WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.196', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/100266?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/100266?lang=en&region=us) [retry 1/2]
+WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.101', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/136723?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/136723?lang=en&region=us) [retry 1/15]
+WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.224', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/120474?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/120474?lang=en&region=us) [retry 1/2]
+WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.175', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/115718?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/115718?lang=en&region=us) [retry 1/2]
+WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.210', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/161676?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/161676?lang=en&region=us) [retry 1/2]
+cfb 2004:  53%|█████▎    | 375/712 [08:58<07:00,  1.25s/it]cfb 2004:  53%|█████▎    | 376/712 [08:59<06:32,  1.17s/it]cfb 2004:  53%|█████▎    | 377/712 [09:01<07:08,  1.28s/it]cfb 2004:  53%|█████▎    | 378/712 [09:01<05:25,  1.03it/s]cfb 2004:  53%|█████▎    | 379/712 [09:01<04:34,  1.21it/s]cfb 2004:  53%|█████▎    | 380/712 [09:03<05:33,  1.01s/it]cfb 2004:  54%|█████▎    | 381/712 [09:03<04:49,  1.14it/s]cfb 2004:  54%|█████▎    | 382/712 [09:05<06:24,  1.17s/it]cfb 2004:  54%|█████▍    | 383/712 [09:07<06:31,  1.19s/it]cfb 2004:  54%|█████▍    | 384/712 [09:07<05:26,  1.00it/s]cfb 2004:  54%|█████▍    | 386/712 [09:08<04:25,  1.23it/s]cfb 2004:  54%|█████▍    | 387/712 [09:10<05:20,  1.01it/s]cfb 2004:  54%|█████▍    | 388/712 [09:11<06:07,  1.13s/it]cfb 2004:  55%|█████▍    | 389/712 [09:12<05:32,  1.03s/it]cfb 2004:  55%|█████▍    | 390/712 [09:12<04:24,  1.22it/s]cfb 2004:  55%|█████▍    | 391/712 [09:14<05:15,  1.02it/s]cfb 2004:  55%|█████▌    | 393/712 [09:18<07:27,  1.40s/it]cfb 2004:  55%|█████▌    | 394/712 [09:19<07:32,  1.42s/it]cfb 2004:  55%|█████▌    | 395/712 [09:23<10:51,  2.06s/it]cfb 2004:  56%|█████▌    | 396/712 [09:28<15:25,  2.93s/it]cfb 2004:  56%|█████▌    | 397/712 [09:30<13:51,  2.64s/it]cfb 2004:  56%|█████▌    | 398/712 [09:32<13:12,  2.52s/it]cfb 2004:  56%|█████▌    | 399/712 [09:33<09:35,  1.84s/it]cfb 2004:  56%|█████▌    | 400/712 [09:33<07:02,  1.35s/it]cfb 2004:  56%|█████▋    | 401/712 [09:33<05:52,  1.13s/it]cfb 2004:  56%|█████▋    | 402/712 [09:34<04:46,  1.08it/s]cfb 2004:  57%|█████▋    | 403/712 [09:35<05:41,  1.11s/it]cfb 2004:  57%|█████▋    | 405/712 [09:36<03:41,  1.39it/s]cfb 2004:  57%|█████▋    | 406/712 [09:38<04:59,  1.02it/s]cfb 2004:  57%|█████▋    | 407/712 [09:42<09:19,  1.83s/it]cfb 2004:  57%|█████▋    | 408/712 [09:44<09:31,  1.88s/it]cfb 2004:  57%|█████▋    | 409/712 [09:47<11:00,  2.18s/it]cfb 2004:  58%|█████▊    | 411/712 [09:49<08:14,  1.64s/it]cfb 2004:  58%|█████▊    | 412/712 [09:52<09:40,  1.93s/it]cfb 2004:  58%|█████▊    | 413/712 [09:53<08:56,  1.79s/it]cfb 2004:  58%|█████▊    | 414/712 [09:54<07:25,  1.49s/it]cfb 2004:  58%|█████▊    | 415/712 [09:56<08:00,  1.62s/it]cfb 2004:  58%|█████▊    | 416/712 [09:56<06:13,  1.26s/it]cfb 2004:  59%|█████▊    | 417/712 [09:56<04:46,  1.03it/s]cfb 2004:  59%|█████▊    | 418/712 [09:57<04:06,  1.19it/s]cfb 2004:  59%|█████▉    | 419/712 [09:58<04:37,  1.06it/s]cfb 2004:  59%|█████▉    | 420/712 [09:59<04:34,  1.07it/s]cfb 2004:  59%|█████▉    | 421/712 [10:00<04:39,  1.04it/s]cfb 2004:  59%|█████▉    | 422/712 [10:01<05:18,  1.10s/it]cfb 2004:  59%|█████▉    | 423/712 [10:02<04:51,  1.01s/it]cfb 2004:  60%|█████▉    | 424/712 [10:05<07:05,  1.48s/it]cfb 2004:  60%|█████▉    | 425/712 [10:06<06:34,  1.38s/it]cfb 2004:  60%|█████▉    | 426/712 [10:07<06:32,  1.37s/it]cfb 2004:  60%|██████    | 428/712 [10:08<04:07,  1.15it/s]cfb 2004:  60%|██████    | 429/712 [10:10<05:22,  1.14s/it]cfb 2004:  61%|██████    | 432/712 [10:12<04:11,  1.11it/s]cfb 2004:  61%|██████    | 433/712 [10:13<04:55,  1.06s/it]cfb 2004:  61%|██████    | 434/712 [10:13<03:56,  1.18it/s]cfb 2004:  61%|██████    | 435/712 [10:14<04:04,  1.13it/s]cfb 2004:  61%|██████    | 436/712 [10:15<03:34,  1.29it/s]cfb 2004:  61%|██████▏   | 437/712 [10:15<03:07,  1.47it/s]cfb 2004:  62%|██████▏   | 438/712 [10:17<04:11,  1.09it/s]cfb 2004:  62%|██████▏   | 439/712 [10:18<04:17,  1.06it/s]cfb 2004:  62%|██████▏   | 440/712 [10:18<03:41,  1.23it/s]cfb 2004:  62%|██████▏   | 441/712 [10:19<02:52,  1.57it/s]cfb 2004:  62%|██████▏   | 442/712 [10:19<02:31,  1.78it/s]cfb 2004:  62%|██████▏   | 443/712 [10:19<02:02,  2.19it/s]cfb 2004:  62%|██████▏   | 444/712 [10:20<03:02,  1.47it/s]cfb 2004:  62%|██████▎   | 445/712 [10:23<05:59,  1.34s/it]cfb 2004:  63%|██████▎   | 446/712 [10:26<07:44,  1.75s/it]cfb 2004:  63%|██████▎   | 447/712 [10:30<11:15,  2.55s/it]cfb 2004:  63%|██████▎   | 449/712 [10:31<06:42,  1.53s/it]cfb 2004:  63%|██████▎   | 450/712 [10:32<05:29,  1.26s/it]cfb 2004:  63%|██████▎   | 451/712 [10:32<04:15,  1.02it/s]cfb 2004:  63%|██████▎   | 452/712 [10:33<04:53,  1.13s/it]cfb 2004:  64%|██████▎   | 453/712 [10:36<06:22,  1.48s/it]cfb 2004:  64%|██████▍   | 454/712 [10:36<05:26,  1.26s/it]cfb 2004:  64%|██████▍   | 455/712 [10:43<12:11,  2.85s/it]cfb 2004:  64%|██████▍   | 456/712 [10:43<08:50,  2.07s/it]cfb 2004:  64%|██████▍   | 457/712 [10:45<08:14,  1.94s/it]cfb 2004:  64%|██████▍   | 458/712 [10:45<06:01,  1.42s/it]cfb 2004:  64%|██████▍   | 459/712 [10:46<05:41,  1.35s/it]cfb 2004:  65%|██████▍   | 460/712 [10:47<04:19,  1.03s/it]cfb 2004:  65%|██████▍   | 461/712 [10:47<03:47,  1.10it/s]cfb 2004:  65%|██████▍   | 462/712 [10:48<03:23,  1.23it/s]cfb 2004:  65%|██████▌   | 463/712 [10:48<02:29,  1.66it/s]cfb 2004:  65%|██████▌   | 464/712 [10:49<02:35,  1.59it/s]cfb 2004:  65%|██████▌   | 465/712 [10:51<05:09,  1.25s/it]cfb 2004:  66%|██████▌   | 467/712 [10:52<03:43,  1.10it/s]cfb 2004:  66%|██████▌   | 468/712 [10:53<03:32,  1.15it/s]cfb 2004:  66%|██████▌   | 469/712 [10:58<08:09,  2.01s/it]cfb 2004:  66%|██████▌   | 470/712 [10:59<06:40,  1.66s/it]cfb 2004:  66%|██████▋   | 472/712 [10:59<03:59,  1.00it/s]cfb 2004:  67%|██████▋   | 475/712 [11:00<02:15,  1.74it/s]cfb 2004:  67%|██████▋   | 476/712 [11:01<03:04,  1.28it/s]cfb 2004:  67%|██████▋   | 477/712 [11:03<03:54,  1.00it/s]cfb 2004:  67%|██████▋   | 478/712 [11:05<04:42,  1.21s/it]cfb 2004:  67%|██████▋   | 479/712 [11:06<04:28,  1.15s/it]cfb 2004:  67%|██████▋   | 480/712 [11:06<03:38,  1.06it/s]cfb 2004:  68%|██████▊   | 481/712 [11:07<03:08,  1.23it/s]cfb 2004:  68%|██████▊   | 482/712 [11:07<02:28,  1.55it/s]cfb 2004:  68%|██████▊   | 484/712 [11:07<01:39,  2.29it/s]cfb 2004:  68%|██████▊   | 486/712 [11:08<01:09,  3.26it/s]cfb 2004:  68%|██████▊   | 487/712 [11:12<04:07,  1.10s/it]cfb 2004:  69%|██████▊   | 488/712 [11:14<04:49,  1.29s/it]cfb 2004:  69%|██████▉   | 490/712 [11:14<03:23,  1.09it/s]cfb 2004:  69%|██████▉   | 491/712 [11:15<02:53,  1.27it/s]cfb 2004:  69%|██████▉   | 492/712 [11:15<02:39,  1.38it/s]cfb 2004:  69%|██████▉   | 493/712 [11:16<02:37,  1.39it/s]cfb 2004:  69%|██████▉   | 494/712 [11:18<03:41,  1.01s/it]cfb 2004:  70%|██████▉   | 496/712 [11:18<02:12,  1.63it/s]cfb 2004:  70%|██████▉   | 497/712 [11:19<02:57,  1.21it/s]cfb 2004:  70%|██████▉   | 498/712 [11:23<05:16,  1.48s/it]cfb 2004:  70%|███████   | 499/712 [11:26<06:42,  1.89s/it]cfb 2004:  70%|███████   | 500/712 [11:27<05:46,  1.64s/it]cfb 2004:  70%|███████   | 501/712 [11:27<04:33,  1.30s/it]cfb 2004:  71%|███████   | 502/712 [11:28<04:10,  1.19s/it]cfb 2004:  71%|███████   | 503/712 [11:29<03:39,  1.05s/it]cfb 2004:  71%|███████   | 504/712 [11:29<02:55,  1.18it/s]cfb 2004:  71%|███████   | 505/712 [11:31<04:11,  1.21s/it]cfb 2004:  71%|███████   | 506/712 [11:32<03:19,  1.03it/s]cfb 2004:  71%|███████   | 507/712 [11:33<03:26,  1.01s/it]cfb 2004:  71%|███████▏  | 508/712 [11:39<09:11,  2.70s/it]cfb 2004:  71%|███████▏  | 509/712 [11:40<07:13,  2.14s/it]cfb 2004:  72%|███████▏  | 510/712 [11:40<05:17,  1.57s/it]cfb 2004:  72%|███████▏  | 511/712 [11:41<03:55,  1.17s/it]cfb 2004:  72%|███████▏  | 512/712 [11:42<03:41,  1.11s/it]cfb 2004:  72%|███████▏  | 513/712 [11:43<04:11,  1.26s/it]cfb 2004:  72%|███████▏  | 514/712 [11:44<04:05,  1.24s/it]cfb 2004:  72%|███████▏  | 515/712 [11:45<03:49,  1.17s/it]cfb 2004:  72%|███████▏  | 516/712 [11:46<03:18,  1.01s/it]cfb 2004:  73%|███████▎  | 517/712 [11:47<03:09,  1.03it/s]cfb 2004:  73%|███████▎  | 518/712 [11:48<03:07,  1.04it/s]cfb 2004:  73%|███████▎  | 519/712 [11:49<02:52,  1.12it/s]cfb 2004:  73%|███████▎  | 520/712 [11:49<02:08,  1.49it/s]cfb 2004:  73%|███████▎  | 521/712 [11:50<02:28,  1.29it/s]cfb 2004:  73%|███████▎  | 522/712 [11:52<03:31,  1.11s/it]cfb 2004:  73%|███████▎  | 523/712 [11:53<03:12,  1.02s/it]cfb 2004:  74%|███████▎  | 524/712 [11:56<05:10,  1.65s/it]WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.196', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/145484?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/145484?lang=en&region=us) [retry 1/2]
+WARNING:sdv.dl_utils:HTTPConnectionPool(host='154.81.58.85', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/134353?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/134353?lang=en&region=us) [retry 1/2]
+cfb 2004:  74%|███████▎  | 525/712 [11:58<05:42,  1.83s/it]cfb 2004:  74%|███████▍  | 526/712 [11:59<04:41,  1.52s/it]cfb 2004:  74%|███████▍  | 527/712 [12:00<04:39,  1.51s/it]cfb 2004:  74%|███████▍  | 529/712 [12:01<02:45,  1.10it/s]cfb 2004:  74%|███████▍  | 530/712 [12:02<02:56,  1.03it/s]cfb 2004:  75%|███████▍  | 531/712 [12:02<02:24,  1.26it/s]cfb 2004:  75%|███████▍  | 532/712 [12:03<02:10,  1.38it/s]cfb 2004:  75%|███████▍  | 533/712 [12:06<04:07,  1.38s/it]cfb 2004:  75%|███████▌  | 534/712 [12:06<03:05,  1.04s/it]cfb 2004:  75%|███████▌  | 535/712 [12:07<02:56,  1.01it/s]WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=243110166) [status retry 1/2]
+cfb 2004:  75%|███████▌  | 536/712 [12:07<02:34,  1.14it/s]WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=243110166) [status retry 2/2]
+WARNING:sdv.dl_utils:retryable status 503 persisted after 2 retries; returning to caller for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=243110166)
+cfb 2004:  76%|███████▌  | 538/712 [12:09<02:39,  1.09it/s]cfb 2004:  76%|███████▌  | 539/712 [12:10<02:35,  1.11it/s]cfb 2004:  76%|███████▌  | 541/712 [12:11<01:45,  1.61it/s]cfb 2004:  76%|███████▌  | 542/712 [12:13<02:47,  1.01it/s]cfb 2004:  76%|███████▋  | 543/712 [12:13<02:15,  1.25it/s]cfb 2004:  76%|███████▋  | 544/712 [12:14<02:10,  1.28it/s]cfb 2004:  77%|███████▋  | 545/712 [12:15<02:19,  1.20it/s]cfb 2004:  77%|███████▋  | 546/712 [12:15<01:55,  1.44it/s]cfb 2004:  77%|███████▋  | 547/712 [12:16<02:00,  1.37it/s]cfb 2004:  77%|███████▋  | 548/712 [12:17<02:26,  1.12it/s]cfb 2004:  77%|███████▋  | 549/712 [12:17<01:57,  1.39it/s]cfb 2004:  77%|███████▋  | 550/712 [12:22<04:53,  1.81s/it]cfb 2004:  77%|███████▋  | 551/712 [12:24<04:50,  1.80s/it]cfb 2004:  78%|███████▊  | 552/712 [12:24<03:54,  1.47s/it]cfb 2004:  78%|███████▊  | 553/712 [12:27<04:42,  1.78s/it]cfb 2004:  78%|███████▊  | 554/712 [12:27<03:34,  1.36s/it]cfb 2004:  78%|███████▊  | 555/712 [12:28<02:44,  1.05s/it]cfb 2004:  78%|███████▊  | 556/712 [12:30<03:51,  1.48s/it]cfb 2004:  78%|███████▊  | 557/712 [12:31<03:46,  1.46s/it]cfb 2004:  78%|███████▊  | 558/712 [12:32<02:43,  1.06s/it]cfb 2004:  79%|███████▊  | 559/712 [12:34<03:31,  1.38s/it]cfb 2004:  79%|███████▊  | 560/712 [12:39<06:46,  2.67s/it]cfb 2004:  79%|███████▉  | 561/712 [12:40<04:58,  1.98s/it]cfb 2004:  79%|███████▉  | 562/712 [12:41<04:02,  1.62s/it]cfb 2004:  79%|███████▉  | 563/712 [12:41<02:57,  1.19s/it]cfb 2004:  79%|███████▉  | 564/712 [12:41<02:12,  1.12it/s]2026-07-28 23:19:44,048 ERROR extra fetch failed: _rosters(243180084,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/243180084/competitions/243180084/competitors
+ERROR:cfb_json_2004:extra fetch failed: _rosters(243180084,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/243180084/competitions/243180084/competitors
+2026-07-28 23:19:45,354 ERROR extra fetch failed: _rosters(243180218,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/243180218/competitions/243180218/competitors
+ERROR:cfb_json_2004:extra fetch failed: _rosters(243180218,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/243180218/competitions/243180218/competitors
+cfb 2004:  79%|███████▉  | 566/712 [12:42<01:56,  1.25it/s]cfb 2004:  80%|███████▉  | 567/712 [12:43<01:42,  1.41it/s]cfb 2004:  80%|███████▉  | 569/712 [12:45<02:10,  1.10it/s]2026-07-28 23:19:48,283 ERROR extra fetch failed: _rosters(243180096,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/243180096/competitions/243180096/competitors
+ERROR:cfb_json_2004:extra fetch failed: _rosters(243180096,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/243180096/competitions/243180096/competitors
+cfb 2004:  80%|████████  | 570/712 [12:45<01:43,  1.37it/s]2026-07-28 23:19:49,410 ERROR extra fetch failed: _rosters(243180150,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/243180150/competitions/243180150/competitors
+ERROR:cfb_json_2004:extra fetch failed: _rosters(243180150,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/243180150/competitions/243180150/competitors
+cfb 2004:  80%|████████  | 571/712 [12:46<01:56,  1.21it/s]cfb 2004:  80%|████████  | 572/712 [12:47<01:32,  1.51it/s]cfb 2004:  80%|████████  | 573/712 [12:47<01:15,  1.84it/s]cfb 2004:  81%|████████  | 574/712 [12:48<01:26,  1.59it/s]2026-07-28 23:19:50,893 ERROR extra fetch failed: _rosters(243180038,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/243180038/competitions/243180038/competitors
+ERROR:cfb_json_2004:extra fetch failed: _rosters(243180038,)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\_cfb_raw_utils.py", line 166, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 55, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 66, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
+    raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/243180038/competitions/243180038/competitors
+cfb 2004:  81%|████████  | 575/712 [12:48<01:09,  1.96it/s]cfb 2004:  81%|████████  | 576/712 [12:49<01:17,  1.75it/s]cfb 2004:  81%|████████  | 577/712 [12:49<01:29,  1.52it/s]cfb 2004:  81%|████████  | 578/712 [12:53<03:34,  1.60s/it]cfb 2004:  81%|████████▏ | 579/712 [12:54<02:59,  1.35s/it]cfb 2004:  81%|████████▏ | 580/712 [12:54<02:19,  1.06s/it]cfb 2004:  82%|████████▏ | 581/712 [12:55<01:47,  1.22it/s]cfb 2004:  82%|████████▏ | 582/712 [12:55<01:25,  1.52it/s]cfb 2004:  82%|████████▏ | 583/712 [12:56<01:26,  1.50it/s]cfb 2004:  82%|████████▏ | 584/712 [12:58<02:27,  1.15s/it]cfb 2004:  82%|████████▏ | 586/712 [12:58<01:26,  1.45it/s]cfb 2004:  83%|████████▎ | 588/712 [13:00<01:30,  1.37it/s]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=243182309&1785295198017) [status retry 1/4]
+cfb 2004:  83%|████████▎ | 589/712 [13:02<02:14,  1.09s/it]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=243182309&1785295198017) [status retry 2/4]
+cfb 2004:  83%|████████▎ | 590/712 [13:03<02:03,  1.01s/it]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=243182309&1785295198017) [status retry 3/4]
+cfb 2004:  83%|████████▎ | 591/712 [13:05<02:29,  1.24s/it]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=243182309&1785295198017) [status retry 4/4]
+WARNING:sdv.dl_utils:retryable status 500 persisted after 4 retries; returning to caller for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=243182309&1785295198017)
+2026-07-28 23:20:10,473 WARNING REFUSED degraded write cfb\json\raw\243182309.json: 58416 -> 251 bytes (0% of existing); keeping banked copy
+WARNING:cfb_json_2004:REFUSED degraded write cfb\json\raw\243182309.json: 58416 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-28 23:20:10,473 WARNING degraded summary for 243182309 (proxy=154.81.58.183:60099) -- keeping banked copy, skipping game
+WARNING:cfb_json_2004:degraded summary for 243182309 (proxy=154.81.58.183:60099) -- keeping banked copy, skipping game
+cfb 2004:  83%|████████▎ | 593/712 [13:07<02:30,  1.26s/it]cfb 2004:  83%|████████▎ | 594/712 [13:08<02:02,  1.04s/it]cfb 2004:  84%|████████▎ | 595/712 [13:09<02:20,  1.20s/it]cfb 2004:  84%|████████▎ | 596/712 [13:11<02:44,  1.42s/it]cfb 2004:  84%|████████▍ | 597/712 [13:13<02:47,  1.45s/it]cfb 2004:  84%|████████▍ | 598/712 [13:19<05:22,  2.83s/it]cfb 2004:  84%|████████▍ | 599/712 [13:20<04:03,  2.16s/it]cfb 2004:  84%|████████▍ | 600/712 [13:21<03:29,  1.87s/it]cfb 2004:  84%|████████▍ | 601/712 [13:22<02:58,  1.61s/it]cfb 2004:  85%|████████▍ | 603/712 [13:23<02:02,  1.12s/it]cfb 2004:  85%|████████▍ | 604/712 [13:23<01:40,  1.07it/s]cfb 2004:  85%|████████▍ | 605/712 [13:26<02:18,  1.30s/it]cfb 2004:  85%|████████▌ | 606/712 [13:27<02:10,  1.23s/it]cfb 2004:  85%|████████▌ | 607/712 [13:32<03:52,  2.22s/it]cfb 2004:  85%|████████▌ | 608/712 [13:32<03:09,  1.82s/it]cfb 2004:  86%|████████▌ | 609/712 [13:35<03:26,  2.01s/it]cfb 2004:  86%|████████▌ | 610/712 [13:36<03:04,  1.81s/it]cfb 2004:  86%|████████▌ | 611/712 [13:37<02:23,  1.43s/it]cfb 2004:  86%|████████▌ | 612/712 [13:37<01:48,  1.09s/it]cfb 2004:  86%|████████▌ | 613/712 [13:37<01:21,  1.22it/s]cfb 2004:  86%|████████▋ | 615/712 [13:40<01:50,  1.14s/it]cfb 2004:  87%|████████▋ | 616/712 [13:44<03:01,  1.89s/it]cfb 2004:  87%|████████▋ | 617/712 [13:45<02:31,  1.59s/it]cfb 2004:  87%|████████▋ | 618/712 [13:46<02:13,  1.42s/it]cfb 2004:  87%|████████▋ | 619/712 [13:47<01:51,  1.20s/it]cfb 2004:  87%|████████▋ | 620/712 [13:51<03:01,  1.98s/it]cfb 2004:  87%|████████▋ | 622/712 [13:51<01:51,  1.24s/it]cfb 2004:  88%|████████▊ | 623/712 [13:52<01:45,  1.19s/it]cfb 2004:  88%|████████▊ | 624/712 [13:53<01:37,  1.10s/it]cfb 2004:  88%|████████▊ | 625/712 [13:54<01:19,  1.10it/s]cfb 2004:  88%|████████▊ | 626/712 [13:54<01:04,  1.34it/s]cfb 2004:  88%|████████▊ | 627/712 [13:57<01:50,  1.31s/it]cfb 2004:  88%|████████▊ | 628/712 [13:57<01:37,  1.16s/it]cfb 2004:  88%|████████▊ | 629/712 [13:58<01:12,  1.14it/s]cfb 2004:  88%|████████▊ | 630/712 [13:59<01:17,  1.06it/s]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=243252628&1785295256377) [status retry 1/4]
+WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=243252628&1785295256377) [status retry 2/4]
+cfb 2004:  89%|████████▊ | 631/712 [14:00<01:36,  1.19s/it]cfb 2004:  89%|████████▉ | 632/712 [14:01<01:09,  1.15it/s]cfb 2004:  89%|████████▉ | 633/712 [14:01<00:55,  1.43it/s]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=243252628&1785295256377) [status retry 3/4]
+cfb 2004:  89%|████████▉ | 634/712 [14:02<00:57,  1.36it/s]WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=243252653) [status retry 1/2]
+cfb 2004:  89%|████████▉ | 635/712 [14:02<00:43,  1.77it/s]WARNING:sdv.dl_utils:retryable status 500 - Internal Server Error for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=243252628&1785295256377) [status retry 4/4]
+cfb 2004:  89%|████████▉ | 636/712 [14:03<01:01,  1.24it/s]cfb 2004:  89%|████████▉ | 637/712 [14:05<01:25,  1.15s/it]cfb 2004:  90%|████████▉ | 638/712 [14:06<01:11,  1.04it/s]WARNING:sdv.dl_utils:retryable status 500 persisted after 4 retries; returning to caller for url (http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=243252628&1785295256377)
+2026-07-28 23:21:08,855 ERROR download_game failed: 243252628
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 114, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7051, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 844, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1466, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 243252628 has no header.competitions; cannot build play-by-play.
+ERROR:cfb_json_2004:download_game failed: 243252628
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 114, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7051, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 844, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1466, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 243252628 has no header.competitions; cannot build play-by-play.
+cfb 2004:  90%|████████▉ | 640/712 [14:09<01:26,  1.20s/it]cfb 2004:  90%|█████████ | 641/712 [14:09<01:12,  1.02s/it]cfb 2004:  90%|█████████ | 642/712 [14:09<00:56,  1.23it/s]cfb 2004:  90%|█████████ | 643/712 [14:10<00:43,  1.57it/s]cfb 2004:  90%|█████████ | 644/712 [14:10<00:35,  1.91it/s]cfb 2004:  91%|█████████ | 645/712 [14:12<01:03,  1.05it/s]cfb 2004:  91%|█████████ | 646/712 [14:13<00:59,  1.11it/s]cfb 2004:  91%|█████████ | 647/712 [14:13<00:44,  1.46it/s]cfb 2004:  91%|█████████ | 648/712 [14:13<00:37,  1.69it/s]cfb 2004:  91%|█████████ | 649/712 [14:16<01:26,  1.37s/it]cfb 2004:  91%|█████████▏| 650/712 [14:21<02:26,  2.36s/it]cfb 2004:  91%|█████████▏| 651/712 [14:24<02:30,  2.47s/it]cfb 2004:  92%|█████████▏| 652/712 [14:25<02:01,  2.03s/it]cfb 2004:  92%|█████████▏| 653/712 [14:25<01:28,  1.49s/it]cfb 2004:  92%|█████████▏| 654/712 [14:27<01:28,  1.52s/it]cfb 2004:  92%|█████████▏| 655/712 [14:28<01:18,  1.37s/it]cfb 2004:  92%|█████████▏| 656/712 [14:28<00:58,  1.04s/it]cfb 2004:  92%|█████████▏| 657/712 [14:30<01:16,  1.39s/it]cfb 2004:  92%|█████████▏| 658/712 [14:32<01:19,  1.47s/it]cfb 2004:  93%|█████████▎| 660/712 [14:34<01:11,  1.37s/it]cfb 2004:  93%|█████████▎| 661/712 [14:36<01:09,  1.36s/it]cfb 2004:  93%|█████████▎| 662/712 [14:36<01:00,  1.20s/it]cfb 2004:  93%|█████████▎| 663/712 [14:37<00:47,  1.03it/s]cfb 2004:  93%|█████████▎| 664/712 [14:37<00:40,  1.18it/s]cfb 2004:  93%|█████████▎| 665/712 [14:38<00:43,  1.09it/s]cfb 2004:  94%|█████████▎| 666/712 [14:40<00:46,  1.01s/it]cfb 2004:  94%|█████████▎| 667/712 [14:40<00:39,  1.13it/s]cfb 2004:  94%|█████████▍| 668/712 [14:41<00:38,  1.15it/s]cfb 2004:  94%|█████████▍| 669/712 [14:44<01:02,  1.46s/it]cfb 2004:  94%|█████████▍| 670/712 [14:44<00:46,  1.11s/it]cfb 2004:  94%|█████████▍| 671/712 [14:44<00:34,  1.17it/s]cfb 2004:  94%|█████████▍| 672/712 [14:48<01:08,  1.72s/it]cfb 2004:  95%|█████████▍| 673/712 [14:49<01:00,  1.56s/it]cfb 2004:  95%|█████████▍| 674/712 [14:50<00:50,  1.33s/it]cfb 2004:  95%|█████████▍| 675/712 [14:53<01:11,  1.94s/it]cfb 2004:  95%|█████████▌| 677/712 [14:54<00:38,  1.10s/it]cfb 2004:  95%|█████████▌| 678/712 [14:54<00:34,  1.02s/it]WARNING:sdv.dl_utils:HTTPConnectionPool(host='154.81.58.221', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/116171?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/116171?lang=en&region=us) [retry 1/2]
+WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.26', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/137028?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/137028?lang=en&region=us) [retry 1/2]
+WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.80', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/106084?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/106084?lang=en&region=us) [retry 1/15]
+WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.2', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/150178?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/150178?lang=en&region=us) [retry 1/2]
+WARNING:sdv.dl_utils:HTTPConnectionPool(host='23.239.174.74', port=60099): Max retries exceeded with url: http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/146279?lang=en&region=us (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))) for url (http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/athletes/146279?lang=en&region=us) [retry 1/15]
+cfb 2004:  95%|█████████▌| 679/712 [14:58<00:56,  1.72s/it]cfb 2004:  96%|█████████▌| 680/712 [14:58<00:41,  1.30s/it]cfb 2004:  96%|█████████▌| 681/712 [15:00<00:42,  1.38s/it]
