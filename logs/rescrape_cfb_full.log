@@ -1647,4 +1647,12 @@ WARNING:sdv.dl_utils:retryable status 504 persisted after 4 retries; returning t
 WARNING:cfb_json_2005:REFUSED degraded write cfb\json\raw\253092309.json: 54837 -> 251 bytes (0% of existing); keeping banked copy
 2026-07-28 21:17:25,139 WARNING degraded summary for 253092309 -- keeping banked copy, skipping game
 WARNING:cfb_json_2005:degraded summary for 253092309 -- keeping banked copy, skipping game
-cfb 2005:  73%|███████▎  | 534/728 [27:22<11:48,  3.65s/it]cfb 2005:  73%|███████▎  | 535/728 [27:27<12:48,  3.98s/it]cfb 2005:  74%|███████▎  | 536/728 [27:27<09:14,  2.89s/it]cfb 2005:  74%|███████▍  | 537/728 [27:31<10:25,  3.27s/it]cfb 2005:  74%|███████▍  | 538/728 [27:31<07:32,  2.38s/it]
+cfb 2005:  73%|███████▎  | 534/728 [27:22<11:48,  3.65s/it]cfb 2005:  73%|███████▎  | 535/728 [27:27<12:48,  3.98s/it]cfb 2005:  74%|███████▎  | 536/728 [27:27<09:14,  2.89s/it]cfb 2005:  74%|███████▍  | 537/728 [27:31<10:25,  3.27s/it]cfb 2005:  74%|███████▍  | 538/728 [27:31<07:32,  2.38s/it]VERIFY 2005 OK   raw                games= 728 ok= 728 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2005 OK   final              games= 728 ok= 728 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2005 OK   game_rosters       games= 728 ok= 708 empty=  20 missing=  0 bad=  2.7%
+VERIFY 2005 INFO play_participants  games= 728 ok=   0 empty= 728 missing=  0 bad=100.0% (pre-2014: ESPN ships no participants[] -- expected)
+VERIFY 2005 PROBE game=252440009 plays=190 named=144 with_id=118 id_given_name=81.9%
+[2026-07-29T01:27:39Z] season 2005 COMPLETE (checkpointed)
+[2026-07-29T01:27:39Z] --- season 2006: refreshing schedule ---
+2026-07-28 21:27:55,228 INFO schedules 2006: 788 games
+[2026-07-29T01:27:55Z] --- season 2006: rescraping all games (raw+final+participants+rosters+extras) ---
