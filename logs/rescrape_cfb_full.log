@@ -3437,3 +3437,10 @@ VERIFY 2013 INFO play_participants  games= 861 ok=   0 empty= 861 missing=  0 ba
 VERIFY 2013 PROBE game=332830097 plays=158 named=116 with_id=114 id_given_name=98.3%
 [2026-07-29T07:01:04Z] season 2013 COMPLETE (checkpointed)
 [2026-07-29T07:01:04Z] --- season 2014: refreshing schedule ---
+VERIFY 2014 OK   raw                games= 873 ok= 873 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2014 OK   final              games= 873 ok= 873 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2014 WARN game_rosters       games= 873 ok= 823 empty=  50 missing=  0 bad=  5.7%
+VERIFY 2014 OK   play_participants  games= 873 ok= 870 empty=   3 missing=  0 bad=  0.3%
+VERIFY 2014 PROBE game=400548403 plays=0 named=0 with_id=0 id_given_name=0.0%
+[2026-07-29T08:27:22Z] season 2014 COMPLETE (checkpointed)
+[2026-07-29T08:27:22Z] --- season 2015: refreshing schedule ---
