@@ -2687,4 +2687,10 @@ WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https:/
 WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=302452393) [status retry 4/4]
 cfb 2010:   0%|          | 1/810 [00:15<3:32:41, 15.77s/it]WARNING:sdv.dl_utils:retryable status 503 persisted after 4 retries; returning to caller for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=302452393)
 cfb 2010:   0%|          | 2/810 [00:22<2:23:48, 10.68s/it]cfb 2010:   0%|          | 3/810 [00:25<1:32:41,  6.89s/it]cfb 2010:   0%|          | 4/810 [00:25<57:17,  4.26s/it]  cfb 2010:   1%|          | 6/810 [00:26<28:49,  2.15s/it]cfb 2010:   1%|          | 7/810 [00:26<21:16,  1.59s/it]cfb 2010:   1%|          | 8/810 [00:26<16:18,  1.22s/it]cfb 2010:   1%|          | 9/810 [00:29<24:35,  1.84s/it]WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=302452393) [status retry 1/2]
-cfb 2010:   1%|          | 10/810 [00:31<22:27,  1.68s/it]cfb 2010:   1%|▏         | 11/810 [00:31<18:49,  1.41s/it]cfb 2010:   1%|▏         | 12/810 [00:38<40:58,  3.08s/it]cfb 2010:   2%|▏         | 13/810 [00:39<30:46,  2.32s/it]
+cfb 2010:   1%|          | 10/810 [00:31<22:27,  1.68s/it]cfb 2010:   1%|▏         | 11/810 [00:31<18:49,  1.41s/it]cfb 2010:   1%|▏         | 12/810 [00:38<40:58,  3.08s/it]cfb 2010:   2%|▏         | 13/810 [00:39<30:46,  2.32s/it]VERIFY 2010 OK   raw                games= 810 ok= 810 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2010 OK   final              games= 810 ok= 810 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2010 OK   game_rosters       games= 810 ok= 808 empty=   2 missing=  0 bad=  0.2%
+VERIFY 2010 INFO play_participants  games= 810 ok=   0 empty= 810 missing=  0 bad=100.0% (pre-2014: ESPN ships no participants[] -- expected)
+VERIFY 2010 PROBE game=302450194 plays=161 named=122 with_id=112 id_given_name=91.8%
+[2026-07-29T05:38:43Z] season 2010 COMPLETE (checkpointed)
+[2026-07-29T05:38:43Z] --- season 2011: refreshing schedule ---
