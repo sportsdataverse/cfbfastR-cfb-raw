@@ -64,6 +64,13 @@ if [ $? -ne 0 ]; then
 fi
 tail -4 "$LOG"
 
+if [ "${CFB_PROXY:-0}" = "1" ]; then
+  # Report the pool + remaining bandwidth once at start. Never prints the proxy
+  # URL, which embeds login:password.
+  $PY -c "import sys; sys.path.insert(0,'python'); import proxy_pool; proxy_pool.apply_to_env(); print('  ' + proxy_pool.status())" >> "$LOG" 2>&1
+  tail -1 "$LOG"
+fi
+
 for YEAR in $(seq "$START_YEAR" "$END_YEAR"); do
   if [ "$FORCE" != "1" ] && grep -qx "$YEAR" "$CKPT"; then
     say "season $YEAR already complete (checkpoint) -- skipping"

@@ -26,6 +26,7 @@ from _cfb_raw_utils import (
     stamp,
     write_json_guarded,
 )
+import proxy_pool
 from cfb_betting import capture_betting
 from cfb_team_box_extra import team_box_extra_from_summary
 
@@ -87,6 +88,11 @@ def _home_away_ids(raw: dict):
 
 def download_game(game_id: int, season: int, rescrape: bool, logger=None):
     logger = logger or get_logger("cfb_json", season)
+    # Rotate to the next proxy for this game. Per-GAME (not per-request) is the
+    # right granularity: one game is ~224 sequential Core v2 calls, so rotating
+    # per request would throw away connection reuse for no extra IP spread.
+    # Returns None when proxying is off or the bandwidth reserve was reached.
+    proxy_hostport = proxy_pool.apply_to_env()
     try:
         # 1. bank RAW first -- but never let a degraded fetch clobber good data.
         # If ESPN answered with a 5xx/empty body, the allowlist dict collapses to
@@ -96,7 +102,9 @@ def download_game(game_id: int, season: int, rescrape: bool, logger=None):
         raw = CFBPlayProcess(gameId=game_id, raw=True).espn_cfb_pbp()
         if not write_json_guarded(raw, f"cfb/json/raw/{game_id}.json", logger=logger):
             logger.warning(
-                "degraded summary for %s -- keeping banked copy, skipping game", game_id
+                "degraded summary for %s (proxy=%s) -- keeping banked copy, skipping game",
+                game_id,
+                proxy_hostport or "direct",
             )
             return "degraded"
 
