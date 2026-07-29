@@ -35,6 +35,14 @@ export PYTHONIOENCODING=utf-8
 
 CFB_RESCRAPE_GIT=${CFB_RESCRAPE_GIT:-0}
 
+# CFB_PY EXISTS BECAUSE `uv run` RE-SYNCS THE ENV before every invocation.
+# uv.lock pins sportsdataverse to the PyPI RELEASE (0.0.72) even though
+# pyproject declares git@main, so `uv run` silently reinstalls the released
+# build over any locally-installed one -- observed mid-run on 2026-07-28,
+# which restarted a season on code missing every fix from that day.
+# Point CFB_PY at the venv directly to pin one interpreter state.
+PY="${CFB_PY:-uv run python}"
+
 mkdir -p logs
 LOG="logs/rescrape_cfb_full.log"
 CKPT="logs/rescrape_checkpoint.txt"
@@ -42,7 +50,19 @@ touch "$CKPT"
 
 say() { echo "[$(date -u +%Y-%m-%dT%H:%M:%SZ)] $*" | tee -a "$LOG"; }
 
-say "=== rescrape start ${START_YEAR}..${END_YEAR} workers=${CFB_SCRAPE_WORKERS} retries=${CFB_EXTRAS_RETRIES} force=${FORCE} git=${CFB_RESCRAPE_GIT} ==="
+say "=== rescrape start ${START_YEAR}..${END_YEAR} workers=${CFB_SCRAPE_WORKERS} retries=${CFB_EXTRAS_RETRIES} force=${FORCE} git=${CFB_RESCRAPE_GIT} py=${PY} ==="
+
+# Abort before touching the network if the interpreter is not running the build
+# we expect. A silent uv re-sync once restarted a season on code missing every
+# fix of that day, producing wrong player ids with no error.
+say "--- preflight: interpreter + sportsdataverse build ---"
+$PY python/preflight_build.py >> "$LOG" 2>&1
+if [ $? -ne 0 ]; then
+  say "PREFLIGHT FAILED -- refusing to start. See $LOG"
+  tail -12 "$LOG"
+  exit 1
+fi
+tail -4 "$LOG"
 
 for YEAR in $(seq "$START_YEAR" "$END_YEAR"); do
   if [ "$FORCE" != "1" ] && grep -qx "$YEAR" "$CKPT"; then
@@ -51,7 +71,7 @@ for YEAR in $(seq "$START_YEAR" "$END_YEAR"); do
   fi
 
   say "--- season $YEAR: refreshing schedule ---"
-  uv run python python/scrape_cfb_schedules.py -s "$YEAR" -e "$YEAR" -r true 2>&1 | tee -a "$LOG"
+  $PY python/scrape_cfb_schedules.py -s "$YEAR" -e "$YEAR" -r true 2>&1 | tee -a "$LOG"
   SCHED_RC=${PIPESTATUS[0]}
   if [ "$SCHED_RC" -ne 0 ]; then
     say "season $YEAR SCHEDULE FAILED rc=$SCHED_RC -- not checkpointing, continuing to next season"
@@ -59,7 +79,7 @@ for YEAR in $(seq "$START_YEAR" "$END_YEAR"); do
   fi
 
   say "--- season $YEAR: rescraping all games (raw+final+participants+rosters+extras) ---"
-  uv run python python/scrape_cfb_json.py -s "$YEAR" -e "$YEAR" -r true 2>&1 | tee -a "$LOG"
+  $PY python/scrape_cfb_json.py -s "$YEAR" -e "$YEAR" -r true 2>&1 | tee -a "$LOG"
   RC=${PIPESTATUS[0]}
 
   if [ "$RC" -ne 0 ]; then
@@ -68,7 +88,7 @@ for YEAR in $(seq "$START_YEAR" "$END_YEAR"); do
   fi
 
   # Post-season sanity: how much of the season actually landed non-empty?
-  uv run python python/verify_season_fill.py -s "$YEAR" 2>&1 | tee -a "$LOG"
+  $PY python/verify_season_fill.py -s "$YEAR" 2>&1 | tee -a "$LOG"
 
   echo "$YEAR" >> "$CKPT"
   say "season $YEAR COMPLETE (checkpointed)"
