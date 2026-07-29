@@ -11,12 +11,11 @@ through a metered pool would burn quota for no concurrency gain. Hosts in
 ``DIRECT_HOSTS`` are excluded via ``NO_PROXY``, which ``requests`` honours
 alongside ``HTTPS_PROXY`` -- so the split needs no change inside sportsdataverse.
 
-BANDWIDTH IS THE BINDING CONSTRAINT, NOT REQUESTS. Measured wire bytes are
-~1.14 MB/game pre-2014 and ~2.88 MB/game post-2014, i.e. ~39.7 GB for a full
-2004-2025 run, against a package that holds far less. The governor therefore
-polls the package's REMAINING bandwidth (authoritative, not an estimate) and
-transparently falls back to direct connections once the reserve is reached, so
-the run degrades instead of hard-failing mid-season.
+BANDWIDTH ACCOUNTING. Real WIRE cost is ~217 KiB/game pre-2014 and ~712
+KiB/game post-2014 (ESPN gzips; an earlier version used decompressed sizes and
+over-charged 3.4x). The provider's own counter updates in BATCHES, not live, so
+it cannot drive a governor on its own -- each worker meters itself against these
+per-game costs and falls back to direct when its slice is spent.
 
 SECRETS: credentials are read from ~/.Renviron at call time and never written to
 disk or logged. Only ``ip:port`` is ever printed -- never the proxy URL, which
@@ -48,6 +47,7 @@ _cycle: itertools.cycle | None = None
 _remaining: int | None = None
 _remaining_at: float = 0.0
 _disabled = False
+_disable_reason = "not disabled"
 
 _POLL_TTL = float(os.getenv("CFB_PROXY_POLL_TTL", "300"))
 _RESERVE_BYTES = float(os.getenv("CFB_PROXY_RESERVE_GB", "1.0")) * 1024**3
@@ -164,7 +164,7 @@ def _refresh_remaining() -> None:
 def status() -> str:
     """Human-safe status line. Never includes credentials."""
     if _disabled:
-        return "proxy: DISABLED (bandwidth reserve reached) -- direct connections"
+        return f"proxy: DISABLED ({_disable_reason}) -- direct connections"
     if _proxies is None:
         return "proxy: not initialised"
     gb = (_remaining or 0) / 1024**3
@@ -199,6 +199,7 @@ def apply_to_env(season: int | None = None) -> str | None:
                 # it silently is how an entire season ran unproxied without
                 # anyone noticing. Say so loudly, once, on the scraper's logger.
                 _disabled = True
+                globals()["_disable_reason"] = f"pool load failed: {type(exc).__name__}"
                 logging.getLogger("cfb_json").warning(
                     "PROXY POOL UNAVAILABLE (%s: %s) -- continuing on DIRECT connections. "
                     "Rate limiting will be higher; re-check the package and restart to re-enable.",
@@ -216,6 +217,9 @@ def apply_to_env(season: int | None = None) -> str | None:
         provider_low = _remaining is not None and _remaining < _RESERVE_BYTES
         if out_of_slice or provider_low:
             _disabled = True
+            globals()["_disable_reason"] = (
+                "worker slice spent" if out_of_slice else "provider reserve reached"
+            )
             for k in ("HTTP_PROXY", "HTTPS_PROXY", "http_proxy", "https_proxy"):
                 os.environ.pop(k, None)
             return None
@@ -237,4 +241,4 @@ def apply_to_env(season: int | None = None) -> str | None:
 
 
 def disabled() -> bool:
-    re
+    return _disabled
