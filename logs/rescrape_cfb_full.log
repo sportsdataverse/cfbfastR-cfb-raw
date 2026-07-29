@@ -2661,4 +2661,14 @@ Traceback (most recent call last):
   File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_game_rosters.py", line 209, in helper_cfb_roster_items
     raise NoESPNDataError(f"NoESPNDataError: No roster data found for any team at {summary_url}")
 sportsdataverse.errors.NoESPNDataError: NoESPNDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/282480166/competitions/282480166/competitors
-cfb 2008:   9%|▊         | 70/812 [02:15<12:42,  1.03s/it]cfb 2008:   9%|▊         | 71/812 [02:17<14:27,  1.17s/it]cfb 2008:   9%|▉         | 73/812 [02:17<08:26,  1.46it/s]cfb 2008:   9%|▉         | 74/812 [02:20<16:01,  1.30s/it]cfb 2008:   9%|▉         | 75/812 [02:27<32:46,  2.67s/it]cfb 2008:   9%|▉         | 76/812 [02:27<25:47,  2.10s/it]
+cfb 2008:   9%|▊         | 70/812 [02:15<12:42,  1.03s/it]cfb 2008:   9%|▊         | 71/812 [02:17<14:27,  1.17s/it]cfb 2008:   9%|▉         | 73/812 [02:17<08:26,  1.46it/s]cfb 2008:   9%|▉         | 74/812 [02:20<16:01,  1.30s/it]cfb 2008:   9%|▉         | 75/812 [02:27<32:46,  2.67s/it]cfb 2008:   9%|▉         | 76/812 [02:27<25:47,  2.10s/it]VERIFY 2008 OK   raw                games= 812 ok= 812 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2008 OK   final              games= 812 ok= 812 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2008 OK   game_rosters       games= 812 ok= 809 empty=   3 missing=  0 bad=  0.4%
+VERIFY 2008 INFO play_participants  games= 812 ok=   0 empty= 812 missing=  0 bad=100.0% (pre-2014: ESPN ships no participants[] -- expected)
+VERIFY 2008 PROBE game=290173147 plays=165 named=124 with_id=124 id_given_name=100.0%
+[2026-07-29T04:48:08Z] season 2008 COMPLETE (checkpointed)
+[2026-07-29T04:48:08Z] --- season 2009: refreshing schedule ---
+2026-07-29 00:48:25,038 INFO schedules 2009: 810 games
+[2026-07-29T04:48:25Z] --- season 2009: rescraping all games (raw+final+participants+rosters+extras) ---
+2026-07-29 00:48:27,123 INFO season 2009: 810 games to scrape (rescrape=True)
+cfb 2009:   0%|          | 0/810 [00:00<?, ?it/s]cfb 2009:   0%|          | 1/810 [00:11<2:33:55, 11.42s/it]cfb 2009:   0%|          | 2/810 [00:17<1:48:38,  8.07s/it]cfb 2009:   0%|          | 3/810 [00:19<1:11:17,  5.30s/it]cfb 2009:   0%|          | 4/810 [00:20<49:09,  3.66s/it]  cfb 2009:   1%|          | 5/810 [00:20<31:55,  2.38s/it]
