@@ -2671,4 +2671,20 @@ VERIFY 2008 PROBE game=290173147 plays=165 named=124 with_id=124 id_given_name=1
 2026-07-29 00:48:25,038 INFO schedules 2009: 810 games
 [2026-07-29T04:48:25Z] --- season 2009: rescraping all games (raw+final+participants+rosters+extras) ---
 2026-07-29 00:48:27,123 INFO season 2009: 810 games to scrape (rescrape=True)
-cfb 2009:   0%|          | 0/810 [00:00<?, ?it/s]cfb 2009:   0%|          | 1/810 [00:11<2:33:55, 11.42s/it]cfb 2009:   0%|          | 2/810 [00:17<1:48:38,  8.07s/it]cfb 2009:   0%|          | 3/810 [00:19<1:11:17,  5.30s/it]cfb 2009:   0%|          | 4/810 [00:20<49:09,  3.66s/it]  cfb 2009:   1%|          | 5/810 [00:20<31:55,  2.38s/it]
+cfb 2009:   0%|          | 0/810 [00:00<?, ?it/s]cfb 2009:   0%|          | 1/810 [00:11<2:33:55, 11.42s/it]cfb 2009:   0%|          | 2/810 [00:17<1:48:38,  8.07s/it]cfb 2009:   0%|          | 3/810 [00:19<1:11:17,  5.30s/it]cfb 2009:   0%|          | 4/810 [00:20<49:09,  3.66s/it]  cfb 2009:   1%|          | 5/810 [00:20<31:55,  2.38s/it]VERIFY 2009 OK   raw                games= 810 ok= 810 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2009 OK   final              games= 810 ok= 810 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2009 OK   game_rosters       games= 810 ok= 810 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2009 INFO play_participants  games= 810 ok=   0 empty= 810 missing=  0 bad=100.0% (pre-2014: ESPN ships no participants[] -- expected)
+VERIFY 2009 PROBE game=292460068 plays=171 named=132 with_id=131 id_given_name=99.2%
+[2026-07-29T05:12:49Z] season 2009 COMPLETE (checkpointed)
+[2026-07-29T05:12:49Z] --- season 2010: refreshing schedule ---
+2026-07-29 01:13:04,922 INFO schedules 2010: 810 games
+[2026-07-29T05:13:05Z] --- season 2010: rescraping all games (raw+final+participants+rosters+extras) ---
+2026-07-29 01:13:07,026 INFO season 2010: 810 games to scrape (rescrape=True)
+cfb 2010:   0%|          | 0/810 [00:00<?, ?it/s]WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=302452393) [status retry 1/4]
+WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=302452393) [status retry 2/4]
+WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=302452393) [status retry 3/4]
+WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=302452393) [status retry 4/4]
+cfb 2010:   0%|          | 1/810 [00:15<3:32:41, 15.77s/it]WARNING:sdv.dl_utils:retryable status 503 persisted after 4 retries; returning to caller for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=302452393)
+cfb 2010:   0%|          | 2/810 [00:22<2:23:48, 10.68s/it]cfb 2010:   0%|          | 3/810 [00:25<1:32:41,  6.89s/it]cfb 2010:   0%|          | 4/810 [00:25<57:17,  4.26s/it]  cfb 2010:   1%|          | 6/810 [00:26<28:49,  2.15s/it]cfb 2010:   1%|          | 7/810 [00:26<21:16,  1.59s/it]cfb 2010:   1%|          | 8/810 [00:26<16:18,  1.22s/it]cfb 2010:   1%|          | 9/810 [00:29<24:35,  1.84s/it]WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=302452393) [status retry 1/2]
+cfb 2010:   1%|          | 10/810 [00:31<22:27,  1.68s/it]cfb 2010:   1%|▏         | 11/810 [00:31<18:49,  1.41s/it]cfb 2010:   1%|▏         | 12/810 [00:38<40:58,  3.08s/it]cfb 2010:   2%|▏         | 13/810 [00:39<30:46,  2.32s/it]

@@ -24332,3 +24332,68 @@ Traceback (most recent call last):
 requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 2026-06-17 09:06:16,534 INFO season 2009: 125 hollow/missing games to rescrape
 2026-06-17 11:41:31,881 INFO season 2009: 0 hollow/missing games to rescrape
+2026-07-29 00:48:27,123 INFO season 2009: 810 games to scrape (rescrape=True)
+2026-07-29 00:50:56,972 WARNING REFUSED degraded write cfb\json\raw\292550130.json: 399767 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 00:50:56,972 WARNING degraded summary for 292550130 (proxy=154.81.58.158:60099) -- keeping banked copy, skipping game
+2026-07-29 00:51:02,830 WARNING REFUSED degraded write cfb\json\raw\292550158.json: 343184 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 00:51:02,830 WARNING degraded summary for 292550158 (proxy=154.81.58.224:60099) -- keeping banked copy, skipping game
+2026-07-29 00:51:20,855 ERROR download_game failed: 292550349
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 114, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7051, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 844, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1466, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 292550349 has no header.competitions; cannot build play-by-play.
+2026-07-29 00:54:12,896 WARNING REFUSED degraded write cfb\json\raw\292690251.json: 428772 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 00:54:12,896 WARNING degraded summary for 292690251 (proxy=23.239.174.26:60099) -- keeping banked copy, skipping game
+2026-07-29 00:56:56,392 WARNING REFUSED degraded write cfb\json\raw\292760024.json: 333059 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 00:56:56,392 WARNING degraded summary for 292760024 (proxy=23.239.174.161:60099) -- keeping banked copy, skipping game
+2026-07-29 00:57:53,854 WARNING REFUSED degraded write cfb\json\raw\292832390.json: 379620 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 00:57:53,854 WARNING degraded summary for 292832390 (proxy=23.239.174.98:60099) -- keeping banked copy, skipping game
+2026-07-29 00:59:23,049 WARNING REFUSED degraded write cfb\json\raw\292900059.json: 327119 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 00:59:23,049 WARNING degraded summary for 292900059 (proxy=23.239.174.50:60099) -- keeping banked copy, skipping game
+2026-07-29 00:59:25,204 WARNING REFUSED degraded write cfb\json\raw\292900251.json: 409611 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 00:59:25,205 WARNING degraded summary for 292900251 (proxy=23.239.174.224:60099) -- keeping banked copy, skipping game
+2026-07-29 01:03:22,526 WARNING REFUSED degraded write cfb\json\raw\293040087.json: 361005 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 01:03:22,526 WARNING degraded summary for 293040087 (proxy=154.81.58.1:60099) -- keeping banked copy, skipping game
+2026-07-29 01:03:50,327 WARNING REFUSED degraded write cfb\json\raw\293040193.json: 373935 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 01:03:50,327 WARNING degraded summary for 293040193 (proxy=154.81.58.170:60099) -- keeping banked copy, skipping game
+2026-07-29 01:04:27,835 ERROR download_game failed: 293040021
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\scrape_cfb_json.py", line 114, in download_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7051, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 844, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1466, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 293040021 has no header.competitions; cannot build play-by-play.
+2026-07-29 01:04:49,629 WARNING REFUSED degraded write cfb\json\raw\293110251.json: 335571 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 01:04:49,629 WARNING degraded summary for 293110251 (proxy=154.81.58.117:60099) -- keeping banked copy, skipping game
+2026-07-29 01:07:01,494 WARNING REFUSED degraded write cfb\json\raw\293180197.json: 383754 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 01:07:01,494 WARNING degraded summary for 293180197 (proxy=23.239.174.169:60099) -- keeping banked copy, skipping game
+2026-07-29 01:07:13,897 WARNING REFUSED degraded write cfb\json\raw\293180154.json: 353031 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 01:07:13,897 WARNING degraded summary for 293180154 (proxy=154.81.58.104:60099) -- keeping banked copy, skipping game
+2026-07-29 01:08:06,061 WARNING REFUSED degraded write cfb\json\raw\293220193.json: 350448 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 01:08:06,061 WARNING degraded summary for 293220193 (proxy=154.81.58.117:60099) -- keeping banked copy, skipping game
+2026-07-29 01:09:14,768 WARNING REFUSED degraded write cfb\json\raw\293250183.json: 359713 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 01:09:14,768 WARNING degraded summary for 293250183 (proxy=154.81.58.169:60099) -- keeping banked copy, skipping game
+2026-07-29 01:09:16,350 WARNING REFUSED degraded write cfb\json\raw\293250242.json: 402047 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 01:09:16,350 WARNING degraded summary for 293250242 (proxy=23.239.174.24:60099) -- keeping banked copy, skipping game
+2026-07-29 01:09:19,283 WARNING REFUSED degraded write cfb\json\raw\293252653.json: 453299 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 01:09:19,283 WARNING degraded summary for 293252653 (proxy=154.81.58.253:60099) -- keeping banked copy, skipping game
+2026-07-29 01:11:14,396 WARNING REFUSED degraded write cfb\json\raw\293370098.json: 356829 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 01:11:14,396 WARNING degraded summary for 293370098 (proxy=154.81.58.89:60099) -- keeping banked copy, skipping game
+2026-07-29 01:12:10,140 WARNING REFUSED degraded write cfb\json\raw\293650142.json: 351481 -> 251 bytes (0% of existing); keeping banked copy
+2026-07-29 01:12:10,140 WARNING degraded summary for 293650142 (proxy=154.81.58.85:60099) -- keeping banked copy, skipping game
