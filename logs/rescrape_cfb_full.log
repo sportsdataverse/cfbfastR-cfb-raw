@@ -4578,3 +4578,5 @@ VERIFY 2015 PROBE game=400757045 plays=181 named=137 with_id=134 id_given_name=9
 [2026-07-29T10:05:32Z] --- season 2016: refreshing schedule ---
 2026-07-29 06:06:02,572 INFO schedules 2016: 820 games
 [2026-07-29T10:06:02Z] --- season 2016: rescraping all games (raw+final+participants+rosters+extras) ---
+2026-07-29 06:06:04,709 INFO season 2016: 879 games to scrape (rescrape=True)
+cfb 2016:   0%|          | 0/879 [00:00<?, ?it/s]
