@@ -71,7 +71,9 @@ def main() -> None:
         ok, empty, missing = _tally(paths)
         pct_bad = 100.0 * (empty + missing) / n
 
-        expected_empty = name == "play_participants" and season < PARTICIPANTS_MIN_SEASON
+        expected_empty = (
+            name == "play_participants" and season < PARTICIPANTS_MIN_SEASON
+        )
         if expected_empty:
             level = "INFO"
             note = " (pre-2014: ESPN ships no participants[] -- expected)"
@@ -90,14 +92,40 @@ def main() -> None:
         )
 
     # Cheap content probe: confirm a real final actually carries plays + names.
-    probe = next((g for g in games if os.path.exists(f"cfb/json/final/{g}.json")), None)
+    #
+    # Skip zero-play games. ESPN marks some games STATUS_FINAL while publishing
+    # no play-by-play at all (2014 game 400548403: drives.previous=0,
+    # playByPlayAvailable=None -- yet 193 participants rows, so the scrape was
+    # fine). Probing one of those reports a meaningless id_given_name=0.0% and
+    # reads like a total failure.
+    probe = None
+    for g in games:
+        path = f"cfb/json/final/{g}.json"
+        if not os.path.exists(path):
+            continue
+        try:
+            with open(path, encoding="utf-8") as fh:
+                candidate = json.load(fh)
+        except Exception:  # noqa: BLE001 - probe is best-effort
+            continue
+        if candidate.get("plays"):
+            probe = g
+            break
     if probe is not None:
         try:
             with open(f"cfb/json/final/{probe}.json", encoding="utf-8") as fh:
                 obj = json.load(fh)
             plays = obj.get("plays") or []
-            named = sum(1 for p in plays if p.get("rusher_player_name") or p.get("passer_player_name"))
-            with_id = sum(1 for p in plays if p.get("rusher_player_id") or p.get("passer_player_id"))
+            named = sum(
+                1
+                for p in plays
+                if p.get("rusher_player_name") or p.get("passer_player_name")
+            )
+            with_id = sum(
+                1
+                for p in plays
+                if p.get("rusher_player_id") or p.get("passer_player_id")
+            )
             pct = 100.0 * with_id / named if named else 0.0
             print(
                 f"VERIFY {season} PROBE game={probe} plays={len(plays)} "
