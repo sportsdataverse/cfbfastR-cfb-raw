@@ -4630,4 +4630,10 @@ sportsdataverse.errors.NoESPNDataError: ESPN summary for game 400941787 has no h
 WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=400933828) [status retry 2/4]
 cfb 2017:   1%|          | 7/890 [00:35<39:14,  2.67s/it]  WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=400933828) [status retry 3/4]
 cfb 2017:   1%|          | 9/890 [00:36<26:58,  1.84s/it]cfb 2017:   1%|          | 10/890 [00:37<21:12,  1.45s/it]cfb 2017:   1%|          | 11/890 [00:37<18:06,  1.24s/it]WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=400933828) [status retry 4/4]
-cfb 2017:   1%|▏         | 12/890 [00:39<21:18,  1.46s/it]cfb 2017:   1%|▏         | 13/890 [00:46<42:41,  2.92s/it]cfb 2017:   2%|▏         | 14/890 [00:49<44:41,  3.06s/it]cfb 2017:   2%|▏         | 15/890 [01:00<1:14:58,  5.14s/it]
+cfb 2017:   1%|▏         | 12/890 [00:39<21:18,  1.46s/it]cfb 2017:   1%|▏         | 13/890 [00:46<42:41,  2.92s/it]cfb 2017:   2%|▏         | 14/890 [00:49<44:41,  3.06s/it]cfb 2017:   2%|▏         | 15/890 [01:00<1:14:58,  5.14s/it]VERIFY 2017 OK   raw                games= 890 ok= 890 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2017 OK   final              games= 890 ok= 890 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2017 OK   game_rosters       games= 890 ok= 865 empty=  25 missing=  0 bad=  2.8%
+VERIFY 2017 OK   play_participants  games= 890 ok= 877 empty=  13 missing=  0 bad=  1.5%
+VERIFY 2017 PROBE game=400935257 plays=171 named=136 with_id=136 id_given_name=100.0%
+[2026-07-29T12:03:26Z] season 2017 COMPLETE (checkpointed)
+[2026-07-29T12:03:26Z] --- season 2018: refreshing schedule ---

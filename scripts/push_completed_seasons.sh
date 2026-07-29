@@ -125,18 +125,19 @@ EOF
     return 1
   fi
 
-  # Now that our work is a commit, rebase onto any concurrent work (this repo
-  # has an automated update line and other sessions push to it). Nothing large
-  # is in the working tree to stash at this point.
-  if ! git pull --rebase --autostash -q; then
-    say "season $YEAR: pull --rebase failed -- aborting any partial rebase and retrying next tick"
-    git rebase --abort 2>/dev/null || true
-    return 1
-  fi
-  HEAD_SHA=$(git rev-parse HEAD)
-
-  if ! git push -q; then
-    say "season $YEAR: PUSH FAILED -- commit $HEAD_SHA is local, will retry next tick"
+  # PUSH FIRST, rebase only if the remote actually moved.
+  #
+  # The previous version rebased unconditionally, and `--autostash` then had to
+  # stash the working tree. On Windows that FAILS while the scraper holds
+  # logs/cfb_json_logfile_<season>.log open ("unable to unlink old ..."), which
+  # left a half-finished rebase plus a pile of orphaned autostashes and blocked
+  # every subsequent push. We are normally the only pusher here, so a plain push
+  # succeeds and no rebase -- and no stash -- is needed at all.
+  if ! git push -q 2>>"$LOG"; then
+    say "season $YEAR: PUSH REJECTED (remote moved, or network) -- commit $HEAD_SHA is local"
+    say "season $YEAR: NOT auto-rebasing: the scraper holds logs open and a rebase here"
+    say "season $YEAR: corrupts the tree. Retrying next tick; if this persists, rebase by hand"
+    say "season $YEAR: once the scrape is idle."
     return 1
   fi
 
