@@ -4878,3 +4878,22 @@ VERIFY 2024 PROBE game=401628579 plays=168 named=130 with_id=130 id_given_name=1
 [2026-07-29T23:04:54Z] --- season 2025: refreshing schedule ---
 2026-07-29 19:05:12,472 INFO schedules 2025: 934 games
 [2026-07-29T23:05:12Z] --- season 2025: rescraping all games (raw+final+participants+rosters+extras) ---
+2026-07-29 19:05:14,642 INFO season 2025: 958 games to scrape (rescrape=True)
+cfb 2025:   0%|          | 0/958 [00:00<?, ?it/s]WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
+WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 56 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 6 will retain null names.
+WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 52 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 2 will retain null names.
+WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=401767509) [status retry 1/4]
+WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=401767509) [status retry 2/4]
+WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=401767509) [status retry 3/4]
+WARNING:sdv.dl_utils:retryable status 503 - Service Unavailable for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=401767509) [status retry 4/4]
+WARNING:sdv.dl_utils:retryable status 503 persisted after 4 retries; returning to caller for url (https://cdn.espn.com/core/college-football/playbyplay?xhr=1&gameId=401767509)
+WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 76 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 26 will retain null names.
+WARNING:sdv.cfb.cfb_play_participants:cfb_play_participants: 51 unique athletes need $ref resolution but max_fetches=50; the first 50 will be resolved and the remaining 1 will retain null names.
+VERIFY 2025 OK   raw                games= 958 ok= 958 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2025 OK   final              games= 958 ok= 958 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2025 OK   game_rosters       games= 958 ok= 945 empty=  13 missing=  0 bad=  1.4%
+VERIFY 2025 OK   play_participants  games= 958 ok= 958 empty=   0 missing=  0 bad=  0.0%
+VERIFY 2025 PROBE game=401767509 plays=141 named=116 with_id=116 id_given_name=100.0%
+[2026-07-30T00:40:32Z] season 2025 COMPLETE (checkpointed)
+[2026-07-30T00:40:32Z] === rescrape finished 2004..2025 ===
+EXIT=0
