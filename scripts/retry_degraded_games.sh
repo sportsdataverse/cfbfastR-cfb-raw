@@ -36,7 +36,9 @@ say() { echo "[$(date -u +%Y-%m-%dT%H:%M:%SZ)] $*" | tee -a "$LOG"; }
 # Harvest fresh each run: the main scrape appends as it goes, so a stale list
 # would silently under-retry.
 grep -h -oE "degraded summary for [0-9]+" logs/cfb_json_logfile_*.log 2>/dev/null \
-  | awk '{print $NF}' | sort -u > "$LIST"
+  | awk '{print $NF}' | sort -u > "$LIST.all"
+  $PY python/filter_stale.py "$LIST.all" "$LIST"
+  rm -f "$LIST.all"
 say "harvested $(wc -l < "$LIST" | tr -d ' ') degraded games into $LIST"
 
 if [ "$DRY_RUN" = "1" ]; then
@@ -49,41 +51,13 @@ for PASS in $(seq 1 "$MAX_PASSES"); do
   [ "$N" -eq 0 ] && { say "nothing left to retry"; break; }
   say "=== pass $PASS/$MAX_PASSES over $N games ==="
 
-  $PY - "$LIST" <<'PYEOF' 2>&1 | tee -a "$LOG"
-import os, sys
-sys.path.insert(0, "python")
-import polars as pl
-from scrape_cfb_json import download_game
-
-ids = [int(x) for x in open(sys.argv[1]).read().split()]
-master = pl.read_parquet("cfb/cfb_schedule_master.parquet")
-season_of = dict(
-    zip(master["game_id"].cast(pl.Int64).to_list(), master["season"].cast(pl.Int64).to_list())
-)
-
-ok = degraded = err = 0
-for gid in ids:
-    season = season_of.get(gid)
-    if season is None:
-        print(f"  {gid}: not in schedule master, skipping")
-        continue
-    before = os.path.getsize(f"cfb/json/raw/{gid}.json") if os.path.exists(f"cfb/json/raw/{gid}.json") else 0
-    res = download_game(gid, season, True)
-    after = os.path.getsize(f"cfb/json/raw/{gid}.json") if os.path.exists(f"cfb/json/raw/{gid}.json") else 0
-    if after < 0.5 * max(before, 1):
-        print(f"  {gid} ({season}): DATA LOSS {before} -> {after}")
-    if res == "ok":
-        ok += 1
-    elif res == "degraded":
-        degraded += 1
-    else:
-        err += 1
-print(f"RETRY RESULT ok={ok} still_degraded={degraded} error={err}")
-PYEOF
+  $PY python/retry_degraded.py "$LIST" 2>&1 | tee -a "$LOG"
 
   # Re-harvest so the next pass only carries what is still failing.
   grep -h -oE "degraded summary for [0-9]+" logs/cfb_json_logfile_*.log 2>/dev/null \
-    | awk '{print $NF}' | sort -u > "$LIST.new"
+    | awk '{print $NF}' | sort -u > "$LIST.all"
+    $PY python/filter_stale.py "$LIST.all" "$LIST.new"
+    rm -f "$LIST.all"
   mv "$LIST.new" "$LIST"
 done
 
