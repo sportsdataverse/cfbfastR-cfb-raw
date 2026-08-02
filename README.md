@@ -48,6 +48,15 @@ sibling checkout).
 - On push, `cfbfastR_cfb_data_trigger.yml` fires `repository_dispatch` to
   `sportsdataverse/cfbfastR-cfb-data`, which rectangularizes `final/` into release parquet.
 
+Manual recovery drivers (not wired into CI; reach for them around a full rescrape):
+
+- `scripts/push_completed_seasons.sh` — watches the rescrape checkpoint and commits +
+  pushes each season the moment it's verified (idempotent via `logs/pushed_seasons.txt`);
+  run alongside `rescrape_cfb_full.sh`, or `ONESHOT=1` to push what's ready and exit.
+- `scripts/retry_degraded_games.sh` — re-fetches the games the write guard skipped as
+  degraded (transient ESPN 5xx); run after the main rescrape finishes (`DRY_RUN=1` lists
+  them without fetching).
+
 ## Reprocess vs. recreate
 
 - **Reprocess** (here, Python): `raw → final`, offline, gated by `processing_version`. Bump
