@@ -1,0 +1,21 @@
+name: orphan-scripts
+
+# Shared gate (sportsdataverse/.github): every scripts/ and ops/ script must be
+# referenced by a runbook, workflow, or another script. See the 2026-08-02
+# pipeline audit §8.2. ops/oneoff/ and ops/init/ are exempt.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'ops/**'
+      - 'README*'
+      - 'CLAUDE.md'
+      - 'docs/**'
+      - '.github/**'
+  workflow_dispatch:
+
+jobs:
+  check:
+    uses: sportsdataverse/.github/.github/workflows/orphan-scripts.yml@main
