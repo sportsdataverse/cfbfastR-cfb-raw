@@ -226,7 +226,9 @@ def main() -> None:
             )
         run_pool(
             _worker,
-            [(g, season, True) for g in games],
+            # thread the parsed -r flag through; hollow mode is a forced
+            # re-scrape of flagged games regardless of -r
+            [(g, season, rescrape or hollow) for g in games],
             kind="process",
             desc=f"cfb {season}",
             workers=_scrape_workers(),
