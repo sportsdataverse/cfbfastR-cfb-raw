@@ -1,3 +1,9 @@
+# =============================================================================
+# CONSUMED CROSS-REPO by cfbfastR-cfb-data's .github/workflows/
+# cfb_model_pipeline.yml (checks this repo out as _raw and runs
+# `uv run python _raw/python/scrape_cfb_qbr.py -s 2004 -e <year> --out ...`).
+# NOT an orphan — coordinate any rename/move/CLI change with that workflow.
+# =============================================================================
 """Scrape ESPN core QBR (the QBR-model training target), keyed by game_id + athlete.
 
 Endpoint: sports.core.api.espn.com/.../seasons/{yr}/types/2/weeks/{wk}/qbr/10000?limit=1000
@@ -5,6 +11,7 @@ Each item has athlete/team/event $refs (event id = game_id) + splits.categories[
 (QBR, TQBR, and component pieces). Output rows join to per-QB feature rows on
 (game_id, passer_player_name).
 """
+
 from __future__ import annotations
 
 import argparse
@@ -18,8 +25,10 @@ _ATHLETE_ID = re.compile(r"/athletes/(\d+)")
 
 
 def _qbr_url(year: int, week: int) -> str:
-    return (f"https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/"
-            f"seasons/{year}/types/2/weeks/{week}/qbr/10000?limit=1000")
+    return (
+        f"https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/"
+        f"seasons/{year}/types/2/weeks/{week}/qbr/10000?limit=1000"
+    )
 
 
 def parse_qbr_payload(payload: dict, year: int, week: int) -> list[dict]:
@@ -29,9 +38,12 @@ def parse_qbr_payload(payload: dict, year: int, week: int) -> list[dict]:
         ath = (rec.get("athlete") or {}).get("$ref", "")
         gm = _EVENT_ID.search(ev)
         aid = _ATHLETE_ID.search(ath)
-        out = {"year": year, "week": week,
-               "game_id": int(gm.group(1)) if gm else None,
-               "athlete_id": int(aid.group(1)) if aid else None}
+        out = {
+            "year": year,
+            "week": week,
+            "game_id": int(gm.group(1)) if gm else None,
+            "athlete_id": int(aid.group(1)) if aid else None,
+        }
         stats = (((rec.get("splits") or {}).get("categories") or [{}])[0]).get("stats", [])
         for s in stats:
             out[s["abbreviation"]] = s.get("value")
@@ -42,8 +54,10 @@ def parse_qbr_payload(payload: dict, year: int, week: int) -> list[dict]:
 def _athlete_name(year: int, athlete_id: int, cache: dict, session: requests.Session) -> str | None:
     if athlete_id in cache:
         return cache[athlete_id]
-    url = (f"https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/"
-           f"seasons/{year}/athletes/{athlete_id}?lang=en&region=us")
+    url = (
+        f"https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/"
+        f"seasons/{year}/athletes/{athlete_id}?lang=en&region=us"
+    )
     try:
         name = session.get(url, timeout=30).json().get("fullName")
     except Exception:
@@ -54,6 +68,7 @@ def _athlete_name(year: int, athlete_id: int, cache: dict, session: requests.Ses
 
 def scrape(years, weeks, out_path: str) -> int:
     import pandas as pd
+
     session = requests.Session()
     cache: dict = {}
     frames = []

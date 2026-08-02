@@ -18,6 +18,9 @@ Python/uv scraper for ESPN college-football game JSON. Sibling of `cfbfastR-cfb-
 - Commit message format is load-bearing: `"CFB Raw Update (Start: YYYY End: YYYY)"` /
   `"CFB Reprocess Update (Start: YYYY End: YYYY)"` — the `-data` trigger greps the years.
 - Bump `SCHEMA_REV` when the final shape / enrichment inputs change.
+- `python/scrape_cfb_qbr.py` is executed cross-repo by `cfbfastR-cfb-data`'s
+  `cfb_model_pipeline.yml` (checks this repo out as `_raw`) — not an orphan;
+  coordinate any rename/move/CLI change with that workflow.
 - Never add AI co-author trailers to commits.
 
 ## Scope: scraping + reprocess only
