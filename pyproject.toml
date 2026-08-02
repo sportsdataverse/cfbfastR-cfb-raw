@@ -15,14 +15,25 @@ dependencies = [
 [dependency-groups]
 dev = ["pytest>=8.0"]
 
-# NOTE: sportsdataverse>=0.0.69 (offline-reprocess features; game_rosters column-width
-# fix that 0.0.52 lacked; the 0.0.60 espn_cfb_schedule guard for null-competitor
-# placeholder events that crashed whole seasons, e.g. 2010/2014; and the 0.0.69
-# roster-backed {type}_player_id + CFBPlayProcess(game_roster=, participants=) params
-# the reprocess pipeline passes for fetch-free, id-aware rebuilds) resolves from PyPI so CI's
-# `uv sync --frozen` works on a clean runner. For local co-development against an unreleased
-# sdv-py, run `uv pip install -e ../../sdv-py` after `uv sync` (do not re-add a path source
-# to [tool.uv.sources] — it would break CI, which has no sibling checkout).
+[tool.uv.sources]
+# Track git main, matching cfbfastR-cfb-data. A GIT source works on a clean CI
+# runner (uv fetches it); the constraint recorded here previously was against a
+# sibling PATH source, which does not, and that is still true.
+#
+# Pinning to PyPI meant the reprocess pipeline silently ran whatever was last
+# released. The parser fixes this depends on -- ESPN's -1 end.yardsToEndzone
+# sentinel, the opportunity_run gate, and the boolean fill_null no-op behind
+# rushing_power_rate -- all landed on main after 0.0.73, so a reprocess would
+# have rebuilt final/ with the defects still in place, and the next scheduled run
+# would have silently reverted any manual repair.
+sportsdataverse = { git = "https://github.com/sportsdataverse/sportsdataverse-py", branch = "main" }
+
+# sportsdataverse floor covers the offline-reprocess features: game_rosters
+# column-width fix (missing in 0.0.52), the 0.0.60 espn_cfb_schedule guard for
+# null-competitor placeholder events that crashed whole seasons (2010/2014), and
+# the 0.0.69 roster-backed {type}_player_id + CFBPlayProcess(game_roster=,
+# participants=) params the reprocess pipeline passes for fetch-free, id-aware
+# rebuilds.
 
 [tool.pytest.ini_options]
 markers = ["live: hits the live ESPN API (gated by CFB_LIVE_TESTS=1)"]
