@@ -1,8 +1,15 @@
 From https://github.com/sportsdataverse/cfbfastR-cfb-raw
  * [new branch]          docs/cfb-modeling-suite-tracks-2-6 -> origin/docs/cfb-modeling-suite-tracks-2-6
-2026-08-03 15:05:36,959 INFO schedules 2026: 946 games
-2026-08-03 15:05:39,333 INFO season 2026: 0 games to scrape (rescrape=False)
-[main 0d5cef496] CFB Raw Update (Start: 2026 End: 2026)
- 3 files changed, 3 insertions(+), 3 deletions(-)
-To https://github.com/sportsdataverse/cfbfastR-cfb-raw
-   a5f6b4862..0d5cef496  main -> main
+2026-08-04 14:15:35,474 INFO schedules 2026: 946 games
+2026-08-04 14:15:37,685 INFO season 2026: 0 games to scrape (rescrape=False)
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	logs/cfb_json_logfile_2026.log
+	logs/cfb_schedules_logfile_2026.log
+
+nothing added to commit but untracked files present (use "git add" to track)
+No changes to commit
+Everything up-to-date
