@@ -32,7 +32,27 @@ uv run python python/scrape_cfb_json.py      -s 2024 -e 2024
 bash scripts/backfill_cfb.sh 2004
 # rebuild final from raw on disk after a pipeline change (offline)
 uv run python python/reprocess_cfb_json.py -s 2024 -e 2024 --force
+# recruit classes (247). Idempotent: a signed class is immutable, so complete
+# years are skipped and only the current cycle fetches. Floor is 2002 --
+# ratings collapse before then (2001: 52% rated on page 1, 0% by page 4).
+bash scripts/10_scrape_recruits.sh              # current cycle
+bash scripts/10_scrape_recruits.sh 2002 2026    # cold backfill
 ```
+
+### Pushing a bulk rebuild
+
+`scripts/chunked_push.sh` commits and pushes a large `final/` rebuild in
+season-sized chunks. A single ~20k-file commit produces a pack GitHub refuses
+(`bad line length` over HTTP/2, `RPC failed` over HTTP/1.1). `reprocess_cfb.sh`
+already commits per season; this restores that shape for an after-the-fact bulk
+rebuild — a model retrain that touches every game, say — where the work is
+already in the worktree and there is no per-season loop to hang commits off.
+
+```bash
+bash scripts/chunked_push.sh
+```
+
+Do not run two of these (or any two git jobs) against this repo concurrently.
 
 ## Dependencies / local dev
 
