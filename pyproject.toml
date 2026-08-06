@@ -10,6 +10,7 @@ dependencies = [
     "pyarrow>=15.0",
     "requests>=2.28",
     "tqdm>=4.66",
+    "curl-cffi>=0.16.0",
 ]
 
 [dependency-groups]
