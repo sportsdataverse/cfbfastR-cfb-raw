@@ -36,3 +36,20 @@ for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
   git push >/dev/null
   rm -f "$TMPLOG"
 done
+
+# Recruiting: CLASS-year keyed, not game-season keyed, so it runs ONCE here
+# rather than inside the loop above -- iterating it per game season would
+# re-scrape the same signing class N times.
+#
+# Cheap by construction: a signed class is immutable, so every prior year is
+# skipped on sight and only the current cycle actually fetches (~4 min).
+#
+# Failure-isolated on purpose. Recruiting is a side dataset; 247 being down or
+# rate-limiting must never fail the game-data run that is this script's job.
+{
+  bash scripts/10_scrape_recruits.sh || echo "!! recruits scrape failed (non-fatal)"
+  git pull >/dev/null 2>&1 || true
+  git add cfb/recruits >/dev/null 2>&1 || true
+  git commit -m "CFB Recruits Update" >/dev/null 2>&1 || echo "No recruit changes to commit"
+  git push >/dev/null 2>&1 || true
+} 2>&1 | tee -a "logs/cfb_recruits_daily.log"
