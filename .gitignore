@@ -8,3 +8,8 @@ __pycache__/
 .vscode/
 .claude/
 .env
+
+# Local agent/skill tooling -- never part of the repo
+.omc/
+agent/
+.agents/
