@@ -26,7 +26,11 @@ for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
     git push >/dev/null
   } 2>&1 | tee "$TMPLOG"
   cp "$TMPLOG" "logs/cfb_reprocess_logfile_${i}.log"
-  git pull --rebase >/dev/null || true
+  # NOT `pull --rebase`: git's default am backend base64-encodes every blob it
+  # replays, and this repo's .git is ~20 GB of parquet/JSON -- it stalls. The
+  # merge backend replays by tree instead. (rebase.backend=merge is not an
+  # option: it landed in git 2.26 and the scrape host runs 2.25.1.)
+  git fetch --quiet origin main && git rebase --merge origin/main >/dev/null || true
   git add "logs/cfb_reprocess_logfile_${i}.log"
   git commit -m "CFB Reprocess log update (Start: $i End: $i)" >/dev/null || true
   git push >/dev/null
