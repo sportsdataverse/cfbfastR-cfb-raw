@@ -1,8 +1,5 @@
-warning: `VIRTUAL_ENV=/root/.venvs/default` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
-2026-08-18 21:32:41,426 INFO schedules 2026: 946 games
-warning: `VIRTUAL_ENV=/root/.venvs/default` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
-2026-08-18 21:32:47,257 INFO season 2026: 0 games to scrape (rescrape=False)
-[main 6f0c26ebd9] CFB Raw Update (Start: 2026 End: 2026)
- 3 files changed, 1 insertion(+), 1 deletion(-)
-To https://github.com/sportsdataverse/cfbfastR-cfb-raw.git
-   fcb9b7c5d4..6f0c26ebd9  main -> main
+From https://github.com/sportsdataverse/cfbfastR-cfb-raw
+ * [new branch]          docs/cfb-modeling-suite-tracks-2-6 -> origin/docs/cfb-modeling-suite-tracks-2-6
+2026-08-19 12:02:25,809 INFO schedules 2026: 946 games
+2026-08-19 12:02:28,019 INFO season 2026: 0 games to scrape (rescrape=False)
+nothing to commit for: CFB Raw Update (Start: 2026 End: 2026)
