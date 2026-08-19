@@ -85,10 +85,10 @@ done
 # rate-limiting must never fail the game-data run that is this script's job.
 {
   bash scripts/10_scrape_recruits.sh || echo "!! recruits scrape failed (non-fatal)"
-  git pull >/dev/null 2>&1 || true
-  git add cfb/recruits >/dev/null 2>&1 || true
-  git commit -m "CFB Recruits Update" >/dev/null 2>&1 || echo "No recruit changes to commit"
-  git push >/dev/null 2>&1 || true
+  # Deliberately NOT `|| PUSH_RC=1`: a 247 outage must not fail the game-data
+  # run. But it does get the retry + sync, so a moved origin no longer silently
+  # discards the signing class.
+  sdv_commit_push "CFB Recruits Update" cfb/recruits || echo "!! recruits push failed (non-fatal)"
 } 2>&1 | tee -a "logs/cfb_recruits_daily.log"
 
 # A rejected push is a FAILED run, not a green one. Release assets upload on a

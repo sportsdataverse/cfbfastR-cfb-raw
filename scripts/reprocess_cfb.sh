@@ -12,6 +12,35 @@ FORCE=${FORCE:-}
 END_YEAR=${END_YEAR:-$START_YEAR}
 mkdir -p logs
 
+# Shared with daily_cfb_scraper.sh rather than copied: two near-identical push
+# helpers is how one of them quietly stops matching the other.
+# shellcheck source=scripts/daily_cfb_scraper.sh
+sdv_commit_push() {
+  local msg="$1"; shift
+  git add -- "$@" >/dev/null 2>&1 || true
+  if git diff --cached --quiet; then
+    echo "nothing to commit for: $msg"
+    return 0
+  fi
+  git commit -m "$msg" >/dev/null || { echo "::warning ::commit failed: $msg"; return 1; }
+  local attempt
+  for attempt in 1 2 3; do
+    if git push origin HEAD >/dev/null 2>&1; then
+      echo "pushed: $msg (attempt $attempt)"
+      return 0
+    fi
+    echo "push rejected (attempt $attempt); syncing with origin"
+    git fetch --quiet origin main || true
+    if ! git rebase --merge origin/main >/dev/null 2>&1; then
+      git rebase --abort >/dev/null 2>&1 || true
+      echo "::error ::cannot rebase onto origin/main for: $msg"
+      return 1
+    fi
+  done
+  echo "::error ::push still rejected after 3 attempts: $msg"
+  return 1
+}
+
 for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
   TMPLOG=$(mktemp "/tmp/cfb_reprocess_${i}.XXXXXX.log")
   {
@@ -19,20 +48,15 @@ for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
     git config --local user.email "action@github.com"
     git config --local user.name "Github Action"
     uv run python python/reprocess_cfb_json.py -s "$i" -e "$i" $FORCE
-    git pull >/dev/null
-    git add cfb/json/final/* >/dev/null 2>&1 || true
-    git commit -m "CFB Reprocess Update (Start: $i End: $i)" || echo "No changes to commit"
-    git pull >/dev/null
-    git push >/dev/null
+    # Load-bearing subject: the -data trigger greps the years out of it.
+    sdv_commit_push "CFB Reprocess Update (Start: $i End: $i)" cfb/json/final || PUSH_RC=1
   } 2>&1 | tee "$TMPLOG"
   cp "$TMPLOG" "logs/cfb_reprocess_logfile_${i}.log"
-  # NOT `pull --rebase`: git's default am backend base64-encodes every blob it
-  # replays, and this repo's .git is ~20 GB of parquet/JSON -- it stalls. The
-  # merge backend replays by tree instead. (rebase.backend=merge is not an
-  # option: it landed in git 2.26 and the scrape host runs 2.25.1.)
-  git fetch --quiet origin main && git rebase --merge origin/main >/dev/null || true
-  git add "logs/cfb_reprocess_logfile_${i}.log"
-  git commit -m "CFB Reprocess log update (Start: $i End: $i)" >/dev/null || true
-  git push >/dev/null
+  sdv_commit_push "CFB Reprocess log update (Start: $i End: $i)" "logs/cfb_reprocess_logfile_${i}.log" || PUSH_RC=1
   rm -f "$TMPLOG"
 done
+
+if [ "${PUSH_RC:-0}" != "0" ]; then
+  echo "::error ::At least one commit failed to reach origin; the repo mirror is stale."
+  exit 1
+fi
