@@ -555,7 +555,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
 401858211,s:20~l:23~e:401858211~c:401858211,2026-09-05T23:30Z,0,True,True,False,False,False,False,2026-09-05T23:30Z,ACC Network,[],,,national,ACC Network,1,STD,3799,Lane Stadium,Blacksburg,USA,False,0.0,0:00,0,1,STATUS_SCHEDULED,pre,False,Scheduled,"Sat, September 5th at 7:30 PM EDT",9/5 - 7:30 PM EDT,4,259,s:20~l:23~t:259,Virginia Tech,Hokies,VT,Virginia Tech Hokies,Virginia Tech,6a2c3e,cf4520,True,3799,https://a.espncdn.com/i/teamlogos/ncaa/500/259.png,1,0,99,[{'value': 0} {'value': 0} {'value': 0} {'value': 0}],"[{'name': 'overall', 'abbreviation': 'overall', 'type': 'total', 'summary': '0-0'}
  {'name': 'Home', 'abbreviation': 'Home', 'type': 'homerecord', 'summary': '0-0'}
  {'name': 'Away', 'abbreviation': 'Away', 'type': 'awayrecord', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': 'CONF', 'type': 'vsconf', 'summary': '0-0'}]",2678,s:20~l:23~t:2678,VMI,Keydets,VMI,VMI Keydets,VMI,ae122a,ffd619,True,3597,https://a.espncdn.com/i/teamlogos/ncaa/500/2678.png,29,0,99,[{'value': 0} {'value': 0} {'value': 0} {'value': 0}],"[{'name': 'overall', 'abbreviation': 'overall', 'type': 'total', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': 'CONF', 'type': 'vsconf', 'summary': '0-0'}]",2678,s:20~l:23~t:2678,VMI,Keydets,VMI,VMI Keydets,VMI,ae122a,000000,True,3597,https://a.espncdn.com/i/teamlogos/ncaa/500/2678.png,29,0,99,[{'value': 0} {'value': 0} {'value': 0} {'value': 0}],"[{'name': 'overall', 'abbreviation': 'overall', 'type': 'total', 'summary': '0-0'}
  {'name': 'Home', 'abbreviation': 'Home', 'type': 'homerecord', 'summary': '0-0'}
  {'name': 'Away', 'abbreviation': 'Away', 'type': 'awayrecord', 'summary': '0-0'}
  {'name': 'vs. Conf.', 'abbreviation': 'CONF', 'type': 'vsconf', 'summary': '0-0'}]",401858211,2026,2,1,VA,,,,
@@ -601,13 +601,6 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': 'Home', 'type': 'homerecord', 'summary': '0-0'}
  {'name': 'Away', 'abbreviation': 'Away', 'type': 'awayrecord', 'summary': '0-0'}
  {'name': 'vs. Conf.', 'abbreviation': 'CONF', 'type': 'vsconf', 'summary': '0-0'}]",401869142,2026,2,1,LA,,,,
-401856774,s:20~l:23~e:401856774~c:401856774,2026-09-06T01:00Z,0,True,True,False,False,False,False,2026-09-06T01:00Z,ESPN+,[],,,national,ESPN+,1,STD,3947,Mountain America Stadium,Tempe,USA,False,0.0,0:00,0,1,STATUS_SCHEDULED,pre,False,Scheduled,"Sat, September 5th at 9:00 PM EDT",9/5 - 9:00 PM EDT,4,9,s:20~l:23~t:9,Arizona State,Sun Devils,ASU,Arizona State Sun Devils,Arizona St,ffc627,8c1d40,True,3947,https://a.espncdn.com/i/teamlogos/ncaa/500/9.png,4,0,99,[{'value': 0} {'value': 0} {'value': 0} {'value': 0}],"[{'name': 'overall', 'abbreviation': 'overall', 'type': 'total', 'summary': '0-0'}
- {'name': 'Home', 'abbreviation': 'Home', 'type': 'homerecord', 'summary': '0-0'}
- {'name': 'Away', 'abbreviation': 'Away', 'type': 'awayrecord', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': 'CONF', 'type': 'vsconf', 'summary': '0-0'}]",2415,s:20~l:23~t:2415,Morgan State,Bears,MORG,Morgan State Bears,Morgan St,014786,f47937,True,3762,https://a.espncdn.com/i/teamlogos/ncaa/500/2415.png,24,0,99,[{'value': 0} {'value': 0} {'value': 0} {'value': 0}],"[{'name': 'overall', 'abbreviation': 'overall', 'type': 'total', 'summary': '0-0'}
- {'name': 'Home', 'abbreviation': 'Home', 'type': 'homerecord', 'summary': '0-0'}
- {'name': 'Away', 'abbreviation': 'Away', 'type': 'awayrecord', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': 'CONF', 'type': 'vsconf', 'summary': '0-0'}]",401856774,2026,2,1,AZ,,,,
 401870790,s:20~l:23~e:401870790~c:401870790,2026-09-06T01:00Z,0,True,True,False,False,False,False,2026-09-06T01:00Z,ESPN+,[],,,national,ESPN+,1,STD,3601,Aggie Memorial Stadium,Las Cruces,USA,False,0.0,0:00,0,1,STATUS_SCHEDULED,pre,False,Scheduled,"Sat, September 5th at 9:00 PM EDT",9/5 - 9:00 PM EDT,4,166,s:20~l:23~t:166,New Mexico State,Aggies,NMSU,New Mexico State Aggies,New Mexico St,7e141b,231f20,True,3601,https://a.espncdn.com/i/teamlogos/ncaa/500/166.png,12,0,99,[{'value': 0} {'value': 0} {'value': 0} {'value': 0}],"[{'name': 'overall', 'abbreviation': 'overall', 'type': 'total', 'summary': '0-0'}
  {'name': 'Home', 'abbreviation': 'Home', 'type': 'homerecord', 'summary': '0-0'}
  {'name': 'Away', 'abbreviation': 'Away', 'type': 'awayrecord', 'summary': '0-0'}
@@ -629,6 +622,13 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': 'Home', 'type': 'homerecord', 'summary': '0-0'}
  {'name': 'Away', 'abbreviation': 'Away', 'type': 'awayrecord', 'summary': '0-0'}
  {'name': 'vs. Conf.', 'abbreviation': 'CONF', 'type': 'vsconf', 'summary': '0-0'}]",401860879,2026,2,1,CA,,,,
+401856774,s:20~l:23~e:401856774~c:401856774,2026-09-06T02:00Z,0,True,True,False,False,False,False,2026-09-06T02:00Z,ESPN+,[],,,national,ESPN+,1,STD,3947,Mountain America Stadium,Tempe,USA,False,0.0,0:00,0,1,STATUS_SCHEDULED,pre,False,Scheduled,"Sat, September 5th at 10:00 PM EDT",9/5 - 10:00 PM EDT,4,9,s:20~l:23~t:9,Arizona State,Sun Devils,ASU,Arizona State Sun Devils,Arizona St,ffc627,8c1d40,True,3947,https://a.espncdn.com/i/teamlogos/ncaa/500/9.png,4,0,99,[{'value': 0} {'value': 0} {'value': 0} {'value': 0}],"[{'name': 'overall', 'abbreviation': 'overall', 'type': 'total', 'summary': '0-0'}
+ {'name': 'Home', 'abbreviation': 'Home', 'type': 'homerecord', 'summary': '0-0'}
+ {'name': 'Away', 'abbreviation': 'Away', 'type': 'awayrecord', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': 'CONF', 'type': 'vsconf', 'summary': '0-0'}]",2415,s:20~l:23~t:2415,Morgan State,Bears,MORG,Morgan State Bears,Morgan St,014786,f47937,True,3762,https://a.espncdn.com/i/teamlogos/ncaa/500/2415.png,24,0,99,[{'value': 0} {'value': 0} {'value': 0} {'value': 0}],"[{'name': 'overall', 'abbreviation': 'overall', 'type': 'total', 'summary': '0-0'}
+ {'name': 'Home', 'abbreviation': 'Home', 'type': 'homerecord', 'summary': '0-0'}
+ {'name': 'Away', 'abbreviation': 'Away', 'type': 'awayrecord', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': 'CONF', 'type': 'vsconf', 'summary': '0-0'}]",401856774,2026,2,1,AZ,,,,
 401864497,s:20~l:23~e:401864497~c:401864497,2026-09-06T02:00Z,0,True,True,False,True,False,False,2026-09-06T02:00Z,CW,[],,,national,CW,1,STD,7220,Clarence T.C. Ching Athletics Complex,Honolulu,USA,False,0.0,0:00,0,1,STATUS_SCHEDULED,pre,False,Scheduled,"Sat, September 5th at 10:00 PM EDT",9/5 - 10:00 PM EDT,4,62,s:20~l:23~t:62,Hawai'i,Rainbow Warriors,HAW,Hawai'i Rainbow Warriors,Hawai'i,005737,000000,True,3610,https://a.espncdn.com/i/teamlogos/ncaa/500/62.png,17,0,99,[{'value': 0} {'value': 0} {'value': 0} {'value': 0}],"[{'name': 'overall', 'abbreviation': 'overall', 'type': 'total', 'summary': '0-0'}
  {'name': 'Home', 'abbreviation': 'Home', 'type': 'homerecord', 'summary': '0-0'}
  {'name': 'Away', 'abbreviation': 'Away', 'type': 'awayrecord', 'summary': '0-0'}
@@ -6516,7 +6516,7 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'abbreviation': 'null', 'name': 'Home', 'summary': '0-0', 'type': 'home'}
  {'abbreviation': 'null', 'name': 'Road', 'summary': '0-0', 'type': 'road'}
  {'abbreviation': 'null', 'name': 'vs. Conf.', 'summary': '0-0', 'type': 'vsconf'}]",401874430,2026,3,1,NV,,,,
-401874431,s:20~l:23~e:401874431~c:401874431,2027-01-01T00:30Z,0,True,True,True,False,False,False,2027-01-01T00:30Z,ESPN,[],event,Kinder's Texas Bowl,national,ESPN,42,Bowl Game,3891,NRG Stadium,Houston,USA,True,0.0,0:00,0,1,STATUS_SCHEDULED,pre,False,Scheduled,"Thu, December 31st at 7:30 PM EST",12/31 - 7:30 PM EST,4,-1,s:20~l:23~t:-1,TBD,TBD,TBD,TBD,TBD,,,False,,,,0,99,[{'value': 0} {'value': 0} {'value': 0} {'value': 0}],"[{'abbreviation': 'Game', 'name': 'overall', 'summary': '0-0', 'type': 'total'}
+401874431,s:20~l:23~e:401874431~c:401874431,2027-01-01T00:30Z,0,True,True,True,False,False,False,2027-01-01T00:30Z,ESPN,[],event,Kinder's Texas Bowl,national,ESPN,42,Bowl Game,3891,Reliant Stadium,Houston,USA,True,0.0,0:00,0,1,STATUS_SCHEDULED,pre,False,Scheduled,"Thu, December 31st at 7:30 PM EST",12/31 - 7:30 PM EST,4,-1,s:20~l:23~t:-1,TBD,TBD,TBD,TBD,TBD,,,False,,,,0,99,[{'value': 0} {'value': 0} {'value': 0} {'value': 0}],"[{'abbreviation': 'Game', 'name': 'overall', 'summary': '0-0', 'type': 'total'}
  {'abbreviation': 'null', 'name': 'Home', 'summary': '0-0', 'type': 'home'}
  {'abbreviation': 'null', 'name': 'Road', 'summary': '0-0', 'type': 'road'}
  {'abbreviation': 'null', 'name': 'vs. Conf.', 'summary': '0-0', 'type': 'vsconf'}]",-2,s:20~l:23~t:-2,TBD,TBD,TBD,TBD,TBD,,,False,,,,0,99,[{'value': 0} {'value': 0} {'value': 0} {'value': 0}],"[{'abbreviation': 'Game', 'name': 'overall', 'summary': '0-0', 'type': 'total'}
