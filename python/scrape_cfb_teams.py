@@ -49,6 +49,8 @@ The group tree (verified live, season type 2)::
     |                       `-- 58 NCAA Division III
     `-- 36 All Star              (0 teams on every season captured so far)
 
+    186 NAIA                     <- parentless SIBLING of 99, not under it
+
 ``espn_cfb_groups`` returns only the two top-level nodes (35, 90) -- 36 is
 reachable only through ``/groups/99/children`` -- so the capture set is pinned
 explicitly rather than discovered, and group 99 backstops it.
@@ -92,8 +94,8 @@ DATASET = "teams"
 FIRST_SEASON = 2001
 #: Bumped when the capture set widens so `is_complete` re-runs a season (cheaply,
 #: reusing captured payloads) instead of declaring a narrower bundle done.
-#: 1 = FBS + FCS only; 2 = the whole NCAA Football tree.
-BUNDLE_VERSION = 2
+#: 1 = FBS + FCS only; 2 = the whole NCAA Football tree; 3 = + group 186 (NAIA).
+BUNDLE_VERSION = 3
 #: Every group whose team list classifies a team, plus the 99 root (the season
 #: universe) and the two mid-level nodes. Pinned rather than discovered:
 #: ``espn_cfb_groups`` omits 36, and a silent taxonomy change should surface as an
@@ -107,6 +109,10 @@ CAPTURE_GROUPS = {
     57: "ncaa_division_ii",
     58: "ncaa_division_iii",
     36: "all_star",
+    # NAIA is NOT under 99 -- it has no parent at all, so no tree walk finds it.
+    # Empty until 2024, then 128-135 teams a season: without it, 139 of 2024's 817
+    # rows (17%) carry no division label.
+    186: "naia",
 }
 SEASON_TYPE = 2
 POSITIONS_URL = "https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/positions"
