@@ -20,8 +20,8 @@ on:
   schedule:
     - cron: '0 9 * 8 *'        # August (preseason)
     - cron: '0 9 * 9-11 *'     # Sept-Nov (regular season)
-    - cron: '0 9 1-20 12 *'    # early-mid December (championships/bowls open)
-    - cron: '0 9 1-20 1 *'     # early January (bowls + CFP)
+    - cron: '0 9 * 12 *'       # all December -- most bowls fall Dec 21-31
+    - cron: '0 9 1-25 1 *'     # January bowls + CFP, past the ~Jan 19-20 final
   workflow_dispatch:
     inputs:
       start_year:
