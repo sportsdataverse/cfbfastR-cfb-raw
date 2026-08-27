@@ -45,29 +45,54 @@ while getopts s:e:fp: flag; do
 done
 FORCE=${FORCE:-}
 PUSH=${PUSH:-true}
+
+usage() {
+  echo "usage: bash scripts/reprocess_cfb.sh -s START [-e END] [-f] [-p true|false]" >&2
+  echo "  -s  first season (REQUIRED)   -e  last season (default: START)" >&2
+  echo "  -f  force, ignore processing_version" >&2
+  echo "  -p  commit+push per season (default true); false = rebuild locally" >&2
+  exit 2
+}
+
+# Validate before anything expensive. Under `set -u` a missing -s used to crash on
+# the END_YEAR default with "unbound variable" -- an unreadable failure for the one
+# script an operator reaches for under pressure.
+[ -n "${START_YEAR:-}" ] || { echo "error: -s is required" >&2; usage; }
 END_YEAR=${END_YEAR:-$START_YEAR}
+case "$START_YEAR$END_YEAR" in *[!0-9]*) echo "error: seasons must be numeric" >&2; usage;; esac
+[ "$START_YEAR" -le "$END_YEAR" ] || { echo "error: -s ($START_YEAR) is after -e ($END_YEAR)" >&2; usage; }
+# -p decides whether ~19.6k files get pushed. A typo must not be interpreted
+# silently in either direction, so anything but true/false is a usage error.
+case "$PUSH" in true|false) ;; *) echo "error: -p must be true or false, got: $PUSH" >&2; usage;; esac
+
 mkdir -p logs
 
 RUN_LOG="logs/cfb_reprocess_$(date -u +%Y%m%d_%H%M%S).log"
 echo "reprocess ${START_YEAR}-${END_YEAR}  force=${FORCE:-no}  push=${PUSH}"
 echo "log:   ${RUN_LOG}"
-echo "watch: tail -f $(pwd)/${RUN_LOG}"
+# Quoted: a repo path containing spaces would otherwise print an uncopyable command.
+printf %s%s%s%s "watch: tail -f " "\"" "$(pwd)/${RUN_LOG}" "\"" ; echo
 
 # How much work is actually queued, BEFORE committing hours to it. Counting
 # stale finals is cheap and the answer is frequently "all of them" -- a
 # sportsdataverse bump moves PROCESSING_VERSION, so every banked game goes stale
 # at once.
-"$PY" - "$START_YEAR" "$END_YEAR" <<'PREFLIGHT' 2>&1 | tee -a "$RUN_LOG"
+"$PY" - "$START_YEAR" "$END_YEAR" "${FORCE:-}" <<'PREFLIGHT' 2>&1 | tee -a "$RUN_LOG"
 import sys
 sys.path.insert(0, "python")
 from cfb_raw_scrape._cfb_raw_utils import PROCESSING_VERSION, games_for_seasons, load_schedule_master
 from reprocess_cfb_json import _final_is_current
 
 s, e = int(sys.argv[1]), int(sys.argv[2])
+force = len(sys.argv) > 3 and sys.argv[3] == "--force"
 master = load_schedule_master()
 games = games_for_seasons(master, s, e)
-stale = [g for g in games if not _final_is_current(g)]
+# --force makes the rebuild loop ignore processing_version, so counting through
+# _final_is_current here would report "0 to rebuild" while the loop rebuilds every
+# game. A preflight that disagrees with the run it precedes is worse than none.
+stale = games if force else [g for g in games if not _final_is_current(g)]
 print(f"target processing_version : {PROCESSING_VERSION}")
+print(f"force                     : {force}")
 print(f"games in {s}-{e}            : {len(games)}")
 print(f"  already current (skipped) : {len(games) - len(stale)}")
 print(f"  to rebuild                : {len(stale)}")
@@ -102,8 +127,11 @@ sdv_commit_push() {
   return 1
 }
 
+# Per-season log AND the whole-run log are written straight from the pipe. The
+# previous form staged a third copy in /tmp and copied it twice; on a full-corpus
+# run that is a lot of duplicated bytes for no extra information.
 for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
-  TMPLOG=$(mktemp "/tmp/cfb_reprocess_${i}.XXXXXX.log")
+  SEASON_LOG="logs/cfb_reprocess_logfile_${i}.log"
   {
     git pull >/dev/null
     git config --local user.email "action@github.com"
@@ -115,13 +143,10 @@ for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
     else
       echo "-p false: rebuilt season $i locally, NOT committed or pushed"
     fi
-  } 2>&1 | tee "$TMPLOG"
-  cat "$TMPLOG" >> "$RUN_LOG"
-  cp "$TMPLOG" "logs/cfb_reprocess_logfile_${i}.log"
+  } 2>&1 | tee "$SEASON_LOG" | tee -a "$RUN_LOG"
   if [ "$PUSH" = "true" ]; then
-    sdv_commit_push "CFB Reprocess log update (Start: $i End: $i)" "logs/cfb_reprocess_logfile_${i}.log" || PUSH_RC=1
+    sdv_commit_push "CFB Reprocess log update (Start: $i End: $i)" "$SEASON_LOG" || PUSH_RC=1
   fi
-  rm -f "$TMPLOG"
 done
 
 RC=0
