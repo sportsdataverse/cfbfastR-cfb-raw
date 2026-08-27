@@ -210,3 +210,25 @@ def test_filter_undone_survives_a_malformed_final(tmp_path):
     (final_dir / "405.json").write_text(json.dumps({"count": "not-a-number"}))
     (final_dir / "406.json").write_text(json.dumps({"count": 0, "header": None}))
     assert u.filter_undone([405, 406], dir=str(final_dir), rescrape=False) == [405]
+
+
+def test_filter_ids_file_intersects_with_the_season(tmp_path):
+    """A recovery list is harvested across ALL seasons' logs, so each season must
+    take only its own share -- and a stray id must not send the scraper after a
+    game that is not in the schedule at all."""
+    ids = tmp_path / "list.txt"
+    ids.write_text("401 402" + chr(10) + "999999" + chr(10))
+    assert u.filter_ids_file([401, 402, 403], str(ids)) == [401, 402]
+
+
+def test_filter_ids_file_tolerates_blank_lines_and_spacing(tmp_path):
+    ids = tmp_path / "list.txt"
+    ids.write_text(chr(10) + " 401 " + chr(10) + chr(10) + "402" + chr(10))
+    assert u.filter_ids_file([401, 402, 403], str(ids)) == [401, 402]
+
+
+def test_filter_ids_file_empty_list_selects_nothing(tmp_path):
+    """Empty must mean 'nothing to retry', never 'retry everything'."""
+    ids = tmp_path / "list.txt"
+    ids.write_text("")
+    assert u.filter_ids_file([401, 402], str(ids)) == []

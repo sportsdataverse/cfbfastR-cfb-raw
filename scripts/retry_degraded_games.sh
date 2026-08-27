@@ -26,6 +26,12 @@ source "$(dirname "${BASH_SOURCE[0]}")/_venv.sh"
 
 # Interpreter resolved by scripts/_venv.sh (sourced above); CFB_PY still overrides.
 MAX_PASSES=${MAX_PASSES:-2}
+# Degraded ids are harvested from every season's log, so the retry pass needs a
+# season range to intersect them against (--ids-file keeps only the ids that are
+# in that season's schedule). Defaults span the full corpus; narrow it with
+# SEASON_START/SEASON_END when retrying a single season.
+SEASON_START=${SEASON_START:-2004}
+SEASON_END=${SEASON_END:-$("$PY" -c "import sys; sys.path.insert(0,'python'); from _cfb_raw_utils import most_recent_cfb_season as m; print(m())")}
 DRY_RUN=${DRY_RUN:-0}
 
 export PYTHONUNBUFFERED=1
@@ -55,7 +61,7 @@ for PASS in $(seq 1 "$MAX_PASSES"); do
   [ "$N" -eq 0 ] && { say "nothing left to retry"; break; }
   say "=== pass $PASS/$MAX_PASSES over $N games ==="
 
-  $PY python/retry_degraded.py "$LIST" 2>&1 | tee -a "$LOG"
+  $PY python/espn_cfb_02_pbp_scrape.py -s "$SEASON_START" -e "$SEASON_END" --ids-file "$LIST" 2>&1 | tee -a "$LOG"
 
   # Re-harvest so the next pass only carries what is still failing.
   grep -h -oE "degraded summary for [0-9]+" logs/cfb_json_logfile_*.log 2>/dev/null \

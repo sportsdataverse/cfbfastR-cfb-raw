@@ -49,5 +49,5 @@ echo "scraping ${START}-${END} -> $LOG"
 echo "watch with: tail -f $(pwd)/$LOG"
 
 PYTHONUNBUFFERED=1 PYTHONIOENCODING=utf-8 \
-  "$PY" python/scrape_cfb_recruits.py -s "$START" -e "$END" "$@" 2>&1 | tee -a "$LOG"
+  "$PY" python/espn_cfb_10_recruits_scrape.py -s "$START" -e "$END" "$@" 2>&1 | tee -a "$LOG"
 echo "EXIT=${PIPESTATUS[0]}" | tee -a "$LOG"

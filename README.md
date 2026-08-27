@@ -26,8 +26,8 @@ subdirectories — ESPN game ids are globally unique): `game_rosters`, `play_par
 ```bash
 uv sync
 # one season, incremental
-uv run python python/scrape_cfb_schedules.py -s 2024 -e 2024
-uv run python python/scrape_cfb_json.py      -s 2024 -e 2024
+"$PY" python/espn_cfb_01_schedules_scrape.py -s 2024 -e 2024
+"$PY" python/espn_cfb_02_pbp_scrape.py      -s 2024 -e 2024
 # full backfill
 bash scripts/backfill_cfb.sh 2004
 # rebuild final from raw on disk after a pipeline change (offline)

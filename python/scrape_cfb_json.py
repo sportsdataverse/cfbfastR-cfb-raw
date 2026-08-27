@@ -16,6 +16,7 @@ from _cfb_raw_utils import (
     PROCESSING_VERSION,
     _safe,
     filter_hollow,
+    filter_ids_file,
     filter_undone,
     games_for_seasons,
     get_logger,
@@ -218,6 +219,15 @@ def main() -> None:
         default="false",
         help="rescrape only games flagged as hollow_extras/no_final in logs/scrape_failures.csv",
     )
+    ap.add_argument(
+        "--ids-file",
+        default=None,
+        help=(
+            "rescrape exactly the game ids in this file (whitespace-separated). "
+            "Used by scripts/retry_degraded_games.sh, which harvests degraded ids "
+            "out of the logs. Forces a re-scrape of those ids regardless of -r."
+        ),
+    )
     args = ap.parse_args()
     end = args.end_year or args.start_year
     rescrape = str(args.rescrape).lower() in ("1", "true", "yes")
@@ -226,7 +236,19 @@ def main() -> None:
     for season in range(args.start_year, end + 1):
         logger = get_logger("cfb_json", season)
         all_games = games_for_seasons(master, season, season)
-        if hollow:
+        if args.ids_file:
+            # An explicit id list is a targeted recovery pass: the caller already
+            # decided these games need re-fetching, so it forces the re-scrape.
+            # Intersected with the season's schedule so a stray id cannot send the
+            # scraper after a game that is not this season's.
+            games = filter_ids_file(all_games, args.ids_file)
+            logger.info(
+                "season %s: %d games from %s are in this season's schedule",
+                season,
+                len(games),
+                args.ids_file,
+            )
+        elif hollow:
             games = filter_hollow(all_games)
             logger.info(
                 "season %s: %d hollow/missing games to rescrape", season, len(games)
@@ -243,7 +265,7 @@ def main() -> None:
             _worker,
             # thread the parsed -r flag through; hollow mode is a forced
             # re-scrape of flagged games regardless of -r
-            [(g, season, rescrape or hollow) for g in games],
+            [(g, season, rescrape or hollow or bool(args.ids_file)) for g in games],
             kind="process",
             desc=f"cfb {season}",
             workers=_scrape_workers(),
