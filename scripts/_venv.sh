@@ -32,4 +32,6 @@ else
 fi
 
 export PY
-echo "interpreter: $PY"
+# stderr, not stdout: drivers pipe stdout into logs and some callers parse it,
+# so a banner here would contaminate their output. CFB_VENV_QUIET=1 silences it.
+[ -n "${CFB_VENV_QUIET:-}" ] || echo "interpreter: $PY" >&2

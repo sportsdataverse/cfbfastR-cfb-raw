@@ -31,7 +31,7 @@ MAX_PASSES=${MAX_PASSES:-2}
 # in that season's schedule). Defaults span the full corpus; narrow it with
 # SEASON_START/SEASON_END when retrying a single season.
 SEASON_START=${SEASON_START:-2004}
-SEASON_END=${SEASON_END:-$("$PY" -c "import sys; sys.path.insert(0,'python'); from _cfb_raw_utils import most_recent_cfb_season as m; print(m())")}
+SEASON_END=${SEASON_END:-$("$PY" -c "import sys; sys.path.insert(0,'python'); from cfb_raw_scrape._cfb_raw_utils import most_recent_cfb_season as m; print(m())")}
 DRY_RUN=${DRY_RUN:-0}
 
 export PYTHONUNBUFFERED=1

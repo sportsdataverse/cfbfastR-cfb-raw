@@ -232,3 +232,17 @@ def test_filter_ids_file_empty_list_selects_nothing(tmp_path):
     ids = tmp_path / "list.txt"
     ids.write_text("")
     assert u.filter_ids_file([401, 402], str(ids)) == []
+
+
+def test_read_ids_file_parses_once_into_a_set(tmp_path):
+    """Split out of filter_ids_file so a wide -s/-e range parses the list once,
+    not once per season."""
+    ids = tmp_path / "list.txt"
+    ids.write_text("401 402" + chr(10) + " 403 " + chr(10) + chr(10))
+    assert u.read_ids_file(str(ids)) == {401, 402, 403}
+
+
+def test_read_ids_file_empty_is_empty_not_everything(tmp_path):
+    ids = tmp_path / "list.txt"
+    ids.write_text("")
+    assert u.read_ids_file(str(ids)) == set()

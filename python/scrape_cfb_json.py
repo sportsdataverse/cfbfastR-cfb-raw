@@ -16,7 +16,7 @@ from cfb_raw_scrape._cfb_raw_utils import (
     PROCESSING_VERSION,
     _safe,
     filter_hollow,
-    filter_ids_file,
+    read_ids_file,
     filter_undone,
     games_for_seasons,
     get_logger,
@@ -233,6 +233,9 @@ def main() -> None:
     rescrape = str(args.rescrape).lower() in ("1", "true", "yes")
     hollow = str(args.hollow).lower() in ("1", "true", "yes")
     master = load_schedule_master()
+    # Parsed ONCE: the loop below is per-season, and the retry driver passes a
+    # wide -s/-e range, so re-reading this file each iteration is pure waste.
+    wanted_ids = read_ids_file(args.ids_file) if args.ids_file else None
     for season in range(args.start_year, end + 1):
         logger = get_logger("cfb_json", season)
         all_games = games_for_seasons(master, season, season)
@@ -241,7 +244,7 @@ def main() -> None:
             # decided these games need re-fetching, so it forces the re-scrape.
             # Intersected with the season's schedule so a stray id cannot send the
             # scraper after a game that is not this season's.
-            games = filter_ids_file(all_games, args.ids_file)
+            games = [g for g in all_games if g in wanted_ids]
             logger.info(
                 "season %s: %d games from %s are in this season's schedule",
                 season,

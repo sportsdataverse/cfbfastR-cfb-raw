@@ -26,6 +26,10 @@ subdirectories — ESPN game ids are globally unique): `game_rosters`, `play_par
 ```bash
 uv sync
 # one season, incremental
+# resolve this repo's interpreter once (never `uv run` for a long scrape --
+# it re-syncs the env mid-run). CFB_PY overrides.
+source scripts/_venv.sh
+
 "$PY" python/espn_cfb_01_schedules_scrape.py -s 2024 -e 2024
 "$PY" python/espn_cfb_02_pbp_scrape.py      -s 2024 -e 2024
 # full backfill
