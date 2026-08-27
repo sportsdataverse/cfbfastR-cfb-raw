@@ -9,7 +9,7 @@ import argparse
 
 import sportsdataverse as sdv
 
-from _cfb_raw_utils import (filter_undone, games_for_seasons, get_logger,
+from cfb_raw_scrape._cfb_raw_utils import (filter_undone, games_for_seasons, get_logger,
                             load_schedule_master, most_recent_cfb_season, run_pool,
                             stamp, write_json_atomic)
 

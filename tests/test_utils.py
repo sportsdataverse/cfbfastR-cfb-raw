@@ -3,7 +3,7 @@ from pathlib import Path
 import importlib.util
 import pandas as pd
 
-UTILS = Path(__file__).parents[1] / "python" / "_cfb_raw_utils.py"
+UTILS = Path(__file__).parents[1] / "python" / "cfb_raw_scrape" / "_cfb_raw_utils.py"
 spec = importlib.util.spec_from_file_location("_cfb_raw_utils", UTILS)
 u = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(u)

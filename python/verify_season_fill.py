@@ -16,7 +16,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from _cfb_raw_utils import games_for_seasons, load_schedule_master
+from cfb_raw_scrape._cfb_raw_utils import games_for_seasons, load_schedule_master
 
 # Season from which ESPN populates per-play participants[]. Verified live
 # against Core v2 /competitions/{id}/plays: 2004-2013 return a full play stream

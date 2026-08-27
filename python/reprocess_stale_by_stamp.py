@@ -27,7 +27,7 @@ from pathlib import Path
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from _cfb_raw_utils import PROCESSING_VERSION, get_logger  # noqa: E402
+from cfb_raw_scrape._cfb_raw_utils import PROCESSING_VERSION, get_logger  # noqa: E402
 from reprocess_cfb_json import FINAL_DIR, RAW_DIR, _run_with_recovery  # noqa: E402
 
 

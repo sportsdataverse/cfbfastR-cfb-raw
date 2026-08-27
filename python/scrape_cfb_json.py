@@ -12,7 +12,7 @@ import argparse
 import sportsdataverse as sdv
 from sportsdataverse.cfb import CFBPlayProcess
 
-from _cfb_raw_utils import (
+from cfb_raw_scrape._cfb_raw_utils import (
     PROCESSING_VERSION,
     _safe,
     filter_hollow,
@@ -28,9 +28,9 @@ from _cfb_raw_utils import (
     stamp,
     write_json_guarded,
 )
-import proxy_pool
-from cfb_betting import capture_betting
-from cfb_team_box_extra import team_box_extra_from_summary
+import cfb_raw_scrape.proxy_pool as proxy_pool
+from cfb_raw_scrape.cfb_betting import capture_betting
+from cfb_raw_scrape.cfb_team_box_extra import team_box_extra_from_summary
 
 # FPI/powerindex + full event_odds only return data for recent CFB seasons
 # (probe: 2014 empty, 2024 populated). Tunable.
