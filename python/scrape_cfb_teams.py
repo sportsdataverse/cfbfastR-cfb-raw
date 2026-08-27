@@ -5,10 +5,14 @@ game-oriented helpers in ``_cfb_raw_utils``.
 
 WHAT IT CAPTURES (per season, one bundle file)
 ----------------------------------------------
-* ``divisions``       the group-80 (FBS) and group-81 (FCS) team-ref lists, kept
-                      as ordered id lists -- membership in one of those two lists
-                      is the ONLY authoritative source of a team's division.
-* ``group_children``  the raw ``/groups/{80,81}/children`` payloads (conference refs).
+* ``divisions``       one ordered team-ref id list per CLASSIFICATION GROUP, kept
+                      verbatim -- membership in those lists is the ONLY
+                      authoritative source of a team's division. Group 99 (the
+                      ``NCAA Football`` root) is captured too and is the whole
+                      season universe: its team list is byte-equal to
+                      ``espn_cfb_season_teams`` on every season checked
+                      (2001/2015/2023/2026), which is how coverage is proven.
+* ``group_children``  the raw ``/groups/{gid}/children`` payloads (conference refs).
 * ``conferences``     one raw conference payload per referenced group id.
 * ``teams``           one raw SEASON-SCOPED team payload per team id.
 
@@ -36,6 +40,27 @@ Two ESPN gotchas are load-bearing here:
   The index page is fetched through sdv-py's ``dl_utils.download`` chokepoint
   with ``limit=200``; every item is then resolved through the SDK wrapper.
 
+The group tree (verified live, season type 2)::
+
+    99 NCAA Football             <- root; its team list IS the season universe
+    |-- 90 NCAA Division I  |-- 80 FBS
+    |                       `-- 81 FCS
+    |-- 35 Division II/III  |-- 57 NCAA Division II
+    |                       `-- 58 NCAA Division III
+    `-- 36 All Star              (0 teams on every season captured so far)
+
+``espn_cfb_groups`` returns only the two top-level nodes (35, 90) -- 36 is
+reachable only through ``/groups/99/children`` -- so the capture set is pinned
+explicitly rather than discovered, and group 99 backstops it.
+
+Teams ESPN files DIRECTLY under 35 with no D2/D3 child are real, not an error to
+be dropped: 195 of them in 2001 (when 57/58 were empty outright) and 107 in 2023.
+
+Re-running an already-captured season is CHEAP: team and conference payloads
+already in the bundle are reused verbatim and only new ids are fetched, so
+widening the capture set does not re-pay for the ~7,300 teams captured under the
+old FBS+FCS-only set.
+
 Pacing knobs (ESPN Core v2 403s under aggressive parallelism):
 ``CFB_TEAMS_WORKERS`` (4), ``CFB_TEAMS_RETRIES`` (4), ``CFB_TEAMS_BACKOFF`` (2.0s).
 """
@@ -56,12 +81,33 @@ from pathlib import Path
 
 import sportsdataverse as sdv
 
-from _cfb_raw_utils import get_logger, most_recent_cfb_season, run_pool, write_json_atomic
+from _cfb_raw_utils import (
+    get_logger,
+    most_recent_cfb_season,
+    run_pool,
+    write_json_atomic,
+)
 
 DATASET = "teams"
 FIRST_SEASON = 2001
-#: group 80 = FBS (Division I-A), group 81 = FCS (Division I-AA).
-DIVISION_GROUPS = {"fbs": 80, "fcs": 81}
+#: Bumped when the capture set widens so `is_complete` re-runs a season (cheaply,
+#: reusing captured payloads) instead of declaring a narrower bundle done.
+#: 1 = FBS + FCS only; 2 = the whole NCAA Football tree.
+BUNDLE_VERSION = 2
+#: Every group whose team list classifies a team, plus the 99 root (the season
+#: universe) and the two mid-level nodes. Pinned rather than discovered:
+#: ``espn_cfb_groups`` omits 36, and a silent taxonomy change should surface as an
+#: empty list here rather than as teams quietly vanishing from the capture.
+CAPTURE_GROUPS = {
+    99: "root",
+    90: "ncaa_division_i",
+    80: "fbs",
+    81: "fcs",
+    35: "division_ii_iii",
+    57: "ncaa_division_ii",
+    58: "ncaa_division_iii",
+    36: "all_star",
+}
 SEASON_TYPE = 2
 POSITIONS_URL = "https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/positions"
 _ID_RE = re.compile(r"/(?:teams|groups|positions)/(\d+)")
@@ -121,13 +167,19 @@ def _workers() -> int:
     return max(1, int(_env_num("CFB_TEAMS_WORKERS", 4, int)))
 
 
-def scrape_season(season: int, logger) -> dict:
-    """Build one season bundle. Never raises; records unfetchable ids instead."""
+def scrape_season(season: int, logger, prior: dict | None = None) -> dict:
+    """Build one season bundle. Never raises; records unfetchable ids instead.
+
+    ``prior`` is a previously written bundle whose team / conference payloads are
+    reused verbatim; only ids it does not already carry are fetched.
+    """
     incomplete: list[str] = []
+    prior_teams: dict[str, dict] = (prior or {}).get("teams") or {}
+    prior_conferences: dict[str, dict] = (prior or {}).get("conferences") or {}
 
     divisions: dict[str, list[str]] = {}
     group_children: dict[str, dict] = {}
-    for label, gid in DIVISION_GROUPS.items():
+    for gid, label in CAPTURE_GROUPS.items():
         payload = _retry(
             sdv.cfb.espn_cfb_season_group_teams,
             season=season,
@@ -141,7 +193,9 @@ def scrape_season(season: int, logger) -> dict:
         divisions[str(gid)] = _ref_ids(payload)
         if payload is None:
             incomplete.append(f"group_{gid}_teams")
-        logger.info("%s %s (group %s): %d teams", season, label, gid, len(divisions[str(gid)]))
+        logger.info(
+            "%s %s (group %s): %d teams", season, label, gid, len(divisions[str(gid)])
+        )
 
         children = _retry(
             sdv.cfb.espn_cfb_season_group_children,
@@ -158,7 +212,20 @@ def scrape_season(season: int, logger) -> dict:
         else:
             group_children[str(gid)] = children
 
+    # Group 99 is the universe; every other list is a subset of it in each season
+    # checked. The union is taken anyway so a gap in 99 cannot drop a team.
     team_ids = sorted({t for ids in divisions.values() for t in ids}, key=int)
+    teams: dict[str, dict] = {
+        tid: prior_teams[tid] for tid in team_ids if tid in prior_teams
+    }
+    todo = [tid for tid in team_ids if tid not in teams]
+    logger.info(
+        "%s: %d teams (%d reused, %d to fetch)",
+        season,
+        len(team_ids),
+        len(teams),
+        len(todo),
+    )
 
     def _team(tid: str):
         return tid, _retry(
@@ -170,17 +237,18 @@ def scrape_season(season: int, logger) -> dict:
             what=f"{season} team {tid}",
         )
 
-    teams: dict[str, dict] = {}
-    for tid, payload in run_pool(_team, team_ids, kind="thread", workers=_workers(), desc=f"{DATASET} {season} teams"):
+    for tid, payload in run_pool(
+        _team, todo, kind="thread", workers=_workers(), desc=f"{DATASET} {season} teams"
+    ):
         if payload is None:
             incomplete.append(f"team_{tid}")
         else:
             teams[tid] = payload
 
-    # Conference ids: the union of the 80/81 children and every id a team's own
-    # `groups` ref names. Neither source alone is complete -- an independent's
-    # group never shows up as a child, and the children list can carry a
-    # conference no captured team belongs to.
+    # Conference ids: the union of every captured group's children and every id a
+    # team's own `groups` ref names. Neither source alone is complete -- an
+    # independent's group never shows up as a child, and the children list can
+    # carry a conference no captured team belongs to.
     conf_refs: dict[str, tuple[int, str]] = {}
 
     def _note_conf(ref: str) -> None:
@@ -208,10 +276,15 @@ def scrape_season(season: int, logger) -> dict:
             what=f"{season} conference {cid}",
         )
 
-    conferences: dict[str, dict] = {}
+    conferences: dict[str, dict] = {
+        cid: prior_conferences[cid] for cid in conf_refs if cid in prior_conferences
+    }
     for cid, payload in run_pool(
         _conf,
-        sorted(conf_refs.values(), key=lambda t: int(t[1])),
+        sorted(
+            (v for k, v in conf_refs.items() if k not in conferences),
+            key=lambda t: int(t[1]),
+        ),
         kind="thread",
         workers=_workers(),
         desc=f"{DATASET} {season} conferences",
@@ -231,6 +304,7 @@ def scrape_season(season: int, logger) -> dict:
     return {
         "season": season,
         "season_type": SEASON_TYPE,
+        "bundle_version": BUNDLE_VERSION,
         "captured_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "divisions": divisions,
         "group_children": group_children,
@@ -244,16 +318,26 @@ def season_path(season: int) -> Path:
     return Path(f"cfb/{DATASET}/json/{season}.json")
 
 
-def is_complete(season: int) -> bool:
-    """A bundle counts as captured only when nothing in it failed to fetch."""
+def load_season(season: int) -> dict | None:
+    """Read an already-written bundle, or None when absent / unreadable."""
     p = season_path(season)
     if not p.is_file():
-        return False
+        return None
     try:
         with p.open(encoding="utf-8") as f:
-            return not json.load(f).get("incomplete")
+            return json.load(f)
     except (OSError, ValueError):
+        return None
+
+
+def is_complete(bundle: dict | None) -> bool:
+    """Captured means nothing failed to fetch AND the capture set is current."""
+    if not bundle:
         return False
+    return (
+        not bundle.get("incomplete")
+        and int(bundle.get("bundle_version") or 1) >= BUNDLE_VERSION
+    )
 
 
 def scrape_positions(logger, *, force: bool = False) -> Path:
@@ -282,7 +366,9 @@ def scrape_positions(logger, *, force: bool = False) -> Path:
         )
 
     items = {}
-    for pid, payload in run_pool(_pos, ids, kind="thread", workers=_workers(), desc="positions"):
+    for pid, payload in run_pool(
+        _pos, ids, kind="thread", workers=_workers(), desc="positions"
+    ):
         if payload is not None:
             items[pid] = payload
     write_json_atomic(
@@ -320,10 +406,11 @@ def main() -> None:
 
     for season in range(args.start_year, end + 1):
         logger = get_logger(f"cfb_{DATASET}", season)
-        if not rescrape and is_complete(season):
+        prior = load_season(season)
+        if not rescrape and is_complete(prior):
             logger.info("%s: already captured, skipping", season)
             continue
-        bundle = scrape_season(season, logger)
+        bundle = scrape_season(season, logger, prior=None if rescrape else prior)
         write_json_atomic(bundle, season_path(season))
         logger.info("%s: wrote %s", season, season_path(season))
 
