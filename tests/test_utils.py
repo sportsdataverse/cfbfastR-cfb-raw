@@ -184,3 +184,29 @@ def test_filter_undone_treats_an_unreadable_final_as_undone(tmp_path):
     final_dir.mkdir()
     (final_dir / "404.json").write_text("{not json")
     assert u.filter_undone([404], dir=str(final_dir), rescrape=False) == [404]
+
+
+def test_status_state_survives_a_null_header():
+    """`.get(k, {})` returns None when the key EXISTS and is null, so a null
+    header used to raise AttributeError out of filter_undone and abort the pass."""
+    assert u.status_state({"header": None}) is None
+    assert u.status_state({"header": {"competitions": None}}) is None
+    assert u.status_state({"header": {"competitions": [None]}}) is None
+
+
+def test_filter_undone_survives_a_malformed_final(tmp_path):
+    """Neither case may raise -- an escaping error aborts the whole filter pass,
+    which is the failure mode this module exists to prevent.
+
+    They resolve differently on purpose:
+
+    * a non-numeric `count` cannot be evaluated at all -> schedule the game.
+    * a null header is merely missing the pre-game SIGNAL. Absence of evidence is
+      not evidence of a shell, so it is left alone -- the same answer `{}` has
+      always got (see test_filter_undone_drops_existing).
+    """
+    final_dir = tmp_path / "final"
+    final_dir.mkdir()
+    (final_dir / "405.json").write_text(json.dumps({"count": "not-a-number"}))
+    (final_dir / "406.json").write_text(json.dumps({"count": 0, "header": None}))
+    assert u.filter_undone([405, 406], dir=str(final_dir), rescrape=False) == [405]

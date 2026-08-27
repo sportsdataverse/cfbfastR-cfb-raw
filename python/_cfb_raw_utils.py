@@ -218,7 +218,7 @@ def status_state(doc: dict) -> str | None:
     Reads the same place in an ESPN summary and in a banked final, so the scraper's
     pre-game guard and the shell test below cannot drift apart.
     """
-    comp = (doc.get("header", {}).get("competitions") or [{}])[0]
+    comp = ((doc.get("header") or {}).get("competitions") or [{}])[0] or {}
     return ((comp.get("status") or {}).get("type") or {}).get("state")
 
 
@@ -238,11 +238,11 @@ def final_is_pregame_shell(path: Path) -> bool:
     """
     try:
         data = json.loads(path.read_bytes())
-    except Exception:  # noqa: BLE001 - unreadable final is not a usable scrape
+        if int(data.get("count") or 0) > 0:
+            return False
+        return status_state(data) == "pre"
+    except Exception:  # noqa: BLE001 - unreadable OR malformed: not a usable scrape
         return True
-    if int(data.get("count") or 0) > 0:
-        return False
-    return status_state(data) == "pre"
 
 
 def filter_undone(
