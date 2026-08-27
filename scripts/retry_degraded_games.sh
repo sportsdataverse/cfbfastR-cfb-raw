@@ -15,12 +15,16 @@
 #   DRY_RUN=1 bash scripts/retry_degraded_games.sh    # just show the list
 #
 # ENV
-#   CFB_PY        interpreter (default "uv run python"; see rescrape_cfb_full.sh)
+#   CFB_PY        interpreter override (default: this repo's .venv; see scripts/_venv.sh)
 #   MAX_PASSES    retry rounds (default 2) -- a game still degraded after these
 #                 is left with its banked copy and reported
 set -uo pipefail
 
-PY="${CFB_PY:-uv run python}"
+# Resolve this repo's interpreter (never `uv run` in a long job -- it re-syncs).
+# shellcheck source=scripts/_venv.sh
+source "$(dirname "${BASH_SOURCE[0]}")/_venv.sh"
+
+# Interpreter resolved by scripts/_venv.sh (sourced above); CFB_PY still overrides.
 MAX_PASSES=${MAX_PASSES:-2}
 DRY_RUN=${DRY_RUN:-0}
 

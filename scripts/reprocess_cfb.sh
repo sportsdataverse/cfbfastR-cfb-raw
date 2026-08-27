@@ -1,6 +1,10 @@
 #!/bin/bash
 # Rebuild final/ from on-disk raw for a season range (no re-scrape).
 set -uo pipefail
+
+# Resolve this repo's interpreter (never `uv run` in a long job -- it re-syncs).
+# shellcheck source=scripts/_venv.sh
+source "$(dirname "${BASH_SOURCE[0]}")/_venv.sh"
 while getopts s:e:f flag; do
   case "${flag}" in
     s) START_YEAR=${OPTARG};;
@@ -47,7 +51,7 @@ for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
     git pull >/dev/null
     git config --local user.email "action@github.com"
     git config --local user.name "Github Action"
-    uv run python python/reprocess_cfb_json.py -s "$i" -e "$i" $FORCE
+    "$PY" python/reprocess_cfb_json.py -s "$i" -e "$i" $FORCE
     # Load-bearing subject: the -data trigger greps the years out of it.
     sdv_commit_push "CFB Reprocess Update (Start: $i End: $i)" cfb/json/final || PUSH_RC=1
   } 2>&1 | tee "$TMPLOG"

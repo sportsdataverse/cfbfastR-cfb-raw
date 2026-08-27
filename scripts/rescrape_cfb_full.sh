@@ -24,6 +24,10 @@
 #   tail -f logs/rescrape_cfb_full.log
 set -uo pipefail
 
+# Resolve this repo's interpreter (never `uv run` in a long job -- it re-syncs).
+# shellcheck source=scripts/_venv.sh
+source "$(dirname "${BASH_SOURCE[0]}")/_venv.sh"
+
 START_YEAR=${1:-2004}
 END_YEAR=${2:-2025}
 FORCE=${FORCE:-0}
@@ -41,7 +45,7 @@ CFB_RESCRAPE_GIT=${CFB_RESCRAPE_GIT:-0}
 # build over any locally-installed one -- observed mid-run on 2026-07-28,
 # which restarted a season on code missing every fix from that day.
 # Point CFB_PY at the venv directly to pin one interpreter state.
-PY="${CFB_PY:-uv run python}"
+# Interpreter resolved by scripts/_venv.sh (sourced above); CFB_PY still overrides.
 
 mkdir -p logs
 LOG="logs/rescrape_cfb_full.log"
