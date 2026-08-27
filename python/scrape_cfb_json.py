@@ -23,6 +23,7 @@ from _cfb_raw_utils import (
     most_recent_cfb_season,
     run_pool,
     season_type_from_raw,
+    status_state,
     stamp,
     write_json_guarded,
 )
@@ -171,6 +172,20 @@ def download_game(game_id: int, season: int, rescrape: bool, logger=None):
             homeTeamId=home_id,
             awayTeamId=away_id,
         )
+        # A summary fetched before kickoff carries no plays. Banking it as final
+        # makes filter_undone treat the game as already scraped, so it is skipped
+        # for the REST OF THE SEASON while the job keeps reporting green -- the
+        # 2026-08-02 reprocess banked 946 such shells, one per unplayed 2026 game.
+        #
+        # The aux datasets written above ARE meaningful before kickoff (rosters,
+        # betting lines, power index), so they are kept; only the final is withheld.
+        if status_state(raw) == "pre":
+            logger.info(
+                "pre-game summary for %s -- aux banked, final withheld until kickoff",
+                game_id,
+            )
+            return "pregame"
+
         write_json_guarded(result, f"cfb/json/final/{game_id}.json", logger=logger)
         return "ok"
     except Exception:

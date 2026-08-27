@@ -212,13 +212,54 @@ def games_for_seasons(master, start: int, end: int) -> list[int]:
     return df["game_id"].astype(int).unique().tolist()
 
 
+def status_state(doc: dict) -> str | None:
+    """ESPN game state -- ``"pre"`` | ``"in"`` | ``"post"`` -- or None if absent.
+
+    Reads the same place in an ESPN summary and in a banked final, so the scraper's
+    pre-game guard and the shell test below cannot drift apart.
+    """
+    comp = ((doc.get("header") or {}).get("competitions") or [{}])[0] or {}
+    return ((comp.get("status") or {}).get("type") or {}).get("state")
+
+
+def final_is_pregame_shell(path: Path) -> bool:
+    """True when a banked final is a PRE-GAME shell rather than a real scrape.
+
+    A summary fetched before kickoff carries no plays, but ``download_game`` used
+    to bank it anyway. Because ``filter_undone`` below was existence-only, such a
+    shell then counted as a completed scrape and the game was skipped for the rest
+    of the season -- while the job stayed green. The 2026-08-02 full-history
+    reprocess (a230f2d50) banked 946 of them, one for every unplayed 2026 game.
+
+    The test is deliberately NOT "zero plays". A finished game with no ESPN
+    play-by-play source legitimately banks ``count == 0`` (e.g. 242410193), and
+    treating those as undone would re-scrape them every single day forever. Only
+    zero plays AND an ESPN status still reading ``pre`` is a shell.
+    """
+    try:
+        data = json.loads(path.read_bytes())
+        if int(data.get("count") or 0) > 0:
+            return False
+        return status_state(data) == "pre"
+    except Exception:  # noqa: BLE001 - unreadable OR malformed: not a usable scrape
+        return True
+
+
 def filter_undone(
     games, dir: str = "cfb/json/final", rescrape: bool = False
 ) -> list[int]:
     if rescrape:
         return list(games)
     d = Path(dir)
-    return [g for g in games if not (d / f"{g}.json").exists()]
+    # ponytail: this parses each banked final -- measured 22s across a 958-game
+    # season, against a scrape that runs for minutes. If that stops being cheap,
+    # read only the stamped `count`/`header.status` keys instead of the whole doc.
+    out = []
+    for g in games:
+        f = d / f"{g}.json"
+        if not f.exists() or final_is_pregame_shell(f):
+            out.append(g)
+    return out
 
 
 def hollow_game_ids(failures_csv: str = "logs/scrape_failures.csv") -> set[int]:

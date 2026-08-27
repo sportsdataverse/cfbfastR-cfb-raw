@@ -130,3 +130,83 @@ def test_write_json_guarded_replaces_an_existing_empty_stub(tmp_path):
     u.write_json_atomic({}, target)
     assert u.write_json_guarded(_big(400), target) is True
     assert len(json.loads(target.read_text())["plays"]) == 400
+
+
+def _final(final_dir, game_id, count, state):
+    """Bank a final with the two fields the shell test reads."""
+    doc = {"count": count}
+    if state is not None:
+        doc["header"] = {"competitions": [{"status": {"type": {"state": state}}}]}
+    (final_dir / f"{game_id}.json").write_text(json.dumps(doc))
+
+
+def test_status_state_reads_pre_in_post():
+    for state in ("pre", "in", "post"):
+        doc = {"header": {"competitions": [{"status": {"type": {"state": state}}}]}}
+        assert u.status_state(doc) == state
+    assert u.status_state({}) is None
+
+
+def test_filter_undone_rescrapes_a_pregame_shell(tmp_path):
+    """The 2026 blocker: a final banked before kickoff must NOT count as scraped.
+
+    946 of these (one per unplayed 2026 game) were banked by the 2026-08-02
+    reprocess. With the old existence-only check every 2026 game was skipped for
+    the whole season while the job reported green.
+    """
+    final_dir = tmp_path / "final"
+    final_dir.mkdir()
+    _final(final_dir, 401, count=0, state="pre")
+    assert u.filter_undone([401], dir=str(final_dir), rescrape=False) == [401]
+
+
+def test_filter_undone_settles_a_finished_game_with_no_plays(tmp_path):
+    """A finished game with no ESPN pbp source legitimately banks count == 0.
+
+    Real example: 242410193. A naive "zero plays -> undone" rule would re-scrape
+    every one of these on every daily run, forever.
+    """
+    final_dir = tmp_path / "final"
+    final_dir.mkdir()
+    _final(final_dir, 402, count=0, state="post")
+    assert u.filter_undone([402], dir=str(final_dir), rescrape=False) == []
+
+
+def test_filter_undone_keeps_a_real_scrape_done(tmp_path):
+    final_dir = tmp_path / "final"
+    final_dir.mkdir()
+    _final(final_dir, 403, count=150, state="post")
+    assert u.filter_undone([403], dir=str(final_dir), rescrape=False) == []
+
+
+def test_filter_undone_treats_an_unreadable_final_as_undone(tmp_path):
+    final_dir = tmp_path / "final"
+    final_dir.mkdir()
+    (final_dir / "404.json").write_text("{not json")
+    assert u.filter_undone([404], dir=str(final_dir), rescrape=False) == [404]
+
+
+def test_status_state_survives_a_null_header():
+    """`.get(k, {})` returns None when the key EXISTS and is null, so a null
+    header used to raise AttributeError out of filter_undone and abort the pass."""
+    assert u.status_state({"header": None}) is None
+    assert u.status_state({"header": {"competitions": None}}) is None
+    assert u.status_state({"header": {"competitions": [None]}}) is None
+
+
+def test_filter_undone_survives_a_malformed_final(tmp_path):
+    """Neither case may raise -- an escaping error aborts the whole filter pass,
+    which is the failure mode this module exists to prevent.
+
+    They resolve differently on purpose:
+
+    * a non-numeric `count` cannot be evaluated at all -> schedule the game.
+    * a null header is merely missing the pre-game SIGNAL. Absence of evidence is
+      not evidence of a shell, so it is left alone -- the same answer `{}` has
+      always got (see test_filter_undone_drops_existing).
+    """
+    final_dir = tmp_path / "final"
+    final_dir.mkdir()
+    (final_dir / "405.json").write_text(json.dumps({"count": "not-a-number"}))
+    (final_dir / "406.json").write_text(json.dumps({"count": 0, "header": None}))
+    assert u.filter_undone([405, 406], dir=str(final_dir), rescrape=False) == [405]
