@@ -2,6 +2,10 @@
 # Scrape raw CFB datasets per season (schedules -> json[+all aux/extras]).
 set -uo pipefail
 
+# Resolve this repo's interpreter (never `uv run` in a long job -- it re-syncs).
+# shellcheck source=scripts/_venv.sh
+source "$(dirname "${BASH_SOURCE[0]}")/_venv.sh"
+
 while getopts s:e:r:h: flag; do
   case "${flag}" in
     s) START_YEAR=${OPTARG};;
@@ -61,8 +65,8 @@ for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
     git pull >/dev/null
     git config --local user.email "action@github.com"
     git config --local user.name "Github Action"
-    uv run python python/scrape_cfb_schedules.py -s "$i" -e "$i" -r "$RESCRAPE"
-    uv run python python/scrape_cfb_json.py      -s "$i" -e "$i" -r "$RESCRAPE" --hollow "$HOLLOW"
+    "$PY" python/espn_cfb_01_schedules_scrape.py -s "$i" -e "$i" -r "$RESCRAPE"
+    "$PY" python/espn_cfb_02_pbp_scrape.py      -s "$i" -e "$i" -r "$RESCRAPE" --hollow "$HOLLOW"
     sdv_commit_push "CFB Raw Update (Start: $i End: $i)" cfb || PUSH_RC=1
   } 2>&1 | tee "$TMPLOG"
   cp "$TMPLOG" "logs/cfb_raw_logfile_${i}.log"

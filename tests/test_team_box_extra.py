@@ -1,7 +1,7 @@
 import importlib.util
 from pathlib import Path
 
-P = Path(__file__).parents[1] / "python" / "cfb_team_box_extra.py"
+P = Path(__file__).parents[1] / "python" / "cfb_raw_scrape" / "cfb_team_box_extra.py"
 spec = importlib.util.spec_from_file_location("cfb_team_box_extra", P)
 m = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(m)

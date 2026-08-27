@@ -40,7 +40,7 @@ from pathlib import Path
 
 import sportsdataverse as sdv
 
-from _cfb_raw_utils import get_logger, most_recent_cfb_season, write_json_atomic
+from cfb_raw_scrape._cfb_raw_utils import get_logger, most_recent_cfb_season, write_json_atomic
 
 DATASET = "recruits"
 SPORT_KEY = 1  # football

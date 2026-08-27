@@ -23,6 +23,10 @@
 #   SDV_PY_247_RETRIES (3)  SDV_PY_247_DELAY (0.5s)  SDV_PY_247_BACKOFF (2.0s)
 set -euo pipefail
 
+# Resolve this repo's interpreter (never `uv run` in a long job -- it re-syncs).
+# shellcheck source=scripts/_venv.sh
+source "$(dirname "${BASH_SOURCE[0]}")/_venv.sh"
+
 cd "$(dirname "$0")/.."
 
 FLOOR=2002
@@ -45,5 +49,5 @@ echo "scraping ${START}-${END} -> $LOG"
 echo "watch with: tail -f $(pwd)/$LOG"
 
 PYTHONUNBUFFERED=1 PYTHONIOENCODING=utf-8 \
-  uv run python python/scrape_cfb_recruits.py -s "$START" -e "$END" "$@" 2>&1 | tee -a "$LOG"
+  "$PY" python/espn_cfb_10_recruits_scrape.py -s "$START" -e "$END" "$@" 2>&1 | tee -a "$LOG"
 echo "EXIT=${PIPESTATUS[0]}" | tee -a "$LOG"

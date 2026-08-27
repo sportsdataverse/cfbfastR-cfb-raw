@@ -1,7 +1,7 @@
 import importlib.util
 from pathlib import Path
 
-P = Path(__file__).parents[1] / "python" / "cfb_betting.py"
+P = Path(__file__).parents[1] / "python" / "cfb_raw_scrape" / "cfb_betting.py"
 spec = importlib.util.spec_from_file_location("cfb_betting", P)
 b = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(b)

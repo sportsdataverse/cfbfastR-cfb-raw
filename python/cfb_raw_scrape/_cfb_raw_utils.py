@@ -262,6 +262,33 @@ def filter_undone(
     return out
 
 
+def read_ids_file(ids_file: str) -> set[int]:
+    """Parse a whitespace-separated game-id list once.
+
+    Split out from ``filter_ids_file`` because the caller loops SEASONS: re-reading
+    and re-parsing the same file per season is pure waste on a wide -s/-e range,
+    which is exactly what the degraded-retry driver runs.
+    """
+    return {
+        int(tok)
+        for tok in Path(ids_file).read_text(encoding="utf-8").split()
+        if tok.strip()
+    }
+
+
+def filter_ids_file(games, ids_file: str) -> list[int]:
+    """Return only the games named in ``ids_file`` (whitespace-separated ids).
+
+    A targeted recovery pass: `scripts/retry_degraded_games.sh` harvests degraded
+    game ids out of the scrape logs and hands them back to be re-fetched.
+
+    Intersected with the season's schedule on purpose -- a stray or mistyped id
+    must not send the scraper after a game that is not in this season, and the
+    caller loops seasons, so each season takes only its own share of the list.
+    """
+    return [g for g in games if g in read_ids_file(ids_file)]
+
+
 def hollow_game_ids(failures_csv: str = "logs/scrape_failures.csv") -> set[int]:
     """Return game IDs recorded as hollow_extras in scrape_failures.csv."""
     import csv as _csv

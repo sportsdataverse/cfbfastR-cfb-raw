@@ -14,8 +14,8 @@ from pathlib import Path
 
 from sportsdataverse.cfb import CFBPlayProcess
 
-from _cfb_raw_utils import PROCESSING_VERSION, get_logger, run_pool, season_type_from_raw, write_json_atomic
-from cfb_betting import odds_override_from_betting
+from cfb_raw_scrape._cfb_raw_utils import PROCESSING_VERSION, get_logger, run_pool, season_type_from_raw, write_json_atomic
+from cfb_raw_scrape.cfb_betting import odds_override_from_betting
 
 RAW_DIR = Path("cfb/json/raw")
 FINAL_DIR = Path("cfb/json/final")

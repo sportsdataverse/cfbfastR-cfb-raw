@@ -5,8 +5,11 @@ Python/uv scraper for ESPN college-football game JSON. Sibling of `cfbfastR-cfb-
 ## Commands
 - `uv sync` — install (editable sdv-py from ../../sdv-py for dev; requires sportsdataverse>=0.0.69).
 - `uv run pytest` — offline test suite. Live tests: `CFB_LIVE_TESTS=1 uv run pytest -m live`.
-- `uv run python python/scrape_cfb_json.py -s YYYY -e YYYY -r false` — scrape.
-- `uv run python python/reprocess_cfb_json.py -s YYYY -e YYYY --force` — offline rebuild.
+- `source scripts/_venv.sh` then `"$PY" python/espn_cfb_02_pbp_scrape.py -s YYYY -e YYYY -r false` — scrape.
+- `"$PY" python/reprocess_cfb_json.py -s YYYY -e YYYY --force` — offline rebuild.
+  **Never `uv run` for a scrape or reprocess** — it re-syncs the env mid-run and has
+  already swapped the interpreter under a live job (2026-07-28). `scripts/_venv.sh`
+  resolves it once: `CFB_PY` override → this repo's `.venv` → loud failure.
 
 ## Conventions
 - SDK boundary: all ESPN access via `sportsdataverse.cfb` (`CFBPlayProcess`, `espn_cfb_*`).
@@ -20,8 +23,37 @@ Python/uv scraper for ESPN college-football game JSON. Sibling of `cfbfastR-cfb-
 - Bump `SCHEMA_REV` when the final shape / enrichment inputs change.
 - `python/scrape_cfb_qbr.py` is executed cross-repo by `cfbfastR-cfb-data`'s
   `cfb_model_pipeline.yml` (checks this repo out as `_raw`) — not an orphan;
-  coordinate any rename/move/CLI change with that workflow.
+  coordinate any rename/move/CLI change with that workflow. It is deliberately
+  **retained under its original name**: the numbered stage
+  `espn_cfb_13_qbr_scrape.py` is a shim over it, so the external caller keeps
+  working. Retiring the old name needs that workflow updated FIRST.
 - Never add AI co-author trailers to commits.
+
+## Pipeline stages
+
+`python/espn_cfb_NN_<name>_scrape.py` are thin shims — the directory listing IS
+the pipeline. The implementation stays in the `scrape_cfb_*` modules they import,
+which also keeps the cross-repo callers above working.
+
+| NN | stage | implementation |
+|---|---|---|
+| 01 | schedules | `scrape_cfb_schedules.py` |
+| 02 | pbp | `scrape_cfb_json.py` |
+| 04 | game_rosters | `scrape_cfb_game_rosters.py` |
+| 10 | recruits | `scrape_cfb_recruits.py` |
+| 11 | play_participants | `scrape_cfb_participants.py` |
+| 12 | power_index | `scrape_cfb_power_index.py` |
+| 13 | qbr | `scrape_cfb_qbr.py` |
+| 14 | teams | `scrape_cfb_teams.py` |
+
+**03, 05–09 are HOLES and stay empty.** 01–09 are the shared ESPN family slots
+(03 standings, 05 draft, 06 player_stats, 07 team_stats, 08 team_rosters,
+09 player_core) which CFB does not scrape. A number means the same dataset in
+every ESPN `-raw` repo — that is worth more than a dense sequence, so never
+compact them. CFB-only datasets start at 10.
+
+The number is intended **build** order, not run order: the ordered sequence in
+`scripts/daily_cfb_scraper.sh` is the executable truth.
 
 ## Scope: scraping + reprocess only
 

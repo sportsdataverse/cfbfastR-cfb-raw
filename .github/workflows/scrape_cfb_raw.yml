@@ -66,7 +66,7 @@ jobs:
       - name: Default year inputs if empty
         if: ${{ env.START_YEAR == '' }}
         run: |
-          YR=$(uv run python -c "import sys; sys.path.insert(0,'python'); from _cfb_raw_utils import most_recent_cfb_season as m; print(m())")
+          YR=$(uv run python -c "import sys; sys.path.insert(0,'python'); from cfb_raw_scrape._cfb_raw_utils import most_recent_cfb_season as m; print(m())")
           echo "START_YEAR=$YR" >> $GITHUB_ENV
           echo "END_YEAR=$YR" >> $GITHUB_ENV
 

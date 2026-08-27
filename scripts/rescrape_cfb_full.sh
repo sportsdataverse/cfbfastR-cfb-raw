@@ -24,6 +24,10 @@
 #   tail -f logs/rescrape_cfb_full.log
 set -uo pipefail
 
+# Resolve this repo's interpreter (never `uv run` in a long job -- it re-syncs).
+# shellcheck source=scripts/_venv.sh
+source "$(dirname "${BASH_SOURCE[0]}")/_venv.sh"
+
 START_YEAR=${1:-2004}
 END_YEAR=${2:-2025}
 FORCE=${FORCE:-0}
@@ -41,7 +45,7 @@ CFB_RESCRAPE_GIT=${CFB_RESCRAPE_GIT:-0}
 # build over any locally-installed one -- observed mid-run on 2026-07-28,
 # which restarted a season on code missing every fix from that day.
 # Point CFB_PY at the venv directly to pin one interpreter state.
-PY="${CFB_PY:-uv run python}"
+# Interpreter resolved by scripts/_venv.sh (sourced above); CFB_PY still overrides.
 
 mkdir -p logs
 LOG="logs/rescrape_cfb_full.log"
@@ -78,7 +82,7 @@ for YEAR in $(seq "$START_YEAR" "$END_YEAR"); do
   fi
 
   say "--- season $YEAR: refreshing schedule ---"
-  $PY python/scrape_cfb_schedules.py -s "$YEAR" -e "$YEAR" -r true 2>&1 | tee -a "$LOG"
+  $PY python/espn_cfb_01_schedules_scrape.py -s "$YEAR" -e "$YEAR" -r true 2>&1 | tee -a "$LOG"
   SCHED_RC=${PIPESTATUS[0]}
   if [ "$SCHED_RC" -ne 0 ]; then
     say "season $YEAR SCHEDULE FAILED rc=$SCHED_RC -- not checkpointing, continuing to next season"
@@ -86,7 +90,7 @@ for YEAR in $(seq "$START_YEAR" "$END_YEAR"); do
   fi
 
   say "--- season $YEAR: rescraping all games (raw+final+participants+rosters+extras) ---"
-  $PY python/scrape_cfb_json.py -s "$YEAR" -e "$YEAR" -r true 2>&1 | tee -a "$LOG"
+  $PY python/espn_cfb_02_pbp_scrape.py -s "$YEAR" -e "$YEAR" -r true 2>&1 | tee -a "$LOG"
   RC=${PIPESTATUS[0]}
 
   if [ "$RC" -ne 0 ]; then

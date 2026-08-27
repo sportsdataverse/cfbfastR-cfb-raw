@@ -11,7 +11,7 @@ from pathlib import Path
 import pandas as pd
 import sportsdataverse as sdv
 
-from _cfb_raw_utils import get_logger, most_recent_cfb_season
+from cfb_raw_scrape._cfb_raw_utils import get_logger, most_recent_cfb_season
 
 SCHED_DIR = Path("cfb/schedules")
 MASTER = "cfb/cfb_schedule_master.parquet"
