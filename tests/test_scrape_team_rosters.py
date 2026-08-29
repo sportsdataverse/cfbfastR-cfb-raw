@@ -146,3 +146,41 @@ def test_main_one_bad_team_does_not_stop_the_sweep(tmp_path, monkeypatch, roster
     rc = tr.main(["-s", str(year), "-e", str(year)])
     assert rc == 1  # the driver sees red
     assert (tmp_path / tr.out_path(year, 333)).exists()  # the good team still landed
+
+
+# --- added after finding the endpoint's 100-row page cap ------------------
+
+
+def test_fetch_asks_for_more_than_the_default_page(monkeypatch):
+    """ESPN pages this at 100. The first version used the generated wrapper,
+    which cannot pass params, and silently truncated every roster: Alabama came
+    back with exactly 100 where the real squad is 120."""
+    seen = {}
+
+    class _R:
+        def json(self):
+            return {"athletes": []}
+
+    def _dl(url, params=None, **kw):
+        seen["url"], seen["params"] = url, params
+        return _R()
+
+    monkeypatch.setattr(tr, "download", _dl)
+    tr._fetch(333)
+    assert seen["params"] == {"limit": tr.ROSTER_LIMIT}
+    assert tr.ROSTER_LIMIT >= 500
+    assert "/teams/333/roster" in seen["url"]
+
+
+def test_write_one_refuses_a_roster_that_hit_the_limit(tmp_path, monkeypatch):
+    """A full page looks like a complete roster -- that is exactly how the
+    100-cap hid. Hitting the limit exactly must raise, not bank."""
+    monkeypatch.chdir(tmp_path)
+    full = {
+        "season": {"year": 2026},
+        "athletes": [{"position": "offense", "items": [{}] * tr.ROSTER_LIMIT}],
+    }
+    monkeypatch.setattr(tr, "_fetch", lambda team_id: full)
+    with pytest.raises(RuntimeError, match="ROSTER_LIMIT"):
+        tr.write_one(2026, 333, _Log())
+    assert not (tmp_path / tr.out_path(2026, 333)).exists()

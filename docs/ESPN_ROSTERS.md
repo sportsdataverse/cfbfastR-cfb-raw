@@ -214,6 +214,14 @@ Only 27 of the 74 ids are actually used by CFB roster rows. The most common are
 16. **The generated `espn_cfb_positions` wrapper hardcodes `params={}`**, so `limit`
     cannot be passed and ESPN pages at 25 with no `page` kwarg. The reference
     capture goes through `dl_utils.download(url, params={"limit": 200})` instead.
+
+    **This bites the roster endpoint too, and it costs data.** `espn_cfb_team_roster`
+    has the same limitation — `params=` raises `TypeError` from
+    `_codegen_runtime._get()` — and the roster route pages at **100**. Measured on
+    Alabama (333): the wrapper returns 100 players, `limit=500` returns **120**.
+    Stage 03 therefore fetches through `dl_utils.download` with an explicit
+    `limit` and refuses to bank a roster whose player count equals the limit,
+    because a full page is indistinguishable from a complete squad.
 17. **The old `espn_cfb_rosters` release was two datasets under one tag.**
     `roster_2004…2022` (18 columns) are byte-equivalent MIRRORS of the CFBD-sourced
     `cfbfastR-data/rosters/parquet/cfb_rosters_{season}.parquet` — the exact file

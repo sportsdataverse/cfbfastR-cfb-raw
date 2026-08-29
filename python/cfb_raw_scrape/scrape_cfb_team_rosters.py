@@ -30,11 +30,13 @@ history is a CFBD splice, not a deeper crawl of this endpoint.
 Payload shape, read from a real Alabama (333) response::
 
     {season: {year, type, name}, team: {...}, coach: [...],
-     athletes: [{position: "offense",  items: [ ...52 players... ]},
-                {position: "defense",  items: [ ...42... ]},
-                {position: "specialTeam", items: [ ...6... ]},
+     athletes: [{position: "offense",  items: [...]},
+                {position: "defense",  items: [...]},
+                {position: "specialTeam", items: [...]},
                 {position: "injuredReserveOrOut" | "suspended" | "practiceSquad",
-                 items: []}]}    # 100 players across 6 groups
+                 items: []}]}    # Alabama: 120 players across 6 groups AT
+                                 # limit=500. The default page cap of 100 hid
+                                 # the last 20 -- see ROSTER_LIMIT.
 """
 
 from __future__ import annotations
@@ -44,7 +46,7 @@ import json
 from datetime import date
 from pathlib import Path
 
-import sportsdataverse as sdv
+from sportsdataverse.dl_utils import download
 
 from cfb_raw_scrape._cfb_raw_utils import (
     get_logger,
@@ -62,6 +64,20 @@ ROSTER_GROUPS = ("80", "81")
 
 #: A roster with no players is a throttled 200, not a team with no team.
 MIN_PLAYERS = 1
+
+#: ESPN pages this endpoint at 100 and the generated wrapper cannot pass query
+#: params -- `espn_cfb_team_roster(..., params=...)` raises TypeError from
+#: _codegen_runtime._get(). Measured on Alabama (333): the default returns 100
+#: players, `limit=500` returns 120. The first version of this stage used the
+#: wrapper and silently truncated EVERY roster at 100.
+#:
+#: This is the second instance of the same wrapper limitation in this repo --
+#: ESPN_ROSTERS.md section 16 records it for espn_cfb_positions, which also has
+#: to go through dl_utils.download with an explicit limit.
+ROSTER_URL = (
+    "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/{team_id}/roster"
+)
+ROSTER_LIMIT = 500
 
 
 def out_path(season: int, team_id: int | str) -> str:
@@ -93,7 +109,13 @@ def team_ids(season: int, groups: tuple[str, ...] = ROSTER_GROUPS) -> list[str]:
 
 
 def _fetch(team_id: int | str) -> dict:
-    return sdv.cfb.espn_cfb_team_roster(team_id=team_id, return_parsed=False)
+    """Fetch one roster through the HTTP chokepoint, with an explicit limit.
+
+    NOT the generated wrapper: it hardcodes the params dict, so the 100-row page
+    cap cannot be lifted through it (see ROSTER_LIMIT).
+    """
+    resp = download(url=ROSTER_URL.format(team_id=team_id), params={"limit": ROSTER_LIMIT})
+    return resp.json() if resp is not None else {}
 
 
 def count_players(payload: dict) -> int:
@@ -135,6 +157,14 @@ def write_one(season: int, team_id: int | str, logger) -> int:
             "(see the module docstring; use the CFBD splice for pre-2023)."
         )
     players = count_players(payload)
+    if players >= ROSTER_LIMIT:
+        # Hitting the requested limit exactly is how the 100-cap hid: a full page
+        # looks like a complete roster. Raise the limit rather than assume the
+        # squad is that big.
+        raise RuntimeError(
+            f"{DATASET} {season} team {team_id}: {players} players == ROSTER_LIMIT "
+            f"({ROSTER_LIMIT}) -- almost certainly truncated; raise the limit"
+        )
     if players < MIN_PLAYERS:
         raise RuntimeError(
             f"{DATASET} {season} team {team_id}: 0 players -- refusing to bank "
