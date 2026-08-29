@@ -53,7 +53,43 @@ jobs:
       RESCRAPE: ${{ inputs.rescrape }}
       HOLLOW: ${{ inputs.hollow }}
     steps:
+      # The checkout materialises ~76 GB of tracked JSON (json/final alone is 58 GB
+      # across 19,750 files averaging 2.9 MB, because each final embeds plays +
+      # advBoxScore + all five aux datasets). A current ubuntu-latest has roughly
+      # 65-70 GB free, so this repo sat just under the ceiling until the 2026-08-27
+      # run committed aux data for 946 games. The next run then died mid-scrape with
+      # "No space left on device" after ~3 hours, having pushed nothing (run
+      # 33208979285).
+      #
+      # Reclaiming the preinstalled toolchains buys ~30 GB. It runs BEFORE checkout
+      # so the space exists when it is needed.
+      #
+      # This is a reprieve, not a cure: json/final grows ~3 GB per season. The
+      # durable fix is to stop committing enriched finals at this size (they
+      # duplicate the aux datasets they embed) or to split the tree.
+      - name: Reclaim runner disk before checkout
+        run: |
+          echo "before:"; df -h / | tail -1
+          sudo rm -rf /usr/share/dotnet || true
+          sudo rm -rf /usr/local/lib/android || true
+          sudo rm -rf /opt/ghc /usr/local/share/boost /usr/share/swift || true
+          sudo rm -rf "${AGENT_TOOLSDIRECTORY:-/opt/hostedtoolcache}" || true
+          sudo docker image prune --all --force >/dev/null 2>&1 || true
+          echo "after:"; df -h / | tail -1
+
       - uses: actions/checkout@v5
+
+      # Fail loudly and EARLY if the tree still does not fit, rather than dying three
+      # hours into a scrape having written nothing.
+      - name: Assert disk headroom
+        run: |
+          df -h / | tail -1
+          avail=$(df -BG --output=avail / | tail -1 | tr -dc 0-9)
+          echo "available after checkout: ${avail} GB"
+          if [ "${avail}" -lt 10 ]; then
+            echo "::error ::only ${avail} GB free after checkout; the scrape writes more and would die mid-run"
+            exit 1
+          fi
 
       - name: Set up uv
         uses: astral-sh/setup-uv@v8.1.0
