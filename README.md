@@ -31,7 +31,7 @@ uv sync
 source scripts/_venv.sh
 
 "$PY" python/espn_cfb_02_schedules_scrape.py -s 2024 -e 2024
-"$PY" python/espn_cfb_06_pbp_scrape.py      -s 2024 -e 2024
+"$PY" python/espn_cfb_04_pbp_scrape.py      -s 2024 -e 2024
 # full backfill
 bash scripts/backfill_cfb.sh 2004
 # rebuild final from raw on disk after a pipeline change (offline)

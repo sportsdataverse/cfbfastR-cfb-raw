@@ -56,11 +56,11 @@ for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
     # 403s under load. They remain as standalone stages for backfilling their
     # own cfb/game_rosters and cfb/play_participants trees.
     # 06 pbp -- the expensive stage, and the one the others feed.
-    "$PY" python/espn_cfb_06_pbp_scrape.py -s "$i" -e "$i" -r "$RESCRAPE" --hollow "$HOLLOW"
+    "$PY" python/espn_cfb_04_pbp_scrape.py -s "$i" -e "$i" -r "$RESCRAPE" --hollow "$HOLLOW"
     # 10/11 are season-level and depend only on the schedule.
-    "$PY" python/espn_cfb_10_qbr_scrape.py -s "$i" -e "$i" \
+    "$PY" python/espn_cfb_08_qbr_scrape.py -s "$i" -e "$i" \
       || echo "!! qbr scrape failed for $i (non-fatal)"
-    "$PY" python/espn_cfb_11_power_index_scrape.py -s "$i" -e "$i" -r "$RESCRAPE" \
+    "$PY" python/espn_cfb_09_power_index_scrape.py -s "$i" -e "$i" -r "$RESCRAPE" \
       || echo "!! power_index scrape failed for $i (non-fatal)"
     sdv_commit_push "CFB Raw Update (Start: $i End: $i)" cfb || PUSH_RC=1
   } 2>&1 | tee "$TMPLOG"

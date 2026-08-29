@@ -61,7 +61,7 @@ for PASS in $(seq 1 "$MAX_PASSES"); do
   [ "$N" -eq 0 ] && { say "nothing left to retry"; break; }
   say "=== pass $PASS/$MAX_PASSES over $N games ==="
 
-  $PY python/espn_cfb_06_pbp_scrape.py -s "$SEASON_START" -e "$SEASON_END" --ids-file "$LIST" 2>&1 | tee -a "$LOG"
+  $PY python/espn_cfb_04_pbp_scrape.py -s "$SEASON_START" -e "$SEASON_END" --ids-file "$LIST" 2>&1 | tee -a "$LOG"
 
   # Re-harvest so the next pass only carries what is still failing.
   grep -h -oE "degraded summary for [0-9]+" logs/cfb_json_logfile_*.log 2>/dev/null \

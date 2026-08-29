@@ -90,7 +90,7 @@ for YEAR in $(seq "$START_YEAR" "$END_YEAR"); do
   fi
 
   say "--- season $YEAR: rescraping all games (raw+final+participants+rosters+extras) ---"
-  $PY python/espn_cfb_06_pbp_scrape.py -s "$YEAR" -e "$YEAR" -r true 2>&1 | tee -a "$LOG"
+  $PY python/espn_cfb_04_pbp_scrape.py -s "$YEAR" -e "$YEAR" -r true 2>&1 | tee -a "$LOG"
   RC=${PIPESTATUS[0]}
 
   if [ "$RC" -ne 0 ]; then
