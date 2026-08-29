@@ -1,0 +1,2 @@
+2026-08-29 06:11:31,770 INFO team_stats 2020: 267 teams x 2 types, 534 to fetch (0 banked and final)
+2026-08-29 06:11:40,918 INFO team_stats 2020: 244 (type/team) publish no stats -- expected, not a failure: ['2/13', '2/16', '2/41', '2/43', '2/46', '2/47', '2/48', '2/50', '2/56', '2/70']
