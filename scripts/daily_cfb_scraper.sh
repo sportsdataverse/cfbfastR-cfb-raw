@@ -43,9 +43,18 @@ for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
     git config --local user.name "Github Action"
     "$PY" python/espn_cfb_01_schedules_scrape.py -s "$i" -e "$i" -r "$RESCRAPE"
     "$PY" python/espn_cfb_02_pbp_scrape.py      -s "$i" -e "$i" -r "$RESCRAPE" --hollow "$HOLLOW"
+    # Stage 14 -- per-season team/conference reference. Season-keyed like 01/02
+    # (unlike recruiting below, which is CLASS-year keyed and runs once), and
+    # cheap to re-run: an already-captured season is skipped, and a partial one
+    # reuses the payloads it has and fetches only the missing ids. Non-fatal so
+    # a reference-endpoint flake cannot cost the season its pbp.
+    "$PY" python/espn_cfb_14_teams_scrape.py    -s "$i" -e "$i" -r "$RESCRAPE" || echo "!! teams scrape failed for $i (non-fatal)"
     sdv_commit_push "CFB Raw Update (Start: $i End: $i)" cfb || PUSH_RC=1
   } 2>&1 | tee "$TMPLOG"
   cp "$TMPLOG" "logs/cfb_raw_logfile_${i}.log"
+  # Stage 14 writes its own canonical per-season log via get_logger; commit it
+  # in-loop like every other season artifact.
+  sdv_commit_log cfb_teams "$i" || PUSH_RC=1
   # NOT `pull --rebase`: git's default am backend base64-encodes every blob it
   # replays, and this repo's .git is ~20 GB of parquet/JSON -- it stalls. The
   # merge backend replays by tree instead. (rebase.backend=merge is not an
