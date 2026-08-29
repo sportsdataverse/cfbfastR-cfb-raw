@@ -1,4 +1,4 @@
-"""Stage 06 entry point -- ESPN CFB per-team season statistics.
+"""Stage 52 entry point -- ESPN's own CFB recruiting classes.
 
 Cold-start execution order:
 
@@ -15,10 +15,15 @@ Cold-start execution order:
     51 player_core        identity + bio; monthly, athlete-keyed
     52 espn_recruits      ESPN's OWN recruiting classes; monthly (50 is 247Sports)
 
-Implementation: ``cfb_raw_scrape.scrape_cfb_team_stats``.
+Implementation: ``cfb_raw_scrape.scrape_cfb_espn_recruits``.
+
+A DIFFERENT PROVIDER from stage 50, which scrapes 247Sports. Different universe,
+different grades, different rankings -- neither is the other's oracle.
+
+Cadence is MONTHLY alongside 50 and 51.
 """
 
-from cfb_raw_scrape.scrape_cfb_team_stats import main
+from cfb_raw_scrape.scrape_cfb_espn_recruits import main
 
 if __name__ == "__main__":
     raise SystemExit(main())

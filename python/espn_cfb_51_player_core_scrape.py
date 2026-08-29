@@ -13,6 +13,7 @@ Cold-start execution order:
     09 power_index
     50 recruits           preflight-gated monthly cadence, not the daily loop
     51 player_core        identity + bio; monthly, athlete-keyed
+    52 espn_recruits      ESPN's OWN recruiting classes; monthly (50 is 247Sports)
 
 Implementation: ``cfb_raw_scrape.scrape_cfb_player_core``.
 
