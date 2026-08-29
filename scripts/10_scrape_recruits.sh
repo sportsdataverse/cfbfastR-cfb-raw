@@ -43,11 +43,33 @@ if [[ "$START" -lt "$FLOOR" ]]; then
   START="$FLOOR"
 fi
 
-LOG="logs/recruits_$(date +%Y%m%d_%H%M%S).log"
-mkdir -p logs
-echo "scraping ${START}-${END} -> $LOG"
-echo "watch with: tail -f $(pwd)/$LOG"
+# Per-class-year loop so each year's run record commits WITH that year, rather
+# than one aggregate log at the end of a backfill that may never reach its exit.
+# The canonical name comes from the Python side (get_logger -> cfb_recruits_
+# logfile_<year>.log); the whole-run tee is a temp file, because a timestamped
+# aggregate is session state and not a pipeline artifact.
+# shellcheck source=scripts/_commit.sh
+source "$(dirname "${BASH_SOURCE[0]}")/_commit.sh"
 
-PYTHONUNBUFFERED=1 PYTHONIOENCODING=utf-8 \
-  "$PY" python/espn_cfb_10_recruits_scrape.py -s "$START" -e "$END" "$@" 2>&1 | tee -a "$LOG"
-echo "EXIT=${PIPESTATUS[0]}" | tee -a "$LOG"
+mkdir -p logs
+RUN_LOG=$(mktemp "/tmp/cfb_recruits_run.XXXXXX.log")
+PUSH="${PUSH:-true}"
+RC=0
+
+echo "scraping classes ${START}-${END}"
+echo "watch with: tail -f $RUN_LOG"
+
+for y in $(seq "$START" "$END"); do
+  PYTHONUNBUFFERED=1 PYTHONIOENCODING=utf-8 \
+    "$PY" python/espn_cfb_10_recruits_scrape.py -s "$y" -e "$y" "$@" 2>&1 | tee -a "$RUN_LOG"
+  year_rc=${PIPESTATUS[0]}
+  [ "$year_rc" -eq 0 ] || { echo "!! class $y exited $year_rc"; RC=1; }
+  # Commit the season log even when the year FAILED -- the log is how the
+  # failure gets diagnosed, so that is exactly when it must survive.
+  if [ "$PUSH" = "true" ]; then
+    sdv_commit_log cfb_recruits "$y" || RC=1
+  fi
+done
+
+echo "EXIT=$RC" | tee -a "$RUN_LOG"
+exit "$RC"
