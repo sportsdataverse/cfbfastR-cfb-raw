@@ -55,13 +55,22 @@ for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
     # doubling a ~250 Core v2 $ref fan-out per game against an endpoint that
     # 403s under load. They remain as standalone stages for backfilling their
     # own cfb/game_rosters and cfb/play_participants trees.
-    # 06 pbp -- the expensive stage, and the one the others feed.
     # 03 team_rosters -- reads 02 schedules? no: it reads 01 TEAMS for its id
     # list, so it must follow 01. Current-season only by construction; it
     # refuses to bank a season the endpoint cannot serve.
     "$PY" python/espn_cfb_03_team_rosters_scrape.py -s "$i" -e "$i" -r "$RESCRAPE" || echo "!! team_rosters scrape failed for $i (non-fatal)"
+    # 04 pbp -- the expensive stage, and the one the others feed.
     "$PY" python/espn_cfb_04_pbp_scrape.py -s "$i" -e "$i" -r "$RESCRAPE" --hollow "$HOLLOW"
-    # 10/11 are season-level and depend only on the schedule.
+    # 05 player_stats -- MUST follow 04: it reads cfb/game_rosters for its
+    # athlete-id list. Athlete-keyed (ESPN ignores the season param and returns
+    # the whole career), and a career GROWS, so every athlete in a live season
+    # re-fetches: ~27k requests in-season, ~0 out of season. That is the
+    # expensive part of this loop after pbp -- move it to a weekly cadence if
+    # the daily window gets tight.
+    "$PY" python/espn_cfb_05_player_stats_scrape.py -s "$i" -e "$i" -r "$RESCRAPE"       || echo "!! player_stats scrape failed for $i (non-fatal)"
+    # 06 team_stats -- Core v2, season AND type in the path. Reads 01 teams for
+    # its id list. ~264 teams x 2 types, cheap.
+    "$PY" python/espn_cfb_06_team_stats_scrape.py -s "$i" -e "$i" -r "$RESCRAPE"       || echo "!! team_stats scrape failed for $i (non-fatal)"
     # 07 standings -- season-keyed, one call for the whole conference tree.
     "$PY" python/espn_cfb_07_standings_scrape.py -s "$i" -e "$i" -r "$RESCRAPE" || echo "!! standings scrape failed for $i (non-fatal)"
     "$PY" python/espn_cfb_08_qbr_scrape.py -s "$i" -e "$i" \
@@ -77,7 +86,7 @@ for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
   # has NO get_logger at all (0 tracked logs) so it is deliberately absent.
   # game_rosters/play_participants are not here because they are not in the
   # loop -- see the comment above.
-  for stage in cfb_teams cfb_schedules cfb_team_rosters cfb_json cfb_standings cfb_power_index; do
+  for stage in cfb_teams cfb_schedules cfb_team_rosters cfb_json cfb_player_stats cfb_team_stats cfb_standings cfb_power_index; do
     sdv_commit_log "$stage" "$i" || PUSH_RC=1
   done
   # NOT `pull --rebase`: git's default am backend base64-encodes every blob it

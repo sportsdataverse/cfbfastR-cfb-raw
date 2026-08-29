@@ -10,8 +10,8 @@ directory top to bottom gives you a working pipeline:
     02 schedules          the game-id gate for everything below
     03 team_rosters       needs 01 teams for the id list; CURRENT SEASON ONLY
     04 pbp / json         fetches rosters + participants inline, writes json/final
-    05 player_stats       (reserved -- not built yet)
-    06 team_stats         (reserved -- not built yet)
+    05 player_stats       athlete-keyed career stats (ESPN ignores season)
+    06 team_stats         Core v2, season + type in the PATH
     07 standings
     08 qbr
     09 power_index
