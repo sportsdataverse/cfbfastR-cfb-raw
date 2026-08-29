@@ -9,9 +9,9 @@ directory top to bottom gives you a working pipeline:
     01 teams              reference; no upstream
     02 schedules          the game-id gate for everything below
     03 team_rosters       (reserved -- not built yet)
-    04 game_rosters
-    05 play_participants
-    06 pbp / json         joins game_rosters + play_participants into json/final
+    04 game_rosters       backfill-only; 06 already fetches this per game
+    05 play_participants  backfill-only; 06 already fetches this per game
+    06 pbp / json         fetches rosters + participants inline, writes json/final
     07 player_stats       (reserved -- not built yet)
     08 team_stats         (reserved -- not built yet)
     09 standings          (reserved -- not built yet)
@@ -19,6 +19,14 @@ directory top to bottom gives you a working pipeline:
     11 power_index
     50 recruits           preflight-gated monthly cadence, not the daily loop
     51 player_core        (reserved -- monthly, not built yet)
+
+
+**04 and 05 are not in the daily loop.** ``scrape_cfb_json`` already calls
+``_rosters`` and ``_participants`` per game and embeds both in the json/final
+payload, so running the standalone stages daily would fetch the same data twice
+-- doubling a ~250 Core v2 ``$ref`` fan-out per game against an endpoint that
+403s under load. They stay as stages for backfilling their own
+``cfb/game_rosters`` and ``cfb/play_participants`` trees (20,696 files each).
 
 **This DIVERGES from the nba / mbb / wnba / wbb family numbering on purpose.**
 Those repos number by cross-repo dataset identity, where 04 means game_rosters

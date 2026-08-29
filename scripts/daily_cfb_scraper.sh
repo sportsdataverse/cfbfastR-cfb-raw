@@ -48,13 +48,13 @@ for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
       || echo "!! teams scrape failed for $i (non-fatal)"
     # 02 schedules is the game-id gate -- everything below needs the master.
     "$PY" python/espn_cfb_02_schedules_scrape.py -s "$i" -e "$i" -r "$RESCRAPE"
-    # 04/05 feed 06: json/final joins game_rosters and play_participants, so
-    # they run BEFORE pbp rather than after it. Non-fatal individually -- a
-    # roster or participants flake must not cost the season its play-by-play.
-    "$PY" python/espn_cfb_04_game_rosters_scrape.py -s "$i" -e "$i" -r "$RESCRAPE" \
-      || echo "!! game_rosters scrape failed for $i (non-fatal)"
-    "$PY" python/espn_cfb_05_play_participants_scrape.py -s "$i" -e "$i" -r "$RESCRAPE" \
-      || echo "!! play_participants scrape failed for $i (non-fatal)"
+    # 04 game_rosters and 05 play_participants are NOT in the daily loop, and
+    # that is deliberate: scrape_cfb_json already fetches both per game
+    # (_rosters / _participants) and embeds them in the json/final payload, so
+    # running the standalone stages here would fetch the SAME data twice --
+    # doubling a ~250 Core v2 $ref fan-out per game against an endpoint that
+    # 403s under load. They remain as standalone stages for backfilling their
+    # own cfb/game_rosters and cfb/play_participants trees.
     # 06 pbp -- the expensive stage, and the one the others feed.
     "$PY" python/espn_cfb_06_pbp_scrape.py -s "$i" -e "$i" -r "$RESCRAPE" --hollow "$HOLLOW"
     # 10/11 are season-level and depend only on the schedule.
@@ -67,10 +67,11 @@ for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
   cp "$TMPLOG" "logs/cfb_raw_logfile_${i}.log"
   # Every stage writes its own canonical per-season log via get_logger; commit
   # each in-loop so a season's run record lands with that season's data.
-  # Verified against each stage's get_logger(): the participants DATASET is
-  # "play_participants" not "participants", pbp logs as cfb_json, and qbr has
-  # NO get_logger at all (0 tracked logs) so it is deliberately absent here.
-  for stage in cfb_teams cfb_schedules cfb_game_rosters cfb_play_participants cfb_json cfb_power_index; do
+  # Verified against each stage's get_logger(): pbp logs as cfb_json, and qbr
+  # has NO get_logger at all (0 tracked logs) so it is deliberately absent.
+  # game_rosters/play_participants are not here because they are not in the
+  # loop -- see the comment above.
+  for stage in cfb_teams cfb_schedules cfb_json cfb_power_index; do
     sdv_commit_log "$stage" "$i" || PUSH_RC=1
   done
   # NOT `pull --rebase`: git's default am backend base64-encodes every blob it
