@@ -49,7 +49,7 @@ for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
     # 02 schedules is the game-id gate -- everything below needs the master.
     "$PY" python/espn_cfb_02_schedules_scrape.py -s "$i" -e "$i" -r "$RESCRAPE"
     # 04 game_rosters and 05 play_participants are NOT in the daily loop, and
-    # that is deliberate: scrape_cfb_json already fetches both per game
+    # that is deliberate: scrape_cfb_pbp already fetches both per game
     # (_rosters / _participants) and embeds them in the json/final payload, so
     # running the standalone stages here would fetch the SAME data twice --
     # doubling a ~250 Core v2 $ref fan-out per game against an endpoint that

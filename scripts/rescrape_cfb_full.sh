@@ -2,7 +2,7 @@
 # Full 2004->2025 CFB rescrape (regular season + bowls), resumable.
 #
 # Every season in range is rescraped from scratch (-r true), covering the whole
-# per-game pipeline in scrape_cfb_json.py: raw summary, enriched final,
+# per-game pipeline in scrape_cfb_pbp.py: raw summary, enriched final,
 # play_participants, game_rosters, power_index, betting, team_box_extra.
 #
 # WHY THIS IS SLOW: espn_cfb_game_rosters resolves each athlete $ref with its

@@ -41,8 +41,8 @@ which also keeps the cross-repo callers above working.
 | 02 | schedules | `cfb_raw_scrape/scrape_cfb_schedules.py` | yes |
 | 03 | team_rosters | *(reserved — not built)* | — |
 | 04 | game_rosters | `cfb_raw_scrape/scrape_cfb_game_rosters.py` | **no — backfill only** |
-| 05 | play_participants | `cfb_raw_scrape/scrape_cfb_participants.py` | **no — backfill only** |
-| 06 | pbp / json | `cfb_raw_scrape/scrape_cfb_json.py` | yes |
+| 05 | play_participants | `cfb_raw_scrape/scrape_cfb_play_participants.py` | **no — backfill only** |
+| 06 | pbp / json | `cfb_raw_scrape/scrape_cfb_pbp.py` | yes |
 | 07 | player_stats | *(reserved — not built)* | — |
 | 08 | team_stats | *(reserved — not built)* | — |
 | 09 | standings | *(reserved — not built)* | — |
@@ -59,10 +59,10 @@ listing top to bottom gives you a working pipeline.
 cross-repo dataset identity, where `04` means game_rosters everywhere. CFB
 numbers by its own dependency chain instead, because the CFB pipeline has joins
 the others do not — teams feeding the extended schedule interface, and
-`scrape_cfb_json` fetching rosters + participants inline. **Do not "fix" a CFB
+`scrape_cfb_pbp` fetching rosters + participants inline. **Do not "fix" a CFB
 number to match a sibling repo.** A reserved number stays EMPTY until built.
 
-**04 and 05 are backfill-only.** `scrape_cfb_json` already calls `_rosters` and
+**04 and 05 are backfill-only.** `scrape_cfb_pbp` already calls `_rosters` and
 `_participants` per game and embeds both in `json/final`, so running the
 standalone stages daily would fetch the same data twice — doubling a ~250 Core
 v2 `$ref` fan-out per game against an endpoint that 403s under load. They exist
@@ -88,9 +88,11 @@ was **decommissioned out of `-raw` into `cfbfastR-cfb-data/python/`** (merged 20
 `HANDOFF.md` moved with it. **Don't reintroduce ML deps here** — enrichment bug fixes go
 to sdv-py, modeling work goes to `-data`.
 
-`python/` holds the scrapers (`scrape_cfb_json`, `_game_rosters`, `_participants`,
-`_power_index`, `_qbr`, `_schedules`) + `reprocess_cfb_json.py`. Reprocess worker count is
-bounded by the `CFB_REPROCESS_WORKERS` env var.
+`python/cfb_raw_scrape/` holds the scraper implementations, each named for the
+stage it serves (`scrape_cfb_teams`, `_schedules`, `_game_rosters`,
+`_play_participants`, `_pbp`, `_qbr`, `_power_index`, `_recruits`). `python/`
+itself holds only entry points. Reprocess worker count is bounded by the
+`CFB_REPROCESS_WORKERS` env var.
 
 ## Spec
 `docs/superpowers/specs/2026-06-03-cfbfastR-cfb-raw-consolidation-design.md`

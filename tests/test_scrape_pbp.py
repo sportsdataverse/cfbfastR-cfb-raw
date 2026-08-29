@@ -4,7 +4,7 @@ from pathlib import Path
 
 # A real package member, so _worker.__module__ resolves for pickle on its own --
 # the previous spec_from_file_location load needed a sys.modules shim for that.
-from cfb_raw_scrape import scrape_cfb_json as sj
+from cfb_raw_scrape import scrape_cfb_pbp as sj
 
 
 class _FakeProc:
@@ -98,7 +98,7 @@ def test_main_dispatches_download_for_master_games(tmp_path, monkeypatch):
     calls = []
     monkeypatch.setattr(sj, "download_game",
                         lambda gid, season, rescrape: calls.append((gid, season, rescrape)) or "ok")
-    monkeypatch.setattr(sys, "argv", ["scrape_cfb_json.py", "-s", "2024", "-e", "2024", "-r", "false"])
+    monkeypatch.setattr(sys, "argv", ["scrape_cfb_pbp.py", "-s", "2024", "-e", "2024", "-r", "false"])
     sj.main()
     assert sorted(c[0] for c in calls) == [401, 402]
     assert all(c[1] == 2024 and c[2] is False for c in calls)

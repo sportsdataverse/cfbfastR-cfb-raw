@@ -1,6 +1,6 @@
 """Stage 06 -- ESPN CFB per-game summary -> raw/ and enriched final/.
 
-Thin shim over ``scrape_cfb_json``: the directory listing IS the pipeline.
+Thin shim over ``scrape_cfb_pbp``: the directory listing IS the pipeline.
 
 **The numbers are this repo's COLD-START EXECUTION ORDER** -- the order the
 stages must run in from an empty tree, renumbered 2026-08-29. Reading the
@@ -21,7 +21,7 @@ directory top to bottom gives you a working pipeline:
     51 player_core        (reserved -- monthly, not built yet)
 
 
-**04 and 05 are not in the daily loop.** ``scrape_cfb_json`` already calls
+**04 and 05 are not in the daily loop.** ``scrape_cfb_pbp`` already calls
 ``_rosters`` and ``_participants`` per game and embeds both in the json/final
 payload, so running the standalone stages daily would fetch the same data twice
 -- doubling a ~250 Core v2 ``$ref`` fan-out per game against an endpoint that
@@ -47,7 +47,7 @@ Example:
 
 from __future__ import annotations
 
-from cfb_raw_scrape.scrape_cfb_json import main
+from cfb_raw_scrape.scrape_cfb_pbp import main
 
 if __name__ == "__main__":
     raise SystemExit(main())

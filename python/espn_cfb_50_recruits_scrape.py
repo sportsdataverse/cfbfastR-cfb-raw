@@ -21,7 +21,7 @@ directory top to bottom gives you a working pipeline:
     51 player_core        (reserved -- monthly, not built yet)
 
 
-**04 and 05 are not in the daily loop.** ``scrape_cfb_json`` already calls
+**04 and 05 are not in the daily loop.** ``scrape_cfb_pbp`` already calls
 ``_rosters`` and ``_participants`` per game and embeds both in the json/final
 payload, so running the standalone stages daily would fetch the same data twice
 -- doubling a ~250 Core v2 ``$ref`` fan-out per game against an endpoint that
