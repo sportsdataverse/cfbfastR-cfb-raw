@@ -16,7 +16,7 @@ directory top to bottom gives you a working pipeline:
     08 qbr
     09 power_index
     50 recruits           preflight-gated monthly cadence, not the daily loop
-    51 player_core        (reserved -- monthly, not built yet)
+    51 player_core        identity + bio; monthly, athlete-keyed
 
 
 **Rosters and participants are not stages.** ``scrape_cfb_pbp`` (04) calls
@@ -33,8 +33,10 @@ pipeline has joins the other leagues do not -- teams feeding the extended
 schedule interface, and game_rosters plus play_participants feeding json/final.
 Do not "fix" a CFB number to match a sibling repo; check this list first.
 
-A reserved number stays EMPTY until its stage is built. The daily driver's
-sequence in ``scripts/daily_cfb_scraper.sh`` remains the executable truth.
+Every number above is now BUILT -- none are reserved. A future reserved number
+stays EMPTY until its stage exists. The daily driver's sequence in
+``scripts/daily_cfb_scraper.sh`` remains the executable truth, and 50/51 are
+deliberately absent from it: they run on a monthly cadence.
 
 Example:
     One season::

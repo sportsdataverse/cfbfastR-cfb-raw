@@ -12,7 +12,7 @@ Cold-start execution order:
     08 qbr
     09 power_index
     50 recruits           preflight-gated monthly cadence, not the daily loop
-    51 player_core        (reserved -- monthly, not built yet)
+    51 player_core        identity + bio; monthly, athlete-keyed
 
 Implementation: ``cfb_raw_scrape.scrape_cfb_player_stats``.
 """

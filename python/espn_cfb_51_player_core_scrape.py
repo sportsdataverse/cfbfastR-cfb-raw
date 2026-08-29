@@ -1,4 +1,4 @@
-"""Stage 06 entry point -- ESPN CFB per-team season statistics.
+"""Stage 51 entry point -- ESPN CFB athlete core records (identity + bio).
 
 Cold-start execution order:
 
@@ -14,10 +14,14 @@ Cold-start execution order:
     50 recruits           preflight-gated monthly cadence, not the daily loop
     51 player_core        identity + bio; monthly, athlete-keyed
 
-Implementation: ``cfb_raw_scrape.scrape_cfb_team_stats``.
+Implementation: ``cfb_raw_scrape.scrape_cfb_player_core``.
+
+Cadence is MONTHLY, alongside stage 50 recruits -- deliberately not in
+``daily_cfb_scraper.sh``. A core record is per-athlete state that changes on a
+roster cycle, not a game cycle.
 """
 
-from cfb_raw_scrape.scrape_cfb_team_stats import main
+from cfb_raw_scrape.scrape_cfb_player_core import main
 
 if __name__ == "__main__":
     raise SystemExit(main())
