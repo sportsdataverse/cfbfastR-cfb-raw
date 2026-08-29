@@ -40,8 +40,8 @@ which also keeps the cross-repo callers above working.
 | 01 | teams | `cfb_raw_scrape/scrape_cfb_teams.py` | yes |
 | 02 | schedules | `cfb_raw_scrape/scrape_cfb_schedules.py` | yes |
 | 03 | team_rosters | *(reserved — not built)* | — |
-| 04 | game_rosters | `cfb_raw_scrape/scrape_cfb_game_rosters.py` | **no — backfill only** |
-| 05 | play_participants | `cfb_raw_scrape/scrape_cfb_play_participants.py` | **no — backfill only** |
+| 04 | game_rosters | *(absorbed into 06)* | — |
+| 05 | play_participants | *(absorbed into 06)* | — |
 | 06 | pbp / json | `cfb_raw_scrape/scrape_cfb_pbp.py` | yes |
 | 07 | player_stats | *(reserved — not built)* | — |
 | 08 | team_stats | *(reserved — not built)* | — |
@@ -62,11 +62,18 @@ the others do not — teams feeding the extended schedule interface, and
 `scrape_cfb_pbp` fetching rosters + participants inline. **Do not "fix" a CFB
 number to match a sibling repo.** A reserved number stays EMPTY until built.
 
-**04 and 05 are backfill-only.** `scrape_cfb_pbp` already calls `_rosters` and
-`_participants` per game and embeds both in `json/final`, so running the
-standalone stages daily would fetch the same data twice — doubling a ~250 Core
-v2 `$ref` fan-out per game against an endpoint that 403s under load. They exist
-to backfill their own `cfb/game_rosters` and `cfb/play_participants` trees.
+**04 and 05 are ABSORBED INTO 06, and their standalone stages are deleted.**
+`scrape_cfb_pbp` calls `_rosters` and `_participants` per game and embeds both
+in `json/final` (verified: 223 roster entries and 172 participants in a real
+file). Keeping separate stages meant a second copy of the same ~250 Core v2
+`$ref` fan-out per game against an endpoint that 403s under load, for data the
+combined stage already has. The numbers stay reserved rather than being
+compacted, so 06 keeps its meaning.
+
+The pre-existing `cfb/game_rosters` and `cfb/play_participants` trees (20,696
+files each) are left in place but are no longer written by anything. Nothing in
+this repo or in `cfbfastR-cfb-data`'s ingest reads them — checked before the
+deletion — so they are a frozen historical artifact, not a live dataset.
 
 ## Layout: entry points at the top, implementations in the package
 

@@ -32,8 +32,14 @@ consumed here — not re-captured):
 COVID-era cancellations); 1,125 captured games are not in the master (mostly 2026
 and non-master events) and are dropped, matching every other dataset in the repo,
 which enumerates from the master. Effective coverage **99.92 %**. Gaps are filled by
-the existing `python/scrape_cfb_game_rosters.py` — **no new scraper was written**,
+re-running stage 06 (`cfb_raw_scrape/scrape_cfb_pbp.py`), which fetches rosters
+per game and embeds them in `json/final` — **no new scraper was written**,
 because the raw store this dataset needs was already complete.
+
+> The standalone `scrape_cfb_game_rosters.py` this section originally named was
+> deleted 2026-08-29: it duplicated the fetch that stage 06 already performs.
+> The `cfb/game_rosters/` tree it wrote is still committed but is no longer
+> updated; read the rosters out of `json/final` instead.
 
 ### Compile cost
 
