@@ -168,3 +168,36 @@ def test_main_one_bad_team_does_not_stop_the_sweep(tmp_path, monkeypatch, payloa
     monkeypatch.setattr(ts, "_fetch", _f)
     assert ts.main(["-s", "2024", "-e", "2024"]) == 1
     assert (tmp_path / ts.out_path(2024, 2, 333)).is_file()
+
+
+def test_a_404_is_ABSENCE_not_failure(tmp_path, monkeypatch):
+    """ESPN publishes no team stats for some (team, season) pairs -- 8 of 244
+    teams for 2004, and team 2193 returns 174 stats for 2015 while 404ing for
+    2004. Counting those as failures makes every backfill season exit non-zero
+    and buries a real failure in the noise."""
+    # NoESPNDataError, not NoDataError -- this repo pins an sportsdataverse
+    # predating the 0.1.0 rename; same object upstream, but only this name
+    # resolves against the pin.
+    from sportsdataverse.errors import NoESPNDataError
+
+    monkeypatch.chdir(tmp_path)
+    _teams(tmp_path, 2004, ["333", "2193"])
+
+    def _f(s, t, tid):
+        if tid == "2193":
+            raise NoESPNDataError("404")
+        return json.loads(FIXTURE.read_text(encoding="utf-8"))
+
+    monkeypatch.setattr(ts, "_fetch", _f)
+    assert ts.main(["-s", "2004", "-e", "2004"]) == 0  # green: absence is not failure
+    assert (tmp_path / ts.out_path(2004, 2, 333)).is_file()
+    assert not (tmp_path / ts.out_path(2004, 2, 2193)).exists()
+
+
+def test_a_REAL_error_still_reports_red(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    _teams(tmp_path, 2004, ["333"])
+    monkeypatch.setattr(
+        ts, "_fetch", lambda s, t, tid: (_ for _ in ()).throw(RuntimeError("boom"))
+    )
+    assert ts.main(["-s", "2004", "-e", "2004"]) == 1

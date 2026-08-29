@@ -53,6 +53,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from datetime import date
 from pathlib import Path
 
@@ -63,6 +64,11 @@ from cfb_raw_scrape._cfb_raw_utils import (
     write_json_atomic,
 )
 from sportsdataverse.dl_utils import download
+
+# NoESPNDataError, not NoDataError: this repo pins an sportsdataverse that
+# predates the 0.1.0 rename. They are the same object upstream, so the
+# catch is identical -- but only this name resolves against the pin.
+from sportsdataverse.errors import NoESPNDataError
 
 DATASET = "team_stats"
 
@@ -87,6 +93,12 @@ STATS_GROUPS = ("80", "81")
 #: that recorded nothing.
 MIN_CATEGORIES = 1
 MIN_STATS = 1
+
+#: Core v2 returns 403 under aggressive concurrency, so pace is a tuning knob
+#: rather than a constant: `run_pool` would otherwise default to cpu_count-2,
+#: which is a property of the machine and nothing to do with what ESPN tolerates.
+#: Env-only so a long backfill can be re-paced without a code change.
+DEFAULT_WORKERS = int(os.environ.get("CFB_TEAM_STATS_WORKERS", "6"))
 
 
 def out_path(season: int, seasontype: int, team_id: int | str) -> str:
@@ -185,6 +197,13 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("-e", "--end_year", type=int, default=None)
     ap.add_argument("-r", "--rescrape", type=str, default="false")
     ap.add_argument(
+        "-w",
+        "--workers",
+        type=int,
+        default=DEFAULT_WORKERS,
+        help=f"concurrent fetches (default {DEFAULT_WORKERS}; env CFB_TEAM_STATS_WORKERS)",
+    )
+    ap.add_argument(
         "-t",
         "--season_types",
         default=",".join(str(t) for t in SEASON_TYPES),
@@ -221,15 +240,37 @@ def main(argv: list[str] | None = None) -> int:
         )
         failures: list[str] = []
 
-        def _one(job, _s=season, _log=logger, _f=failures):
+        absent: list[str] = []
+
+        def _one(job, _s=season, _log=logger, _f=failures, _a=absent):
             seasontype, tid = job
             try:
                 write_one(_s, seasontype, tid, _log)
+            except NoESPNDataError:
+                # A 404 means the fetch SUCCEEDED and ESPN has no stats for this
+                # team in this season -- not that anything went wrong. Measured
+                # 2004: 8 of 244 teams 404, and team 2193 returns 174 stats for
+                # 2015 while 404ing for 2004, so the absence is real and
+                # per-season. Counting these as failures would make every
+                # backfill season exit non-zero and bury an actual failure in the
+                # noise. Per sdv-py's error vocabulary: NoDataError is "nothing
+                # here", AssetFetchError is "we do not know" -- never collapse them.
+                _a.append(f"{seasontype}/{tid}")
             except Exception as exc:  # noqa: BLE001 -- one team must not stop the sweep
                 _log.error("%s", exc)
                 _f.append(f"{seasontype}/{tid}")
 
-        run_pool(_one, jobs, kind="thread", desc=f"{DATASET} {season}")
+        run_pool(
+            _one, jobs, kind="thread", workers=args.workers, desc=f"{DATASET} {season}"
+        )
+        if absent:
+            logger.info(
+                "%s %s: %d (type/team) publish no stats -- expected, not a failure: %s",
+                DATASET,
+                season,
+                len(absent),
+                absent[:10],
+            )
         if failures:
             logger.error(
                 "%s %s: %d failed: %s", DATASET, season, len(failures), failures[:10]
