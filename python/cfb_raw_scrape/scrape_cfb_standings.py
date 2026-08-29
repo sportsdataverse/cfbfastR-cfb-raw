@@ -82,26 +82,40 @@ def _fetch(season: int, group: int) -> dict:
 
 
 def summarize(payload: dict) -> dict:
-    """Count what actually came back, for the completeness check and the log.
+    """Count every standings group in the tree, at any depth.
+
+    The tree is NOT two levels. Three shapes appear in one FBS response:
+
+    - a flat conference carries ``standings.entries`` and no ``children``
+      (FBS Independents, 3 teams)
+    - a DIVISIONAL conference carries ``children`` and **no standings key at
+      all** -- Sun Belt has East and West with 7 teams each, SWAC has East and
+      West with 6 each
+    - a leaf group queried directly (21 = MVFC) carries its standings on the
+      ROOT with ``children == []``
+
+    A two-level count reported 120 teams for 2024 FBS when the file actually
+    held 146: Sun Belt's 14 and SWAC's 12 sat one level below where it looked.
+    The data was never lost -- the COUNTER was wrong, which is worse, because
+    the completeness guard was then measuring the wrong number and the log line
+    understated what had been banked.
 
     Returns:
-        ``{"conferences": int, "entries": int}`` -- entries summed across every
-        conference, which is the number that would silently be zero on a
-        throttled 200.
+        ``{"conferences": int, "entries": int}`` where conferences counts groups
+        that actually carry entries, at whatever depth they sit.
     """
-    children = payload.get("children") or []
-    entries = sum(
-        len((c.get("standings") or {}).get("entries") or []) for c in children
-    )
-    # A LEAF conference group (21 = MVFC, 22 = Ivy) carries its standings at the
-    # ROOT with children == []. Counting only children[] reported 0 entries for a
-    # payload that actually had 11, and the completeness guard would then have
-    # refused to bank a perfectly good response.
-    root = len((payload.get("standings") or {}).get("entries") or [])
-    return {
-        "conferences": len(children) or (1 if root else 0),
-        "entries": entries + root,
-    }
+
+    def walk(node: dict) -> tuple[int, int]:
+        entries = len((node.get("standings") or {}).get("entries") or [])
+        groups = 1 if entries else 0
+        for child in node.get("children") or []:
+            g, e = walk(child)
+            groups += g
+            entries += e
+        return groups, entries
+
+    groups, entries = walk(payload)
+    return {"conferences": groups, "entries": entries}
 
 
 def is_season_final(season: int, today=None) -> bool:

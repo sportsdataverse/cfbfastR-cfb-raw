@@ -190,3 +190,44 @@ def test_main_rejects_an_unknown_division(tmp_path, monkeypatch):
 def test_divisions_cover_what_espn_actually_publishes():
     """FBS and FCS only -- group 35 'Division II/III' is named but always empty."""
     assert ss.DIVISIONS == {"fbs": 80, "fcs": 81}
+
+
+def test_summarize_recurses_into_DIVISIONAL_conferences():
+    """Sun Belt and SWAC carry children (East/West) and NO standings key.
+
+    A two-level count read 120 teams for 2024 FBS where the banked file holds
+    134 -- Sun Belt's 14 sat one level below where the counter looked. The data
+    was never missing; the counter was, which is worse: the completeness guard
+    was measuring the wrong number.
+    """
+    tree = {
+        "children": [
+            {"id": "18", "name": "FBS Independents", "standings": {"entries": [{}] * 3}},
+            {
+                "id": "37",
+                "name": "Sun Belt Conference",
+                "children": [
+                    {"id": "167", "standings": {"entries": [{}] * 7}},
+                    {"id": "168", "standings": {"entries": [{}] * 7}},
+                ],
+            },
+        ]
+    }
+    # 3 + 7 + 7; the divisional PARENT is not counted as a group, its two
+    # divisions are -- three groups carry entries, not two.
+    assert ss.summarize(tree) == {"conferences": 3, "entries": 17}
+
+
+def test_real_2024_counts_are_the_recursive_ones():
+    """Locks the numbers a two-level counter got wrong."""
+    import json as _json
+    from pathlib import Path as _Path
+
+    for div, groups, teams in (("fbs", 12, 134), ("fcs", 15, 129)):
+        f = _Path("cfb/standings/json") / div / "2024.json"
+        if not f.is_file():
+            pytest.skip(f"{f} not banked in this checkout")
+        assert ss.summarize(_json.loads(f.read_text(encoding="utf-8"))) == {
+            "conferences": groups,
+            "entries": teams,
+        }
