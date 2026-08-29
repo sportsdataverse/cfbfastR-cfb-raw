@@ -73,6 +73,7 @@ from pathlib import Path
 
 from cfb_raw_scrape._cfb_raw_utils import (
     get_logger,
+    is_recruiting_class_final,
     write_json_atomic,
 )
 from sportsdataverse.dl_utils import download
@@ -116,25 +117,9 @@ def manifest_path(year: int) -> Path:
     return year_dir(year) / "_manifest.json"
 
 
-def is_class_final(year: int, today: date | None = None) -> bool:
-    """True once class `year` can no longer gain recruits.
-
-    **This is the guard stage 50 is missing, and it is here deliberately.** The
-    247 producer treats "the manifest exists" as done, so the 2027 class was
-    banked complete on 2026-08-06 at 4,779 rows -- while finished classes run
-    5,678-5,952 -- and will never refresh through signing day. Presence of a
-    completion marker is not finality when the underlying class is still open.
-
-    A class signs in December of year-1 (early period) and February of `year`,
-    with late additions after. April of the class year is the conservative line.
-    """
-    today = today or date.today()
-    return (today.year, today.month) >= (year, 4)
-
-
 def is_complete(year: int, today: date | None = None) -> bool:
     """Manifest present, its own totals agree, AND the class has closed."""
-    if not is_class_final(year, today):
+    if not is_recruiting_class_final(year, today):
         return False
     p = manifest_path(year)
     if not p.is_file():

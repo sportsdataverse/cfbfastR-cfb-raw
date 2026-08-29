@@ -39,8 +39,12 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import sportsdataverse as sdv
-
-from cfb_raw_scrape._cfb_raw_utils import get_logger, most_recent_cfb_season, write_json_atomic
+from cfb_raw_scrape._cfb_raw_utils import (
+    get_logger,
+    is_recruiting_class_final,
+    most_recent_cfb_season,
+    write_json_atomic,
+)
 
 DATASET = "recruits"
 SPORT_KEY = 1  # football
@@ -136,8 +140,24 @@ def year_dir(year: int) -> Path:
     return Path(f"cfb/{DATASET}/json/{year}")
 
 
-def is_complete(year: int) -> bool:
-    """A year is done iff its manifest exists -- written only after the last page."""
+def is_complete(year: int, today=None) -> bool:
+    """Manifest present AND the class has closed.
+
+    The manifest alone is not enough. It is written after the last page of
+    whatever the feed held AT THAT MOMENT, and an open class keeps signing --
+    so a manifest for a live class certifies a snapshot, not a total. The 2027
+    class was banked on 2026-08-06 at 4,779 rows while signed classes run
+    5,678-5,952, and under the manifest-only rule it would have stayed frozen
+    through its own signing day.
+
+    Deliberately NOT checking rows against a stated count here: the 26 already
+    banked years carry ``expected: null`` (the field postdates them), so
+    requiring agreement would invalidate every one of them and trigger a full
+    re-scrape of classes that are correct and closed. Stage 52 records
+    ``expected`` from the start and does check it.
+    """
+    if not is_recruiting_class_final(year, today):
+        return False
     return (year_dir(year) / "_manifest.json").is_file()
 
 

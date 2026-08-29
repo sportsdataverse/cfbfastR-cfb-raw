@@ -11,10 +11,9 @@ import time
 import uuid
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
+from importlib.metadata import version as _pkg_version
 from pathlib import Path
 from typing import Callable, Iterable
-
-from importlib.metadata import version as _pkg_version
 
 # Bump SCHEMA_REV whenever the final-JSON shape or enrichment inputs change in a way
 # that should force a reprocess of already-built games.
@@ -342,3 +341,24 @@ def season_type_from_raw(raw: dict):
         except (TypeError, ValueError):
             pass
     return None
+
+
+def is_recruiting_class_final(year: int, today=None) -> bool:
+    """True once recruiting class `year` can no longer gain recruits.
+
+    Shared by stage 50 (247Sports) and stage 52 (ESPN) so the two producers
+    cannot drift into different ideas of when a class is closed.
+
+    A class signs in December of ``year - 1`` (early period) and February of
+    ``year`` (traditional), with late additions after. April of the class year
+    is the conservative line.
+
+    This exists because a completion MARKER is not finality. Stage 50 treated
+    "the manifest exists" as done, so the 2027 class was banked complete on
+    2026-08-06 at 4,779 rows -- against signed classes of 5,678-5,952 -- and
+    would never have refreshed through its own signing day.
+    """
+    from datetime import date
+
+    today = today or date.today()
+    return (today.year, today.month) >= (year, 4)

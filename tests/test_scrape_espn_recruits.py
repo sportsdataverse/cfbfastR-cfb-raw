@@ -77,10 +77,12 @@ def test_scrape_year_REFUSES_a_feed_that_states_no_count(tmp_path, monkeypatch):
 def test_is_class_final_keeps_an_OPEN_class_refreshable():
     """The guard stage 50 lacks: the 2027 class was banked 'complete' at 4,779
     rows in Aug 2026, months before it signs."""
-    assert er.is_class_final(2027, date(2026, 8, 29)) is False
-    assert er.is_class_final(2027, date(2027, 2, 1)) is False  # signing day-ish
-    assert er.is_class_final(2027, date(2027, 4, 1)) is True
-    assert er.is_class_final(2024, date(2026, 8, 29)) is True
+    assert er.is_recruiting_class_final(2027, date(2026, 8, 29)) is False
+    assert (
+        er.is_recruiting_class_final(2027, date(2027, 2, 1)) is False
+    )  # signing day-ish
+    assert er.is_recruiting_class_final(2027, date(2027, 4, 1)) is True
+    assert er.is_recruiting_class_final(2024, date(2026, 8, 29)) is True
 
 
 def test_is_complete_requires_finality_AND_agreeing_totals(tmp_path, monkeypatch):
