@@ -5,7 +5,7 @@ Python/uv scraper for ESPN college-football game JSON. Sibling of `cfbfastR-cfb-
 ## Commands
 - `uv sync` — install (editable sdv-py from ../../sdv-py for dev; requires sportsdataverse>=0.0.69).
 - `uv run pytest` — offline test suite. Live tests: `CFB_LIVE_TESTS=1 uv run pytest -m live`.
-- `source scripts/_venv.sh` then `"$PY" python/espn_cfb_02_pbp_scrape.py -s YYYY -e YYYY -r false` — scrape.
+- `source scripts/_venv.sh` then `"$PY" python/espn_cfb_06_pbp_scrape.py -s YYYY -e YYYY -r false` — scrape.
 - `"$PY" python/reprocess_cfb_json.py -s YYYY -e YYYY --force` — offline rebuild.
   **Never `uv run` for a scrape or reprocess** — it re-syncs the env mid-run and has
   already swapped the interpreter under a live job (2026-07-28). `scripts/_venv.sh`
@@ -25,7 +25,7 @@ Python/uv scraper for ESPN college-football game JSON. Sibling of `cfbfastR-cfb-
   `cfb_model_pipeline.yml` (checks this repo out as `_raw`) — not an orphan;
   coordinate any rename/move/CLI change with that workflow. It is deliberately
   **retained under its original name**: the numbered stage
-  `espn_cfb_13_qbr_scrape.py` is a shim over it, so the external caller keeps
+  `espn_cfb_10_qbr_scrape.py` is a shim over it, so the external caller keeps
   working. Retiring the old name needs that workflow updated FIRST.
 - Never add AI co-author trailers to commits.
 

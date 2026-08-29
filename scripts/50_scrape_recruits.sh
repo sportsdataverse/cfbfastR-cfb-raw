@@ -15,9 +15,9 @@
 # understates every team's talent.
 #
 # Usage:
-#   scripts/10_scrape_recruits.sh                 # current cycle only
-#   scripts/10_scrape_recruits.sh 2002 2026       # cold backfill
-#   scripts/10_scrape_recruits.sh 2026 2026 --rescrape
+#   scripts/50_scrape_recruits.sh                 # current cycle only
+#   scripts/50_scrape_recruits.sh 2002 2026       # cold backfill
+#   scripts/50_scrape_recruits.sh 2026 2026 --rescrape
 #
 # Pace/retry are env-tunable, shared with sdv-py so both sides tune together:
 #   SDV_PY_247_RETRIES (3)  SDV_PY_247_DELAY (0.5s)  SDV_PY_247_BACKOFF (2.0s)
@@ -61,7 +61,7 @@ echo "watch with: tail -f $RUN_LOG"
 
 for y in $(seq "$START" "$END"); do
   PYTHONUNBUFFERED=1 PYTHONIOENCODING=utf-8 \
-    "$PY" python/espn_cfb_10_recruits_scrape.py -s "$y" -e "$y" "$@" 2>&1 | tee -a "$RUN_LOG"
+    "$PY" python/espn_cfb_50_recruits_scrape.py -s "$y" -e "$y" "$@" 2>&1 | tee -a "$RUN_LOG"
   year_rc=${PIPESTATUS[0]}
   [ "$year_rc" -eq 0 ] || { echo "!! class $y exited $year_rc"; RC=1; }
   # Commit the season log even when the year FAILED -- the log is how the

@@ -2,7 +2,7 @@
 # One interpreter resolver for this repo's drivers. Source it, do not execute:
 #
 #     source "$(dirname "${BASH_SOURCE[0]}")/_venv.sh"
-#     "$PY" python/espn_cfb_01_schedules_scrape.py -s 2026
+#     "$PY" python/espn_cfb_02_schedules_scrape.py -s 2026
 #
 # CFB_PY EXISTS BECAUSE `uv run` RE-SYNCS THE ENV before every invocation, so it
 # can swap the interpreter under a running job: observed mid-run on 2026-07-28,

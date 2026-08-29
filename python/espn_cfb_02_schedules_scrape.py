@@ -1,6 +1,6 @@
-"""Stage 04 -- ESPN CFB per-game rosters.
+"""Stage 02 -- ESPN CFB season schedules + the schedule master.
 
-Thin shim over ``scrape_cfb_game_rosters``: the directory listing IS the pipeline.
+Thin shim over ``scrape_cfb_schedules``: the directory listing IS the pipeline.
 
 **The numbers are this repo's COLD-START EXECUTION ORDER** -- the order the
 stages must run in from an empty tree, renumbered 2026-08-29. Reading the
@@ -34,12 +34,12 @@ Example:
     One season::
 
         source scripts/_venv.sh
-        "$PY" python/espn_cfb_04_game_rosters_scrape.py -s 2026 -e 2026
+        "$PY" python/espn_cfb_02_schedules_scrape.py -s 2026 -e 2026
 """
 
 from __future__ import annotations
 
-from scrape_cfb_game_rosters import main
+from scrape_cfb_schedules import main
 
 if __name__ == "__main__":
     raise SystemExit(main())

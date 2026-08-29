@@ -30,8 +30,8 @@ uv sync
 # it re-syncs the env mid-run). CFB_PY overrides.
 source scripts/_venv.sh
 
-"$PY" python/espn_cfb_01_schedules_scrape.py -s 2024 -e 2024
-"$PY" python/espn_cfb_02_pbp_scrape.py      -s 2024 -e 2024
+"$PY" python/espn_cfb_02_schedules_scrape.py -s 2024 -e 2024
+"$PY" python/espn_cfb_06_pbp_scrape.py      -s 2024 -e 2024
 # full backfill
 bash scripts/backfill_cfb.sh 2004
 # rebuild final from raw on disk after a pipeline change (offline)
@@ -39,8 +39,8 @@ uv run python python/reprocess_cfb_json.py -s 2024 -e 2024 --force
 # recruit classes (247). Idempotent: a signed class is immutable, so complete
 # years are skipped and only the current cycle fetches. Floor is 2002 --
 # ratings collapse before then (2001: 52% rated on page 1, 0% by page 4).
-bash scripts/10_scrape_recruits.sh              # current cycle
-bash scripts/10_scrape_recruits.sh 2002 2026    # cold backfill
+bash scripts/50_scrape_recruits.sh              # current cycle
+bash scripts/50_scrape_recruits.sh 2002 2026    # cold backfill
 ```
 
 ### Pushing a bulk rebuild

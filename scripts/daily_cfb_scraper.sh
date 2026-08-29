@@ -41,20 +41,38 @@ for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
     git pull >/dev/null
     git config --local user.email "action@github.com"
     git config --local user.name "Github Action"
-    "$PY" python/espn_cfb_01_schedules_scrape.py -s "$i" -e "$i" -r "$RESCRAPE"
-    "$PY" python/espn_cfb_02_pbp_scrape.py      -s "$i" -e "$i" -r "$RESCRAPE" --hollow "$HOLLOW"
-    # Stage 14 -- per-season team/conference reference. Season-keyed like 01/02
-    # (unlike recruiting below, which is CLASS-year keyed and runs once), and
-    # cheap to re-run: an already-captured season is skipped, and a partial one
-    # reuses the payloads it has and fetches only the missing ids. Non-fatal so
-    # a reference-endpoint flake cannot cost the season its pbp.
-    "$PY" python/espn_cfb_14_teams_scrape.py    -s "$i" -e "$i" -r "$RESCRAPE" || echo "!! teams scrape failed for $i (non-fatal)"
+    # Cold-start execution order (see any stage docstring for the full list).
+    # 01 teams first: reference data with no upstream, and the extended
+    # schedule/team-info interface will read it.
+    "$PY" python/espn_cfb_01_teams_scrape.py -s "$i" -e "$i" -r "$RESCRAPE" \
+      || echo "!! teams scrape failed for $i (non-fatal)"
+    # 02 schedules is the game-id gate -- everything below needs the master.
+    "$PY" python/espn_cfb_02_schedules_scrape.py -s "$i" -e "$i" -r "$RESCRAPE"
+    # 04/05 feed 06: json/final joins game_rosters and play_participants, so
+    # they run BEFORE pbp rather than after it. Non-fatal individually -- a
+    # roster or participants flake must not cost the season its play-by-play.
+    "$PY" python/espn_cfb_04_game_rosters_scrape.py -s "$i" -e "$i" -r "$RESCRAPE" \
+      || echo "!! game_rosters scrape failed for $i (non-fatal)"
+    "$PY" python/espn_cfb_05_play_participants_scrape.py -s "$i" -e "$i" -r "$RESCRAPE" \
+      || echo "!! play_participants scrape failed for $i (non-fatal)"
+    # 06 pbp -- the expensive stage, and the one the others feed.
+    "$PY" python/espn_cfb_06_pbp_scrape.py -s "$i" -e "$i" -r "$RESCRAPE" --hollow "$HOLLOW"
+    # 10/11 are season-level and depend only on the schedule.
+    "$PY" python/espn_cfb_10_qbr_scrape.py -s "$i" -e "$i" \
+      || echo "!! qbr scrape failed for $i (non-fatal)"
+    "$PY" python/espn_cfb_11_power_index_scrape.py -s "$i" -e "$i" -r "$RESCRAPE" \
+      || echo "!! power_index scrape failed for $i (non-fatal)"
     sdv_commit_push "CFB Raw Update (Start: $i End: $i)" cfb || PUSH_RC=1
   } 2>&1 | tee "$TMPLOG"
   cp "$TMPLOG" "logs/cfb_raw_logfile_${i}.log"
-  # Stage 14 writes its own canonical per-season log via get_logger; commit it
-  # in-loop like every other season artifact.
-  sdv_commit_log cfb_teams "$i" || PUSH_RC=1
+  # Every stage writes its own canonical per-season log via get_logger; commit
+  # each in-loop so a season's run record lands with that season's data.
+  # Verified against each stage's get_logger(): the participants DATASET is
+  # "play_participants" not "participants", pbp logs as cfb_json, and qbr has
+  # NO get_logger at all (0 tracked logs) so it is deliberately absent here.
+  for stage in cfb_teams cfb_schedules cfb_game_rosters cfb_play_participants cfb_json cfb_power_index; do
+    sdv_commit_log "$stage" "$i" || PUSH_RC=1
+  done
   # NOT `pull --rebase`: git's default am backend base64-encodes every blob it
   # replays, and this repo's .git is ~20 GB of parquet/JSON -- it stalls. The
   # merge backend replays by tree instead. (rebase.backend=merge is not an
@@ -73,7 +91,7 @@ done
 # Failure-isolated on purpose. Recruiting is a side dataset; 247 being down or
 # rate-limiting must never fail the game-data run that is this script's job.
 {
-  bash scripts/10_scrape_recruits.sh || echo "!! recruits scrape failed (non-fatal)"
+  bash scripts/50_scrape_recruits.sh || echo "!! recruits scrape failed (non-fatal)"
   # Deliberately NOT `|| PUSH_RC=1`: a 247 outage must not fail the game-data
   # run. But it does get the retry + sync, so a moved origin no longer silently
   # discards the signing class.
