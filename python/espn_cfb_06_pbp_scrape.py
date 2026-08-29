@@ -47,7 +47,7 @@ Example:
 
 from __future__ import annotations
 
-from scrape_cfb_json import main
+from cfb_raw_scrape.scrape_cfb_json import main
 
 if __name__ == "__main__":
     raise SystemExit(main())

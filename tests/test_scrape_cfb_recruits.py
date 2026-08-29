@@ -18,7 +18,7 @@ sys.path.insert(
     os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "python"),
 )
 
-import scrape_cfb_recruits as sr  # noqa: E402
+from cfb_raw_scrape import scrape_cfb_recruits as sr  # noqa: E402
 
 
 def _page(n_players: int, *, count: int | None = None) -> dict:

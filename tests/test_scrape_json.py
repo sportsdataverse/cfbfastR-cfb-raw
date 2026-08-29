@@ -1,14 +1,10 @@
-import importlib.util
 import json
 import sys
 from pathlib import Path
 
-P = Path(__file__).parents[1] / "python" / "scrape_cfb_json.py"
-spec = importlib.util.spec_from_file_location("scrape_cfb_json", P)
-sj = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(sj)
-# Register so pickle can resolve _worker.__module__ == "scrape_cfb_json" correctly.
-sys.modules.setdefault("scrape_cfb_json", sj)
+# A real package member, so _worker.__module__ resolves for pickle on its own --
+# the previous spec_from_file_location load needed a sys.modules shim for that.
+from cfb_raw_scrape import scrape_cfb_json as sj
 
 
 class _FakeProc:

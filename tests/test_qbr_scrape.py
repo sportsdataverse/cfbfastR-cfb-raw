@@ -3,7 +3,7 @@ import pathlib
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "python"))
-from scrape_cfb_qbr import parse_qbr_payload
+from cfb_raw_scrape.scrape_cfb_qbr import parse_qbr_payload
 
 FIX = pathlib.Path(__file__).parent / "fixtures" / "qbr_endpoint_sample.json"
 

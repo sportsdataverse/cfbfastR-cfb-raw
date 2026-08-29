@@ -1,11 +1,6 @@
-import importlib.util
-from pathlib import Path
 import pandas as pd
 
-P = Path(__file__).parents[1] / "python" / "scrape_cfb_schedules.py"
-spec = importlib.util.spec_from_file_location("scrape_cfb_schedules", P)
-s = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(s)
+from cfb_raw_scrape import scrape_cfb_schedules as s
 
 
 def test_merge_master_dedupes_on_game_id(tmp_path):

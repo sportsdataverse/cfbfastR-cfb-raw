@@ -35,25 +35,50 @@ Python/uv scraper for ESPN college-football game JSON. Sibling of `cfbfastR-cfb-
 the pipeline. The implementation stays in the `scrape_cfb_*` modules they import,
 which also keeps the cross-repo callers above working.
 
-| NN | stage | implementation |
-|---|---|---|
-| 01 | schedules | `scrape_cfb_schedules.py` |
-| 02 | pbp | `scrape_cfb_json.py` |
-| 04 | game_rosters | `scrape_cfb_game_rosters.py` |
-| 10 | recruits | `scrape_cfb_recruits.py` |
-| 11 | play_participants | `scrape_cfb_participants.py` |
-| 12 | power_index | `scrape_cfb_power_index.py` |
-| 13 | qbr | `scrape_cfb_qbr.py` |
-| 14 | teams | `scrape_cfb_teams.py` |
+| NN | stage | implementation | in the daily loop? |
+|---|---|---|---|
+| 01 | teams | `cfb_raw_scrape/scrape_cfb_teams.py` | yes |
+| 02 | schedules | `cfb_raw_scrape/scrape_cfb_schedules.py` | yes |
+| 03 | team_rosters | *(reserved — not built)* | — |
+| 04 | game_rosters | `cfb_raw_scrape/scrape_cfb_game_rosters.py` | **no — backfill only** |
+| 05 | play_participants | `cfb_raw_scrape/scrape_cfb_participants.py` | **no — backfill only** |
+| 06 | pbp / json | `cfb_raw_scrape/scrape_cfb_json.py` | yes |
+| 07 | player_stats | *(reserved — not built)* | — |
+| 08 | team_stats | *(reserved — not built)* | — |
+| 09 | standings | *(reserved — not built)* | — |
+| 10 | qbr | `cfb_raw_scrape/scrape_cfb_qbr.py` | yes |
+| 11 | power_index | `cfb_raw_scrape/scrape_cfb_power_index.py` | yes |
+| 50 | recruits | `cfb_raw_scrape/scrape_cfb_recruits.py` | monthly, preflight-gated |
+| 51 | player_core | *(reserved — not built)* | monthly |
 
-**03, 05–09 are HOLES and stay empty.** 01–09 are the shared ESPN family slots
-(03 standings, 05 draft, 06 player_stats, 07 team_stats, 08 team_rosters,
-09 player_core) which CFB does not scrape. A number means the same dataset in
-every ESPN `-raw` repo — that is worth more than a dense sequence, so never
-compact them. CFB-only datasets start at 10.
+**The numbers are this repo's COLD-START EXECUTION ORDER** (renumbered
+2026-08-29), not the cross-repo ESPN family slots. Reading the `python/`
+listing top to bottom gives you a working pipeline.
 
-The number is intended **build** order, not run order: the ordered sequence in
-`scripts/daily_cfb_scraper.sh` is the executable truth.
+**This DIVERGES from nba / mbb / wnba / wbb deliberately.** Those repos number by
+cross-repo dataset identity, where `04` means game_rosters everywhere. CFB
+numbers by its own dependency chain instead, because the CFB pipeline has joins
+the others do not — teams feeding the extended schedule interface, and
+`scrape_cfb_json` fetching rosters + participants inline. **Do not "fix" a CFB
+number to match a sibling repo.** A reserved number stays EMPTY until built.
+
+**04 and 05 are backfill-only.** `scrape_cfb_json` already calls `_rosters` and
+`_participants` per game and embeds both in `json/final`, so running the
+standalone stages daily would fetch the same data twice — doubling a ~250 Core
+v2 `$ref` fan-out per game against an endpoint that 403s under load. They exist
+to backfill their own `cfb/game_rosters` and `cfb/play_participants` trees.
+
+## Layout: entry points at the top, implementations in the package
+
+`python/` holds only what a driver invokes — the numbered stage shims plus
+`reprocess_cfb_json.py`, `filter_stale.py`, `preflight_build.py`,
+`verify_season_fill.py`, `reprocess_stale_by_stamp.py`. Every scraper
+implementation lives in `python/cfb_raw_scrape/` and is imported from there
+(`from cfb_raw_scrape.scrape_cfb_teams import main`). The directory listing at
+the top level IS the pipeline; the package is where the work is.
+
+The ordered sequence in `scripts/daily_cfb_scraper.sh` remains the executable
+truth for what actually runs each night.
 
 ## Scope: scraping + reprocess only
 
