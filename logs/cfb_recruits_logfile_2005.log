@@ -1,0 +1,12 @@
+2026-08-06 02:09:36,632 INFO recruits 2005: feed reports 2570 recruits
+2026-08-06 02:09:36,651 INFO recruits 2005: page 1 -> 250 rows (cum 250/2570)
+2026-08-06 02:09:43,816 INFO recruits 2005: page 2 -> 250 rows (cum 500/2570)
+2026-08-06 02:09:50,582 INFO recruits 2005: page 3 -> 250 rows (cum 750/2570)
+2026-08-06 02:09:57,318 INFO recruits 2005: page 4 -> 250 rows (cum 1000/2570)
+2026-08-06 02:10:05,708 INFO recruits 2005: page 5 -> 250 rows (cum 1250/2570)
+2026-08-06 02:10:13,310 INFO recruits 2005: page 6 -> 250 rows (cum 1500/2570)
+2026-08-06 02:10:22,519 INFO recruits 2005: page 7 -> 250 rows (cum 1750/2570)
+2026-08-06 02:10:30,089 INFO recruits 2005: page 8 -> 250 rows (cum 2000/2570)
+2026-08-06 02:10:37,473 INFO recruits 2005: page 9 -> 250 rows (cum 2250/2570)
+2026-08-06 02:10:43,215 INFO recruits 2005: page 10 -> 250 rows (cum 2500/2570)
+2026-08-06 02:10:46,320 INFO recruits 2005: page 11 -> 70 rows (cum 2570/2570)

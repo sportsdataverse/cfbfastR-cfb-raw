@@ -1,0 +1,27 @@
+2026-08-27 04:18:01,387 INFO 2021 fbs (group 80): 142 teams
+2026-08-27 04:18:01,544 INFO 2021 fcs (group 81): 130 teams
+2026-08-27 04:18:09,123 INFO 2021: 272 teams, 43 conferences, 0 incomplete
+2026-08-27 04:18:09,235 INFO 2021: wrote cfb\teams\json\2021.json
+2026-08-27 06:09:54,268 INFO 2021 root (group 99): 790 teams
+2026-08-27 06:09:54,430 INFO 2021 ncaa_division_i (group 90): 270 teams
+2026-08-27 06:09:54,586 INFO 2021 fbs (group 80): 142 teams
+2026-08-27 06:09:54,731 INFO 2021 fcs (group 81): 130 teams
+2026-08-27 06:09:54,881 INFO 2021 division_ii_iii (group 35): 519 teams
+2026-08-27 06:09:55,034 INFO 2021 ncaa_division_ii (group 57): 159 teams
+2026-08-27 06:09:55,189 INFO 2021 ncaa_division_iii (group 58): 243 teams
+2026-08-27 06:09:55,341 INFO 2021 all_star (group 36): 0 teams
+2026-08-27 06:09:55,421 INFO 2021: 793 teams (272 reused, 521 to fetch)
+2026-08-27 06:10:11,388 INFO 2021: 793 teams, 106 conferences, 0 incomplete
+2026-08-27 06:10:11,668 INFO 2021: wrote cfb\teams\json\2021.json
+2026-08-27 06:14:45,792 INFO 2021 root (group 99): 790 teams
+2026-08-27 06:14:45,923 INFO 2021 ncaa_division_i (group 90): 270 teams
+2026-08-27 06:14:46,063 INFO 2021 fbs (group 80): 142 teams
+2026-08-27 06:14:46,200 INFO 2021 fcs (group 81): 130 teams
+2026-08-27 06:14:46,330 INFO 2021 division_ii_iii (group 35): 519 teams
+2026-08-27 06:14:46,460 INFO 2021 ncaa_division_ii (group 57): 159 teams
+2026-08-27 06:14:46,589 INFO 2021 ncaa_division_iii (group 58): 243 teams
+2026-08-27 06:14:46,719 INFO 2021 all_star (group 36): 0 teams
+2026-08-27 06:14:46,855 INFO 2021 naia (group 186): 0 teams
+2026-08-27 06:14:46,927 INFO 2021: 793 teams (793 reused, 0 to fetch)
+2026-08-27 06:14:46,928 INFO 2021: 793 teams, 106 conferences, 0 incomplete
+2026-08-27 06:14:47,117 INFO 2021: wrote cfb\teams\json\2021.json

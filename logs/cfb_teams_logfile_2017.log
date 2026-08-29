@@ -1,0 +1,27 @@
+2026-08-27 04:17:28,411 INFO 2017 fbs (group 80): 138 teams
+2026-08-27 04:17:28,555 INFO 2017 fcs (group 81): 124 teams
+2026-08-27 04:17:35,929 INFO 2017: 262 teams, 42 conferences, 0 incomplete
+2026-08-27 04:17:36,083 INFO 2017: wrote cfb\teams\json\2017.json
+2026-08-27 06:08:44,838 INFO 2017 root (group 99): 772 teams
+2026-08-27 06:08:44,979 INFO 2017 ncaa_division_i (group 90): 262 teams
+2026-08-27 06:08:45,119 INFO 2017 fbs (group 80): 138 teams
+2026-08-27 06:08:45,296 INFO 2017 fcs (group 81): 124 teams
+2026-08-27 06:08:45,442 INFO 2017 division_ii_iii (group 35): 509 teams
+2026-08-27 06:08:45,597 INFO 2017 ncaa_division_ii (group 57): 159 teams
+2026-08-27 06:08:45,743 INFO 2017 ncaa_division_iii (group 58): 250 teams
+2026-08-27 06:08:45,893 INFO 2017 all_star (group 36): 0 teams
+2026-08-27 06:08:45,963 INFO 2017: 773 teams (262 reused, 511 to fetch)
+2026-08-27 06:09:01,455 INFO 2017: 773 teams, 105 conferences, 0 incomplete
+2026-08-27 06:09:01,676 INFO 2017: wrote cfb\teams\json\2017.json
+2026-08-27 06:14:39,920 INFO 2017 root (group 99): 772 teams
+2026-08-27 06:14:40,061 INFO 2017 ncaa_division_i (group 90): 262 teams
+2026-08-27 06:14:40,205 INFO 2017 fbs (group 80): 138 teams
+2026-08-27 06:14:40,339 INFO 2017 fcs (group 81): 124 teams
+2026-08-27 06:14:40,470 INFO 2017 division_ii_iii (group 35): 509 teams
+2026-08-27 06:14:40,600 INFO 2017 ncaa_division_ii (group 57): 159 teams
+2026-08-27 06:14:40,733 INFO 2017 ncaa_division_iii (group 58): 250 teams
+2026-08-27 06:14:40,864 INFO 2017 all_star (group 36): 0 teams
+2026-08-27 06:14:41,000 INFO 2017 naia (group 186): 0 teams
+2026-08-27 06:14:41,069 INFO 2017: 773 teams (773 reused, 0 to fetch)
+2026-08-27 06:14:41,070 INFO 2017: 773 teams, 105 conferences, 0 incomplete
+2026-08-27 06:14:41,297 INFO 2017: wrote cfb\teams\json\2017.json

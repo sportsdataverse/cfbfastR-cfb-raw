@@ -1,0 +1,27 @@
+2026-08-27 04:16:35,013 INFO 2010 fbs (group 80): 124 teams
+2026-08-27 04:16:35,167 INFO 2010 fcs (group 81): 125 teams
+2026-08-27 04:16:42,233 INFO 2010: 249 teams, 39 conferences, 0 incomplete
+2026-08-27 04:16:42,382 INFO 2010: wrote cfb\teams\json\2010.json
+2026-08-27 06:06:48,644 INFO 2010 root (group 99): 705 teams
+2026-08-27 06:06:48,795 INFO 2010 ncaa_division_i (group 90): 249 teams
+2026-08-27 06:06:48,938 INFO 2010 fbs (group 80): 124 teams
+2026-08-27 06:06:49,091 INFO 2010 fcs (group 81): 125 teams
+2026-08-27 06:06:49,246 INFO 2010 division_ii_iii (group 35): 456 teams
+2026-08-27 06:06:49,386 INFO 2010 ncaa_division_ii (group 57): 1 teams
+2026-08-27 06:06:49,539 INFO 2010 ncaa_division_iii (group 58): 0 teams
+2026-08-27 06:06:49,683 INFO 2010 all_star (group 36): 0 teams
+2026-08-27 06:06:49,763 INFO 2010: 705 teams (249 reused, 456 to fetch)
+2026-08-27 06:07:03,728 INFO 2010: 705 teams, 45 conferences, 0 incomplete
+2026-08-27 06:07:03,958 INFO 2010: wrote cfb\teams\json\2010.json
+2026-08-27 06:14:29,523 INFO 2010 root (group 99): 705 teams
+2026-08-27 06:14:29,659 INFO 2010 ncaa_division_i (group 90): 249 teams
+2026-08-27 06:14:29,801 INFO 2010 fbs (group 80): 124 teams
+2026-08-27 06:14:29,937 INFO 2010 fcs (group 81): 125 teams
+2026-08-27 06:14:30,069 INFO 2010 division_ii_iii (group 35): 456 teams
+2026-08-27 06:14:30,200 INFO 2010 ncaa_division_ii (group 57): 1 teams
+2026-08-27 06:14:30,329 INFO 2010 ncaa_division_iii (group 58): 0 teams
+2026-08-27 06:14:30,463 INFO 2010 all_star (group 36): 0 teams
+2026-08-27 06:14:30,599 INFO 2010 naia (group 186): 0 teams
+2026-08-27 06:14:30,678 INFO 2010: 705 teams (705 reused, 0 to fetch)
+2026-08-27 06:14:30,679 INFO 2010: 705 teams, 45 conferences, 0 incomplete
+2026-08-27 06:14:30,836 INFO 2010: wrote cfb\teams\json\2010.json

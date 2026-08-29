@@ -1,0 +1,29 @@
+2026-08-27 04:15:05,475 INFO 2023 fbs (group 80): 145 teams
+2026-08-27 04:15:05,612 INFO 2023 fcs (group 81): 130 teams
+2026-08-27 04:15:13,561 INFO 2023: 275 teams, 35 conferences, 0 incomplete
+2026-08-27 04:15:13,722 INFO 2023: wrote cfb\teams\json\2023.json
+2026-08-27 04:18:17,359 INFO 2023: already captured, skipping
+2026-08-27 06:03:17,842 INFO 2023 root (group 99): 800 teams
+2026-08-27 06:03:17,973 INFO 2023 ncaa_division_i (group 90): 272 teams
+2026-08-27 06:03:18,106 INFO 2023 fbs (group 80): 145 teams
+2026-08-27 06:03:18,258 INFO 2023 fcs (group 81): 130 teams
+2026-08-27 06:03:18,405 INFO 2023 division_ii_iii (group 35): 574 teams
+2026-08-27 06:03:18,536 INFO 2023 ncaa_division_ii (group 57): 183 teams
+2026-08-27 06:03:18,681 INFO 2023 ncaa_division_iii (group 58): 249 teams
+2026-08-27 06:03:18,818 INFO 2023 all_star (group 36): 0 teams
+2026-08-27 06:03:18,891 INFO 2023: 857 teams (275 reused, 582 to fetch)
+2026-08-27 06:03:36,470 INFO 2023: 857 teams, 90 conferences, 0 incomplete
+2026-08-27 06:03:36,654 INFO 2023: wrote cfb\teams\json\2023.json
+2026-08-27 06:10:29,760 INFO 2023: already captured, skipping
+2026-08-27 06:14:48,694 INFO 2023 root (group 99): 800 teams
+2026-08-27 06:14:48,847 INFO 2023 ncaa_division_i (group 90): 272 teams
+2026-08-27 06:14:48,989 INFO 2023 fbs (group 80): 145 teams
+2026-08-27 06:14:49,127 INFO 2023 fcs (group 81): 130 teams
+2026-08-27 06:14:49,279 INFO 2023 division_ii_iii (group 35): 574 teams
+2026-08-27 06:14:49,419 INFO 2023 ncaa_division_ii (group 57): 183 teams
+2026-08-27 06:14:49,578 INFO 2023 ncaa_division_iii (group 58): 249 teams
+2026-08-27 06:14:49,717 INFO 2023 all_star (group 36): 0 teams
+2026-08-27 06:14:49,847 INFO 2023 naia (group 186): 0 teams
+2026-08-27 06:14:49,916 INFO 2023: 857 teams (857 reused, 0 to fetch)
+2026-08-27 06:14:49,918 INFO 2023: 857 teams, 90 conferences, 0 incomplete
+2026-08-27 06:14:50,157 INFO 2023: wrote cfb\teams\json\2023.json

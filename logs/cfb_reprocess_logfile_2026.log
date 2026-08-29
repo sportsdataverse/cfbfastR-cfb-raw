@@ -1,0 +1,168 @@
+2026-08-02 20:59:07,079 ERROR reprocess failed: 401856716
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 112, in reprocess_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7101, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 863, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1503, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 401856716 has no header.competitions; cannot build play-by-play.
+2026-08-02 20:59:07,389 ERROR reprocess failed: 401856793
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 112, in reprocess_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7101, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 863, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1503, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 401856793 has no header.competitions; cannot build play-by-play.
+2026-08-02 20:59:07,574 ERROR reprocess failed: 401856872
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 112, in reprocess_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7101, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 863, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1503, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 401856872 has no header.competitions; cannot build play-by-play.
+2026-08-02 20:59:08,004 ERROR reprocess failed: 401858529
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 112, in reprocess_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7101, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 863, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1503, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 401858529 has no header.competitions; cannot build play-by-play.
+2026-08-02 20:59:08,160 ERROR reprocess failed: 401862771
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 112, in reprocess_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7101, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 863, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1503, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 401862771 has no header.competitions; cannot build play-by-play.
+2026-08-02 20:59:08,169 ERROR reprocess failed: 401862778
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 112, in reprocess_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7101, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 863, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1503, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 401862778 has no header.competitions; cannot build play-by-play.
+2026-08-02 20:59:08,247 ERROR reprocess failed: 401862827
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 112, in reprocess_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7101, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 863, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1503, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 401862827 has no header.competitions; cannot build play-by-play.
+2026-08-02 20:59:08,551 ERROR reprocess failed: 401869954
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 112, in reprocess_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7101, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 863, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1503, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 401869954 has no header.competitions; cannot build play-by-play.
+2026-08-02 20:59:08,606 ERROR reprocess failed: 401871059
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 112, in reprocess_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7101, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 863, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1503, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 401871059 has no header.competitions; cannot build play-by-play.
+2026-08-02 20:59:08,666 ERROR reprocess failed: 401874342
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 112, in reprocess_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7101, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 863, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1503, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 401874342 has no header.competitions; cannot build play-by-play.
+2026-08-02 20:59:08,668 ERROR reprocess failed: 401874404
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 112, in reprocess_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7101, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 863, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1503, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 401874404 has no header.competitions; cannot build play-by-play.
+2026-08-02 20:59:08,698 ERROR reprocess failed: 401874429
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\python\reprocess_cfb_json.py", line 112, in reprocess_game
+    result = proc.run_processing_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 7101, in run_processing_pipeline
+    pbp_txt = self.__helper_cfb_pbp_drives(self.json)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 863, in __helper_cfb_pbp_drives
+    pbp_txt, init = self.__helper_cfb_pbp(pbp_txt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\cfbfastR-dev\cfbfastR-cfb-raw\.venv\Lib\site-packages\sportsdataverse\cfb\cfb_pbp.py", line 1503, in __helper_cfb_pbp
+    raise NoESPNDataError(
+sportsdataverse.errors.NoESPNDataError: ESPN summary for game 401874429 has no header.competitions; cannot build play-by-play.

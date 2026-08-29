@@ -1,0 +1,27 @@
+2026-08-27 04:17:04,781 INFO 2014 fbs (group 80): 136 teams
+2026-08-27 04:17:04,928 INFO 2014 fcs (group 81): 124 teams
+2026-08-27 04:17:12,329 INFO 2014: 260 teams, 42 conferences, 0 incomplete
+2026-08-27 04:17:12,482 INFO 2014: wrote cfb\teams\json\2014.json
+2026-08-27 06:07:53,814 INFO 2014 root (group 99): 769 teams
+2026-08-27 06:07:53,958 INFO 2014 ncaa_division_i (group 90): 260 teams
+2026-08-27 06:07:54,099 INFO 2014 fbs (group 80): 136 teams
+2026-08-27 06:07:54,249 INFO 2014 fcs (group 81): 124 teams
+2026-08-27 06:07:54,404 INFO 2014 division_ii_iii (group 35): 510 teams
+2026-08-27 06:07:54,582 INFO 2014 ncaa_division_ii (group 57): 160 teams
+2026-08-27 06:07:54,747 INFO 2014 ncaa_division_iii (group 58): 246 teams
+2026-08-27 06:07:54,889 INFO 2014 all_star (group 36): 0 teams
+2026-08-27 06:07:54,958 INFO 2014: 770 teams (260 reused, 510 to fetch)
+2026-08-27 06:08:10,135 INFO 2014: 770 teams, 106 conferences, 0 incomplete
+2026-08-27 06:08:10,316 INFO 2014: wrote cfb\teams\json\2014.json
+2026-08-27 06:14:35,255 INFO 2014 root (group 99): 769 teams
+2026-08-27 06:14:35,395 INFO 2014 ncaa_division_i (group 90): 260 teams
+2026-08-27 06:14:35,530 INFO 2014 fbs (group 80): 136 teams
+2026-08-27 06:14:35,669 INFO 2014 fcs (group 81): 124 teams
+2026-08-27 06:14:35,800 INFO 2014 division_ii_iii (group 35): 510 teams
+2026-08-27 06:14:35,929 INFO 2014 ncaa_division_ii (group 57): 160 teams
+2026-08-27 06:14:36,059 INFO 2014 ncaa_division_iii (group 58): 246 teams
+2026-08-27 06:14:36,196 INFO 2014 all_star (group 36): 0 teams
+2026-08-27 06:14:36,330 INFO 2014 naia (group 186): 0 teams
+2026-08-27 06:14:36,409 INFO 2014: 770 teams (770 reused, 0 to fetch)
+2026-08-27 06:14:36,410 INFO 2014: 770 teams, 106 conferences, 0 incomplete
+2026-08-27 06:14:36,580 INFO 2014: wrote cfb\teams\json\2014.json

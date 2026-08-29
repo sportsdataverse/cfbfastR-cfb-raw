@@ -1,0 +1,27 @@
+2026-08-27 04:18:25,468 INFO 2025 fbs (group 80): 146 teams
+2026-08-27 04:18:25,606 INFO 2025 fcs (group 81): 131 teams
+2026-08-27 04:18:33,318 INFO 2025: 277 teams, 29 conferences, 0 incomplete
+2026-08-27 04:18:33,437 INFO 2025: wrote cfb\teams\json\2025.json
+2026-08-27 06:10:47,395 INFO 2025 root (group 99): 807 teams
+2026-08-27 06:10:47,547 INFO 2025 ncaa_division_i (group 90): 267 teams
+2026-08-27 06:10:47,690 INFO 2025 fbs (group 80): 146 teams
+2026-08-27 06:10:47,833 INFO 2025 fcs (group 81): 131 teams
+2026-08-27 06:10:47,989 INFO 2025 division_ii_iii (group 35): 402 teams
+2026-08-27 06:10:48,158 INFO 2025 ncaa_division_ii (group 57): 167 teams
+2026-08-27 06:10:48,302 INFO 2025 ncaa_division_iii (group 58): 237 teams
+2026-08-27 06:10:48,452 INFO 2025 all_star (group 36): 0 teams
+2026-08-27 06:10:48,521 INFO 2025: 819 teams (277 reused, 542 to fetch)
+2026-08-27 06:11:04,223 INFO 2025: 819 teams, 87 conferences, 0 incomplete
+2026-08-27 06:11:04,547 INFO 2025: wrote cfb\teams\json\2025.json
+2026-08-27 06:14:51,709 INFO 2025 root (group 99): 807 teams
+2026-08-27 06:14:51,846 INFO 2025 ncaa_division_i (group 90): 267 teams
+2026-08-27 06:14:51,987 INFO 2025 fbs (group 80): 146 teams
+2026-08-27 06:14:52,119 INFO 2025 fcs (group 81): 131 teams
+2026-08-27 06:14:52,251 INFO 2025 division_ii_iii (group 35): 402 teams
+2026-08-27 06:14:52,392 INFO 2025 ncaa_division_ii (group 57): 167 teams
+2026-08-27 06:14:52,525 INFO 2025 ncaa_division_iii (group 58): 237 teams
+2026-08-27 06:14:52,655 INFO 2025 all_star (group 36): 0 teams
+2026-08-27 06:14:52,799 INFO 2025 naia (group 186): 131 teams
+2026-08-27 06:14:52,867 INFO 2025: 819 teams (819 reused, 0 to fetch)
+2026-08-27 06:14:52,869 INFO 2025: 819 teams, 87 conferences, 0 incomplete
+2026-08-27 06:14:53,109 INFO 2025: wrote cfb\teams\json\2025.json

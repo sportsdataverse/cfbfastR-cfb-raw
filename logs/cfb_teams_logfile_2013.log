@@ -1,0 +1,27 @@
+2026-08-27 04:16:56,971 INFO 2013 fbs (group 80): 134 teams
+2026-08-27 04:16:57,120 INFO 2013 fcs (group 81): 126 teams
+2026-08-27 04:17:04,590 INFO 2013: 260 teams, 42 conferences, 0 incomplete
+2026-08-27 04:17:04,701 INFO 2013: wrote cfb\teams\json\2013.json
+2026-08-27 06:07:35,794 INFO 2013 root (group 99): 744 teams
+2026-08-27 06:07:35,938 INFO 2013 ncaa_division_i (group 90): 260 teams
+2026-08-27 06:07:36,079 INFO 2013 fbs (group 80): 134 teams
+2026-08-27 06:07:36,223 INFO 2013 fcs (group 81): 126 teams
+2026-08-27 06:07:36,366 INFO 2013 division_ii_iii (group 35): 470 teams
+2026-08-27 06:07:36,523 INFO 2013 ncaa_division_ii (group 57): 154 teams
+2026-08-27 06:07:36,671 INFO 2013 ncaa_division_iii (group 58): 244 teams
+2026-08-27 06:07:36,818 INFO 2013 all_star (group 36): 0 teams
+2026-08-27 06:07:36,895 INFO 2013: 745 teams (260 reused, 485 to fetch)
+2026-08-27 06:07:53,474 INFO 2013: 745 teams, 94 conferences, 0 incomplete
+2026-08-27 06:07:53,657 INFO 2013: wrote cfb\teams\json\2013.json
+2026-08-27 06:14:33,802 INFO 2013 root (group 99): 744 teams
+2026-08-27 06:14:33,932 INFO 2013 ncaa_division_i (group 90): 260 teams
+2026-08-27 06:14:34,071 INFO 2013 fbs (group 80): 134 teams
+2026-08-27 06:14:34,211 INFO 2013 fcs (group 81): 126 teams
+2026-08-27 06:14:34,341 INFO 2013 division_ii_iii (group 35): 470 teams
+2026-08-27 06:14:34,471 INFO 2013 ncaa_division_ii (group 57): 154 teams
+2026-08-27 06:14:34,608 INFO 2013 ncaa_division_iii (group 58): 244 teams
+2026-08-27 06:14:34,741 INFO 2013 all_star (group 36): 0 teams
+2026-08-27 06:14:34,872 INFO 2013 naia (group 186): 0 teams
+2026-08-27 06:14:34,942 INFO 2013: 745 teams (745 reused, 0 to fetch)
+2026-08-27 06:14:34,943 INFO 2013: 745 teams, 94 conferences, 0 incomplete
+2026-08-27 06:14:35,168 INFO 2013: wrote cfb\teams\json\2013.json

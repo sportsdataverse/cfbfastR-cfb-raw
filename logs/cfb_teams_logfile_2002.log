@@ -1,0 +1,27 @@
+2026-08-27 04:15:37,180 INFO 2002 fbs (group 80): 117 teams
+2026-08-27 04:15:37,332 INFO 2002 fcs (group 81): 123 teams
+2026-08-27 04:15:44,498 INFO 2002: 240 teams, 39 conferences, 0 incomplete
+2026-08-27 04:15:44,621 INFO 2002: wrote cfb\teams\json\2002.json
+2026-08-27 06:05:32,364 INFO 2002 root (group 99): 471 teams
+2026-08-27 06:05:32,511 INFO 2002 ncaa_division_i (group 90): 240 teams
+2026-08-27 06:05:32,652 INFO 2002 fbs (group 80): 117 teams
+2026-08-27 06:05:32,802 INFO 2002 fcs (group 81): 123 teams
+2026-08-27 06:05:32,971 INFO 2002 division_ii_iii (group 35): 231 teams
+2026-08-27 06:05:33,108 INFO 2002 ncaa_division_ii (group 57): 0 teams
+2026-08-27 06:05:33,254 INFO 2002 ncaa_division_iii (group 58): 0 teams
+2026-08-27 06:05:33,394 INFO 2002 all_star (group 36): 0 teams
+2026-08-27 06:05:33,464 INFO 2002: 471 teams (240 reused, 231 to fetch)
+2026-08-27 06:05:40,420 INFO 2002: 471 teams, 43 conferences, 0 incomplete
+2026-08-27 06:05:40,597 INFO 2002: wrote cfb\teams\json\2002.json
+2026-08-27 06:14:18,424 INFO 2002 root (group 99): 471 teams
+2026-08-27 06:14:18,555 INFO 2002 ncaa_division_i (group 90): 240 teams
+2026-08-27 06:14:18,686 INFO 2002 fbs (group 80): 117 teams
+2026-08-27 06:14:18,820 INFO 2002 fcs (group 81): 123 teams
+2026-08-27 06:14:18,956 INFO 2002 division_ii_iii (group 35): 231 teams
+2026-08-27 06:14:19,084 INFO 2002 ncaa_division_ii (group 57): 0 teams
+2026-08-27 06:14:19,218 INFO 2002 ncaa_division_iii (group 58): 0 teams
+2026-08-27 06:14:19,357 INFO 2002 all_star (group 36): 0 teams
+2026-08-27 06:14:19,493 INFO 2002 naia (group 186): 0 teams
+2026-08-27 06:14:19,565 INFO 2002: 471 teams (471 reused, 0 to fetch)
+2026-08-27 06:14:19,566 INFO 2002: 471 teams, 43 conferences, 0 incomplete
+2026-08-27 06:14:19,681 INFO 2002: wrote cfb\teams\json\2002.json

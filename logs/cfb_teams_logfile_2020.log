@@ -1,0 +1,27 @@
+2026-08-27 04:17:52,496 INFO 2020 fbs (group 80): 140 teams
+2026-08-27 04:17:52,646 INFO 2020 fcs (group 81): 127 teams
+2026-08-27 04:18:01,207 INFO 2020: 267 teams, 45 conferences, 0 incomplete
+2026-08-27 04:18:01,305 INFO 2020: wrote cfb\teams\json\2020.json
+2026-08-27 06:09:36,310 INFO 2020 root (group 99): 776 teams
+2026-08-27 06:09:36,460 INFO 2020 ncaa_division_i (group 90): 267 teams
+2026-08-27 06:09:36,610 INFO 2020 fbs (group 80): 140 teams
+2026-08-27 06:09:36,758 INFO 2020 fcs (group 81): 127 teams
+2026-08-27 06:09:36,917 INFO 2020 division_ii_iii (group 35): 508 teams
+2026-08-27 06:09:37,067 INFO 2020 ncaa_division_ii (group 57): 155 teams
+2026-08-27 06:09:37,211 INFO 2020 ncaa_division_iii (group 58): 249 teams
+2026-08-27 06:09:37,361 INFO 2020 all_star (group 36): 0 teams
+2026-08-27 06:09:37,433 INFO 2020: 777 teams (267 reused, 510 to fetch)
+2026-08-27 06:09:53,854 INFO 2020: 777 teams, 108 conferences, 0 incomplete
+2026-08-27 06:09:54,182 INFO 2020: wrote cfb\teams\json\2020.json
+2026-08-27 06:14:44,324 INFO 2020 root (group 99): 776 teams
+2026-08-27 06:14:44,463 INFO 2020 ncaa_division_i (group 90): 267 teams
+2026-08-27 06:14:44,593 INFO 2020 fbs (group 80): 140 teams
+2026-08-27 06:14:44,733 INFO 2020 fcs (group 81): 127 teams
+2026-08-27 06:14:44,865 INFO 2020 division_ii_iii (group 35): 508 teams
+2026-08-27 06:14:44,994 INFO 2020 ncaa_division_ii (group 57): 155 teams
+2026-08-27 06:14:45,126 INFO 2020 ncaa_division_iii (group 58): 249 teams
+2026-08-27 06:14:45,260 INFO 2020 all_star (group 36): 0 teams
+2026-08-27 06:14:45,398 INFO 2020 naia (group 186): 0 teams
+2026-08-27 06:14:45,468 INFO 2020: 777 teams (777 reused, 0 to fetch)
+2026-08-27 06:14:45,469 INFO 2020: 777 teams, 108 conferences, 0 incomplete
+2026-08-27 06:14:45,652 INFO 2020: wrote cfb\teams\json\2020.json

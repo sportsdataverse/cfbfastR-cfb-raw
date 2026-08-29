@@ -1,0 +1,27 @@
+2026-08-27 04:15:59,165 INFO 2005 fbs (group 80): 119 teams
+2026-08-27 04:15:59,305 INFO 2005 fcs (group 81): 120 teams
+2026-08-27 04:16:06,042 INFO 2005: 239 teams, 42 conferences, 0 incomplete
+2026-08-27 04:16:06,130 INFO 2005: wrote cfb\teams\json\2005.json
+2026-08-27 06:05:57,367 INFO 2005 root (group 99): 240 teams
+2026-08-27 06:05:57,522 INFO 2005 ncaa_division_i (group 90): 239 teams
+2026-08-27 06:05:57,662 INFO 2005 fbs (group 80): 119 teams
+2026-08-27 06:05:57,805 INFO 2005 fcs (group 81): 120 teams
+2026-08-27 06:05:57,951 INFO 2005 division_ii_iii (group 35): 1 teams
+2026-08-27 06:05:58,099 INFO 2005 ncaa_division_ii (group 57): 0 teams
+2026-08-27 06:05:58,239 INFO 2005 ncaa_division_iii (group 58): 0 teams
+2026-08-27 06:05:58,389 INFO 2005 all_star (group 36): 0 teams
+2026-08-27 06:05:58,459 INFO 2005: 240 teams (239 reused, 1 to fetch)
+2026-08-27 06:05:58,664 INFO 2005: 240 teams, 46 conferences, 0 incomplete
+2026-08-27 06:05:58,773 INFO 2005: wrote cfb\teams\json\2005.json
+2026-08-27 06:14:22,497 INFO 2005 root (group 99): 240 teams
+2026-08-27 06:14:22,629 INFO 2005 ncaa_division_i (group 90): 239 teams
+2026-08-27 06:14:22,766 INFO 2005 fbs (group 80): 119 teams
+2026-08-27 06:14:22,908 INFO 2005 fcs (group 81): 120 teams
+2026-08-27 06:14:23,038 INFO 2005 division_ii_iii (group 35): 1 teams
+2026-08-27 06:14:23,168 INFO 2005 ncaa_division_ii (group 57): 0 teams
+2026-08-27 06:14:23,298 INFO 2005 ncaa_division_iii (group 58): 0 teams
+2026-08-27 06:14:23,429 INFO 2005 all_star (group 36): 0 teams
+2026-08-27 06:14:23,576 INFO 2005 naia (group 186): 0 teams
+2026-08-27 06:14:23,645 INFO 2005: 240 teams (240 reused, 0 to fetch)
+2026-08-27 06:14:23,645 INFO 2005: 240 teams, 46 conferences, 0 incomplete
+2026-08-27 06:14:23,731 INFO 2005: wrote cfb\teams\json\2005.json

@@ -13,3 +13,14 @@ __pycache__/
 .omc/
 agent/
 .agents/
+
+# --- logs/ ---
+# DELIBERATELY TRACKED: the per-season stage logfiles, <stage>_logfile_YYYY.log
+# (cfb_raw / cfb_json / cfb_schedules / cfb_reprocess / cfb_recruits / cfb_teams).
+# They are the per-stage run record for a season and are committed on purpose --
+# do not "clean them up". Ad-hoc and one-off run logs are ignored below.
+logs/*_backfill.log
+logs/*_backfill_early.log
+logs/*_run.log
+logs/teams_expand*.log
+logs/*_logfile_[a-z]*.log
