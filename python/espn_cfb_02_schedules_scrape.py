@@ -8,7 +8,7 @@ directory top to bottom gives you a working pipeline:
 
     01 teams              reference; no upstream
     02 schedules          the game-id gate for everything below
-    03 team_rosters       (reserved -- not built yet)
+    03 team_rosters       needs 01 teams for the id list; CURRENT SEASON ONLY
     04 pbp / json         fetches rosters + participants inline, writes json/final
     05 player_stats       (reserved -- not built yet)
     06 team_stats         (reserved -- not built yet)

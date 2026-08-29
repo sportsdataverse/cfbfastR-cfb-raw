@@ -1,6 +1,6 @@
-"""Stage 08 -- ESPN CFB ESPN Total QBR (CFB extra).
+"""Stage 03 -- ESPN CFB per-team season rosters.
 
-Thin shim over ``scrape_cfb_qbr``: the directory listing IS the pipeline.
+Thin shim over ``scrape_cfb_team_rosters``: the directory listing IS the pipeline.
 
 **The numbers are this repo's COLD-START EXECUTION ORDER** -- the order the
 stages must run in from an empty tree, renumbered 2026-08-29. Reading the
@@ -40,12 +40,12 @@ Example:
     One season::
 
         source scripts/_venv.sh
-        "$PY" python/espn_cfb_08_qbr_scrape.py -s 2026 -e 2026
+        "$PY" python/espn_cfb_03_team_rosters_scrape.py -s 2026 -e 2026
 """
 
 from __future__ import annotations
 
-from cfb_raw_scrape.scrape_cfb_qbr import main
+from cfb_raw_scrape.scrape_cfb_team_rosters import main
 
 if __name__ == "__main__":
     raise SystemExit(main())

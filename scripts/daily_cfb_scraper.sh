@@ -56,6 +56,10 @@ for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
     # 403s under load. They remain as standalone stages for backfilling their
     # own cfb/game_rosters and cfb/play_participants trees.
     # 06 pbp -- the expensive stage, and the one the others feed.
+    # 03 team_rosters -- reads 02 schedules? no: it reads 01 TEAMS for its id
+    # list, so it must follow 01. Current-season only by construction; it
+    # refuses to bank a season the endpoint cannot serve.
+    "$PY" python/espn_cfb_03_team_rosters_scrape.py -s "$i" -e "$i" -r "$RESCRAPE" || echo "!! team_rosters scrape failed for $i (non-fatal)"
     "$PY" python/espn_cfb_04_pbp_scrape.py -s "$i" -e "$i" -r "$RESCRAPE" --hollow "$HOLLOW"
     # 10/11 are season-level and depend only on the schedule.
     # 07 standings -- season-keyed, one call for the whole conference tree.
@@ -73,7 +77,7 @@ for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
   # has NO get_logger at all (0 tracked logs) so it is deliberately absent.
   # game_rosters/play_participants are not here because they are not in the
   # loop -- see the comment above.
-  for stage in cfb_teams cfb_schedules cfb_json cfb_standings cfb_power_index; do
+  for stage in cfb_teams cfb_schedules cfb_team_rosters cfb_json cfb_standings cfb_power_index; do
     sdv_commit_log "$stage" "$i" || PUSH_RC=1
   done
   # NOT `pull --rebase`: git's default am backend base64-encodes every blob it

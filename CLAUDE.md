@@ -39,7 +39,7 @@ which also keeps the cross-repo callers above working.
 |---|---|---|---|
 | 01 | teams | `cfb_raw_scrape/scrape_cfb_teams.py` | yes |
 | 02 | schedules | `cfb_raw_scrape/scrape_cfb_schedules.py` | yes |
-| 03 | team_rosters | *(reserved — not built)* | — |
+| 03 | team_rosters | `cfb_raw_scrape/scrape_cfb_team_rosters.py` — FBS+FCS, **current season only** | yes |
 | 04 | pbp / json | `cfb_raw_scrape/scrape_cfb_pbp.py` | yes |
 | 05 | player_stats | *(reserved — not built)* | — |
 | 06 | team_stats | *(reserved — not built)* | — |
