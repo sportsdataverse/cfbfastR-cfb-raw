@@ -1,0 +1,2 @@
+2026-08-29 06:09:45,336 INFO team_stats 2016: 262 teams x 2 types, 524 to fetch (0 banked and final)
+2026-08-29 06:09:58,444 INFO team_stats 2016: 18 (type/team) publish no stats -- expected, not a failure: ['2/5', '2/3144', '2/3145', '2/3146', '2/3147', '2/3194', '2/3193', '2/3197', '2/3198', '3/5']
