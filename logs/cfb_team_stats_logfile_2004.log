@@ -1,0 +1,68 @@
+2026-08-29 05:58:36,611 INFO team_stats 2004: 244 teams x 2 types, 488 to fetch (0 banked and final)
+2026-08-29 05:58:42,153 ERROR NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/types/2/teams/2099/statistics
+
+  Suggestion: Try `find_team(name, league='cfb')` to verify the team_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-29 05:58:42,623 ERROR NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/types/2/teams/2193/statistics
+
+  Suggestion: Try `find_team(name, league='cfb')` to verify the team_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-29 05:58:42,709 ERROR NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/types/2/teams/2217/statistics
+
+  Suggestion: Try `find_team(name, league='cfb')` to verify the team_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-29 05:58:43,558 ERROR NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/types/2/teams/2417/statistics
+
+  Suggestion: Try `find_team(name, league='cfb')` to verify the team_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-29 05:58:43,930 ERROR NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/types/2/teams/2463/statistics
+
+  Suggestion: Try `find_team(name, league='cfb')` to verify the team_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-29 05:58:44,387 ERROR NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/types/2/teams/2561/statistics
+
+  Suggestion: Try `find_team(name, league='cfb')` to verify the team_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-29 05:58:44,601 ERROR NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/types/2/teams/2599/statistics
+
+  Suggestion: Try `find_team(name, league='cfb')` to verify the team_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-29 05:58:44,634 ERROR NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/types/2/teams/2608/statistics
+
+  Suggestion: Try `find_team(name, league='cfb')` to verify the team_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-29 05:58:49,950 ERROR NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/types/3/teams/2099/statistics
+
+  Suggestion: Try `find_team(name, league='cfb')` to verify the team_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-29 05:58:50,425 ERROR NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/types/3/teams/2193/statistics
+
+  Suggestion: Try `find_team(name, league='cfb')` to verify the team_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-29 05:58:50,508 ERROR NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/types/3/teams/2217/statistics
+
+  Suggestion: Try `find_team(name, league='cfb')` to verify the team_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-29 05:58:51,280 ERROR NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/types/3/teams/2417/statistics
+
+  Suggestion: Try `find_team(name, league='cfb')` to verify the team_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-29 05:58:51,580 ERROR NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/types/3/teams/2463/statistics
+
+  Suggestion: Try `find_team(name, league='cfb')` to verify the team_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-29 05:58:52,004 ERROR NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/types/3/teams/2561/statistics
+
+  Suggestion: Try `find_team(name, league='cfb')` to verify the team_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-29 05:58:52,237 ERROR NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/types/3/teams/2599/statistics
+
+  Suggestion: Try `find_team(name, league='cfb')` to verify the team_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-29 05:58:52,240 ERROR NoESPNDataError: No data found for https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2004/types/3/teams/2608/statistics
+
+  Suggestion: Try `find_team(name, league='cfb')` to verify the team_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-29 05:58:53,239 ERROR team_stats 2004: 16 failed: ['2/2099', '2/2193', '2/2217', '2/2417', '2/2463', '2/2561', '2/2599', '2/2608', '3/2099', '3/2193']
+2026-08-29 06:03:44,033 INFO team_stats 2004: 244 teams x 2 types, 488 to fetch (0 banked and final)
+2026-08-29 06:03:50,515 INFO team_stats 2004: 16 (type/team) publish no stats -- expected, not a failure: ['2/2099', '2/2193', '2/2217', '2/2417', '2/2463', '2/2561', '2/2608', '2/2599', '3/2099', '3/2193']
