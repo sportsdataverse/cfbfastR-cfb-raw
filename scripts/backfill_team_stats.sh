@@ -24,7 +24,10 @@ echo "=== team_stats backfill ${START}-${END} | workers=${CFB_TEAM_STATS_WORKERS
 RC=0
 for season in $(seq "$START" "$END"); do
   echo "--- season ${season} start $(date -u +%FT%TZ) ---" >> "$LOG"
-  PYTHONUNBUFFERED=1 PYTHONIOENCODING=utf-8 \
+  # TQDM_DISABLE: tqdm renders  progress bars into the log, which makes
+  # `tail -f` unreadable -- the whole point of the log. Progress is visible as
+  # one line per season instead.
+  PYTHONUNBUFFERED=1 PYTHONIOENCODING=utf-8 TQDM_DISABLE=1 \
     "$PY" python/espn_cfb_06_team_stats_scrape.py -s "$season" -e "$season" >> "$LOG" 2>&1 \
     || { echo "!! season ${season} returned non-zero" >> "$LOG"; RC=1; }
   sdv_commit_push "CFB team_stats backfill (${season})" cfb || RC=1
