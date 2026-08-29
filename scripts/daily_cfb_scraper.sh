@@ -58,6 +58,8 @@ for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
     # 06 pbp -- the expensive stage, and the one the others feed.
     "$PY" python/espn_cfb_04_pbp_scrape.py -s "$i" -e "$i" -r "$RESCRAPE" --hollow "$HOLLOW"
     # 10/11 are season-level and depend only on the schedule.
+    # 07 standings -- season-keyed, one call for the whole conference tree.
+    "$PY" python/espn_cfb_07_standings_scrape.py -s "$i" -e "$i" -r "$RESCRAPE" || echo "!! standings scrape failed for $i (non-fatal)"
     "$PY" python/espn_cfb_08_qbr_scrape.py -s "$i" -e "$i" \
       || echo "!! qbr scrape failed for $i (non-fatal)"
     "$PY" python/espn_cfb_09_power_index_scrape.py -s "$i" -e "$i" -r "$RESCRAPE" \
@@ -71,7 +73,7 @@ for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
   # has NO get_logger at all (0 tracked logs) so it is deliberately absent.
   # game_rosters/play_participants are not here because they are not in the
   # loop -- see the comment above.
-  for stage in cfb_teams cfb_schedules cfb_json cfb_power_index; do
+  for stage in cfb_teams cfb_schedules cfb_json cfb_standings cfb_power_index; do
     sdv_commit_log "$stage" "$i" || PUSH_RC=1
   done
   # NOT `pull --rebase`: git's default am backend base64-encodes every blob it

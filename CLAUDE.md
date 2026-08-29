@@ -43,7 +43,7 @@ which also keeps the cross-repo callers above working.
 | 04 | pbp / json | `cfb_raw_scrape/scrape_cfb_pbp.py` | yes |
 | 05 | player_stats | *(reserved — not built)* | — |
 | 06 | team_stats | *(reserved — not built)* | — |
-| 07 | standings | *(reserved — not built)* | — |
+| 07 | standings | `cfb_raw_scrape/scrape_cfb_standings.py` | yes |
 | 08 | qbr | `cfb_raw_scrape/scrape_cfb_qbr.py` | yes |
 | 09 | power_index | `cfb_raw_scrape/scrape_cfb_power_index.py` | yes |
 | 50 | recruits | `cfb_raw_scrape/scrape_cfb_recruits.py` | monthly, preflight-gated |

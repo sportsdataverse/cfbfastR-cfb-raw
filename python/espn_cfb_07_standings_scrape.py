@@ -1,6 +1,6 @@
-"""Stage 02 -- ESPN CFB season schedules + the schedule master.
+"""Stage 07 -- ESPN CFB per-season conference standings.
 
-Thin shim over ``scrape_cfb_schedules``: the directory listing IS the pipeline.
+Thin shim over ``scrape_cfb_standings``: the directory listing IS the pipeline.
 
 **The numbers are this repo's COLD-START EXECUTION ORDER** -- the order the
 stages must run in from an empty tree, renumbered 2026-08-29. Reading the
@@ -40,12 +40,12 @@ Example:
     One season::
 
         source scripts/_venv.sh
-        "$PY" python/espn_cfb_02_schedules_scrape.py -s 2026 -e 2026
+        "$PY" python/espn_cfb_07_standings_scrape.py -s 2026 -e 2026
 """
 
 from __future__ import annotations
 
-from cfb_raw_scrape.scrape_cfb_schedules import main
+from cfb_raw_scrape.scrape_cfb_standings import main
 
 if __name__ == "__main__":
     raise SystemExit(main())

@@ -12,7 +12,7 @@ directory top to bottom gives you a working pipeline:
     04 pbp / json         fetches rosters + participants inline, writes json/final
     05 player_stats       (reserved -- not built yet)
     06 team_stats         (reserved -- not built yet)
-    07 standings          (reserved -- not built yet)
+    07 standings
     08 qbr
     09 power_index
     50 recruits           preflight-gated monthly cadence, not the daily loop
