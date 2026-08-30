@@ -190,7 +190,15 @@ def run_pool(
         from tqdm import tqdm
     except Exception:  # noqa: BLE001
         tqdm = None
-    with Executor(max_workers=workers) as ex:
+    # spawn, never fork: polars/rayon is already initialised in the parent, and
+    # forked workers inherit its locked thread pool -- observed 2026-08-29 as a
+    # 0%-CPU pool stuck at 0/948 for 45 min. Thread pools take no context.
+    kwargs = {}
+    if kind == "process":
+        import multiprocessing
+
+        kwargs["mp_context"] = multiprocessing.get_context("spawn")
+    with Executor(max_workers=workers, **kwargs) as ex:
         futures = {ex.submit(fn, it): it for it in items}
         it = as_completed(futures)
         if tqdm is not None:
