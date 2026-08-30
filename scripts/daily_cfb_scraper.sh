@@ -35,6 +35,7 @@ mkdir -p logs
 # shellcheck source=scripts/_commit.sh
 source "$(dirname "${BASH_SOURCE[0]}")/_commit.sh"
 
+SEASON_LOGS=()
 for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
   TMPLOG=$(mktemp "/tmp/cfb_raw_${i}.XXXXXX.log")
   {
@@ -80,20 +81,24 @@ for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
     sdv_commit_push "CFB Raw Update (Start: $i End: $i)" cfb || PUSH_RC=1
   } 2>&1 | tee "$TMPLOG"
   cp "$TMPLOG" "logs/cfb_raw_logfile_${i}.log"
-  # Every stage writes its own canonical per-season log via get_logger; commit
-  # each in-loop so a season's run record lands with that season's data.
-  # Verified against each stage's get_logger(): pbp logs as cfb_json, and qbr
-  # has NO get_logger at all (0 tracked logs) so it is deliberately absent.
-  # game_rosters/play_participants are not here because they are not in the
-  # loop -- see the comment above.
-  for stage in cfb_teams cfb_schedules cfb_team_rosters cfb_json cfb_player_stats cfb_team_stats cfb_standings cfb_power_index; do
-    sdv_commit_log "$stage" "$i" || PUSH_RC=1
-  done
+  # Every stage writes its own canonical per-season log via get_logger; one
+  # commit carries all of them plus the driver log. Verified against each
+  # stage's get_logger(): pbp logs as cfb_json, and qbr has NO get_logger at all
+  # (0 tracked logs) so it is deliberately absent. game_rosters /
+  # play_participants are not here because they are not in the loop -- see the
+  # comment above.
+  #
+  # ONE commit, not one per log: every push to main dispatches
+  # cfbfastR-cfb-data, and the old per-stage loop fired ~10 dispatches per run
+  # (GitHub collapses the queue, but it also cancelled the data-carrying run).
   # NOT `pull --rebase`: git's default am backend base64-encodes every blob it
   # replays, and this repo's .git is ~20 GB of parquet/JSON -- it stalls. The
   # merge backend replays by tree instead. (rebase.backend=merge is not an
   # option: it landed in git 2.26 and the scrape host runs 2.25.1.)
-  sdv_commit_push "CFB Raw log update (Start: $i End: $i)" "logs/cfb_raw_logfile_${i}.log" || PUSH_RC=1
+  SEASON_LOGS+=("logs/cfb_raw_logfile_${i}.log")
+  for stage in cfb_teams cfb_schedules cfb_team_rosters cfb_json cfb_player_stats cfb_team_stats cfb_standings cfb_power_index; do
+    [ -f "logs/${stage}_logfile_${i}.log" ] && SEASON_LOGS+=("logs/${stage}_logfile_${i}.log")
+  done
   rm -f "$TMPLOG"
 done
 
@@ -107,12 +112,20 @@ done
 # Failure-isolated on purpose. Recruiting is a side dataset; 247 being down or
 # rate-limiting must never fail the game-data run that is this script's job.
 {
-  bash scripts/50_scrape_recruits.sh || echo "!! recruits scrape failed (non-fatal)"
+  # PUSH=false: the recruits log rides the single log commit below instead of
+  # its own push (and its own downstream dispatch).
+  PUSH=false bash scripts/50_scrape_recruits.sh || echo "!! recruits scrape failed (non-fatal)"
   # Deliberately NOT `|| PUSH_RC=1`: a 247 outage must not fail the game-data
   # run. But it does get the retry + sync, so a moved origin no longer silently
   # discards the signing class.
   sdv_commit_push "CFB Recruits Update" cfb/recruits || echo "!! recruits push failed (non-fatal)"
 } 2>&1 | tee -a "$(mktemp "/tmp/cfb_recruits_daily.XXXXXX.log")"
+
+# All run logs in ONE commit (see the SEASON_LOGS comment above). Keyed to the
+# LAST game season so the message still parses downstream.
+# git add aborts on a pathspec that matches nothing, so only add what exists.
+for f in logs/cfb_recruits_logfile_*.log; do [ -f "$f" ] && SEASON_LOGS+=("$f"); done
+sdv_commit_push "CFB Raw log update (Start: ${START_YEAR} End: ${END_YEAR})" "${SEASON_LOGS[@]}" || PUSH_RC=1
 
 # A rejected push is a FAILED run, not a green one. Release assets upload on a
 # separate path and can succeed while the repo mirror is left stale.
