@@ -1,0 +1,1038 @@
+2026-08-30 04:09:06,235 INFO player_stats 2026-2026: 476 athletes, 476 to fetch (0 banked and final, 476 still accruing)
+2026-08-30 04:09:06,392 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/4431473/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:06,394 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/4430420/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:06,444 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/4682999/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:06,525 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/4794106/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:06,530 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/4812345/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:06,562 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/4870677/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:06,580 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/4870806/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:06,736 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/4918438/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:06,766 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/4921412/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:06,784 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5077816/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:06,785 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5076127/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:06,855 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5079510/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:06,873 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5079661/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:06,874 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5079685/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:06,900 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5079837/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:06,913 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5081207/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:06,933 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5082623/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:06,951 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5084046/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:06,982 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5085032/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,023 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5088127/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,027 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5088325/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,032 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5089217/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,335 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5110445/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,348 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5110458/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,662 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5126527/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,674 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5126576/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,711 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5139094/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,722 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5140228/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,738 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5141409/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,756 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5141652/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,814 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5146426/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,826 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5146637/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,838 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5146779/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,844 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5146780/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,849 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5146813/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,858 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5146888/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,892 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5147510/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,898 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5147723/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,906 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5147970/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,912 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5148626/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,932 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5150890/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,939 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5150894/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,944 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5150896/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,976 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5151346/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,984 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5151350/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,994 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5151801/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:07,997 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5151351/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,014 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5155747/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,032 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5153150/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,052 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5157060/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,055 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5158934/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,066 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5158959/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,070 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5158992/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,074 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5158993/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,078 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5159007/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,079 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5159022/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,083 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5159043/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,086 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5159047/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,087 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5159052/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,091 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5159076/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,093 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5159054/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,097 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5159081/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,100 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5159091/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,102 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5159244/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,108 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5159454/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,111 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5160469/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,113 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5160501/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,125 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5161012/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,126 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5161013/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,137 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5161814/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,137 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5161841/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,140 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5162724/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,142 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5161854/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,146 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5162992/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,149 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5163847/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,150 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5162996/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,153 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5164658/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,154 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5164659/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,167 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5167700/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,170 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5167315/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,179 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5176079/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,179 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5181214/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,181 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5182803/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,192 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5200379/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,195 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5201872/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,198 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5201877/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,210 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5203854/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,214 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5207807/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,224 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5207865/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,229 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5209194/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,236 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5209365/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,245 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5209392/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,247 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5210204/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,250 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5210433/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,251 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5209961/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,253 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5210485/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,256 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5210560/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,259 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5210800/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,263 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5211180/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,266 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5211058/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,270 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5212646/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,275 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5212653/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,277 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5212698/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,282 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5213126/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,287 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5213233/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,293 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5214357/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,301 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5214458/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,304 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5214465/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,313 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5214517/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,314 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5214467/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,318 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5215351/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,326 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5215357/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,330 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5215358/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,332 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5216074/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,334 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5216343/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,345 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5219168/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,349 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5219289/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,360 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5219292/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,369 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5219293/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,371 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5219294/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,380 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5219297/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,390 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5220008/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,403 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5220019/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,430 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5220598/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,436 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5220605/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,441 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5220611/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,447 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5220612/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,452 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5220613/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,464 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5221033/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,465 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5220742/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,473 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5221040/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,476 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5221041/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,478 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5222362/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,485 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5222691/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,486 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5222674/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,499 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5226004/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,510 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5229556/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,513 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5229838/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,528 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5233014/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,553 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5233018/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,555 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5237318/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,561 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5238038/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,565 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5245138/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,569 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5245503/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,570 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5254923/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,572 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5252214/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,574 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5257985/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,582 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5263731/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,585 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5264686/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,588 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5264956/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,592 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5265299/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,595 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5265578/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,600 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5266863/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,601 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5266864/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,607 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5268018/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,609 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5272620/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,613 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5276949/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,616 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5278551/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,617 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5273797/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,618 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5279150/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,621 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5279908/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,623 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5281516/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,624 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5281572/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,628 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5282030/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,629 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5282365/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,633 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5283059/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,633 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5289316/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,639 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5290566/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,645 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5289839/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,647 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5290674/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,648 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5290636/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,649 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5290700/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,654 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5290772/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,657 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5290766/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,660 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5290842/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,663 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5290901/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,663 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5290855/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,666 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5291184/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,670 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5291815/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,671 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5291741/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,673 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5293032/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,677 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5294116/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,679 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5294233/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,683 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5294501/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,690 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5295319/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,695 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5295321/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,698 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5295320/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,704 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5295322/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,711 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5296060/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,711 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5296061/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,717 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5296062/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,720 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5296064/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,723 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5296065/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,730 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5296068/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,732 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5296069/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,734 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5296070/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,742 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5296071/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,743 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5296072/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,746 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5296075/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,754 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5296208/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,764 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5296613/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,766 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5296614/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,778 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5296618/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,787 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5296620/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,797 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5296621/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,801 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5296750/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,806 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5296635/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,812 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5303281/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,815 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5309601/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,818 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5310477/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,824 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5310922/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,827 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5325955/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,830 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5329898/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,836 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5334338/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,839 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5334339/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,841 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5378090/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,848 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5378091/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,850 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5378092/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,855 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5378093/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,861 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5378094/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,864 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5378095/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,873 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5378096/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,876 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5378097/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,878 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5378098/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,881 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5378099/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,883 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5378101/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,885 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5378102/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,886 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5378103/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,888 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5378104/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,890 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5386508/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,893 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5386509/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,895 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5386510/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,896 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5386511/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,900 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5386512/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,901 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5386513/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,904 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5386514/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,909 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5386516/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,910 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5386515/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,915 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5386517/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,917 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5386519/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,919 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5386520/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,922 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5386518/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,924 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5386521/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,927 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5388988/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,928 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5386522/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,930 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5388989/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,933 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5388990/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,936 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5388991/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,938 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5388992/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,941 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5388993/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,942 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5388994/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,948 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5388995/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,948 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5388996/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,950 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5388997/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,953 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5388998/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,955 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5443266/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,957 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5443771/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,960 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5443772/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,962 ERROR NoDataError: No data found for https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5444140/stats
+
+  Suggestion: Try `find_athlete(name, league='cfb', team=<team>)` to look up a valid athlete_id.
+  (from `sportsdataverse import find_team, find_athlete, find_event`)
+2026-08-30 04:09:08,964 ERROR player_stats: 259 athlete(s) failed: ['4431473', '4430420', '4682999', '4794106', '4812345', '4870677', '4870806', '4918438', '4921412', '5077816']
