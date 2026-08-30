@@ -17,11 +17,15 @@ concurrency:
   cancel-in-progress: false
 
 on:
-  schedule:
-    - cron: '0 9 * 8 *'        # August (preseason)
-    - cron: '0 9 * 9-11 *'     # Sept-Nov (regular season)
-    - cron: '0 9 * 12 *'       # all December -- most bowls fall Dec 21-31
-    - cron: '0 9 1-25 1 *'     # January bowls + CFP, past the ~Jan 19-20 final
+  # Schedule DISABLED 2026-08-29: the scrape now runs from the droplet crontab
+  # (Sat 16:00 + 20:15, Sun 06:30 ET in season; 04:05 ET off-season). GitHub
+  # was delaying these by 5-11 h and the 08-28/08-29 runs failed/cancelled,
+  # and two schedulers pushing the same tree only race each other.
+  # schedule:
+  #   - cron: '0 9 * 8 *'        # August (preseason)
+  #   - cron: '0 9 * 9-11 *'     # Sept-Nov (regular season)
+  #   - cron: '0 9 * 12 *'       # all December -- most bowls fall Dec 21-31
+  #   - cron: '0 9 1-25 1 *'     # January bowls + CFP, past the ~Jan 19-20 final
   workflow_dispatch:
     inputs:
       start_year:
