@@ -25,3 +25,6 @@
 2026-08-27 06:14:54,441 INFO 2026: 827 teams (827 reused, 0 to fetch)
 2026-08-27 06:14:54,442 INFO 2026: 827 teams, 87 conferences, 0 incomplete
 2026-08-27 06:14:54,633 INFO 2026: wrote cfb\teams\json\2026.json
+2026-08-29 20:34:41,158 INFO 2026: already captured, skipping
+2026-08-29 20:34:51,217 INFO 2026: already captured, skipping
+2026-08-29 21:22:13,090 INFO 2026: already captured, skipping
