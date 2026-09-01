@@ -35,7 +35,7 @@ source scripts/_venv.sh
 # full backfill
 bash scripts/backfill_cfb.sh 2004
 # rebuild final from raw on disk after a pipeline change (offline)
-uv run python python/reprocess_cfb_json.py -s 2024 -e 2024 --force
+uv run python python/espn_cfb_60_reprocess.py -s 2024 -e 2024 --force
 # recruit classes (247). Idempotent: a signed class is immutable, so complete
 # years are skipped and only the current cycle fetches. Floor is 2002 --
 # ratings collapse before then (2001: 52% rated on page 1, 0% by page 4).
