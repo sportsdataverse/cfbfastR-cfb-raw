@@ -14,7 +14,14 @@ from pathlib import Path
 
 from sportsdataverse.cfb import CFBPlayProcess
 
-from cfb_raw_scrape._cfb_raw_utils import PROCESSING_VERSION, get_logger, run_pool, season_type_from_raw, write_json_atomic
+from cfb_raw_scrape._cfb_raw_utils import (
+    PROCESSING_VERSION,
+    get_logger,
+    run_pool,
+    season_type_from_raw,
+    status_state,
+    write_json_atomic,
+)
 from cfb_raw_scrape.cfb_betting import odds_override_from_betting
 
 RAW_DIR = Path("cfb/json/raw")
@@ -89,6 +96,12 @@ def reprocess_game(game_id: int, season: int, force: bool, logger=None):
         if raw is None:
             logger.warning("no raw on disk for %s", game_id)
             return "missing_raw"
+        if status_state(raw) == "pre":
+            # Same guard as scrape_cfb_pbp: a pre-kickoff summary carries no plays, and
+            # a banked shell is pure churn -- the 2026-09-01 sweep wrote and pushed 940
+            # of them for one season. filter_undone already treats a shell as undone,
+            # so nothing downstream needs the file either.
+            return "pregame"
 
         betting = _aux("betting", season, game_id)
         # prefer the cfb_line_odds multi-book consensus; fall back to the ESPN betting aux
@@ -216,7 +229,7 @@ def _verify(pairs, logger) -> tuple[int, int, int]:
     """Confirm every targeted game now has a final at the current PROCESSING_VERSION.
     Returns (current, stale_or_missing, current_but_empty). Empty-but-current games are
     reported (could be legitimately play-less, e.g. cancelled), not treated as failures."""
-    current = stale = empty = 0
+    current = stale = empty = pregame = 0
     incomplete: list[int] = []
     for game_id, _season, _force in pairs:
         d = _read(FINAL_DIR / f"{game_id}.json", {})
@@ -224,14 +237,17 @@ def _verify(pairs, logger) -> tuple[int, int, int]:
             current += 1
             if (d.get("count") or 0) == 0:
                 empty += 1
+        elif status_state(_read(RAW_DIR / f"{game_id}.json", {})) == "pre":
+            pregame += 1  # withheld on purpose, not a failure
         else:
             stale += 1
             incomplete.append(game_id)
     logger.info(
-        "verify: %d/%d current (%d empty-but-current), %d stale/missing",
+        "verify: %d/%d current (%d empty-but-current), %d pre-kickoff withheld, %d stale/missing",
         current,
         len(pairs),
         empty,
+        pregame,
         stale,
     )
     if incomplete:
