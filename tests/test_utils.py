@@ -42,7 +42,7 @@ def test_processing_version_format():
     v = u.PROCESSING_VERSION
     assert "+" in v
     local = v.split("+")[1].split(".")
-    assert local[-1].isdigit()  # SCHEMA_REV is always the last piece
+    assert local[-1] == str(u.SCHEMA_REV)  # SCHEMA_REV is always the last piece
     assert len(local) in (1, 2)  # optional leading sdv-py git sha
     if len(local) == 2:
         assert len(local[0]) == 8 and int(local[0], 16) >= 0
