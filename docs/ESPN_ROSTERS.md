@@ -1,7 +1,7 @@
 # ESPN CFB rosters — collection strategy, column union, gotchas
 
 Recon for the `cfb_rosters` dataset (compiled in `cfbfastR-cfb-data` by
-`python/cfb_data_build/rosters_espn.py`, published to the `espn_cfb_rosters` tag).
+`cfbfastR-cfb-data`'s `python/cfb_data_build/rosters_espn.py`, published to the `espn_cfb_rosters` tag).
 
 ## 1. Collection strategy — and the request-count math
 
