@@ -73,7 +73,7 @@ def test_pregame_raw_is_not_banked(tmp_path, monkeypatch):
     raw_path = tmp_path / "cfb/json/raw/401.json"
     raw = json.loads(raw_path.read_text())
     raw["header"]["competitions"][0]["status"] = {"type": {"state": "pre"}}
-    raw_path.write_text(json.dumps(raw))
+    rp.write_json_atomic(raw, str(raw_path))
     monkeypatch.setattr(rp, "CFBPlayProcess", _FakeProc)
     assert rp.reprocess_game(401, season=2026, force=True) == "pregame"
     assert not (tmp_path / "cfb/json/final/401.json").exists()
