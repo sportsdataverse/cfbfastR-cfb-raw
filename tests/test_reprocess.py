@@ -65,3 +65,15 @@ def test_version_gate_skips_current(tmp_path, monkeypatch):
     (tmp_path / "cfb/json/final/401.json").write_text(json.dumps(
         {"processing_version": rp.PROCESSING_VERSION}))
     assert rp.reprocess_game(401, season=2024, force=False) == "skipped"
+
+
+def test_pregame_raw_is_not_banked(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    _seed(tmp_path)
+    raw_path = tmp_path / "cfb/json/raw/401.json"
+    raw = json.loads(raw_path.read_text())
+    raw["header"]["competitions"][0]["status"] = {"type": {"state": "pre"}}
+    raw_path.write_text(json.dumps(raw))
+    monkeypatch.setattr(rp, "CFBPlayProcess", _FakeProc)
+    assert rp.reprocess_game(401, season=2026, force=True) == "pregame"
+    assert not (tmp_path / "cfb/json/final/401.json").exists()
