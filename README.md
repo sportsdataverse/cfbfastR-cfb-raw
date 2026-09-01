@@ -174,6 +174,84 @@ See `python/model_training/HANDOFF.md` for the sdv-py integration checklist.
 
 <!-- END GENERATED: status -->
 
+## Repository layout
+
+<!-- BEGIN GENERATED: layout -->
+
+```
+cfbfastR-cfb-raw/
+├── cfb/
+│   ├── betting/
+│   ├── espn_recruits/
+│   ├── game_rosters/
+│   ├── json/
+│   ├── play_participants/
+│   ├── player_stats/
+│   ├── power_index/
+│   ├── qbr/
+│   └── … 8 more
+├── dev/   # working notes, not part of the pipeline
+├── docs/   # explainers, model reports and dataset docs
+│   └── superpowers/
+├── logs/   # per-run logs (gitignored where large)
+├── ops/   # cron definitions and runbooks
+│   └── oneoff/
+├── python/   # Python pipeline stages, numbered in build order
+│   ├── cfb_raw_scrape/
+│   ├── __init__.py
+│   ├── espn_cfb_01_teams_scrape.py
+│   ├── espn_cfb_02_schedules_scrape.py
+│   ├── espn_cfb_03_team_rosters_scrape.py
+│   ├── espn_cfb_04_pbp_scrape.py
+│   ├── espn_cfb_05_player_stats_scrape.py
+│   ├── espn_cfb_06_team_stats_scrape.py
+│   ├── espn_cfb_07_standings_scrape.py
+│   ├── espn_cfb_08_qbr_scrape.py
+│   ├── espn_cfb_09_power_index_scrape.py
+│   ├── espn_cfb_50_recruits_scrape.py
+│   ├── espn_cfb_51_player_core_scrape.py
+│   ├── espn_cfb_52_espn_recruits_scrape.py
+│   ├── espn_cfb_60_reprocess.py
+│   ├── espn_cfb_61_reprocess_stale.py
+│   └── … 3 more
+├── scripts/   # bash drivers (the daily/weekly entry points)
+│   ├── 50_scrape_recruits.sh
+│   ├── _commit.sh
+│   ├── _venv.sh
+│   ├── backfill_cfb.sh
+│   ├── backfill_team_stats.sh
+│   ├── chunked_push.sh
+│   ├── daily_cfb_scraper.sh
+│   ├── espn_cfb.sh
+│   ├── monthly_cfb_scraper.sh
+│   ├── push_completed_seasons.sh
+│   ├── reprocess_cfb.sh
+│   ├── rescrape_cfb_full.sh
+│   └── retry_degraded_games.sh
+├── tests/   # test suite
+│   ├── cpoe/
+│   ├── fixtures/
+│   ├── model_training/
+│   ├── pregame_wp/
+│   ├── rb_eval/
+│   ├── __init__.py
+│   ├── conftest.py
+│   ├── test_betting.py
+│   ├── test_live_endpoints.py
+│   ├── test_qbr_scrape.py
+│   ├── test_refreshers.py
+│   ├── test_reprocess.py
+│   ├── test_schedules.py
+│   ├── test_scrape_cfb_recruits.py
+│   ├── test_scrape_espn_recruits.py
+│   ├── test_scrape_pbp.py
+│   └── … 8 more
+└── tools/   # repo-local helper scripts
+    └── hooks/
+```
+
+<!-- END GENERATED: layout -->
+
 ## Reports & explainers
 
 <!-- BEGIN GENERATED: reports -->
