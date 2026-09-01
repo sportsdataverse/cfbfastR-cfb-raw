@@ -47,7 +47,7 @@ say() { echo "[$(date -u +%Y-%m-%dT%H:%M:%SZ)] $*" | tee -a "$LOG"; }
 # would silently under-retry.
 grep -h -oE "degraded summary for [0-9]+" logs/cfb_json_logfile_*.log 2>/dev/null \
   | awk '{print $NF}' | sort -u > "$LIST.all"
-  $PY python/filter_stale.py "$LIST.all" "$LIST"
+  $PY python/espn_cfb_92_filter_stale.py "$LIST.all" "$LIST"
   rm -f "$LIST.all"
 say "harvested $(wc -l < "$LIST" | tr -d ' ') degraded games into $LIST"
 
@@ -66,7 +66,7 @@ for PASS in $(seq 1 "$MAX_PASSES"); do
   # Re-harvest so the next pass only carries what is still failing.
   grep -h -oE "degraded summary for [0-9]+" logs/cfb_json_logfile_*.log 2>/dev/null \
     | awk '{print $NF}' | sort -u > "$LIST.all"
-    $PY python/filter_stale.py "$LIST.all" "$LIST.new"
+    $PY python/espn_cfb_92_filter_stale.py "$LIST.all" "$LIST.new"
     rm -f "$LIST.all"
   mv "$LIST.new" "$LIST"
 done

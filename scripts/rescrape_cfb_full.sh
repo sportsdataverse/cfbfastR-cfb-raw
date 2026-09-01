@@ -60,7 +60,7 @@ say "=== rescrape start ${START_YEAR}..${END_YEAR} workers=${CFB_SCRAPE_WORKERS}
 # we expect. A silent uv re-sync once restarted a season on code missing every
 # fix of that day, producing wrong player ids with no error.
 say "--- preflight: interpreter + sportsdataverse build ---"
-$PY python/preflight_build.py >> "$LOG" 2>&1
+$PY python/espn_cfb_90_preflight_build.py >> "$LOG" 2>&1
 if [ $? -ne 0 ]; then
   say "PREFLIGHT FAILED -- refusing to start. See $LOG"
   tail -12 "$LOG"
@@ -99,7 +99,7 @@ for YEAR in $(seq "$START_YEAR" "$END_YEAR"); do
   fi
 
   # Post-season sanity: how much of the season actually landed non-empty?
-  $PY python/verify_season_fill.py -s "$YEAR" 2>&1 | tee -a "$LOG"
+  $PY python/espn_cfb_91_verify_season_fill.py -s "$YEAR" 2>&1 | tee -a "$LOG"
 
   echo "$YEAR" >> "$CKPT"
   say "season $YEAR COMPLETE (checkpointed)"

@@ -80,8 +80,8 @@ deletion — so they are a frozen historical artifact, not a live dataset.
 ## Layout: entry points at the top, implementations in the package
 
 `python/` holds only what a driver invokes — the numbered stage shims plus
-`reprocess_cfb_json.py`, `filter_stale.py`, `preflight_build.py`,
-`verify_season_fill.py`, `reprocess_stale_by_stamp.py`. Every scraper
+`espn_cfb_60_reprocess.py`, `espn_cfb_61_reprocess_stale.py` (reprocess band),
+`espn_cfb_90_preflight_build.py`, `espn_cfb_91_verify_season_fill.py`, `espn_cfb_92_filter_stale.py` (ops-check band). Every scraper
 implementation lives in `python/cfb_raw_scrape/` and is imported from there
 (`from cfb_raw_scrape.scrape_cfb_teams import main`). The directory listing at
 the top level IS the pipeline; the package is where the work is.

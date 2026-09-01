@@ -3,11 +3,11 @@ import json
 import sys
 from pathlib import Path
 
-P = Path(__file__).parents[1] / "python" / "reprocess_cfb_json.py"
-spec = importlib.util.spec_from_file_location("reprocess_cfb_json", P)
+P = Path(__file__).parents[1] / "python" / "espn_cfb_60_reprocess.py"
+spec = importlib.util.spec_from_file_location("espn_cfb_60_reprocess", P)
 rp = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(rp)
-sys.modules.setdefault("reprocess_cfb_json", rp)
+sys.modules.setdefault("espn_cfb_60_reprocess", rp)
 
 
 class _FakeProc:

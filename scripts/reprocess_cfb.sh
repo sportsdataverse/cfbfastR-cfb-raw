@@ -81,7 +81,7 @@ printf %s%s%s%s "watch: tail -f " "\"" "$(pwd)/${RUN_LOG}" "\"" ; echo
 import sys
 sys.path.insert(0, "python")
 from cfb_raw_scrape._cfb_raw_utils import PROCESSING_VERSION, games_for_seasons, load_schedule_master
-from reprocess_cfb_json import _final_is_current
+from espn_cfb_60_reprocess import _final_is_current
 
 s, e = int(sys.argv[1]), int(sys.argv[2])
 force = len(sys.argv) > 3 and sys.argv[3] == "--force"
@@ -113,7 +113,7 @@ for i in $(seq "${START_YEAR}" "${END_YEAR}"); do
     git pull >/dev/null
     git config --local user.email "action@github.com"
     git config --local user.name "Github Action"
-    "$PY" python/reprocess_cfb_json.py -s "$i" -e "$i" $FORCE
+    "$PY" python/espn_cfb_60_reprocess.py -s "$i" -e "$i" $FORCE
     if [ "$PUSH" = "true" ]; then
       # Load-bearing subject: the -data trigger greps the years out of it.
       sdv_commit_push "CFB Reprocess Update (Start: $i End: $i)" cfb/json/final || PUSH_RC=1
