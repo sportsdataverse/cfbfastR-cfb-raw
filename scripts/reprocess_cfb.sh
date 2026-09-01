@@ -16,7 +16,7 @@
 #
 # COST (measured 2026-08-27, offline, no network): 1.19 s/game single-threaded,
 # so the full 2004-2026 corpus (19,586 games) is roughly ONE HOUR at 6-8 workers.
-# reprocess_cfb_json sizes workers itself from cpu + free RAM; override with
+# espn_cfb_60_reprocess sizes workers itself from cpu + free RAM; override with
 # CFB_SCRAPE_WORKERS if it guesses badly.
 #
 # WHEN TO RUN IT: a sportsdataverse bump moves PROCESSING_VERSION, so every

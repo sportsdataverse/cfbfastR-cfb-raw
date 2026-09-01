@@ -6,7 +6,7 @@ Python/uv scraper for ESPN college-football game JSON. Sibling of `cfbfastR-cfb-
 - `uv sync` — install (editable sdv-py from ../../sdv-py for dev; requires sportsdataverse>=0.0.69).
 - `uv run pytest` — offline test suite. Live tests: `CFB_LIVE_TESTS=1 uv run pytest -m live`.
 - `source scripts/_venv.sh` then `"$PY" python/espn_cfb_04_pbp_scrape.py -s YYYY -e YYYY -r false` — scrape.
-- `"$PY" python/reprocess_cfb_json.py -s YYYY -e YYYY --force` — offline rebuild.
+- `"$PY" python/espn_cfb_60_reprocess.py -s YYYY -e YYYY --force` — offline rebuild.
   **Never `uv run` for a scrape or reprocess** — it re-syncs the env mid-run and has
   already swapped the interpreter under a live job (2026-07-28). `scripts/_venv.sh`
   resolves it once: `CFB_PY` override → this repo's `.venv` → loud failure.

@@ -1,6 +1,6 @@
 """Reprocess every final/ game whose processing_version is stale, from raw on disk.
 
-`reprocess_cfb_json.py` enumerates its work from `cfb_schedule_master.parquet`,
+`espn_cfb_60_reprocess.py` enumerates its work from `cfb_schedule_master.parquet`,
 so a game that has raw + final but is absent from the schedule master is never
 targeted -- even with `--force`, and even though the verify pass only checks the
 games it targeted, so it reports "0 stale/missing" while those games keep an old
@@ -28,7 +28,7 @@ from pathlib import Path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from cfb_raw_scrape._cfb_raw_utils import PROCESSING_VERSION, get_logger  # noqa: E402
-from reprocess_cfb_json import FINAL_DIR, RAW_DIR, _run_with_recovery  # noqa: E402
+from espn_cfb_60_reprocess import FINAL_DIR, RAW_DIR, _run_with_recovery  # noqa: E402
 
 
 def _stale_pairs(force: bool) -> list[tuple[int, int, bool]]:

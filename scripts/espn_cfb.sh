@@ -27,7 +27,7 @@ fi
 FORCE=""
 if [ "${1:-}" = "--force" ]; then FORCE="--force"; shift; fi
 
-mapfile -t ALL < <(ls python/nhl_raw_[0-9][0-9]_*.py | sort)
+mapfile -t ALL < <(ls python/espn_cfb_[0-9][0-9]_*.py | sort)
 
 SELECTED=()
 if [ "$#" -eq 0 ]; then

@@ -12,7 +12,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from reprocess_cfb_json import _final_is_current  # noqa: E402
+from espn_cfb_60_reprocess import _final_is_current  # noqa: E402
 
 src, dst = sys.argv[1], sys.argv[2]
 with open(src, encoding="utf-8") as fh:
