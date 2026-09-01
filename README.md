@@ -2,6 +2,39 @@
 
 Raw + enriched college-football game JSON, scraped from ESPN via `sportsdataverse`.
 
+
+## Pipeline diagrams
+
+```mermaid
+graph LR;
+    E[ESPN APIs] --> A[cfbfastR-cfb-raw];
+    A --> F[cfb/json/final per-game JSON];
+    F --> D[cfbfastR-cfb-data];
+    D --> T1[espn_cfb_model_artifacts];
+    D --> T2[espn_cfb_model_pbp];
+    D --> T3[cfb_ratings];
+    D --> T4[cfb_recruiting_proj];
+```
+
+```mermaid
+flowchart TB;
+    subgraph RAW[cfbfastR-cfb-raw];
+        direction TB;
+        R1[python/espn_cfb_01_teams_scrape.py ... 09_power_index_scrape.py] --> R2[python/espn_cfb_04_pbp_scrape.py];
+        R2 --> R3[python/espn_cfb_60_reprocess.py];
+        R3 --> R4[python/espn_cfb_90_preflight_build.py ... 92_filter_stale.py];
+        R5[scripts/daily_cfb_scraper.sh] --> R1;
+    end;
+    subgraph DATA[cfbfastR-cfb-data];
+        direction TB;
+        D1[python/espn_cfb_01_pbp_creation.py ... 29_adv_specialists_creation.py] --> D2[python/cfb_model_10_pbp_creation.py];
+        D2 --> D3[python/cfb_model_30_train_creation.py ... 34_higher_models_creation.py];
+        D3 --> D4[python/cfb_model_60_publish_creation.py];
+        D4 --> D5[python/cfb_model_70_reports_creation.py];
+    end;
+    RAW --> DATA;
+```
+
 ## What it produces
 
 Per game:
@@ -150,3 +183,32 @@ See `python/model_training/HANDOFF.md` for the sdv-py integration checklist.
 | [ESPN CFB rosters — collection strategy, column union, gotchas](docs/ESPN_ROSTERS.md) | explainer | 2026-08-29 |
 
 <!-- END GENERATED: reports -->
+
+## Consumers
+
+The packages that read what this repo produces:
+
+- **R:** [cfbfastR](https://cfbfastR.sportsdataverse.org) — docs at <https://cfbfastR.sportsdataverse.org>
+- **Python:** [`sportsdataverse.cfb`](https://github.com/sportsdataverse/sportsdataverse-py) — docs at <https://py.sportsdataverse.org>
+
+## Stage inventory
+
+Every numbered pipeline stage in `python/` (auto-listed; run subsets with the `scripts/*.sh` drivers by number or name):
+
+- `python/espn_cfb_01_teams_scrape.py`
+- `python/espn_cfb_02_schedules_scrape.py`
+- `python/espn_cfb_03_team_rosters_scrape.py`
+- `python/espn_cfb_04_pbp_scrape.py`
+- `python/espn_cfb_05_player_stats_scrape.py`
+- `python/espn_cfb_06_team_stats_scrape.py`
+- `python/espn_cfb_07_standings_scrape.py`
+- `python/espn_cfb_08_qbr_scrape.py`
+- `python/espn_cfb_09_power_index_scrape.py`
+- `python/espn_cfb_50_recruits_scrape.py`
+- `python/espn_cfb_51_player_core_scrape.py`
+- `python/espn_cfb_52_espn_recruits_scrape.py`
+- `python/espn_cfb_60_reprocess.py`
+- `python/espn_cfb_61_reprocess_stale.py`
+- `python/espn_cfb_90_preflight_build.py`
+- `python/espn_cfb_91_verify_season_fill.py`
+- `python/espn_cfb_92_filter_stale.py`
