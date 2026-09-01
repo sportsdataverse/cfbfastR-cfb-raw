@@ -40,7 +40,12 @@ def _reject_constant(c):  # json.loads(parse_constant=) fires only for NaN/Infin
 
 def test_processing_version_format():
     v = u.PROCESSING_VERSION
-    assert "+" in v and v.split("+")[1].isdigit()
+    assert "+" in v
+    local = v.split("+")[1].split(".")
+    assert local[-1].isdigit()  # SCHEMA_REV is always the last piece
+    assert len(local) in (1, 2)  # optional leading sdv-py git sha
+    if len(local) == 2:
+        assert len(local[0]) == 8 and int(local[0], 16) >= 0
 
 
 def test_stamp_adds_identity():

@@ -11,6 +11,7 @@ import time
 import uuid
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
+from importlib.metadata import distribution as _distribution
 from importlib.metadata import version as _pkg_version
 from pathlib import Path
 from typing import Callable, Iterable
@@ -20,13 +21,38 @@ from typing import Callable, Iterable
 #   rev 2: odds_override now sourced from the cfb_line_odds multi-book consensus
 #          (cfb/odds_consensus.parquet) instead of the ESPN betting aux; EPA/WPA
 #          spread inputs change, so every prior 0.0.69+1 final must rebuild.
-SCHEMA_REV = 2
+#   rev 3: sdv-py main 7be22b5a -- #405 passer rows restored in the pass box,
+#          #408 penalty_side / penalty_yards_net / EPA_penalty_direct + the EP/WP
+#          end-state repairs, #413 late-insert reorder, #414 AirYds / aDOT /
+#          CompAirYds / YAC / AirYdsPct on the pass + receiver box. Every
+#          0.0.75+2 and 0.1.3+2 final must rebuild.
+SCHEMA_REV = 3
 try:
     _SDV_VERSION = _pkg_version("sportsdataverse")
 except Exception:  # noqa: BLE001
     _SDV_VERSION = "0.0.0"
+
+
+def _sdv_git_sha() -> str:
+    """Short commit of a git-installed sportsdataverse; "" for a PyPI install.
+
+    This repo tracks sdv-py's main branch, so the version string alone
+    (0.1.3 across #405..#414) cannot tell two library states apart -- the
+    2026-08-06 and 08-29 lock bumps left every final's stamp unchanged and
+    reprocess skipped all of them.
+    """
+    try:
+        raw = _distribution("sportsdataverse").read_text("direct_url.json") or "{}"
+        return str(json.loads(raw).get("vcs_info", {}).get("commit_id", ""))[:8]
+    except Exception:  # noqa: BLE001
+        return ""
+
+
 # NOTE: sportsdataverse exposes no __version__ attribute; use importlib.metadata.
-PROCESSING_VERSION = f"{_SDV_VERSION}+{SCHEMA_REV}"
+# Local segment is "<sha>.<rev>" for a git install, "<rev>" for PyPI.
+PROCESSING_VERSION = f"{_SDV_VERSION}+" + ".".join(
+    p for p in (_sdv_git_sha(), str(SCHEMA_REV)) if p
+)
 
 
 def get_logger(name: str, year: int | str) -> logging.Logger:
