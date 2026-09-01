@@ -128,3 +128,25 @@ Optional dependency groups:
 | `gam` | `uv sync --group gam` | T3 rb_eval training (pygam) |
 
 See `python/model_training/HANDOFF.md` for the sdv-py integration checklist.
+
+## Automation & status
+
+<!-- BEGIN GENERATED: status -->
+
+| workflow | schedule | last run |
+|---|---|---|
+| [![cfbfastR_cfb_data_trigger.yml](https://github.com/sportsdataverse/cfbfastR-cfb-raw/actions/workflows/cfbfastR_cfb_data_trigger.yml/badge.svg)](https://github.com/sportsdataverse/cfbfastR-cfb-raw/actions/workflows/cfbfastR_cfb_data_trigger.yml) | on push / dispatch | 2026-09-01 |
+| [![orphan_scripts.yml](https://github.com/sportsdataverse/cfbfastR-cfb-raw/actions/workflows/orphan_scripts.yml/badge.svg)](https://github.com/sportsdataverse/cfbfastR-cfb-raw/actions/workflows/orphan_scripts.yml) | on push / dispatch | 2026-09-01 |
+| [![scrape_cfb_raw.yml](https://github.com/sportsdataverse/cfbfastR-cfb-raw/actions/workflows/scrape_cfb_raw.yml/badge.svg)](https://github.com/sportsdataverse/cfbfastR-cfb-raw/actions/workflows/scrape_cfb_raw.yml) | on dispatch | 2026-08-29 |
+
+<!-- END GENERATED: status -->
+
+## Reports & explainers
+
+<!-- BEGIN GENERATED: reports -->
+
+| Report | What it is | Last updated |
+|---|---|---|
+| [ESPN CFB rosters — collection strategy, column union, gotchas](docs/ESPN_ROSTERS.md) | explainer | 2026-08-29 |
+
+<!-- END GENERATED: reports -->
