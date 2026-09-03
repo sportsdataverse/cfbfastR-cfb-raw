@@ -62,3 +62,19 @@
 2026-08-31 04:06:22,928 ERROR team_rosters 2026 team 112351: 0 players -- refusing to bank what is almost certainly a throttled 200
 2026-08-31 04:06:22,940 ERROR team_rosters 2026 team 112350: 0 players -- refusing to bank what is almost certainly a throttled 200
 2026-08-31 04:06:22,942 ERROR team_rosters 2026: 14 team(s) failed: ['2130', '3144', '3145', '3146', '3147', '110242', '3194', '3197', '3198', '125290']
+2026-09-03 09:04:45,256 INFO team_rosters 2026: 278 teams, 278 to fetch (0 already banked and final)
+2026-09-03 09:05:01,213 ERROR team_rosters 2026 team 2130: 0 players -- refusing to bank what is almost certainly a throttled 200
+2026-09-03 09:05:15,908 ERROR team_rosters 2026 team 3145: 0 players -- refusing to bank what is almost certainly a throttled 200
+2026-09-03 09:05:15,909 ERROR team_rosters 2026 team 3144: 0 players -- refusing to bank what is almost certainly a throttled 200
+2026-09-03 09:05:15,910 ERROR team_rosters 2026 team 3146: 0 players -- refusing to bank what is almost certainly a throttled 200
+2026-09-03 09:05:16,028 ERROR team_rosters 2026 team 3147: 0 players -- refusing to bank what is almost certainly a throttled 200
+2026-09-03 09:05:16,033 ERROR team_rosters 2026 team 110242: 0 players -- refusing to bank what is almost certainly a throttled 200
+2026-09-03 09:05:16,039 ERROR team_rosters 2026 team 3193: 0 players -- refusing to bank what is almost certainly a throttled 200
+2026-09-03 09:05:16,040 ERROR team_rosters 2026 team 3197: 0 players -- refusing to bank what is almost certainly a throttled 200
+2026-09-03 09:05:16,062 ERROR team_rosters 2026 team 3194: 0 players -- refusing to bank what is almost certainly a throttled 200
+2026-09-03 09:05:16,102 ERROR team_rosters 2026 team 3198: 0 players -- refusing to bank what is almost certainly a throttled 200
+2026-09-03 09:05:16,138 ERROR team_rosters 2026 team 125291: 0 players -- refusing to bank what is almost certainly a throttled 200
+2026-09-03 09:05:16,164 ERROR team_rosters 2026 team 125290: 0 players -- refusing to bank what is almost certainly a throttled 200
+2026-09-03 09:05:16,172 ERROR team_rosters 2026 team 112351: 0 players -- refusing to bank what is almost certainly a throttled 200
+2026-09-03 09:05:16,215 ERROR team_rosters 2026 team 112350: 0 players -- refusing to bank what is almost certainly a throttled 200
+2026-09-03 09:05:16,217 ERROR team_rosters 2026: 14 team(s) failed: ['2130', '3145', '3144', '3146', '3147', '110242', '3193', '3197', '3194', '3198']
