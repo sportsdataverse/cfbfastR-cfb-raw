@@ -1826,13 +1826,6 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': 'Home', 'type': 'homerecord', 'summary': '1-0'}
  {'name': 'Away', 'abbreviation': 'Away', 'type': 'awayrecord', 'summary': '0-0'}
  {'name': 'vs. Conf.', 'abbreviation': 'CONF', 'type': 'vsconf', 'summary': '0-0'}]",401856671,2026,2,2,,,,,
-401856784,s:20~l:23~e:401856784~c:401856784,2026-09-13T00:00Z,0,True,True,False,False,False,False,2026-09-13T00:00Z,ESPN+,[],,,national,ESPN+,1,STD,4727,McLane Stadium,Waco,TX,USA,False,0.0,0:00,0,1,STATUS_SCHEDULED,pre,False,Scheduled,"Sat, September 12th at 8:00 PM EDT",9/12 - 8:00 PM EDT,4,239,s:20~l:23~t:239,Baylor,Bears,BAY,Baylor Bears,Baylor,154734,ffb81c,True,3724,https://a.espncdn.com/i/teamlogos/ncaa/500/239.png,4,0,,99,[{'value': 0} {'value': 0} {'value': 0} {'value': 0}],"[{'name': 'overall', 'abbreviation': 'overall', 'type': 'total', 'summary': '0-1'}
- {'name': 'Home', 'abbreviation': 'Home', 'type': 'homerecord', 'summary': '0-0'}
- {'name': 'Away', 'abbreviation': 'Away', 'type': 'awayrecord', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': 'CONF', 'type': 'vsconf', 'summary': '0-0'}]",2504,s:20~l:23~t:2504,Prairie View A&M,Panthers,PV,Prairie View A&M Panthers,Prairie View,582c83,eaaa00,True,3639,https://a.espncdn.com/i/teamlogos/ncaa/500/2504.png,31,0,,99,[{'value': 0} {'value': 0} {'value': 0} {'value': 0}],"[{'name': 'overall', 'abbreviation': 'overall', 'type': 'total', 'summary': '1-1'}
- {'name': 'Home', 'abbreviation': 'Home', 'type': 'homerecord', 'summary': '1-0'}
- {'name': 'Away', 'abbreviation': 'Away', 'type': 'awayrecord', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': 'CONF', 'type': 'vsconf', 'summary': '1-0'}]",401856784,2026,2,2,,,,,
 401856789,s:20~l:23~e:401856789~c:401856789,2026-09-13T00:00Z,0,True,True,False,False,False,False,2026-09-13T00:00Z,ESPN+,[],,,national,ESPN+,1,STD,3616,Amon G. Carter Stadium,Fort Worth,TX,USA,False,0.0,0:00,0,1,STATUS_SCHEDULED,pre,False,Scheduled,"Sat, September 12th at 8:00 PM EDT",9/12 - 8:00 PM EDT,4,2628,s:20~l:23~t:2628,TCU,Horned Frogs,TCU,TCU Horned Frogs,TCU,4d1979,ffffff,True,3616,https://a.espncdn.com/i/teamlogos/ncaa/500/2628.png,4,0,,99,[{'value': 0} {'value': 0} {'value': 0} {'value': 0}],"[{'name': 'overall', 'abbreviation': 'overall', 'type': 'total', 'summary': '0-1'}
  {'name': 'Home', 'abbreviation': 'Home', 'type': 'homerecord', 'summary': '0-0'}
  {'name': 'Away', 'abbreviation': 'Away', 'type': 'awayrecord', 'summary': '0-0'}
@@ -1840,6 +1833,13 @@ id,uid,date,attendance,time_valid,date_valid,neutral_site,conference_competition
  {'name': 'Home', 'abbreviation': 'Home', 'type': 'homerecord', 'summary': '2-0'}
  {'name': 'Away', 'abbreviation': 'Away', 'type': 'awayrecord', 'summary': '0-0'}
  {'name': 'vs. Conf.', 'abbreviation': 'CONF', 'type': 'vsconf', 'summary': '0-0'}]",401856789,2026,2,2,,,,,
+401856784,s:20~l:23~e:401856784~c:401856784,2026-09-13T00:08Z,0,True,True,False,False,False,False,2026-09-13T00:08Z,ESPN+,[],,,national,ESPN+,1,STD,4727,McLane Stadium,Waco,TX,USA,False,0.0,0:00,0,1,STATUS_SCHEDULED,pre,False,Scheduled,"Sat, September 12th at 8:08 PM EDT",9/12 - 8:08 PM EDT,4,239,s:20~l:23~t:239,Baylor,Bears,BAY,Baylor Bears,Baylor,154734,ffb81c,True,3724,https://a.espncdn.com/i/teamlogos/ncaa/500/239.png,4,0,,99,[{'value': 0} {'value': 0} {'value': 0} {'value': 0}],"[{'name': 'overall', 'abbreviation': 'overall', 'type': 'total', 'summary': '0-1'}
+ {'name': 'Home', 'abbreviation': 'Home', 'type': 'homerecord', 'summary': '0-0'}
+ {'name': 'Away', 'abbreviation': 'Away', 'type': 'awayrecord', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': 'CONF', 'type': 'vsconf', 'summary': '0-0'}]",2504,s:20~l:23~t:2504,Prairie View A&M,Panthers,PV,Prairie View A&M Panthers,Prairie View,582c83,eaaa00,True,3639,https://a.espncdn.com/i/teamlogos/ncaa/500/2504.png,31,0,,99,[{'value': 0} {'value': 0} {'value': 0} {'value': 0}],"[{'name': 'overall', 'abbreviation': 'overall', 'type': 'total', 'summary': '1-1'}
+ {'name': 'Home', 'abbreviation': 'Home', 'type': 'homerecord', 'summary': '1-0'}
+ {'name': 'Away', 'abbreviation': 'Away', 'type': 'awayrecord', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': 'CONF', 'type': 'vsconf', 'summary': '1-0'}]",401856784,2026,2,2,,,,,
 401864504,s:20~l:23~e:401864504~c:401864504,2026-09-13T01:00Z,0,True,True,False,False,False,False,2026-09-13T01:00Z,MW+,[],,,national,MW+,1,STD,3935,CEFCU Stadium,San Jose,CA,USA,False,0.0,0:00,0,1,STATUS_SCHEDULED,pre,False,Scheduled,"Sat, September 12th at 9:00 PM EDT",9/12 - 9:00 PM EDT,4,23,s:20~l:23~t:23,San José State,Spartans,SJSU,San José State Spartans,San José St,0038a8,ffb81a,True,3935,https://a.espncdn.com/i/teamlogos/ncaa/500/23.png,17,0,,99,[{'value': 0} {'value': 0} {'value': 0} {'value': 0}],"[{'name': 'overall', 'abbreviation': 'overall', 'type': 'total', 'summary': '1-1'}
  {'name': 'Home', 'abbreviation': 'Home', 'type': 'homerecord', 'summary': '0-0'}
  {'name': 'Away', 'abbreviation': 'Away', 'type': 'awayrecord', 'summary': '1-1'}
