@@ -19,8 +19,21 @@ agent/
 # (cfb_raw / cfb_json / cfb_schedules / cfb_reprocess / cfb_recruits / cfb_teams).
 # They are the per-stage run record for a season and are committed on purpose --
 # do not "clean them up". Ad-hoc and one-off run logs are ignored below.
-logs/*_backfill.log
-logs/*_backfill_early.log
-logs/*_run.log
-logs/teams_expand*.log
-logs/*_logfile_[a-z]*.log
+# Ignore every ad-hoc run log, then carve the tracked ones back in. The old
+# rules enumerated ad-hoc SHAPES instead (*_backfill.log, *_run.log, ...), so
+# each new driver name -- cron_daily_cfb_*, cfb_reprocess_<timestamp>,
+# reprocess_sweep_*, publish_driver_* -- slipped through and left the tree
+# dirty. Deny-by-default cannot drift that way.
+logs/*.log
+# The per-season stage logs described above.
+!logs/*_logfile_[0-9][0-9][0-9][0-9].log
+# Long-lived tracked run logs that predate the _logfile_ convention.
+!logs/backfill_team_stats.log
+!logs/hollow_rescrape_2004_2025.log
+!logs/monthly_cfb_scraper.log
+!logs/push_seasons.log
+!logs/rescrape_cfb_full.log
+!logs/retry_degraded.log
+
+# Local knowledge-graph scratch output, not part of the repo.
+.understand-anything/
