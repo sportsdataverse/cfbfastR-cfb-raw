@@ -38,3 +38,5 @@
 2026-09-12 20:21:58,102 INFO team_stats 2026: 68 (type/team) publish no stats -- expected, not a failure: ['2/46', '2/56', '2/108', '2/159', '2/163', '2/171', '2/172', '2/219', '2/225', '2/284']
 2026-09-13 04:11:03,497 INFO team_stats 2026: 278 teams x 2 types, 556 to fetch (0 banked and final)
 2026-09-13 04:11:13,691 INFO team_stats 2026: 68 (type/team) publish no stats -- expected, not a failure: ['2/46', '2/56', '2/108', '2/159', '2/163', '2/172', '2/171', '2/219', '2/225', '2/284']
+2026-09-13 06:35:04,094 INFO team_stats 2026: 278 teams x 2 types, 556 to fetch (0 banked and final)
+2026-09-13 06:35:23,905 INFO team_stats 2026: 68 (type/team) publish no stats -- expected, not a failure: ['2/46', '2/56', '2/108', '2/159', '2/163', '2/171', '2/172', '2/219', '2/225', '2/284']
