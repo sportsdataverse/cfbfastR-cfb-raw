@@ -26,7 +26,13 @@ from typing import Callable, Iterable
 #          end-state repairs, #413 late-insert reorder, #414 AirYds / aDOT /
 #          CompAirYds / YAC / AirYdsPct on the pass + receiver box. Every
 #          0.0.75+2 and 0.1.3+2 final must rebuild.
-SCHEMA_REV = 3
+#   rev 4: sdv-py main f9e34851 -- #499 jersey-style special-teams text
+#          ("#43 M.Chiumento punt 43 yards ...") left yds_punted / yds_kickoff /
+#          yds_fg and the returner columns null; #493 live-drive dedupe, #494
+#          deterministic box-score row order. Every 0.1.4+dd3e64a7.3 final must
+#          rebuild. (Position ids are NOT restored by this: play_participants is
+#          re-embedded from the stored aux, which predates *_position_id.)
+SCHEMA_REV = 4
 try:
     _SDV_VERSION = _pkg_version("sportsdataverse")
 except Exception:  # noqa: BLE001
