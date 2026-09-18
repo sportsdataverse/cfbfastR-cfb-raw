@@ -196,16 +196,27 @@ def test_filter_undone_rescrapes_a_live_snapshot(tmp_path):
 
 
 def test_filter_undone_rescrapes_the_real_stored_live_snapshot():
-    """Same assertion against the committed snapshot itself, not a fabricated one.
+    """Same assertion against a REAL captured snapshot, not a fabricated one.
 
     Guards the field path as ESPN actually shapes it: a hand-built fixture would
-    still pass if `status_state` were reading the wrong key.
+    still pass if `status_state` were reading the wrong key. The fixture is the
+    `header` + `count` of 401856682 as it was banked mid-game, lifted verbatim
+    out of the pre-refresh commit (259ddfbd66) -- the live
+    `cfb/json/final/401856682.json` was re-captured once the fix landed, so it
+    reads `post` now and can no longer carry this assertion.
     """
-    p = Path(__file__).parents[1] / "cfb/json/final/401856682.json"
-    if not p.exists():  # not in a shallow/partial checkout
-        pytest.skip("stored snapshot not present")
+    p = Path(__file__).parent / "fixtures/final_401856682_live_snapshot.json"
     assert u.status_state(json.loads(p.read_bytes())) == "in"
     assert u.final_is_unfinished(p) is True
+
+
+def test_the_stored_401856682_final_is_the_finished_game():
+    """The R1 re-capture is banked: the live final must no longer be a snapshot."""
+    p = Path(__file__).parents[1] / "cfb/json/final/401856682.json"
+    if not p.exists():  # not in a shallow/partial checkout
+        pytest.skip("stored final not present")
+    assert u.status_state(json.loads(p.read_bytes())) == "post"
+    assert u.final_is_unfinished(p) is False
 
 
 def test_filter_undone_keeps_a_real_scrape_done(tmp_path):
