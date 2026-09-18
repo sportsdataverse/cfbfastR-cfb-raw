@@ -73,10 +73,11 @@ reserved player_stats / team_stats / standings shifted with them. The sequence
 stays dense over live stages so the listing keeps reading as the pipeline; the
 reserved slots are the only gaps, and each is a stage that will exist.
 
-The pre-existing `cfb/game_rosters` and `cfb/play_participants` trees (20,696
-files each) are left committed but are no longer written by anything. Nothing in
-this repo or in `cfbfastR-cfb-data`'s ingest reads them — checked before the
-deletion — so they are a frozen historical artifact, not a live dataset.
+The `cfb/game_rosters` and `cfb/play_participants` trees (20,697 files each) are
+still written per game by `scrape_cfb_pbp.py` (the "standalone datasets" loop, via
+`write_json_guarded`) and re-embedded into each final; stage 05 reads
+`cfb/game_rosters/json/*.json`. They are live offline-reprocess sources, not a
+frozen artifact — the 2026-09-18 refresh rewrote 101 of each.
 
 ## Layout: entry points at the top, implementations in the package
 
