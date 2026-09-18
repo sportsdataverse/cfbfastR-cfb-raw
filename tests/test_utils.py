@@ -1,5 +1,7 @@
 import json
 from pathlib import Path
+
+import pytest
 import importlib.util
 import pandas as pd
 
@@ -175,6 +177,35 @@ def test_filter_undone_settles_a_finished_game_with_no_plays(tmp_path):
     final_dir.mkdir()
     _final(final_dir, 402, count=0, state="post")
     assert u.filter_undone([402], dir=str(final_dir), rescrape=False) == []
+
+
+def test_filter_undone_rescrapes_a_live_snapshot(tmp_path):
+    """R1: a final banked MID-GAME must not count as scraped either.
+
+    The real file this is taken from: cfb/json/final/401856682.json (OSU @ TEX,
+    2026-09-12) banked 26 plays at 5:39 of the 1st quarter. It has plays, so the
+    pre-game-only test called it done and the nightly scrape skipped it for the
+    rest of the season.
+    """
+    final_dir = tmp_path / "final"
+    final_dir.mkdir()
+    _final(final_dir, 401856682, count=26, state="in")
+    assert u.filter_undone([401856682], dir=str(final_dir), rescrape=False) == [
+        401856682
+    ]
+
+
+def test_filter_undone_rescrapes_the_real_stored_live_snapshot():
+    """Same assertion against the committed snapshot itself, not a fabricated one.
+
+    Guards the field path as ESPN actually shapes it: a hand-built fixture would
+    still pass if `status_state` were reading the wrong key.
+    """
+    p = Path(__file__).parents[1] / "cfb/json/final/401856682.json"
+    if not p.exists():  # not in a shallow/partial checkout
+        pytest.skip("stored snapshot not present")
+    assert u.status_state(json.loads(p.read_bytes())) == "in"
+    assert u.final_is_unfinished(p) is True
 
 
 def test_filter_undone_keeps_a_real_scrape_done(tmp_path):

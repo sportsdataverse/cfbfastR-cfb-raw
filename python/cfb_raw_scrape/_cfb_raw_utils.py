@@ -255,31 +255,43 @@ def status_state(doc: dict) -> str | None:
     """ESPN game state -- ``"pre"`` | ``"in"`` | ``"post"`` -- or None if absent.
 
     Reads the same place in an ESPN summary and in a banked final, so the scraper's
-    pre-game guard and the shell test below cannot drift apart.
+    in-flight guards and the undone test below cannot drift apart.
     """
     comp = ((doc.get("header") or {}).get("competitions") or [{}])[0] or {}
     return ((comp.get("status") or {}).get("type") or {}).get("state")
 
 
-def final_is_pregame_shell(path: Path) -> bool:
-    """True when a banked final is a PRE-GAME shell rather than a real scrape.
+def final_is_unfinished(path: Path) -> bool:
+    """True when a banked final is a snapshot of a game still IN FLIGHT.
 
-    A summary fetched before kickoff carries no plays, but ``download_game`` used
-    to bank it anyway. Because ``filter_undone`` below was existence-only, such a
-    shell then counted as a completed scrape and the game was skipped for the rest
-    of the season -- while the job stayed green. The 2026-08-02 full-history
-    reprocess (a230f2d50) banked 946 of them, one for every unplayed 2026 game.
+    ESPN's own status is the whole test: ``pre`` or ``in`` means the summary was
+    fetched before the game ended, so what is banked is not the game.
 
-    The test is deliberately NOT "zero plays". A finished game with no ESPN
-    play-by-play source legitimately banks ``count == 0`` (e.g. 242410193), and
-    treating those as undone would re-scrape them every single day forever. Only
-    zero plays AND an ESPN status still reading ``pre`` is a shell.
+    * ``pre`` -- fetched before kickoff, no plays at all. ``download_game`` used
+      to bank these; the 2026-08-02 full-history reprocess (a230f2d50) banked
+      946, one per unplayed 2026 game.
+    * ``in`` -- fetched mid-game, carrying only the plays run so far. This is the
+      one a play-count test cannot see: 401856682 (OSU @ TEX, 2026-09-12) banked
+      26 plays at 5:39 of the 1st quarter, and because it HAD plays the old
+      pre-game-only test called it a completed scrape. ``filter_undone`` then
+      skipped it every night for the rest of the season while the job stayed
+      green -- 101 of the 185 played 2026 games were stale this way. The daily
+      cron fires at 04:05 UTC, part-way through the late west-coast window, so
+      an unfinished night game is the normal case here, not an edge case.
+
+    The test is deliberately NOT "zero plays", and NOT a play-count floor: a
+    finished game with no ESPN play-by-play source legitimately banks
+    ``count == 0`` (e.g. 242410193), and a finished game's play count has no
+    known minimum. Equally, a MISSING status is not evidence of an unfinished
+    game -- absence of the signal leaves the game alone, or every header-less
+    historical final would re-scrape every day forever.
     """
     try:
         data = json.loads(path.read_bytes())
-        if int(data.get("count") or 0) > 0:
-            return False
-        return status_state(data) == "pre"
+        if status_state(data) in ("pre", "in"):
+            return True
+        int(data.get("count") or 0)  # non-numeric count -> not a usable scrape
+        return False
     except Exception:  # noqa: BLE001 - unreadable OR malformed: not a usable scrape
         return True
 
@@ -296,7 +308,7 @@ def filter_undone(
     out = []
     for g in games:
         f = d / f"{g}.json"
-        if not f.exists() or final_is_pregame_shell(f):
+        if not f.exists() or final_is_unfinished(f):
             out.append(g)
     return out
 
