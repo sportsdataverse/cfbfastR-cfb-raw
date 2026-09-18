@@ -32,7 +32,13 @@ from typing import Callable, Iterable
 #          deterministic box-score row order. Every 0.1.4+dd3e64a7.3 final must
 #          rebuild. (Position ids are NOT restored by this: play_participants is
 #          re-embedded from the stored aux, which predates *_position_id.)
-SCHEMA_REV = 4
+#   rev 5: sdv-py main e00ce5c86 (#531) -- CFB processor fixes #503/#506/#517/#526/#532
+#          (shared name/returner/FG-kicker clause regexes, penalty + play-type
+#          repairs) and #508's special-teams derivation, which fills kick
+#          distances and bare-punt returns the play text never states and records
+#          provenance in the new yds_punted_source / yds_kickoff_source /
+#          yds_punt_return_source columns. Every 0.1.4+f9e34851.4 final must rebuild.
+SCHEMA_REV = 5
 try:
     _SDV_VERSION = _pkg_version("sportsdataverse")
 except Exception:  # noqa: BLE001
