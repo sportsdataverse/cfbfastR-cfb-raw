@@ -47,7 +47,17 @@ from typing import Callable, Iterable
 #          the thrower's own pick-six as a passing TD. CFB output changes (pass_td,
 #          rush_td, yds_receiving, yds_rushing and the pass/rush box rows built from
 #          them), so every 0.1.4+e00ce5c8.5 final must rebuild.
-SCHEMA_REV = 6
+#   rev 7: sdv-py main c9215199 -- #554 (N38/C43) stops admin/timeout rows after a
+#          score from carrying the realized EP. An `Official Timeout` (and the
+#          other non-snap admin rows) inherited the scoring play's EP, so EP_start
+#          / EP_end read 8.0 on roughly a tenth of games and EPA on the following
+#          snap was computed off it. The V1 gate (sdv-py #553, packaged as
+#          sportsdataverse.validation) is what surfaced it: ep.start_range and
+#          ep.end_range_non_scoring were its top two blockers. EP/EPA output
+#          changes on those rows, so every 0.1.4+9dc97e98.6 final must rebuild.
+#          (N38 is the fix; nothing else in 9dc97e987..c9215199 touches the CFB
+#          processor -- V1 itself only added an additive `validate=` kwarg.)
+SCHEMA_REV = 7
 try:
     _SDV_VERSION = _pkg_version("sportsdataverse")
 except Exception:  # noqa: BLE001
