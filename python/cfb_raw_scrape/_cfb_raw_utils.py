@@ -38,7 +38,16 @@ from typing import Callable, Iterable
 #          distances and bare-punt returns the play text never states and records
 #          provenance in the new yds_punted_source / yds_kickoff_source /
 #          yds_punt_return_source columns. Every 0.1.4+f9e34851.4 final must rebuild.
-SCHEMA_REV = 5
+#   rev 6: sdv-py main 9dc97e987 -- #538 (O3) stops crediting return-TD yardage to
+#          the offense. football/espn_text.py gained before_turnover(), which the
+#          rushing/receiving yardage extractors now read (CFB booked 82 yds_receiving
+#          on a fumble returned 82 yards for a TD), and returned_for_touchdown(),
+#          which gates pass_td / rush_td ahead of the type.text label branch -- ESPN
+#          types 2005-2007 pick-sixes "Passing Touchdown", so summarize_passer booked
+#          the thrower's own pick-six as a passing TD. CFB output changes (pass_td,
+#          rush_td, yds_receiving, yds_rushing and the pass/rush box rows built from
+#          them), so every 0.1.4+e00ce5c8.5 final must rebuild.
+SCHEMA_REV = 6
 try:
     _SDV_VERSION = _pkg_version("sportsdataverse")
 except Exception:  # noqa: BLE001
