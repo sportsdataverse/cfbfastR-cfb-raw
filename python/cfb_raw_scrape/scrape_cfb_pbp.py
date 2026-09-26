@@ -11,6 +11,7 @@ import argparse
 
 import sportsdataverse as sdv
 from sportsdataverse.cfb import CFBPlayProcess
+from sportsdataverse.errors import NoDataError
 
 from cfb_raw_scrape._cfb_raw_utils import (
     PROCESSING_VERSION,
@@ -189,6 +190,15 @@ def download_game(game_id: int, season: int, rescrape: bool, logger=None):
 
         write_json_guarded(result, f"cfb/json/final/{game_id}.json", logger=logger)
         return "ok"
+    except NoDataError as exc:
+        # Bowl/playoff slots with a TBD opponent: nothing to build until ESPN names
+        # the team. They re-poll daily, and a full traceback each time (61 games,
+        # ~5.6 MB/day in 2026-09) buried every real failure in the log.
+        if "placeholder (TBD)" not in str(exc):
+            logger.exception("download_game failed: %s", game_id)
+            return "error"
+        logger.info("TBD matchup for %s -- no play-by-play until the opponent is set", game_id)
+        return "pregame"
     except Exception:
         logger.exception("download_game failed: %s", game_id)
         return "error"

@@ -167,8 +167,8 @@ def write_one(season: int, team_id: int | str, logger) -> int:
         )
     if players < MIN_PLAYERS:
         raise RuntimeError(
-            f"{DATASET} {season} team {team_id}: 0 players -- refusing to bank "
-            "what is almost certainly a throttled 200"
+            f"{DATASET} {season} team {team_id}: 0 players -- not banked (a throttled "
+            "200, or a team ESPN publishes no roster for; the same 12 teams hit this daily)"
         )
     payload["season_requested"] = season
     write_json_atomic(payload, out_path(season, team_id))
