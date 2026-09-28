@@ -57,7 +57,15 @@ from typing import Callable, Iterable
 #          changes on those rows, so every 0.1.4+9dc97e98.6 final must rebuild.
 #          (N38 is the fix; nothing else in 9dc97e987..c9215199 touches the CFB
 #          processor -- V1 itself only added an additive `validate=` kwarg.)
-SCHEMA_REV = 7
+#   rev 8: sdv-py main 0dbba992e -- #597 drops ESPN stub echoes and stale drive
+#          copies from the play feed (2007-2025 play counts change), #596 reads
+#          "for N yards loss" as a loss in yds_rushed / yds_receiving, #595 score
+#          repair anchors on the last accepted score (WP changes in every season),
+#          #593 keeps rush/pass flags on 2025+ fumble text (havoc), plus the
+#          try-row / return-TD work never reprocessed since rev 7 (#571, #580,
+#          #585, #586, #587, #588) and the #567 dedupe. Every
+#          0.1.4+c9215199.7 final must rebuild.
+SCHEMA_REV = 8
 try:
     _SDV_VERSION = _pkg_version("sportsdataverse")
 except Exception:  # noqa: BLE001
