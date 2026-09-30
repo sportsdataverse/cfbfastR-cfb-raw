@@ -65,7 +65,17 @@ from typing import Callable, Iterable
 #          try-row / return-TD work never reprocessed since rev 7 (#571, #580,
 #          #585, #586, #587, #588) and the #567 dedupe. Every
 #          0.1.4+c9215199.7 final must rebuild.
-SCHEMA_REV = 8
+#   rev 9: sdv-py main 01d3c1ad6 -- GOP explainer wave 2: #624 a pick-six / fumble-return
+#          TD is not the offense's conversion or TD, #627/#632 tackles credited to the
+#          tackler's team and tackle share over scrimmage snaps, #628 one season usage
+#          row per player, #629 pace over regulation drives, #630 neutral = score-and-
+#          clock WP, #631 a completion with no stated gain takes statYardage (pass +
+#          receiving yards), #625 gated xQBR retrain (exp_qbr), #626 overtime-aware WP
+#          and end-of-regulation fourth-down states.
+#          Plus #636: ESPN "& 0" downs take the goal-to-go distance from the
+#          previous snap (EP/EPA/WP change on those rows).
+#          Every 0.1.4+9a3acbe8.8 (and older) final must rebuild.
+SCHEMA_REV = 9
 try:
     _SDV_VERSION = _pkg_version("sportsdataverse")
 except Exception:  # noqa: BLE001
