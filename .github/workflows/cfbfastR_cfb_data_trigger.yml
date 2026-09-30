@@ -1,6 +1,9 @@
 name: cfbfastR CFB Data trigger
 
-on: [push, workflow_dispatch]
+# MANUAL since 2026-09-29: the droplet crontab chains cfbfastR-cfb-data's
+# scripts/cron_daily_cfb.sh after every scrape, so a push no longer dispatches
+# the GH build (one producer). Dispatch this by hand to rebuild in Actions.
+on: [workflow_dispatch]
 
 jobs:
   cfbfastR_cfb_data_trigger:
