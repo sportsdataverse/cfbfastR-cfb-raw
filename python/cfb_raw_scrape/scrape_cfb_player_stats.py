@@ -49,6 +49,10 @@ from cfb_raw_scrape._cfb_raw_utils import (
 )
 from sportsdataverse.cfb import espn_cfb_player_stats_v3
 
+# NoESPNDataError, not NoDataError: the same object upstream, but only this name
+# is guaranteed against this repo's pin (see scrape_cfb_team_stats).
+from sportsdataverse.errors import NoESPNDataError
+
 DATASET = "player_stats"
 
 #: Stage 04's output -- the athlete-id source (see module docstring).
@@ -198,15 +202,30 @@ def main(argv: list[str] | None = None) -> int:
         len(stale & set(ids)),
     )
     failures: list[str] = []
+    no_stats: list[str] = []
 
-    def _one(aid, _log=logger, _f=failures):
+    def _one(aid, _log=logger, _f=failures, _n=no_stats):
         try:
             write_one(aid, _log)
+        except NoESPNDataError:
+            # ESPN answers 404 ("Statistics not found") for a rostered athlete who
+            # has never recorded a stat: about 43% of the pool every season. That
+            # is expected absence, not a failure. Until 2026-09-30 each one was a
+            # 4-line ERROR and the stage exited 1 on every run it ever had, which
+            # buried the real failures and grew the tracked log past GitHub's
+            # push cap. Same rule as scrape_cfb_team_stats.
+            _n.append(str(aid))
         except Exception as exc:  # noqa: BLE001 -- one athlete must not stop the sweep
             _log.error("%s", exc)
             _f.append(str(aid))
 
     run_pool(_one, todo, kind="thread", desc=f"{DATASET} {start}-{end}")
+    if no_stats:
+        logger.info(
+            "%s: %d athlete(s) publish no stats (ESPN 404) -- expected, not banked",
+            DATASET,
+            len(no_stats),
+        )
     if failures:
         logger.error(
             "%s: %d athlete(s) failed: %s", DATASET, len(failures), failures[:10]

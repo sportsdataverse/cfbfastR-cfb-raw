@@ -6,6 +6,7 @@
 """
 
 import json
+import logging
 from datetime import date
 from pathlib import Path
 
@@ -159,3 +160,25 @@ def test_main_one_bad_athlete_does_not_stop_the_sweep(tmp_path, monkeypatch, car
     monkeypatch.setattr(ps, "espn_cfb_player_stats_v3", _f, raising=True)
     assert ps.main(["-s", "2024", "-e", "2024"]) == 1
     assert (tmp_path / ps.out_path(10)).is_file()
+
+
+def test_main_no_stats_404_is_expected_not_a_failure(tmp_path, monkeypatch, career, caplog):
+    # ESPN answers 404 ("Statistics not found") for a rostered athlete who has never
+    # recorded a stat -- about 43% of the pool. Expected absence: no file, no ERROR,
+    # and the stage stays green (it exited 1 on every run until 2026-09-30).
+    monkeypatch.chdir(tmp_path)
+    _roster(tmp_path, 1, 2024, [10, 11])
+
+    def _f(*, athlete_id, **kw):
+        if str(athlete_id) == "11":
+            raise ps.NoESPNDataError("https://site.web.api.espn.com/.../athletes/11/stats")
+        return career
+
+    monkeypatch.setattr(ps, "espn_cfb_player_stats_v3", _f, raising=True)
+    assert ps.main(["-s", "2024", "-e", "2024"]) == 0
+    assert (tmp_path / ps.out_path(10)).is_file()
+    assert not (tmp_path / ps.out_path(11)).exists()
+    # caplog, not the logfile: get_logger keeps the first FileHandler it made, so
+    # after an earlier main() test the file under this tmp_path never appears
+    assert any("1 athlete(s) publish no stats" in r.getMessage() for r in caplog.records)
+    assert [r for r in caplog.records if r.levelno >= logging.ERROR] == []
