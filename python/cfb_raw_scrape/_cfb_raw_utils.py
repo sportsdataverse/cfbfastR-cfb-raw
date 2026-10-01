@@ -92,7 +92,13 @@ from typing import Callable, Iterable
 #          scored that end with no down (EP_end ~1 point below the next snap's EP_start). ~1.8
 #          kickoffs a game, median EPA change 0.95. Every 0.1.4+fac97693.11 (and older) final
 #          must rebuild.
-SCHEMA_REV = 12
+#   rev 13: sdv-py main 99484724b -- #649 a play that ends a half / regulation / a finished game
+#          leaves a possession worth nothing (EP_end 0; the game's last play was never flagged, the
+#          play before a 0:00 snap was treated as the end), #651 scores ESPN marks but no text rule
+#          named are typed from the row (~650: frozen-board pick-sixes, fumble returns), textless
+#          copies (~180) and untyped admin rows (1,387) dropped. Every 0.1.4+c48bf6de.12 (and
+#          older) final must rebuild.
+SCHEMA_REV = 13
 try:
     _SDV_VERSION = _pkg_version("sportsdataverse")
 except Exception:  # noqa: BLE001
