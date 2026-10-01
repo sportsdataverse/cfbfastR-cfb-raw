@@ -76,6 +76,24 @@ bash scripts/50_scrape_recruits.sh              # current cycle
 bash scripts/50_scrape_recruits.sh 2002 2026    # cold backfill
 ```
 
+### Reprocessing the corpus after a sportsdataverse bump
+
+A sportsdataverse-py lock bump (or a `SCHEMA_REV` bump) moves `PROCESSING_VERSION`, so every
+final goes stale. `scripts/reprocess_chain.sh` rebuilds them season by season, each under the
+git_pull sweep's lock, and with `--data` then rebuilds and publishes cfbfastR-cfb-data:
+
+```bash
+bash scripts/reprocess_chain.sh --data                     # this season, then newest-first to 2004
+SEASONS="2011 2010" bash scripts/reprocess_chain.sh --data # resume the seasons it lists as failed
+```
+
+Before you start: land every sdv-py PR the run should carry (the stamp includes the sdv-py
+commit, so a later bump re-stales everything), bump the lock and `SCHEMA_REV` here and in
+cfbfastR-cfb-data, `uv sync` both, check the stamp, and look for other jobs on the locks
+(`fuser -v /tmp/git_pull_sdv.lock /tmp/cfbfastR-cfb-data-build.lock`). The script's header has
+the full checklist and what it handles: long lock waits, no auto-gc (a background repack once
+held the lock 45 minutes), and the 03:40-05:15 ET daily-scrape window.
+
 ### Pushing a bulk rebuild
 
 `scripts/chunked_push.sh` commits and pushes a large `final/` rebuild in
