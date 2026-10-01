@@ -25,8 +25,11 @@
 # WHAT IT HANDLES
 #   - The lock. The git_pull sweep (:40 every 4 h) and other jobs take /tmp/git_pull_sdv.lock;
 #     each season waits up to LOCK_WAIT (3 h) and a timeout names the holder.
-#   - Auto gc, off for every git process here: a daemonized `git gc --auto` inherits the lock's
-#     fd (a repack of the 37 GB pack store held it 45 min). scripts/_commit.sh does the same.
+#   - Lock fds: each season runs with 9>&- (the subshell keeps the lock). git daemonizes
+#     `gc --auto` and credential-cache--daemon (https push, ~15 min); an inherited fd held the
+#     lock after the season ended (a repack of the 37 GB pack store held it 45 min).
+#   - Auto gc, off for every git process here: a repack mid-chain only competes for IO.
+#     scripts/_commit.sh does the same.
 #   - The daily window: no season starts between PAUSE_FROM and PAUSE_TO ET (the 04:05 scrape).
 #   - A failed season does not stop the chain; the end lists a SEASONS= rerun, and --data is
 #     skipped when any season failed (it would compile stale finals).
@@ -71,7 +74,7 @@ for y in $SEASONS; do
   pause
   log "season $y start"
   ( flock -w "$LOCK_WAIT" 9 || { log "season $y: no lock after ${LOCK_WAIT}s, held by:"; holders "$LOCK"; exit 1; }
-    bash scripts/reprocess_cfb.sh -s "$y" -e "$y" ) 9>"$LOCK"
+    bash scripts/reprocess_cfb.sh -s "$y" -e "$y" 9>&- ) 9>"$LOCK"
   rc=$?
   log "season $y exit $rc"
   [ "$rc" -eq 0 ] || failed="$failed $y"
