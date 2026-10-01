@@ -35,6 +35,13 @@
 # git's default am backend base64-encodes every parquet blob it replays.
 sdv_commit_push() {
   local msg="$1"; shift
+  # No automatic gc from this function's git calls (commit, fetch and rebase all run `gc --auto`).
+  # The callers hold /tmp/git_pull_sdv.lock on fd 9, and the daemonized gc inherits that fd: on
+  # 2026-10-01 a repack of the 37 GB pack store held the lock 45 minutes after one season's commit,
+  # and the next two seasons and the git_pull sweep timed out. Repack in a quiet window instead
+  # (`git gc`, nothing else running). GIT_CONFIG_PARAMETERS is what `git -c` sets; the droplet's
+  # git 2.25 ignores GIT_CONFIG_COUNT.
+  local -x GIT_CONFIG_PARAMETERS="${GIT_CONFIG_PARAMETERS:+$GIT_CONFIG_PARAMETERS }'gc.auto=0'"
   # Rotate any tracked *.log over 50 MiB before staging: GitHub's pre-receive hook rejects a
   # push carrying a blob over 100 MiB, and every later push then carries it too (2026-09-30,
   # cfb_player_stats_logfile_2026.log at 105 MB). A no-op where the droplet helper is absent.
