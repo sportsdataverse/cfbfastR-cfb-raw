@@ -82,7 +82,12 @@ from typing import Callable, Iterable
 #          and null keys never twin a play copy, #643 2007-13 touchdowns filed as their
 #          own kick get the snap's down (EP/EPA change on 248 rows, was down -1).
 #          Every 0.1.4+01d3c1ad.9 (and older) final must rebuild.
-SCHEMA_REV = 10
+#   rev 11: sdv-py main fac976933 -- #646 a play ends at the next play's clock: end.TimeSecsRem
+#          was the PREVIOUS play's start clock (shift(1)), so every EP_end / after-state read an
+#          earlier clock (a final kneel at 0:14 "ended" at 0:54: EPA -0.97, now -4.8); the last
+#          play of a half / finished game ends at 0:00. EPA moves on most plays (median 0.009,
+#          17% by >0.1). Every 0.1.4+88acd48d.10 (and older) final must rebuild.
+SCHEMA_REV = 11
 try:
     _SDV_VERSION = _pkg_version("sportsdataverse")
 except Exception:  # noqa: BLE001
