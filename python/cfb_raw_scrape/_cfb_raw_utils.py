@@ -97,7 +97,8 @@ from typing import Callable, Iterable
 #          play before a 0:00 snap was treated as the end), #651 scores ESPN marks but no text rule
 #          named are typed from the row (~650: frozen-board pick-sixes, fumble returns), textless
 #          copies (~180) and untyped admin rows (1,387) dropped. Every 0.1.4+c48bf6de.12 (and
-#          older) final must rebuild.
+#          older) final must rebuild. Locked at ea7c36d24 (#650 loader-schema docs on top) before
+#          the rev-13 reprocess ran.
 SCHEMA_REV = 13
 try:
     _SDV_VERSION = _pkg_version("sportsdataverse")
