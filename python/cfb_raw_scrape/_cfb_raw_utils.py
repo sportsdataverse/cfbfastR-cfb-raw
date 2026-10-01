@@ -87,7 +87,12 @@ from typing import Callable, Iterable
 #          earlier clock (a final kneel at 0:14 "ended" at 0:54: EPA -0.97, now -4.8); the last
 #          play of a half / finished game ends at 0:00. EPA moves on most plays (median 0.009,
 #          17% by >0.1). Every 0.1.4+88acd48d.10 (and older) final must rebuild.
-SCHEMA_REV = 11
+#   rev 12: sdv-py main c48bf6dea -- #648 a returned kickoff ends at the receiving team's first
+#          down: ESPN ends "Kickoff Return (Offense)" (2014 on) at down -1, and the EP / WP models
+#          scored that end with no down (EP_end ~1 point below the next snap's EP_start). ~1.8
+#          kickoffs a game, median EPA change 0.95. Every 0.1.4+fac97693.11 (and older) final
+#          must rebuild.
+SCHEMA_REV = 12
 try:
     _SDV_VERSION = _pkg_version("sportsdataverse")
 except Exception:  # noqa: BLE001
