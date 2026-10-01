@@ -75,7 +75,14 @@ from typing import Callable, Iterable
 #          Plus #636: ESPN "& 0" downs take the goal-to-go distance from the
 #          previous snap (EP/EPA/WP change on those rows).
 #          Every 0.1.4+9a3acbe8.8 (and older) final must rebuild.
-SCHEMA_REV = 9
+#   rev 10: sdv-py main 88acd48d2 -- #638 reunite rows the id sort filed in a later drive
+#          (#637) + same-series goal-to-go, #639 same series stops at a new series
+#          (overtime, scores, down resets), #642 blocked field goals keep ESPN's type
+#          (#641: ~71 rows were a Penalty / an Extra Point Missed try / a lost return TD)
+#          and null keys never twin a play copy, #643 2007-13 touchdowns filed as their
+#          own kick get the snap's down (EP/EPA change on 248 rows, was down -1).
+#          Every 0.1.4+01d3c1ad.9 (and older) final must rebuild.
+SCHEMA_REV = 10
 try:
     _SDV_VERSION = _pkg_version("sportsdataverse")
 except Exception:  # noqa: BLE001
