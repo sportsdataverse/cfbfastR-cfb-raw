@@ -167,3 +167,5 @@
 2026-10-18 06:42:32,426 ERROR team_stats 2026: 24 failed: ['2/6', '2/8', '2/9', '2/5', '2/12', '2/2', '2/23', '2/13', '2/16', '2/21']
 2026-10-19 04:15:56,569 INFO team_stats 2026: 278 teams x 2 types, 556 to fetch (0 banked and final)
 2026-10-19 04:16:09,962 INFO team_stats 2026: 24 (type/team) publish no stats -- expected, not a failure: ['2/3144', '2/3145', '2/3146', '2/3193', '2/3147', '2/3194', '2/3197', '2/3198', '2/112351', '2/112350']
+2026-10-20 04:15:44,407 INFO team_stats 2026: 278 teams x 2 types, 556 to fetch (0 banked and final)
+2026-10-20 04:16:00,288 INFO team_stats 2026: 24 (type/team) publish no stats -- expected, not a failure: ['2/3144', '2/3145', '2/3146', '2/3193', '2/3194', '2/3147', '2/3197', '2/3198', '2/112350', '2/125291']
