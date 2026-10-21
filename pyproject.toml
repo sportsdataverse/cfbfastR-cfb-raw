@@ -27,7 +27,8 @@ dev = ["pytest>=8.0"]
 # rushing_power_rate -- all landed on main after 0.0.73, so a reprocess would
 # have rebuilt final/ with the defects still in place, and the next scheduled run
 # would have silently reverted any manual repair.
-sportsdataverse = { git = "https://github.com/sportsdataverse/sportsdataverse-py", branch = "main" }
+# pinned 2026-10-21 until REPROCESS runs #1/#2 (sdv-py quality program, WB-nfl-2)
+sportsdataverse = { git = "https://github.com/sportsdataverse/sportsdataverse-py", rev = "9e9e0d6de36eba6450d5025a4852408fb4f3128c" }
 
 # sportsdataverse floor covers the offline-reprocess features: game_rosters
 # column-width fix (missing in 0.0.52), the 0.0.60 espn_cfb_schedule guard for
