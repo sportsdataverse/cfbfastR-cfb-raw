@@ -99,7 +99,14 @@ from typing import Callable, Iterable
 #          copies (~180) and untyped admin rows (1,387) dropped. Every 0.1.4+c48bf6de.12 (and
 #          older) final must rebuild. Locked at ea7c36d24 (#650 loader-schema docs on top) before
 #          the rev-13 reprocess ran.
-SCHEMA_REV = 13
+#   rev 14: REPROCESS run #2 (sdv-py quality program), sdv-py main 377094931b (0.2.0b1): devel-cfb
+#          (#905-#925 end states / fumbles / row order, #946 strict odds flags, #966 half-end wp_after,
+#          #1015 fumble recovering team), the CFB parity series #767-#778 (fumble recovery team, kneel
+#          yards, pre-2014 penalties + XP flags, onside td_play, fumble_lost, 2012-13 touchbacks + OOB
+#          35), #740 yards_per_dropback, #743 forced-try OT WP, devel-nfl's CFB hunks (line-yards
+#          band, Timeout-ending end_of_half), #1025 football/attribution, Float64 EP/WP and Int64 ids.
+#          Every rev-13 (and older) final must rebuild.
+SCHEMA_REV = 14
 try:
     _SDV_VERSION = _pkg_version("sportsdataverse")
 except Exception:  # noqa: BLE001
