@@ -1,6 +1,6 @@
-2026-10-27 12:31:01,856 INFO psutil unavailable; workers=6 (cpu-2)
-2026-10-27 12:31:56,399 INFO sweep attempt 1: 2 game(s) at 6 worker(s)
-reprocess w=6:   0%|          | 0/2 [00:00<?, ?it/s]2026-10-27 12:31:59,663 ERROR reprocess failed: 401339628
+2026-10-29 19:16:47,915 INFO psutil unavailable; workers=6 (cpu-2)
+2026-10-29 19:17:27,365 INFO sweep attempt 1: 2 game(s) at 6 worker(s)
+reprocess w=6:   0%|          | 0/2 [00:00<?, ?it/s]2026-10-29 19:17:30,039 ERROR reprocess failed: 401339628
 Traceback (most recent call last):
   File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/espn_cfb_60_reprocess.py", line 125, in reprocess_game
     result = proc.run_processing_pipeline()
@@ -14,7 +14,7 @@ Traceback (most recent call last):
   File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_pbp.py", line 4280, in __helper_cfb_pbp
     raise NoDataError(
 sportsdataverse.errors.NoDataError: ESPN summary for game 401339628 has a placeholder (TBD) competitor; there is no play-by-play to build.
-reprocess w=6:  50%|█████     | 1/2 [00:03<00:03,  3.27s/it]2026-10-27 12:31:59,672 ERROR reprocess failed: 401352013
+reprocess w=6:  50%|█████     | 1/2 [00:02<00:02,  2.68s/it]2026-10-29 19:17:30,079 ERROR reprocess failed: 401352013
 Traceback (most recent call last):
   File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/espn_cfb_60_reprocess.py", line 125, in reprocess_game
     result = proc.run_processing_pipeline()
@@ -28,7 +28,7 @@ Traceback (most recent call last):
   File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_pbp.py", line 4280, in __helper_cfb_pbp
     raise NoDataError(
 sportsdataverse.errors.NoDataError: ESPN summary for game 401352013 has a placeholder (TBD) competitor; there is no play-by-play to build.
-reprocess w=6: 100%|██████████| 2/2 [00:03<00:00,  1.63s/it]
-2026-10-27 12:32:48,977 INFO verify: 895/897 current (53 empty-but-current), 0 pre-kickoff withheld, 2 stale/missing
-2026-10-27 12:32:48,978 WARNING not-current after sweep (first 20): [401339628, 401352013]
+reprocess w=6: 100%|██████████| 2/2 [00:02<00:00,  1.36s/it]
+2026-10-29 19:18:14,080 INFO verify: 895/897 current (53 empty-but-current), 0 pre-kickoff withheld, 2 stale/missing
+2026-10-29 19:18:14,081 WARNING not-current after sweep (first 20): [401339628, 401352013]
 nothing to commit for: CFB Reprocess Update (Start: 2021 End: 2021)
