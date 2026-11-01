@@ -1,8 +1,10 @@
 """Scrape CFB schedules per season -> cfb/schedules + master."""
+
 from __future__ import annotations
 
 import os
 import sys
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import argparse
@@ -29,7 +31,9 @@ def fetch_season(season: int) -> pd.DataFrame:
     """
     try:
         cal = sdv.cfb.espn_cfb_calendar(season=season, return_as_pandas=True)
-        week_specs = [(int(r["season_type"]), int(r["week"])) for _, r in cal.iterrows()]
+        week_specs = [
+            (int(r["season_type"]), int(r["week"])) for _, r in cal.iterrows()
+        ]
     except Exception:
         # Calendar unavailable (rare, very old seasons): regular weeks 1-16 + bowls.
         week_specs = [(2, w) for w in range(1, 17)] + [(3, 1)]
@@ -45,10 +49,26 @@ def fetch_season(season: int) -> pd.DataFrame:
     if not frames:
         return pd.DataFrame()
 
-    out = pd.concat(frames, ignore_index=True).drop_duplicates(subset=["game_id"], keep="last")
+    out = pd.concat(frames, ignore_index=True).drop_duplicates(
+        subset=["game_id"], keep="last"
+    )
     if "season" not in out.columns:
         out["season"] = season
     return out
+
+
+def conform_to_master(df: pd.DataFrame, master_path: str = MASTER) -> pd.DataFrame:
+    """Cast ``df`` to the master's column dtypes (string ids, int32 game_id).
+
+    sdv-py's schedule frame moved its ids to Int64 (pin 8c46936ea7, 2026-10-29); the
+    master and every season file hold them as strings, and the mixed column made
+    every ``merge_master`` write fail from 2026-10-31. One dtype per id, fixed here.
+    """
+    p = Path(master_path)
+    if not p.exists():
+        return df
+    master = pd.read_parquet(p)
+    return df.astype({c: master[c].dtype for c in df.columns if c in master.columns})
 
 
 def merge_master(new: pd.DataFrame, master_path: str = MASTER) -> None:
@@ -80,7 +100,7 @@ def main() -> None:
     for season in range(args.start_year, end + 1):
         logger = get_logger("cfb_schedules", season)
         try:
-            df = fetch_season(season)
+            df = conform_to_master(fetch_season(season))
             write_season(df, season)
             merge_master(df)
             logger.info("schedules %s: %d games", season, len(df))
