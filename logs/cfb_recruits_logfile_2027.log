@@ -1885,3 +1885,5 @@
 2026-10-31 16:18:17,156 INFO recruits 2027: page 19 -> 250 rows (cum 4750/5052)
 2026-10-31 16:18:28,668 INFO recruits 2027: page 20 -> 250 rows (cum 5000/5052)
 2026-10-31 16:18:35,873 INFO recruits 2027: page 21 -> 52 rows (cum 5052/5052)
+2026-10-31 20:30:57,476 ERROR recruits 2027 page 1 failed after 3 attempts: ipa.247sports.com/rdb/v1/recruits/ answered HTTP 401: 
+2026-10-31 20:30:57,479 ERROR recruits 2027 INCOMPLETE: rows=0 failed_pages=[1] (no manifest written)
