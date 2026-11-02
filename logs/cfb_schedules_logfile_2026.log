@@ -352,3 +352,5 @@ Traceback (most recent call last):
   File "pyarrow/array.pxi", line 91, in pyarrow.lib._ndarray_to_array
   File "pyarrow/error.pxi", line 92, in pyarrow.lib.check_status
 pyarrow.lib.ArrowTypeError: ("Expected bytes, got a 'int' object", 'Conversion failed for column id with type object')
+2026-11-01 16:55:55,863 INFO schedules 2026: 950 games
+2026-11-02 04:05:29,288 INFO schedules 2026: 950 games
