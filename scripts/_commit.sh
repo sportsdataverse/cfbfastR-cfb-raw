@@ -33,10 +33,21 @@
 # Order matters: stage and commit FIRST so the tree is clean, and only then
 # reconcile with origin. `rebase --merge` rather than `pull --rebase` because
 # git's default am backend base64-encodes every parquet blob it replays.
+#
+# The git_pull sweep's lock (/tmp/git_pull_sdv.lock) is taken HERE, around the commit+push only
+# (flock -w). Callers must not hold it themselves: a caller-held lock for a whole season or build
+# starved every other droplet job waiting on it (the 2026-10/11 cron issues). The sweep skips a
+# checkout with tracked changes, so the scrape itself needs no lock. The subshell keeps the lock
+# and git gets 9>&-.
 sdv_commit_push() {
+  command -v flock >/dev/null || { _sdv_commit_push "$@"; return; }   # off the droplet
+  ( flock -w "${GIT_PULL_LOCK_WAIT:-3600}" 9 || { echo "::error ::git_pull sweep held its lock for 1h: $1"; exit 1; }
+    _sdv_commit_push "$@" 9>&- ) 9>"${GIT_PULL_LOCK:-/tmp/git_pull_sdv.lock}"
+}
+_sdv_commit_push() {
   local msg="$1"; shift
   # No automatic gc from this function's git calls (commit, fetch and rebase all run `gc --auto`).
-  # The callers hold /tmp/git_pull_sdv.lock on fd 9, and the daemonized gc inherits that fd: on
+  # The lock is held on fd 9 around this function, and a daemonized gc inheriting it: on
   # 2026-10-01 a repack of the 37 GB pack store held the lock 45 minutes after one season's commit,
   # and the next two seasons and the git_pull sweep timed out. Repack in a quiet window instead
   # (`git gc`, nothing else running). GIT_CONFIG_PARAMETERS is what `git -c` sets; the droplet's

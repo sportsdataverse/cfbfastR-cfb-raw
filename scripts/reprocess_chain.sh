@@ -1,5 +1,5 @@
 #!/bin/bash
-# Reprocess a run of seasons one at a time, each under the git_pull sweep's lock, then (with
+# Reprocess a run of seasons one at a time, each under the cfb build lock, then (with
 # --data) rebuild and publish cfbfastR-cfb-data for the same seasons.
 #
 # OPERATOR RUNBOOK (after a sportsdataverse lock bump that moved PROCESSING_VERSION)
@@ -23,9 +23,12 @@
 #      never `pkill -f` with a pattern your own shell's command line also contains.
 #
 # WHAT IT HANDLES
-#   - The lock. The git_pull sweep (:40 every 4 h) and other jobs take /tmp/git_pull_sdv.lock;
-#     each season waits up to LOCK_WAIT (3 h) and a timeout names the holder.
-#   - Lock fds: each season runs with 9>&- (the subshell keeps the lock). git daemonizes
+#   - The locks. Each season holds the cfb build lock (/tmp/cfbfastR-cfb-data-build.lock, the one
+#     cron_daily_cfb.sh holds), so a season never overlaps a cfb-data build reading these finals;
+#     it waits up to LOCK_WAIT (3 h) and a timeout names the holder. The git_pull sweep's lock is
+#     NOT held for the season (that starved every other droplet job): scripts/_commit.sh takes it
+#     around each commit+push only.
+#   - Lock fds: each season runs with 8>&- (the subshell keeps the lock). git daemonizes
 #     `gc --auto` and credential-cache--daemon (https push, ~15 min); an inherited fd held the
 #     lock after the season ended (a repack of the 37 GB pack store held it 45 min).
 #   - Auto gc, off for every git process here: a repack mid-chain only competes for IO.
@@ -43,7 +46,7 @@ case "${1:-}" in
   *) echo "usage: [SEASONS=\"Y ...\"] bash scripts/reprocess_chain.sh [--data]" >&2; exit 2 ;;
 esac
 SEASONS=${SEASONS:-$(seq "${CFB_LAST:-$(date +%Y)}" -1 "${CFB_FIRST:-2004}")}
-LOCK=${GIT_PULL_LOCK:-/tmp/git_pull_sdv.lock}
+LOCK=${CFB_BUILD_LOCK:-/tmp/cfbfastR-cfb-data-build.lock}
 LOCK_WAIT=${LOCK_WAIT:-10800}
 PAUSE_FROM=${PAUSE_FROM:-340}
 PAUSE_TO=${PAUSE_TO:-515}
@@ -73,8 +76,8 @@ failed=""
 for y in $SEASONS; do
   pause
   log "season $y start"
-  ( flock -w "$LOCK_WAIT" 9 || { log "season $y: no lock after ${LOCK_WAIT}s, held by:"; holders "$LOCK"; exit 1; }
-    bash scripts/reprocess_cfb.sh -s "$y" -e "$y" 9>&- ) 9>"$LOCK"
+  ( flock -w "$LOCK_WAIT" 8 || { log "season $y: no lock after ${LOCK_WAIT}s, held by:"; holders "$LOCK"; exit 1; }
+    bash scripts/reprocess_cfb.sh -s "$y" -e "$y" 8>&- ) 8>"$LOCK"
   rc=$?
   log "season $y exit $rc"
   [ "$rc" -eq 0 ] || failed="$failed $y"
@@ -92,7 +95,7 @@ if $DATA; then
     for y in $SEASONS; do
       pause
       log "data $y start"
-      # cron_daily_cfb.sh takes the cfb-data build lock and this lock itself, refuses a dirty or
+      # cron_daily_cfb.sh takes the cfb-data build lock and (around git) the sweep lock itself, refuses a dirty or
       # off-main checkout, pulls, syncs and publishes; its output is long, so it gets a file
       ( cd "$CFB_DATA_ROOT" && bash scripts/cron_daily_cfb.sh -s "$y" -e "$y" ) \
         > "logs/cfb_data_chain_${y}_$(date -u +%Y%m%d_%H%M%S).log" 2>&1
