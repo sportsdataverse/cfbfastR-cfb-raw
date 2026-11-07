@@ -359,3 +359,4 @@ pyarrow.lib.ArrowTypeError: ("Expected bytes, got a 'int' object", 'Conversion f
 2026-11-05 04:05:25,619 INFO schedules 2026: 950 games
 2026-11-06 04:05:25,617 INFO schedules 2026: 950 games
 2026-11-07 04:05:26,016 INFO schedules 2026: 950 games
+2026-11-07 16:00:32,622 INFO schedules 2026: 950 games
