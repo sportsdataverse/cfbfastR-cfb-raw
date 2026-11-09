@@ -1438,3 +1438,17 @@
 2026-11-08 06:31:10,032 ERROR team_rosters 2026 team 112351: 0 players -- not banked (a throttled 200, or a team ESPN publishes no roster for; the same 12 teams hit this daily)
 2026-11-08 06:31:10,039 ERROR team_rosters 2026 team 125291: 0 players -- not banked (a throttled 200, or a team ESPN publishes no roster for; the same 12 teams hit this daily)
 2026-11-08 06:31:10,168 ERROR team_rosters 2026: 12 team(s) failed: ['3144', '3145', '3146', '3147', '3194', '3197', '3193', '3198', '112350', '125290']
+2026-11-09 04:05:28,089 INFO team_rosters 2026: 278 teams, 278 to fetch (0 already banked and final)
+2026-11-09 04:05:57,616 ERROR team_rosters 2026 team 3144: 0 players -- not banked (a throttled 200, or a team ESPN publishes no roster for; the same 12 teams hit this daily)
+2026-11-09 04:05:57,624 ERROR team_rosters 2026 team 3145: 0 players -- not banked (a throttled 200, or a team ESPN publishes no roster for; the same 12 teams hit this daily)
+2026-11-09 04:05:57,732 ERROR team_rosters 2026 team 3146: 0 players -- not banked (a throttled 200, or a team ESPN publishes no roster for; the same 12 teams hit this daily)
+2026-11-09 04:05:57,762 ERROR team_rosters 2026 team 3147: 0 players -- not banked (a throttled 200, or a team ESPN publishes no roster for; the same 12 teams hit this daily)
+2026-11-09 04:05:57,805 ERROR team_rosters 2026 team 3197: 0 players -- not banked (a throttled 200, or a team ESPN publishes no roster for; the same 12 teams hit this daily)
+2026-11-09 04:05:57,806 ERROR team_rosters 2026 team 3198: 0 players -- not banked (a throttled 200, or a team ESPN publishes no roster for; the same 12 teams hit this daily)
+2026-11-09 04:05:57,852 ERROR team_rosters 2026 team 3194: 0 players -- not banked (a throttled 200, or a team ESPN publishes no roster for; the same 12 teams hit this daily)
+2026-11-09 04:05:57,854 ERROR team_rosters 2026 team 3193: 0 players -- not banked (a throttled 200, or a team ESPN publishes no roster for; the same 12 teams hit this daily)
+2026-11-09 04:05:57,968 ERROR team_rosters 2026 team 112350: 0 players -- not banked (a throttled 200, or a team ESPN publishes no roster for; the same 12 teams hit this daily)
+2026-11-09 04:05:57,991 ERROR team_rosters 2026 team 125291: 0 players -- not banked (a throttled 200, or a team ESPN publishes no roster for; the same 12 teams hit this daily)
+2026-11-09 04:05:57,997 ERROR team_rosters 2026 team 125290: 0 players -- not banked (a throttled 200, or a team ESPN publishes no roster for; the same 12 teams hit this daily)
+2026-11-09 04:05:58,031 ERROR team_rosters 2026 team 112351: 0 players -- not banked (a throttled 200, or a team ESPN publishes no roster for; the same 12 teams hit this daily)
+2026-11-09 04:05:58,033 ERROR team_rosters 2026: 12 team(s) failed: ['3144', '3145', '3146', '3147', '3197', '3198', '3194', '3193', '112350', '125291']
