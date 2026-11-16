@@ -316850,3 +316850,2141 @@ sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any te
 2026-11-15 06:32:34,793 INFO TBD matchup for 401874300 -- no play-by-play until the opponent is set
 2026-11-15 06:32:34,879 INFO TBD matchup for 401874322 -- no play-by-play until the opponent is set
 2026-11-15 06:32:34,933 INFO TBD matchup for 401874301 -- no play-by-play until the opponent is set
+2026-11-16 04:06:47,150 INFO season 2026: 219 games to scrape (rescrape=False)
+2026-11-16 04:06:50,345 ERROR extra fetch failed: _rosters(401866465,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401866465/competitions/401866465/competitors
+2026-11-16 04:06:50,406 INFO pre-game summary for 401866465 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:50,426 ERROR extra fetch failed: _rosters(401866464,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401866464/competitions/401866464/competitors
+2026-11-16 04:06:50,471 INFO pre-game summary for 401866464 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:50,478 ERROR extra fetch failed: _rosters(401866467,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401866467/competitions/401866467/competitors
+2026-11-16 04:06:50,513 ERROR extra fetch failed: _rosters(401866466,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401866466/competitions/401866466/competitors
+2026-11-16 04:06:50,522 INFO pre-game summary for 401866467 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:50,594 INFO pre-game summary for 401866466 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:50,597 ERROR extra fetch failed: _rosters(401866469,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401866469/competitions/401866469/competitors
+2026-11-16 04:06:50,641 INFO pre-game summary for 401866469 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:50,817 ERROR extra fetch failed: _rosters(401862830,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401862830/competitions/401862830/competitors
+2026-11-16 04:06:50,860 INFO pre-game summary for 401862830 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:50,924 ERROR extra fetch failed: _rosters(401858303,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858303/competitions/401858303/competitors
+2026-11-16 04:06:50,960 INFO pre-game summary for 401858303 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:50,992 ERROR extra fetch failed: _rosters(401866468,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401866468/competitions/401866468/competitors
+2026-11-16 04:06:50,998 ERROR extra fetch failed: _rosters(401856869,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856869/competitions/401856869/competitors
+2026-11-16 04:06:51,031 INFO pre-game summary for 401866468 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:51,033 INFO pre-game summary for 401856869 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:51,077 ERROR extra fetch failed: _rosters(401858529,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858529/competitions/401858529/competitors
+2026-11-16 04:06:51,110 INFO pre-game summary for 401858529 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:51,269 ERROR extra fetch failed: _rosters(401864545,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401864545/competitions/401864545/competitors
+2026-11-16 04:06:51,303 INFO pre-game summary for 401864545 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:51,309 ERROR extra fetch failed: _rosters(401864542,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401864542/competitions/401864542/competitors
+2026-11-16 04:06:51,344 INFO pre-game summary for 401864542 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:51,456 ERROR extra fetch failed: _rosters(401856866,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856866/competitions/401856866/competitors
+2026-11-16 04:06:51,495 ERROR extra fetch failed: _rosters(401858310,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858310/competitions/401858310/competitors
+2026-11-16 04:06:51,501 INFO pre-game summary for 401856866 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:51,531 INFO pre-game summary for 401858310 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:51,544 ERROR extra fetch failed: _rosters(401856749,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856749/competitions/401856749/competitors
+2026-11-16 04:06:51,572 INFO pre-game summary for 401856749 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:51,681 ERROR extra fetch failed: _rosters(401858531,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858531/competitions/401858531/competitors
+2026-11-16 04:06:51,716 INFO pre-game summary for 401858531 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:51,750 ERROR extra fetch failed: _rosters(401856748,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856748/competitions/401856748/competitors
+2026-11-16 04:06:51,784 INFO pre-game summary for 401856748 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:51,917 ERROR extra fetch failed: _rosters(401858309,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858309/competitions/401858309/competitors
+2026-11-16 04:06:51,948 ERROR extra fetch failed: _rosters(401856867,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856867/competitions/401856867/competitors
+2026-11-16 04:06:51,955 INFO pre-game summary for 401858309 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:51,985 INFO pre-game summary for 401856867 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:52,020 ERROR extra fetch failed: _rosters(401858530,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858530/competitions/401858530/competitors
+2026-11-16 04:06:52,055 INFO pre-game summary for 401858530 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:52,072 ERROR extra fetch failed: _rosters(401858533,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858533/competitions/401858533/competitors
+2026-11-16 04:06:52,109 INFO pre-game summary for 401858533 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:52,211 ERROR extra fetch failed: _rosters(401862831,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401862831/competitions/401862831/competitors
+2026-11-16 04:06:52,247 INFO pre-game summary for 401862831 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:52,321 ERROR extra fetch failed: _rosters(401862835,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401862835/competitions/401862835/competitors
+2026-11-16 04:06:52,359 INFO pre-game summary for 401862835 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:52,414 ERROR extra fetch failed: _rosters(401862834,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401862834/competitions/401862834/competitors
+2026-11-16 04:06:52,473 ERROR extra fetch failed: _rosters(401856868,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856868/competitions/401856868/competitors
+2026-11-16 04:06:52,506 INFO pre-game summary for 401856868 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:52,547 INFO pre-game summary for 401862834 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:52,607 ERROR extra fetch failed: _rosters(401858305,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858305/competitions/401858305/competitors
+2026-11-16 04:06:52,664 INFO pre-game summary for 401858305 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:52,680 ERROR extra fetch failed: _rosters(401856750,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856750/competitions/401856750/competitors
+2026-11-16 04:06:52,710 INFO pre-game summary for 401856750 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:52,728 ERROR extra fetch failed: _rosters(401871080,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401871080/competitions/401871080/competitors
+2026-11-16 04:06:52,763 INFO pre-game summary for 401871080 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:52,862 ERROR extra fetch failed: _rosters(401856746,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856746/competitions/401856746/competitors
+2026-11-16 04:06:52,895 INFO pre-game summary for 401856746 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:52,912 ERROR extra fetch failed: _rosters(401862832,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401862832/competitions/401862832/competitors
+2026-11-16 04:06:52,948 INFO pre-game summary for 401862832 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:53,196 ERROR extra fetch failed: _rosters(401871081,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401871081/competitions/401871081/competitors
+2026-11-16 04:06:53,224 ERROR extra fetch failed: _rosters(401871079,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401871079/competitions/401871079/competitors
+2026-11-16 04:06:53,244 INFO pre-game summary for 401871081 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:53,262 INFO pre-game summary for 401871079 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:53,293 ERROR extra fetch failed: _rosters(401858527,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858527/competitions/401858527/competitors
+2026-11-16 04:06:53,331 INFO pre-game summary for 401858527 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:53,359 ERROR extra fetch failed: _rosters(401862833,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401862833/competitions/401862833/competitors
+2026-11-16 04:06:53,395 INFO pre-game summary for 401862833 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:53,405 ERROR extra fetch failed: _rosters(401869929,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401869929/competitions/401869929/competitors
+2026-11-16 04:06:53,441 INFO pre-game summary for 401869929 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:53,666 ERROR extra fetch failed: _rosters(401869946,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401869946/competitions/401869946/competitors
+2026-11-16 04:06:53,689 ERROR extra fetch failed: _rosters(401871077,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401871077/competitions/401871077/competitors
+2026-11-16 04:06:53,701 INFO pre-game summary for 401869946 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:53,722 INFO pre-game summary for 401871077 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:53,754 ERROR extra fetch failed: _rosters(401871078,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401871078/competitions/401871078/competitors
+2026-11-16 04:06:53,777 ERROR extra fetch failed: _rosters(401858528,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858528/competitions/401858528/competitors
+2026-11-16 04:06:53,792 INFO pre-game summary for 401871078 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:53,814 INFO pre-game summary for 401858528 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:53,857 ERROR extra fetch failed: _rosters(401856755,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856755/competitions/401856755/competitors
+2026-11-16 04:06:53,893 INFO pre-game summary for 401856755 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:54,172 ERROR extra fetch failed: _rosters(401858535,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858535/competitions/401858535/competitors
+2026-11-16 04:06:54,186 ERROR extra fetch failed: _rosters(401856754,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856754/competitions/401856754/competitors
+2026-11-16 04:06:54,207 INFO pre-game summary for 401858535 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:54,223 INFO pre-game summary for 401856754 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:54,241 ERROR extra fetch failed: _rosters(401856747,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856747/competitions/401856747/competitors
+2026-11-16 04:06:54,257 ERROR extra fetch failed: _rosters(401856871,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856871/competitions/401856871/competitors
+2026-11-16 04:06:54,275 INFO pre-game summary for 401856747 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:54,296 INFO pre-game summary for 401856871 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:54,396 ERROR extra fetch failed: _rosters(401858304,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858304/competitions/401858304/competitors
+2026-11-16 04:06:54,432 INFO pre-game summary for 401858304 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:54,612 ERROR extra fetch failed: _rosters(401858532,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858532/competitions/401858532/competitors
+2026-11-16 04:06:54,651 ERROR extra fetch failed: _rosters(401856752,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856752/competitions/401856752/competitors
+2026-11-16 04:06:54,661 INFO pre-game summary for 401858532 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:54,664 ERROR extra fetch failed: _rosters(401861968,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401861968/competitions/401861968/competitors
+2026-11-16 04:06:54,688 INFO pre-game summary for 401856752 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:54,697 INFO pre-game summary for 401861968 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:54,723 ERROR extra fetch failed: _rosters(401864543,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401864543/competitions/401864543/competitors
+2026-11-16 04:06:54,757 INFO pre-game summary for 401864543 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:54,871 ERROR extra fetch failed: _rosters(401869953,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401869953/competitions/401869953/competitors
+2026-11-16 04:06:54,904 INFO pre-game summary for 401869953 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:55,113 ERROR extra fetch failed: _rosters(401871101,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401871101/competitions/401871101/competitors
+2026-11-16 04:06:55,136 ERROR extra fetch failed: _rosters(401869958,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401869958/competitions/401869958/competitors
+2026-11-16 04:06:55,169 INFO pre-game summary for 401871101 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:55,169 ERROR extra fetch failed: _rosters(401858534,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858534/competitions/401858534/competitors
+2026-11-16 04:06:55,172 INFO pre-game summary for 401869958 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:55,212 INFO pre-game summary for 401858534 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:55,230 ERROR extra fetch failed: _rosters(401860920,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401860920/competitions/401860920/competitors
+2026-11-16 04:06:55,266 INFO pre-game summary for 401860920 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:55,459 ERROR extra fetch failed: _rosters(401858302,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858302/competitions/401858302/competitors
+2026-11-16 04:06:55,495 INFO pre-game summary for 401858302 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:55,572 ERROR extra fetch failed: _rosters(401856865,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856865/competitions/401856865/competitors
+2026-11-16 04:06:55,653 INFO pre-game summary for 401856865 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:55,660 ERROR extra fetch failed: _rosters(401869938,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401869938/competitions/401869938/competitors
+2026-11-16 04:06:55,699 INFO pre-game summary for 401869938 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:55,713 ERROR extra fetch failed: _rosters(401864544,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401864544/competitions/401864544/competitors
+2026-11-16 04:06:55,717 ERROR extra fetch failed: _rosters(401856753,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856753/competitions/401856753/competitors
+2026-11-16 04:06:55,748 INFO pre-game summary for 401864544 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:55,752 INFO pre-game summary for 401856753 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:55,851 ERROR extra fetch failed: _rosters(401858307,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858307/competitions/401858307/competitors
+2026-11-16 04:06:55,889 INFO pre-game summary for 401858307 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:56,058 ERROR extra fetch failed: _rosters(401856751,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856751/competitions/401856751/competitors
+2026-11-16 04:06:56,095 INFO pre-game summary for 401856751 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:56,136 ERROR extra fetch failed: _rosters(401860918,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401860918/competitions/401860918/competitors
+2026-11-16 04:06:56,174 INFO pre-game summary for 401860918 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:56,178 ERROR extra fetch failed: _rosters(401858308,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858308/competitions/401858308/competitors
+2026-11-16 04:06:56,210 INFO pre-game summary for 401858308 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:56,272 ERROR extra fetch failed: _rosters(401862836,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401862836/competitions/401862836/competitors
+2026-11-16 04:06:56,290 ERROR extra fetch failed: _rosters(401858306,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858306/competitions/401858306/competitors
+2026-11-16 04:06:56,307 INFO pre-game summary for 401862836 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:56,330 INFO pre-game summary for 401858306 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:56,450 ERROR extra fetch failed: _rosters(401856872,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856872/competitions/401856872/competitors
+2026-11-16 04:06:56,482 INFO pre-game summary for 401856872 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:56,577 ERROR extra fetch failed: _rosters(401860925,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401860925/competitions/401860925/competitors
+2026-11-16 04:06:56,612 INFO pre-game summary for 401860925 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:56,658 ERROR extra fetch failed: _rosters(401856870,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856870/competitions/401856870/competitors
+2026-11-16 04:06:56,661 ERROR extra fetch failed: _rosters(401860919,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401860919/competitions/401860919/competitors
+2026-11-16 04:06:56,690 INFO pre-game summary for 401856870 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:56,695 INFO pre-game summary for 401860919 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:56,753 ERROR extra fetch failed: _rosters(401864541,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401864541/competitions/401864541/competitors
+2026-11-16 04:06:56,792 INFO pre-game summary for 401864541 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:56,913 ERROR extra fetch failed: _rosters(401866470,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401866470/competitions/401866470/competitors
+2026-11-16 04:06:57,006 INFO pre-game summary for 401866470 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:57,027 ERROR extra fetch failed: _rosters(401866471,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401866471/competitions/401866471/competitors
+2026-11-16 04:06:57,057 INFO pre-game summary for 401866471 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:57,107 ERROR extra fetch failed: _rosters(401862838,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401862838/competitions/401862838/competitors
+2026-11-16 04:06:57,136 ERROR extra fetch failed: _rosters(401856879,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856879/competitions/401856879/competitors
+2026-11-16 04:06:57,138 INFO pre-game summary for 401862838 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:57,166 WARNING REFUSED degraded write cfb/betting/json/401856879.json: 17909 -> 6597 bytes (37% of existing); keeping banked copy
+2026-11-16 04:06:57,167 INFO pre-game summary for 401856879 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:57,210 ERROR extra fetch failed: _rosters(401862840,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401862840/competitions/401862840/competitors
+2026-11-16 04:06:57,243 INFO pre-game summary for 401862840 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:57,420 ERROR extra fetch failed: _rosters(401858536,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858536/competitions/401858536/competitors
+2026-11-16 04:06:57,423 ERROR extra fetch failed: _rosters(401856762,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856762/competitions/401856762/competitors
+2026-11-16 04:06:57,451 INFO pre-game summary for 401858536 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:57,451 WARNING REFUSED degraded write cfb/betting/json/401856762.json: 17899 -> 1888 bytes (11% of existing); keeping banked copy
+2026-11-16 04:06:57,452 INFO pre-game summary for 401856762 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:57,477 ERROR extra fetch failed: _rosters(401866472,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401866472/competitions/401866472/competitors
+2026-11-16 04:06:57,480 ERROR extra fetch failed: _rosters(401866473,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401866473/competitions/401866473/competitors
+2026-11-16 04:06:57,507 INFO pre-game summary for 401866472 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:57,510 INFO pre-game summary for 401866473 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:57,584 ERROR extra fetch failed: _rosters(401869930,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401869930/competitions/401869930/competitors
+2026-11-16 04:06:57,636 INFO pre-game summary for 401869930 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:57,824 ERROR extra fetch failed: _rosters(401864549,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401864549/competitions/401864549/competitors
+2026-11-16 04:06:57,848 ERROR extra fetch failed: _rosters(401856756,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856756/competitions/401856756/competitors
+2026-11-16 04:06:57,855 INFO pre-game summary for 401864549 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:57,868 ERROR extra fetch failed: _rosters(401856759,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856759/competitions/401856759/competitors
+2026-11-16 04:06:57,880 WARNING REFUSED degraded write cfb/betting/json/401856756.json: 17842 -> 1866 bytes (10% of existing); keeping banked copy
+2026-11-16 04:06:57,881 INFO pre-game summary for 401856756 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:57,898 WARNING REFUSED degraded write cfb/betting/json/401856759.json: 17828 -> 1862 bytes (10% of existing); keeping banked copy
+2026-11-16 04:06:57,898 INFO pre-game summary for 401856759 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:57,907 ERROR extra fetch failed: _rosters(401864546,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401864546/competitions/401864546/competitors
+2026-11-16 04:06:57,940 INFO pre-game summary for 401864546 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:58,213 ERROR extra fetch failed: _rosters(401856880,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856880/competitions/401856880/competitors
+2026-11-16 04:06:58,244 INFO pre-game summary for 401856880 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:58,247 ERROR extra fetch failed: _rosters(401858544,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858544/competitions/401858544/competitors
+2026-11-16 04:06:58,280 ERROR extra fetch failed: _rosters(401856757,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856757/competitions/401856757/competitors
+2026-11-16 04:06:58,281 INFO pre-game summary for 401858544 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:58,296 ERROR extra fetch failed: _rosters(401858543,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858543/competitions/401858543/competitors
+2026-11-16 04:06:58,311 WARNING REFUSED degraded write cfb/betting/json/401856757.json: 17817 -> 1854 bytes (10% of existing); keeping banked copy
+2026-11-16 04:06:58,312 INFO pre-game summary for 401856757 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:58,318 ERROR extra fetch failed: _rosters(401856760,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856760/competitions/401856760/competitors
+2026-11-16 04:06:58,327 WARNING REFUSED degraded write cfb/betting/json/401858543.json: 17839 -> 1833 bytes (10% of existing); keeping banked copy
+2026-11-16 04:06:58,328 INFO pre-game summary for 401858543 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:58,347 INFO pre-game summary for 401856760 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:58,656 ERROR extra fetch failed: _rosters(401858311,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858311/competitions/401858311/competitors
+2026-11-16 04:06:58,691 INFO pre-game summary for 401858311 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:58,726 ERROR extra fetch failed: _rosters(401856765,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856765/competitions/401856765/competitors
+2026-11-16 04:06:58,742 ERROR extra fetch failed: _rosters(401856876,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856876/competitions/401856876/competitors
+2026-11-16 04:06:58,757 WARNING REFUSED degraded write cfb/betting/json/401856765.json: 17846 -> 1895 bytes (11% of existing); keeping banked copy
+2026-11-16 04:06:58,758 INFO pre-game summary for 401856765 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:58,773 INFO pre-game summary for 401856876 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:58,886 ERROR extra fetch failed: _rosters(401858314,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858314/competitions/401858314/competitors
+2026-11-16 04:06:58,904 ERROR extra fetch failed: _rosters(401858538,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858538/competitions/401858538/competitors
+2026-11-16 04:06:58,933 INFO pre-game summary for 401858314 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:58,937 INFO pre-game summary for 401858538 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:59,150 ERROR extra fetch failed: _rosters(401856761,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856761/competitions/401856761/competitors
+2026-11-16 04:06:59,183 INFO pre-game summary for 401856761 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:59,202 ERROR extra fetch failed: _rosters(401856874,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856874/competitions/401856874/competitors
+2026-11-16 04:06:59,234 INFO pre-game summary for 401856874 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:59,351 ERROR extra fetch failed: _rosters(401858541,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858541/competitions/401858541/competitors
+2026-11-16 04:06:59,433 WARNING REFUSED degraded write cfb/betting/json/401858541.json: 17886 -> 1869 bytes (10% of existing); keeping banked copy
+2026-11-16 04:06:59,434 INFO pre-game summary for 401858541 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:59,446 ERROR extra fetch failed: _rosters(401858312,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858312/competitions/401858312/competitors
+2026-11-16 04:06:59,478 INFO pre-game summary for 401858312 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:59,489 ERROR extra fetch failed: _rosters(401856764,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856764/competitions/401856764/competitors
+2026-11-16 04:06:59,518 WARNING REFUSED degraded write cfb/betting/json/401856764.json: 17844 -> 1888 bytes (11% of existing); keeping banked copy
+2026-11-16 04:06:59,519 INFO pre-game summary for 401856764 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:59,579 ERROR extra fetch failed: _rosters(401856763,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856763/competitions/401856763/competitors
+2026-11-16 04:06:59,611 INFO pre-game summary for 401856763 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:59,752 ERROR extra fetch failed: _rosters(401856758,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856758/competitions/401856758/competitors
+2026-11-16 04:06:59,787 INFO pre-game summary for 401856758 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:59,805 ERROR extra fetch failed: _rosters(401856877,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856877/competitions/401856877/competitors
+2026-11-16 04:06:59,825 ERROR extra fetch failed: _rosters(401856873,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856873/competitions/401856873/competitors
+2026-11-16 04:06:59,838 INFO pre-game summary for 401856877 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:59,855 WARNING REFUSED degraded write cfb/betting/json/401856873.json: 17833 -> 1861 bytes (10% of existing); keeping banked copy
+2026-11-16 04:06:59,856 INFO pre-game summary for 401856873 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:59,862 ERROR extra fetch failed: _rosters(401856875,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856875/competitions/401856875/competitors
+2026-11-16 04:06:59,895 INFO pre-game summary for 401856875 -- aux banked, final withheld until kickoff
+2026-11-16 04:06:59,983 ERROR extra fetch failed: _rosters(401856878,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856878/competitions/401856878/competitors
+2026-11-16 04:07:00,036 INFO pre-game summary for 401856878 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:00,159 ERROR extra fetch failed: _rosters(401858313,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858313/competitions/401858313/competitors
+2026-11-16 04:07:00,190 WARNING REFUSED degraded write cfb/betting/json/401858313.json: 17883 -> 8122 bytes (45% of existing); keeping banked copy
+2026-11-16 04:07:00,191 INFO pre-game summary for 401858313 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:00,256 ERROR extra fetch failed: _rosters(401858317,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858317/competitions/401858317/competitors
+2026-11-16 04:07:00,289 WARNING REFUSED degraded write cfb/betting/json/401858317.json: 17856 -> 1879 bytes (11% of existing); keeping banked copy
+2026-11-16 04:07:00,290 INFO pre-game summary for 401858317 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:00,340 ERROR extra fetch failed: _rosters(401858316,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858316/competitions/401858316/competitors
+2026-11-16 04:07:00,351 ERROR extra fetch failed: _rosters(401858315,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858315/competitions/401858315/competitors
+2026-11-16 04:07:00,371 INFO pre-game summary for 401858316 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:00,385 INFO pre-game summary for 401858315 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:00,503 INFO TBD matchup for 401860926 -- no play-by-play until the opponent is set
+2026-11-16 04:07:00,519 ERROR extra fetch failed: _rosters(401858537,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858537/competitions/401858537/competitors
+2026-11-16 04:07:00,525 INFO TBD matchup for 401860927 -- no play-by-play until the opponent is set
+2026-11-16 04:07:00,550 WARNING REFUSED degraded write cfb/betting/json/401858537.json: 17866 -> 1885 bytes (11% of existing); keeping banked copy
+2026-11-16 04:07:00,551 INFO pre-game summary for 401858537 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:00,601 ERROR extra fetch failed: _rosters(401858539,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858539/competitions/401858539/competitors
+2026-11-16 04:07:00,633 INFO pre-game summary for 401858539 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:00,662 INFO TBD matchup for 401860929 -- no play-by-play until the opponent is set
+2026-11-16 04:07:00,694 ERROR extra fetch failed: _rosters(401858542,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858542/competitions/401858542/competitors
+2026-11-16 04:07:00,704 INFO TBD matchup for 401860928 -- no play-by-play until the opponent is set
+2026-11-16 04:07:00,728 INFO pre-game summary for 401858542 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:01,043 ERROR extra fetch failed: _rosters(401862841,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401862841/competitions/401862841/competitors
+2026-11-16 04:07:01,064 ERROR extra fetch failed: _rosters(401862839,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401862839/competitions/401862839/competitors
+2026-11-16 04:07:01,076 INFO pre-game summary for 401862841 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:01,080 ERROR extra fetch failed: _rosters(401861969,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401861969/competitions/401861969/competitors
+2026-11-16 04:07:01,101 INFO pre-game summary for 401862839 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:01,111 INFO pre-game summary for 401861969 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:01,131 ERROR extra fetch failed: _rosters(401862837,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401862837/competitions/401862837/competitors
+2026-11-16 04:07:01,165 INFO pre-game summary for 401862837 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:01,250 ERROR extra fetch failed: _rosters(401862842,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401862842/competitions/401862842/competitors
+2026-11-16 04:07:01,289 INFO pre-game summary for 401862842 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:01,496 ERROR extra fetch failed: _rosters(401862843,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401862843/competitions/401862843/competitors
+2026-11-16 04:07:01,496 ERROR extra fetch failed: _rosters(401869947,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401869947/competitions/401869947/competitors
+2026-11-16 04:07:01,523 ERROR extra fetch failed: _rosters(401864550,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401864550/competitions/401864550/competitors
+2026-11-16 04:07:01,527 INFO pre-game summary for 401869947 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:01,529 INFO pre-game summary for 401862843 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:01,557 INFO pre-game summary for 401864550 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:01,624 ERROR extra fetch failed: _rosters(401869954,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401869954/competitions/401869954/competitors
+2026-11-16 04:07:01,663 INFO pre-game summary for 401869954 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:01,681 INFO TBD matchup for 401934095 -- no play-by-play until the opponent is set
+2026-11-16 04:07:01,774 ERROR extra fetch failed: _rosters(401869959,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401869959/competitions/401869959/competitors
+2026-11-16 04:07:01,784 INFO TBD matchup for 401934096 -- no play-by-play until the opponent is set
+2026-11-16 04:07:01,810 INFO pre-game summary for 401869959 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:01,889 ERROR extra fetch failed: _rosters(401871102,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401871102/competitions/401871102/competitors
+2026-11-16 04:07:01,908 INFO TBD matchup for 401934098 -- no play-by-play until the opponent is set
+2026-11-16 04:07:01,921 INFO pre-game summary for 401871102 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:01,928 INFO TBD matchup for 401934097 -- no play-by-play until the opponent is set
+2026-11-16 04:07:01,933 INFO TBD matchup for 401934099 -- no play-by-play until the opponent is set
+2026-11-16 04:07:02,019 ERROR extra fetch failed: _rosters(401871103,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401871103/competitions/401871103/competitors
+2026-11-16 04:07:02,042 INFO TBD matchup for 401934100 -- no play-by-play until the opponent is set
+2026-11-16 04:07:02,044 INFO TBD matchup for 401934101 -- no play-by-play until the opponent is set
+2026-11-16 04:07:02,052 INFO pre-game summary for 401871103 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:02,057 INFO TBD matchup for 401934102 -- no play-by-play until the opponent is set
+2026-11-16 04:07:02,379 ERROR extra fetch failed: _rosters(401866474,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401866474/competitions/401866474/competitors
+2026-11-16 04:07:02,382 ERROR extra fetch failed: _rosters(401858540,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858540/competitions/401858540/competitors
+2026-11-16 04:07:02,412 INFO pre-game summary for 401866474 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:02,416 WARNING REFUSED degraded write cfb/betting/json/401858540.json: 17880 -> 1880 bytes (11% of existing); keeping banked copy
+2026-11-16 04:07:02,417 INFO pre-game summary for 401858540 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:02,425 ERROR extra fetch failed: _rosters(401870804,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401870804/competitions/401870804/competitors
+2026-11-16 04:07:02,454 ERROR extra fetch failed: _rosters(401871082,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401871082/competitions/401871082/competitors
+2026-11-16 04:07:02,456 INFO pre-game summary for 401870804 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:02,490 INFO pre-game summary for 401871082 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:02,493 ERROR extra fetch failed: _rosters(401866475,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401866475/competitions/401866475/competitors
+2026-11-16 04:07:02,528 INFO pre-game summary for 401866475 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:02,756 ERROR extra fetch failed: _rosters(401871063,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401871063/competitions/401871063/competitors
+2026-11-16 04:07:02,787 INFO pre-game summary for 401871063 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:02,808 ERROR extra fetch failed: _rosters(401871062,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401871062/competitions/401871062/competitors
+2026-11-16 04:07:02,836 ERROR extra fetch failed: _rosters(401871083,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401871083/competitions/401871083/competitors
+2026-11-16 04:07:02,840 INFO pre-game summary for 401871062 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:02,869 INFO pre-game summary for 401871083 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:02,884 INFO TBD matchup for 401869535 -- no play-by-play until the opponent is set
+2026-11-16 04:07:02,886 ERROR extra fetch failed: _rosters(401869939,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401869939/competitions/401869939/competitors
+2026-11-16 04:07:02,918 INFO pre-game summary for 401869939 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:02,927 ERROR extra fetch failed: _rosters(401864548,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401864548/competitions/401864548/competitors
+2026-11-16 04:07:02,945 INFO TBD matchup for 401869546 -- no play-by-play until the opponent is set
+2026-11-16 04:07:02,959 INFO pre-game summary for 401864548 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:02,986 INFO TBD matchup for 401869542 -- no play-by-play until the opponent is set
+2026-11-16 04:07:02,995 INFO TBD matchup for 401869533 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,002 ERROR extra fetch failed: _rosters(401864547,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401864547/competitions/401864547/competitors
+2026-11-16 04:07:03,027 INFO TBD matchup for 401874049 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,054 INFO pre-game summary for 401864547 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:03,057 INFO TBD matchup for 401934103 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,088 INFO TBD matchup for 401934104 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,112 INFO TBD matchup for 401934106 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,129 INFO TBD matchup for 401934107 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,170 INFO TBD matchup for 401934109 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,170 INFO TBD matchup for 401934108 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,174 INFO TBD matchup for 401934105 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,226 INFO TBD matchup for 401858318 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,226 INFO TBD matchup for 401934110 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,234 INFO TBD matchup for 401869536 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,277 INFO TBD matchup for 401869532 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,279 INFO TBD matchup for 401869545 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,308 INFO TBD matchup for 401934111 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,315 INFO TBD matchup for 401869534 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,337 INFO TBD matchup for 401934114 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,363 INFO TBD matchup for 401934112 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,374 INFO TBD matchup for 401934113 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,390 INFO TBD matchup for 401874421 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,441 INFO TBD matchup for 401874404 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,448 INFO TBD matchup for 401874403 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,458 INFO TBD matchup for 401932016 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,489 INFO TBD matchup for 401874405 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,494 INFO TBD matchup for 401874406 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,548 INFO TBD matchup for 401874408 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,549 INFO TBD matchup for 401874407 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,579 INFO TBD matchup for 401874409 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,586 INFO TBD matchup for 401874411 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,593 INFO TBD matchup for 401874410 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,655 INFO TBD matchup for 401874413 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,658 INFO TBD matchup for 401874412 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,706 INFO TBD matchup for 401874414 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,708 INFO TBD matchup for 401874415 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,716 INFO TBD matchup for 401915245 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,772 INFO TBD matchup for 401874416 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,779 INFO TBD matchup for 401874417 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,783 ERROR extra fetch failed: _rosters(401862844,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 271, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401862844/competitions/401862844/competitors
+2026-11-16 04:07:03,802 INFO TBD matchup for 401874419 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,811 INFO TBD matchup for 401874418 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,814 WARNING REFUSED degraded write cfb/betting/json/401862844.json: 17859 -> 1880 bytes (11% of existing); keeping banked copy
+2026-11-16 04:07:03,815 INFO pre-game summary for 401862844 -- aux banked, final withheld until kickoff
+2026-11-16 04:07:03,850 INFO TBD matchup for 401874420 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,876 INFO TBD matchup for 401874422 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,878 INFO TBD matchup for 401874423 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,907 INFO TBD matchup for 401915453 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,930 INFO TBD matchup for 401874425 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,953 INFO TBD matchup for 401874426 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,961 INFO TBD matchup for 401874424 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,971 INFO TBD matchup for 401874427 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,994 INFO TBD matchup for 401874429 -- no play-by-play until the opponent is set
+2026-11-16 04:07:03,998 INFO TBD matchup for 401874428 -- no play-by-play until the opponent is set
+2026-11-16 04:07:04,046 INFO TBD matchup for 401874396 -- no play-by-play until the opponent is set
+2026-11-16 04:07:04,063 INFO TBD matchup for 401874430 -- no play-by-play until the opponent is set
+2026-11-16 04:07:04,080 INFO TBD matchup for 401874432 -- no play-by-play until the opponent is set
+2026-11-16 04:07:04,108 INFO TBD matchup for 401923399 -- no play-by-play until the opponent is set
+2026-11-16 04:07:04,111 INFO TBD matchup for 401874433 -- no play-by-play until the opponent is set
+2026-11-16 04:07:04,152 INFO TBD matchup for 401874395 -- no play-by-play until the opponent is set
+2026-11-16 04:07:04,184 INFO TBD matchup for 401874296 -- no play-by-play until the opponent is set
+2026-11-16 04:07:04,221 INFO TBD matchup for 401874298 -- no play-by-play until the opponent is set
+2026-11-16 04:07:04,239 INFO TBD matchup for 401874297 -- no play-by-play until the opponent is set
+2026-11-16 04:07:04,275 INFO TBD matchup for 401874299 -- no play-by-play until the opponent is set
+2026-11-16 04:07:04,276 INFO TBD matchup for 401874320 -- no play-by-play until the opponent is set
+2026-11-16 04:07:04,294 INFO TBD matchup for 401874295 -- no play-by-play until the opponent is set
+2026-11-16 04:07:04,332 INFO TBD matchup for 401874321 -- no play-by-play until the opponent is set
+2026-11-16 04:07:04,342 INFO TBD matchup for 401874342 -- no play-by-play until the opponent is set
+2026-11-16 04:07:04,395 INFO TBD matchup for 401874301 -- no play-by-play until the opponent is set
+2026-11-16 04:07:04,461 INFO TBD matchup for 401874322 -- no play-by-play until the opponent is set
+2026-11-16 04:07:04,475 INFO TBD matchup for 401874300 -- no play-by-play until the opponent is set
+2026-11-16 04:07:04,613 INFO TBD matchup for 401874431 -- no play-by-play until the opponent is set
