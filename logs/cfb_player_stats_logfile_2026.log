@@ -34630,3 +34630,5 @@
 2026-11-16 04:15:06,878 ERROR site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5455468/stats answered HTTP 403: <html> <head><title>403 Forbidden</title></head> <body> <center><h1>403 Forbidden</h1></center> </body> </html>
 2026-11-16 04:15:09,414 INFO player_stats: 9760 athlete(s) publish no stats (ESPN 404) -- expected, not banked
 2026-11-16 04:15:09,415 ERROR player_stats: 252 athlete(s) failed: ['5442914', '5442913', '5442923', '5442917', '5442924', '5442922', '5442926', '5442927', '5442925', '5442929']
+2026-11-17 04:09:30,806 INFO player_stats 2026-2026: 26101 athletes, 26101 to fetch (0 banked and final, 26101 still accruing)
+2026-11-17 04:11:24,033 INFO player_stats: 9943 athlete(s) publish no stats (ESPN 404) -- expected, not banked
