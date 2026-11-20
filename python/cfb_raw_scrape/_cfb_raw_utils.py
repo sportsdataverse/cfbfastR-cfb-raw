@@ -106,7 +106,13 @@ from typing import Callable, Iterable
 #          35), #740 yards_per_dropback, #743 forced-try OT WP, devel-nfl's CFB hunks (line-yards
 #          band, Timeout-ending end_of_half), #1025 football/attribution, Float64 EP/WP and Int64 ids.
 #          Every rev-13 (and older) final must rebuild.
-SCHEMA_REV = 14
+#   rev 15: REPROCESS run #3 (Phase 4), sdv-py main 2fdd0612af: #1036 live-feed snapshot copies dropped
+#          before the corrupt-game size guard (11,893 duplicate rows in 709 games, 4 unenriched games),
+#          #1042 one name per player + CFB OT timeouts + provider id NaN reads, #1052 fumbler capture,
+#          #1053 OT drives counted once for timeout windows, #1054 fair catch beyond the 25 dead at the
+#          spot, #1096 pos_score_pts = points scored on the play, #1245 sacks and kneel-downs count as
+#          rushes in the box score (NCAA convention). Every rev-14 (and older) final must rebuild.
+SCHEMA_REV = 15
 try:
     _SDV_VERSION = _pkg_version("sportsdataverse")
 except Exception:  # noqa: BLE001
