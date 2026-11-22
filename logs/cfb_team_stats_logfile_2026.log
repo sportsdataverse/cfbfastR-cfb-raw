@@ -542,3 +542,5 @@
 2026-11-22 04:16:27,024 ERROR Expecting value: line 1 column 1 (char 0)
 2026-11-22 04:16:39,860 INFO team_stats 2026: 24 (type/team) publish no stats -- expected, not a failure: ['2/3144', '2/3145', '2/3146', '2/3147', '2/3194', '2/3193', '2/3197', '2/112350', '2/125291', '2/112351']
 2026-11-22 04:16:39,860 ERROR team_stats 2026: 28 failed: ['2/6', '2/9', '2/8', '2/12', '2/5', '2/2', '2/13', '2/21', '2/25', '2/16']
+2026-11-22 06:41:40,770 INFO team_stats 2026: 278 teams x 2 types, 556 to fetch (0 banked and final)
+2026-11-22 06:41:53,737 INFO team_stats 2026: 24 (type/team) publish no stats -- expected, not a failure: ['2/3144', '2/3145', '2/3146', '2/3194', '2/3193', '2/3147', '2/3198', '2/112350', '2/112351', '2/3197']
