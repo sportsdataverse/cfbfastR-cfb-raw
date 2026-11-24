@@ -112,7 +112,13 @@ from typing import Callable, Iterable
 #          #1053 OT drives counted once for timeout windows, #1054 fair catch beyond the 25 dead at the
 #          spot, #1096 pos_score_pts = points scored on the play, #1245 sacks and kneel-downs count as
 #          rushes in the box score (NCAA convention). Every rev-14 (and older) final must rebuild.
-SCHEMA_REV = 15
+#   rev 16: sdv-py main 12555e0354: #1257 a replay review's account of the reversed call is no part of
+#          the play (cleaned_text / td_play / fumble_vec read the ruling; 95 overturned touchdowns kept
+#          their type, 96 reversed fumbles) and a lateral credits the catch, carry or return to the player
+#          who made it (new lateral_play / lateral_player_name / lateral_player_id), #1258 a pass or sack
+#          ESPN typed "Rush" takes the type its text names (36 rows), plus #1250 (Yahoo shangrila) and
+#          #1251 (participant columns stay String). Every rev-15 (and older) final must rebuild.
+SCHEMA_REV = 16
 try:
     _SDV_VERSION = _pkg_version("sportsdataverse")
 except Exception:  # noqa: BLE001
