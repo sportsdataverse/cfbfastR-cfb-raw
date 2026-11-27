@@ -37296,3 +37296,5 @@
 2026-11-25 04:15:20,148 ERROR player_stats: 253 athlete(s) failed: ['5441476', '5441477', '5441483', '5441484', '5441487', '5441479', '5441490', '5441494', '5441492', '5441488']
 2026-11-26 04:09:14,239 INFO player_stats 2026-2026: 26318 athletes, 26318 to fetch (0 banked and final, 26318 still accruing)
 2026-11-26 04:11:00,055 INFO player_stats: 9880 athlete(s) publish no stats (ESPN 404) -- expected, not banked
+2026-11-27 04:09:58,137 INFO player_stats 2026-2026: 26318 athletes, 26318 to fetch (0 banked and final, 26318 still accruing)
+2026-11-27 04:11:46,817 INFO player_stats: 9879 athlete(s) publish no stats (ESPN 404) -- expected, not banked
