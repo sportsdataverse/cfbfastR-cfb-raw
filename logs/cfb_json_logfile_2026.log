@@ -346951,3 +346951,2412 @@ sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any te
 2026-11-28 04:07:20,628 INFO TBD matchup for 401874301 -- no play-by-play until the opponent is set
 2026-11-28 04:07:20,644 INFO TBD matchup for 401874342 -- no play-by-play until the opponent is set
 2026-11-28 04:07:20,660 INFO TBD matchup for 401874322 -- no play-by-play until the opponent is set
+2026-11-28 16:01:59,932 INFO season 2026: 132 games to scrape (rescrape=False)
+2026-11-28 16:02:05,147 ERROR extra fetch failed: _rosters(401934098,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:05,295 INFO pre-game summary for 401934098 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:05,672 ERROR extra fetch failed: _rosters(401934101,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:05,741 INFO pre-game summary for 401934101 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:06,123 ERROR extra fetch failed: _rosters(401934102,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401934102/competitions/401934102/competitors
+2026-11-28 16:02:06,190 INFO pre-game summary for 401934102 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:06,756 ERROR extra fetch failed: _rosters(401934103,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401934103/competitions/401934103/competitors
+2026-11-28 16:02:06,808 INFO pre-game summary for 401934103 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:07,302 ERROR extra fetch failed: _rosters(401934104,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401934104/competitions/401934104/competitors
+2026-11-28 16:02:07,352 INFO pre-game summary for 401934104 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:07,795 ERROR extra fetch failed: _rosters(401934105,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401934105/competitions/401934105/competitors
+2026-11-28 16:02:07,867 INFO pre-game summary for 401934105 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:08,564 ERROR extra fetch failed: _rosters(401934106,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401934106/competitions/401934106/competitors
+2026-11-28 16:02:08,607 INFO pre-game summary for 401934106 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:09,229 ERROR extra fetch failed: _rosters(401934107,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401934107/competitions/401934107/competitors
+2026-11-28 16:02:09,277 INFO pre-game summary for 401934107 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:09,609 ERROR extra fetch failed: _rosters(401934099,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:09,770 ERROR extra fetch failed: _rosters(401934108,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401934108/competitions/401934108/competitors
+2026-11-28 16:02:09,766 ERROR extra fetch failed: _rosters(401934100,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:09,807 ERROR extra fetch failed: _rosters(401934096,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401934096/competitions/401934096/competitors
+2026-11-28 16:02:09,812 INFO pre-game summary for 401934108 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:10,349 ERROR extra fetch failed: _rosters(401934109,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401934109/competitions/401934109/competitors
+2026-11-28 16:02:10,393 INFO pre-game summary for 401934109 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:10,463 ERROR extra fetch failed: _rosters(401934110,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401934110/competitions/401934110/competitors
+2026-11-28 16:02:10,539 INFO pre-game summary for 401934110 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:10,839 ERROR extra fetch failed: _rosters(401934114,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401934114/competitions/401934114/competitors
+2026-11-28 16:02:10,884 INFO pre-game summary for 401934114 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:10,969 ERROR extra fetch failed: _rosters(401934111,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401934111/competitions/401934111/competitors
+2026-11-28 16:02:11,012 INFO pre-game summary for 401934111 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:11,080 ERROR extra fetch failed: _rosters(401934112,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401934112/competitions/401934112/competitors
+2026-11-28 16:02:11,126 INFO pre-game summary for 401934112 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:11,129 ERROR extra fetch failed: _rosters(401934113,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401934113/competitions/401934113/competitors
+2026-11-28 16:02:11,178 INFO pre-game summary for 401934113 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:15,642 ERROR extra fetch failed: _rosters(401862837,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401862837/competitions/401862837/competitors
+2026-11-28 16:02:15,882 ERROR extra fetch failed: _rosters(401870804,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:15,900 ERROR extra fetch failed: _rosters(401871102,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:16,061 ERROR extra fetch failed: _rosters(401856758,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:21,907 ERROR extra fetch failed: _rosters(401856875,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:21,909 ERROR extra fetch failed: _rosters(401871103,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:22,011 ERROR extra fetch failed: _rosters(401856878,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:22,094 ERROR extra fetch failed: _rosters(401862841,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:24,148 ERROR extra fetch failed: _rosters(401869947,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:25,305 ERROR extra fetch failed: _rosters(401869959,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401869959/competitions/401869959/competitors
+2026-11-28 16:02:26,459 ERROR extra fetch failed: _rosters(401858317,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:26,505 ERROR extra fetch failed: _rosters(401871063,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:26,780 ERROR extra fetch failed: _rosters(401871082,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:26,849 ERROR extra fetch failed: _rosters(401871083,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:28,564 ERROR extra fetch failed: _rosters(401869939,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:29,726 ERROR extra fetch failed: _rosters(401856764,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:30,018 ERROR extra fetch failed: _rosters(401856760,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:30,595 ERROR extra fetch failed: _rosters(401858312,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:30,885 ERROR extra fetch failed: _rosters(401856876,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:30,963 ERROR extra fetch failed: _rosters(401858543,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:32,848 ERROR extra fetch failed: _rosters(401858316,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:33,800 ERROR extra fetch failed: _rosters(401858539,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:34,083 ERROR extra fetch failed: _rosters(401862839,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:34,442 ERROR extra fetch failed: _rosters(401864550,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:34,757 ERROR extra fetch failed: _rosters(401871062,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:35,010 ERROR extra fetch failed: _rosters(401866475,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:50,233 ERROR extra fetch failed: _rosters(401862843,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:50,269 INFO pre-game summary for 401862843 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:50,686 ERROR extra fetch failed: _rosters(401856763,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:50,733 INFO pre-game summary for 401856763 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:51,055 ERROR extra fetch failed: _rosters(401858542,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 362, in _construct_series_with_fallbacks
+    return constructor(name, values, strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 167, in get_df_item_by_key
+    return _select_rows(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 314, in _select_rows
+    s = pl.Series("", key, dtype=Int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/series/series.py", line 326, in __init__
+    self._s = sequence_to_pyseries(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 161, in sequence_to_pyseries
+    pyseries = _construct_series_with_fallbacks(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/construction/series.py", line 377, in _construct_series_with_fallbacks
+    return PySeries.new_from_any_values_and_dtype(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unexpected value while building Series of type Int64; found value of type String: "team_id"
+
+This error occurred with the following context stack:
+	[1] while constructing Series ''
+
+
+Hint: Try setting `strict=False` to allow passing data with mixed types.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 90, in espn_cfb_game_rosters
+    team_rosters = team_rosters.join(items[["team_id", "order", "home_away", "winner"]], how="left", on="team_id")
+                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/dataframe/frame.py", line 1412, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 169, in get_df_item_by_key
+    return _select_columns(df, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 217, in _select_columns
+    return _select_columns_by_name(df, key)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/polars/_utils/getitem.py", line 269, in _select_columns_by_name
+    return df._from_pydf(df._df.select(list(key)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "winner" not found
+2026-11-28 16:02:51,101 INFO pre-game summary for 401858542 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:51,506 ERROR extra fetch failed: _rosters(401860926,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401860926/competitions/401860926/competitors
+2026-11-28 16:02:51,551 INFO pre-game summary for 401860926 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:51,992 ERROR extra fetch failed: _rosters(401856877,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856877/competitions/401856877/competitors
+2026-11-28 16:02:52,036 INFO pre-game summary for 401856877 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:52,199 ERROR extra fetch failed: _rosters(401860929,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401860929/competitions/401860929/competitors
+2026-11-28 16:02:52,240 INFO pre-game summary for 401860929 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:52,380 ERROR extra fetch failed: _rosters(401856765,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856765/competitions/401856765/competitors
+2026-11-28 16:02:52,433 INFO pre-game summary for 401856765 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:52,636 ERROR extra fetch failed: _rosters(401858538,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858538/competitions/401858538/competitors
+2026-11-28 16:02:52,686 INFO pre-game summary for 401858538 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:52,742 ERROR extra fetch failed: _rosters(401856757,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856757/competitions/401856757/competitors
+2026-11-28 16:02:52,788 INFO pre-game summary for 401856757 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:53,057 ERROR extra fetch failed: _rosters(401858541,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858541/competitions/401858541/competitors
+2026-11-28 16:02:53,123 INFO pre-game summary for 401858541 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:53,199 ERROR extra fetch failed: _rosters(401858315,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858315/competitions/401858315/competitors
+2026-11-28 16:02:53,288 INFO pre-game summary for 401858315 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:53,460 ERROR extra fetch failed: _rosters(401856873,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856873/competitions/401856873/competitors
+2026-11-28 16:02:53,526 INFO pre-game summary for 401856873 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:53,642 ERROR extra fetch failed: _rosters(401864548,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401864548/competitions/401864548/competitors
+2026-11-28 16:02:53,685 INFO pre-game summary for 401864548 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:53,839 ERROR extra fetch failed: _rosters(401856874,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856874/competitions/401856874/competitors
+2026-11-28 16:02:53,885 INFO pre-game summary for 401856874 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:53,994 ERROR extra fetch failed: _rosters(401860928,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401860928/competitions/401860928/competitors
+2026-11-28 16:02:54,034 INFO pre-game summary for 401860928 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:54,208 ERROR extra fetch failed: _rosters(401860927,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401860927/competitions/401860927/competitors
+2026-11-28 16:02:54,257 INFO pre-game summary for 401860927 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:54,447 ERROR extra fetch failed: _rosters(401864547,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401864547/competitions/401864547/competitors
+2026-11-28 16:02:54,496 INFO pre-game summary for 401864547 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:54,604 INFO TBD matchup for 401869546 -- no play-by-play until the opponent is set
+2026-11-28 16:02:54,617 ERROR extra fetch failed: _rosters(401869535,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401869535/competitions/401869535/competitors
+2026-11-28 16:02:54,653 INFO pre-game summary for 401869535 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:54,958 ERROR extra fetch failed: _rosters(401869533,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401869533/competitions/401869533/competitors
+2026-11-28 16:02:54,993 INFO pre-game summary for 401869533 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:55,122 INFO TBD matchup for 401874049 -- no play-by-play until the opponent is set
+2026-11-28 16:02:55,159 ERROR extra fetch failed: _rosters(401869542,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401869542/competitions/401869542/competitors
+2026-11-28 16:02:55,204 INFO pre-game summary for 401869542 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:55,563 ERROR extra fetch failed: _rosters(401858318,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401858318/competitions/401858318/competitors
+2026-11-28 16:02:55,603 INFO pre-game summary for 401858318 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:55,676 ERROR extra fetch failed: _rosters(401869536,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401869536/competitions/401869536/competitors
+2026-11-28 16:02:55,735 INFO pre-game summary for 401869536 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:55,852 INFO TBD matchup for 401869532 -- no play-by-play until the opponent is set
+2026-11-28 16:02:55,956 INFO TBD matchup for 401869534 -- no play-by-play until the opponent is set
+2026-11-28 16:02:56,528 ERROR extra fetch failed: _rosters(401862844,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401862844/competitions/401862844/competitors
+2026-11-28 16:02:56,570 WARNING REFUSED degraded write cfb/betting/json/401862844.json: 17859 -> 1878 bytes (11% of existing); keeping banked copy
+2026-11-28 16:02:56,573 INFO pre-game summary for 401862844 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:56,629 ERROR extra fetch failed: _rosters(401869545,)
+Traceback (most recent call last):
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/_cfb_raw_utils.py", line 283, in _safe
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/python/cfb_raw_scrape/scrape_cfb_pbp.py", line 58, in _rosters
+    return sdv.cfb.espn_cfb_game_rosters(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/cfb/cfb_game_rosters.py", line 89, in espn_cfb_game_rosters
+    team_rosters = helper_cfb_roster_items(items=items, summary_url=summary_url, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sdv_repos/cfbfastR-cfb-raw/.venv/lib/python3.11/site-packages/sportsdataverse/_espn_game_rosters.py", line 194, in roster_items
+    raise NoDataError(f"NoDataError: No roster data found for any team at {summary_url}")
+sportsdataverse.errors.NoDataError: NoDataError: No roster data found for any team at https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401869545/competitions/401869545/competitors
+2026-11-28 16:02:56,670 INFO pre-game summary for 401869545 -- aux banked, final withheld until kickoff
+2026-11-28 16:02:56,681 INFO TBD matchup for 401874421 -- no play-by-play until the opponent is set
+2026-11-28 16:02:56,775 INFO TBD matchup for 401874403 -- no play-by-play until the opponent is set
+2026-11-28 16:02:56,781 INFO TBD matchup for 401874404 -- no play-by-play until the opponent is set
+2026-11-28 16:02:56,886 INFO TBD matchup for 401932016 -- no play-by-play until the opponent is set
+2026-11-28 16:02:56,961 INFO TBD matchup for 401874405 -- no play-by-play until the opponent is set
+2026-11-28 16:02:56,992 INFO TBD matchup for 401874406 -- no play-by-play until the opponent is set
+2026-11-28 16:02:57,050 INFO TBD matchup for 401874407 -- no play-by-play until the opponent is set
+2026-11-28 16:02:57,136 INFO TBD matchup for 401874408 -- no play-by-play until the opponent is set
+2026-11-28 16:02:57,174 INFO TBD matchup for 401874409 -- no play-by-play until the opponent is set
+2026-11-28 16:02:57,244 INFO TBD matchup for 401874410 -- no play-by-play until the opponent is set
+2026-11-28 16:02:57,277 INFO TBD matchup for 401874411 -- no play-by-play until the opponent is set
+2026-11-28 16:02:57,356 INFO TBD matchup for 401874412 -- no play-by-play until the opponent is set
+2026-11-28 16:02:57,384 INFO TBD matchup for 401874413 -- no play-by-play until the opponent is set
+2026-11-28 16:02:57,497 INFO TBD matchup for 401874414 -- no play-by-play until the opponent is set
+2026-11-28 16:02:57,527 INFO TBD matchup for 401915245 -- no play-by-play until the opponent is set
+2026-11-28 16:02:57,616 INFO TBD matchup for 401874415 -- no play-by-play until the opponent is set
+2026-11-28 16:02:57,629 INFO TBD matchup for 401874416 -- no play-by-play until the opponent is set
+2026-11-28 16:02:57,708 INFO TBD matchup for 401874417 -- no play-by-play until the opponent is set
+2026-11-28 16:02:57,750 INFO TBD matchup for 401874418 -- no play-by-play until the opponent is set
+2026-11-28 16:02:57,805 INFO TBD matchup for 401874419 -- no play-by-play until the opponent is set
+2026-11-28 16:02:57,904 INFO TBD matchup for 401874420 -- no play-by-play until the opponent is set
+2026-11-28 16:02:57,905 INFO TBD matchup for 401874422 -- no play-by-play until the opponent is set
+2026-11-28 16:02:58,015 INFO TBD matchup for 401874423 -- no play-by-play until the opponent is set
+2026-11-28 16:02:58,090 INFO TBD matchup for 401915453 -- no play-by-play until the opponent is set
+2026-11-28 16:02:58,118 INFO TBD matchup for 401874424 -- no play-by-play until the opponent is set
+2026-11-28 16:02:58,211 INFO TBD matchup for 401874425 -- no play-by-play until the opponent is set
+2026-11-28 16:02:58,231 INFO TBD matchup for 401874426 -- no play-by-play until the opponent is set
+2026-11-28 16:02:58,345 INFO TBD matchup for 401874428 -- no play-by-play until the opponent is set
+2026-11-28 16:02:58,346 INFO TBD matchup for 401874427 -- no play-by-play until the opponent is set
+2026-11-28 16:02:58,446 INFO TBD matchup for 401874396 -- no play-by-play until the opponent is set
+2026-11-28 16:02:58,451 INFO TBD matchup for 401874429 -- no play-by-play until the opponent is set
+2026-11-28 16:02:58,557 INFO TBD matchup for 401874430 -- no play-by-play until the opponent is set
+2026-11-28 16:02:58,564 INFO TBD matchup for 401874431 -- no play-by-play until the opponent is set
+2026-11-28 16:02:58,673 INFO TBD matchup for 401874432 -- no play-by-play until the opponent is set
+2026-11-28 16:02:58,687 INFO TBD matchup for 401874433 -- no play-by-play until the opponent is set
+2026-11-28 16:02:58,779 INFO TBD matchup for 401923399 -- no play-by-play until the opponent is set
+2026-11-28 16:02:58,833 INFO TBD matchup for 401874395 -- no play-by-play until the opponent is set
+2026-11-28 16:02:58,877 INFO TBD matchup for 401874295 -- no play-by-play until the opponent is set
+2026-11-28 16:02:58,941 INFO TBD matchup for 401874296 -- no play-by-play until the opponent is set
+2026-11-28 16:02:58,972 INFO TBD matchup for 401874297 -- no play-by-play until the opponent is set
+2026-11-28 16:02:59,044 INFO TBD matchup for 401874298 -- no play-by-play until the opponent is set
+2026-11-28 16:02:59,130 INFO TBD matchup for 401874299 -- no play-by-play until the opponent is set
+2026-11-28 16:02:59,198 INFO TBD matchup for 401874320 -- no play-by-play until the opponent is set
+2026-11-28 16:02:59,252 INFO TBD matchup for 401874321 -- no play-by-play until the opponent is set
+2026-11-28 16:02:59,313 INFO TBD matchup for 401874342 -- no play-by-play until the opponent is set
+2026-11-28 16:02:59,357 INFO TBD matchup for 401874300 -- no play-by-play until the opponent is set
+2026-11-28 16:02:59,409 INFO TBD matchup for 401874301 -- no play-by-play until the opponent is set
+2026-11-28 16:02:59,468 INFO TBD matchup for 401874322 -- no play-by-play until the opponent is set
