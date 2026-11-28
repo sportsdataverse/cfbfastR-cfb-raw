@@ -1,1 +1,1 @@
-{"count":0,"pageIndex":0,"pageSize":25,"pageCount":0,"items":[],"game_id":401869536,"season":2026,"week":14}
+{"count":2,"pageIndex":1,"pageSize":25,"pageCount":1,"items":[{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401869536/competitions/401869536/powerindex/2084?lang=en&region=us"},{"$ref":"http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401869536/competitions/401869536/powerindex/2649?lang=en&region=us"}],"game_id":401869536,"season":2026,"week":14}
